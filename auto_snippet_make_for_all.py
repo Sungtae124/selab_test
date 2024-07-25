@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from abc import ABC
 import re
 
+
 class OpenAIEngine(ABC):
     def __init__(self):
         load_dotenv()
@@ -28,6 +29,7 @@ class OpenAIEngine(ABC):
                     break
         raise save_err
 
+
 def load_server_info(file_path='server_info.txt'):
     server_info = {}
     with open(file_path, 'r') as file:
@@ -37,6 +39,7 @@ def load_server_info(file_path='server_info.txt'):
             server_info[key] = value
     server_info['port'] = int(server_info['port'])
     return server_info
+
 
 def list_remote_files(directory, server_info):
     try:
@@ -59,6 +62,21 @@ def list_remote_files(directory, server_info):
         print(f"An error occurred: {e}")
         raise
 
+
+def select_test_path(bug_id):
+    match bug_id:
+        case "Chart-2" | "Chart-4" | "Chart-14" | "Chart-16":
+            return "/fixed/tests"
+        case "Cli-5" | "Codec-5" | "JxPath-1" | "Lang-39" | "Lang-47" | "Lang-57":
+            return "/fixed/src/test"
+        case "Closure-2" | "Closure-171" | "Mockito-4" | "Mockito-18" | "Mockito-29" | "Mockito-36" | "Mockito-38":
+            return "/fixed/test"
+        case "Gson-6" | "Gson-9":
+            return "/fixed/gson/src/test/java"
+        case _:
+            return "/fixed/src/test/java"
+
+
 def read_remote_file(file_path, server_info):
     try:
         ssh = paramiko.SSHClient()
@@ -78,6 +96,7 @@ def read_remote_file(file_path, server_info):
         print(f"An error occurred: {e}")
         raise
 
+
 def extract_field_info(file_lines, class_name, src_path):
     fields = []
     for i, line in enumerate(file_lines):
@@ -95,9 +114,10 @@ def extract_field_info(file_lines, class_name, src_path):
                 "snippet": snippet,
                 "begin_line": i + 1,
                 "end_line": j + 1,
-                "comment": extract_comments(file_lines[max(0, i-5):i])  # 주석 추출
+                "comment": extract_comments(file_lines[max(0, i - 5):i])  # 주석 추출
             })
     return fields
+
 
 def extract_comments(file_lines):
     comments = []
@@ -105,6 +125,7 @@ def extract_comments(file_lines):
         if line.startswith('//') or line.startswith('/*') or line.startswith('*'):
             comments.append(line.strip())
     return '\n'.join(comments)
+
 
 def extract_child_ranges(snippet):
     child_ranges = []
@@ -116,6 +137,7 @@ def extract_child_ranges(snippet):
             end_col = match.end()
             child_ranges.append(f"(line {line_num},col {start_col})-(line {line_num},col {end_col})")
     return child_ranges
+
 
 def generate_script_from_prompt(prompt, engine):
     response = engine.get_LLM_response(
@@ -129,6 +151,7 @@ def generate_script_from_prompt(prompt, engine):
     )
     return response['choices'][0]['message']['content']
 
+
 def check_script_for_bugs(prompt, engine):
     response = engine.get_LLM_response(
         model="gpt-3.5-turbo",
@@ -140,6 +163,7 @@ def check_script_for_bugs(prompt, engine):
         temperature=0.5,
     )
     return response['choices'][0]['message']['content']
+
 
 def main():
     server_info = load_server_info()
@@ -154,9 +178,9 @@ def main():
             result_dir = f'{remote_dir}/result'
 
             # Dynamic test directory discovery
-            test_dirs = [d for d in list_remote_files(f'{remote_dir}/buggy/src', server_info) if 'test' in d.lower()]
-            if test_dirs:
-                test_dir = f'{remote_dir}/buggy/src/{test_dirs[0]}'
+            test_dir_rel = select_test_path(bug_id)
+            if test_dir_rel:
+                test_dir = f'{remote_dir}/{test_dir_rel}'
             else:
                 raise Exception(f"Test directory not found for {bug_id}")
 
@@ -382,6 +406,7 @@ def main():
 
         except Exception as e:
             print(f"Error processing bug {bug_id}: {e}")
+
 
 if __name__ == "__main__":
     main()
