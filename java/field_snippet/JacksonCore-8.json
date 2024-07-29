@@ -1,0 +1,236 @@
+[
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.BYTE_READ_IO_BUFFER",
+    "snippet": "public final static int BYTE_READ_IO_BUFFER\u003d0;",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": "/** \n * Buffer used for reading byte-based input.\n */\n"
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.BYTE_WRITE_ENCODING_BUFFER",
+    "snippet": "public final static int BYTE_WRITE_ENCODING_BUFFER\u003d1;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": "/** \n * Buffer used for temporarily storing encoded content; used for example by UTF-8 encoding writer\n */\n"
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.BYTE_WRITE_CONCAT_BUFFER",
+    "snippet": "public final static int BYTE_WRITE_CONCAT_BUFFER\u003d2;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": "/** \n * Buffer used for temporarily concatenating output; used for example when requesting output as byte array.\n */\n"
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.BYTE_BASE64_CODEC_BUFFER",
+    "snippet": "public final static int BYTE_BASE64_CODEC_BUFFER\u003d3;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": "/** \n * Buffer used for concatenating binary data that is either being encoded as base64 output, or decoded from base64 input.\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.CHAR_TOKEN_BUFFER",
+    "snippet": "public final static int CHAR_TOKEN_BUFFER\u003d0;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.CHAR_CONCAT_BUFFER",
+    "snippet": "public final static int CHAR_CONCAT_BUFFER\u003d1;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.CHAR_TEXT_BUFFER",
+    "snippet": "public final static int CHAR_TEXT_BUFFER\u003d2;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.CHAR_NAME_COPY_BUFFER",
+    "snippet": "public final static int CHAR_NAME_COPY_BUFFER\u003d3;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.BYTE_BUFFER_LENGTHS",
+    "snippet": "private final static int[] BYTE_BUFFER_LENGTHS\u003dnew int[]{8000,8000,2000,2000};",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler.CHAR_BUFFER_LENGTHS",
+    "snippet": "private final static int[] CHAR_BUFFER_LENGTHS\u003dnew int[]{4000,4000,200,200};",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler._byteBuffers",
+    "snippet": "final protected byte[][] _byteBuffers;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "BufferRecycler",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "signature": "BufferRecycler._charBuffers",
+    "snippet": "final protected char[][] _charBuffers;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer.NO_CHARS",
+    "snippet": "final static char[] NO_CHARS\u003dnew char[0];",
+    "begin_line": 29,
+    "end_line": 29,
+    "comment": ""
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer.MIN_SEGMENT_LEN",
+    "snippet": "final static int MIN_SEGMENT_LEN\u003d1000;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Let\u0027s start with sizable but not huge buffer, will grow as necessary\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer.MAX_SEGMENT_LEN",
+    "snippet": "final static int MAX_SEGMENT_LEN\u003d0x40000;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Let\u0027s limit maximum segment length to something sensible like 256k\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._allocator",
+    "snippet": "private final BufferRecycler _allocator;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._inputBuffer",
+    "snippet": "private char[] _inputBuffer;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * Shared input buffer; stored here in case some input can be returned as is, without being copied to collector\u0027s own buffers. Note that this is read-only for this Object.\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._inputStart",
+    "snippet": "private int _inputStart;",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * Character offset of first char in input buffer; -1 to indicate that input buffer currently does not contain any useful char data\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._inputLen",
+    "snippet": "private int _inputLen;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": ""
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._segments",
+    "snippet": "private ArrayList\u003cchar[]\u003e _segments;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * List of segments prior to currently active segment.\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._hasSegments",
+    "snippet": "private boolean _hasSegments\u003dfalse;",
+    "begin_line": 85,
+    "end_line": 85,
+    "comment": "/** \n * Flag that indicates whether _seqments is non-empty\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._segmentSize",
+    "snippet": "private int _segmentSize;",
+    "begin_line": 92,
+    "end_line": 92,
+    "comment": "/** \n * Amount of characters in segments in  {@link _segments}\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._currentSegment",
+    "snippet": "private char[] _currentSegment;",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": ""
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._currentSize",
+    "snippet": "private int _currentSize;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": "/** \n * Number of characters in currently active (last) segment\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._resultString",
+    "snippet": "private String _resultString;",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": "/** \n * String that will be constructed when the whole contents are needed; will be temporarily stored in case asked for again.\n */\n"
+  },
+  {
+    "class_name": "TextBuffer",
+    "src_path": "src/main/resources/JacksonCore-8/buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java",
+    "signature": "TextBuffer._resultArray",
+    "snippet": "private char[] _resultArray;",
+    "begin_line": 113,
+    "end_line": 113,
+    "comment": ""
+  }
+]
