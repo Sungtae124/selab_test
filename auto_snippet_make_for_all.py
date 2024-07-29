@@ -7,6 +7,7 @@ import socket
 from dotenv import load_dotenv
 from abc import ABC
 import re
+import bug_list
 
 
 class OpenAIEngine(ABC):
@@ -30,14 +31,14 @@ class OpenAIEngine(ABC):
         raise save_err
 
 
-def load_server_info(file_path='server_info.txt'):
-    server_info = {}
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-        for line in lines:
-            key, value = line.strip().split('=')
-            server_info[key] = value
-    server_info['port'] = int(server_info['port'])
+def load_server_info():
+    load_dotenv()
+    server_info = {
+        "hostname": os.getenv('HOSTNAME'),
+        "port": int(os.getenv('PORT')),
+        "username": os.getenv('USERNAME'),
+        "password": os.getenv('PASSWORD')
+    }
     return server_info
 
 
@@ -169,7 +170,7 @@ def main():
     server_info = load_server_info()
     openai_engine = OpenAIEngine()
 
-    bug_ids = ['Lang-cd ', '']  # 추가하고 싶은 다른 버그 데이터셋 ID
+    bug_ids = bug_list.get_d4j_bug_list()
     os.makedirs('scripts', exist_ok=True)
 
     for bug_id in bug_ids:
