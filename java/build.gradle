@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'kr.ac.seoultech.selab'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.json:json:20210307'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'org.apache.commons:commons-csv:1.10.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.38.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+
+test {
+    useJUnitPlatform()
+}
