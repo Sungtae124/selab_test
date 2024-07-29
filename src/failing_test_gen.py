@@ -34,10 +34,10 @@ def main():
                     for i in range(start_line, len(lines)):
                         failing_tests += f'{lines[i]}\n'
 
-            if not os.path.exists(f'./rst/{bug_id}'):
-                os.makedirs(f'./rst/{bug_id}')
+            if not os.path.exists(f'../rst/{bug_id}'):
+                os.makedirs(f'../rst/{bug_id}')
 
-            with open(f'./rst/{bug_id}/failed_tests', 'w') as f:
+            with open(f'../rst/{bug_id}/failed_tests', 'w') as f:
                 f.write(failing_tests)
 
             print("Done.")
