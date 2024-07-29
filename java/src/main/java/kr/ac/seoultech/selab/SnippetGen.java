@@ -13,35 +13,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class JavaParser {
-    public static class VariableDeclaration {
-        public String class_name;
-        public String src_path;
-        public String signature;
-        public String snippet;
-        public int begin_line;
-        public int end_line;
-        public String comment;
+public class SnippetGen {
+    public static class MethodDeclarationInfo {
+        private String name;
+        private boolean is_bug = true;
+        private String src_path;
+        private String class_name;
+        private String signature;
+        private String snippet;
+        private int begin_line;
+        private int end_line;
+        private String comment;
+        private resolved_comments resolved_comments = new resolved_comments();
+        private susp susp = new susp();
+        private int num_failing_tests = 0;
 
-        public VariableDeclaration(String class_name, String src_path, String signature, String snippet, int begin_line, int end_line, String comment) {
-            this.class_name = class_name;
-            this.src_path = src_path;
+        public MethodDeclarationInfo(String name, String filePath, String className, String signature, String snippet, int beginLine, int endLine, String comment) {
+            this.name = name;
+            this.src_path = filePath;
+            this.class_name = className;
             this.signature = signature;
             this.snippet = snippet;
-            this.begin_line = begin_line;
-            this.end_line = end_line;
+            this.begin_line = beginLine;
+            this.end_line = endLine;
             this.comment = comment;
         }
     }
 
-    public List<VariableDeclaration> parse(String sourceCode, String filePath) {
+    public static class resolved_comments {
+    }
+
+    public static class susp {
+        private double ochiai_susp = 0.5;
+    }
+
+    public List<MethodDeclarationInfo> parse(String sourceCode, String filePath) {
         ASTParser parser = ASTParser.newParser(AST.getJLSLatest());
         parser.setSource(sourceCode.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
 
         CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
-        List<VariableDeclaration> declarations = new ArrayList<>();
+        List<MethodDeclarationInfo> methods = new ArrayList<>();
 
         cu.accept(new ASTVisitor() {
             private String currentClassName = null;
@@ -53,41 +66,41 @@ public class JavaParser {
             }
 
             @Override
-            public boolean visit(FieldDeclaration node) {
+            public boolean visit(MethodDeclaration node) {
                 int rawBeginLine = cu.getLineNumber(node.getStartPosition());
-                int rawEndLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
+                int endLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
 
                 String rawSnippet = node.toString().trim();
                 String comment = node.getJavadoc() != null ? node.getJavadoc().toString() : "";
                 String snippet = rawSnippet.replaceAll("(?s)/\\*.*?\\*/|//.*", "").trim(); // 주석 제거
 
-                // 주석 제거 후 실제 선언부의 시작 라인을 찾기 위해 라인 단위로 나누고, 주석 제거된 라인의 인덱스를 찾음
-                String[] lines = rawSnippet.split("\n");
-                int offset = 0;
+                String methodName = node.getName().getFullyQualifiedName();
 
-                for (int i = lines.length - 1; i >= 0; i--) {
-                    if (lines[i].contains(snippet.split("\\s+")[0])) { // snippet의 첫 번째 단어가 포함된 라인 찾기
+
+                // 주석 제거 후 실제 선언부의 시작 라인을 찾기 위해 라인 단위로 나누고, 주석 제거된 라인의 인덱스를 찾음
+                String[] lines = node.toString().split("\n");
+                int beginLine = rawBeginLine;
+
+                for (int i = 0; i < lines.length; i++) {
+                    if (lines[i].contains(methodName)) {
+                        beginLine = i + rawBeginLine;
                         break;
                     }
-                    offset++;
                 }
 
-                int beginLine = rawEndLine - offset;
+                String className = filePath.substring(filePath.indexOf("org")).replace("/", ".").replace(".java", "");
+                String signature = className + "." + methodName;
+                String name = currentClassName + "." + methodName + "#" + beginLine;
 
-                for (Object fragment : node.fragments()) {
-                    VariableDeclarationFragment vdf = (VariableDeclarationFragment) fragment;
-                    String variableName = vdf.getName().getFullyQualifiedName();
-                    String signature = currentClassName + "." + variableName;
-                    declarations.add(new VariableDeclaration(currentClassName, filePath, signature, snippet, beginLine, rawEndLine, comment));
-                }
+                methods.add(new MethodDeclarationInfo(name, filePath.substring(filePath.indexOf("buggy/") + 6), className, signature, snippet, beginLine, endLine, comment));
                 return super.visit(node);
             }
         });
 
-        return declarations;
+        return methods;
     }
 
-    public void saveAsJson(List<VariableDeclaration> declarations, String outputFilePath) {
+    public void saveAsJson(List<MethodDeclarationInfo> declarations, String outputFilePath) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(outputFilePath)) {
             gson.toJson(declarations, writer);
@@ -95,6 +108,7 @@ public class JavaParser {
             e.printStackTrace();
         }
     }
+
 
     public static void main(String[] args) throws IOException {
 
@@ -116,9 +130,9 @@ public class JavaParser {
             // 값 추출
             JSONArray classes = jsonObject.getJSONArray("classes");
 
-            List<VariableDeclaration> declarations = new ArrayList<>();
-            JavaParser parser = new JavaParser();
-            String outputJsonFilePath = "field_snippet/" + bugId + ".json";
+            List<MethodDeclarationInfo> declarations = new ArrayList<>();
+            SnippetGen parser = new SnippetGen();
+            String outputJsonFilePath = "rst/" + bugId + "/snippet.json";
 
 
             for (Object cl : classes) {
