@@ -1,0 +1,38 @@
+[
+  {
+    "class_name": "org.jsoup.nodes.Attribute",
+    "src_path": "src/main/java/org/jsoup/nodes/Attribute.java",
+    "signature": "org.jsoup.nodes.Attribute.booleanAttributes",
+    "snippet": "private static final String[] booleanAttributes\u003d{\"allowfullscreen\",\"async\",\"autofocus\",\"checked\",\"compact\",\"declare\",\"default\",\"defer\",\"disabled\",\"formnovalidate\",\"hidden\",\"inert\",\"ismap\",\"itemscope\",\"multiple\",\"muted\",\"nohref\",\"noresize\",\"noshade\",\"novalidate\",\"nowrap\",\"open\",\"readonly\",\"required\",\"reversed\",\"seamless\",\"selected\",\"sortable\",\"truespeed\",\"typemustmatch\"};",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "org.jsoup.nodes.Attribute",
+    "src_path": "src/main/java/org/jsoup/nodes/Attribute.java",
+    "signature": "org.jsoup.nodes.Attribute.key",
+    "snippet": "private String key;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "org.jsoup.nodes.Attribute",
+    "src_path": "src/main/java/org/jsoup/nodes/Attribute.java",
+    "signature": "org.jsoup.nodes.Attribute.val",
+    "snippet": "private String val;",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "org.jsoup.nodes.Attribute",
+    "src_path": "src/main/java/org/jsoup/nodes/Attribute.java",
+    "signature": "org.jsoup.nodes.Attribute.parent",
+    "snippet": "Attributes parent;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  }
+]

@@ -1,0 +1,168 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.equals(Object o)",
+            "snippet": "public boolean equals(Object o) {\nif (o == this) return true;\nif (o == null) return false;\nif (o.getClass() != getClass()) return false;\nreturn name.equals(((Animal) o).name);\n}",
+            "begin_line": 131,
+            "end_line": 136,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 132,col 9)-(line 132,col 35)",
+                "(line 133,col 9)-(line 133,col 36)",
+                "(line 134,col 9)-(line 134,col 53)",
+                "(line 135,col 9)-(line 135,col 46)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.toString()",
+            "snippet": "public String toString() {\nreturn getClass().toString() + \"('\"+name+\"')\";\n}",
+            "begin_line": 139,
+            "end_line": 141,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 140,col 9)-(line 140,col 54)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Dog()",
+            "snippet": "public Dog() { }\npublic Dog(String n, int y) {",
+            "begin_line": 148,
+            "end_line": 149,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Dog(String n, int y)",
+            "snippet": "public Dog(String n, int y) {\nname = n;\nageInYears = y;\n}",
+            "begin_line": 149,
+            "end_line": 152,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 150,col 9)-(line 150,col 17)",
+                "(line 151,col 9)-(line 151,col 23)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.equals(Object o)",
+            "snippet": "public boolean equals(Object o) {\nreturn super.equals(o)",
+            "begin_line": 155,
+            "end_line": 156,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Cat()",
+            "snippet": "public Cat() { }\npublic Cat(String n, boolean p) {",
+            "begin_line": 167,
+            "end_line": 168,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Cat(String n, boolean p)",
+            "snippet": "public Cat(String n, boolean p) {\nname = n;\npurrs = p;\n}",
+            "begin_line": 168,
+            "end_line": 171,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 169,col 9)-(line 169,col 17)",
+                "(line 170,col 9)-(line 170,col 18)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.equals(Object o)",
+            "snippet": "public boolean equals(Object o) {\nreturn super.equals(o) && ((Cat) o).purrs == purrs;\n}",
+            "begin_line": 174,
+            "end_line": 176,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 175,col 9)-(line 175,col 59)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.toString()",
+            "snippet": "public String toString() {\nreturn super.toString()+\"(purrs: \"+purrs+\")\";\n}",
+            "begin_line": 179,
+            "end_line": 181,
+            "comment": "********************************************************\n \n\n@JsonTypeInfo(use=Id.NAME, include=As.WRAPPER_OBJECT)\n@JsonSubTypes({\n    @Type(value=Dog.class, name=\"doggy\"),\n    @Type(Cat.class) /* defaults to \"TestTypedNames$Cat\" then ",
+            "child_ranges": [
+                "(line 180,col 9)-(line 180,col 53)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.MaineCoon()",
+            "snippet": "public MaineCoon() { super(); }\npublic MaineCoon(String n, boolean p) {",
+            "begin_line": 188,
+            "end_line": 189,
+            "comment": "/* uses default name (\"MaineCoon\") since there's no @JsonTypeName,\n * nor did supertype specify name\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.MaineCoon(String n, boolean p)",
+            "snippet": "public MaineCoon(String n, boolean p) {\nsuper(n, p);\n}",
+            "begin_line": 189,
+            "end_line": 191,
+            "comment": "/* uses default name (\"MaineCoon\") since there's no @JsonTypeName,\n * nor did supertype specify name\n ",
+            "child_ranges": [
+                "(line 190,col 9)-(line 190,col 20)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Persian()",
+            "snippet": "public Persian() { super(); }\npublic Persian(String n, boolean p) {",
+            "begin_line": 196,
+            "end_line": 197,
+            "comment": "/* uses default name (\"MaineCoon\") since there's no @JsonTypeName,\n * nor did supertype specify name\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/jsontype/TestTypeNames.java",
+            "signature": "com.fasterxml.jackson.databind.jsontype.TestTypeNames.Persian(String n, boolean p)",
+            "snippet": "public Persian(String n, boolean p) {\nsuper(n, p);\n}",
+            "begin_line": 197,
+            "end_line": 199,
+            "comment": "/* uses default name (\"MaineCoon\") since there's no @JsonTypeName,\n * nor did supertype specify name\n ",
+            "child_ranges": [
+                "(line 198,col 9)-(line 198,col 20)"
+            ]
+        }
+    ]
+]

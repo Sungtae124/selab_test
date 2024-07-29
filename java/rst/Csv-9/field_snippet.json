@@ -1,0 +1,587 @@
+[
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d1L;",
+    "begin_line": 147,
+    "end_line": 147,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.delimiter",
+    "snippet": "private final char delimiter;",
+    "begin_line": 149,
+    "end_line": 149,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.quoteChar",
+    "snippet": "private final Character quoteChar;",
+    "begin_line": 150,
+    "end_line": 150,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.quotePolicy",
+    "snippet": "private final Quote quotePolicy;",
+    "begin_line": 151,
+    "end_line": 151,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.commentStart",
+    "snippet": "private final Character commentStart;",
+    "begin_line": 152,
+    "end_line": 152,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.escape",
+    "snippet": "private final Character escape;",
+    "begin_line": 153,
+    "end_line": 153,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.ignoreSurroundingSpaces",
+    "snippet": "private final boolean ignoreSurroundingSpaces;",
+    "begin_line": 154,
+    "end_line": 154,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.ignoreEmptyLines",
+    "snippet": "private final boolean ignoreEmptyLines;",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.recordSeparator",
+    "snippet": "private final String recordSeparator;",
+    "begin_line": 156,
+    "end_line": 156,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.nullString",
+    "snippet": "private final String nullString;",
+    "begin_line": 157,
+    "end_line": 157,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.header",
+    "snippet": "private final String[] header;",
+    "begin_line": 158,
+    "end_line": 158,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.skipHeaderRecord",
+    "snippet": "private final boolean skipHeaderRecord;",
+    "begin_line": 159,
+    "end_line": 159,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.DEFAULT",
+    "snippet": "public static final CSVFormat DEFAULT\u003dnew CSVFormat(COMMA,DOUBLE_QUOTE_CHAR,null,null,null,false,true,CRLF,null,null,false);",
+    "begin_line": 175,
+    "end_line": 175,
+    "comment": "/** \n * Standard comma separated format, as for  {@link #RFC4180} but allowing empty lines.\u003ch3\u003eRFC 4180:\u003c/h3\u003e \u003cul\u003e \u003cli\u003ewithDelimiter(\u0027,\u0027)\u003c/li\u003e \u003cli\u003ewithQuoteChar(\u0027\"\u0027)\u003c/li\u003e \u003cli\u003ewithRecordSeparator(CRLF)\u003c/li\u003e \u003c/ul\u003e \u003ch3\u003eAdditional:\u003c/h3\u003e \u003cul\u003e \u003cli\u003ewithIgnoreEmptyLines(true)\u003c/li\u003e \u003c/ul\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.RFC4180",
+    "snippet": "public static final CSVFormat RFC4180\u003dDEFAULT.withIgnoreEmptyLines(false);",
+    "begin_line": 186,
+    "end_line": 186,
+    "comment": "/** \n * Comma separated format as defined by \u003ca href\u003d\"http://tools.ietf.org/html/rfc4180\"\u003eRFC 4180\u003c/a\u003e. \u003ch3\u003eRFC 4180:\u003c/h3\u003e \u003cul\u003e \u003cli\u003ewithDelimiter(\u0027,\u0027)\u003c/li\u003e \u003cli\u003ewithQuoteChar(\u0027\"\u0027)\u003c/li\u003e \u003cli\u003ewithRecordSeparator(CRLF)\u003c/li\u003e \u003c/ul\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.EXCEL",
+    "snippet": "public static final CSVFormat EXCEL\u003dDEFAULT.withIgnoreEmptyLines(false);",
+    "begin_line": 210,
+    "end_line": 210,
+    "comment": "/** \n * Excel file format (using a comma as the value delimiter). Note that the actual value delimiter used by Excel is locale dependent, it might be necessary to customize this format to accommodate to your regional settings. \u003cp\u003e For example for parsing or generating a CSV file on a French system the following format will be used: \u003c/p\u003e \u003cpre\u003e CSVFormat fmt \u003d CSVFormat.newBuilder(EXCEL).withDelimiter(\u0027;\u0027); \u003c/pre\u003e \u003cp\u003e Settings are: \u003c/p\u003e \u003cul\u003e \u003cli\u003ewithDelimiter(\u0027,\u0027)\u003c/li\u003e \u003cli\u003ewithQuoteChar(\u0027\"\u0027)\u003c/li\u003e \u003cli\u003ewithRecordSeparator(CRLF)\u003c/li\u003e \u003c/ul\u003e Note: this is currently the same as RFC4180\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.TDF",
+    "snippet": "public static final CSVFormat TDF\u003dDEFAULT.withDelimiter(TAB).withIgnoreSurroundingSpaces(true);",
+    "begin_line": 216,
+    "end_line": 216,
+    "comment": "/** \n * Tab-delimited format, with quote; leading and trailing spaces ignored. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "signature": "org.apache.commons.csv.CSVFormat.MYSQL",
+    "snippet": "public static final CSVFormat MYSQL\u003dDEFAULT.withDelimiter(TAB).withEscape(BACKSLASH).withIgnoreEmptyLines(false).withQuoteChar(null).withRecordSeparator(LF);",
+    "begin_line": 232,
+    "end_line": 232,
+    "comment": "/** \n * Default MySQL format used by the \u003ctt\u003eSELECT INTO OUTFILE\u003c/tt\u003e and \u003ctt\u003eLOAD DATA INFILE\u003c/tt\u003e operations. This is a tab-delimited format with a LF character as the line separator. Values are not quoted and special characters are escaped with \u0027\\\u0027.\n * @see \u003ca href\u003d\"http://dev.mysql.com/doc/refman/5.1/en/load-data.html\"\u003e\n     *      http://dev.mysql.com/doc/refman/5.1/en/load-data.html\u003c/a\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.format",
+    "snippet": "private final CSVFormat format;",
+    "begin_line": 210,
+    "end_line": 210,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.headerMap",
+    "snippet": "private final Map\u003cString,Integer\u003e headerMap;",
+    "begin_line": 213,
+    "end_line": 213,
+    "comment": "/** \n * A mapping of column names to column indices \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.lexer",
+    "snippet": "private final Lexer lexer;",
+    "begin_line": 215,
+    "end_line": 215,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.record",
+    "snippet": "private final List\u003cString\u003e record\u003dnew ArrayList\u003cString\u003e();",
+    "begin_line": 218,
+    "end_line": 218,
+    "comment": "/** \n * A record buffer for getRecord(). Grows as necessary and is reused. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.recordNumber",
+    "snippet": "private long recordNumber;",
+    "begin_line": 220,
+    "end_line": 220,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.reusableToken",
+    "snippet": "private final Token reusableToken\u003dnew Token();",
+    "begin_line": 222,
+    "end_line": 222,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "signature": "org.apache.commons.csv.CSVParser.current",
+    "snippet": "private CSVRecord current;",
+    "begin_line": 405,
+    "end_line": 405,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.EMPTY_STRING_ARRAY",
+    "snippet": "private static final String[] EMPTY_STRING_ARRAY\u003dnew String[0];",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d1L;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.comment",
+    "snippet": "private final String comment;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * The accumulated comments (if any) \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.mapping",
+    "snippet": "private final Map\u003cString,Integer\u003e mapping;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * The column name to index mapping. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.recordNumber",
+    "snippet": "private final long recordNumber;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * The record number. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecord",
+    "src_path": "src/main/java/org/apache/commons/csv/CSVRecord.java",
+    "signature": "org.apache.commons.csv.CSVRecord.values",
+    "snippet": "private final String[] values;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * The values of the record \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.BACKSPACE",
+    "snippet": "static final char BACKSPACE\u003d\u0027\\b\u0027;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.COMMA",
+    "snippet": "static final char COMMA\u003d\u0027,\u0027;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.COMMENT",
+    "snippet": "static final char COMMENT\u003d\u0027#\u0027;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * Starts a comment, the remainder of the line is the comment.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.CR",
+    "snippet": "static final char CR\u003d\u0027\\r\u0027;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.DOUBLE_QUOTE_CHAR",
+    "snippet": "static final Character DOUBLE_QUOTE_CHAR\u003dCharacter.valueOf(\u0027\"\u0027);",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.BACKSLASH",
+    "snippet": "static final char BACKSLASH\u003d\u0027\\\\\u0027;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.FF",
+    "snippet": "static final char FF\u003d\u0027\\f\u0027;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.LF",
+    "snippet": "static final char LF\u003d\u0027\\n\u0027;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.SP",
+    "snippet": "static final char SP\u003d\u0027 \u0027;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.TAB",
+    "snippet": "static final char TAB\u003d\u0027\\t\u0027;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.RS",
+    "snippet": "static final char RS\u003d30;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * ASCII record separator \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.US",
+    "snippet": "static final char US\u003d31;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * ASCII unit separator \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.EMPTY",
+    "snippet": "static final String EMPTY\u003d\"\";",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.END_OF_STREAM",
+    "snippet": "static final int END_OF_STREAM\u003d-1;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * The end of stream symbol \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.UNDEFINED",
+    "snippet": "static final int UNDEFINED\u003d-2;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Undefined state for the lookahead char \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.CRLF",
+    "snippet": "static final String CRLF\u003d\"\\r\\n\";",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * According to RFC 4180, line breaks are delimited by CRLF \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.LINE_SEPARATOR",
+    "snippet": "static final String LINE_SEPARATOR\u003d\"\\u2028\";",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * Unicode line separator.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.PARAGRAPH_SEPARATOR",
+    "snippet": "static final String PARAGRAPH_SEPARATOR\u003d\"\\u2029\";",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * Unicode paragraph separator.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Constants",
+    "src_path": "src/main/java/org/apache/commons/csv/Constants.java",
+    "signature": "org.apache.commons.csv.Constants.NEXT_LINE",
+    "snippet": "static final String NEXT_LINE\u003d\"\\u0085\";",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * Unicode next line.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.lastChar",
+    "snippet": "private int lastChar\u003dUNDEFINED;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * The last char returned \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.eolCounter",
+    "snippet": "private long eolCounter\u003d0;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * The count of EOLs (CR/LF/CRLF) seen so far \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.closed",
+    "snippet": "private boolean closed;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.DISABLED",
+    "snippet": "private static final char DISABLED\u003d\u0027\\ufffe\u0027;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Constant char to use for disabling comments, escapes and encapsulation. The value -2 is used because it won\u0027t be confused with an EOF signal (-1), and because the Unicode value  {@code FFFE} would be encoded as twochars (using surrogates) and thus there should never be a collision with a real text char.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.delimiter",
+    "snippet": "private final char delimiter;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.escape",
+    "snippet": "private final char escape;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.quoteChar",
+    "snippet": "private final char quoteChar;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.commentStart",
+    "snippet": "private final char commentStart;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.ignoreSurroundingSpaces",
+    "snippet": "private final boolean ignoreSurroundingSpaces;",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.ignoreEmptyLines",
+    "snippet": "private final boolean ignoreEmptyLines;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Lexer",
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "signature": "org.apache.commons.csv.Lexer.reader",
+    "snippet": "private final ExtendedBufferedReader reader;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * The input stream \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Token",
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "signature": "org.apache.commons.csv.Token.INITIAL_TOKEN_LENGTH",
+    "snippet": "private static final int INITIAL_TOKEN_LENGTH\u003d50;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * length of the initial token (content-)buffer \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Token",
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "signature": "org.apache.commons.csv.Token.Type",
+    "snippet": "enum Type;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.csv.Token",
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "signature": "org.apache.commons.csv.Token.type",
+    "snippet": "Token.Type type\u003dINVALID;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Token type \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Token",
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "signature": "org.apache.commons.csv.Token.content",
+    "snippet": "final StringBuilder content\u003dnew StringBuilder(INITIAL_TOKEN_LENGTH);",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * The content buffer. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.csv.Token",
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "signature": "org.apache.commons.csv.Token.isReady",
+    "snippet": "boolean isReady;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * Token ready flag: indicates a valid token with content (ready for the parser). \n */\n"
+  }
+]

@@ -1,0 +1,33 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.databind.TestStdDateFormat",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/TestStdDateFormat.java",
+            "signature": "com.fasterxml.jackson.databind.TestStdDateFormat.testFactories()",
+            "snippet": "public void testFactories() {\nTimeZone tz = TimeZone.getTimeZone(\"GMT\");\nLocale loc = Locale.US;\nassertNotNull(StdDateFormat.getISO8601Format(tz, loc));\nassertNotNull(StdDateFormat.getRFC1123Format(tz, loc));\n}",
+            "begin_line": 11,
+            "end_line": 16,
+            "comment": "",
+            "child_ranges": [
+                "(line 12,col 9)-(line 12,col 50)",
+                "(line 13,col 9)-(line 13,col 31)",
+                "(line 14,col 9)-(line 14,col 63)",
+                "(line 15,col 9)-(line 15,col 63)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.TestStdDateFormat",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/TestStdDateFormat.java",
+            "signature": "com.fasterxml.jackson.databind.TestStdDateFormat.testInvalid()",
+            "snippet": "public void testInvalid() {\nStdDateFormat std = new StdDateFormat();\ntry {",
+            "begin_line": 59,
+            "end_line": 61,
+            "comment": "         ... yet, with lenient, do allow",
+            "child_ranges": [
+                "(line 60,col 9)-(line 60,col 48)"
+            ]
+        }
+    ]
+]

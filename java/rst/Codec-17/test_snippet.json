@@ -1,0 +1,83 @@
+[
+    [
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testConstructor()",
+            "snippet": "public void testConstructor() {\nnew StringUtils();\n}",
+            "begin_line": 48,
+            "end_line": 50,
+            "comment": "    \n     * We could make the constructor private but there does not seem to be a point to jumping through extra code hoops\n     * to restrict instantiation right now.\n     ",
+            "child_ranges": [
+                "(line 49,col 9)-(line 49,col 26)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUncheckedBadName()",
+            "snippet": "public void testGetBytesUncheckedBadName() {\ntry {",
+            "begin_line": 113,
+            "end_line": 114,
+            "comment": "    \n     * We could make the constructor private but there does not seem to be a point to jumping through extra code hoops\n     * to restrict instantiation right now.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUncheckedNullInput()",
+            "snippet": "public void testGetBytesUncheckedNullInput() {\nAssert.assertNull(StringUtils.getBytesUnchecked(null, \"UNKNOWN\"));\n}",
+            "begin_line": 123,
+            "end_line": 125,
+            "comment": "             Expected",
+            "child_ranges": [
+                "(line 124,col 9)-(line 124,col 74)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringBadEnc()",
+            "snippet": "public void testNewStringBadEnc() {\ntry {",
+            "begin_line": 134,
+            "end_line": 135,
+            "comment": "             Expected",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringNullInput()",
+            "snippet": "public void testNewStringNullInput() {\nAssert.assertNull(StringUtils.newString(null, \"UNKNOWN\"));\n}",
+            "begin_line": 144,
+            "end_line": 146,
+            "comment": "             Expected",
+            "child_ranges": [
+                "(line 145,col 9)-(line 145,col 66)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/codec/binary/StringUtilsTest.java",
+            "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringNullInput_CODEC229()",
+            "snippet": "public void testNewStringNullInput_CODEC229() {\nAssert.assertNull(StringUtils.newStringUtf8(null));\nAssert.assertNull(StringUtils.newStringIso8859_1(null));\nAssert.assertNull(StringUtils.newStringUsAscii(null));\nAssert.assertNull(StringUtils.newStringUtf16(null));\nAssert.assertNull(StringUtils.newStringUtf16Be(null));\nAssert.assertNull(StringUtils.newStringUtf16Le(null));\n}",
+            "begin_line": 149,
+            "end_line": 156,
+            "comment": "             Expected",
+            "child_ranges": [
+                "(line 150,col 9)-(line 150,col 59)",
+                "(line 151,col 9)-(line 151,col 64)",
+                "(line 152,col 9)-(line 152,col 62)",
+                "(line 153,col 9)-(line 153,col 60)",
+                "(line 154,col 9)-(line 154,col 62)",
+                "(line 155,col 9)-(line 155,col 62)"
+            ]
+        }
+    ]
+]

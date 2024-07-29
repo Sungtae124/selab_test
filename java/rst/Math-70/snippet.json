@@ -1,0 +1,642 @@
+[
+  {
+    "name": "ConvergingAlgorithmImpl.ConvergingAlgorithmImpl#58",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.ConvergingAlgorithmImpl",
+    "snippet": "protected ConvergingAlgorithmImpl(final int defaultMaximalIterationCount,final double defaultAbsoluteAccuracy){\n  this.defaultAbsoluteAccuracy\u003ddefaultAbsoluteAccuracy;\n  this.defaultRelativeAccuracy\u003d1.0e-14;\n  this.absoluteAccuracy\u003ddefaultAbsoluteAccuracy;\n  this.relativeAccuracy\u003ddefaultRelativeAccuracy;\n  this.defaultMaximalIterationCount\u003ddefaultMaximalIterationCount;\n  this.maximalIterationCount\u003ddefaultMaximalIterationCount;\n  this.iterationCount\u003d0;\n}",
+    "begin_line": 58,
+    "end_line": 69,
+    "comment": "/** \n * Construct an algorithm with given iteration count and accuracy.\n * @param defaultAbsoluteAccuracy maximum absolute error\n * @param defaultMaximalIterationCount maximum number of iterations\n * @throws IllegalArgumentException if f is null or thedefaultAbsoluteAccuracy is not valid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.getIterationCount#74",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.getIterationCount",
+    "snippet": "public int getIterationCount(){\n  return iterationCount;\n}",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.setAbsoluteAccuracy#79",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.setAbsoluteAccuracy",
+    "snippet": "public void setAbsoluteAccuracy(double accuracy){\n  absoluteAccuracy\u003daccuracy;\n}",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.getAbsoluteAccuracy#84",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.getAbsoluteAccuracy",
+    "snippet": "public double getAbsoluteAccuracy(){\n  return absoluteAccuracy;\n}",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.resetAbsoluteAccuracy#89",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.resetAbsoluteAccuracy",
+    "snippet": "public void resetAbsoluteAccuracy(){\n  absoluteAccuracy\u003ddefaultAbsoluteAccuracy;\n}",
+    "begin_line": 89,
+    "end_line": 89,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.setMaximalIterationCount#94",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.setMaximalIterationCount",
+    "snippet": "public void setMaximalIterationCount(int count){\n  maximalIterationCount\u003dcount;\n}",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.getMaximalIterationCount#99",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.getMaximalIterationCount",
+    "snippet": "public int getMaximalIterationCount(){\n  return maximalIterationCount;\n}",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.resetMaximalIterationCount#104",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.resetMaximalIterationCount",
+    "snippet": "public void resetMaximalIterationCount(){\n  maximalIterationCount\u003ddefaultMaximalIterationCount;\n}",
+    "begin_line": 104,
+    "end_line": 104,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.setRelativeAccuracy#109",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.setRelativeAccuracy",
+    "snippet": "public void setRelativeAccuracy(double accuracy){\n  relativeAccuracy\u003daccuracy;\n}",
+    "begin_line": 109,
+    "end_line": 109,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.getRelativeAccuracy#114",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.getRelativeAccuracy",
+    "snippet": "public double getRelativeAccuracy(){\n  return relativeAccuracy;\n}",
+    "begin_line": 114,
+    "end_line": 114,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ConvergingAlgorithmImpl.resetRelativeAccuracy#119",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.resetRelativeAccuracy",
+    "snippet": "public void resetRelativeAccuracy(){\n  relativeAccuracy\u003ddefaultRelativeAccuracy;\n}",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.BisectionSolver#38",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.BisectionSolver",
+    "snippet": "@Deprecated public BisectionSolver(UnivariateRealFunction f){\n  super(f,100,1E-6);\n}",
+    "begin_line": 38,
+    "end_line": 45,
+    "comment": "/** \n * Construct a solver for the given function.\n * @param f function to solve.\n * @deprecated as of 2.0 the function to solve is passed as an argumentto the  {@link #solve(UnivariateRealFunction,double,double)} or{@link UnivariateRealSolverImpl#solve(UnivariateRealFunction,double,double,double)}method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.BisectionSolver#50",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.BisectionSolver",
+    "snippet": "public BisectionSolver(){\n  super(100,1E-6);\n}",
+    "begin_line": 50,
+    "end_line": 53,
+    "comment": "/** \n * Construct a solver.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.solve#58",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.solve",
+    "snippet": "@Deprecated public double solve(double min,double max,double initial) throws MaxIterationsExceededException, FunctionEvaluationException {\n  return solve(f,min,max);\n}",
+    "begin_line": 58,
+    "end_line": 60,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.solve#65",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.solve",
+    "snippet": "@Deprecated public double solve(double min,double max) throws MaxIterationsExceededException, FunctionEvaluationException {\n  return solve(f,min,max);\n}",
+    "begin_line": 65,
+    "end_line": 67,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.solve#72",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.solve",
+    "snippet": "public double solve(final UnivariateRealFunction f,double min,double max,double initial) throws MaxIterationsExceededException, FunctionEvaluationException {\n  return solve(min,max);\n}",
+    "begin_line": 72,
+    "end_line": 73,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BisectionSolver.solve#78",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+    "signature": "org.apache.commons.math.analysis.solvers.BisectionSolver.solve",
+    "snippet": "public double solve(final UnivariateRealFunction f,double min,double max) throws MaxIterationsExceededException, FunctionEvaluationException {\n  clearResult();\n  verifyInterval(min,max);\n  double m;\n  double fm;\n  double fmin;\n  int i\u003d0;\n  while (i \u003c maximalIterationCount) {\n    m\u003dUnivariateRealSolverUtils.midpoint(min,max);\n    fmin\u003df.value(min);\n    fm\u003df.value(m);\n    if (fm * fmin \u003e 0.0) {\n      min\u003dm;\n    }\n else {\n      max\u003dm;\n    }\n    if (Math.abs(max - min) \u003c\u003d absoluteAccuracy) {\n      m\u003dUnivariateRealSolverUtils.midpoint(min,max);\n      setResult(m,i);\n      return m;\n    }\n    ++i;\n  }\n  throw new MaxIterationsExceededException(maximalIterationCount);\n}",
+    "begin_line": 78,
+    "end_line": 108,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.UnivariateRealSolverImpl#63",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.UnivariateRealSolverImpl",
+    "snippet": "@Deprecated protected UnivariateRealSolverImpl(final UnivariateRealFunction f,final int defaultMaximalIterationCount,final double defaultAbsoluteAccuracy){\n  super(defaultMaximalIterationCount,defaultAbsoluteAccuracy);\n  if (f \u003d\u003d null) {\n    throw MathRuntimeException.createIllegalArgumentException(\"function to solve cannot be null\");\n  }\n  this.f\u003df;\n  this.defaultFunctionValueAccuracy\u003d1.0e-15;\n  this.functionValueAccuracy\u003ddefaultFunctionValueAccuracy;\n}",
+    "begin_line": 63,
+    "end_line": 81,
+    "comment": "/** \n * Construct a solver with given iteration count and accuracy.\n * @param f the function to solve.\n * @param defaultAbsoluteAccuracy maximum absolute error\n * @param defaultMaximalIterationCount maximum number of iterations\n * @throws IllegalArgumentException if f is null or thedefaultAbsoluteAccuracy is not valid\n * @deprecated as of 2.0 the function to solve is passed as an argumentto the  {@link #solve(UnivariateRealFunction,double,double)} or{@link UnivariateRealSolverImpl#solve(UnivariateRealFunction,double,double,double)}method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.UnivariateRealSolverImpl#89",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.UnivariateRealSolverImpl",
+    "snippet": "protected UnivariateRealSolverImpl(final int defaultMaximalIterationCount,final double defaultAbsoluteAccuracy){\n  super(defaultMaximalIterationCount,defaultAbsoluteAccuracy);\n  this.defaultFunctionValueAccuracy\u003d1.0e-15;\n  this.functionValueAccuracy\u003ddefaultFunctionValueAccuracy;\n}",
+    "begin_line": 89,
+    "end_line": 96,
+    "comment": "/** \n * Construct a solver with given iteration count and accuracy.\n * @param defaultAbsoluteAccuracy maximum absolute error\n * @param defaultMaximalIterationCount maximum number of iterations\n * @throws IllegalArgumentException if f is null or thedefaultAbsoluteAccuracy is not valid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.checkResultComputed#102",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.checkResultComputed",
+    "snippet": "protected void checkResultComputed() throws IllegalStateException {\n  if (!resultComputed) {\n    throw MathRuntimeException.createIllegalStateException(\"no result available\");\n  }\n}",
+    "begin_line": 102,
+    "end_line": 105,
+    "comment": "/** \n * Check if a result has been computed.\n * @exception IllegalStateException if no result has been computed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.getResult#110",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.getResult",
+    "snippet": "public double getResult(){\n  checkResultComputed();\n  return result;\n}",
+    "begin_line": 110,
+    "end_line": 111,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.getFunctionValue#116",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.getFunctionValue",
+    "snippet": "public double getFunctionValue(){\n  checkResultComputed();\n  return functionValue;\n}",
+    "begin_line": 116,
+    "end_line": 117,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.setFunctionValueAccuracy#122",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.setFunctionValueAccuracy",
+    "snippet": "public void setFunctionValueAccuracy(final double accuracy){\n  functionValueAccuracy\u003daccuracy;\n}",
+    "begin_line": 122,
+    "end_line": 122,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.getFunctionValueAccuracy#127",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.getFunctionValueAccuracy",
+    "snippet": "public double getFunctionValueAccuracy(){\n  return functionValueAccuracy;\n}",
+    "begin_line": 127,
+    "end_line": 127,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.resetFunctionValueAccuracy#132",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.resetFunctionValueAccuracy",
+    "snippet": "public void resetFunctionValueAccuracy(){\n  functionValueAccuracy\u003ddefaultFunctionValueAccuracy;\n}",
+    "begin_line": 132,
+    "end_line": 132,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.setResult#139",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.setResult",
+    "snippet": "protected final void setResult(final double newResult,final int iterationCount){\n  this.result\u003dnewResult;\n  this.iterationCount\u003diterationCount;\n  this.resultComputed\u003dtrue;\n}",
+    "begin_line": 139,
+    "end_line": 144,
+    "comment": "/** \n * Convenience function for implementations.\n * @param newResult the result to set\n * @param iterationCount the iteration count to set\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.setResult#152",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.setResult",
+    "snippet": "protected final void setResult(final double x,final double fx,final int iterationCount){\n  this.result\u003dx;\n  this.functionValue\u003dfx;\n  this.iterationCount\u003diterationCount;\n  this.resultComputed\u003dtrue;\n}",
+    "begin_line": 152,
+    "end_line": 159,
+    "comment": "/** \n * Convenience function for implementations.\n * @param x the result to set\n * @param fx the result to set\n * @param iterationCount the iteration count to set\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.clearResult#164",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.clearResult",
+    "snippet": "protected final void clearResult(){\n  this.iterationCount\u003d0;\n  this.resultComputed\u003dfalse;\n}",
+    "begin_line": 164,
+    "end_line": 167,
+    "comment": "/** \n * Convenience function for implementations.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.isBracketing#177",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.isBracketing",
+    "snippet": "protected boolean isBracketing(final double lower,final double upper,final UnivariateRealFunction function) throws FunctionEvaluationException {\n  final double f1\u003dfunction.value(lower);\n  final double f2\u003dfunction.value(upper);\n  return (f1 \u003e 0 \u0026\u0026 f2 \u003c 0) || (f1 \u003c 0 \u0026\u0026 f2 \u003e 0);\n}",
+    "begin_line": 177,
+    "end_line": 185,
+    "comment": "/** \n * Returns true iff the function takes opposite signs at the endpoints.\n * @param lower  the lower endpoint\n * @param upper  the upper endpoint\n * @param function the function\n * @return true if f(lower) * f(upper) \u003c 0\n * @throws FunctionEvaluationException if an error occurs evaluating thefunction at the endpoints\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.isSequence#194",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.isSequence",
+    "snippet": "protected boolean isSequence(final double start,final double mid,final double end){\n  return (start \u003c mid) \u0026\u0026 (mid \u003c end);\n}",
+    "begin_line": 194,
+    "end_line": 197,
+    "comment": "/** \n * Returns true if the arguments form a (strictly) increasing sequence\n * @param start  first number\n * @param mid   second number\n * @param end  third number\n * @return true if the arguments form an increasing sequence\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.verifyInterval#205",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.verifyInterval",
+    "snippet": "protected void verifyInterval(final double lower,final double upper){\n  if (lower \u003e\u003d upper) {\n    throw MathRuntimeException.createIllegalArgumentException(\"endpoints do not specify an interval: [{0}, {1}]\",lower,upper);\n  }\n}",
+    "begin_line": 205,
+    "end_line": 213,
+    "comment": "/** \n * Verifies that the endpoints specify an interval, throws IllegalArgumentException if not\n * @param lower  lower endpoint\n * @param upper upper endpoint\n * @throws IllegalArgumentException\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.verifySequence#222",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.verifySequence",
+    "snippet": "protected void verifySequence(final double lower,final double initial,final double upper){\n  if (!isSequence(lower,initial,upper)) {\n    throw MathRuntimeException.createIllegalArgumentException(\"invalid interval, initial value parameters:  lower\u003d{0}, initial\u003d{1}, upper\u003d{2}\",lower,initial,upper);\n  }\n}",
+    "begin_line": 222,
+    "end_line": 230,
+    "comment": "/** \n * Verifies that \u003ccode\u003elower \u003c initial \u003c upper\u003c/code\u003e throws IllegalArgumentException if not\n * @param lower  lower endpoint\n * @param initial initial value\n * @param upper upper endpoint\n * @throws IllegalArgumentException\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverImpl.verifyBracketing#240",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.verifyBracketing",
+    "snippet": "protected void verifyBracketing(final double lower,final double upper,final UnivariateRealFunction function) throws FunctionEvaluationException {\n  verifyInterval(lower,upper);\n  if (!isBracketing(lower,upper,function)) {\n    throw MathRuntimeException.createIllegalArgumentException(\"function values at endpoints do not have different signs.  \" + \"Endpoints: [{0}, {1}], Values: [{2}, {3}]\",lower,upper,function.value(lower),function.value(upper));\n  }\n}",
+    "begin_line": 240,
+    "end_line": 254,
+    "comment": "/** \n * Verifies that the endpoints specify an interval and the function takes opposite signs at the enpoints, throws IllegalArgumentException if not\n * @param lower  lower endpoint\n * @param upper upper endpoint\n * @param function function\n * @throws IllegalArgumentException\n * @throws FunctionEvaluationException if an error occurs evaluating thefunction at the endpoints\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.UnivariateRealSolverUtils#38",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.UnivariateRealSolverUtils",
+    "snippet": "private UnivariateRealSolverUtils(){\n  super();\n}",
+    "begin_line": 38,
+    "end_line": 40,
+    "comment": "/** \n * Default constructor.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.solve#43",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.solve",
+    "snippet": "public static double solve(UnivariateRealFunction f,double x0,double x1) throws ConvergenceException, FunctionEvaluationException {\n  setup(f);\n  return LazyHolder.FACTORY.newDefaultSolver().solve(f,x0,x1);\n}",
+    "begin_line": 43,
+    "end_line": 60,
+    "comment": "/** \n * Convenience method to find a zero of a univariate real function.  A default solver is used.\n * @param f the function.\n * @param x0 the lower bound for the interval.\n * @param x1 the upper bound for the interval.\n * @return a value where the function is zero.\n * @throws ConvergenceException if the iteration count was exceeded\n * @throws FunctionEvaluationException if an error occurs evaluatingthe function\n * @throws IllegalArgumentException if f is null or the endpoints do notspecify a valid interval\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.solve#63",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.solve",
+    "snippet": "public static double solve(UnivariateRealFunction f,double x0,double x1,double absoluteAccuracy) throws ConvergenceException, FunctionEvaluationException {\n  setup(f);\n  UnivariateRealSolver solver\u003dLazyHolder.FACTORY.newDefaultSolver();\n  solver.setAbsoluteAccuracy(absoluteAccuracy);\n  return solver.solve(f,x0,x1);\n}",
+    "begin_line": 63,
+    "end_line": 86,
+    "comment": "/** \n * Convenience method to find a zero of a univariate real function.  A default solver is used.\n * @param f the function\n * @param x0 the lower bound for the interval\n * @param x1 the upper bound for the interval\n * @param absoluteAccuracy the accuracy to be used by the solver\n * @return a value where the function is zero\n * @throws ConvergenceException if the iteration count is exceeded\n * @throws FunctionEvaluationException if an error occurs evaluating thefunction\n * @throws IllegalArgumentException if f is null, the endpoints do notspecify a valid interval, or the absoluteAccuracy is not valid for the default solver\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.bracket#89",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.bracket",
+    "snippet": "public static double[] bracket(UnivariateRealFunction function,double initial,double lowerBound,double upperBound) throws ConvergenceException, FunctionEvaluationException {\n  return bracket(function,initial,lowerBound,upperBound,Integer.MAX_VALUE);\n}",
+    "begin_line": 89,
+    "end_line": 134,
+    "comment": "/** \n * This method attempts to find two values a and b satisfying \u003cul\u003e \u003cli\u003e \u003ccode\u003e lowerBound \u003c\u003d a \u003c initial \u003c b \u003c\u003d upperBound\u003c/code\u003e \u003c/li\u003e \u003cli\u003e \u003ccode\u003e f(a) * f(b) \u003c 0 \u003c/code\u003e\u003c/li\u003e \u003c/ul\u003e If f is continuous on \u003ccode\u003e[a,b],\u003c/code\u003e this means that \u003ccode\u003ea\u003c/code\u003e and \u003ccode\u003eb\u003c/code\u003e bracket a root of f. \u003cp\u003e The algorithm starts by setting \u003ccode\u003ea :\u003d initial -1; b :\u003d initial +1,\u003c/code\u003e examines the value of the function at \u003ccode\u003ea\u003c/code\u003e and \u003ccode\u003eb\u003c/code\u003e and keeps moving the endpoints out by one unit each time through a loop that terminates when one of the following happens: \u003cul\u003e \u003cli\u003e \u003ccode\u003e f(a) * f(b) \u003c 0 \u003c/code\u003e --  success!\u003c/li\u003e \u003cli\u003e \u003ccode\u003e a \u003d lower \u003c/code\u003e and \u003ccode\u003e b \u003d upper\u003c/code\u003e -- ConvergenceException \u003c/li\u003e \u003cli\u003e \u003ccode\u003e Integer.MAX_VALUE\u003c/code\u003e iterations elapse -- ConvergenceException \u003c/li\u003e \u003c/ul\u003e\u003c/p\u003e \u003cp\u003e \u003cstrong\u003eNote: \u003c/strong\u003e this method can take \u003ccode\u003eInteger.MAX_VALUE\u003c/code\u003e iterations to throw a \u003ccode\u003eConvergenceException.\u003c/code\u003e  Unless you are confident that there is a root between \u003ccode\u003elowerBound\u003c/code\u003e and \u003ccode\u003eupperBound\u003c/code\u003e near \u003ccode\u003einitial,\u003c/code\u003e it is better to use {@link #bracket(UnivariateRealFunction,double,double,double,int)}, explicitly specifying the maximum number of iterations.\u003c/p\u003e\n * @param function the function\n * @param initial initial midpoint of interval being expanded tobracket a root\n * @param lowerBound lower bound (a is never lower than this value)\n * @param upperBound upper bound (b never is greater than thisvalue)\n * @return a two element array holding {a, b}\n * @throws ConvergenceException if a root can not be bracketted\n * @throws FunctionEvaluationException if an error occurs evaluating thefunction\n * @throws IllegalArgumentException if function is null, maximumIterationsis not positive, or initial is not between lowerBound and upperBound\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.bracket#137",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.bracket",
+    "snippet": "public static double[] bracket(UnivariateRealFunction function,double initial,double lowerBound,double upperBound,int maximumIterations) throws ConvergenceException, FunctionEvaluationException {\n  if (function \u003d\u003d null) {\n    throw MathRuntimeException.createIllegalArgumentException(NULL_FUNCTION_MESSAGE);\n  }\n  if (maximumIterations \u003c\u003d 0) {\n    throw MathRuntimeException.createIllegalArgumentException(\"bad value for maximum iterations number: {0}\",maximumIterations);\n  }\n  if (initial \u003c lowerBound || initial \u003e upperBound || lowerBound \u003e\u003d upperBound) {\n    throw MathRuntimeException.createIllegalArgumentException(\"invalid bracketing parameters:  lower bound\u003d{0},  initial\u003d{1}, upper bound\u003d{2}\",lowerBound,initial,upperBound);\n  }\n  double a\u003dinitial;\n  double b\u003dinitial;\n  double fa;\n  double fb;\n  int numIterations\u003d0;\n  do {\n    a\u003dMath.max(a - 1.0,lowerBound);\n    b\u003dMath.min(b + 1.0,upperBound);\n    fa\u003dfunction.value(a);\n    fb\u003dfunction.value(b);\n    numIterations++;\n  }\n while ((fa * fb \u003e 0.0) \u0026\u0026 (numIterations \u003c maximumIterations) \u0026\u0026 ((a \u003e lowerBound) || (b \u003c upperBound)));\n  if (fa * fb \u003e 0.0) {\n    throw new ConvergenceException(\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \" + \"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \" + \"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\",numIterations,maximumIterations,initial,lowerBound,upperBound,a,b,fa,fb);\n  }\n  return new double[]{a,b};\n}",
+    "begin_line": 137,
+    "end_line": 213,
+    "comment": "/** \n * This method attempts to find two values a and b satisfying \u003cul\u003e \u003cli\u003e \u003ccode\u003e lowerBound \u003c\u003d a \u003c initial \u003c b \u003c\u003d upperBound\u003c/code\u003e \u003c/li\u003e \u003cli\u003e \u003ccode\u003e f(a) * f(b) \u003c\u003d 0 \u003c/code\u003e \u003c/li\u003e \u003c/ul\u003e If f is continuous on \u003ccode\u003e[a,b],\u003c/code\u003e this means that \u003ccode\u003ea\u003c/code\u003e and \u003ccode\u003eb\u003c/code\u003e bracket a root of f. \u003cp\u003e The algorithm starts by setting \u003ccode\u003ea :\u003d initial -1; b :\u003d initial +1,\u003c/code\u003e examines the value of the function at \u003ccode\u003ea\u003c/code\u003e and \u003ccode\u003eb\u003c/code\u003e and keeps moving the endpoints out by one unit each time through a loop that terminates when one of the following happens: \u003cul\u003e \u003cli\u003e \u003ccode\u003e f(a) * f(b) \u003c\u003d 0 \u003c/code\u003e --  success!\u003c/li\u003e \u003cli\u003e \u003ccode\u003e a \u003d lower \u003c/code\u003e and \u003ccode\u003e b \u003d upper\u003c/code\u003e -- ConvergenceException \u003c/li\u003e \u003cli\u003e \u003ccode\u003e maximumIterations\u003c/code\u003e iterations elapse -- ConvergenceException \u003c/li\u003e\u003c/ul\u003e\u003c/p\u003e\n * @param function the function\n * @param initial initial midpoint of interval being expanded tobracket a root\n * @param lowerBound lower bound (a is never lower than this value)\n * @param upperBound upper bound (b never is greater than thisvalue)\n * @param maximumIterations maximum number of iterations to perform\n * @return a two element array holding {a, b}.\n * @throws ConvergenceException if the algorithm fails to find a and bsatisfying the desired conditions\n * @throws FunctionEvaluationException if an error occurs evaluating thefunction\n * @throws IllegalArgumentException if function is null, maximumIterationsis not positive, or initial is not between lowerBound and upperBound\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.midpoint#216",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.midpoint",
+    "snippet": "public static double midpoint(double a,double b){\n  return (a + b) * .5;\n}",
+    "begin_line": 216,
+    "end_line": 224,
+    "comment": "/** \n * Compute the midpoint of two values.\n * @param a first value.\n * @param b second value.\n * @return the midpoint.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "UnivariateRealSolverUtils.setup#231",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.setup",
+    "snippet": "private static void setup(UnivariateRealFunction f){\n  if (f \u003d\u003d null) {\n    throw MathRuntimeException.createIllegalArgumentException(NULL_FUNCTION_MESSAGE);\n  }\n}",
+    "begin_line": 231,
+    "end_line": 235,
+    "comment": "/** \n * Checks to see if f is null, throwing IllegalArgumentException if so.\n * @param f  input function\n * @throws IllegalArgumentException if f is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

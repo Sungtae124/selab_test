@@ -1,0 +1,22 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/core/util/TestTextBuffer.java",
+            "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testEmpty()",
+            "snippet": "public void testEmpty() {\nTextBuffer tb = new TextBuffer(new BufferRecycler());\ntb.resetWithEmpty();\n\nassertTrue(tb.getTextBuffer().length == 0);\ntb.contentsAsString();\nassertTrue(tb.getTextBuffer().length == 0);\n}",
+            "begin_line": 79,
+            "end_line": 86,
+            "comment": "     [Core#182]",
+            "child_ranges": [
+                "(line 80,col 9)-(line 80,col 61)",
+                "(line 81,col 9)-(line 81,col 28)",
+                "(line 82,col 0)-(line 82,col 0)",
+                "(line 83,col 9)-(line 83,col 51)",
+                "(line 84,col 9)-(line 84,col 30)",
+                "(line 85,col 9)-(line 85,col 51)"
+            ]
+        }
+    ]
+]

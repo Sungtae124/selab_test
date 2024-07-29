@@ -1,0 +1,254 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_OBJECT_ARRAY",
+    "snippet": "public static final Object[] EMPTY_OBJECT_ARRAY\u003dnew Object[0];",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eObject\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_CLASS_ARRAY",
+    "snippet": "public static final Class\u003c?\u003e[] EMPTY_CLASS_ARRAY\u003dnew Class[0];",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eClass\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_STRING_ARRAY",
+    "snippet": "public static final String[] EMPTY_STRING_ARRAY\u003dnew String[0];",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eString\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_LONG_ARRAY",
+    "snippet": "public static final long[] EMPTY_LONG_ARRAY\u003dnew long[0];",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * An empty immutable \u003ccode\u003elong\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_LONG_OBJECT_ARRAY",
+    "snippet": "public static final Long[] EMPTY_LONG_OBJECT_ARRAY\u003dnew Long[0];",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eLong\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_INT_ARRAY",
+    "snippet": "public static final int[] EMPTY_INT_ARRAY\u003dnew int[0];",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eint\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_INTEGER_OBJECT_ARRAY",
+    "snippet": "public static final Integer[] EMPTY_INTEGER_OBJECT_ARRAY\u003dnew Integer[0];",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eInteger\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_SHORT_ARRAY",
+    "snippet": "public static final short[] EMPTY_SHORT_ARRAY\u003dnew short[0];",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eshort\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_SHORT_OBJECT_ARRAY",
+    "snippet": "public static final Short[] EMPTY_SHORT_OBJECT_ARRAY\u003dnew Short[0];",
+    "begin_line": 87,
+    "end_line": 87,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eShort\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_BYTE_ARRAY",
+    "snippet": "public static final byte[] EMPTY_BYTE_ARRAY\u003dnew byte[0];",
+    "begin_line": 91,
+    "end_line": 91,
+    "comment": "/** \n * An empty immutable \u003ccode\u003ebyte\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_BYTE_OBJECT_ARRAY",
+    "snippet": "public static final Byte[] EMPTY_BYTE_OBJECT_ARRAY\u003dnew Byte[0];",
+    "begin_line": 95,
+    "end_line": 95,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eByte\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_DOUBLE_ARRAY",
+    "snippet": "public static final double[] EMPTY_DOUBLE_ARRAY\u003dnew double[0];",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": "/** \n * An empty immutable \u003ccode\u003edouble\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_DOUBLE_OBJECT_ARRAY",
+    "snippet": "public static final Double[] EMPTY_DOUBLE_OBJECT_ARRAY\u003dnew Double[0];",
+    "begin_line": 103,
+    "end_line": 103,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eDouble\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_FLOAT_ARRAY",
+    "snippet": "public static final float[] EMPTY_FLOAT_ARRAY\u003dnew float[0];",
+    "begin_line": 107,
+    "end_line": 107,
+    "comment": "/** \n * An empty immutable \u003ccode\u003efloat\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_FLOAT_OBJECT_ARRAY",
+    "snippet": "public static final Float[] EMPTY_FLOAT_OBJECT_ARRAY\u003dnew Float[0];",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eFloat\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_BOOLEAN_ARRAY",
+    "snippet": "public static final boolean[] EMPTY_BOOLEAN_ARRAY\u003dnew boolean[0];",
+    "begin_line": 115,
+    "end_line": 115,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eboolean\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_BOOLEAN_OBJECT_ARRAY",
+    "snippet": "public static final Boolean[] EMPTY_BOOLEAN_OBJECT_ARRAY\u003dnew Boolean[0];",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eBoolean\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_CHAR_ARRAY",
+    "snippet": "public static final char[] EMPTY_CHAR_ARRAY\u003dnew char[0];",
+    "begin_line": 123,
+    "end_line": 123,
+    "comment": "/** \n * An empty immutable \u003ccode\u003echar\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.EMPTY_CHARACTER_OBJECT_ARRAY",
+    "snippet": "public static final Character[] EMPTY_CHARACTER_OBJECT_ARRAY\u003dnew Character[0];",
+    "begin_line": 127,
+    "end_line": 127,
+    "comment": "/** \n * An empty immutable \u003ccode\u003eCharacter\u003c/code\u003e array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ArrayUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ArrayUtils.java",
+    "signature": "org.apache.commons.lang3.ArrayUtils.INDEX_NOT_FOUND",
+    "snippet": "public static final int INDEX_NOT_FOUND\u003d-1;",
+    "begin_line": 134,
+    "end_line": 134,
+    "comment": "/** \n * The index value when an element is not found in a list or array: \u003ccode\u003e-1\u003c/code\u003e. This value is returned by methods in this class and can also be used in comparisons with values returned by various method from  {@link java.util.List}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.PACKAGE_SEPARATOR_CHAR",
+    "snippet": "public static final char PACKAGE_SEPARATOR_CHAR\u003d\u0027.\u0027;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * \u003cp\u003eThe package separator character: \u003ccode\u003e\u0027\u0026#x2e;\u0027 \u003d\u003d  {@value}\u003c/code\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.PACKAGE_SEPARATOR",
+    "snippet": "public static final String PACKAGE_SEPARATOR\u003dString.valueOf(PACKAGE_SEPARATOR_CHAR);",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * \u003cp\u003eThe package separator String: \u003ccode\u003e\"\u0026#x2e;\"\u003c/code\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.INNER_CLASS_SEPARATOR_CHAR",
+    "snippet": "public static final char INNER_CLASS_SEPARATOR_CHAR\u003d\u0027$\u0027;",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * \u003cp\u003eThe inner class separator character: \u003ccode\u003e\u0027$\u0027 \u003d\u003d  {@value}\u003c/code\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.INNER_CLASS_SEPARATOR",
+    "snippet": "public static final String INNER_CLASS_SEPARATOR\u003dString.valueOf(INNER_CLASS_SEPARATOR_CHAR);",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * \u003cp\u003eThe inner class separator String: \u003ccode\u003e\"$\"\u003c/code\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.primitiveWrapperMap",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e primitiveWrapperMap\u003dnew HashMap\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e();",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * Maps primitive \u003ccode\u003eClass\u003c/code\u003ees to their corresponding wrapper \u003ccode\u003eClass\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.wrapperPrimitiveMap",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e wrapperPrimitiveMap\u003dnew HashMap\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e();",
+    "begin_line": 89,
+    "end_line": 89,
+    "comment": "/** \n * Maps wrapper \u003ccode\u003eClass\u003c/code\u003ees to their corresponding primitive types.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.abbreviationMap",
+    "snippet": "private static final Map\u003cString,String\u003e abbreviationMap\u003dnew HashMap\u003cString,String\u003e();",
+    "begin_line": 102,
+    "end_line": 102,
+    "comment": "/** \n * Maps a primitive class name to its corresponding abbreviation used in array class names.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.reverseAbbreviationMap",
+    "snippet": "private static final Map\u003cString,String\u003e reverseAbbreviationMap\u003dnew HashMap\u003cString,String\u003e();",
+    "begin_line": 107,
+    "end_line": 107,
+    "comment": "/** \n * Maps an abbreviation used in array class names to corresponding primitive class name.\n */\n"
+  }
+]
