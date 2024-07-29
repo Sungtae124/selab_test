@@ -1,0 +1,2432 @@
+[
+  {
+    "class_name": "BasicVariables",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/BasicVariables.java",
+    "signature": "BasicVariables.vars",
+    "snippet": "private HashMap vars\u003dnew HashMap();",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Contains the values of declared variables\n */\n"
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.parentContext",
+    "snippet": "protected JXPathContext parentContext;",
+    "begin_line": 381,
+    "end_line": 381,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.contextBean",
+    "snippet": "protected Object contextBean;",
+    "begin_line": 382,
+    "end_line": 382,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.vars",
+    "snippet": "protected Variables vars;",
+    "begin_line": 383,
+    "end_line": 383,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.functions",
+    "snippet": "protected Functions functions;",
+    "begin_line": 384,
+    "end_line": 384,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.factory",
+    "snippet": "protected AbstractFactory factory;",
+    "begin_line": 385,
+    "end_line": 385,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.locale",
+    "snippet": "private Locale locale;",
+    "begin_line": 386,
+    "end_line": 386,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.lenientSet",
+    "snippet": "private boolean lenientSet\u003dfalse;",
+    "begin_line": 387,
+    "end_line": 387,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.lenient",
+    "snippet": "private boolean lenient\u003dfalse;",
+    "begin_line": 388,
+    "end_line": 388,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.idManager",
+    "snippet": "protected IdentityManager idManager;",
+    "begin_line": 389,
+    "end_line": 389,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.keyManager",
+    "snippet": "protected KeyManager keyManager;",
+    "begin_line": 390,
+    "end_line": 390,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.decimalFormats",
+    "snippet": "protected HashMap decimalFormats;",
+    "begin_line": 391,
+    "end_line": 391,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.contextFactory",
+    "snippet": "private static JXPathContextFactory contextFactory;",
+    "begin_line": 393,
+    "end_line": 393,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.compilationContext",
+    "snippet": "private static JXPathContext compilationContext;",
+    "begin_line": 394,
+    "end_line": 394,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContext.java",
+    "signature": "JXPathContext.GENERIC_FUNCTIONS",
+    "snippet": "private static final PackageFunctions GENERIC_FUNCTIONS\u003dnew PackageFunctions(\"\",null);",
+    "begin_line": 397,
+    "end_line": 397,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContextFactory.java",
+    "signature": "JXPathContextFactory.FACTORY_NAME_PROPERTY",
+    "snippet": "public static final String FACTORY_NAME_PROPERTY\u003d\"org.apache.commons.jxpath.JXPathContextFactory\";",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * The default property \n */\n"
+  },
+  {
+    "class_name": "JXPathContextFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContextFactory.java",
+    "signature": "JXPathContextFactory.DEFAULT_FACTORY_CLASS",
+    "snippet": "private static final String DEFAULT_FACTORY_CLASS\u003d\"org.apache.commons.jxpath.ri.JXPathContextFactoryReferenceImpl\";",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": "/** \n * The default factory class \n */\n"
+  },
+  {
+    "class_name": "JXPathContextFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContextFactory.java",
+    "signature": "JXPathContextFactory.factoryImplName",
+    "snippet": "private static String factoryImplName\u003dnull;",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * Avoid reading all the files when the findFactory method is called the second time ( cache the result of finding the default impl )\n */\n"
+  },
+  {
+    "class_name": "JXPathContextFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/JXPathContextFactory.java",
+    "signature": "JXPathContextFactory.debug",
+    "snippet": "private static boolean debug\u003dfalse;",
+    "begin_line": 140,
+    "end_line": 140,
+    "comment": "/** \n * Temp debug code - this will be removed after we test everything\n */\n"
+  },
+  {
+    "class_name": "PackageFunctions",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/PackageFunctions.java",
+    "signature": "PackageFunctions.classPrefix",
+    "snippet": "private String classPrefix;",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": ""
+  },
+  {
+    "class_name": "PackageFunctions",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/PackageFunctions.java",
+    "signature": "PackageFunctions.namespace",
+    "snippet": "private String namespace;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": ""
+  },
+  {
+    "class_name": "PackageFunctions",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/PackageFunctions.java",
+    "signature": "PackageFunctions.EMPTY_ARRAY",
+    "snippet": "private static final Object[] EMPTY_ARRAY\u003dnew Object[0];",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.parentContext",
+    "snippet": "protected EvalContext parentContext;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.rootContext",
+    "snippet": "protected RootContext rootContext;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.position",
+    "snippet": "protected int position\u003d0;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.startedSetIteration",
+    "snippet": "private boolean startedSetIteration\u003dfalse;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.done",
+    "snippet": "private boolean done\u003dfalse;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.hasPerformedIteratorStep",
+    "snippet": "private boolean hasPerformedIteratorStep\u003dfalse;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.pointerIterator",
+    "snippet": "private Iterator pointerIterator;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": ""
+  },
+  {
+    "class_name": "EvalContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/EvalContext.java",
+    "signature": "EvalContext.REVERSE_COMPARATOR",
+    "snippet": "private static final Comparator REVERSE_COMPARATOR\u003dnew Comparator(){\n  public int compare(  Object o1,  Object o2){\n    return ((Comparable)o2).compareTo(o1);\n  }\n}\n;",
+    "begin_line": 56,
+    "end_line": 61,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.USE_SOFT_CACHE",
+    "snippet": "public static final boolean USE_SOFT_CACHE\u003dtrue;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Change this to \u003ccode\u003efalse\u003c/code\u003e to disable soft caching of  CompiledExpressions. \n */\n"
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.COMPILER",
+    "snippet": "private static final Compiler COMPILER\u003dnew TreeCompiler();",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.compiled",
+    "snippet": "private static Map compiled\u003dnew HashMap();",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.cleanupCount",
+    "snippet": "private static int cleanupCount\u003d0;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.nodeFactories",
+    "snippet": "private static Vector nodeFactories\u003dnew Vector();",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.nodeFactoryArray",
+    "snippet": "private static NodePointerFactory nodeFactoryArray[]\u003dnull;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.rootPointer",
+    "snippet": "private Pointer rootPointer;",
+    "begin_line": 112,
+    "end_line": 112,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.contextPointer",
+    "snippet": "private Pointer contextPointer;",
+    "begin_line": 113,
+    "end_line": 113,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.namespaceResolver",
+    "snippet": "protected NamespaceResolver namespaceResolver;",
+    "begin_line": 115,
+    "end_line": 115,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.defaultNamespaceURI",
+    "snippet": "private String defaultNamespaceURI;",
+    "begin_line": 116,
+    "end_line": 116,
+    "comment": ""
+  },
+  {
+    "class_name": "JXPathContextReferenceImpl",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/JXPathContextReferenceImpl.java",
+    "signature": "JXPathContextReferenceImpl.CLEANUP_THRESHOLD",
+    "snippet": "private static final int CLEANUP_THRESHOLD\u003d500;",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.parent",
+    "snippet": "final protected NamespaceResolver parent;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.namespaceMap",
+    "snippet": "protected HashMap namespaceMap\u003dnew HashMap();",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.reverseMap",
+    "snippet": "protected HashMap reverseMap;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.pointer",
+    "snippet": "protected NodePointer pointer;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.defaultNamespaceURI",
+    "snippet": "private String defaultNamespaceURI;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "NamespaceResolver",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/NamespaceResolver.java",
+    "signature": "NamespaceResolver.sealed",
+    "snippet": "private boolean sealed;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "Parser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/Parser.java",
+    "signature": "Parser.parser",
+    "snippet": "private static XPathParser parser\u003dnew XPathParser(new StringReader(\"\"));",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "QName",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/QName.java",
+    "signature": "QName.prefix",
+    "snippet": "private String prefix;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "QName",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/QName.java",
+    "signature": "QName.name",
+    "snippet": "private String name;",
+    "begin_line": 29,
+    "end_line": 29,
+    "comment": ""
+  },
+  {
+    "class_name": "AttributeContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+    "signature": "AttributeContext.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "AttributeContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+    "signature": "AttributeContext.setStarted",
+    "snippet": "private boolean setStarted\u003dfalse;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "AttributeContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+    "signature": "AttributeContext.iterator",
+    "snippet": "private NodeIterator iterator;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "AttributeContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+    "signature": "AttributeContext.currentNodePointer",
+    "snippet": "private NodePointer currentNodePointer;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "ChildContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/ChildContext.java",
+    "signature": "ChildContext.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "ChildContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/ChildContext.java",
+    "signature": "ChildContext.startFromParentLocation",
+    "snippet": "private boolean startFromParentLocation;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "ChildContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/ChildContext.java",
+    "signature": "ChildContext.reverse",
+    "snippet": "private boolean reverse;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "ChildContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/ChildContext.java",
+    "signature": "ChildContext.iterator",
+    "snippet": "private NodeIterator iterator;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.setStarted",
+    "snippet": "private boolean setStarted\u003dfalse;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.stack",
+    "snippet": "private Stack stack;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.currentNodePointer",
+    "snippet": "private NodePointer currentNodePointer;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.includeSelf",
+    "snippet": "private boolean includeSelf;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "DescendantContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/DescendantContext.java",
+    "signature": "DescendantContext.ELEMENT_NODE_TEST",
+    "snippet": "private static final NodeTest ELEMENT_NODE_TEST\u003dnew NodeTypeTest(Compiler.NODE_TYPE_NODE);",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": ""
+  },
+  {
+    "class_name": "InitialContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/InitialContext.java",
+    "signature": "InitialContext.startedSet",
+    "snippet": "private boolean startedSet\u003dfalse;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": ""
+  },
+  {
+    "class_name": "InitialContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/InitialContext.java",
+    "signature": "InitialContext.started",
+    "snippet": "private boolean started\u003dfalse;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "InitialContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/InitialContext.java",
+    "signature": "InitialContext.collection",
+    "snippet": "private boolean collection;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "InitialContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/InitialContext.java",
+    "signature": "InitialContext.nodePointer",
+    "snippet": "private NodePointer nodePointer;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.jxpathContext",
+    "snippet": "private JXPathContextReferenceImpl jxpathContext;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.pointer",
+    "snippet": "private NodePointer pointer;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.registers",
+    "snippet": "private Object registers[];",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.availableRegister",
+    "snippet": "private int availableRegister\u003d0;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.UNKNOWN_VALUE",
+    "snippet": "public static final Object UNKNOWN_VALUE\u003dnew Object();",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "RootContext",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/RootContext.java",
+    "signature": "RootContext.MAX_REGISTER",
+    "snippet": "private static final int MAX_REGISTER\u003d4;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "SimplePathInterpreter",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/SimplePathInterpreter.java",
+    "signature": "SimplePathInterpreter.QNAME_NAME",
+    "snippet": "private static final QName QNAME_NAME\u003dnew QName(null,\"name\");",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "SimplePathInterpreter",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/axes/SimplePathInterpreter.java",
+    "signature": "SimplePathInterpreter.PERFECT_MATCH",
+    "snippet": "private static final int PERFECT_MATCH\u003d1000;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": ""
+  },
+  {
+    "class_name": "Expression",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "Expression.ZERO",
+    "snippet": "protected static final Double ZERO\u003dnew Double(0);",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "Expression",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "Expression.ONE",
+    "snippet": "protected static final Double ONE\u003dnew Double(1);",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": ""
+  },
+  {
+    "class_name": "Expression",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "Expression.NOT_A_NUMBER",
+    "snippet": "protected static final Double NOT_A_NUMBER\u003dnew Double(Double.NaN);",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": ""
+  },
+  {
+    "class_name": "Expression",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "Expression.contextDependencyKnown",
+    "snippet": "private boolean contextDependencyKnown\u003dfalse;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "Expression",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "Expression.contextDependent",
+    "snippet": "private boolean contextDependent;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": ""
+  },
+  {
+    "class_name": "PointerIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "PointerIterator.iterator",
+    "snippet": "private Iterator iterator;",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": ""
+  },
+  {
+    "class_name": "PointerIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "PointerIterator.qname",
+    "snippet": "private QName qname;",
+    "begin_line": 95,
+    "end_line": 95,
+    "comment": ""
+  },
+  {
+    "class_name": "PointerIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "PointerIterator.locale",
+    "snippet": "private Locale locale;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": ""
+  },
+  {
+    "class_name": "ValueIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+    "signature": "ValueIterator.iterator",
+    "snippet": "private Iterator iterator;",
+    "begin_line": 122,
+    "end_line": 122,
+    "comment": ""
+  },
+  {
+    "class_name": "LocationPath",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/LocationPath.java",
+    "signature": "LocationPath.absolute",
+    "snippet": "private boolean absolute;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "Path",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Path.java",
+    "signature": "Path.steps",
+    "snippet": "private Step[] steps;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": ""
+  },
+  {
+    "class_name": "Path",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Path.java",
+    "signature": "Path.basicKnown",
+    "snippet": "private boolean basicKnown\u003dfalse;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": ""
+  },
+  {
+    "class_name": "Path",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Path.java",
+    "signature": "Path.basic",
+    "snippet": "private boolean basic;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "Step",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Step.java",
+    "signature": "Step.axis",
+    "snippet": "private int axis;",
+    "begin_line": 26,
+    "end_line": 26,
+    "comment": ""
+  },
+  {
+    "class_name": "Step",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Step.java",
+    "signature": "Step.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "Step",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/Step.java",
+    "signature": "Step.predicates",
+    "snippet": "private Expression[] predicates;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "TreeCompiler",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/compiler/TreeCompiler.java",
+    "signature": "TreeCompiler.QNAME_NAME",
+    "snippet": "private static final QName QNAME_NAME\u003dnew QName(null,\"name\");",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.WHOLE_COLLECTION",
+    "snippet": "public static final int WHOLE_COLLECTION\u003dInteger.MIN_VALUE;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.index",
+    "snippet": "protected int index\u003dWHOLE_COLLECTION;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.UNKNOWN_NAMESPACE",
+    "snippet": "public static final String UNKNOWN_NAMESPACE\u003d\"\u003c\u003cunknown namespace\u003e\u003e\";",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.attribute",
+    "snippet": "private boolean attribute\u003dfalse;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.rootNode",
+    "snippet": "private transient Object rootNode;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.namespaceResolver",
+    "snippet": "private NamespaceResolver namespaceResolver;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.parent",
+    "snippet": "protected NodePointer parent;",
+    "begin_line": 102,
+    "end_line": 102,
+    "comment": ""
+  },
+  {
+    "class_name": "NodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/NodePointer.java",
+    "signature": "NodePointer.locale",
+    "snippet": "protected Locale locale;",
+    "begin_line": 103,
+    "end_line": 103,
+    "comment": ""
+  },
+  {
+    "class_name": "BeanPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/BeanPointerFactory.java",
+    "signature": "BeanPointerFactory.BEAN_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int BEAN_POINTER_FACTORY_ORDER\u003d900;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "CollectionPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/CollectionPointerFactory.java",
+    "signature": "CollectionPointerFactory.COLLECTION_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int COLLECTION_POINTER_FACTORY_ORDER\u003d10;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "NullPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/NullPointer.java",
+    "signature": "NullPointer.name",
+    "snippet": "private QName name;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "NullPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/NullPointer.java",
+    "signature": "NullPointer.id",
+    "snippet": "private String id;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "PropertyOwnerPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/PropertyOwnerPointer.java",
+    "signature": "PropertyOwnerPointer.UNINITIALIZED",
+    "snippet": "private static final Object UNINITIALIZED\u003dnew Object();",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": ""
+  },
+  {
+    "class_name": "PropertyOwnerPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/beans/PropertyOwnerPointer.java",
+    "signature": "PropertyOwnerPointer.value",
+    "snippet": "private Object value\u003dUNINITIALIZED;",
+    "begin_line": 101,
+    "end_line": 101,
+    "comment": ""
+  },
+  {
+    "class_name": "ContainerPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/container/ContainerPointer.java",
+    "signature": "ContainerPointer.container",
+    "snippet": "private Container container;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "ContainerPointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/container/ContainerPointer.java",
+    "signature": "ContainerPointer.valuePointer",
+    "snippet": "private NodePointer valuePointer;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "ContainerPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/container/ContainerPointerFactory.java",
+    "signature": "ContainerPointerFactory.CONTAINER_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int CONTAINER_POINTER_FACTORY_ORDER\u003d200;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMAttributeIterator.java",
+    "signature": "DOMAttributeIterator.parent",
+    "snippet": "private NodePointer parent;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMAttributeIterator.java",
+    "signature": "DOMAttributeIterator.name",
+    "snippet": "private QName name;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMAttributeIterator.java",
+    "signature": "DOMAttributeIterator.attributes",
+    "snippet": "private List attributes;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMAttributeIterator.java",
+    "signature": "DOMAttributeIterator.position",
+    "snippet": "private int position\u003d0;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMAttributePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMAttributePointer.java",
+    "signature": "DOMAttributePointer.attr",
+    "snippet": "private Attr attr;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.parent",
+    "snippet": "private NodePointer parent;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.node",
+    "snippet": "private Node node;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.child",
+    "snippet": "private Node child\u003dnull;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.reverse",
+    "snippet": "private boolean reverse;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodeIterator.java",
+    "signature": "DOMNodeIterator.position",
+    "snippet": "private int position\u003d0;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d-8751046933894857319L;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.node",
+    "snippet": "private Node node;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.namespaces",
+    "snippet": "private Map namespaces;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.defaultNamespace",
+    "snippet": "private String defaultNamespace;",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.id",
+    "snippet": "private String id;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.XML_NAMESPACE_URI",
+    "snippet": "public static final String XML_NAMESPACE_URI\u003d\"http:",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+    "signature": "DOMNodePointer.XMLNS_NAMESPACE_URI",
+    "snippet": "public static final String XMLNS_NAMESPACE_URI\u003d\"http:",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": ""
+  },
+  {
+    "class_name": "DOMPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMPointerFactory.java",
+    "signature": "DOMPointerFactory.DOM_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int DOM_POINTER_FACTORY_ORDER\u003d100;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "DynamicPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/dynamic/DynamicPointerFactory.java",
+    "signature": "DynamicPointerFactory.DYNAMIC_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int DYNAMIC_POINTER_FACTORY_ORDER\u003d800;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMAttributeIterator.java",
+    "signature": "JDOMAttributeIterator.parent",
+    "snippet": "private NodePointer parent;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMAttributeIterator.java",
+    "signature": "JDOMAttributeIterator.name",
+    "snippet": "private QName name;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMAttributeIterator.java",
+    "signature": "JDOMAttributeIterator.attributes",
+    "snippet": "private List attributes;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMAttributeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMAttributeIterator.java",
+    "signature": "JDOMAttributeIterator.position",
+    "snippet": "private int position\u003d0;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMAttributePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMAttributePointer.java",
+    "signature": "JDOMAttributePointer.attr",
+    "snippet": "private Attribute attr;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.parent",
+    "snippet": "private NodePointer parent;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.nodeTest",
+    "snippet": "private NodeTest nodeTest;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.reverse",
+    "snippet": "private boolean reverse;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.position",
+    "snippet": "private int position\u003d0;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.index",
+    "snippet": "private int index\u003d0;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.children",
+    "snippet": "private List children;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodeIterator",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodeIterator.java",
+    "signature": "JDOMNodeIterator.child",
+    "snippet": "private Object child;",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java",
+    "signature": "JDOMNodePointer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d-6346532297491082651L;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java",
+    "signature": "JDOMNodePointer.node",
+    "snippet": "private Object node;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java",
+    "signature": "JDOMNodePointer.id",
+    "snippet": "private String id;",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java",
+    "signature": "JDOMNodePointer.XML_NAMESPACE_URI",
+    "snippet": "public static final String XML_NAMESPACE_URI\u003d\"http:",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMNodePointer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java",
+    "signature": "JDOMNodePointer.XMLNS_NAMESPACE_URI",
+    "snippet": "public static final String XMLNS_NAMESPACE_URI\u003d\"http:",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "JDOMPointerFactory",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMPointerFactory.java",
+    "signature": "JDOMPointerFactory.JDOM_POINTER_FACTORY_ORDER",
+    "snippet": "public static final int JDOM_POINTER_FACTORY_ORDER\u003d110;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.staticFlag",
+    "snippet": "public static final boolean staticFlag\u003dfalse;",
+    "begin_line": 11,
+    "end_line": 11,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.bufsize",
+    "snippet": "int bufsize;",
+    "begin_line": 12,
+    "end_line": 12,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.available",
+    "snippet": "int available;",
+    "begin_line": 13,
+    "end_line": 13,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.tokenBegin",
+    "snippet": "int tokenBegin;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.bufpos",
+    "snippet": "public int bufpos\u003d-1;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.bufline",
+    "snippet": "protected int bufline[];",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.bufcolumn",
+    "snippet": "protected int bufcolumn[];",
+    "begin_line": 17,
+    "end_line": 17,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.column",
+    "snippet": "protected int column\u003d0;",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.line",
+    "snippet": "protected int line\u003d1;",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.prevCharIsCR",
+    "snippet": "protected boolean prevCharIsCR\u003dfalse;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.prevCharIsLF",
+    "snippet": "protected boolean prevCharIsLF\u003dfalse;",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.inputStream",
+    "snippet": "protected java.io.Reader inputStream;",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.buffer",
+    "snippet": "protected char[] buffer;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.maxNextCharInd",
+    "snippet": "protected int maxNextCharInd\u003d0;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "SimpleCharStream",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/SimpleCharStream.java",
+    "signature": "SimpleCharStream.inBuf",
+    "snippet": "protected int inBuf\u003d0;",
+    "begin_line": 29,
+    "end_line": 29,
+    "comment": ""
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.kind",
+    "snippet": "public int kind;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": "/** \n * An integer that describes the kind of this token.  This numbering system is determined by JavaCCParser, and a table of these numbers is stored in the file ...Constants.java.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.beginLine",
+    "snippet": "public int beginLine, beginColumn, endLine, endColumn;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": "/** \n * beginLine and beginColumn describe the position of the first character of this token; endLine and endColumn describe the position of the last character of this token.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.beginColumn",
+    "snippet": "public int beginLine, beginColumn, endLine, endColumn;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": "/** \n * beginLine and beginColumn describe the position of the first character of this token; endLine and endColumn describe the position of the last character of this token.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.endLine",
+    "snippet": "public int beginLine, beginColumn, endLine, endColumn;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": "/** \n * beginLine and beginColumn describe the position of the first character of this token; endLine and endColumn describe the position of the last character of this token.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.endColumn",
+    "snippet": "public int beginLine, beginColumn, endLine, endColumn;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": "/** \n * beginLine and beginColumn describe the position of the first character of this token; endLine and endColumn describe the position of the last character of this token.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.image",
+    "snippet": "public String image;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * The string image of the token.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.next",
+    "snippet": "public Token next;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * A reference to the next regular (non-special) token from the input stream.  If this is the last token from the input stream, or if the token manager has not read tokens beyond this one, this field is set to null.  This is true only if this token is also a regular token.  Otherwise, see below for a description of the contents of this field.\n */\n"
+  },
+  {
+    "class_name": "Token",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/Token.java",
+    "signature": "Token.specialToken",
+    "snippet": "public Token specialToken;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * This field is used to access special tokens that occur prior to this token, but after the immediately preceding regular (non-special) token. If there are no such special tokens, this field is set to null. When there are more than one such special token, this field refers to the last of these special tokens, which in turn refers to the next previous special token through its specialToken field, and so on until the first special token (whose specialToken field is null). The next fields of special tokens refer to other special tokens that immediately follow it (without an intervening regular token).  If there is no such token, this field is null.\n */\n"
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.compiler",
+    "snippet": "private Compiler compiler;",
+    "begin_line": 8,
+    "end_line": 8,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.token_source",
+    "snippet": "public XPathParserTokenManager token_source;",
+    "begin_line": 3508,
+    "end_line": 3508,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_input_stream",
+    "snippet": "SimpleCharStream jj_input_stream;",
+    "begin_line": 3509,
+    "end_line": 3509,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.token",
+    "snippet": "public Token token, jj_nt;",
+    "begin_line": 3510,
+    "end_line": 3510,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_nt",
+    "snippet": "public Token token, jj_nt;",
+    "begin_line": 3510,
+    "end_line": 3510,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_scanpos",
+    "snippet": "private Token jj_scanpos, jj_lastpos;",
+    "begin_line": 3511,
+    "end_line": 3511,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_lastpos",
+    "snippet": "private Token jj_scanpos, jj_lastpos;",
+    "begin_line": 3511,
+    "end_line": 3511,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_la",
+    "snippet": "private int jj_la;",
+    "begin_line": 3512,
+    "end_line": 3512,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.lookingAhead",
+    "snippet": "public boolean lookingAhead\u003dfalse;",
+    "begin_line": 3513,
+    "end_line": 3513,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_semLA",
+    "snippet": "private boolean jj_semLA;",
+    "begin_line": 3514,
+    "end_line": 3514,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_gen",
+    "snippet": "private int jj_gen;",
+    "begin_line": 3515,
+    "end_line": 3515,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_la1",
+    "snippet": "final private int[] jj_la1\u003dnew int[39];",
+    "begin_line": 3516,
+    "end_line": 3516,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_la1_0",
+    "snippet": "static private int[] jj_la1_0;",
+    "begin_line": 3517,
+    "end_line": 3517,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_la1_1",
+    "snippet": "static private int[] jj_la1_1;",
+    "begin_line": 3518,
+    "end_line": 3518,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_la1_2",
+    "snippet": "static private int[] jj_la1_2;",
+    "begin_line": 3519,
+    "end_line": 3519,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_2_rtns",
+    "snippet": "final private JJCalls[] jj_2_rtns\u003dnew JJCalls[6];",
+    "begin_line": 3534,
+    "end_line": 3534,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_rescan",
+    "snippet": "private boolean jj_rescan\u003dfalse;",
+    "begin_line": 3535,
+    "end_line": 3535,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_gc",
+    "snippet": "private int jj_gc\u003d0;",
+    "begin_line": 3536,
+    "end_line": 3536,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_expentries",
+    "snippet": "private java.util.Vector jj_expentries\u003dnew java.util.Vector();",
+    "begin_line": 3655,
+    "end_line": 3655,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_expentry",
+    "snippet": "private int[] jj_expentry;",
+    "begin_line": 3656,
+    "end_line": 3656,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_kind",
+    "snippet": "private int jj_kind\u003d-1;",
+    "begin_line": 3657,
+    "end_line": 3657,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_lasttokens",
+    "snippet": "private int[] jj_lasttokens\u003dnew int[100];",
+    "begin_line": 3658,
+    "end_line": 3658,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParser",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "XPathParser.jj_endpos",
+    "snippet": "private int jj_endpos;",
+    "begin_line": 3659,
+    "end_line": 3659,
+    "comment": ""
+  },
+  {
+    "class_name": "JJCalls",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "JJCalls.gen",
+    "snippet": "int gen;",
+    "begin_line": 3769,
+    "end_line": 3769,
+    "comment": ""
+  },
+  {
+    "class_name": "JJCalls",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "JJCalls.first",
+    "snippet": "Token first;",
+    "begin_line": 3770,
+    "end_line": 3770,
+    "comment": ""
+  },
+  {
+    "class_name": "JJCalls",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "JJCalls.arg",
+    "snippet": "int arg;",
+    "begin_line": 3771,
+    "end_line": 3771,
+    "comment": ""
+  },
+  {
+    "class_name": "JJCalls",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParser.java",
+    "signature": "JJCalls.next",
+    "snippet": "JJCalls next;",
+    "begin_line": 3772,
+    "end_line": 3772,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.debugStream",
+    "snippet": "public java.io.PrintStream debugStream\u003dSystem.out;",
+    "begin_line": 8,
+    "end_line": 8,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec0",
+    "snippet": "static final long[] jjbitVec0\u003d{0xfffffffffffffffeL,0xffffffffffffffffL,0xffffffffffffffffL,0xffffffffffffffffL};",
+    "begin_line": 1295,
+    "end_line": 1295,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec2",
+    "snippet": "static final long[] jjbitVec2\u003d{0x0L,0x0L,0xffffffffffffffffL,0xffffffffffffffffL};",
+    "begin_line": 1298,
+    "end_line": 1298,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec3",
+    "snippet": "static final long[] jjbitVec3\u003d{0x0L,0xffffffffffffc000L,0xfffff0007fffffffL,0x7fffffL};",
+    "begin_line": 1301,
+    "end_line": 1301,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec4",
+    "snippet": "static final long[] jjbitVec4\u003d{0x0L,0x0L,0x0L,0xff7fffffff7fffffL};",
+    "begin_line": 1304,
+    "end_line": 1304,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec5",
+    "snippet": "static final long[] jjbitVec5\u003d{0x7ff3ffffffffffffL,0x7ffffffffffffdfeL,0xffffffffffffffffL,0xfc31ffffffffe00fL};",
+    "begin_line": 1307,
+    "end_line": 1307,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec6",
+    "snippet": "static final long[] jjbitVec6\u003d{0xffffffL,0xffffffffffff0000L,0xf80001ffffffffffL,0x3L};",
+    "begin_line": 1310,
+    "end_line": 1310,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec7",
+    "snippet": "static final long[] jjbitVec7\u003d{0x0L,0x0L,0xfffffffbffffd740L,0xffffd547f7fffL};",
+    "begin_line": 1313,
+    "end_line": 1313,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec8",
+    "snippet": "static final long[] jjbitVec8\u003d{0xffffffffffffdffeL,0xffffffffdffeffffL,0xffffffffffff0003L,0x33fcfffffff199fL};",
+    "begin_line": 1316,
+    "end_line": 1316,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec9",
+    "snippet": "static final long[] jjbitVec9\u003d{0xfffe000000000000L,0xfffffffe027fffffL,0x7fL,0x707ffffff0000L};",
+    "begin_line": 1319,
+    "end_line": 1319,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec10",
+    "snippet": "static final long[] jjbitVec10\u003d{0x7fffffe00000000L,0xfffe0000000007feL,0x7cffffffffffffffL,0x60002f7fffL};",
+    "begin_line": 1322,
+    "end_line": 1322,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec11",
+    "snippet": "static final long[] jjbitVec11\u003d{0x23ffffffffffffe0L,0x3ff000000L,0x3c5fdfffff99fe0L,0x30003b0000000L};",
+    "begin_line": 1325,
+    "end_line": 1325,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec12",
+    "snippet": "static final long[] jjbitVec12\u003d{0x36dfdfffff987e0L,0x1c00005e000000L,0x23edfdfffffbafe0L,0x100000000L};",
+    "begin_line": 1328,
+    "end_line": 1328,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec13",
+    "snippet": "static final long[] jjbitVec13\u003d{0x23cdfdfffff99fe0L,0x3b0000000L,0x3bfc718d63dc7e0L,0x0L};",
+    "begin_line": 1331,
+    "end_line": 1331,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec14",
+    "snippet": "static final long[] jjbitVec14\u003d{0x3effdfffffddfe0L,0x300000000L,0x3effdfffffddfe0L,0x340000000L};",
+    "begin_line": 1334,
+    "end_line": 1334,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec15",
+    "snippet": "static final long[] jjbitVec15\u003d{0x3fffdfffffddfe0L,0x300000000L,0x0L,0x0L};",
+    "begin_line": 1337,
+    "end_line": 1337,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec16",
+    "snippet": "static final long[] jjbitVec16\u003d{0xd7ffffffffffeL,0x3fL,0x200d6caefef02596L,0x1fL};",
+    "begin_line": 1340,
+    "end_line": 1340,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec17",
+    "snippet": "static final long[] jjbitVec17\u003d{0x0L,0x3fffffffeffL,0x0L,0x0L};",
+    "begin_line": 1343,
+    "end_line": 1343,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec18",
+    "snippet": "static final long[] jjbitVec18\u003d{0x0L,0x0L,0xffffffff00000000L,0x7fffffffff003fL};",
+    "begin_line": 1346,
+    "end_line": 1346,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec19",
+    "snippet": "static final long[] jjbitVec19\u003d{0x500000000007daedL,0x2c62ab82315001L,0xf580c90040000000L,0x201080000000007L};",
+    "begin_line": 1349,
+    "end_line": 1349,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec20",
+    "snippet": "static final long[] jjbitVec20\u003d{0xffffffffffffffffL,0xffffffffffffffffL,0xffffffff0fffffffL,0x3ffffffffffffffL};",
+    "begin_line": 1352,
+    "end_line": 1352,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec21",
+    "snippet": "static final long[] jjbitVec21\u003d{0xffffffff3f3fffffL,0x3fffffffaaff3f3fL,0x5fdfffffffffffffL,0x1fdc1fff0fcf1fdcL};",
+    "begin_line": 1355,
+    "end_line": 1355,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec22",
+    "snippet": "static final long[] jjbitVec22\u003d{0x4c4000000000L,0x0L,0x7L,0x0L};",
+    "begin_line": 1358,
+    "end_line": 1358,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec23",
+    "snippet": "static final long[] jjbitVec23\u003d{0x3fe00000080L,0xfffffffffffffffeL,0xfffffffe001fffffL,0x7ffffffffffffffL};",
+    "begin_line": 1361,
+    "end_line": 1361,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec24",
+    "snippet": "static final long[] jjbitVec24\u003d{0x1fffffffffe0L,0x0L,0x0L,0x0L};",
+    "begin_line": 1364,
+    "end_line": 1364,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec25",
+    "snippet": "static final long[] jjbitVec25\u003d{0xffffffffffffffffL,0xffffffffffffffffL,0x3fffffffffL,0x0L};",
+    "begin_line": 1367,
+    "end_line": 1367,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec26",
+    "snippet": "static final long[] jjbitVec26\u003d{0xffffffffffffffffL,0xffffffffffffffffL,0xfffffffffL,0x0L};",
+    "begin_line": 1370,
+    "end_line": 1370,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec27",
+    "snippet": "static final long[] jjbitVec27\u003d{0x0L,0x0L,0x80000000000000L,0xff7fffffff7fffffL};",
+    "begin_line": 1373,
+    "end_line": 1373,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec28",
+    "snippet": "static final long[] jjbitVec28\u003d{0xffffffL,0xffffffffffff0000L,0xf80001ffffffffffL,0x30003L};",
+    "begin_line": 1376,
+    "end_line": 1376,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec29",
+    "snippet": "static final long[] jjbitVec29\u003d{0xffffffffffffffffL,0x30000003fL,0xfffffffbffffd7c0L,0xffffd547f7fffL};",
+    "begin_line": 1379,
+    "end_line": 1379,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec30",
+    "snippet": "static final long[] jjbitVec30\u003d{0xffffffffffffdffeL,0xffffffffdffeffffL,0xffffffffffff007bL,0x33fcfffffff199fL};",
+    "begin_line": 1382,
+    "end_line": 1382,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec31",
+    "snippet": "static final long[] jjbitVec31\u003d{0xfffe000000000000L,0xfffffffe027fffffL,0xbbfffffbfffe007fL,0x707ffffff0016L};",
+    "begin_line": 1385,
+    "end_line": 1385,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec32",
+    "snippet": "static final long[] jjbitVec32\u003d{0x7fffffe00000000L,0xffff03ff0007ffffL,0x7cffffffffffffffL,0x3ff3dffffef7fffL};",
+    "begin_line": 1388,
+    "end_line": 1388,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec33",
+    "snippet": "static final long[] jjbitVec33\u003d{0xf3ffffffffffffeeL,0xffcfff1e3fffL,0xd3c5fdfffff99feeL,0x3ffcfb080399fL};",
+    "begin_line": 1391,
+    "end_line": 1391,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec34",
+    "snippet": "static final long[] jjbitVec34\u003d{0xd36dfdfffff987e4L,0x1fffc05e003987L,0xf3edfdfffffbafeeL,0xffc100003bbfL};",
+    "begin_line": 1394,
+    "end_line": 1394,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec35",
+    "snippet": "static final long[] jjbitVec35\u003d{0xf3cdfdfffff99feeL,0xffc3b0c0398fL,0xc3bfc718d63dc7ecL,0xff8000803dc7L};",
+    "begin_line": 1397,
+    "end_line": 1397,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec36",
+    "snippet": "static final long[] jjbitVec36\u003d{0xc3effdfffffddfeeL,0xffc300603ddfL,0xc3effdfffffddfecL,0xffc340603ddfL};",
+    "begin_line": 1400,
+    "end_line": 1400,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec37",
+    "snippet": "static final long[] jjbitVec37\u003d{0xc3fffdfffffddfecL,0xffc300803dcfL,0x0L,0x0L};",
+    "begin_line": 1403,
+    "end_line": 1403,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec38",
+    "snippet": "static final long[] jjbitVec38\u003d{0x7ff7ffffffffffeL,0x3ff7fffL,0x3bff6caefef02596L,0x3ff3f5fL};",
+    "begin_line": 1406,
+    "end_line": 1406,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec39",
+    "snippet": "static final long[] jjbitVec39\u003d{0xc2a003ff03000000L,0xfffe03fffffffeffL,0x2fe3ffffebf0fdfL,0x0L};",
+    "begin_line": 1409,
+    "end_line": 1409,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec40",
+    "snippet": "static final long[] jjbitVec40\u003d{0x0L,0x0L,0x0L,0x21fff0000L};",
+    "begin_line": 1412,
+    "end_line": 1412,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjbitVec41",
+    "snippet": "static final long[] jjbitVec41\u003d{0x3efffe000000a0L,0xfffffffffffffffeL,0xfffffffe661fffffL,0x77ffffffffffffffL};",
+    "begin_line": 1415,
+    "end_line": 1415,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjnextStates",
+    "snippet": "static final int[] jjnextStates\u003d{1,2,4,5};",
+    "begin_line": 1589,
+    "end_line": 1589,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjstrLiteralImages",
+    "snippet": "public static final String[] jjstrLiteralImages\u003d{\"\",null,null,null,null,null,\"\\57\",\"\\57\\57\",\"\\174\",\"\\53\",\"\\55\",\"\\75\",\"\\41\\75\",\"\\74\",\"\\74\\75\",\"\\76\",\"\\76\\75\",\"\\44\",null,null,null,null,null,null,null,null,null,\"\\157\\162\",\"\\141\\156\\144\",\"\\155\\157\\144\",\"\\144\\151\\166\",\"\\156\\157\\144\\145\",\"\\164\\145\\170\\164\",\"\\143\\157\\155\\155\\145\\156\\164\",\"\\160\\162\\157\\143\\145\\163\\163\\151\\156\\147\\55\\151\\156\\163\\164\\162\\165\\143\\164\\151\\157\\156\",\"\\163\\145\\154\\146\\72\\72\",\"\\143\\150\\151\\154\\144\\72\\72\",\"\\160\\141\\162\\145\\156\\164\\72\\72\",\"\\141\\156\\143\\145\\163\\164\\157\\162\\72\\72\",\"\\141\\164\\164\\162\\151\\142\\165\\164\\145\\72\\72\",\"\\156\\141\\155\\145\\163\\160\\141\\143\\145\\72\\72\",\"\\160\\162\\145\\143\\145\\144\\151\\156\\147\\72\\72\",\"\\146\\157\\154\\154\\157\\167\\151\\156\\147\\72\\72\",\"\\144\\145\\163\\143\\145\\156\\144\\141\\156\\164\\72\\72\",\"\\141\\156\\143\\145\\163\\164\\157\\162\\55\\157\\162\\55\\163\\145\\154\\146\\72\\72\",\"\\146\\157\\154\\154\\157\\167\\151\\156\\147\\55\\163\\151\\142\\154\\151\\156\\147\\72\\72\",\"\\160\\162\\145\\143\\145\\144\\151\\156\\147\\55\\163\\151\\142\\154\\151\\156\\147\\72\\72\",\"\\144\\145\\163\\143\\145\\156\\144\\141\\156\\164\\55\\157\\162\\55\\163\\145\\154\\146\\72\\72\",\"\\154\\141\\163\\164\",\"\\160\\157\\163\\151\\164\\151\\157\\156\",\"\\143\\157\\165\\156\\164\",\"\\151\\144\",\"\\153\\145\\171\",\"\\154\\157\\143\\141\\154\\55\\156\\141\\155\\145\",\"\\156\\141\\155\\145\\163\\160\\141\\143\\145\\55\\165\\162\\151\",\"\\156\\141\\155\\145\",\"\\163\\164\\162\\151\\156\\147\",\"\\143\\157\\156\\143\\141\\164\",\"\\163\\164\\141\\162\\164\\163\\55\\167\\151\\164\\150\",\"\\143\\157\\156\\164\\141\\151\\156\\163\",\"\\163\\165\\142\\163\\164\\162\\151\\156\\147\\55\\142\\145\\146\\157\\162\\145\",\"\\163\\165\\142\\163\\164\\162\\151\\156\\147\\55\\141\\146\\164\\145\\162\",\"\\163\\165\\142\\163\\164\\162\\151\\156\\147\",\"\\163\\164\\162\\151\\156\\147\\55\\154\\145\\156\\147\\164\\150\",\"\\156\\157\\162\\155\\141\\154\\151\\172\\145\\55\\163\\160\\141\\143\\145\",\"\\164\\162\\141\\156\\163\\154\\141\\164\\145\",\"\\142\\157\\157\\154\\145\\141\\156\",\"\\156\\157\\164\",\"\\164\\162\\165\\145\",\"\\146\\141\\154\\163\\145\",\"\\156\\165\\154\\154\",\"\\154\\141\\156\\147\",\"\\156\\165\\155\\142\\145\\162\",\"\\163\\165\\155\",\"\\146\\154\\157\\157\\162\",\"\\143\\145\\151\\154\\151\\156\\147\",\"\\162\\157\\165\\156\\144\",\"\\146\\157\\162\\155\\141\\164\\55\\156\\165\\155\\142\\145\\162\",null,\"\\72\",\"\\50\",\"\\51\",\"\\56\",\"\\56\\56\",\"\\133\",\"\\135\",\"\\100\",\"\\54\",\"\\52\"};",
+    "begin_line": 1737,
+    "end_line": 1737,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.lexStateNames",
+    "snippet": "public static final String[] lexStateNames\u003d{\"DEFAULT\"};",
+    "begin_line": 1740,
+    "end_line": 1740,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjtoToken",
+    "snippet": "static final long[] jjtoToken\u003d{0xfffffffff817ffc1L,0x1ffffffL};",
+    "begin_line": 1743,
+    "end_line": 1743,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjtoSkip",
+    "snippet": "static final long[] jjtoSkip\u003d{0x3eL,0x0L};",
+    "begin_line": 1746,
+    "end_line": 1746,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.input_stream",
+    "snippet": "protected SimpleCharStream input_stream;",
+    "begin_line": 1747,
+    "end_line": 1747,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjrounds",
+    "snippet": "private final int[] jjrounds\u003dnew int[13];",
+    "begin_line": 1748,
+    "end_line": 1748,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjstateSet",
+    "snippet": "private final int[] jjstateSet\u003dnew int[26];",
+    "begin_line": 1749,
+    "end_line": 1749,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.curChar",
+    "snippet": "protected char curChar;",
+    "begin_line": 1750,
+    "end_line": 1750,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.curLexState",
+    "snippet": "int curLexState\u003d0;",
+    "begin_line": 1802,
+    "end_line": 1802,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.defaultLexState",
+    "snippet": "int defaultLexState\u003d0;",
+    "begin_line": 1803,
+    "end_line": 1803,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjnewStateCnt",
+    "snippet": "int jjnewStateCnt;",
+    "begin_line": 1804,
+    "end_line": 1804,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjround",
+    "snippet": "int jjround;",
+    "begin_line": 1805,
+    "end_line": 1805,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjmatchedPos",
+    "snippet": "int jjmatchedPos;",
+    "begin_line": 1806,
+    "end_line": 1806,
+    "comment": ""
+  },
+  {
+    "class_name": "XPathParserTokenManager",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/ri/parser/XPathParserTokenManager.java",
+    "signature": "XPathParserTokenManager.jjmatchedKind",
+    "snippet": "int jjmatchedKind;",
+    "begin_line": 1807,
+    "end_line": 1807,
+    "comment": ""
+  },
+  {
+    "class_name": "ValueUtils",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/util/ValueUtils.java",
+    "signature": "ValueUtils.dynamicPropertyHandlerMap",
+    "snippet": "private static Map dynamicPropertyHandlerMap\u003dnew HashMap();",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": ""
+  },
+  {
+    "class_name": "ValueUtils",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/util/ValueUtils.java",
+    "signature": "ValueUtils.UNKNOWN_LENGTH_MAX_COUNT",
+    "snippet": "private static final int UNKNOWN_LENGTH_MAX_COUNT\u003d16000;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.MODEL_DOM",
+    "snippet": "public static final String MODEL_DOM\u003d\"DOM\";",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.MODEL_JDOM",
+    "snippet": "public static final String MODEL_JDOM\u003d\"JDOM\";",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.document",
+    "snippet": "private Object document;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.xmlURL",
+    "snippet": "private URL xmlURL;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.model",
+    "snippet": "private String model;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.parserClasses",
+    "snippet": "private static HashMap parserClasses\u003dnew HashMap();",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "DocumentContainer",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/DocumentContainer.java",
+    "signature": "DocumentContainer.parsers",
+    "snippet": "private static HashMap parsers\u003dnew HashMap();",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.validating",
+    "snippet": "private boolean validating\u003dfalse;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.namespaceAware",
+    "snippet": "private boolean namespaceAware\u003dtrue;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.whitespace",
+    "snippet": "private boolean whitespace\u003dfalse;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.expandEntityRef",
+    "snippet": "private boolean expandEntityRef\u003dtrue;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.ignoreComments",
+    "snippet": "private boolean ignoreComments\u003dfalse;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "XMLParser2",
+    "src_path": "src/main/resources/JxPath-1/buggy/src/java/org/apache/commons/jxpath/xml/XMLParser2.java",
+    "signature": "XMLParser2.coalescing",
+    "snippet": "private boolean coalescing\u003dfalse;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  }
+]
