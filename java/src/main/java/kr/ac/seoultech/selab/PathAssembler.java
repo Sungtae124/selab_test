@@ -90,7 +90,6 @@ public class PathAssembler {
         defects4j.add("Jsoup-26");
         defects4j.add("Jsoup-66");
         defects4j.add("Jsoup-89");
-        defects4j.add("JxPath-1");
         defects4j.add("Lang-20");
         defects4j.add("Lang-33");
         defects4j.add("Lang-39");
@@ -99,10 +98,7 @@ public class PathAssembler {
         defects4j.add("Math-4");
         defects4j.add("Math-70");
         defects4j.add("Math-79");
-        defects4j.add("Mockito-4");
         defects4j.add("Mockito-18");
-        defects4j.add("Mockito-29");
-        defects4j.add("Mockito-36");
         defects4j.add("Mockito-38");
 
         // no code snippet

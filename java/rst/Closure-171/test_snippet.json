@@ -1,0 +1,1341 @@
+[
+    [
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNumRepetitions()",
+            "snippet": "public int getNumRepetitions() {\nreturn 1;\n}",
+            "begin_line": 56,
+            "end_line": 58,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 57,col 5)-(line 57,col 13)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.visit(NodeTraversal t, Node n, Node parent)",
+            "snippet": "public void visit(NodeTraversal t, Node n, Node parent) {\nScope s = t.getScope();\nif (s.isGlobal()) {",
+            "begin_line": 62,
+            "end_line": 64,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 63,col 7)-(line 63,col 29)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getProcessor(final Compiler compiler)",
+            "snippet": "public CompilerPass getProcessor(final Compiler compiler) {\nregistry = compiler.getTypeRegistry();\nreturn new CompilerPass() {",
+            "begin_line": 73,
+            "end_line": 75,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 74,col 5)-(line 74,col 42)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.process(Node externs, Node root)",
+            "snippet": "public void process(Node externs, Node root) {\nMemoizedScopeCreator scopeCreator =",
+            "begin_line": 77,
+            "end_line": 78,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubProperty()",
+            "snippet": "public void testStubProperty() {\ntestSame(\"function Foo() {}; Foo.bar;\");\nObjectType foo = (ObjectType) globalScope.getVar(\"Foo\").getType();\nassertFalse(foo.hasProperty(\"bar\"));\nAsserts.assertTypeEquals(registry.getNativeType(UNKNOWN_TYPE),",
+            "begin_line": 91,
+            "end_line": 95,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 92,col 5)-(line 92,col 44)",
+                "(line 93,col 5)-(line 93,col 70)",
+                "(line 94,col 5)-(line 94,col 40)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorProperty()",
+            "snippet": "public void testConstructorProperty() {\ntestSame(\"var foo = {}; /** @constructor */ foo.Bar = function() {};\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.hasProperty(\"Bar\"));\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n\nJSType fooBar = foo.getPropertyType(\"Bar\");\nassertEquals(\"function (new:foo.Bar): undefined\", fooBar.toString());\nAsserts.assertTypeCollectionEquals(",
+            "begin_line": 101,
+            "end_line": 109,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 102,col 5)-(line 102,col 75)",
+                "(line 103,col 5)-(line 103,col 67)",
+                "(line 104,col 5)-(line 104,col 39)",
+                "(line 105,col 5)-(line 105,col 51)",
+                "(line 106,col 0)-(line 106,col 0)",
+                "(line 107,col 5)-(line 107,col 47)",
+                "(line 108,col 5)-(line 108,col 73)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPrototypePropertyMethodWithoutAnnotation()",
+            "snippet": "public void testPrototypePropertyMethodWithoutAnnotation() {\ntestSame(\"var Foo = function Foo() {};\" +",
+            "begin_line": 113,
+            "end_line": 114,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumProperty()",
+            "snippet": "public void testEnumProperty() {\ntestSame(\"var foo = {}; /** @enum */ foo.Bar = {XXX: 'xxx'};\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.hasProperty(\"Bar\"));\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\nassertTrue(foo.isPropertyTypeDeclared(\"Bar\"));\n\nJSType fooBar = foo.getPropertyType(\"Bar\");\nassertEquals(\"enum{foo.Bar}\", fooBar.toString());\nAsserts.assertTypeCollectionEquals(",
+            "begin_line": 133,
+            "end_line": 142,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 134,col 5)-(line 134,col 67)",
+                "(line 135,col 5)-(line 135,col 67)",
+                "(line 136,col 5)-(line 136,col 39)",
+                "(line 137,col 5)-(line 137,col 51)",
+                "(line 138,col 5)-(line 138,col 50)",
+                "(line 139,col 0)-(line 139,col 0)",
+                "(line 140,col 5)-(line 140,col 47)",
+                "(line 141,col 5)-(line 141,col 53)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty1()",
+            "snippet": "public void testInferredProperty1() {\ntestSame(\"var foo = {}; foo.Bar = 3;\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 146,
+            "end_line": 152,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 147,col 5)-(line 147,col 43)",
+                "(line 148,col 5)-(line 148,col 67)",
+                "(line 149,col 5)-(line 149,col 55)",
+                "(line 150,col 5)-(line 150,col 66)",
+                "(line 151,col 5)-(line 151,col 50)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty1a()",
+            "snippet": "public void testInferredProperty1a() {\ntestSame(\"var foo = {}; /** @type {number} */ foo.Bar = 3;\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 154,
+            "end_line": 160,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 155,col 5)-(line 155,col 65)",
+                "(line 156,col 5)-(line 156,col 67)",
+                "(line 157,col 5)-(line 157,col 55)",
+                "(line 158,col 5)-(line 158,col 66)",
+                "(line 159,col 5)-(line 159,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2()",
+            "snippet": "public void testInferredProperty2() {\ntestSame(\"var foo = { Bar: 3 };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 162,
+            "end_line": 168,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 163,col 5)-(line 163,col 38)",
+                "(line 164,col 5)-(line 164,col 67)",
+                "(line 165,col 5)-(line 165,col 55)",
+                "(line 166,col 5)-(line 166,col 66)",
+                "(line 167,col 5)-(line 167,col 50)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2b()",
+            "snippet": "public void testInferredProperty2b() {\ntestSame(\"var foo = { /** @type {number} */ Bar: 3 };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 170,
+            "end_line": 176,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 171,col 5)-(line 171,col 60)",
+                "(line 172,col 5)-(line 172,col 67)",
+                "(line 173,col 5)-(line 173,col 55)",
+                "(line 174,col 5)-(line 174,col 66)",
+                "(line 175,col 5)-(line 175,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2c()",
+            "snippet": "public void testInferredProperty2c() {\ntestSame(\"var foo = { /** @return {number} */ Bar: 3 };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"function (): number\", foo.getPropertyType(\"Bar\").toString());\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 178,
+            "end_line": 184,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 179,col 5)-(line 179,col 62)",
+                "(line 180,col 5)-(line 180,col 67)",
+                "(line 181,col 5)-(line 181,col 55)",
+                "(line 182,col 5)-(line 182,col 79)",
+                "(line 183,col 5)-(line 183,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty3()",
+            "snippet": "public void testInferredProperty3() {\ntestSame(\"var foo = { /** @type {number} */ get Bar() { return 3 } };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"?\", foo.getPropertyType(\"Bar\").toString());\nassertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 186,
+            "end_line": 192,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 187,col 5)-(line 187,col 76)",
+                "(line 188,col 5)-(line 188,col 67)",
+                "(line 189,col 5)-(line 189,col 55)",
+                "(line 190,col 5)-(line 190,col 61)",
+                "(line 191,col 5)-(line 191,col 50)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty4()",
+            "snippet": "public void testInferredProperty4() {\ntestSame(\"var foo = { /** @type {number} */ set Bar(a) {} };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"?\", foo.getPropertyType(\"Bar\").toString());\nassertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 194,
+            "end_line": 200,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 195,col 5)-(line 195,col 67)",
+                "(line 196,col 5)-(line 196,col 67)",
+                "(line 197,col 5)-(line 197,col 55)",
+                "(line 198,col 5)-(line 198,col 61)",
+                "(line 199,col 5)-(line 199,col 50)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty5()",
+            "snippet": "public void testInferredProperty5() {\ntestSame(\"var foo = { /** @return {number} */ get Bar() { return 3 } };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 202,
+            "end_line": 208,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 203,col 5)-(line 203,col 78)",
+                "(line 204,col 5)-(line 204,col 67)",
+                "(line 205,col 5)-(line 205,col 55)",
+                "(line 206,col 5)-(line 206,col 66)",
+                "(line 207,col 5)-(line 207,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty6()",
+            "snippet": "public void testInferredProperty6() {\ntestSame(\"var foo = { /** @param {number} a */ set Bar(a) {} };\");\nObjectType foo = (ObjectType) findNameType(\"foo\", globalScope);\nassertTrue(foo.toString(), foo.hasProperty(\"Bar\"));\nassertEquals(\"number\", foo.getPropertyType(\"Bar\").toString());\nassertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
+            "begin_line": 210,
+            "end_line": 216,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": [
+                "(line 211,col 5)-(line 211,col 70)",
+                "(line 212,col 5)-(line 212,col 67)",
+                "(line 213,col 5)-(line 213,col 55)",
+                "(line 214,col 5)-(line 214,col 66)",
+                "(line 215,col 5)-(line 215,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPrototypeInit()",
+            "snippet": "public void testPrototypeInit() {\ntestSame(\"/** @constructor */ var Foo = function() {};\" +",
+            "begin_line": 218,
+            "end_line": 219,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBogusPrototypeInit()",
+            "snippet": "public void testBogusPrototypeInit() {\n// This used to cause a compiler crash.",
+            "begin_line": 227,
+            "end_line": 228,
+            "comment": "\n * Tests for {@link TypedScopeCreator} and {@link TypeInference}. Admittedly,\n * the name is a bit of a misnomer.\n * @author nicksantos@google.com (Nick Santos)\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty1()",
+            "snippet": "public void testInferredPrototypeProperty1() {\ntestSame(\"/** @constructor */ var Foo = function() {};\" +",
+            "begin_line": 234,
+            "end_line": 235,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty2()",
+            "snippet": "public void testInferredPrototypeProperty2() {\ntestSame(\"/** @constructor */ var Foo = function() {};\" +",
+            "begin_line": 244,
+            "end_line": 245,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnum()",
+            "snippet": "public void testEnum() {\ntestSame(\"/** @enum */ var Foo = {BAR: 1}; var f = Foo;\");\nObjectType f = (ObjectType) findNameType(\"f\", globalScope);\nassertTrue(f.hasProperty(\"BAR\"));\nassertEquals(\"Foo.<number>\", f.getPropertyType(\"BAR\").toString());\nassertTrue(f instanceof EnumType);\n}",
+            "begin_line": 254,
+            "end_line": 260,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": [
+                "(line 255,col 5)-(line 255,col 62)",
+                "(line 256,col 5)-(line 256,col 63)",
+                "(line 257,col 5)-(line 257,col 37)",
+                "(line 258,col 5)-(line 258,col 70)",
+                "(line 259,col 5)-(line 259,col 38)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumElement()",
+            "snippet": "public void testEnumElement() {\ntestSame(\"/** @enum */ var Foo = {BAR: 1}; var f = Foo;\");\nVar bar = globalScope.getVar(\"Foo.BAR\");\nassertNotNull(bar);\nassertEquals(\"Foo.<number>\", bar.getType().toString());\n}",
+            "begin_line": 262,
+            "end_line": 267,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": [
+                "(line 263,col 5)-(line 263,col 62)",
+                "(line 264,col 5)-(line 264,col 44)",
+                "(line 265,col 5)-(line 265,col 23)",
+                "(line 266,col 5)-(line 266,col 59)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedEnum()",
+            "snippet": "public void testNamespacedEnum() {\ntestSame(\"var goog = {}; goog.ui = {};\" +",
+            "begin_line": 269,
+            "end_line": 270,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumAlias()",
+            "snippet": "public void testEnumAlias() {\ntestSame(\"/** @enum */ var Foo = {BAR: 1}; \" +",
+            "begin_line": 287,
+            "end_line": 288,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacesEnumAlias()",
+            "snippet": "public void testNamespacesEnumAlias() {\ntestSame(\"var goog = {}; /** @enum */ goog.Foo = {BAR: 1}; \" +",
+            "begin_line": 302,
+            "end_line": 303,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStub()",
+            "snippet": "public void testCollectedFunctionStub() {\ntestSame(",
+            "begin_line": 312,
+            "end_line": 313,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStubLocal()",
+            "snippet": "public void testCollectedFunctionStubLocal() {\ntestSame(",
+            "begin_line": 326,
+            "end_line": 327,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStub()",
+            "snippet": "public void testNamespacedFunctionStub() {\ntestSame(",
+            "begin_line": 342,
+            "end_line": 343,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStubLocal()",
+            "snippet": "public void testNamespacedFunctionStubLocal() {\ntestSame(",
+            "begin_line": 357,
+            "end_line": 358,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedCtorProperty()",
+            "snippet": "public void testCollectedCtorProperty() {\ntestSame(",
+            "begin_line": 374,
+            "end_line": 375,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass1()",
+            "snippet": "public void testPropertyOnUnknownSuperClass1() {\ntestSame(",
+            "begin_line": 387,
+            "end_line": 388,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass2()",
+            "snippet": "public void testPropertyOnUnknownSuperClass2() {\ntestSame(",
+            "begin_line": 402,
+            "end_line": 403,
+            "comment": "     This used to cause a compiler crash.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns()",
+            "snippet": "public void testStubsInExterns() {\ntestSame(",
+            "begin_line": 556,
+            "end_line": 557,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns2()",
+            "snippet": "public void testStubsInExterns2() {\ntestSame(",
+            "begin_line": 574,
+            "end_line": 575,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns3()",
+            "snippet": "public void testStubsInExterns3() {\ntestSame(",
+            "begin_line": 592,
+            "end_line": 593,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns4()",
+            "snippet": "public void testStubsInExterns4() {\ntestSame(",
+            "begin_line": 610,
+            "end_line": 611,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns1()",
+            "snippet": "public void testPropertyInExterns1() {\ntestSame(",
+            "begin_line": 627,
+            "end_line": 628,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns2()",
+            "snippet": "public void testPropertyInExterns2() {\ntestSame(",
+            "begin_line": 648,
+            "end_line": 649,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns3()",
+            "snippet": "public void testPropertyInExterns3() {\ntestSame(",
+            "begin_line": 662,
+            "end_line": 663,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTypedStubsInExterns()",
+            "snippet": "public void testTypedStubsInExterns() {\ntestSame(",
+            "begin_line": 672,
+            "end_line": 673,
+            "comment": "   TODO(johnlenz): A syntax for stubs using object literals?",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnInstanceType()",
+            "snippet": "public void testPropertyDeclarationOnInstanceType() {\ntestSame(",
+            "begin_line": 706,
+            "end_line": 707,
+            "comment": "     declared with.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnRecordType()",
+            "snippet": "public void testPropertyDeclarationOnRecordType() {\ntestSame(",
+            "begin_line": 718,
+            "end_line": 719,
+            "comment": "     declared with.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalThis1()",
+            "snippet": "public void testGlobalThis1() {\ntestSame(",
+            "begin_line": 730,
+            "end_line": 731,
+            "comment": "     declared with.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalThis2()",
+            "snippet": "public void testGlobalThis2() {\ntestSame(",
+            "begin_line": 745,
+            "end_line": 746,
+            "comment": "     declared with.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testObjectLiteralCast()",
+            "snippet": "public void testObjectLiteralCast() {\n// Verify that \"goog.reflect.object\" does not modify the types on",
+            "begin_line": 760,
+            "end_line": 761,
+            "comment": "     declared with.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast1()",
+            "snippet": "public void testBadObjectLiteralCast1() {\ntestSame(\"/** @constructor */ A.B = function() {}\\n\" +",
+            "begin_line": 774,
+            "end_line": 775,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast2()",
+            "snippet": "public void testBadObjectLiteralCast2() {\ntestSame(\"goog.reflect.object(A.B, {})\",",
+            "begin_line": 780,
+            "end_line": 781,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorNode()",
+            "snippet": "public void testConstructorNode() {\ntestSame(\"var goog = {}; /** @constructor */ goog.Foo = function() {};\");\n\nObjectType ctor = (ObjectType) (findNameType(\"goog.Foo\", globalScope));\nassertNotNull(ctor);\nassertTrue(ctor.isConstructor());\nassertEquals(\"function (new:goog.Foo): undefined\", ctor.toString());\n}",
+            "begin_line": 785,
+            "end_line": 792,
+            "comment": "     \"A.B\"",
+            "child_ranges": [
+                "(line 786,col 5)-(line 786,col 77)",
+                "(line 787,col 0)-(line 787,col 0)",
+                "(line 788,col 5)-(line 788,col 75)",
+                "(line 789,col 5)-(line 789,col 24)",
+                "(line 790,col 5)-(line 790,col 37)",
+                "(line 791,col 5)-(line 791,col 72)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testForLoopIntegration()",
+            "snippet": "public void testForLoopIntegration() {\ntestSame(\"var y = 3; for (var x = true; x; y = x) {}\");\n\nVar y = globalScope.getVar(\"y\");\nassertTrue(y.isTypeInferred());\nassertEquals(\"(boolean|number)\", y.getType().toString());\n}",
+            "begin_line": 794,
+            "end_line": 800,
+            "comment": "     \"A.B\"",
+            "child_ranges": [
+                "(line 795,col 5)-(line 795,col 59)",
+                "(line 796,col 0)-(line 796,col 0)",
+                "(line 797,col 5)-(line 797,col 36)",
+                "(line 798,col 5)-(line 798,col 35)",
+                "(line 799,col 5)-(line 799,col 61)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorAlias()",
+            "snippet": "public void testConstructorAlias() {\ntestSame(",
+            "begin_line": 802,
+            "end_line": 803,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedConstructorAlias()",
+            "snippet": "public void testNamespacedConstructorAlias() {\ntestSame(",
+            "begin_line": 810,
+            "end_line": 811,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType1()",
+            "snippet": "public void testTemplateType1() {\ntestSame(",
+            "begin_line": 820,
+            "end_line": 821,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2()",
+            "snippet": "public void testTemplateType2() {\ntestSame(",
+            "begin_line": 837,
+            "end_line": 838,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2a()",
+            "snippet": "public void testTemplateType2a() {\ntestSame(",
+            "begin_line": 853,
+            "end_line": 854,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2b()",
+            "snippet": "public void testTemplateType2b() {\ntestSame(",
+            "begin_line": 870,
+            "end_line": 871,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType3()",
+            "snippet": "public void testTemplateType3() {\ntestSame(",
+            "begin_line": 887,
+            "end_line": 888,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4()",
+            "snippet": "public void testTemplateType4() {\ntestSame(",
+            "begin_line": 908,
+            "end_line": 909,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4a()",
+            "snippet": "public void testTemplateType4a() {\ntestSame(",
+            "begin_line": 926,
+            "end_line": 927,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4b()",
+            "snippet": "public void testTemplateType4b() {\ntestSame(",
+            "begin_line": 944,
+            "end_line": 945,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType5()",
+            "snippet": "public void testTemplateType5() {\ntestSame(",
+            "begin_line": 962,
+            "end_line": 963,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType6()",
+            "snippet": "public void testTemplateType6() {\ntestSame(",
+            "begin_line": 979,
+            "end_line": 980,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7()",
+            "snippet": "public void testTemplateType7() {\ntestSame(",
+            "begin_line": 997,
+            "end_line": 998,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7b()",
+            "snippet": "public void testTemplateType7b() {\ntestSame(",
+            "begin_line": 1033,
+            "end_line": 1034,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7c()",
+            "snippet": "public void testTemplateType7c() {\ntestSame(",
+            "begin_line": 1069,
+            "end_line": 1070,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.disable_testTemplateType8()",
+            "snippet": "public void disable_testTemplateType8() {\n// TODO(johnlenz): somehow allow templated typedefs",
+            "begin_line": 1105,
+            "end_line": 1106,
+            "comment": "     \"A.B\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType9()",
+            "snippet": "public void testTemplateType9() {\ntestSame(",
+            "begin_line": 1134,
+            "end_line": 1135,
+            "comment": "     TODO(johnlenz): somehow allow templated typedefs",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType10()",
+            "snippet": "public void testTemplateType10() {\n// NOTE: we would like the type within the function to remain \"Foo\"",
+            "begin_line": 1154,
+            "end_line": 1155,
+            "comment": "     TODO(johnlenz): somehow allow templated typedefs",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType11()",
+            "snippet": "public void testTemplateType11() {\ntestSame(",
+            "begin_line": 1171,
+            "end_line": 1172,
+            "comment": "     to provide a \"minimum\" type for \"Foo\" within the function body.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType12()",
+            "snippet": "public void testTemplateType12() {\ntestSame(",
+            "begin_line": 1189,
+            "end_line": 1190,
+            "comment": "     NOTE: we would like this to be \"Bar\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.disable_testTemplateType13()",
+            "snippet": "public void disable_testTemplateType13() {\n// TODO(johnlenz): allow template types in @type function expressions",
+            "begin_line": 1204,
+            "end_line": 1205,
+            "comment": "     NOTE: we would like this to be \"Bar\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType1()",
+            "snippet": "public void testClassTemplateType1() {\n// Verify that template types used in method signature are resolved.",
+            "begin_line": 1219,
+            "end_line": 1220,
+            "comment": "     TODO(johnlenz): allow template types in @type function expressions",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType2()",
+            "snippet": "public void testClassTemplateType2() {\n// Verify that template types used in method signature on namespaced",
+            "begin_line": 1236,
+            "end_line": 1237,
+            "comment": "     Verify that template types used in method signature are resolved.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType3()",
+            "snippet": "public void testClassTemplateType3() {\n// Verify that template types used for instance properties are recognized.",
+            "begin_line": 1255,
+            "end_line": 1256,
+            "comment": "     objects are resolved.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType4()",
+            "snippet": "public void testClassTemplateType4() {\n// Verify that template types used for instance properties are recognized.",
+            "begin_line": 1272,
+            "end_line": 1273,
+            "comment": "     Verify that template types used for instance properties are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType5()",
+            "snippet": "public void testClassTemplateType5() {\n// Verify that template types used for prototype properties in stub",
+            "begin_line": 1290,
+            "end_line": 1291,
+            "comment": "     Verify that template types used for instance properties are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType6()",
+            "snippet": "public void testClassTemplateType6() {\n// Verify that template types used for prototype properties in assignment",
+            "begin_line": 1309,
+            "end_line": 1310,
+            "comment": "     declarations are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType7()",
+            "snippet": "public void testClassTemplateType7() {\n// Verify that template types used in prototype methods are recognized.",
+            "begin_line": 1328,
+            "end_line": 1329,
+            "comment": "     expressions are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType8()",
+            "snippet": "public void testClassTemplateType8() {\n// Verify that template types used in casts are recognized.",
+            "begin_line": 1343,
+            "end_line": 1344,
+            "comment": "     Verify that template types used in prototype methods are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance1()",
+            "snippet": "public void testClassTemplateInheritance1() {\n// Verify that template type inheritance works for prototype properties.",
+            "begin_line": 1358,
+            "end_line": 1359,
+            "comment": "     Verify that template types used in casts are recognized.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance2()",
+            "snippet": "public void testClassTemplateInheritance2() {\n// Verify that template type inheritance works for properties and methods.",
+            "begin_line": 1387,
+            "end_line": 1388,
+            "comment": "     Verify that template type inheritance works for prototype properties.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance3()",
+            "snippet": "public void testClassTemplateInheritance3() {\n// Verify that template type inheritance works when the superclass template",
+            "begin_line": 1416,
+            "end_line": 1417,
+            "comment": "     Verify that template type inheritance works for properties and methods.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance4()",
+            "snippet": "public void testClassTemplateInheritance4() {\n// Verify that overriding methods works with template type inheritance.",
+            "begin_line": 1446,
+            "end_line": 1447,
+            "comment": "     types are not specified.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance5()",
+            "snippet": "public void testClassTemplateInheritance5() {\n// Verify that overriding methods works with template type inheritance.",
+            "begin_line": 1473,
+            "end_line": 1474,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithoutJSDoc()",
+            "snippet": "public void testClosureParameterTypesWithoutJSDoc() {\ntestSame(",
+            "begin_line": 1506,
+            "end_line": 1507,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithJSDoc()",
+            "snippet": "public void testClosureParameterTypesWithJSDoc() {\ntestSame(",
+            "begin_line": 1516,
+            "end_line": 1517,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty1()",
+            "snippet": "public void testDuplicateExternProperty1() {\ntestSame(",
+            "begin_line": 1527,
+            "end_line": 1528,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty2()",
+            "snippet": "public void testDuplicateExternProperty2() {\ntestSame(",
+            "begin_line": 1536,
+            "end_line": 1537,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod()",
+            "snippet": "public void testAbstractMethod() {\ntestSame(",
+            "begin_line": 1544,
+            "end_line": 1545,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod2()",
+            "snippet": "public void testAbstractMethod2() {\ntestSame(",
+            "begin_line": 1564,
+            "end_line": 1565,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod3()",
+            "snippet": "public void testAbstractMethod3() {\ntestSame(",
+            "begin_line": 1576,
+            "end_line": 1577,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod4()",
+            "snippet": "public void testAbstractMethod4() {\ntestSame(",
+            "begin_line": 1585,
+            "end_line": 1586,
+            "comment": "     Verify that overriding methods works with template type inheritance.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testActiveXObject()",
+            "snippet": "public void testActiveXObject() {\ntestSame(",
+            "begin_line": 1606,
+            "end_line": 1607,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference1()",
+            "snippet": "public void testReturnTypeInference1() {\ntestSame(\"function f() {}\");\nassertEquals(",
+            "begin_line": 1615,
+            "end_line": 1617,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1616,col 5)-(line 1616,col 32)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference2()",
+            "snippet": "public void testReturnTypeInference2() {\ntestSame(\"/** @return {?} */ function f() {}\");\nassertEquals(",
+            "begin_line": 1622,
+            "end_line": 1624,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1623,col 5)-(line 1623,col 51)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference3()",
+            "snippet": "public void testReturnTypeInference3() {\ntestSame(\"function f() {x: return 3;}\");\nassertEquals(",
+            "begin_line": 1629,
+            "end_line": 1631,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1630,col 5)-(line 1630,col 44)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference4()",
+            "snippet": "public void testReturnTypeInference4() {\ntestSame(\"function f() { throw Error(); }\");\nassertEquals(",
+            "begin_line": 1636,
+            "end_line": 1638,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1637,col 5)-(line 1637,col 48)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference5()",
+            "snippet": "public void testReturnTypeInference5() {\ntestSame(\"function f() { if (true) { return 1; } }\");\nassertEquals(",
+            "begin_line": 1643,
+            "end_line": 1645,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1644,col 5)-(line 1644,col 57)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testLiteralTypesInferred()",
+            "snippet": "public void testLiteralTypesInferred() {\ntestSame(\"null + true + false + 0 + '' + {}\");\nassertEquals(",
+            "begin_line": 1650,
+            "end_line": 1652,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": [
+                "(line 1651,col 5)-(line 1651,col 50)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalQualifiedNameInLocalScope()",
+            "snippet": "public void testGlobalQualifiedNameInLocalScope() {\ntestSame(",
+            "begin_line": 1666,
+            "end_line": 1667,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression1()",
+            "snippet": "public void testDeclaredCatchExpression1() {\ntestSame(",
+            "begin_line": 1855,
+            "end_line": 1856,
+            "comment": "         should be: \"function (this:Foo, number): ?\"",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression2()",
+            "snippet": "public void testDeclaredCatchExpression2() {\ntestSame(",
+            "begin_line": 1863,
+            "end_line": 1864,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findNameType(final String name, Scope scope)",
+            "snippet": "private JSType findNameType(final String name, Scope scope) {\nreturn findTypeOnMatchedNode(new Predicate<Node>() {",
+            "begin_line": 1871,
+            "end_line": 1872,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTypeOnMatchedNode(new Predicate<Node>()",
+            "snippet": "return findTypeOnMatchedNode(new Predicate<Node>() {\n@Override public boolean apply(Node n) {",
+            "begin_line": 1872,
+            "end_line": 1873,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findNameTypeStr(final String name, Scope scope)",
+            "snippet": "private String findNameTypeStr(final String name, Scope scope) {\nreturn findNameType(name, scope).toString();\n}",
+            "begin_line": 1879,
+            "end_line": 1881,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": [
+                "(line 1880,col 5)-(line 1880,col 48)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTokenType(final int type, Scope scope)",
+            "snippet": "private JSType findTokenType(final int type, Scope scope) {\nreturn findTypeOnMatchedNode(new Predicate<Node>() {",
+            "begin_line": 1883,
+            "end_line": 1884,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTypeOnMatchedNode(new Predicate<Node>()",
+            "snippet": "return findTypeOnMatchedNode(new Predicate<Node>() {\n@Override public boolean apply(Node n) {",
+            "begin_line": 1884,
+            "end_line": 1885,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTypeOnMatchedNode(Predicate<Node> matcher, Scope scope)",
+            "snippet": "private JSType findTypeOnMatchedNode(Predicate<Node> matcher, Scope scope) {\nNode root = scope.getRootNode();\nDeque<Node> queue = Lists.newLinkedList();\nqueue.push(root);\nwhile (!queue.isEmpty()) {",
+            "begin_line": 1891,
+            "end_line": 1895,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": [
+                "(line 1892,col 5)-(line 1892,col 36)",
+                "(line 1893,col 5)-(line 1893,col 46)",
+                "(line 1894,col 5)-(line 1894,col 21)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNativeType(JSTypeNative type)",
+            "snippet": "private JSType getNativeType(JSTypeNative type) {\nreturn registry.getNativeType(type);\n}",
+            "begin_line": 1909,
+            "end_line": 1911,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": [
+                "(line 1910,col 5)-(line 1910,col 40)"
+            ]
+        },
+        {
+            "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
+            "child_classes": [],
+            "src_path": "test/com/google/javascript/jscomp/TypedScopeCreatorTest.java",
+            "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNativeObjectType(JSTypeNative type)",
+            "snippet": "private ObjectType getNativeObjectType(JSTypeNative type) {\nreturn (ObjectType) registry.getNativeType(type);\n}",
+            "begin_line": 1913,
+            "end_line": 1915,
+            "comment": "     model catches as separate scopes currently.",
+            "child_ranges": [
+                "(line 1914,col 5)-(line 1914,col 53)"
+            ]
+        }
+    ]
+]

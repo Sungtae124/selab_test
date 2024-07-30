@@ -1,0 +1,479 @@
+[
+  {
+    "class_name": "org.mockito.internal.configuration.ClassPathLoader",
+    "src_path": "src/org/mockito/internal/configuration/ClassPathLoader.java",
+    "signature": "org.mockito.internal.configuration.ClassPathLoader.MOCKITO_CONFIGURATION_CLASS_NAME",
+    "snippet": "public static final String MOCKITO_CONFIGURATION_CLASS_NAME\u003d\"org.mockito.configuration.MockitoConfiguration\";",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.DefaultAnnotationEngine",
+    "src_path": "src/org/mockito/internal/configuration/DefaultAnnotationEngine.java",
+    "signature": "org.mockito.internal.configuration.DefaultAnnotationEngine.annotationProcessorMap",
+    "snippet": "private final Map\u003cClass\u003c? extends Annotation\u003e,FieldAnnotationProcessor\u003c?\u003e\u003e annotationProcessorMap\u003dnew HashMap\u003cClass\u003c? extends Annotation\u003e,FieldAnnotationProcessor\u003c?\u003e\u003e();",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.GlobalConfiguration",
+    "src_path": "src/org/mockito/internal/configuration/GlobalConfiguration.java",
+    "signature": "org.mockito.internal.configuration.GlobalConfiguration.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d-2860353062105505938L;",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.GlobalConfiguration",
+    "src_path": "src/org/mockito/internal/configuration/GlobalConfiguration.java",
+    "signature": "org.mockito.internal.configuration.GlobalConfiguration.GLOBAL_CONFIGURATION",
+    "snippet": "private static final ThreadLocal\u003cIMockitoConfiguration\u003e GLOBAL_CONFIGURATION\u003dnew ThreadLocal\u003cIMockitoConfiguration\u003e();",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.InjectingAnnotationEngine",
+    "src_path": "src/org/mockito/internal/configuration/InjectingAnnotationEngine.java",
+    "signature": "org.mockito.internal.configuration.InjectingAnnotationEngine.delegate",
+    "snippet": "private final AnnotationEngine delegate\u003dnew DefaultAnnotationEngine();",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.InjectingAnnotationEngine",
+    "src_path": "src/org/mockito/internal/configuration/InjectingAnnotationEngine.java",
+    "signature": "org.mockito.internal.configuration.InjectingAnnotationEngine.spyAnnotationEngine",
+    "snippet": "private final AnnotationEngine spyAnnotationEngine\u003dnew SpyAnnotationEngine();",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.ConstructorInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/ConstructorInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.ConstructorInjection.argResolver",
+    "snippet": "private ConstructorArgumentResolver argResolver;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.ConstructorInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/ConstructorInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.ConstructorInjection.objects",
+    "snippet": "final Set\u003cObject\u003e objects;",
+    "begin_line": 70,
+    "end_line": 70,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjection.fields",
+    "snippet": "private final Set\u003cField\u003e fields\u003dnew HashSet\u003cField\u003e();",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjection.mocks",
+    "snippet": "private final Set\u003cObject\u003e mocks\u003dnewMockSafeHashSet();",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjection.fieldOwner",
+    "snippet": "private final Object fieldOwner;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjection.injectionStrategies",
+    "snippet": "private final MockInjectionStrategy injectionStrategies\u003dMockInjectionStrategy.nop();",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjection.postInjectionStrategies",
+    "snippet": "private final MockInjectionStrategy postInjectionStrategies\u003dMockInjectionStrategy.nop();",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.MockInjectionStrategy",
+    "src_path": "src/org/mockito/internal/configuration/injection/MockInjectionStrategy.java",
+    "signature": "org.mockito.internal.configuration.injection.MockInjectionStrategy.nextStrategy",
+    "snippet": "private MockInjectionStrategy nextStrategy;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.PropertyAndSetterInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.PropertyAndSetterInjection.mockCandidateFilter",
+    "snippet": "private final MockCandidateFilter mockCandidateFilter\u003dnew TypeBasedCandidateFilter(new NameBasedCandidateFilter(new FinalMockCandidateFilter()));",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.PropertyAndSetterInjection",
+    "src_path": "src/org/mockito/internal/configuration/injection/PropertyAndSetterInjection.java",
+    "signature": "org.mockito.internal.configuration.injection.PropertyAndSetterInjection.notFinalOrStatic",
+    "snippet": "private final ListUtil.Filter\u003cField\u003e notFinalOrStatic\u003dnew ListUtil.Filter\u003cField\u003e(){\n  public boolean isOut(  Field object){\n    return Modifier.isFinal(object.getModifiers()) || Modifier.isStatic(object.getModifiers());\n  }\n}\n;",
+    "begin_line": 63,
+    "end_line": 68,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.filter.NameBasedCandidateFilter",
+    "src_path": "src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java",
+    "signature": "org.mockito.internal.configuration.injection.filter.NameBasedCandidateFilter.next",
+    "snippet": "private final MockCandidateFilter next;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.filter.NameBasedCandidateFilter",
+    "src_path": "src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java",
+    "signature": "org.mockito.internal.configuration.injection.filter.NameBasedCandidateFilter.mockUtil",
+    "snippet": "private final MockUtil mockUtil\u003dnew MockUtil();",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.filter.TypeBasedCandidateFilter",
+    "src_path": "src/org/mockito/internal/configuration/injection/filter/TypeBasedCandidateFilter.java",
+    "signature": "org.mockito.internal.configuration.injection.filter.TypeBasedCandidateFilter.next",
+    "snippet": "MockCandidateFilter next;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.scanner.InjectMocksScanner",
+    "src_path": "src/org/mockito/internal/configuration/injection/scanner/InjectMocksScanner.java",
+    "signature": "org.mockito.internal.configuration.injection.scanner.InjectMocksScanner.clazz",
+    "snippet": "private final Class\u003c?\u003e clazz;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.scanner.MockScanner",
+    "src_path": "src/org/mockito/internal/configuration/injection/scanner/MockScanner.java",
+    "signature": "org.mockito.internal.configuration.injection.scanner.MockScanner.mockUtil",
+    "snippet": "private final MockUtil mockUtil\u003dnew MockUtil();",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.scanner.MockScanner",
+    "src_path": "src/org/mockito/internal/configuration/injection/scanner/MockScanner.java",
+    "signature": "org.mockito.internal.configuration.injection.scanner.MockScanner.instance",
+    "snippet": "private final Object instance;",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.injection.scanner.MockScanner",
+    "src_path": "src/org/mockito/internal/configuration/injection/scanner/MockScanner.java",
+    "signature": "org.mockito.internal.configuration.injection.scanner.MockScanner.clazz",
+    "snippet": "private final Class\u003c?\u003e clazz;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.PluginFinder",
+    "src_path": "src/org/mockito/internal/configuration/plugins/PluginFinder.java",
+    "signature": "org.mockito.internal.configuration.plugins.PluginFinder.pluginSwitch",
+    "snippet": "private final PluginSwitch pluginSwitch;",
+    "begin_line": 12,
+    "end_line": 12,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.PluginLoader",
+    "src_path": "src/org/mockito/internal/configuration/plugins/PluginLoader.java",
+    "signature": "org.mockito.internal.configuration.plugins.PluginLoader.pluginSwitch",
+    "snippet": "private final PluginSwitch pluginSwitch;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.PluginRegistry",
+    "src_path": "src/org/mockito/internal/configuration/plugins/PluginRegistry.java",
+    "signature": "org.mockito.internal.configuration.plugins.PluginRegistry.pluginSwitch",
+    "snippet": "private final PluginSwitch pluginSwitch\u003dnew PluginLoader(new DefaultPluginSwitch()).loadPlugin(PluginSwitch.class,DefaultPluginSwitch.class.getName());",
+    "begin_line": 10,
+    "end_line": 10,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.PluginRegistry",
+    "src_path": "src/org/mockito/internal/configuration/plugins/PluginRegistry.java",
+    "signature": "org.mockito.internal.configuration.plugins.PluginRegistry.mockMaker",
+    "snippet": "private final MockMaker mockMaker\u003dnew PluginLoader(pluginSwitch).loadPlugin(MockMaker.class,\"org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker\");",
+    "begin_line": 13,
+    "end_line": 13,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.PluginRegistry",
+    "src_path": "src/org/mockito/internal/configuration/plugins/PluginRegistry.java",
+    "signature": "org.mockito.internal.configuration.plugins.PluginRegistry.stackTraceCleanerProvider",
+    "snippet": "private final StackTraceCleanerProvider stackTraceCleanerProvider\u003dnew PluginLoader(pluginSwitch).loadPlugin(StackTraceCleanerProvider.class,\"org.mockito.internal.exceptions.stacktrace.DefaultStackTraceCleanerProvider\");",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.configuration.plugins.Plugins",
+    "src_path": "src/org/mockito/internal/configuration/plugins/Plugins.java",
+    "signature": "org.mockito.internal.configuration.plugins.Plugins.registry",
+    "snippet": "private static PluginRegistry registry\u003dnew PluginRegistry();",
+    "begin_line": 11,
+    "end_line": 11,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.ArgumentMatcherStorageImpl",
+    "src_path": "src/org/mockito/internal/progress/ArgumentMatcherStorageImpl.java",
+    "signature": "org.mockito.internal.progress.ArgumentMatcherStorageImpl.TWO_SUB_MATCHERS",
+    "snippet": "public static final int TWO_SUB_MATCHERS\u003d2;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.ArgumentMatcherStorageImpl",
+    "src_path": "src/org/mockito/internal/progress/ArgumentMatcherStorageImpl.java",
+    "signature": "org.mockito.internal.progress.ArgumentMatcherStorageImpl.ONE_SUB_MATCHER",
+    "snippet": "public static final int ONE_SUB_MATCHER\u003d1;",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.ArgumentMatcherStorageImpl",
+    "src_path": "src/org/mockito/internal/progress/ArgumentMatcherStorageImpl.java",
+    "signature": "org.mockito.internal.progress.ArgumentMatcherStorageImpl.matcherStack",
+    "snippet": "private final Stack\u003cLocalizedMatcher\u003e matcherStack\u003dnew Stack\u003cLocalizedMatcher\u003e();",
+    "begin_line": 26,
+    "end_line": 26,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.reporter",
+    "snippet": "private final Reporter reporter\u003dnew Reporter();",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.argumentMatcherStorage",
+    "snippet": "private final ArgumentMatcherStorage argumentMatcherStorage\u003dnew ArgumentMatcherStorageImpl();",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.iOngoingStubbing",
+    "snippet": "IOngoingStubbing iOngoingStubbing;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.verificationMode",
+    "snippet": "private Localized\u003cVerificationMode\u003e verificationMode;",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.stubbingInProgress",
+    "snippet": "private Location stubbingInProgress\u003dnull;",
+    "begin_line": 26,
+    "end_line": 26,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.MockingProgressImpl",
+    "src_path": "src/org/mockito/internal/progress/MockingProgressImpl.java",
+    "signature": "org.mockito.internal.progress.MockingProgressImpl.listener",
+    "snippet": "private MockingProgressListener listener;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.ThreadSafeMockingProgress",
+    "src_path": "src/org/mockito/internal/progress/ThreadSafeMockingProgress.java",
+    "signature": "org.mockito.internal.progress.ThreadSafeMockingProgress.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d6839454041642082618L;",
+    "begin_line": 17,
+    "end_line": 17,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.progress.ThreadSafeMockingProgress",
+    "src_path": "src/org/mockito/internal/progress/ThreadSafeMockingProgress.java",
+    "signature": "org.mockito.internal.progress.ThreadSafeMockingProgress.mockingProgress",
+    "snippet": "private static final ThreadLocal\u003cMockingProgress\u003e mockingProgress\u003dnew ThreadLocal\u003cMockingProgress\u003e();",
+    "begin_line": 18,
+    "end_line": 18,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues",
+    "src_path": "src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+    "signature": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d1998191268711234347L;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues",
+    "src_path": "src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+    "signature": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues.methodsGuru",
+    "snippet": "ObjectMethodsGuru methodsGuru\u003dnew ObjectMethodsGuru();",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues",
+    "src_path": "src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java",
+    "signature": "org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues.mockUtil",
+    "snippet": "MockUtil mockUtil\u003dnew MockUtil();",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.MockUtil",
+    "src_path": "src/org/mockito/internal/util/MockUtil.java",
+    "signature": "org.mockito.internal.util.MockUtil.mockMaker",
+    "snippet": "private static final MockMaker mockMaker\u003dPlugins.getMockMaker();",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.ObjectMethodsGuru",
+    "src_path": "src/org/mockito/internal/util/ObjectMethodsGuru.java",
+    "signature": "org.mockito.internal.util.ObjectMethodsGuru.serialVersionUID",
+    "snippet": "private static final long serialVersionUID\u003d-1286718569065470494L;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.Primitives",
+    "src_path": "src/org/mockito/internal/util/Primitives.java",
+    "signature": "org.mockito.internal.util.Primitives.PRIMITIVE_TYPES",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e PRIMITIVE_TYPES\u003dnew HashMap\u003cClass\u003c?\u003e,Class\u003c?\u003e\u003e();",
+    "begin_line": 13,
+    "end_line": 13,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.Primitives",
+    "src_path": "src/org/mockito/internal/util/Primitives.java",
+    "signature": "org.mockito.internal.util.Primitives.PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e,Object\u003e PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES\u003dnew HashMap\u003cClass\u003c?\u003e,Object\u003e();",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.collections.HashCodeAndEqualsSafeSet",
+    "src_path": "src/org/mockito/internal/util/collections/HashCodeAndEqualsSafeSet.java",
+    "signature": "org.mockito.internal.util.collections.HashCodeAndEqualsSafeSet.backingHashSet",
+    "snippet": "private final HashSet\u003cHashCodeAndEqualsMockWrapper\u003e backingHashSet\u003dnew HashSet\u003cHashCodeAndEqualsMockWrapper\u003e();",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.collections.HashCodeAndEqualsSafeSet",
+    "src_path": "src/org/mockito/internal/util/collections/HashCodeAndEqualsSafeSet.java",
+    "signature": "org.mockito.internal.util.collections.HashCodeAndEqualsSafeSet.iterator",
+    "snippet": "private final Iterator\u003cHashCodeAndEqualsMockWrapper\u003e iterator\u003dbackingHashSet.iterator();",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.reflection.AccessibilityChanger",
+    "src_path": "src/org/mockito/internal/util/reflection/AccessibilityChanger.java",
+    "signature": "org.mockito.internal.util.reflection.AccessibilityChanger.wasAccessible",
+    "snippet": "private Boolean wasAccessible\u003dnull;",
+    "begin_line": 11,
+    "end_line": 11,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.reflection.FieldReader",
+    "src_path": "src/org/mockito/internal/util/reflection/FieldReader.java",
+    "signature": "org.mockito.internal.util.reflection.FieldReader.target",
+    "snippet": "final Object target;",
+    "begin_line": 13,
+    "end_line": 13,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.reflection.FieldReader",
+    "src_path": "src/org/mockito/internal/util/reflection/FieldReader.java",
+    "signature": "org.mockito.internal.util.reflection.FieldReader.field",
+    "snippet": "final Field field;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "org.mockito.internal.util.reflection.FieldReader",
+    "src_path": "src/org/mockito/internal/util/reflection/FieldReader.java",
+    "signature": "org.mockito.internal.util.reflection.FieldReader.changer",
+    "snippet": "final AccessibilityChanger changer\u003dnew AccessibilityChanger();",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  }
+]

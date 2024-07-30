@@ -1,0 +1,20 @@
+[
+    [],
+    [
+        {
+            "class_name": "org.apache.commons.cli.UtilTest",
+            "child_classes": [],
+            "src_path": "src/test/org/apache/commons/cli/UtilTest.java",
+            "signature": "org.apache.commons.cli.UtilTest.testStripLeadingHyphens()",
+            "snippet": "public void testStripLeadingHyphens() {\nassertEquals(\"f\", Util.stripLeadingHyphens(\"-f\"));\nassertEquals(\"foo\", Util.stripLeadingHyphens(\"--foo\"));\nassertNull(Util.stripLeadingHyphens(null));\n}",
+            "begin_line": 25,
+            "end_line": 29,
+            "comment": "\n * @author brianegge\n ",
+            "child_ranges": [
+                "(line 26,col 9)-(line 26,col 58)",
+                "(line 27,col 9)-(line 27,col 63)",
+                "(line 28,col 9)-(line 28,col 51)"
+            ]
+        }
+    ]
+]

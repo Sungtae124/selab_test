@@ -1,0 +1,1442 @@
+[
+  {
+    "name": "Assertions.Assertions#27",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Assertions.java",
+    "class_name": "org.apache.commons.csv.Assertions",
+    "signature": "org.apache.commons.csv.Assertions.Assertions",
+    "snippet": "private Assertions(){\n}",
+    "begin_line": 27,
+    "end_line": 29,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Assertions.notNull#31",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Assertions.java",
+    "class_name": "org.apache.commons.csv.Assertions",
+    "signature": "org.apache.commons.csv.Assertions.notNull",
+    "snippet": "public static void notNull(Object parameter,String parameterName){\n  if (parameter \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Parameter \u0027\" + parameterName + \"\u0027 must not be null!\");\n  }\n}",
+    "begin_line": 31,
+    "end_line": 35,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isLineBreak#234",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isLineBreak",
+    "snippet": "private static boolean isLineBreak(final char c){\n  return c \u003d\u003d LF || c \u003d\u003d CR;\n}",
+    "begin_line": 234,
+    "end_line": 239,
+    "comment": "/** \n * Returns true if the given character is a line break character.\n * @param c the character to check\n * @return true if \u003ccode\u003ec\u003c/code\u003e is a line break character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isLineBreak#246",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isLineBreak",
+    "snippet": "private static boolean isLineBreak(final Character c){\n  return c !\u003d null \u0026\u0026 isLineBreak(c.charValue());\n}",
+    "begin_line": 246,
+    "end_line": 251,
+    "comment": "/** \n * Returns true if the given character is a line break character.\n * @param c the character to check, may be null\n * @return true if \u003ccode\u003ec\u003c/code\u003e is a line break character (and not null)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.newFormat#259",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.newFormat",
+    "snippet": "public static CSVFormat newFormat(final char delimiter){\n  return new CSVFormat(delimiter,null,null,null,null,false,false,null,null,null,false);\n}",
+    "begin_line": 259,
+    "end_line": 263,
+    "comment": "/** \n * Creates a new CSV format with the specified delimiter.\n * @param delimiter the char used for value separation, must not be a line break character\n * @return a new CSV format.\n * @throws IllegalArgumentException if the delimiter is a line break character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.CSVFormat#280",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.CSVFormat",
+    "snippet": "CSVFormat(final char delimiter,final Character quoteChar,final Quote quotePolicy,final Character commentStart,final Character escape,final boolean ignoreSurroundingSpaces,final boolean ignoreEmptyLines,final String recordSeparator,final String nullString,final String[] header,boolean skipHeaderRecord){\n  if (isLineBreak(delimiter)) {\n    throw new IllegalArgumentException(\"The delimiter cannot be a line break\");\n  }\n  this.delimiter\u003ddelimiter;\n  this.quoteChar\u003dquoteChar;\n  this.quotePolicy\u003dquotePolicy;\n  this.commentStart\u003dcommentStart;\n  this.escape\u003descape;\n  this.ignoreSurroundingSpaces\u003dignoreSurroundingSpaces;\n  this.ignoreEmptyLines\u003dignoreEmptyLines;\n  this.recordSeparator\u003drecordSeparator;\n  this.nullString\u003dnullString;\n  this.header\u003dheader \u003d\u003d null ? null : header.clone();\n  this.skipHeaderRecord\u003dskipHeaderRecord;\n}",
+    "begin_line": 280,
+    "end_line": 311,
+    "comment": "/** \n * Creates a customized CSV format.\n * @param delimiter the char used for value separation, must not be a line break character\n * @param quoteChar the Character used as value encapsulation marker, may be  {@code null} to disable\n * @param quotePolicy the quote policy\n * @param commentStart the Character used for comment identification, may be  {@code null} to disable\n * @param escape the Character used to escape special characters in values, may be  {@code null} to disable\n * @param ignoreSurroundingSpaces \u003ctt\u003etrue\u003c/tt\u003e when whitespaces enclosing values should be ignored\n * @param ignoreEmptyLines \u003ctt\u003etrue\u003c/tt\u003e when the parser should skip empty lines\n * @param recordSeparator the line separator to use for output\n * @param nullString the line separator to use for output\n * @param header the header\n * @param skipHeaderRecord TODO\n * @throws IllegalArgumentException if the delimiter is a line break character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.equals#313",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.equals",
+    "snippet": "@Override public boolean equals(final Object obj){\n  if (this \u003d\u003d obj) {\n    return true;\n  }\n  if (obj \u003d\u003d null) {\n    return false;\n  }\n  if (getClass() !\u003d obj.getClass()) {\n    return false;\n  }\n  final CSVFormat other\u003d(CSVFormat)obj;\n  if (delimiter !\u003d other.delimiter) {\n    return false;\n  }\n  if (quotePolicy !\u003d other.quotePolicy) {\n    return false;\n  }\n  if (quoteChar \u003d\u003d null) {\n    if (other.quoteChar !\u003d null) {\n      return false;\n    }\n  }\n else   if (!quoteChar.equals(other.quoteChar)) {\n    return false;\n  }\n  if (commentStart \u003d\u003d null) {\n    if (other.commentStart !\u003d null) {\n      return false;\n    }\n  }\n else   if (!commentStart.equals(other.commentStart)) {\n    return false;\n  }\n  if (escape \u003d\u003d null) {\n    if (other.escape !\u003d null) {\n      return false;\n    }\n  }\n else   if (!escape.equals(other.escape)) {\n    return false;\n  }\n  if (!Arrays.equals(header,other.header)) {\n    return false;\n  }\n  if (ignoreSurroundingSpaces !\u003d other.ignoreSurroundingSpaces) {\n    return false;\n  }\n  if (ignoreEmptyLines !\u003d other.ignoreEmptyLines) {\n    return false;\n  }\n  if (recordSeparator \u003d\u003d null) {\n    if (other.recordSeparator !\u003d null) {\n      return false;\n    }\n  }\n else   if (!recordSeparator.equals(other.recordSeparator)) {\n    return false;\n  }\n  return true;\n}",
+    "begin_line": 313,
+    "end_line": 370,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.format#374",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.format",
+    "snippet": "public String format(final Object... values){\n  final StringWriter out\u003dnew StringWriter();\n  try {\n    new CSVPrinter(out,this).printRecord(values);\n    return out.toString().trim();\n  }\n catch (  final IOException e) {\n    throw new IllegalStateException(e);\n  }\n}",
+    "begin_line": 374,
+    "end_line": 388,
+    "comment": "/** \n * Formats the specified values.\n * @param values the values to format\n * @return the formatted values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getCommentStart#394",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getCommentStart",
+    "snippet": "public Character getCommentStart(){\n  return commentStart;\n}",
+    "begin_line": 394,
+    "end_line": 397,
+    "comment": "/** \n * Returns the character marking the start of a line comment.\n * @return the comment start marker, may be {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getDelimiter#403",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getDelimiter",
+    "snippet": "public char getDelimiter(){\n  return delimiter;\n}",
+    "begin_line": 403,
+    "end_line": 406,
+    "comment": "/** \n * Returns the character delimiting the values (typically \u0027;\u0027, \u0027,\u0027 or \u0027\\t\u0027).\n * @return the delimiter character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getEscape#412",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getEscape",
+    "snippet": "public Character getEscape(){\n  return escape;\n}",
+    "begin_line": 412,
+    "end_line": 415,
+    "comment": "/** \n * Returns the escape character.\n * @return the escape character, may be {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getHeader#421",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getHeader",
+    "snippet": "public String[] getHeader(){\n  return header !\u003d null ? header.clone() : null;\n}",
+    "begin_line": 421,
+    "end_line": 424,
+    "comment": "/** \n * Returns a copy of the header array.\n * @return a copy of the header array\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getIgnoreEmptyLines#430",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getIgnoreEmptyLines",
+    "snippet": "public boolean getIgnoreEmptyLines(){\n  return ignoreEmptyLines;\n}",
+    "begin_line": 430,
+    "end_line": 434,
+    "comment": "/** \n * Specifies whether empty lines between records are ignored when parsing input.\n * @return \u003ctt\u003etrue\u003c/tt\u003e if empty lines between records are ignored, \u003ctt\u003efalse\u003c/tt\u003e if they are turned into emptyrecords.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getIgnoreSurroundingSpaces#440",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getIgnoreSurroundingSpaces",
+    "snippet": "public boolean getIgnoreSurroundingSpaces(){\n  return ignoreSurroundingSpaces;\n}",
+    "begin_line": 440,
+    "end_line": 444,
+    "comment": "/** \n * Specifies whether spaces around values are ignored when parsing input.\n * @return \u003ctt\u003etrue\u003c/tt\u003e if spaces around values are ignored, \u003ctt\u003efalse\u003c/tt\u003e if they are treated as part of thevalue.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getNullString#450",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getNullString",
+    "snippet": "public String getNullString(){\n  return nullString;\n}",
+    "begin_line": 450,
+    "end_line": 461,
+    "comment": "/** \n * Gets the String to convert to and from  {@code null}. \u003cul\u003e \u003cli\u003e \u003cstrong\u003eReading:\u003c/strong\u003e Converts strings equal to the given  {@code nullString} to {@code null} when readingrecords. \u003c/li\u003e \u003cli\u003e \u003cstrong\u003eWriting:\u003c/strong\u003e Writes  {@code null} as the given {@code nullString} when writing records.\u003c/li\u003e\u003c/ul\u003e\n * @return the String to convert to and from {@code null}. No substitution occurs if  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getQuoteChar#467",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getQuoteChar",
+    "snippet": "public Character getQuoteChar(){\n  return quoteChar;\n}",
+    "begin_line": 467,
+    "end_line": 470,
+    "comment": "/** \n * Returns the character used to encapsulate values containing special characters.\n * @return the quoteChar character, may be {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getQuotePolicy#476",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getQuotePolicy",
+    "snippet": "public Quote getQuotePolicy(){\n  return quotePolicy;\n}",
+    "begin_line": 476,
+    "end_line": 479,
+    "comment": "/** \n * Returns the quote policy output fields.\n * @return the quote policy\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getRecordSeparator#485",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getRecordSeparator",
+    "snippet": "public String getRecordSeparator(){\n  return recordSeparator;\n}",
+    "begin_line": 485,
+    "end_line": 488,
+    "comment": "/** \n * Returns the line separator delimiting output records.\n * @return the line separator\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.getSkipHeaderRecord#494",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.getSkipHeaderRecord",
+    "snippet": "public boolean getSkipHeaderRecord(){\n  return skipHeaderRecord;\n}",
+    "begin_line": 494,
+    "end_line": 497,
+    "comment": "/** \n * Returns whether to skip the header record.\n * @return whether to skip the header record.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.hashCode#499",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.hashCode",
+    "snippet": "@Override public int hashCode(){\n  final int prime\u003d31;\n  int result\u003d1;\n  result\u003dprime * result + delimiter;\n  result\u003dprime * result + ((quotePolicy \u003d\u003d null) ? 0 : quotePolicy.hashCode());\n  result\u003dprime * result + ((quoteChar \u003d\u003d null) ? 0 : quoteChar.hashCode());\n  result\u003dprime * result + ((commentStart \u003d\u003d null) ? 0 : commentStart.hashCode());\n  result\u003dprime * result + ((escape \u003d\u003d null) ? 0 : escape.hashCode());\n  result\u003dprime * result + (ignoreSurroundingSpaces ? 1231 : 1237);\n  result\u003dprime * result + (ignoreEmptyLines ? 1231 : 1237);\n  result\u003dprime * result + ((recordSeparator \u003d\u003d null) ? 0 : recordSeparator.hashCode());\n  result\u003dprime * result + Arrays.hashCode(header);\n  return result;\n}",
+    "begin_line": 499,
+    "end_line": 515,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isCommentingEnabled#521",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isCommentingEnabled",
+    "snippet": "public boolean isCommentingEnabled(){\n  return commentStart !\u003d null;\n}",
+    "begin_line": 521,
+    "end_line": 526,
+    "comment": "/** \n * Specifies whether comments are supported by this format. Note that the comment introducer character is only recognized at the start of a line.\n * @return \u003ctt\u003etrue\u003c/tt\u003e is comments are supported, \u003ctt\u003efalse\u003c/tt\u003e otherwise\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isEscaping#532",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isEscaping",
+    "snippet": "public boolean isEscaping(){\n  return escape !\u003d null;\n}",
+    "begin_line": 532,
+    "end_line": 535,
+    "comment": "/** \n * Returns whether escape are being processed.\n * @return {@code true} if escapes are processed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isNullHandling#541",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isNullHandling",
+    "snippet": "public boolean isNullHandling(){\n  return nullString !\u003d null;\n}",
+    "begin_line": 541,
+    "end_line": 544,
+    "comment": "/** \n * Returns whether a nullString has been defined.\n * @return {@code true} if a nullString is defined\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.isQuoting#550",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.isQuoting",
+    "snippet": "public boolean isQuoting(){\n  return quoteChar !\u003d null;\n}",
+    "begin_line": 550,
+    "end_line": 553,
+    "comment": "/** \n * Returns whether a quoteChar has been defined.\n * @return {@code true} if a quoteChar is defined\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.parse#556",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.parse",
+    "snippet": "public CSVParser parse(final Reader in) throws IOException {\n  return new CSVParser(in,this);\n}",
+    "begin_line": 556,
+    "end_line": 570,
+    "comment": "/** \n * Parses the specified content. \u003cp\u003e See also the various static parse methods on  {@link CSVParser}. \u003c/p\u003e\n * @param in the input stream\n * @return a parser over a stream of {@link CSVRecord}s.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.toString#572",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.toString",
+    "snippet": "@Override public String toString(){\n  final StringBuilder sb\u003dnew StringBuilder();\n  sb.append(\"Delimiter\u003d\u003c\").append(delimiter).append(\u0027\u003e\u0027);\n  if (isEscaping()) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"Escape\u003d\u003c\").append(escape).append(\u0027\u003e\u0027);\n  }\n  if (isQuoting()) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"QuoteChar\u003d\u003c\").append(quoteChar).append(\u0027\u003e\u0027);\n  }\n  if (isCommentingEnabled()) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"CommentStart\u003d\u003c\").append(commentStart).append(\u0027\u003e\u0027);\n  }\n  if (isNullHandling()) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"NullString\u003d\u003c\").append(nullString).append(\u0027\u003e\u0027);\n  }\n  if (recordSeparator !\u003d null) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"RecordSeparator\u003d\u003c\").append(recordSeparator).append(\u0027\u003e\u0027);\n  }\n  if (getIgnoreEmptyLines()) {\n    sb.append(\" EmptyLines:ignored\");\n  }\n  if (getIgnoreSurroundingSpaces()) {\n    sb.append(\" SurroundingSpaces:ignored\");\n  }\n  sb.append(\" SkipHeaderRecord:\").append(skipHeaderRecord);\n  if (header !\u003d null) {\n    sb.append(\u0027 \u0027);\n    sb.append(\"Header:\").append(Arrays.toString(header));\n  }\n  return sb.toString();\n}",
+    "begin_line": 572,
+    "end_line": 608,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.validate#614",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.validate",
+    "snippet": "void validate() throws IllegalStateException {\n  if (quoteChar !\u003d null \u0026\u0026 delimiter \u003d\u003d quoteChar.charValue()) {\n    throw new IllegalStateException(\"The quoteChar character and the delimiter cannot be the same (\u0027\" + quoteChar + \"\u0027)\");\n  }\n  if (escape !\u003d null \u0026\u0026 delimiter \u003d\u003d escape.charValue()) {\n    throw new IllegalStateException(\"The escape character and the delimiter cannot be the same (\u0027\" + escape + \"\u0027)\");\n  }\n  if (commentStart !\u003d null \u0026\u0026 delimiter \u003d\u003d commentStart.charValue()) {\n    throw new IllegalStateException(\"The comment start character and the delimiter cannot be the same (\u0027\" + commentStart + \"\u0027)\");\n  }\n  if (quoteChar !\u003d null \u0026\u0026 quoteChar.equals(commentStart)) {\n    throw new IllegalStateException(\"The comment start character and the quoteChar cannot be the same (\u0027\" + commentStart + \"\u0027)\");\n  }\n  if (escape !\u003d null \u0026\u0026 escape.equals(commentStart)) {\n    throw new IllegalStateException(\"The comment start and the escape character cannot be the same (\u0027\" + commentStart + \"\u0027)\");\n  }\n  if (escape \u003d\u003d null \u0026\u0026 quotePolicy \u003d\u003d Quote.NONE) {\n    throw new IllegalStateException(\"No quotes mode set but no escape character is set\");\n  }\n  if (header !\u003d null) {\n    final Set\u003cString\u003e set\u003dnew HashSet\u003cString\u003e(header.length);\n    set.addAll(Arrays.asList(header));\n    if (set.size() !\u003d header.length) {\n      throw new IllegalStateException(\"The header contains duplicate names: \" + Arrays.toString(header));\n    }\n  }\n}",
+    "begin_line": 614,
+    "end_line": 652,
+    "comment": "/** \n * Verifies the consistency of the parameters and throws an IllegalStateException if necessary.\n * @throws IllegalStateException\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withCommentStart#660",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withCommentStart",
+    "snippet": "public CSVFormat withCommentStart(final char commentStart){\n  return withCommentStart(Character.valueOf(commentStart));\n}",
+    "begin_line": 660,
+    "end_line": 667,
+    "comment": "/** \n * Sets the comment start marker of the format to the specified character. Note that the comment start character is only recognized at the start of a line.\n * @param commentStart the comment start marker\n * @return A new CSVFormat that is equal to this one but with the specified character as the comment start marker\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withCommentStart#675",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withCommentStart",
+    "snippet": "public CSVFormat withCommentStart(final Character commentStart){\n  if (isLineBreak(commentStart)) {\n    throw new IllegalArgumentException(\"The comment start character cannot be a line break\");\n  }\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 675,
+    "end_line": 686,
+    "comment": "/** \n * Sets the comment start marker of the format to the specified character. Note that the comment start character is only recognized at the start of a line.\n * @param commentStart the comment start marker, use  {@code null} to disable\n * @return A new CSVFormat that is equal to this one but with the specified character as the comment start marker\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withDelimiter#694",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withDelimiter",
+    "snippet": "public CSVFormat withDelimiter(final char delimiter){\n  if (isLineBreak(delimiter)) {\n    throw new IllegalArgumentException(\"The delimiter cannot be a line break\");\n  }\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 694,
+    "end_line": 703,
+    "comment": "/** \n * Sets the delimiter of the format to the specified character.\n * @param delimiter the delimiter character\n * @return A new CSVFormat that is equal to this with the specified character as delimiter\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withEscape#711",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withEscape",
+    "snippet": "public CSVFormat withEscape(final char escape){\n  return withEscape(Character.valueOf(escape));\n}",
+    "begin_line": 711,
+    "end_line": 716,
+    "comment": "/** \n * Sets the escape character of the format to the specified character.\n * @param escape the escape character\n * @return A new CSVFormat that is equal to his but with the specified character as the escape character\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withEscape#724",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withEscape",
+    "snippet": "public CSVFormat withEscape(final Character escape){\n  if (isLineBreak(escape)) {\n    throw new IllegalArgumentException(\"The escape character cannot be a line break\");\n  }\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 724,
+    "end_line": 733,
+    "comment": "/** \n * Sets the escape character of the format to the specified character.\n * @param escape the escape character, use  {@code null} to disable\n * @return A new CSVFormat that is equal to this but with the specified character as the escape character\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withHeader#736",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withHeader",
+    "snippet": "public CSVFormat withHeader(final String... header){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 736,
+    "end_line": 755,
+    "comment": "/** \n * Sets the header of the format. The header can either be parsed automatically from the input file with: \u003cpre\u003e CSVFormat format \u003d aformat.withHeader();\u003c/pre\u003e or specified manually with: \u003cpre\u003e CSVFormat format \u003d aformat.withHeader(\u0026quot;name\u0026quot;, \u0026quot;email\u0026quot;, \u0026quot;phone\u0026quot;);\u003c/pre\u003e\n * @param header the header, \u003ctt\u003enull\u003c/tt\u003e if disabled, empty if parsed automatically, user specified otherwise.\n * @return A new CSVFormat that is equal to this but with the specified header\n * @see #withSkipHeaderRecord(boolean)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withIgnoreEmptyLines#762",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withIgnoreEmptyLines",
+    "snippet": "public CSVFormat withIgnoreEmptyLines(final boolean ignoreEmptyLines){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 762,
+    "end_line": 768,
+    "comment": "/** \n * Sets the empty line skipping behavior of the format.\n * @param ignoreEmptyLines the empty line skipping behavior, \u003ctt\u003etrue\u003c/tt\u003e to ignore the empty lines between the records, \u003ctt\u003efalse\u003c/tt\u003e to translate empty lines to empty records.\n * @return A new CSVFormat that is equal to this but with the specified empty line skipping behavior.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withIgnoreSurroundingSpaces#775",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withIgnoreSurroundingSpaces",
+    "snippet": "public CSVFormat withIgnoreSurroundingSpaces(final boolean ignoreSurroundingSpaces){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 775,
+    "end_line": 781,
+    "comment": "/** \n * Sets the trimming behavior of the format.\n * @param ignoreSurroundingSpaces the trimming behavior, \u003ctt\u003etrue\u003c/tt\u003e to remove the surrounding spaces, \u003ctt\u003efalse\u003c/tt\u003e to leave the spaces as is.\n * @return A new CSVFormat that is equal to this but with the specified trimming behavior.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withNullString#788",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withNullString",
+    "snippet": "public CSVFormat withNullString(final String nullString){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 788,
+    "end_line": 801,
+    "comment": "/** \n * Performs conversions to and from null for strings on input and output. \u003cul\u003e \u003cli\u003e \u003cstrong\u003eReading:\u003c/strong\u003e Converts strings equal to the given  {@code nullString} to {@code null} when readingrecords.\u003c/li\u003e \u003cli\u003e \u003cstrong\u003eWriting:\u003c/strong\u003e Writes  {@code null} as the given {@code nullString} when writing records.\u003c/li\u003e\u003c/ul\u003e\n * @param nullString the String to convert to and from  {@code null}. No substitution occurs if  {@code null}\n * @return A new CSVFormat that is equal to this but with the specified null conversion string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withQuoteChar#809",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withQuoteChar",
+    "snippet": "public CSVFormat withQuoteChar(final char quoteChar){\n  return withQuoteChar(Character.valueOf(quoteChar));\n}",
+    "begin_line": 809,
+    "end_line": 814,
+    "comment": "/** \n * Sets the quoteChar of the format to the specified character.\n * @param quoteChar the quoteChar character\n * @return A new CSVFormat that is equal to this but with the specified character as quoteChar\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withQuoteChar#822",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withQuoteChar",
+    "snippet": "public CSVFormat withQuoteChar(final Character quoteChar){\n  if (isLineBreak(quoteChar)) {\n    throw new IllegalArgumentException(\"The quoteChar cannot be a line break\");\n  }\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 822,
+    "end_line": 831,
+    "comment": "/** \n * Sets the quoteChar of the format to the specified character.\n * @param quoteChar the quoteChar character, use  {@code null} to disable\n * @return A new CSVFormat that is equal to this but with the specified character as quoteChar\n * @throws IllegalArgumentException thrown if the specified character is a line break\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withQuotePolicy#838",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withQuotePolicy",
+    "snippet": "public CSVFormat withQuotePolicy(final Quote quotePolicy){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 838,
+    "end_line": 844,
+    "comment": "/** \n * Sets the output quote policy of the format to the specified value.\n * @param quotePolicy the quote policy to use for output.\n * @return A new CSVFormat that is equal to this but with the specified quote policy\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withRecordSeparator#851",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withRecordSeparator",
+    "snippet": "public CSVFormat withRecordSeparator(final char recordSeparator){\n  return withRecordSeparator(String.valueOf(recordSeparator));\n}",
+    "begin_line": 851,
+    "end_line": 856,
+    "comment": "/** \n * Sets the record separator of the format to the specified character.\n * @param recordSeparator the record separator to use for output.\n * @return A new CSVFormat that is equal to this but with the the specified output record separator\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withRecordSeparator#863",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withRecordSeparator",
+    "snippet": "public CSVFormat withRecordSeparator(final String recordSeparator){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 863,
+    "end_line": 869,
+    "comment": "/** \n * Sets the record separator of the format to the specified String.\n * @param recordSeparator the record separator to use for output.\n * @return A new CSVFormat that is equal to this but with the the specified output record separator\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVFormat.withSkipHeaderRecord#877",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVFormat.java",
+    "class_name": "org.apache.commons.csv.CSVFormat",
+    "signature": "org.apache.commons.csv.CSVFormat.withSkipHeaderRecord",
+    "snippet": "public CSVFormat withSkipHeaderRecord(final boolean skipHeaderRecord){\n  return new CSVFormat(delimiter,quoteChar,quotePolicy,commentStart,escape,ignoreSurroundingSpaces,ignoreEmptyLines,recordSeparator,nullString,header,skipHeaderRecord);\n}",
+    "begin_line": 877,
+    "end_line": 883,
+    "comment": "/** \n * Sets whether to skip the header record.\n * @param skipHeaderRecord whether to skip the header record.\n * @return A new CSVFormat that is equal to this but with the the specified skipHeaderRecord setting.\n * @see #withHeader(String...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.parse#136",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.parse",
+    "snippet": "public static CSVParser parse(File file,final CSVFormat format) throws IOException {\n  Assertions.notNull(file,\"file\");\n  Assertions.notNull(format,\"format\");\n  return new CSVParser(new FileReader(file),format);\n}",
+    "begin_line": 136,
+    "end_line": 153,
+    "comment": "/** \n * Creates a parser for the given  {@link File}.\n * @param file a CSV file. Must not be null.\n * @param format the CSVFormat used for CSV parsing. Must not be null.\n * @return a new parser\n * @throws IllegalArgumentException If the parameters of the format are inconsistent or if either file or format are null.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.parse#156",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.parse",
+    "snippet": "public static CSVParser parse(String string,final CSVFormat format) throws IOException {\n  Assertions.notNull(string,\"string\");\n  Assertions.notNull(format,\"format\");\n  return new CSVParser(new StringReader(string),format);\n}",
+    "begin_line": 156,
+    "end_line": 173,
+    "comment": "/** \n * Creates a parser for the given  {@link String}.\n * @param string a CSV string. Must not be null.\n * @param format the CSVFormat used for CSV parsing. Must not be null.\n * @return a new parser\n * @throws IllegalArgumentException If the parameters of the format are inconsistent or if either string or format are null.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.parse#176",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.parse",
+    "snippet": "public static CSVParser parse(URL url,Charset charset,final CSVFormat format) throws IOException {\n  Assertions.notNull(url,\"url\");\n  Assertions.notNull(charset,\"charset\");\n  Assertions.notNull(format,\"format\");\n  return new CSVParser(new InputStreamReader(url.openStream(),charset \u003d\u003d null ? Charset.forName(\"UTF-8\") : charset),format);\n}",
+    "begin_line": 176,
+    "end_line": 202,
+    "comment": "/** \n * Creates a parser for the given URL. \u003cp\u003e If you do not read all records from the given  {@code url}, you should call  {@link #close()} on the parser, unlessyou close the  {@code url}. \u003c/p\u003e\n * @param url a URL. Must not be null.\n * @param charset the charset for the resource. Must not be null.\n * @param format the CSVFormat used for CSV parsing. Must not be null.\n * @return a new parser\n * @throws IllegalArgumentException If the parameters of the format are inconsistent or if either url, charset or format are null.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.CSVParser#227",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.CSVParser",
+    "snippet": "public CSVParser(final Reader reader,final CSVFormat format) throws IOException {\n  Assertions.notNull(reader,\"reader\");\n  Assertions.notNull(format,\"format\");\n  format.validate();\n  this.format\u003dformat;\n  this.lexer\u003dnew Lexer(format,new ExtendedBufferedReader(reader));\n  this.headerMap\u003dthis.initializeHeader();\n}",
+    "begin_line": 227,
+    "end_line": 245,
+    "comment": "/** \n * Customized CSV parser using the given  {@link CSVFormat}\u003cp\u003e If you do not read all records from the given  {@code reader}, you should call  {@link #close()} on the parser,unless you close the  {@code reader}. \u003c/p\u003e\n * @param reader a Reader containing CSV-formatted input. Must not be null.\n * @param format the CSVFormat used for CSV parsing. Must not be null.\n * @throws IllegalArgumentException If the parameters of the format are inconsistent or if either reader or format are null.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.addRecordValue#247",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.addRecordValue",
+    "snippet": "private void addRecordValue(){\n  final String input\u003dthis.reusableToken.content.toString();\n  final String nullString\u003dthis.format.getNullString();\n  if (nullString \u003d\u003d null) {\n    this.record.add(input);\n  }\n else {\n    this.record.add(input.equalsIgnoreCase(nullString) ? null : input);\n  }\n}",
+    "begin_line": 247,
+    "end_line": 255,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.close#261",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.close",
+    "snippet": "public void close() throws IOException {\n  if (this.lexer !\u003d null) {\n    this.lexer.close();\n  }\n}",
+    "begin_line": 261,
+    "end_line": 267,
+    "comment": "/** \n * Closes resources.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.getCurrentLineNumber#273",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.getCurrentLineNumber",
+    "snippet": "public long getCurrentLineNumber(){\n  return this.lexer.getCurrentLineNumber();\n}",
+    "begin_line": 273,
+    "end_line": 278,
+    "comment": "/** \n * Returns the current line number in the input stream. \u003cp/\u003e ATTENTION: If your CSV input has multi-line values, the returned number does not correspond to the record number.\n * @return current line number\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.getHeaderMap#284",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.getHeaderMap",
+    "snippet": "public Map\u003cString,Integer\u003e getHeaderMap(){\n  return new LinkedHashMap\u003cString,Integer\u003e(this.headerMap);\n}",
+    "begin_line": 284,
+    "end_line": 289,
+    "comment": "/** \n * Returns a copy of the header map that iterates in column order. \u003cp\u003e The map keys are column names. The map values are 0-based indices. \u003c/p\u003e\n * @return a copy of the header map that iterates in column order.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.getRecordNumber#295",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.getRecordNumber",
+    "snippet": "public long getRecordNumber(){\n  return this.recordNumber;\n}",
+    "begin_line": 295,
+    "end_line": 300,
+    "comment": "/** \n * Returns the current record number in the input stream. \u003cp/\u003e ATTENTION: If your CSV input has multi-line values, the returned number does not correspond to the line number.\n * @return current line number\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.getRecords#307",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.getRecords",
+    "snippet": "public List\u003cCSVRecord\u003e getRecords() throws IOException {\n  final List\u003cCSVRecord\u003e records\u003dnew ArrayList\u003cCSVRecord\u003e();\n  CSVRecord rec;\n  while ((rec\u003dthis.nextRecord()) !\u003d null) {\n    records.add(rec);\n  }\n  return records;\n}",
+    "begin_line": 307,
+    "end_line": 319,
+    "comment": "/** \n * Parses the CSV input according to the given format and returns the content as a list of {@link CSVRecord CSVRecords}. \u003cp/\u003e The returned content starts at the current parse-position in the stream.\n * @return list of {@link CSVRecord CSVRecords}, may be empty\n * @throws IOException on parse error or input read-failure\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.initializeHeader#324",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.initializeHeader",
+    "snippet": "private Map\u003cString,Integer\u003e initializeHeader() throws IOException {\n  Map\u003cString,Integer\u003e hdrMap\u003dnull;\n  final String[] formatHeader\u003dthis.format.getHeader();\n  if (formatHeader !\u003d null) {\n    hdrMap\u003dnew LinkedHashMap\u003cString,Integer\u003e();\n    String[] header\u003dnull;\n    if (formatHeader.length \u003d\u003d 0) {\n      final CSVRecord record\u003dthis.nextRecord();\n      if (record !\u003d null) {\n        header\u003drecord.values();\n      }\n    }\n else {\n      if (this.format.getSkipHeaderRecord()) {\n        this.nextRecord();\n      }\n      header\u003dformatHeader;\n    }\n    if (header !\u003d null) {\n      for (int i\u003d0; i \u003c header.length; i++) {\n        hdrMap.put(header[i],Integer.valueOf(i));\n      }\n    }\n  }\n  return hdrMap;\n}",
+    "begin_line": 324,
+    "end_line": 352,
+    "comment": "/** \n * Initializes the name to index mapping if the format defines a header.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.isClosed#354",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.isClosed",
+    "snippet": "public boolean isClosed(){\n  return this.lexer.isClosed();\n}",
+    "begin_line": 354,
+    "end_line": 356,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.iterator#359",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.iterator",
+    "snippet": "public Iterator\u003cCSVRecord\u003e iterator(){\n  return new Iterator\u003cCSVRecord\u003e(){\n    private CSVRecord current;\n    private CSVRecord getNextRecord(){\n      try {\n        return CSVParser.this.nextRecord();\n      }\n catch (      final IOException e) {\n        throw new RuntimeException(e);\n      }\n    }\n    public boolean hasNext(){\n      if (CSVParser.this.isClosed()) {\n        return false;\n      }\n      if (this.current \u003d\u003d null) {\n        this.current\u003dthis.getNextRecord();\n      }\n      return this.current !\u003d null;\n    }\n    public CSVRecord next(){\n      if (CSVParser.this.isClosed()) {\n        throw new NoSuchElementException(\"CSVParser has been closed\");\n      }\n      CSVRecord next\u003dthis.current;\n      this.current\u003dnull;\n      if (next \u003d\u003d null) {\n        next\u003dthis.getNextRecord();\n        if (next \u003d\u003d null) {\n          throw new NoSuchElementException(\"No more CSV records available\");\n        }\n      }\n      return next;\n    }\n    public void remove(){\n      throw new UnsupportedOperationException();\n    }\n  }\n;\n}",
+    "begin_line": 359,
+    "end_line": 412,
+    "comment": "/** \n * Returns an iterator on the records. \u003cp\u003eIOExceptions occurring during the iteration are wrapped in a RuntimeException. If the parser is closed a call to  {@code next()} will throw aNoSuchElementException.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.getNextRecord#370",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.getNextRecord",
+    "snippet": "private CSVRecord getNextRecord(){\n  try {\n    return CSVParser.this.nextRecord();\n  }\n catch (  final IOException e) {\n    throw new RuntimeException(e);\n  }\n}",
+    "begin_line": 370,
+    "end_line": 377,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.hasNext#379",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.hasNext",
+    "snippet": "public boolean hasNext(){\n  if (CSVParser.this.isClosed()) {\n    return false;\n  }\n  if (this.current \u003d\u003d null) {\n    this.current\u003dthis.getNextRecord();\n  }\n  return this.current !\u003d null;\n}",
+    "begin_line": 379,
+    "end_line": 388,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.next#390",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.next",
+    "snippet": "public CSVRecord next(){\n  if (CSVParser.this.isClosed()) {\n    throw new NoSuchElementException(\"CSVParser has been closed\");\n  }\n  CSVRecord next\u003dthis.current;\n  this.current\u003dnull;\n  if (next \u003d\u003d null) {\n    next\u003dthis.getNextRecord();\n    if (next \u003d\u003d null) {\n      throw new NoSuchElementException(\"No more CSV records available\");\n    }\n  }\n  return next;\n}",
+    "begin_line": 390,
+    "end_line": 406,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.remove#408",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.remove",
+    "snippet": "public void remove(){\n  throw new UnsupportedOperationException();\n}",
+    "begin_line": 408,
+    "end_line": 410,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CSVParser.nextRecord#419",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/CSVParser.java",
+    "class_name": "org.apache.commons.csv.CSVParser",
+    "signature": "org.apache.commons.csv.CSVParser.nextRecord",
+    "snippet": "CSVRecord nextRecord() throws IOException {\n  CSVRecord result\u003dnull;\n  this.record.clear();\n  StringBuilder sb\u003dnull;\n  do {\n    this.reusableToken.reset();\n    this.lexer.nextToken(this.reusableToken);\nswitch (this.reusableToken.type) {\ncase TOKEN:      this.addRecordValue();\n    break;\ncase EORECORD:  this.addRecordValue();\nbreak;\ncase EOF:if (this.reusableToken.isReady) {\nthis.addRecordValue();\n}\nbreak;\ncase INVALID:throw new IOException(\"(line \" + this.getCurrentLineNumber() + \") invalid parse sequence\");\ncase COMMENT:if (sb \u003d\u003d null) {\nsb\u003dnew StringBuilder();\n}\n else {\nsb.append(Constants.LF);\n}\nsb.append(this.reusableToken.content);\nthis.reusableToken.type\u003dTOKEN;\nbreak;\n}\n}\n while (this.reusableToken.type \u003d\u003d TOKEN);\nif (!this.record.isEmpty()) {\nthis.recordNumber++;\nfinal String comment\u003dsb \u003d\u003d null ? null : sb.toString();\nresult\u003dnew CSVRecord(this.record.toArray(new String[this.record.size()]),this.headerMap,comment,this.recordNumber);\n}\nreturn result;\n}",
+    "begin_line": 419,
+    "end_line": 461,
+    "comment": "/** \n * Parses the next record from the current point in the stream.\n * @return the record as an array of values, or \u003ctt\u003enull\u003c/tt\u003e if the end of the stream has been reached\n * @throws IOException on parse error or input read-failure\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.ExtendedBufferedReader#50",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.ExtendedBufferedReader",
+    "snippet": "ExtendedBufferedReader(final Reader reader){\n  super(reader);\n}",
+    "begin_line": 50,
+    "end_line": 52,
+    "comment": "/** \n * Created extended buffered reader using default buffer-size\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.read#54",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.read",
+    "snippet": "@Override public int read() throws IOException {\n  final int current\u003dsuper.read();\n  if (current \u003d\u003d CR || (current \u003d\u003d LF \u0026\u0026 lastChar !\u003d CR)) {\n    eolCounter++;\n  }\n  lastChar\u003dcurrent;\n  return lastChar;\n}",
+    "begin_line": 54,
+    "end_line": 62,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.getLastChar#68",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.getLastChar",
+    "snippet": "int getLastChar(){\n  return lastChar;\n}",
+    "begin_line": 68,
+    "end_line": 74,
+    "comment": "/** \n * Returns the last character that was read as an integer (0 to 65535). This will be the last character returned by any of the read methods. This will not include a character read using the  {@link #lookAhead()} method. If nocharacter has been read then this will return  {@link Constants#UNDEFINED}. If the end of the stream was reached on the last read then this will return  {@link Constants#END_OF_STREAM}.\n * @return the last character that was read\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.read#76",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.read",
+    "snippet": "@Override public int read(final char[] buf,final int offset,final int length) throws IOException {\n  if (length \u003d\u003d 0) {\n    return 0;\n  }\n  final int len\u003dsuper.read(buf,offset,length);\n  if (len \u003e 0) {\n    for (int i\u003doffset; i \u003c offset + len; i++) {\n      final char ch\u003dbuf[i];\n      if (ch \u003d\u003d LF) {\n        if (CR !\u003d (i \u003e 0 ? buf[i - 1] : lastChar)) {\n          eolCounter++;\n        }\n      }\n else       if (ch \u003d\u003d CR) {\n        eolCounter++;\n      }\n    }\n    lastChar\u003dbuf[offset + len - 1];\n  }\n else   if (len \u003d\u003d -1) {\n    lastChar\u003dEND_OF_STREAM;\n  }\n  return len;\n}",
+    "begin_line": 76,
+    "end_line": 104,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.readLine#107",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.readLine",
+    "snippet": "@Override public String readLine() throws IOException {\n  final String line\u003dsuper.readLine();\n  if (line !\u003d null) {\n    lastChar\u003dLF;\n    eolCounter++;\n  }\n else {\n    lastChar\u003dEND_OF_STREAM;\n  }\n  return line;\n}",
+    "begin_line": 107,
+    "end_line": 128,
+    "comment": "/** \n * Calls  {@link BufferedReader#readLine()} which drops the line terminator(s). This method should only be calledwhen processing a comment, otherwise information can be lost. \u003cp\u003e Increments  {@link #eolCounter}\u003cp\u003e Sets  {@link #lastChar} to {@link Constants#END_OF_STREAM} at EOF, otherwise to LF\n * @return the line that was read, or null if reached EOF.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.lookAhead#135",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.lookAhead",
+    "snippet": "int lookAhead() throws IOException {\n  super.mark(1);\n  final int c\u003dsuper.read();\n  super.reset();\n  return c;\n}",
+    "begin_line": 135,
+    "end_line": 145,
+    "comment": "/** \n * Returns the next character in the current reader without consuming it. So the next call to  {@link #read()} willstill return this value. Does not affect line number or last character.\n * @return the next character\n * @throws IOException if there is an error in reading\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.getCurrentLineNumber#151",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.getCurrentLineNumber",
+    "snippet": "long getCurrentLineNumber(){\n  if (lastChar \u003d\u003d CR || lastChar \u003d\u003d LF || lastChar \u003d\u003d UNDEFINED || lastChar \u003d\u003d END_OF_STREAM) {\n    return eolCounter;\n  }\n  return eolCounter + 1;\n}",
+    "begin_line": 151,
+    "end_line": 158,
+    "comment": "/** \n * Returns the current line number\n * @return the current line number\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.isClosed#160",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.isClosed",
+    "snippet": "public boolean isClosed(){\n  return closed;\n}",
+    "begin_line": 160,
+    "end_line": 162,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExtendedBufferedReader.close#168",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+    "class_name": "org.apache.commons.csv.ExtendedBufferedReader",
+    "signature": "org.apache.commons.csv.ExtendedBufferedReader.close",
+    "snippet": "@Override public void close() throws IOException {\n  closed\u003dtrue;\n  lastChar\u003dEND_OF_STREAM;\n  super.close();\n}",
+    "begin_line": 168,
+    "end_line": 176,
+    "comment": "/** \n * Closes the stream.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.Lexer#63",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.Lexer",
+    "snippet": "Lexer(final CSVFormat format,final ExtendedBufferedReader in){\n  this.in\u003din;\n  this.delimiter\u003dformat.getDelimiter();\n  this.escape\u003dmapNullToDisabled(format.getEscape());\n  this.quoteChar\u003dmapNullToDisabled(format.getQuoteChar());\n  this.commentStart\u003dmapNullToDisabled(format.getCommentStart());\n  this.ignoreSurroundingSpaces\u003dformat.getIgnoreSurroundingSpaces();\n  this.ignoreEmptyLines\u003dformat.getIgnoreEmptyLines();\n}",
+    "begin_line": 63,
+    "end_line": 69,
+    "comment": "/** \n * INTERNAL API. but ctor needs to be called dynamically by PerformanceTest class \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.nextToken#77",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.nextToken",
+    "snippet": "Token nextToken(final Token token) throws IOException {\n  int lastChar\u003din.getLastChar();\n  int c\u003din.read();\n  boolean eol\u003dreadEndOfLine(c);\n  if (ignoreEmptyLines) {\n    while (eol \u0026\u0026 isStartOfLine(lastChar)) {\n      lastChar\u003dc;\n      c\u003din.read();\n      eol\u003dreadEndOfLine(c);\n      if (isEndOfFile(c)) {\n        token.type\u003dEOF;\n        return token;\n      }\n    }\n  }\n  if (isEndOfFile(lastChar) || (!isDelimiter(lastChar) \u0026\u0026 isEndOfFile(c))) {\n    token.type\u003dEOF;\n    return token;\n  }\n  if (isStartOfLine(lastChar) \u0026\u0026 isCommentStart(c)) {\n    final String line\u003din.readLine();\n    if (line \u003d\u003d null) {\n      token.type\u003dEOF;\n      return token;\n    }\n    final String comment\u003dline.trim();\n    token.content.append(comment);\n    token.type\u003dCOMMENT;\n    return token;\n  }\n  while (token.type \u003d\u003d INVALID) {\n    if (ignoreSurroundingSpaces) {\n      while (isWhitespace(c) \u0026\u0026 !eol) {\n        c\u003din.read();\n        eol\u003dreadEndOfLine(c);\n      }\n    }\n    if (isDelimiter(c)) {\n      token.type\u003dTOKEN;\n    }\n else     if (eol) {\n      token.type\u003dEORECORD;\n    }\n else     if (isQuoteChar(c)) {\n      parseEncapsulatedToken(token);\n    }\n else     if (isEndOfFile(c)) {\n      token.type\u003dEOF;\n      token.isReady\u003dtrue;\n    }\n else {\n      parseSimpleToken(token,c);\n    }\n  }\n  return token;\n}",
+    "begin_line": 77,
+    "end_line": 164,
+    "comment": "/** \n * Returns the next token. \u003cp/\u003e A token corresponds to a term, a record change or an end-of-file indicator.\n * @param token an existing Token object to reuse. The caller is responsible to initialize the Token.\n * @return the next token found\n * @throws java.io.IOException on stream access error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.parseSimpleToken#173",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.parseSimpleToken",
+    "snippet": "private Token parseSimpleToken(final Token token,int ch) throws IOException {\n  while (true) {\n    if (readEndOfLine(ch)) {\n      token.type\u003dEORECORD;\n      break;\n    }\n else     if (isEndOfFile(ch)) {\n      token.type\u003dEOF;\n      token.isReady\u003dtrue;\n      break;\n    }\n else     if (isDelimiter(ch)) {\n      token.type\u003dTOKEN;\n      break;\n    }\n else     if (isEscape(ch)) {\n      final int unescaped\u003dreadEscape();\n      if (unescaped \u003d\u003d Constants.END_OF_STREAM) {\n        token.content.append((char)ch).append((char)in.getLastChar());\n      }\n else {\n        token.content.append((char)unescaped);\n      }\n      ch\u003din.read();\n    }\n else {\n      token.content.append((char)ch);\n      ch\u003din.read();\n    }\n  }\n  if (ignoreSurroundingSpaces) {\n    trimTrailingSpaces(token.content);\n  }\n  return token;\n}",
+    "begin_line": 173,
+    "end_line": 217,
+    "comment": "/** \n * Parses a simple token. \u003cp/\u003e Simple token are tokens which are not surrounded by encapsulators. A simple token might contain escaped delimiters (as \\, or \\;). The token is finished when one of the following conditions become true: \u003cul\u003e \u003cli\u003eend of line has been reached (EORECORD)\u003c/li\u003e \u003cli\u003eend of stream has been reached (EOF)\u003c/li\u003e \u003cli\u003ean unescaped delimiter has been reached (TOKEN)\u003c/li\u003e \u003c/ul\u003e\n * @param token the current token\n * @param ch the current character\n * @return the filled token\n * @throws IOException on stream access error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.parseEncapsulatedToken#225",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.parseEncapsulatedToken",
+    "snippet": "private Token parseEncapsulatedToken(final Token token) throws IOException {\n  final long startLineNumber\u003dgetCurrentLineNumber();\n  int c;\n  while (true) {\n    c\u003din.read();\n    if (isEscape(c)) {\n      final int unescaped\u003dreadEscape();\n      if (unescaped \u003d\u003d Constants.END_OF_STREAM) {\n        token.content.append((char)c).append((char)in.getLastChar());\n      }\n else {\n        token.content.append((char)unescaped);\n      }\n    }\n else     if (isQuoteChar(c)) {\n      if (isQuoteChar(in.lookAhead())) {\n        c\u003din.read();\n        token.content.append((char)c);\n      }\n else {\n        while (true) {\n          c\u003din.read();\n          if (isDelimiter(c)) {\n            token.type\u003dTOKEN;\n            return token;\n          }\n else           if (isEndOfFile(c)) {\n            token.type\u003dEOF;\n            token.isReady\u003dtrue;\n            return token;\n          }\n else           if (readEndOfLine(c)) {\n            token.type\u003dEORECORD;\n            return token;\n          }\n else           if (!isWhitespace(c)) {\n            throw new IOException(\"(line \" + getCurrentLineNumber() + \") invalid char between encapsulated token and delimiter\");\n          }\n        }\n      }\n    }\n else     if (isEndOfFile(c)) {\n      throw new IOException(\"(startline \" + startLineNumber + \") EOF reached before encapsulated token finished\");\n    }\n else {\n      token.content.append((char)c);\n    }\n  }\n}",
+    "begin_line": 225,
+    "end_line": 288,
+    "comment": "/** \n * Parses an encapsulated token. \u003cp/\u003e Encapsulated tokens are surrounded by the given encapsulating-string. The encapsulator itself might be included in the token using a doubling syntax (as \"\", \u0027\u0027) or using escaping (as in \\\", \\\u0027). Whitespaces before and after an encapsulated token are ignored. The token is finished when one of the following conditions become true: \u003cul\u003e \u003cli\u003ean unescaped encapsulator has been reached, and is followed by optional whitespace then:\u003c/li\u003e \u003cul\u003e \u003cli\u003edelimiter (TOKEN)\u003c/li\u003e \u003cli\u003eend of line (EORECORD)\u003c/li\u003e \u003c/ul\u003e \u003cli\u003eend of stream has been reached (EOF)\u003c/li\u003e \u003c/ul\u003e\n * @param token the current token\n * @return a valid token object\n * @throws IOException on invalid state: EOF before closing encapsulator or invalid character before delimiter or EOL\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.mapNullToDisabled#290",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.mapNullToDisabled",
+    "snippet": "private char mapNullToDisabled(final Character c){\n  return c \u003d\u003d null ? DISABLED : c.charValue();\n}",
+    "begin_line": 290,
+    "end_line": 292,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.getCurrentLineNumber#298",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.getCurrentLineNumber",
+    "snippet": "long getCurrentLineNumber(){\n  return in.getCurrentLineNumber();\n}",
+    "begin_line": 298,
+    "end_line": 301,
+    "comment": "/** \n * Returns the current line number\n * @return the current line number\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.readEscape#309",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.readEscape",
+    "snippet": "int readEscape() throws IOException {\n  final int ch\u003din.read();\nswitch (ch) {\ncase \u0027r\u0027:    return CR;\ncase \u0027n\u0027:  return LF;\ncase \u0027t\u0027:return TAB;\ncase \u0027b\u0027:return BACKSPACE;\ncase \u0027f\u0027:return FF;\ncase CR:case LF:case FF:case TAB:case BACKSPACE:return ch;\ncase END_OF_STREAM:throw new IOException(\"EOF whilst processing escape sequence\");\ndefault:if (isMetaChar(ch)) {\nreturn ch;\n}\nreturn END_OF_STREAM;\n}\n}",
+    "begin_line": 309,
+    "end_line": 345,
+    "comment": "/** \n * Handle an escape sequence. The current character must be the escape character. On return, the next character is available by calling  {@link ExtendedBufferedReader#getLastChar()}on the input stream.\n * @return the unescaped character (as an int) or {@link Constants#END_OF_STREAM} if char following the escape isinvalid.\n * @throws IOException if there is a problem reading the stream or the end of stream is detected:the escape character is not allowed at end of strem\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.trimTrailingSpaces#347",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.trimTrailingSpaces",
+    "snippet": "void trimTrailingSpaces(final StringBuilder buffer){\n  int length\u003dbuffer.length();\n  while (length \u003e 0 \u0026\u0026 Character.isWhitespace(buffer.charAt(length - 1))) {\n    length\u003dlength - 1;\n  }\n  if (length !\u003d buffer.length()) {\n    buffer.setLength(length);\n  }\n}",
+    "begin_line": 347,
+    "end_line": 355,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.readEndOfLine#361",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.readEndOfLine",
+    "snippet": "boolean readEndOfLine(int ch) throws IOException {\n  if (ch \u003d\u003d CR \u0026\u0026 in.lookAhead() \u003d\u003d LF) {\n    ch\u003din.read();\n  }\n  return ch \u003d\u003d LF || ch \u003d\u003d CR;\n}",
+    "begin_line": 361,
+    "end_line": 369,
+    "comment": "/** \n * Greedily accepts \\n, \\r and \\r\\n This checker consumes silently the second control-character...\n * @return true if the given or next character is a line-terminator\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isClosed#371",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isClosed",
+    "snippet": "boolean isClosed(){\n  return in.isClosed();\n}",
+    "begin_line": 371,
+    "end_line": 373,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isWhitespace#378",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isWhitespace",
+    "snippet": "boolean isWhitespace(final int ch){\n  return !isDelimiter(ch) \u0026\u0026 Character.isWhitespace((char)ch);\n}",
+    "begin_line": 378,
+    "end_line": 380,
+    "comment": "/** \n * @return true if the given char is a whitespace character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isStartOfLine#387",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isStartOfLine",
+    "snippet": "boolean isStartOfLine(final int ch){\n  return ch \u003d\u003d LF || ch \u003d\u003d CR || ch \u003d\u003d UNDEFINED;\n}",
+    "begin_line": 387,
+    "end_line": 390,
+    "comment": "/** \n * Checks if the current character represents the start of a line: a CR, LF or is at the start of the file.\n * @param ch the character to check\n * @return true if the character is at the start of a line.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isEndOfFile#395",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isEndOfFile",
+    "snippet": "boolean isEndOfFile(final int ch){\n  return ch \u003d\u003d END_OF_STREAM;\n}",
+    "begin_line": 395,
+    "end_line": 397,
+    "comment": "/** \n * @return true if the given character indicates end of file\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isDelimiter#399",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isDelimiter",
+    "snippet": "boolean isDelimiter(final int ch){\n  return ch \u003d\u003d delimiter;\n}",
+    "begin_line": 399,
+    "end_line": 401,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isEscape#403",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isEscape",
+    "snippet": "boolean isEscape(final int ch){\n  return ch \u003d\u003d escape;\n}",
+    "begin_line": 403,
+    "end_line": 405,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isQuoteChar#407",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isQuoteChar",
+    "snippet": "boolean isQuoteChar(final int ch){\n  return ch \u003d\u003d quoteChar;\n}",
+    "begin_line": 407,
+    "end_line": 409,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isCommentStart#411",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isCommentStart",
+    "snippet": "boolean isCommentStart(final int ch){\n  return ch \u003d\u003d commentStart;\n}",
+    "begin_line": 411,
+    "end_line": 413,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.isMetaChar#415",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.isMetaChar",
+    "snippet": "private boolean isMetaChar(final int ch){\n  return ch \u003d\u003d delimiter || ch \u003d\u003d escape || ch \u003d\u003d quoteChar || ch \u003d\u003d commentStart;\n}",
+    "begin_line": 415,
+    "end_line": 420,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Lexer.close#426",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Lexer.java",
+    "class_name": "org.apache.commons.csv.Lexer",
+    "signature": "org.apache.commons.csv.Lexer.close",
+    "snippet": "void close() throws IOException {\n  in.close();\n}",
+    "begin_line": 426,
+    "end_line": 430,
+    "comment": "/** \n * Closes resources.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Token.reset#60",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "class_name": "org.apache.commons.csv.Token",
+    "signature": "org.apache.commons.csv.Token.reset",
+    "snippet": "void reset(){\n  content.setLength(0);\n  type\u003dINVALID;\n  isReady\u003dfalse;\n}",
+    "begin_line": 60,
+    "end_line": 64,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Token.toString#70",
+    "is_bug": true,
+    "src_path": "src/main/java/org/apache/commons/csv/Token.java",
+    "class_name": "org.apache.commons.csv.Token",
+    "signature": "org.apache.commons.csv.Token.toString",
+    "snippet": "@Override public String toString(){\n  return type.name() + \" [\" + content.toString()+ \"]\";\n}",
+    "begin_line": 70,
+    "end_line": 74,
+    "comment": "/** \n * Eases IDE debugging.\n * @return a string helpful for debugging.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

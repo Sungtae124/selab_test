@@ -1,0 +1,16 @@
+--- com.google.gson.stream.JsonWriterTest::testBoxedBooleans
+java.lang.NullPointerException
+	at com.google.gson.stream.JsonWriterTest.testBoxedBooleans(JsonWriterTest.java:292)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at kr.ac.seoultech.selab.logicfl.coverage.JUnit4TestRunner.main(JUnit4TestRunner.java:33)
