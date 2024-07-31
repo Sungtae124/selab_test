@@ -2,6 +2,7 @@ package kr.ac.seoultech.selab;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.*;
 import org.json.*;
 
@@ -47,11 +48,16 @@ public class SnippetGen {
         private double ochiai_susp = 0.5;
     }
 
-    public List<MethodDeclarationInfo> parse(String sourceCode, String filePath) {
+    public List<MethodDeclarationInfo> parse(String unitName, String[] classPath, String[] sourcePath, String source) { // String sourceCode, String filePath
         ASTParser parser = ASTParser.newParser(AST.getJLSLatest());
-        parser.setSource(sourceCode.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
-
+        Map<String, String> options = JavaCore.getOptions();
+        JavaCore.setComplianceOptions(JavaCore.latestSupportedJavaVersion(), options);
+        parser.setCompilerOptions(options);
+        parser.setEnvironment(classPath, sourcePath, null, true);
+        parser.setUnitName(unitName);
+        parser.setResolveBindings(true);
+        parser.setSource(source.toCharArray());
         CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
         List<MethodDeclarationInfo> methods = new ArrayList<>();
@@ -76,24 +82,51 @@ public class SnippetGen {
 
                 String methodName = node.getName().getFullyQualifiedName();
 
-
-                // 주석 제거 후 실제 선언부의 시작 라인을 찾기 위해 라인 단위로 나누고, 주석 제거된 라인의 인덱스를 찾음
-                String[] lines = node.toString().split("\n");
-                int beginLine = rawBeginLine;
-
-                for (int i = 0; i < lines.length; i++) {
-                    if (lines[i].contains(methodName)) {
-                        beginLine = i + rawBeginLine;
-                        break;
+                List<String> paramTypes = new ArrayList<>();
+                List<SingleVariableDeclaration> parameters = node.parameters();
+                for (SingleVariableDeclaration parameter : parameters) {
+                    Type type = parameter.getType();
+                    String typeSignature = getTypeSignature(type);
+                    if (typeSignature != null) {
+                        paramTypes.add(typeSignature);
+                    } else {
+                        System.err.println("Failed to resolve binding for type: " + type);
                     }
                 }
 
-                String className = filePath.substring(filePath.indexOf("org")).replace("/", ".").replace(".java", "");
-                String signature = className + "." + methodName;
-                String name = currentClassName + "." + methodName + "#" + beginLine;
+                String className = unitName.substring(unitName.indexOf("org")).replace("/", ".").replace(".java", "");
+                String signature = className + "." + methodName + "(" + String.join(", ", paramTypes) + ")";
+                String name = currentClassName + "." + methodName + "#" + rawBeginLine;
 
-                methods.add(new MethodDeclarationInfo(name, filePath.substring(filePath.indexOf("buggy/") + 6), className, signature, snippet, beginLine, endLine, comment));
+                methods.add(new MethodDeclarationInfo(name, unitName.substring(unitName.indexOf("buggy/") + 6), className, signature, snippet, rawBeginLine, endLine, comment));
                 return super.visit(node);
+            }
+
+            private String getTypeSignature(Type type) {
+                ITypeBinding tb = (ITypeBinding) type.resolveBinding();
+                if (tb != null) {
+                    if (tb.isPrimitive()) {
+//                        System.out.println("Primitive type: " + tb.getName());
+                        return tb.getName();
+                    }
+//
+//                    if (tb.isArray()) {
+//                        //Handle array type.
+//                        System.out.println("Array type: " + tb.getQualifiedName());
+//                    }
+//
+//                    if (tb.isParameterizedType()) {
+//                        //Handle parameterized type.
+//                        System.out.println("Parameterized type: " + tb.getQualifiedName());
+//                    }
+
+                    //Handle other special cases...
+
+                    //Otherwise, returns the qualified name.
+                    return tb.getQualifiedName();
+                }
+                System.out.println("Failed to resolve binding for type: " + type);
+                return "java.lang.Object"; // or throw an exception if tb is null
             }
         });
 
@@ -132,17 +165,22 @@ public class SnippetGen {
 
             List<MethodDeclarationInfo> declarations = new ArrayList<>();
             SnippetGen parser = new SnippetGen();
-            String outputJsonFilePath = "rst/" + bugId + "/snippet.json";
+            String outputJsonFilePath = "rst/" + bugId.replace('-', '_') + "/snippet.json";
 
 
             for (Object cl : classes) {
-                String classPath = cl.toString().replace(".", "/") + ".java";
-                String sourceFilePath = basePath + sourcePath + "/" + classPath;
+                String parserUnitName = cl.toString().replace(".", "/") + ".java"; // org/apache/commons/lang3/StringUtils.java
+                String sourceFilePath = basePath + sourcePath + "/" + parserUnitName; // src/main/resources/Lang-20/buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
+                String parserClassPath = basePath + bugId + "/buggy/target/classes"; // Chart, Closure만 target/classes 없음.
+                String parserSourcePath = basePath + sourcePath;
                 try {
                     String javaSourceCode = new String(Files.readAllBytes(Paths.get(sourceFilePath).toAbsolutePath()));
-                    declarations.addAll(parser.parse(javaSourceCode, sourceFilePath));
+                    // String unitName, String[] classPath, String[] sourcePath, String source
+                    declarations.addAll(parser.parse(parserUnitName, new String[]{parserClassPath}, new String[]{parserSourcePath}, javaSourceCode));
+                } catch (java.nio.file.NoSuchFileException e) {
+
                 } catch (Exception e) {
-                    System.out.println("Error: " + sourceFilePath);
+                    System.out.println(bugId + ")Error: " + e);
                 }
             }
             parser.saveAsJson(declarations, outputJsonFilePath);
