@@ -1,1 +1,962 @@
-[]
+[
+  {
+    "name": "DataUtilities.calculateColumnTotal#64",
+    "is_bug": true,
+    "src_path": "org/jfree/data/DataUtilities.java",
+    "class_name": "org.jfree.data.DataUtilities",
+    "signature": "org.jfree.data.DataUtilities.calculateColumnTotal(org.jfree.data.Values2D, int)",
+    "snippet": "public static double calculateColumnTotal(Values2D data,int column){\n  double total\u003d0.0;\n  int rowCount\u003ddata.getRowCount();\n  for (int r\u003d0; r \u003c rowCount; r++) {\n    Number n\u003ddata.getValue(r,column);\n    if (n !\u003d null) {\n      total+\u003dn.doubleValue();\n    }\n  }\n  return total;\n}",
+    "begin_line": 64,
+    "end_line": 74,
+    "comment": "/** \n * Returns the total of the values in one column of the supplied data table.\n * @param data  the table of values (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @param column  the column index (zero-based).\n * @return The total of the values in the specified column.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DataUtilities.calculateRowTotal#85",
+    "is_bug": true,
+    "src_path": "org/jfree/data/DataUtilities.java",
+    "class_name": "org.jfree.data.DataUtilities",
+    "signature": "org.jfree.data.DataUtilities.calculateRowTotal(org.jfree.data.Values2D, int)",
+    "snippet": "public static double calculateRowTotal(Values2D data,int row){\n  double total\u003d0.0;\n  int columnCount\u003ddata.getColumnCount();\n  for (int c\u003d0; c \u003c columnCount; c++) {\n    Number n\u003ddata.getValue(row,c);\n    if (n !\u003d null) {\n      total+\u003dn.doubleValue();\n    }\n  }\n  return total;\n}",
+    "begin_line": 85,
+    "end_line": 95,
+    "comment": "/** \n * Returns the total of the values in one row of the supplied data table.\n * @param data  the table of values (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @param row  the row index (zero-based).\n * @return The total of the values in the specified row.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DataUtilities.createNumberArray#105",
+    "is_bug": true,
+    "src_path": "org/jfree/data/DataUtilities.java",
+    "class_name": "org.jfree.data.DataUtilities",
+    "signature": "org.jfree.data.DataUtilities.createNumberArray(double[])",
+    "snippet": "public static Number[] createNumberArray(double[] data){\n  if (data \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027data\u0027 argument.\");\n  }\n  Number[] result\u003dnew Number[data.length];\n  for (int i\u003d0; i \u003c data.length; i++) {\n    result[i]\u003dnew Double(data[i]);\n  }\n  return result;\n}",
+    "begin_line": 105,
+    "end_line": 114,
+    "comment": "/** \n * Constructs an array of \u003ccode\u003eNumber\u003c/code\u003e objects from an array of  \u003ccode\u003edouble\u003c/code\u003e primitives.\n * @param data  the data (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return An array of \u003ccode\u003eDouble\u003c/code\u003e.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DataUtilities.createNumberArray2D#124",
+    "is_bug": true,
+    "src_path": "org/jfree/data/DataUtilities.java",
+    "class_name": "org.jfree.data.DataUtilities",
+    "signature": "org.jfree.data.DataUtilities.createNumberArray2D(double[][])",
+    "snippet": "public static Number[][] createNumberArray2D(double[][] data){\n  if (data \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027data\u0027 argument.\");\n  }\n  int l1\u003ddata.length;\n  Number[][] result\u003dnew Number[l1][];\n  for (int i\u003d0; i \u003c l1; i++) {\n    result[i]\u003dcreateNumberArray(data[i]);\n  }\n  return result;\n}",
+    "begin_line": 124,
+    "end_line": 134,
+    "comment": "/** \n * Constructs an array of arrays of \u003ccode\u003eNumber\u003c/code\u003e objects from a  corresponding structure containing \u003ccode\u003edouble\u003c/code\u003e primitives.\n * @param data  the data (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return An array of \u003ccode\u003eDouble\u003c/code\u003e.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DataUtilities.getCumulativePercentages#146",
+    "is_bug": true,
+    "src_path": "org/jfree/data/DataUtilities.java",
+    "class_name": "org.jfree.data.DataUtilities",
+    "signature": "org.jfree.data.DataUtilities.getCumulativePercentages(org.jfree.data.KeyedValues)",
+    "snippet": "public static KeyedValues getCumulativePercentages(KeyedValues data){\n  if (data \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027data\u0027 argument.\");\n  }\n  DefaultKeyedValues result\u003dnew DefaultKeyedValues();\n  double total\u003d0.0;\n  for (int i\u003d0; i \u003c data.getItemCount(); i++) {\n    Number v\u003ddata.getValue(i);\n    if (v !\u003d null) {\n      total\u003dtotal + v.doubleValue();\n    }\n  }\n  double runningTotal\u003d0.0;\n  for (int i\u003d0; i \u003c data.getItemCount(); i++) {\n    Number v\u003ddata.getValue(i);\n    if (v !\u003d null) {\n      runningTotal\u003drunningTotal + v.doubleValue();\n    }\n    result.addValue(data.getKey(i),new Double(runningTotal / total));\n  }\n  return result;\n}",
+    "begin_line": 146,
+    "end_line": 167,
+    "comment": "/** \n * Returns a  {@link KeyedValues} instance that contains the cumulative percentage values for the data in another  {@link KeyedValues} instance.\u003cp\u003e The percentages are values between 0.0 and 1.0 (where 1.0 \u003d 100%).\n * @param data  the data (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return The cumulative percentages.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset#90",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset(double[][], double[][])",
+    "snippet": "public DefaultIntervalCategoryDataset(double[][] starts,double[][] ends){\n  this(DataUtilities.createNumberArray2D(starts),DataUtilities.createNumberArray2D(ends));\n}",
+    "begin_line": 90,
+    "end_line": 93,
+    "comment": "/** \n * Creates a new dataset using the specified data values and automatically generated series and category keys.\n * @param starts  the starting values for the intervals (\u003ccode\u003enull\u003c/code\u003enot permitted).\n * @param ends  the ending values for the intervals (\u003ccode\u003enull\u003c/code\u003e notpermitted).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset#106",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset(java.lang.Number[][], java.lang.Number[][])",
+    "snippet": "public DefaultIntervalCategoryDataset(Number[][] starts,Number[][] ends){\n  this(null,null,starts,ends);\n}",
+    "begin_line": 106,
+    "end_line": 108,
+    "comment": "/** \n * Constructs a dataset and populates it with data from the array. \u003cp\u003e The arrays are indexed as data[series][category].  Series and category names are automatically generated - you can change them using the {@link #setSeriesKeys(Comparable[])} and {@link #setCategoryKeys(Comparable[])} methods.\n * @param starts  the start values data.\n * @param ends  the end values data.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset#122",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset(java.lang.String[], java.lang.Number[][], java.lang.Number[][])",
+    "snippet": "public DefaultIntervalCategoryDataset(String[] seriesNames,Number[][] starts,Number[][] ends){\n  this(seriesNames,null,starts,ends);\n}",
+    "begin_line": 122,
+    "end_line": 128,
+    "comment": "/** \n * Constructs a DefaultIntervalCategoryDataset, populates it with data from the arrays, and uses the supplied names for the series. \u003cp\u003e Category names are generated automatically (\"Category 1\", \"Category 2\", etc).\n * @param seriesNames  the series names (if \u003ccode\u003enull\u003c/code\u003e, series nameswill be generated automatically).\n * @param starts  the start values data, indexed as data[series][category].\n * @param ends  the end values data, indexed as data[series][category].\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset#142",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.DefaultIntervalCategoryDataset(java.lang.Comparable[], java.lang.Comparable[], java.lang.Number[][], java.lang.Number[][])",
+    "snippet": "public DefaultIntervalCategoryDataset(Comparable[] seriesKeys,Comparable[] categoryKeys,Number[][] starts,Number[][] ends){\n  this.startData\u003dstarts;\n  this.endData\u003dends;\n  if (starts !\u003d null \u0026\u0026 ends !\u003d null) {\n    String baseName\u003d\"org.jfree.data.resources.DataPackageResources\";\n    ResourceBundle resources\u003dResourceBundle.getBundle(baseName);\n    int seriesCount\u003dstarts.length;\n    if (seriesCount !\u003d ends.length) {\n      String errMsg\u003d\"DefaultIntervalCategoryDataset: the number \" + \"of series in the start value dataset does \" + \"not match the number of series in the end \"+ \"value dataset.\";\n      throw new IllegalArgumentException(errMsg);\n    }\n    if (seriesCount \u003e 0) {\n      if (seriesKeys !\u003d null) {\n        if (seriesKeys.length !\u003d seriesCount) {\n          throw new IllegalArgumentException(\"The number of series keys does not \" + \"match the number of series in the data.\");\n        }\n        this.seriesKeys\u003dseriesKeys;\n      }\n else {\n        String prefix\u003dresources.getString(\"series.default-prefix\") + \" \";\n        this.seriesKeys\u003dgenerateKeys(seriesCount,prefix);\n      }\n      int categoryCount\u003dstarts[0].length;\n      if (categoryCount !\u003d ends[0].length) {\n        String errMsg\u003d\"DefaultIntervalCategoryDataset: the \" + \"number of categories in the start value \" + \"dataset does not match the number of \"+ \"categories in the end value dataset.\";\n        throw new IllegalArgumentException(errMsg);\n      }\n      if (categoryKeys !\u003d null) {\n        if (categoryKeys.length !\u003d categoryCount) {\n          throw new IllegalArgumentException(\"The number of category keys does not match \" + \"the number of categories in the data.\");\n        }\n        this.categoryKeys\u003dcategoryKeys;\n      }\n else {\n        String prefix\u003dresources.getString(\"categories.default-prefix\") + \" \";\n        this.categoryKeys\u003dgenerateKeys(categoryCount,prefix);\n      }\n    }\n else {\n      this.seriesKeys\u003dnull;\n      this.categoryKeys\u003dnull;\n    }\n  }\n}",
+    "begin_line": 142,
+    "end_line": 212,
+    "comment": "/** \n * Constructs a DefaultIntervalCategoryDataset, populates it with data from the arrays, and uses the supplied names for the series and the supplied objects for the categories.\n * @param seriesKeys  the series keys (if \u003ccode\u003enull\u003c/code\u003e, series keyswill be generated automatically).\n * @param categoryKeys  the category keys (if \u003ccode\u003enull\u003c/code\u003e, category keys will be generated automatically).\n * @param starts  the start values data, indexed as data[series][category].\n * @param ends  the end values data, indexed as data[series][category].\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getSeriesCount#222",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getSeriesCount()",
+    "snippet": "public int getSeriesCount(){\n  int result\u003d0;\n  if (this.startData !\u003d null) {\n    result\u003dthis.startData.length;\n  }\n  return result;\n}",
+    "begin_line": 222,
+    "end_line": 228,
+    "comment": "/** \n * Returns the number of series in the dataset (possibly zero).\n * @return The number of series in the dataset.\n * @see #getRowCount()\n * @see #getCategoryCount()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getSeriesIndex#240",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getSeriesIndex(java.lang.Comparable)",
+    "snippet": "public int getSeriesIndex(Comparable seriesKey){\n  int result\u003d-1;\n  for (int i\u003d0; i \u003c this.seriesKeys.length; i++) {\n    if (seriesKey.equals(this.seriesKeys[i])) {\n      result\u003di;\n      break;\n    }\n  }\n  return result;\n}",
+    "begin_line": 240,
+    "end_line": 249,
+    "comment": "/** \n * Returns a series index.\n * @param seriesKey  the series key.\n * @return The series index.\n * @see #getRowIndex(Comparable)\n * @see #getSeriesKey(int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getSeriesKey#260",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getSeriesKey(int)",
+    "snippet": "public Comparable getSeriesKey(int series){\n  if ((series \u003e\u003d getSeriesCount()) || (series \u003c 0)) {\n    throw new IllegalArgumentException(\"No such series : \" + series);\n  }\n  return this.seriesKeys[series];\n}",
+    "begin_line": 260,
+    "end_line": 265,
+    "comment": "/** \n * Returns the name of the specified series.\n * @param series  the index of the required series (zero-based).\n * @return The name of the specified series.\n * @see #getSeriesIndex(Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.setSeriesKeys#276",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.setSeriesKeys(java.lang.Comparable[])",
+    "snippet": "public void setSeriesKeys(Comparable[] seriesKeys){\n  if (seriesKeys \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027seriesKeys\u0027 argument.\");\n  }\n  if (seriesKeys.length !\u003d getSeriesCount()) {\n    throw new IllegalArgumentException(\"The number of series keys does not match the data.\");\n  }\n  this.seriesKeys\u003dseriesKeys;\n  fireDatasetChanged();\n}",
+    "begin_line": 276,
+    "end_line": 286,
+    "comment": "/** \n * Sets the names of the series in the dataset.\n * @param seriesKeys  the new keys (\u003ccode\u003enull\u003c/code\u003e not permitted, the length of the array must match the number of series in the  dataset).\n * @see #setCategoryKeys(Comparable[])\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getCategoryCount#295",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getCategoryCount()",
+    "snippet": "public int getCategoryCount(){\n  int result\u003d0;\n  if (this.startData !\u003d null) {\n    if (getSeriesCount() \u003e 0) {\n      result\u003dthis.startData[0].length;\n    }\n  }\n  return result;\n}",
+    "begin_line": 295,
+    "end_line": 303,
+    "comment": "/** \n * Returns the number of categories in the dataset.\n * @return The number of categories in the dataset.\n * @see #getColumnCount()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getColumnKeys#313",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getColumnKeys()",
+    "snippet": "public List getColumnKeys(){\n  if (this.categoryKeys \u003d\u003d null) {\n    return new ArrayList();\n  }\n else {\n    return Collections.unmodifiableList(Arrays.asList(this.categoryKeys));\n  }\n}",
+    "begin_line": 313,
+    "end_line": 323,
+    "comment": "/** \n * Returns a list of the categories in the dataset.  This method supports  the  {@link CategoryDataset} interface.\n * @return A list of the categories in the dataset.\n * @see #getRowKeys()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.setCategoryKeys#334",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.setCategoryKeys(java.lang.Comparable[])",
+    "snippet": "public void setCategoryKeys(Comparable[] categoryKeys){\n  if (categoryKeys \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027categoryKeys\u0027 argument.\");\n  }\n  if (categoryKeys.length !\u003d this.startData[0].length) {\n    throw new IllegalArgumentException(\"The number of categories does not match the data.\");\n  }\n  for (int i\u003d0; i \u003c categoryKeys.length; i++) {\n    if (categoryKeys[i] \u003d\u003d null) {\n      throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.setCategoryKeys(): \" + \"null category not permitted.\");\n    }\n  }\n  this.categoryKeys\u003dcategoryKeys;\n  fireDatasetChanged();\n}",
+    "begin_line": 334,
+    "end_line": 351,
+    "comment": "/** \n * Sets the categories for the dataset.\n * @param categoryKeys  an array of objects representing the categories in the dataset.\n * @see #getRowKeys()\n * @see #setSeriesKeys(Comparable[])\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getValue#366",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getValue(java.lang.Comparable, java.lang.Comparable)",
+    "snippet": "public Number getValue(Comparable series,Comparable category){\n  int seriesIndex\u003dgetSeriesIndex(series);\n  if (seriesIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027series\u0027 key.\");\n  }\n  int itemIndex\u003dgetColumnIndex(category);\n  if (itemIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027category\u0027 key.\");\n  }\n  return getValue(seriesIndex,itemIndex);\n}",
+    "begin_line": 366,
+    "end_line": 376,
+    "comment": "/** \n * Returns the data value for one category in a series. \u003cP\u003e This method is part of the CategoryDataset interface.  Not particularly meaningful for this class...returns the end value.\n * @param series    The required series (zero based index).\n * @param category  The required category.\n * @return The data value for one category in a series (null possible).\n * @see #getEndValue(Comparable,Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getValue#391",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getValue(int, int)",
+    "snippet": "public Number getValue(int series,int category){\n  return getEndValue(series,category);\n}",
+    "begin_line": 391,
+    "end_line": 393,
+    "comment": "/** \n * Returns the data value for one category in a series. \u003cP\u003e This method is part of the CategoryDataset interface.  Not particularly meaningful for this class...returns the end value.\n * @param series  the required series (zero based index).\n * @param category  the required category.\n * @return The data value for one category in a series (null possible).\n * @see #getEndValue(int,int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getStartValue#406",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getStartValue(java.lang.Comparable, java.lang.Comparable)",
+    "snippet": "public Number getStartValue(Comparable series,Comparable category){\n  int seriesIndex\u003dgetSeriesIndex(series);\n  if (seriesIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027series\u0027 key.\");\n  }\n  int itemIndex\u003dgetColumnIndex(category);\n  if (itemIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027category\u0027 key.\");\n  }\n  return getStartValue(seriesIndex,itemIndex);\n}",
+    "begin_line": 406,
+    "end_line": 416,
+    "comment": "/** \n * Returns the start data value for one category in a series.\n * @param series  the required series.\n * @param category  the required category.\n * @return The start data value for one category in a series (possibly \u003ccode\u003enull\u003c/code\u003e).\n * @see #getStartValue(int,int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getStartValue#429",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getStartValue(int, int)",
+    "snippet": "public Number getStartValue(int series,int category){\n  if ((series \u003c 0) || (series \u003e\u003d getSeriesCount())) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.getValue(): \" + \"series index out of range.\");\n  }\n  if ((category \u003c 0) || (category \u003e\u003d getCategoryCount())) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.getValue(): \" + \"category index out of range.\");\n  }\n  return this.startData[series][category];\n}",
+    "begin_line": 429,
+    "end_line": 447,
+    "comment": "/** \n * Returns the start data value for one category in a series.\n * @param series  the required series (zero based index).\n * @param category  the required category.\n * @return The start data value for one category in a series (possibly \u003ccode\u003enull\u003c/code\u003e).\n * @see #getStartValue(Comparable,Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getEndValue#459",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getEndValue(java.lang.Comparable, java.lang.Comparable)",
+    "snippet": "public Number getEndValue(Comparable series,Comparable category){\n  int seriesIndex\u003dgetSeriesIndex(series);\n  if (seriesIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027series\u0027 key.\");\n  }\n  int itemIndex\u003dgetColumnIndex(category);\n  if (itemIndex \u003c 0) {\n    throw new UnknownKeyException(\"Unknown \u0027category\u0027 key.\");\n  }\n  return getEndValue(seriesIndex,itemIndex);\n}",
+    "begin_line": 459,
+    "end_line": 469,
+    "comment": "/** \n * Returns the end data value for one category in a series.\n * @param series  the required series.\n * @param category  the required category.\n * @return The end data value for one category in a series (null possible).\n * @see #getEndValue(int,int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getEndValue#481",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getEndValue(int, int)",
+    "snippet": "public Number getEndValue(int series,int category){\n  if ((series \u003c 0) || (series \u003e\u003d getSeriesCount())) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.getValue(): \" + \"series index out of range.\");\n  }\n  if ((category \u003c 0) || (category \u003e\u003d getCategoryCount())) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.getValue(): \" + \"category index out of range.\");\n  }\n  return this.endData[series][category];\n}",
+    "begin_line": 481,
+    "end_line": 495,
+    "comment": "/** \n * Returns the end data value for one category in a series.\n * @param series  the required series (zero based index).\n * @param category  the required category.\n * @return The end data value for one category in a series (null possible).\n * @see #getEndValue(Comparable,Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.setStartValue#507",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.setStartValue(int, java.lang.Comparable, java.lang.Number)",
+    "snippet": "public void setStartValue(int series,Comparable category,Number value){\n  if ((series \u003c 0) || (series \u003e getSeriesCount() - 1)) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.setValue: \" + \"series outside valid range.\");\n  }\n  int categoryIndex\u003dgetCategoryIndex(category);\n  if (categoryIndex \u003c 0) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.setValue: \" + \"unrecognised category.\");\n  }\n  this.startData[series][categoryIndex]\u003dvalue;\n  fireDatasetChanged();\n}",
+    "begin_line": 507,
+    "end_line": 528,
+    "comment": "/** \n * Sets the start data value for one category in a series.\n * @param series  the series (zero-based index).\n * @param category  the category.\n * @param value The value.\n * @see #setEndValue(int,Comparable,Number)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.setEndValue#540",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.setEndValue(int, java.lang.Comparable, java.lang.Number)",
+    "snippet": "public void setEndValue(int series,Comparable category,Number value){\n  if ((series \u003c 0) || (series \u003e getSeriesCount() - 1)) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.setValue: \" + \"series outside valid range.\");\n  }\n  int categoryIndex\u003dgetCategoryIndex(category);\n  if (categoryIndex \u003c 0) {\n    throw new IllegalArgumentException(\"DefaultIntervalCategoryDataset.setValue: \" + \"unrecognised category.\");\n  }\n  this.endData[series][categoryIndex]\u003dvalue;\n  fireDatasetChanged();\n}",
+    "begin_line": 540,
+    "end_line": 561,
+    "comment": "/** \n * Sets the end data value for one category in a series.\n * @param series  the series (zero-based index).\n * @param category  the category.\n * @param value the value.\n * @see #setStartValue(int,Comparable,Number)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getCategoryIndex#572",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getCategoryIndex(java.lang.Comparable)",
+    "snippet": "public int getCategoryIndex(Comparable category){\n  int result\u003d-1;\n  for (int i\u003d0; i \u003c this.categoryKeys.length; i++) {\n    if (category.equals(this.categoryKeys[i])) {\n      result\u003di;\n      break;\n    }\n  }\n  return result;\n}",
+    "begin_line": 572,
+    "end_line": 581,
+    "comment": "/** \n * Returns the index for the given category.\n * @param category  the category (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return The index.\n * @see #getColumnIndex(Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.generateKeys#592",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.generateKeys(int, java.lang.String)",
+    "snippet": "private Comparable[] generateKeys(int count,String prefix){\n  Comparable[] result\u003dnew Comparable[count];\n  String name;\n  for (int i\u003d0; i \u003c count; i++) {\n    name\u003dprefix + (i + 1);\n    result[i]\u003dname;\n  }\n  return result;\n}",
+    "begin_line": 592,
+    "end_line": 600,
+    "comment": "/** \n * Generates an array of keys, by appending a space plus an integer (starting with 1) to the supplied prefix string.\n * @param count  the number of keys required.\n * @param prefix  the name prefix.\n * @return An array of \u003ci\u003eprefixN\u003c/i\u003e with N \u003d { 1 .. count}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getColumnKey#611",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getColumnKey(int)",
+    "snippet": "public Comparable getColumnKey(int column){\n  return this.categoryKeys[column];\n}",
+    "begin_line": 611,
+    "end_line": 613,
+    "comment": "/** \n * Returns a column key.\n * @param column  the column index.\n * @return The column key.\n * @see #getRowKey(int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getColumnIndex#624",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getColumnIndex(java.lang.Comparable)",
+    "snippet": "public int getColumnIndex(Comparable columnKey){\n  if (columnKey \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027columnKey\u0027 argument.\");\n  }\n  return getCategoryIndex(columnKey);\n}",
+    "begin_line": 624,
+    "end_line": 629,
+    "comment": "/** \n * Returns a column index.\n * @param columnKey  the column key (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return The column index.\n * @see #getCategoryIndex(Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getRowIndex#640",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getRowIndex(java.lang.Comparable)",
+    "snippet": "public int getRowIndex(Comparable rowKey){\n  return getSeriesIndex(rowKey);\n}",
+    "begin_line": 640,
+    "end_line": 642,
+    "comment": "/** \n * Returns a row index.\n * @param rowKey  the row key.\n * @return The row index.\n * @see #getSeriesIndex(Comparable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getRowKeys#652",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getRowKeys()",
+    "snippet": "public List getRowKeys(){\n  if (this.seriesKeys \u003d\u003d null) {\n    return new java.util.ArrayList();\n  }\n else {\n    return Collections.unmodifiableList(Arrays.asList(this.seriesKeys));\n  }\n}",
+    "begin_line": 652,
+    "end_line": 661,
+    "comment": "/** \n * Returns a list of the series in the dataset.  This method supports the  {@link CategoryDataset} interface.\n * @return A list of the series in the dataset.\n * @see #getColumnKeys()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getRowKey#672",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getRowKey(int)",
+    "snippet": "public Comparable getRowKey(int row){\n  if ((row \u003e\u003d getRowCount()) || (row \u003c 0)) {\n    throw new IllegalArgumentException(\"The \u0027row\u0027 argument is out of bounds.\");\n  }\n  return this.seriesKeys[row];\n}",
+    "begin_line": 672,
+    "end_line": 678,
+    "comment": "/** \n * Returns the name of the specified series.\n * @param row  the index of the required row/series (zero-based).\n * @return The name of the specified series.\n * @see #getColumnKey(int)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getColumnCount#689",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getColumnCount()",
+    "snippet": "public int getColumnCount(){\n  return this.categoryKeys.length;\n}",
+    "begin_line": 689,
+    "end_line": 691,
+    "comment": "/** \n * Returns the number of categories in the dataset.  This method is part of  the  {@link CategoryDataset} interface.\n * @return The number of categories in the dataset.\n * @see #getCategoryCount()\n * @see #getRowCount()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.getRowCount#701",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.getRowCount()",
+    "snippet": "public int getRowCount(){\n  return this.seriesKeys.length;\n}",
+    "begin_line": 701,
+    "end_line": 703,
+    "comment": "/** \n * Returns the number of series in the dataset (possibly zero).\n * @return The number of series in the dataset.\n * @see #getSeriesCount()\n * @see #getColumnCount()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.equals#712",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.equals(java.lang.Object)",
+    "snippet": "public boolean equals(Object obj){\n  if (obj \u003d\u003d this) {\n    return true;\n  }\n  if (!(obj instanceof DefaultIntervalCategoryDataset)) {\n    return false;\n  }\n  DefaultIntervalCategoryDataset that\u003d(DefaultIntervalCategoryDataset)obj;\n  if (!Arrays.equals(this.seriesKeys,that.seriesKeys)) {\n    return false;\n  }\n  if (!Arrays.equals(this.categoryKeys,that.categoryKeys)) {\n    return false;\n  }\n  if (!equal(this.startData,that.startData)) {\n    return false;\n  }\n  if (!equal(this.endData,that.endData)) {\n    return false;\n  }\n  return true;\n}",
+    "begin_line": 712,
+    "end_line": 735,
+    "comment": "/** \n * Tests this dataset for equality with an arbitrary object.\n * @param obj  the object (\u003ccode\u003enull\u003c/code\u003e permitted).\n * @return A boolean.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.clone#745",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.clone()",
+    "snippet": "public Object clone() throws CloneNotSupportedException {\n  DefaultIntervalCategoryDataset clone\u003d(DefaultIntervalCategoryDataset)super.clone();\n  clone.categoryKeys\u003d(Comparable[])this.categoryKeys.clone();\n  clone.seriesKeys\u003d(Comparable[])this.seriesKeys.clone();\n  clone.startData\u003dclone(this.startData);\n  clone.endData\u003dclone(this.endData);\n  return clone;\n}",
+    "begin_line": 745,
+    "end_line": 753,
+    "comment": "/** \n * Returns a clone of this dataset.\n * @return A clone.\n * @throws CloneNotSupportedException if there is a problem cloning thedataset.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.equal#763",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.equal(java.lang.Number[][], java.lang.Number[][])",
+    "snippet": "private static boolean equal(Number[][] array1,Number[][] array2){\n  if (array1 \u003d\u003d null) {\n    return (array2 \u003d\u003d null);\n  }\n  if (array2 \u003d\u003d null) {\n    return false;\n  }\n  if (array1.length !\u003d array2.length) {\n    return false;\n  }\n  for (int i\u003d0; i \u003c array1.length; i++) {\n    if (!Arrays.equals(array1[i],array2[i])) {\n      return false;\n    }\n  }\n  return true;\n}",
+    "begin_line": 763,
+    "end_line": 779,
+    "comment": "/** \n * Tests two double[][] arrays for equality.\n * @param array1  the first array (\u003ccode\u003enull\u003c/code\u003e permitted).\n * @param array2  the second arrray (\u003ccode\u003enull\u003c/code\u003e permitted).\n * @return A boolean.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultIntervalCategoryDataset.clone#788",
+    "is_bug": true,
+    "src_path": "org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+    "class_name": "org.jfree.data.category.DefaultIntervalCategoryDataset",
+    "signature": "org.jfree.data.category.DefaultIntervalCategoryDataset.clone(java.lang.Number[][])",
+    "snippet": "private static Number[][] clone(Number[][] array){\n  if (array \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027array\u0027 argument.\");\n  }\n  Number[][] result\u003dnew Number[array.length][];\n  for (int i\u003d0; i \u003c array.length; i++) {\n    Number[] child\u003darray[i];\n    Number[] copychild\u003dnew Number[child.length];\n    System.arraycopy(child,0,copychild,0,child.length);\n    result[i]\u003dcopychild;\n  }\n  return result;\n}",
+    "begin_line": 788,
+    "end_line": 800,
+    "comment": "/** \n * Clones a two dimensional array of \u003ccode\u003eNumber\u003c/code\u003e objects.\n * @param array  the array (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @return A clone of the array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.AbstractDataset#94",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.AbstractDataset()",
+    "snippet": "protected AbstractDataset(){\n  this.group\u003dnew DatasetGroup();\n  this.listenerList\u003dnew EventListenerList();\n}",
+    "begin_line": 94,
+    "end_line": 97,
+    "comment": "/** \n * Constructs a dataset. By default, the dataset is assigned to its own  group.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.getGroup#106",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.getGroup()",
+    "snippet": "public DatasetGroup getGroup(){\n  return this.group;\n}",
+    "begin_line": 106,
+    "end_line": 108,
+    "comment": "/** \n * Returns the dataset group for the dataset.\n * @return The group (never \u003ccode\u003enull\u003c/code\u003e).\n * @see #setGroup(DatasetGroup)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.setGroup#117",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.setGroup(org.jfree.data.general.DatasetGroup)",
+    "snippet": "public void setGroup(DatasetGroup group){\n  if (group \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027group\u0027 argument.\");\n  }\n  this.group\u003dgroup;\n}",
+    "begin_line": 117,
+    "end_line": 122,
+    "comment": "/** \n * Sets the dataset group for the dataset.\n * @param group  the group (\u003ccode\u003enull\u003c/code\u003e not permitted).\n * @see #getGroup()\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.addChangeListener#131",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.addChangeListener(org.jfree.data.general.DatasetChangeListener)",
+    "snippet": "public void addChangeListener(DatasetChangeListener listener){\n  this.listenerList.add(DatasetChangeListener.class,listener);\n}",
+    "begin_line": 131,
+    "end_line": 133,
+    "comment": "/** \n * Registers an object to receive notification of changes to the dataset.\n * @param listener  the object to register.\n * @see #removeChangeListener(DatasetChangeListener)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.removeChangeListener#143",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.removeChangeListener(org.jfree.data.general.DatasetChangeListener)",
+    "snippet": "public void removeChangeListener(DatasetChangeListener listener){\n  this.listenerList.remove(DatasetChangeListener.class,listener);\n}",
+    "begin_line": 143,
+    "end_line": 145,
+    "comment": "/** \n * Deregisters an object so that it no longer receives notification of  changes to the dataset.\n * @param listener  the object to deregister.\n * @see #addChangeListener(DatasetChangeListener)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.hasListener#159",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.hasListener(java.util.EventListener)",
+    "snippet": "public boolean hasListener(EventListener listener){\n  List list\u003dArrays.asList(this.listenerList.getListenerList());\n  return list.contains(listener);\n}",
+    "begin_line": 159,
+    "end_line": 162,
+    "comment": "/** \n * Returns \u003ccode\u003etrue\u003c/code\u003e if the specified object is registered with the dataset as a listener.  Most applications won\u0027t need to call this  method, it exists mainly for use by unit testing code.\n * @param listener  the listener.\n * @return A boolean.\n * @see #addChangeListener(DatasetChangeListener)\n * @see #removeChangeListener(DatasetChangeListener)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.fireDatasetChanged#169",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.fireDatasetChanged()",
+    "snippet": "protected void fireDatasetChanged(){\n  notifyListeners(new DatasetChangeEvent(this,this));\n}",
+    "begin_line": 169,
+    "end_line": 171,
+    "comment": "/** \n * Notifies all registered listeners that the dataset has changed.\n * @see #addChangeListener(DatasetChangeListener)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.notifyListeners#182",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.notifyListeners(org.jfree.data.general.DatasetChangeEvent)",
+    "snippet": "protected void notifyListeners(DatasetChangeEvent event){\n  Object[] listeners\u003dthis.listenerList.getListenerList();\n  for (int i\u003dlisteners.length - 2; i \u003e\u003d 0; i-\u003d2) {\n    if (listeners[i] \u003d\u003d DatasetChangeListener.class) {\n      ((DatasetChangeListener)listeners[i + 1]).datasetChanged(event);\n    }\n  }\n}",
+    "begin_line": 182,
+    "end_line": 192,
+    "comment": "/** \n * Notifies all registered listeners that the dataset has changed.\n * @param event  contains information about the event that triggered the notification.\n * @see #addChangeListener(DatasetChangeListener)\n * @see #removeChangeListener(DatasetChangeListener)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.clone#204",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.clone()",
+    "snippet": "public Object clone() throws CloneNotSupportedException {\n  AbstractDataset clone\u003d(AbstractDataset)super.clone();\n  clone.listenerList\u003dnew EventListenerList();\n  return clone;\n}",
+    "begin_line": 204,
+    "end_line": 208,
+    "comment": "/** \n * Returns a clone of the dataset. The cloned dataset will NOT include the  {@link DatasetChangeListener} references that have been registered with this dataset.\n * @return A clone.\n * @throws CloneNotSupportedException  if the dataset does not support cloning.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.writeObject#217",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.writeObject(java.io.ObjectOutputStream)",
+    "snippet": "private void writeObject(ObjectOutputStream stream) throws IOException {\n  stream.defaultWriteObject();\n}",
+    "begin_line": 217,
+    "end_line": 219,
+    "comment": "/** \n * Handles serialization.\n * @param stream  the output stream.\n * @throws IOException if there is an I/O problem.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.readObject#229",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.readObject(java.io.ObjectInputStream)",
+    "snippet": "private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {\n  stream.defaultReadObject();\n  this.listenerList\u003dnew EventListenerList();\n  stream.registerValidation(this,10);\n}",
+    "begin_line": 229,
+    "end_line": 235,
+    "comment": "/** \n * Restores a serialized object.\n * @param stream  the input stream.\n * @throws IOException if there is an I/O problem.\n * @throws ClassNotFoundException if there is a problem loading a class.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractDataset.validateObject#254",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractDataset.java",
+    "class_name": "org.jfree.data.general.AbstractDataset",
+    "signature": "org.jfree.data.general.AbstractDataset.validateObject()",
+    "snippet": "public void validateObject() throws InvalidObjectException {\n  fireDatasetChanged();\n}",
+    "begin_line": 254,
+    "end_line": 256,
+    "comment": "/** \n * Validates the object. We use this opportunity to call listeners who have  registered during the deserialization process, as listeners are not  serialized. This method is called by the serialization system after the  entire graph is read. This object has registered itself to the system with a priority of 10.  Other callbacks may register with a higher priority number to be called  before this object, or with a lower priority number to be called after  the listeners were notified. All listeners are supposed to have register by now, either in their  readObject or validateObject methods. Notify them that this dataset has  changed.  \n * @exception InvalidObjectException If the object cannot validate itself.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractSeriesDataset.AbstractSeriesDataset#64",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractSeriesDataset.java",
+    "class_name": "org.jfree.data.general.AbstractSeriesDataset",
+    "signature": "org.jfree.data.general.AbstractSeriesDataset.AbstractSeriesDataset()",
+    "snippet": "protected AbstractSeriesDataset(){\n  super();\n}",
+    "begin_line": 64,
+    "end_line": 66,
+    "comment": "/** \n * Creates a new dataset.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractSeriesDataset.getSeriesCount#73",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractSeriesDataset.java",
+    "class_name": "org.jfree.data.general.AbstractSeriesDataset",
+    "signature": "org.jfree.data.general.AbstractSeriesDataset.getSeriesCount()",
+    "snippet": "public abstract int getSeriesCount();",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * Returns the number of series in the dataset.\n * @return The series count.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractSeriesDataset.getSeriesKey#87",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractSeriesDataset.java",
+    "class_name": "org.jfree.data.general.AbstractSeriesDataset",
+    "signature": "org.jfree.data.general.AbstractSeriesDataset.getSeriesKey(int)",
+    "snippet": "public abstract Comparable getSeriesKey(int series);",
+    "begin_line": 87,
+    "end_line": 87,
+    "comment": "/** \n * Returns the key for a series.   \u003cp\u003e If \u003ccode\u003eseries\u003c/code\u003e is not within the specified range, the  implementing method should throw an  {@link IndexOutOfBoundsException} (preferred) or an  {@link IllegalArgumentException}.\n * @param series  the series index (in the range \u003ccode\u003e0\u003c/code\u003e to \u003ccode\u003egetSeriesCount() - 1\u003c/code\u003e).\n * @return The series key.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractSeriesDataset.indexOf#96",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractSeriesDataset.java",
+    "class_name": "org.jfree.data.general.AbstractSeriesDataset",
+    "signature": "org.jfree.data.general.AbstractSeriesDataset.indexOf(java.lang.Comparable)",
+    "snippet": "public int indexOf(Comparable seriesKey){\n  int seriesCount\u003dgetSeriesCount();\n  for (int s\u003d0; s \u003c seriesCount; s++) {\n    if (getSeriesKey(s).equals(seriesKey)) {\n      return s;\n    }\n  }\n  return -1;\n}",
+    "begin_line": 96,
+    "end_line": 104,
+    "comment": "/** \n * Returns the index of the named series, or -1.\n * @param seriesKey  the series key (\u003ccode\u003enull\u003c/code\u003e permitted).\n * @return The index.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "AbstractSeriesDataset.seriesChanged#111",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/AbstractSeriesDataset.java",
+    "class_name": "org.jfree.data.general.AbstractSeriesDataset",
+    "signature": "org.jfree.data.general.AbstractSeriesDataset.seriesChanged(org.jfree.data.general.SeriesChangeEvent)",
+    "snippet": "public void seriesChanged(SeriesChangeEvent event){\n  fireDatasetChanged();\n}",
+    "begin_line": 111,
+    "end_line": 113,
+    "comment": "/** \n * Called when a series belonging to the dataset changes.\n * @param event  information about the change.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DatasetGroup.DatasetGroup#62",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/DatasetGroup.java",
+    "class_name": "org.jfree.data.general.DatasetGroup",
+    "signature": "org.jfree.data.general.DatasetGroup.DatasetGroup()",
+    "snippet": "public DatasetGroup(){\n  super();\n  this.id\u003d\"NOID\";\n}",
+    "begin_line": 62,
+    "end_line": 65,
+    "comment": "/** \n * Constructs a new group.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DatasetGroup.DatasetGroup#72",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/DatasetGroup.java",
+    "class_name": "org.jfree.data.general.DatasetGroup",
+    "signature": "org.jfree.data.general.DatasetGroup.DatasetGroup(java.lang.String)",
+    "snippet": "public DatasetGroup(String id){\n  if (id \u003d\u003d null) {\n    throw new IllegalArgumentException(\"Null \u0027id\u0027 argument.\");\n  }\n  this.id\u003did;\n}",
+    "begin_line": 72,
+    "end_line": 77,
+    "comment": "/** \n * Creates a new group with the specified id.\n * @param id  the identification for the group.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DatasetGroup.getID#84",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/DatasetGroup.java",
+    "class_name": "org.jfree.data.general.DatasetGroup",
+    "signature": "org.jfree.data.general.DatasetGroup.getID()",
+    "snippet": "public String getID(){\n  return this.id;\n}",
+    "begin_line": 84,
+    "end_line": 86,
+    "comment": "/** \n * Returns the identification string for this group.\n * @return The identification string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DatasetGroup.clone#95",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/DatasetGroup.java",
+    "class_name": "org.jfree.data.general.DatasetGroup",
+    "signature": "org.jfree.data.general.DatasetGroup.clone()",
+    "snippet": "public Object clone() throws CloneNotSupportedException {\n  return super.clone();\n}",
+    "begin_line": 95,
+    "end_line": 97,
+    "comment": "/** \n * Clones the group.\n * @return A clone.\n * @throws CloneNotSupportedException not by this class.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DatasetGroup.equals#106",
+    "is_bug": true,
+    "src_path": "org/jfree/data/general/DatasetGroup.java",
+    "class_name": "org.jfree.data.general.DatasetGroup",
+    "signature": "org.jfree.data.general.DatasetGroup.equals(java.lang.Object)",
+    "snippet": "public boolean equals(Object obj){\n  if (obj \u003d\u003d this) {\n    return true;\n  }\n  if (!(obj instanceof DatasetGroup)) {\n    return false;\n  }\n  DatasetGroup that\u003d(DatasetGroup)obj;\n  if (!this.id.equals(that.id)) {\n    return false;\n  }\n  return true;\n}",
+    "begin_line": 106,
+    "end_line": 118,
+    "comment": "/** \n * Tests this instance for equality with an arbitrary object.\n * @param obj  the object (\u003ccode\u003enull\u003c/code\u003e permitted).\n * @return A boolean.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DataPackageResources.getContents#57",
+    "is_bug": true,
+    "src_path": "org/jfree/data/resources/DataPackageResources.java",
+    "class_name": "org.jfree.data.resources.DataPackageResources",
+    "signature": "org.jfree.data.resources.DataPackageResources.getContents()",
+    "snippet": "public Object[][] getContents(){\n  return CONTENTS;\n}",
+    "begin_line": 57,
+    "end_line": 59,
+    "comment": "/** \n * Returns the array of strings in the resource bundle.\n * @return The localised resources.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]
