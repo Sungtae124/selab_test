@@ -98,7 +98,7 @@ public class SnippetGen {
                 String signature = className + "." + methodName + "(" + String.join(", ", paramTypes) + ")";
                 String name = currentClassName + "." + methodName + "#" + rawBeginLine;
 
-                methods.add(new MethodDeclarationInfo(name, unitName.substring(unitName.indexOf("buggy/") + 6), className, signature, snippet, rawBeginLine, endLine, comment));
+                methods.add(new MethodDeclarationInfo(name, unitName, className, signature, snippet, rawBeginLine, endLine, comment));
                 return super.visit(node);
             }
 
