@@ -73,7 +73,7 @@ public class SnippetGen {
 
             @Override
             public boolean visit(MethodDeclaration node) {
-                int rawBeginLine = cu.getLineNumber(node.getStartPosition());
+                int rawBeginLine = cu.getLineNumber(node.getName().getStartPosition());
                 int endLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
 
                 String rawSnippet = node.toString().trim();
@@ -171,7 +171,7 @@ public class SnippetGen {
             for (Object cl : classes) {
                 String parserUnitName = cl.toString().replace(".", "/") + ".java"; // org/apache/commons/lang3/StringUtils.java
                 String sourceFilePath = basePath + sourcePath + "/" + parserUnitName; // src/main/resources/Lang-20/buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
-                String parserClassPath = basePath + bugId + "/buggy/target/classes"; // Chart, Closure만 target/classes 없음.
+                String parserClassPath = basePath + bugId + "/buggy/target/classes"; // Chart, Closure, Mockito-18 target/classes 없음.
                 String parserSourcePath = basePath + sourcePath;
                 try {
                     String javaSourceCode = new String(Files.readAllBytes(Paths.get(sourceFilePath).toAbsolutePath()));
