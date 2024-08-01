@@ -94,7 +94,7 @@ public class SnippetGen {
                     }
                 }
 
-                String className = unitName.substring(unitName.indexOf("org")).replace("/", ".").replace(".java", "");
+                String className = unitName.replace("/", ".").replace(".java", "");
                 String signature = className + "." + methodName + "(" + String.join(", ", paramTypes) + ")";
                 String name = currentClassName + "." + methodName + "#" + rawBeginLine;
 
