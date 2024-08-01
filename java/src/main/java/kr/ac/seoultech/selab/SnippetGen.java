@@ -125,8 +125,8 @@ public class SnippetGen {
                     //Otherwise, returns the qualified name.
                     return tb.getQualifiedName();
                 }
-                System.out.println("Failed to resolve binding for type: " + type);
-                return "java.lang.Object"; // or throw an exception if tb is null
+//                System.out.println("Failed to resolve binding for type: " + type);
+                return type.toString(); // or throw an exception if tb is null
             }
         });
 
