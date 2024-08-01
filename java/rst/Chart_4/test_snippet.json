@@ -1,0 +1,1820 @@
+[
+    [
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(XYPlotTests.class);\n}",
+            "begin_line": 117,
+            "end_line": 119,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 118,col 9)-(line 118,col 48)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.XYPlotTests(String name)",
+            "snippet": "public XYPlotTests(String name) {\nsuper(name);\n}",
+            "begin_line": 126,
+            "end_line": 128,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 127,col 9)-(line 127,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testEquals()",
+            "snippet": "public void testEquals() {\n\nXYPlot plot1 = new XYPlot();\nXYPlot plot2 = new XYPlot();\nassertTrue(plot1.equals(plot2));\n\n// orientation...",
+            "begin_line": 144,
+            "end_line": 150,
+            "comment": "    \n     * Some checks for the equals() method.\n     ",
+            "child_ranges": [
+                "(line 145,col 0)-(line 145,col 0)",
+                "(line 146,col 9)-(line 146,col 36)",
+                "(line 147,col 9)-(line 147,col 36)",
+                "(line 148,col 9)-(line 148,col 40)",
+                "(line 149,col 0)-(line 149,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloning()",
+            "snippet": "public void testCloning() {\nXYPlot p1 = new XYPlot();\nXYPlot p2 = null;\ntry {",
+            "begin_line": 444,
+            "end_line": 447,
+            "comment": "    \n     * Confirm that basic cloning works.\n     ",
+            "child_ranges": [
+                "(line 445,col 9)-(line 445,col 33)",
+                "(line 446,col 9)-(line 446,col 25)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloning2()",
+            "snippet": "public void testCloning2() {\nXYPlot p1 = new XYPlot(null, new NumberAxis(\"Domain Axis\"),",
+            "begin_line": 461,
+            "end_line": 462,
+            "comment": "    \n     * Tests cloning for a more complex plot.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloning3()",
+            "snippet": "public void testCloning3() {\nXYPlot p1 = new XYPlot(null, new NumberAxis(\"Domain Axis\"),",
+            "begin_line": 486,
+            "end_line": 487,
+            "comment": "    \n     * Tests cloning for a plot where the fixed legend items have been\n     * specified.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloning_QuadrantOrigin()",
+            "snippet": "public void testCloning_QuadrantOrigin() {\nXYPlot p1 = new XYPlot();\nPoint2D p = new Point2D.Double(1.2, 3.4);\np1.setQuadrantOrigin(p);\nXYPlot p2 = null;\ntry {",
+            "begin_line": 510,
+            "end_line": 515,
+            "comment": "    \n     * Confirm that cloning captures the quadrantOrigin field.\n     ",
+            "child_ranges": [
+                "(line 511,col 9)-(line 511,col 33)",
+                "(line 512,col 9)-(line 512,col 49)",
+                "(line 513,col 9)-(line 513,col 32)",
+                "(line 514,col 9)-(line 514,col 25)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloning_QuadrantPaint()",
+            "snippet": "public void testCloning_QuadrantPaint() {\nXYPlot p1 = new XYPlot();\np1.setQuadrantPaint(3, new GradientPaint(1.0f, 2.0f, Color.red,",
+            "begin_line": 530,
+            "end_line": 532,
+            "comment": "    \n     * Confirm that cloning captures the quadrantOrigin field.\n     ",
+            "child_ranges": [
+                "(line 531,col 9)-(line 531,col 33)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testCloneIndependence()",
+            "snippet": "public void testCloneIndependence() {\nXYPlot p1 = new XYPlot(null, new NumberAxis(\"Domain Axis\"),",
+            "begin_line": 555,
+            "end_line": 556,
+            "comment": "    \n     * Tests the independence of the clones.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSetNullRenderer()",
+            "snippet": "public void testSetNullRenderer() {\nboolean failed = false;\ntry {",
+            "begin_line": 629,
+            "end_line": 631,
+            "comment": "    \n     * Setting a null renderer should be allowed, but is generating a null\n     * pointer exception in 0.9.7.\n     ",
+            "child_ranges": [
+                "(line 630,col 9)-(line 630,col 31)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSerialization1()",
+            "snippet": "public void testSerialization1() {\n\nXYDataset data = new XYSeriesCollection();\nNumberAxis domainAxis = new NumberAxis(\"Domain\");\nNumberAxis rangeAxis = new NumberAxis(\"Range\");\nStandardXYItemRenderer renderer = new StandardXYItemRenderer();\nXYPlot p1 = new XYPlot(data, domainAxis, rangeAxis, renderer);\nXYPlot p2 = null;\n\ntry {",
+            "begin_line": 645,
+            "end_line": 654,
+            "comment": "    \n     * Serialize an instance, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 646,col 0)-(line 646,col 0)",
+                "(line 647,col 9)-(line 647,col 50)",
+                "(line 648,col 9)-(line 648,col 57)",
+                "(line 649,col 9)-(line 649,col 55)",
+                "(line 650,col 9)-(line 650,col 71)",
+                "(line 651,col 9)-(line 651,col 70)",
+                "(line 652,col 9)-(line 652,col 25)",
+                "(line 653,col 0)-(line 653,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSerialization2()",
+            "snippet": "public void testSerialization2() {\n\nIntervalXYDataset data1 = createDataset1();\nXYItemRenderer renderer1 = new XYBarRenderer(0.20);\nrenderer1.setBaseToolTipGenerator(",
+            "begin_line": 676,
+            "end_line": 680,
+            "comment": "    \n     * Serialize an instance, restore it, and check for equality.  This test\n     * uses a {@link DateAxis} and a {@link StandardXYToolTipGenerator}.\n     ",
+            "child_ranges": [
+                "(line 677,col 0)-(line 677,col 0)",
+                "(line 678,col 9)-(line 678,col 51)",
+                "(line 679,col 9)-(line 679,col 59)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSerialization3()",
+            "snippet": "public void testSerialization3() {\n\nXYSeriesCollection dataset = new XYSeriesCollection();\nJFreeChart chart = ChartFactory.createXYLineChart(",
+            "begin_line": 713,
+            "end_line": 716,
+            "comment": "    \n     * Problem to reproduce a bug in serialization.  The bug (first reported\n     * against the {@link org.jfree.chart.plot.CategoryPlot} class) is a null\n     * pointer exception that occurs when drawing a plot after deserialization.\n     * It is caused by four temporary storage structures (axesAtTop,\n     * axesAtBottom, axesAtLeft and axesAtRight - all initialized as empty\n     * lists in the constructor) not being initialized by the readObject()\n     * method following deserialization.  This test has been written to\n     * reproduce the bug (now fixed).\n     ",
+            "child_ranges": [
+                "(line 714,col 0)-(line 714,col 0)",
+                "(line 715,col 9)-(line 715,col 62)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSerialization4()",
+            "snippet": "public void testSerialization4() {\n\nXYSeriesCollection dataset = new XYSeriesCollection();\nJFreeChart chart = ChartFactory.createXYLineChart(",
+            "begin_line": 761,
+            "end_line": 764,
+            "comment": "    \n     * A test to reproduce a bug in serialization: the domain and/or range\n     * markers for a plot are not being serialized.\n     ",
+            "child_ranges": [
+                "(line 762,col 0)-(line 762,col 0)",
+                "(line 763,col 9)-(line 763,col 62)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSerialization5()",
+            "snippet": "public void testSerialization5() {\nXYSeriesCollection dataset1 = new XYSeriesCollection();\nNumberAxis domainAxis1 = new NumberAxis(\"Domain 1\");\nNumberAxis rangeAxis1 = new NumberAxis(\"Range 1\");\nStandardXYItemRenderer renderer1 = new StandardXYItemRenderer();\nXYPlot p1 = new XYPlot(dataset1, domainAxis1, rangeAxis1, renderer1);\nNumberAxis domainAxis2 = new NumberAxis(\"Domain 2\");\nNumberAxis rangeAxis2 = new NumberAxis(\"Range 2\");\nStandardXYItemRenderer renderer2 = new StandardXYItemRenderer();\nXYSeriesCollection dataset2 = new XYSeriesCollection();\np1.setDataset(1, dataset2);\np1.setDomainAxis(1, domainAxis2);\np1.setRangeAxis(1, rangeAxis2);\np1.setRenderer(1, renderer2);\nXYPlot p2 = null;\ntry {",
+            "begin_line": 815,
+            "end_line": 830,
+            "comment": "    \n     * Tests a bug where the plot is no longer registered as a listener\n     * with the dataset(s) and axes after deserialization.  See patch 1209475\n     * at SourceForge.\n     ",
+            "child_ranges": [
+                "(line 816,col 9)-(line 816,col 63)",
+                "(line 817,col 9)-(line 817,col 60)",
+                "(line 818,col 9)-(line 818,col 58)",
+                "(line 819,col 9)-(line 819,col 72)",
+                "(line 820,col 9)-(line 820,col 77)",
+                "(line 821,col 9)-(line 821,col 60)",
+                "(line 822,col 9)-(line 822,col 58)",
+                "(line 823,col 9)-(line 823,col 72)",
+                "(line 824,col 9)-(line 824,col 63)",
+                "(line 825,col 9)-(line 825,col 35)",
+                "(line 826,col 9)-(line 826,col 41)",
+                "(line 827,col 9)-(line 827,col 39)",
+                "(line 828,col 9)-(line 828,col 37)",
+                "(line 829,col 9)-(line 829,col 25)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testGetRendererForDataset()",
+            "snippet": "public void testGetRendererForDataset() {\nXYDataset d0 = new XYSeriesCollection();\nXYDataset d1 = new XYSeriesCollection();\nXYDataset d2 = new XYSeriesCollection();\nXYDataset d3 = new XYSeriesCollection();  // not used by plot",
+            "begin_line": 871,
+            "end_line": 875,
+            "comment": "    \n     * Some checks for the getRendererForDataset() method.\n     ",
+            "child_ranges": [
+                "(line 872,col 9)-(line 872,col 48)",
+                "(line 873,col 9)-(line 873,col 48)",
+                "(line 874,col 9)-(line 874,col 48)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testGetLegendItems()",
+            "snippet": "public void testGetLegendItems() {\n// check the case where there is a secondary dataset that doesn't",
+            "begin_line": 895,
+            "end_line": 896,
+            "comment": "    \n     * Some checks for the getLegendItems() method.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.createDataset1()",
+            "snippet": "private IntervalXYDataset createDataset1() {\n\n// create dataset 1...",
+            "begin_line": 914,
+            "end_line": 916,
+            "comment": "    \n     * Creates a sample dataset.\n     *\n     * @return Series 1.\n     ",
+            "child_ranges": [
+                "(line 915,col 0)-(line 915,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.createDataset2()",
+            "snippet": "private XYDataset createDataset2() {\n// create dataset 1...",
+            "begin_line": 944,
+            "end_line": 945,
+            "comment": "    \n     * Creates a sample dataset.\n     *\n     * @return A sample dataset.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testSetRenderer()",
+            "snippet": "public void testSetRenderer() {\nXYPlot plot = new XYPlot();\nXYItemRenderer renderer = new XYLineAndShapeRenderer();\nplot.setRenderer(renderer);\n// now make a change to the renderer and see if it triggers a plot",
+            "begin_line": 956,
+            "end_line": 960,
+            "comment": "    \n     * A test for a bug where setting the renderer doesn't register the plot\n     * as a RendererChangeListener.\n     ",
+            "child_ranges": [
+                "(line 957,col 9)-(line 957,col 35)",
+                "(line 958,col 9)-(line 958,col 63)",
+                "(line 959,col 9)-(line 959,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testRemoveAnnotation()",
+            "snippet": "public void testRemoveAnnotation() {\nXYPlot plot = new XYPlot();\nXYTextAnnotation a1 = new XYTextAnnotation(\"X\", 1.0, 2.0);\nXYTextAnnotation a2 = new XYTextAnnotation(\"X\", 3.0, 4.0);\nXYTextAnnotation a3 = new XYTextAnnotation(\"X\", 1.0, 2.0);\nplot.addAnnotation(a1);\nplot.addAnnotation(a2);\nplot.addAnnotation(a3);\nplot.removeAnnotation(a2);\nXYTextAnnotation x = (XYTextAnnotation) plot.getAnnotations().get(0);\nassertEquals(x, a1);\n\n// now remove a3, but since a3.equals(a1), this will in fact remove",
+            "begin_line": 971,
+            "end_line": 983,
+            "comment": "    \n     * Some checks for the removeAnnotation() method.\n     ",
+            "child_ranges": [
+                "(line 972,col 9)-(line 972,col 35)",
+                "(line 973,col 9)-(line 973,col 66)",
+                "(line 974,col 9)-(line 974,col 66)",
+                "(line 975,col 9)-(line 975,col 66)",
+                "(line 976,col 9)-(line 976,col 31)",
+                "(line 977,col 9)-(line 977,col 31)",
+                "(line 978,col 9)-(line 978,col 31)",
+                "(line 979,col 9)-(line 979,col 34)",
+                "(line 980,col 9)-(line 980,col 77)",
+                "(line 981,col 9)-(line 981,col 28)",
+                "(line 982,col 0)-(line 982,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testAddDomainMarker()",
+            "snippet": "public void testAddDomainMarker() {\nXYPlot plot = new XYPlot();\nMarker m = new ValueMarker(1.0);\nplot.addDomainMarker(m);\nList listeners = Arrays.asList(m.getListeners(",
+            "begin_line": 994,
+            "end_line": 998,
+            "comment": "    \n     * Some tests for the addDomainMarker() method(s).\n     ",
+            "child_ranges": [
+                "(line 995,col 9)-(line 995,col 35)",
+                "(line 996,col 9)-(line 996,col 40)",
+                "(line 997,col 9)-(line 997,col 32)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testAddRangeMarker()",
+            "snippet": "public void testAddRangeMarker() {\nXYPlot plot = new XYPlot();\nMarker m = new ValueMarker(1.0);\nplot.addRangeMarker(m);\nList listeners = Arrays.asList(m.getListeners(",
+            "begin_line": 1009,
+            "end_line": 1013,
+            "comment": "    \n     * Some tests for the addRangeMarker() method(s).\n     ",
+            "child_ranges": [
+                "(line 1010,col 9)-(line 1010,col 35)",
+                "(line 1011,col 9)-(line 1011,col 40)",
+                "(line 1012,col 9)-(line 1012,col 31)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.test1654215()",
+            "snippet": "public void test1654215() {\nDefaultXYDataset dataset = new DefaultXYDataset();\nJFreeChart chart = ChartFactory.createXYLineChart(\"Title\", \"X\", \"Y\",",
+            "begin_line": 1025,
+            "end_line": 1027,
+            "comment": "    \n     * A test for bug 1654215 (where a renderer is added to the plot without\n     * a corresponding dataset and it throws an exception at drawing time).\n     ",
+            "child_ranges": [
+                "(line 1026,col 9)-(line 1026,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testDrawRangeGridlines()",
+            "snippet": "public void testDrawRangeGridlines() {\nDefaultXYDataset dataset = new DefaultXYDataset();\nJFreeChart chart = ChartFactory.createXYLineChart(\"Title\", \"X\", \"Y\",",
+            "begin_line": 1051,
+            "end_line": 1053,
+            "comment": "    \n     * A test for drawing range grid lines when there is no primary renderer.\n     * In 1.0.4, this is throwing a NullPointerException.\n     ",
+            "child_ranges": [
+                "(line 1052,col 9)-(line 1052,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testDrawSeriesWithZeroItems()",
+            "snippet": "public void testDrawSeriesWithZeroItems() {\nDefaultXYDataset dataset = new DefaultXYDataset();\ndataset.addSeries(\"Series 1\", new double[][] {{1.0, 2.0}, {3.0, 4.0}});\ndataset.addSeries(\"Series 2\", new double[][] {{}, {}});\nJFreeChart chart = ChartFactory.createXYLineChart(\"Title\", \"X\", \"Y\",",
+            "begin_line": 1077,
+            "end_line": 1081,
+            "comment": "    \n     * A test for drawing a plot where a series has zero items.  With\n     * JFreeChart 1.0.5+cvs this was throwing an exception at one point.\n     ",
+            "child_ranges": [
+                "(line 1078,col 9)-(line 1078,col 58)",
+                "(line 1079,col 9)-(line 1079,col 79)",
+                "(line 1080,col 9)-(line 1080,col 63)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testRemoveDomainMarker()",
+            "snippet": "public void testRemoveDomainMarker() {\nXYPlot plot = new XYPlot();\nassertFalse(plot.removeDomainMarker(new ValueMarker(0.5)));\n}",
+            "begin_line": 1103,
+            "end_line": 1106,
+            "comment": "    \n     * Check that removing a marker that isn't assigned to the plot returns\n     * false.\n     ",
+            "child_ranges": [
+                "(line 1104,col 9)-(line 1104,col 35)",
+                "(line 1105,col 9)-(line 1105,col 67)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testRemoveRangeMarker()",
+            "snippet": "public void testRemoveRangeMarker() {\nXYPlot plot = new XYPlot();\nassertFalse(plot.removeRangeMarker(new ValueMarker(0.5)));\n}",
+            "begin_line": 1112,
+            "end_line": 1115,
+            "comment": "    \n     * Check that removing a marker that isn't assigned to the plot returns\n     * false.\n     ",
+            "child_ranges": [
+                "(line 1113,col 9)-(line 1113,col 35)",
+                "(line 1114,col 9)-(line 1114,col 66)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testGetDomainAxisForDataset()",
+            "snippet": "public void testGetDomainAxisForDataset() {\nXYDataset dataset = new XYSeriesCollection();\nNumberAxis xAxis = new NumberAxis(\"X\");\nNumberAxis yAxis = new NumberAxis(\"Y\");\nXYItemRenderer renderer = new DefaultXYItemRenderer();\nXYPlot plot = new XYPlot(dataset, xAxis, yAxis, renderer);\nassertEquals(xAxis, plot.getDomainAxisForDataset(0));\n\n// should get IllegalArgumentException for negative index",
+            "begin_line": 1120,
+            "end_line": 1128,
+            "comment": "    \n     * Some tests for the getDomainAxisForDataset() method.\n     ",
+            "child_ranges": [
+                "(line 1121,col 9)-(line 1121,col 53)",
+                "(line 1122,col 9)-(line 1122,col 47)",
+                "(line 1123,col 9)-(line 1123,col 47)",
+                "(line 1124,col 9)-(line 1124,col 62)",
+                "(line 1125,col 9)-(line 1125,col 66)",
+                "(line 1126,col 9)-(line 1126,col 61)",
+                "(line 1127,col 0)-(line 1127,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.plot.junit.XYPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/plot/junit/XYPlotTests.java",
+            "signature": "org.jfree.chart.plot.junit.XYPlotTests.testGetRangeAxisForDataset()",
+            "snippet": "public void testGetRangeAxisForDataset() {\nXYDataset dataset = new XYSeriesCollection();\nNumberAxis xAxis = new NumberAxis(\"X\");\nNumberAxis yAxis = new NumberAxis(\"Y\");\nXYItemRenderer renderer = new DefaultXYItemRenderer();\nXYPlot plot = new XYPlot(dataset, xAxis, yAxis, renderer);\nassertEquals(yAxis, plot.getRangeAxisForDataset(0));\n\n// should get IllegalArgumentException for negative index",
+            "begin_line": 1171,
+            "end_line": 1179,
+            "comment": "    \n     * Some tests for the getRangeAxisForDataset() method.\n     ",
+            "child_ranges": [
+                "(line 1172,col 9)-(line 1172,col 53)",
+                "(line 1173,col 9)-(line 1173,col 47)",
+                "(line 1174,col 9)-(line 1174,col 47)",
+                "(line 1175,col 9)-(line 1175,col 62)",
+                "(line 1176,col 9)-(line 1176,col 66)",
+                "(line 1177,col 9)-(line 1177,col 60)",
+                "(line 1178,col 0)-(line 1178,col 0)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(NumberAxisTests.class);\n}",
+            "begin_line": 88,
+            "end_line": 90,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 89,col 9)-(line 89,col 52)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.NumberAxisTests(String name)",
+            "snippet": "public NumberAxisTests(String name) {\nsuper(name);\n}",
+            "begin_line": 97,
+            "end_line": 99,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 98,col 9)-(line 98,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testCloning()",
+            "snippet": "public void testCloning() {\nNumberAxis a1 = new NumberAxis(\"Test\");\nNumberAxis a2 = null;\ntry {",
+            "begin_line": 104,
+            "end_line": 107,
+            "comment": "    \n     * Confirm that cloning works.\n     ",
+            "child_ranges": [
+                "(line 105,col 9)-(line 105,col 47)",
+                "(line 106,col 9)-(line 106,col 29)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testEquals()",
+            "snippet": "public void testEquals() {\n\nNumberAxis a1 = new NumberAxis(\"Test\");\nNumberAxis a2 = new NumberAxis(\"Test\");\nassertTrue(a1.equals(a2));\n\n//private boolean autoRangeIncludesZero;\na1.setAutoRangeIncludesZero(false);\nassertFalse(a1.equals(a2));\na2.setAutoRangeIncludesZero(false);\nassertTrue(a1.equals(a2));\n\n//private boolean autoRangeStickyZero;\na1.setAutoRangeStickyZero(false);\nassertFalse(a1.equals(a2));\na2.setAutoRangeStickyZero(false);\nassertTrue(a1.equals(a2));\n\n//private NumberTickUnit tickUnit;\na1.setTickUnit(new NumberTickUnit(25.0));\nassertFalse(a1.equals(a2));\na2.setTickUnit(new NumberTickUnit(25.0));\nassertTrue(a1.equals(a2));\n\n//private NumberFormat numberFormatOverride;\na1.setNumberFormatOverride(new DecimalFormat(\"0.00\"));\nassertFalse(a1.equals(a2));\na2.setNumberFormatOverride(new DecimalFormat(\"0.00\"));\nassertTrue(a1.equals(a2));\n\na1.setRangeType(RangeType.POSITIVE);\nassertFalse(a1.equals(a2));\na2.setRangeType(RangeType.POSITIVE);\nassertTrue(a1.equals(a2));\n\n}",
+            "begin_line": 121,
+            "end_line": 156,
+            "comment": "    \n     * Confirm that the equals method can distinguish all the required fields.\n     ",
+            "child_ranges": [
+                "(line 122,col 0)-(line 122,col 0)",
+                "(line 123,col 9)-(line 123,col 47)",
+                "(line 124,col 9)-(line 124,col 47)",
+                "(line 125,col 9)-(line 125,col 34)",
+                "(line 126,col 0)-(line 126,col 0)",
+                "(line 127,col 9)-(line 127,col 48)",
+                "(line 128,col 9)-(line 128,col 43)",
+                "(line 129,col 9)-(line 129,col 35)",
+                "(line 130,col 9)-(line 130,col 43)",
+                "(line 131,col 9)-(line 131,col 34)",
+                "(line 132,col 0)-(line 132,col 0)",
+                "(line 133,col 9)-(line 133,col 46)",
+                "(line 134,col 9)-(line 134,col 41)",
+                "(line 135,col 9)-(line 135,col 35)",
+                "(line 136,col 9)-(line 136,col 41)",
+                "(line 137,col 9)-(line 137,col 34)",
+                "(line 138,col 0)-(line 138,col 0)",
+                "(line 139,col 9)-(line 139,col 42)",
+                "(line 140,col 9)-(line 140,col 49)",
+                "(line 141,col 9)-(line 141,col 35)",
+                "(line 142,col 9)-(line 142,col 49)",
+                "(line 143,col 9)-(line 143,col 34)",
+                "(line 144,col 0)-(line 144,col 0)",
+                "(line 145,col 9)-(line 145,col 52)",
+                "(line 146,col 9)-(line 146,col 62)",
+                "(line 147,col 9)-(line 147,col 35)",
+                "(line 148,col 9)-(line 148,col 62)",
+                "(line 149,col 9)-(line 149,col 34)",
+                "(line 150,col 0)-(line 150,col 0)",
+                "(line 151,col 9)-(line 151,col 44)",
+                "(line 152,col 9)-(line 152,col 35)",
+                "(line 153,col 9)-(line 153,col 44)",
+                "(line 154,col 9)-(line 154,col 34)",
+                "(line 155,col 0)-(line 155,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testHashCode()",
+            "snippet": "public void testHashCode() {\nNumberAxis a1 = new NumberAxis(\"Test\");\nNumberAxis a2 = new NumberAxis(\"Test\");\nassertTrue(a1.equals(a2));\nint h1 = a1.hashCode();\nint h2 = a2.hashCode();\nassertEquals(h1, h2);\n}",
+            "begin_line": 161,
+            "end_line": 168,
+            "comment": "    \n     * Two objects that are equal are required to return the same hashCode.\n     ",
+            "child_ranges": [
+                "(line 162,col 9)-(line 162,col 47)",
+                "(line 163,col 9)-(line 163,col 47)",
+                "(line 164,col 9)-(line 164,col 34)",
+                "(line 165,col 9)-(line 165,col 31)",
+                "(line 166,col 9)-(line 166,col 31)",
+                "(line 167,col 9)-(line 167,col 29)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testTranslateJava2DToValue()",
+            "snippet": "public void testTranslateJava2DToValue() {\nNumberAxis axis = new NumberAxis();\naxis.setRange(50.0, 100.0);\nRectangle2D dataArea = new Rectangle2D.Double(10.0, 50.0, 400.0, 300.0);\ndouble y1 = axis.java2DToValue(75.0, dataArea, RectangleEdge.LEFT);\nassertEquals(y1, 95.8333333, EPSILON);\ndouble y2 = axis.java2DToValue(75.0, dataArea, RectangleEdge.RIGHT);\nassertEquals(y2, 95.8333333, EPSILON);\ndouble x1 = axis.java2DToValue(75.0, dataArea, RectangleEdge.TOP);\nassertEquals(x1, 58.125, EPSILON);\ndouble x2 = axis.java2DToValue(75.0, dataArea, RectangleEdge.BOTTOM);\nassertEquals(x2, 58.125, EPSILON);\naxis.setInverted(true);\ndouble y3 = axis.java2DToValue(75.0, dataArea, RectangleEdge.LEFT);\nassertEquals(y3, 54.1666667, EPSILON);\ndouble y4 = axis.java2DToValue(75.0, dataArea, RectangleEdge.RIGHT);\nassertEquals(y4, 54.1666667, EPSILON);\ndouble x3 = axis.java2DToValue(75.0, dataArea, RectangleEdge.TOP);\nassertEquals(x3, 91.875, EPSILON);\ndouble x4 = axis.java2DToValue(75.0, dataArea, RectangleEdge.BOTTOM);\nassertEquals(x4, 91.875, EPSILON);\n}",
+            "begin_line": 175,
+            "end_line": 196,
+            "comment": "    \n     * Test the translation of Java2D values to data values.\n     ",
+            "child_ranges": [
+                "(line 176,col 9)-(line 176,col 43)",
+                "(line 177,col 9)-(line 177,col 35)",
+                "(line 178,col 9)-(line 178,col 80)",
+                "(line 179,col 9)-(line 179,col 75)",
+                "(line 180,col 9)-(line 180,col 46)",
+                "(line 181,col 9)-(line 181,col 76)",
+                "(line 182,col 9)-(line 182,col 46)",
+                "(line 183,col 9)-(line 183,col 74)",
+                "(line 184,col 9)-(line 184,col 42)",
+                "(line 185,col 9)-(line 185,col 77)",
+                "(line 186,col 9)-(line 186,col 42)",
+                "(line 187,col 9)-(line 187,col 31)",
+                "(line 188,col 9)-(line 188,col 75)",
+                "(line 189,col 9)-(line 189,col 46)",
+                "(line 190,col 9)-(line 190,col 76)",
+                "(line 191,col 9)-(line 191,col 46)",
+                "(line 192,col 9)-(line 192,col 74)",
+                "(line 193,col 9)-(line 193,col 42)",
+                "(line 194,col 9)-(line 194,col 77)",
+                "(line 195,col 9)-(line 195,col 42)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testSerialization()",
+            "snippet": "public void testSerialization() {\n\nNumberAxis a1 = new NumberAxis(\"Test Axis\");\nNumberAxis a2 = null;\n\ntry {",
+            "begin_line": 201,
+            "end_line": 206,
+            "comment": "    \n     * Serialize an instance, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 202,col 0)-(line 202,col 0)",
+                "(line 203,col 9)-(line 203,col 52)",
+                "(line 204,col 9)-(line 204,col 29)",
+                "(line 205,col 0)-(line 205,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testAutoRange1()",
+            "snippet": "public void testAutoRange1() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createBarChart(",
+            "begin_line": 228,
+            "end_line": 232,
+            "comment": "    \n     * A simple test for the auto-range calculation looking at a\n     * NumberAxis used as the range axis for a CategoryPlot.\n     ",
+            "child_ranges": [
+                "(line 229,col 9)-(line 229,col 70)",
+                "(line 230,col 9)-(line 230,col 53)",
+                "(line 231,col 9)-(line 231,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testAutoRange2()",
+            "snippet": "public void testAutoRange2() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createLineChart(\"Test\", \"Categories\",",
+            "begin_line": 253,
+            "end_line": 257,
+            "comment": "    \n     * A simple test for the auto-range calculation looking at a\n     * NumberAxis used as the range axis for a CategoryPlot.  In this\n     * case, the 'autoRangeIncludesZero' flag is set to false.\n     ",
+            "child_ranges": [
+                "(line 254,col 9)-(line 254,col 70)",
+                "(line 255,col 9)-(line 255,col 53)",
+                "(line 256,col 9)-(line 256,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testAutoRange3()",
+            "snippet": "public void testAutoRange3() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createLineChart(\"Test\", \"Categories\",",
+            "begin_line": 273,
+            "end_line": 277,
+            "comment": "    \n     * A simple test for the auto-range calculation looking at a\n     * NumberAxis used as the range axis for a CategoryPlot.  In this\n     * case, the 'autoRangeIncludesZero' flag is set to false AND the\n     * original dataset is replaced with a new dataset.\n     ",
+            "child_ranges": [
+                "(line 274,col 9)-(line 274,col 70)",
+                "(line 275,col 9)-(line 275,col 53)",
+                "(line 276,col 9)-(line 276,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testAutoRange4()",
+            "snippet": "public void testAutoRange4() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createBarChart(\"Test\", \"Categories\",",
+            "begin_line": 299,
+            "end_line": 303,
+            "comment": "    \n     * A check for the interaction between the 'autoRangeIncludesZero' flag\n     * and the base setting in the BarRenderer.\n     ",
+            "child_ranges": [
+                "(line 300,col 9)-(line 300,col 70)",
+                "(line 301,col 9)-(line 301,col 53)",
+                "(line 302,col 9)-(line 302,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testXYAutoRange1()",
+            "snippet": "public void testXYAutoRange1() {\nXYSeries series = new XYSeries(\"Series 1\");\nseries.add(1.0, 1.0);\nseries.add(2.0, 2.0);\nseries.add(3.0, 3.0);\nXYSeriesCollection dataset = new XYSeriesCollection();\ndataset.addSeries(series);\nJFreeChart chart = ChartFactory.createScatterPlot(",
+            "begin_line": 347,
+            "end_line": 354,
+            "comment": "    \n     * Checks that the auto-range for the domain axis on an XYPlot is\n     * working as expected.\n     ",
+            "child_ranges": [
+                "(line 348,col 9)-(line 348,col 51)",
+                "(line 349,col 9)-(line 349,col 29)",
+                "(line 350,col 9)-(line 350,col 29)",
+                "(line 351,col 9)-(line 351,col 29)",
+                "(line 352,col 9)-(line 352,col 62)",
+                "(line 353,col 9)-(line 353,col 34)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testXYAutoRange2()",
+            "snippet": "public void testXYAutoRange2() {\nXYSeries series = new XYSeries(\"Series 1\");\nseries.add(1.0, 1.0);\nseries.add(2.0, 2.0);\nseries.add(3.0, 3.0);\nXYSeriesCollection dataset = new XYSeriesCollection();\ndataset.addSeries(series);\nJFreeChart chart = ChartFactory.createScatterPlot(",
+            "begin_line": 375,
+            "end_line": 382,
+            "comment": "    \n     * Checks that the auto-range for the range axis on an XYPlot is\n     * working as expected.\n     ",
+            "child_ranges": [
+                "(line 376,col 9)-(line 376,col 51)",
+                "(line 377,col 9)-(line 377,col 29)",
+                "(line 378,col 9)-(line 378,col 29)",
+                "(line 379,col 9)-(line 379,col 29)",
+                "(line 380,col 9)-(line 380,col 62)",
+                "(line 381,col 9)-(line 381,col 34)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.NumberAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/NumberAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.NumberAxisTests.testSetLowerBound()",
+            "snippet": "public void testSetLowerBound() {\nNumberAxis axis = new NumberAxis(\"X\");\naxis.setRange(0.0, 10.0);\naxis.setLowerBound(5.0);\nassertEquals(5.0, axis.getLowerBound(), EPSILON);\naxis.setLowerBound(10.0);\nassertEquals(10.0, axis.getLowerBound(), EPSILON);\nassertEquals(11.0, axis.getUpperBound(), EPSILON);\n\n//axis.setRangeType(RangeType.POSITIVE);\n//axis.setLowerBound(-5.0);\n//assertEquals(0.0, axis.getLowerBound(), EPSILON);\n}",
+            "begin_line": 446,
+            "end_line": 458,
+            "comment": "    \n     * Some checks for the setLowerBound() method.\n     ",
+            "child_ranges": [
+                "(line 447,col 9)-(line 447,col 46)",
+                "(line 448,col 9)-(line 448,col 33)",
+                "(line 449,col 9)-(line 449,col 32)",
+                "(line 450,col 9)-(line 450,col 57)",
+                "(line 451,col 9)-(line 451,col 33)",
+                "(line 452,col 9)-(line 452,col 58)",
+                "(line 453,col 9)-(line 453,col 58)",
+                "(line 454,col 0)-(line 454,col 0)",
+                "(line 455,col 9)-(line 455,col 48)",
+                "(line 456,col 9)-(line 456,col 35)",
+                "(line 457,col 9)-(line 457,col 59)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(XYStepChartTests.class);\n}",
+            "begin_line": 79,
+            "end_line": 81,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 80,col 9)-(line 80,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.XYStepChartTests(String name)",
+            "snippet": "public XYStepChartTests(String name) {\nsuper(name);\n}",
+            "begin_line": 88,
+            "end_line": 90,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 89,col 9)-(line 89,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.setUp()",
+            "snippet": "protected void setUp() {\nthis.chart = createChart();\n}",
+            "begin_line": 95,
+            "end_line": 97,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 96,col 9)-(line 96,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.testDrawWithNullInfo()",
+            "snippet": "public void testDrawWithNullInfo() {\n\nboolean success = false;\ntry {",
+            "begin_line": 103,
+            "end_line": 106,
+            "comment": "    \n     * Draws the chart with a null info object to make sure that no exceptions\n     * are thrown (a problem that was occurring at one point).\n     ",
+            "child_ranges": [
+                "(line 104,col 0)-(line 104,col 0)",
+                "(line 105,col 9)-(line 105,col 32)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.testReplaceDataset()",
+            "snippet": "public void testReplaceDataset() {\n\n// create a dataset...",
+            "begin_line": 126,
+            "end_line": 128,
+            "comment": "    \n     * Replaces the dataset and checks that it has changed as expected.\n     ",
+            "child_ranges": [
+                "(line 127,col 0)-(line 127,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.testSetSeriesToolTipGenerator()",
+            "snippet": "public void testSetSeriesToolTipGenerator() {\nXYPlot plot = (XYPlot) this.chart.getPlot();\nXYItemRenderer renderer = plot.getRenderer();\nStandardXYToolTipGenerator tt = new StandardXYToolTipGenerator();\nrenderer.setSeriesToolTipGenerator(0, tt);\nXYToolTipGenerator tt2 = renderer.getToolTipGenerator(0, 0, false);\nassertTrue(tt2 == tt);\n}",
+            "begin_line": 153,
+            "end_line": 160,
+            "comment": "    \n     * Check that setting a tool tip generator for a series does override the\n     * default generator.\n     ",
+            "child_ranges": [
+                "(line 154,col 9)-(line 154,col 52)",
+                "(line 155,col 9)-(line 155,col 53)",
+                "(line 156,col 9)-(line 156,col 73)",
+                "(line 157,col 9)-(line 157,col 50)",
+                "(line 158,col 9)-(line 158,col 75)",
+                "(line 159,col 9)-(line 159,col 30)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.createChart()",
+            "snippet": "private static JFreeChart createChart() {\n\n// create a dataset...",
+            "begin_line": 167,
+            "end_line": 169,
+            "comment": "    \n     * Create a horizontal bar chart with sample data in the range -3 to +3.\n     *\n     * @return The chart.\n     ",
+            "child_ranges": [
+                "(line 168,col 0)-(line 168,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepChartTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.flag = true;\n}",
+            "begin_line": 204,
+            "end_line": 206,
+            "comment": "        \n         * Event handler.\n         *\n         * @param event  the event.\n         ",
+            "child_ranges": [
+                "(line 205,col 13)-(line 205,col 29)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(TimeSeriesChartTests.class);\n}",
+            "begin_line": 78,
+            "end_line": 80,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 79,col 9)-(line 79,col 57)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.TimeSeriesChartTests(String name)",
+            "snippet": "public TimeSeriesChartTests(String name) {\nsuper(name);\n}",
+            "begin_line": 87,
+            "end_line": 89,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 88,col 9)-(line 88,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.setUp()",
+            "snippet": "protected void setUp() {\nthis.chart = createChart();\n}",
+            "begin_line": 94,
+            "end_line": 96,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 95,col 9)-(line 95,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.testDrawWithNullInfo()",
+            "snippet": "public void testDrawWithNullInfo() {\n\nboolean success = false;\ntry {",
+            "begin_line": 102,
+            "end_line": 105,
+            "comment": "    \n     * Draws the chart with a null info object to make sure that no exceptions\n     * are thrown (a problem that was occurring at one point).\n     ",
+            "child_ranges": [
+                "(line 103,col 0)-(line 103,col 0)",
+                "(line 104,col 9)-(line 104,col 32)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.testReplaceDataset()",
+            "snippet": "public void testReplaceDataset() {\n\n// create a dataset...",
+            "begin_line": 125,
+            "end_line": 127,
+            "comment": "    \n     * Replaces the dataset and checks that it has changed as expected.\n     ",
+            "child_ranges": [
+                "(line 126,col 0)-(line 126,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.testSetSeriesToolTipGenerator()",
+            "snippet": "public void testSetSeriesToolTipGenerator() {\nXYPlot plot = (XYPlot) this.chart.getPlot();\nXYItemRenderer renderer = plot.getRenderer();\nStandardXYToolTipGenerator tt = new StandardXYToolTipGenerator();\nrenderer.setSeriesToolTipGenerator(0, tt);\nXYToolTipGenerator tt2 = renderer.getToolTipGenerator(0, 0, false);\nassertTrue(tt2 == tt);\n}",
+            "begin_line": 152,
+            "end_line": 159,
+            "comment": "    \n     * Check that setting a tool tip generator for a series does override the\n     * default generator.\n     ",
+            "child_ranges": [
+                "(line 153,col 9)-(line 153,col 52)",
+                "(line 154,col 9)-(line 154,col 53)",
+                "(line 155,col 9)-(line 155,col 73)",
+                "(line 156,col 9)-(line 156,col 50)",
+                "(line 157,col 9)-(line 157,col 75)",
+                "(line 158,col 9)-(line 158,col 30)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.createChart()",
+            "snippet": "private static JFreeChart createChart() {\n\n// create a dataset...",
+            "begin_line": 166,
+            "end_line": 168,
+            "comment": "    \n     * Create a horizontal bar chart with sample data in the range -3 to +3.\n     *\n     * @return The chart.\n     ",
+            "child_ranges": [
+                "(line 167,col 0)-(line 167,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.TimeSeriesChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/TimeSeriesChartTests.java",
+            "signature": "org.jfree.chart.junit.TimeSeriesChartTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.flag = true;\n}",
+            "begin_line": 202,
+            "end_line": 204,
+            "comment": "        \n         * Event handler.\n         *\n         * @param event  the event.\n         ",
+            "child_ranges": [
+                "(line 203,col 13)-(line 203,col 29)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(ScatterPlotTests.class);\n}",
+            "begin_line": 81,
+            "end_line": 83,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 82,col 9)-(line 82,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.ScatterPlotTests(String name)",
+            "snippet": "public ScatterPlotTests(String name) {\nsuper(name);\n}",
+            "begin_line": 90,
+            "end_line": 92,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 91,col 9)-(line 91,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.setUp()",
+            "snippet": "protected void setUp() {\nthis.chart = createChart();\n}",
+            "begin_line": 97,
+            "end_line": 99,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 98,col 9)-(line 98,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.testDrawWithNullInfo()",
+            "snippet": "public void testDrawWithNullInfo() {\n\nboolean success = false;\n\ntry {",
+            "begin_line": 105,
+            "end_line": 109,
+            "comment": "    \n     * Draws the chart with a null info object to make sure that no exceptions\n     * are thrown (a problem that was occurring at one point).\n     ",
+            "child_ranges": [
+                "(line 106,col 0)-(line 106,col 0)",
+                "(line 107,col 9)-(line 107,col 32)",
+                "(line 108,col 0)-(line 108,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.testReplaceDataset()",
+            "snippet": "public void testReplaceDataset() {\n\n// create a dataset...",
+            "begin_line": 130,
+            "end_line": 132,
+            "comment": "    \n     * Replaces the dataset and checks that it has changed as expected.\n     ",
+            "child_ranges": [
+                "(line 131,col 0)-(line 131,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.testSetSeriesToolTipGenerator()",
+            "snippet": "public void testSetSeriesToolTipGenerator() {\nXYPlot plot = (XYPlot) this.chart.getPlot();\nXYItemRenderer renderer = plot.getRenderer();\nStandardXYToolTipGenerator tt = new StandardXYToolTipGenerator();\nrenderer.setSeriesToolTipGenerator(0, tt);\nXYToolTipGenerator tt2 = renderer.getToolTipGenerator(0, 0, false);\nassertTrue(tt2 == tt);\n}",
+            "begin_line": 157,
+            "end_line": 164,
+            "comment": "    \n     * Check that setting a tool tip generator for a series does override the\n     * default generator.\n     ",
+            "child_ranges": [
+                "(line 158,col 9)-(line 158,col 52)",
+                "(line 159,col 9)-(line 159,col 53)",
+                "(line 160,col 9)-(line 160,col 73)",
+                "(line 161,col 9)-(line 161,col 50)",
+                "(line 162,col 9)-(line 162,col 75)",
+                "(line 163,col 9)-(line 163,col 30)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.createChart()",
+            "snippet": "private static JFreeChart createChart() {\n\n// create a dataset...",
+            "begin_line": 171,
+            "end_line": 173,
+            "comment": "    \n     * Create a horizontal bar chart with sample data in the range -3 to +3.\n     *\n     * @return The chart.\n     ",
+            "child_ranges": [
+                "(line 172,col 0)-(line 172,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.ScatterPlotTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/ScatterPlotTests.java",
+            "signature": "org.jfree.chart.junit.ScatterPlotTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.flag = true;\n}",
+            "begin_line": 208,
+            "end_line": 210,
+            "comment": "        \n         * Event handler.\n         *\n         * @param event  the event.\n         ",
+            "child_ranges": [
+                "(line 209,col 13)-(line 209,col 29)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(JFreeChartTests.class);\n}",
+            "begin_line": 99,
+            "end_line": 101,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 100,col 9)-(line 100,col 52)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.JFreeChartTests(String name)",
+            "snippet": "public JFreeChartTests(String name) {\nsuper(name);\n}",
+            "begin_line": 108,
+            "end_line": 110,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 109,col 9)-(line 109,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.setUp()",
+            "snippet": "protected void setUp() {\n\n// create a dataset...",
+            "begin_line": 115,
+            "end_line": 117,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 116,col 0)-(line 116,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testEquals()",
+            "snippet": "public void testEquals() {\nJFreeChart chart1 = new JFreeChart(\"Title\",",
+            "begin_line": 137,
+            "end_line": 138,
+            "comment": "    \n     * Check that the equals() method can distinguish all fields.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testEquals2()",
+            "snippet": "public void testEquals2() {\nJFreeChart chart1 = new JFreeChart(\"Title\",",
+            "begin_line": 233,
+            "end_line": 234,
+            "comment": "    \n     * A test to make sure that the legend is being picked up in the\n     * equals() testing.\n     ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testSubtitleCount()",
+            "snippet": "public void testSubtitleCount() {\nint count = this.pieChart.getSubtitleCount();\nassertEquals(1, count);\n}",
+            "begin_line": 245,
+            "end_line": 248,
+            "comment": "    \n     * Checks the subtitle count - should be 1 (the legend).\n     ",
+            "child_ranges": [
+                "(line 246,col 9)-(line 246,col 53)",
+                "(line 247,col 9)-(line 247,col 31)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testGetSubtitle()",
+            "snippet": "public void testGetSubtitle() {\nDefaultPieDataset dataset = new DefaultPieDataset();\nJFreeChart chart = ChartFactory.createPieChart(\"title\", dataset, true,",
+            "begin_line": 253,
+            "end_line": 255,
+            "comment": "    \n     * Some checks for the getSubtitle() method.\n     ",
+            "child_ranges": [
+                "(line 254,col 9)-(line 254,col 60)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testSerialization1()",
+            "snippet": "public void testSerialization1() {\n\nDefaultPieDataset data = new DefaultPieDataset();\ndata.setValue(\"Type 1\", 54.5);\ndata.setValue(\"Type 2\", 23.9);\ndata.setValue(\"Type 3\", 45.8);\n\nJFreeChart c1 = ChartFactory.createPieChart(\"Test\", data, true, true,",
+            "begin_line": 291,
+            "end_line": 298,
+            "comment": "    \n     * Serialize a pie chart, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 292,col 0)-(line 292,col 0)",
+                "(line 293,col 9)-(line 293,col 57)",
+                "(line 294,col 9)-(line 294,col 38)",
+                "(line 295,col 9)-(line 295,col 38)",
+                "(line 296,col 9)-(line 296,col 38)",
+                "(line 297,col 0)-(line 297,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testSerialization2()",
+            "snippet": "public void testSerialization2() {\n\nDefaultPieDataset data = new DefaultPieDataset();\ndata.setValue(\"Type 1\", 54.5);\ndata.setValue(\"Type 2\", 23.9);\ndata.setValue(\"Type 3\", 45.8);\n\nJFreeChart c1 = ChartFactory.createPieChart3D(\"Test\", data, true, true,",
+            "begin_line": 324,
+            "end_line": 331,
+            "comment": "    \n     * Serialize a 3D pie chart, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 325,col 0)-(line 325,col 0)",
+                "(line 326,col 9)-(line 326,col 57)",
+                "(line 327,col 9)-(line 327,col 38)",
+                "(line 328,col 9)-(line 328,col 38)",
+                "(line 329,col 9)-(line 329,col 38)",
+                "(line 330,col 0)-(line 330,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testSerialization3()",
+            "snippet": "public void testSerialization3() {\n\n// row keys...",
+            "begin_line": 356,
+            "end_line": 358,
+            "comment": "    \n     * Serialize a bar chart, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 357,col 0)-(line 357,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testSerialization4()",
+            "snippet": "public void testSerialization4() {\n\nRegularTimePeriod t = new Day();\nTimeSeries series = new TimeSeries(\"Series 1\");\nseries.add(t, 36.4);\nt = t.next();\nseries.add(t, 63.5);\nTimeSeriesCollection dataset = new TimeSeriesCollection();\ndataset.addSeries(series);\n\nJFreeChart c1 = ChartFactory.createTimeSeriesChart(\"Test\", \"Date\",",
+            "begin_line": 438,
+            "end_line": 448,
+            "comment": "    \n     * Serialize a time seroes chart, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 439,col 0)-(line 439,col 0)",
+                "(line 440,col 9)-(line 440,col 40)",
+                "(line 441,col 9)-(line 441,col 55)",
+                "(line 442,col 9)-(line 442,col 28)",
+                "(line 443,col 9)-(line 443,col 21)",
+                "(line 444,col 9)-(line 444,col 28)",
+                "(line 445,col 9)-(line 445,col 66)",
+                "(line 446,col 9)-(line 446,col 34)",
+                "(line 447,col 0)-(line 447,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testAddSubtitle()",
+            "snippet": "public void testAddSubtitle() {\nDefaultPieDataset dataset = new DefaultPieDataset();\nJFreeChart chart = ChartFactory.createPieChart(\"title\", dataset, true,",
+            "begin_line": 473,
+            "end_line": 475,
+            "comment": "    \n     * Some checks for the addSubtitle() methods.\n     ",
+            "child_ranges": [
+                "(line 474,col 9)-(line 474,col 60)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testGetSubtitles()",
+            "snippet": "public void testGetSubtitles() {\nDefaultPieDataset dataset = new DefaultPieDataset();\nJFreeChart chart = ChartFactory.createPieChart(\"title\", dataset, true,",
+            "begin_line": 517,
+            "end_line": 519,
+            "comment": "    \n     * Some checks for the getSubtitles() method.\n     ",
+            "child_ranges": [
+                "(line 518,col 9)-(line 518,col 60)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testLegendEvents()",
+            "snippet": "public void testLegendEvents() {\nDefaultPieDataset dataset = new DefaultPieDataset();\nJFreeChart chart = ChartFactory.createPieChart(\"title\", dataset, true,",
+            "begin_line": 533,
+            "end_line": 535,
+            "comment": "    \n     * Some checks for the default legend firing change events.\n     ",
+            "child_ranges": [
+                "(line 534,col 9)-(line 534,col 60)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.testTitleChangeEvent()",
+            "snippet": "public void testTitleChangeEvent() {\nDefaultPieDataset dataset = new DefaultPieDataset();\nJFreeChart chart = ChartFactory.createPieChart(\"title\", dataset, true,",
+            "begin_line": 547,
+            "end_line": 549,
+            "comment": "    \n     * Some checks for title changes and event notification.\n     ",
+            "child_ranges": [
+                "(line 548,col 9)-(line 548,col 60)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.JFreeChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/JFreeChartTests.java",
+            "signature": "org.jfree.chart.junit.JFreeChartTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.lastChartChangeEvent = event;\n}",
+            "begin_line": 586,
+            "end_line": 588,
+            "comment": "    \n     * Records the last chart change event.\n     *\n     * @param event  the event.\n     ",
+            "child_ranges": [
+                "(line 587,col 9)-(line 587,col 42)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(LogAxisTests.class);\n}",
+            "begin_line": 77,
+            "end_line": 79,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 78,col 9)-(line 78,col 49)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.LogAxisTests(String name)",
+            "snippet": "public LogAxisTests(String name) {\nsuper(name);\n}",
+            "begin_line": 86,
+            "end_line": 88,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 87,col 9)-(line 87,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testCloning()",
+            "snippet": "public void testCloning() {\nLogAxis a1 = new LogAxis(\"Test\");\nLogAxis a2 = null;\ntry {",
+            "begin_line": 93,
+            "end_line": 96,
+            "comment": "    \n     * Confirm that cloning works.\n     ",
+            "child_ranges": [
+                "(line 94,col 9)-(line 94,col 41)",
+                "(line 95,col 9)-(line 95,col 26)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testEquals()",
+            "snippet": "public void testEquals() {\nLogAxis a1 = new LogAxis(\"Test\");\nLogAxis a2 = new LogAxis(\"Test\");\nassertTrue(a1.equals(a2));\n\na1.setBase(2.0);\nassertFalse(a1.equals(a2));\na2.setBase(2.0);\nassertTrue(a1.equals(a2));\n\na1.setSmallestValue(0.1);\nassertFalse(a1.equals(a2));\na2.setSmallestValue(0.1);\nassertTrue(a1.equals(a2));\n\na1.setMinorTickCount(8);\nassertFalse(a1.equals(a2));\na2.setMinorTickCount(8);\nassertTrue(a1.equals(a2));\n}",
+            "begin_line": 110,
+            "end_line": 129,
+            "comment": "    \n     * Confirm that the equals method can distinguish all the required fields.\n     ",
+            "child_ranges": [
+                "(line 111,col 9)-(line 111,col 41)",
+                "(line 112,col 9)-(line 112,col 41)",
+                "(line 113,col 9)-(line 113,col 34)",
+                "(line 114,col 0)-(line 114,col 0)",
+                "(line 115,col 9)-(line 115,col 24)",
+                "(line 116,col 9)-(line 116,col 35)",
+                "(line 117,col 9)-(line 117,col 24)",
+                "(line 118,col 9)-(line 118,col 34)",
+                "(line 119,col 0)-(line 119,col 0)",
+                "(line 120,col 9)-(line 120,col 33)",
+                "(line 121,col 9)-(line 121,col 35)",
+                "(line 122,col 9)-(line 122,col 33)",
+                "(line 123,col 9)-(line 123,col 34)",
+                "(line 124,col 0)-(line 124,col 0)",
+                "(line 125,col 9)-(line 125,col 32)",
+                "(line 126,col 9)-(line 126,col 35)",
+                "(line 127,col 9)-(line 127,col 32)",
+                "(line 128,col 9)-(line 128,col 34)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testHashCode()",
+            "snippet": "public void testHashCode() {\nLogAxis a1 = new LogAxis(\"Test\");\nLogAxis a2 = new LogAxis(\"Test\");\nassertTrue(a1.equals(a2));\nint h1 = a1.hashCode();\nint h2 = a2.hashCode();\nassertEquals(h1, h2);\n}",
+            "begin_line": 134,
+            "end_line": 141,
+            "comment": "    \n     * Two objects that are equal are required to return the same hashCode.\n     ",
+            "child_ranges": [
+                "(line 135,col 9)-(line 135,col 41)",
+                "(line 136,col 9)-(line 136,col 41)",
+                "(line 137,col 9)-(line 137,col 34)",
+                "(line 138,col 9)-(line 138,col 31)",
+                "(line 139,col 9)-(line 139,col 31)",
+                "(line 140,col 9)-(line 140,col 29)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testTranslateJava2DToValue()",
+            "snippet": "public void testTranslateJava2DToValue() {\nLogAxis axis = new LogAxis();\naxis.setRange(50.0, 100.0);\nRectangle2D dataArea = new Rectangle2D.Double(10.0, 50.0, 400.0, 300.0);\ndouble y1 = axis.java2DToValue(75.0, dataArea, RectangleEdge.LEFT);\nassertEquals(94.3874312681693, y1, EPSILON);\ndouble y2 = axis.java2DToValue(75.0, dataArea, RectangleEdge.RIGHT);\nassertEquals(94.3874312681693, y2, EPSILON);\ndouble x1 = axis.java2DToValue(75.0, dataArea, RectangleEdge.TOP);\nassertEquals(55.961246381405, x1, EPSILON);\ndouble x2 = axis.java2DToValue(75.0, dataArea, RectangleEdge.BOTTOM);\nassertEquals(55.961246381405, x2, EPSILON);\naxis.setInverted(true);\ndouble y3 = axis.java2DToValue(75.0, dataArea, RectangleEdge.LEFT);\nassertEquals(52.9731547179647, y3, EPSILON);\ndouble y4 = axis.java2DToValue(75.0, dataArea, RectangleEdge.RIGHT);\nassertEquals(52.9731547179647, y4, EPSILON);\ndouble x3 = axis.java2DToValue(75.0, dataArea, RectangleEdge.TOP);\nassertEquals(89.3475453695651, x3, EPSILON);\ndouble x4 = axis.java2DToValue(75.0, dataArea, RectangleEdge.BOTTOM);\nassertEquals(89.3475453695651, x4, EPSILON);\n}",
+            "begin_line": 148,
+            "end_line": 169,
+            "comment": "    \n     * Test the translation of Java2D values to data values.\n     ",
+            "child_ranges": [
+                "(line 149,col 9)-(line 149,col 37)",
+                "(line 150,col 9)-(line 150,col 35)",
+                "(line 151,col 9)-(line 151,col 80)",
+                "(line 152,col 9)-(line 152,col 75)",
+                "(line 153,col 9)-(line 153,col 52)",
+                "(line 154,col 9)-(line 154,col 76)",
+                "(line 155,col 9)-(line 155,col 52)",
+                "(line 156,col 9)-(line 156,col 74)",
+                "(line 157,col 9)-(line 157,col 51)",
+                "(line 158,col 9)-(line 158,col 77)",
+                "(line 159,col 9)-(line 159,col 51)",
+                "(line 160,col 9)-(line 160,col 31)",
+                "(line 161,col 9)-(line 161,col 75)",
+                "(line 162,col 9)-(line 162,col 52)",
+                "(line 163,col 9)-(line 163,col 76)",
+                "(line 164,col 9)-(line 164,col 52)",
+                "(line 165,col 9)-(line 165,col 74)",
+                "(line 166,col 9)-(line 166,col 52)",
+                "(line 167,col 9)-(line 167,col 77)",
+                "(line 168,col 9)-(line 168,col 52)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testSerialization()",
+            "snippet": "public void testSerialization() {\n\nLogAxis a1 = new LogAxis(\"Test Axis\");\nLogAxis a2 = null;\n\ntry {",
+            "begin_line": 174,
+            "end_line": 179,
+            "comment": "    \n     * Serialize an instance, restore it, and check for equality.\n     ",
+            "child_ranges": [
+                "(line 175,col 0)-(line 175,col 0)",
+                "(line 176,col 9)-(line 176,col 46)",
+                "(line 177,col 9)-(line 177,col 26)",
+                "(line 178,col 0)-(line 178,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testAutoRange1()",
+            "snippet": "public void testAutoRange1() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createBarChart(",
+            "begin_line": 201,
+            "end_line": 205,
+            "comment": "    \n     * A simple test for the auto-range calculation looking at a\n     * LogAxis used as the range axis for a CategoryPlot.\n     ",
+            "child_ranges": [
+                "(line 202,col 9)-(line 202,col 70)",
+                "(line 203,col 9)-(line 203,col 53)",
+                "(line 204,col 9)-(line 204,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testAutoRange3()",
+            "snippet": "public void testAutoRange3() {\nDefaultCategoryDataset dataset = new DefaultCategoryDataset();\ndataset.setValue(100.0, \"Row 1\", \"Column 1\");\ndataset.setValue(200.0, \"Row 1\", \"Column 2\");\nJFreeChart chart = ChartFactory.createLineChart(\"Test\", \"Categories\",",
+            "begin_line": 227,
+            "end_line": 231,
+            "comment": "    \n     * A simple test for the auto-range calculation looking at a\n     * NumberAxis used as the range axis for a CategoryPlot.  In this\n     * case, the original dataset is replaced with a new dataset.\n     ",
+            "child_ranges": [
+                "(line 228,col 9)-(line 228,col 70)",
+                "(line 229,col 9)-(line 229,col 53)",
+                "(line 230,col 9)-(line 230,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testXYAutoRange1()",
+            "snippet": "public void testXYAutoRange1() {\nXYSeries series = new XYSeries(\"Series 1\");\nseries.add(1.0, 1.0);\nseries.add(2.0, 2.0);\nseries.add(3.0, 3.0);\nXYSeriesCollection dataset = new XYSeriesCollection();\ndataset.addSeries(series);\nJFreeChart chart = ChartFactory.createScatterPlot(",
+            "begin_line": 253,
+            "end_line": 260,
+            "comment": "    \n     * Checks that the auto-range for the domain axis on an XYPlot is\n     * working as expected.\n     ",
+            "child_ranges": [
+                "(line 254,col 9)-(line 254,col 51)",
+                "(line 255,col 9)-(line 255,col 29)",
+                "(line 256,col 9)-(line 256,col 29)",
+                "(line 257,col 9)-(line 257,col 29)",
+                "(line 258,col 9)-(line 258,col 62)",
+                "(line 259,col 9)-(line 259,col 34)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testXYAutoRange2()",
+            "snippet": "public void testXYAutoRange2() {\nXYSeries series = new XYSeries(\"Series 1\");\nseries.add(1.0, 1.0);\nseries.add(2.0, 2.0);\nseries.add(3.0, 3.0);\nXYSeriesCollection dataset = new XYSeriesCollection();\ndataset.addSeries(series);\nJFreeChart chart = ChartFactory.createScatterPlot(",
+            "begin_line": 281,
+            "end_line": 288,
+            "comment": "    \n     * Checks that the auto-range for the range axis on an XYPlot is\n     * working as expected.\n     ",
+            "child_ranges": [
+                "(line 282,col 9)-(line 282,col 51)",
+                "(line 283,col 9)-(line 283,col 29)",
+                "(line 284,col 9)-(line 284,col 29)",
+                "(line 285,col 9)-(line 285,col 29)",
+                "(line 286,col 9)-(line 286,col 62)",
+                "(line 287,col 9)-(line 287,col 34)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testSetLowerBound()",
+            "snippet": "public void testSetLowerBound() {\nLogAxis axis = new LogAxis(\"X\");\naxis.setRange(0.0, 10.0);\naxis.setLowerBound(5.0);\nassertEquals(5.0, axis.getLowerBound(), EPSILON);\naxis.setLowerBound(10.0);\nassertEquals(10.0, axis.getLowerBound(), EPSILON);\nassertEquals(11.0, axis.getUpperBound(), EPSILON);\n}",
+            "begin_line": 308,
+            "end_line": 316,
+            "comment": "    \n     * Some checks for the setLowerBound() method.\n     ",
+            "child_ranges": [
+                "(line 309,col 9)-(line 309,col 40)",
+                "(line 310,col 9)-(line 310,col 33)",
+                "(line 311,col 9)-(line 311,col 32)",
+                "(line 312,col 9)-(line 312,col 57)",
+                "(line 313,col 9)-(line 313,col 33)",
+                "(line 314,col 9)-(line 314,col 58)",
+                "(line 315,col 9)-(line 315,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.LogAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/LogAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.LogAxisTests.testTickMarksVisibleDefault()",
+            "snippet": "public void testTickMarksVisibleDefault() {\nLogAxis axis = new LogAxis(\"Log Axis\");\nassertTrue(axis.isTickMarksVisible());\n}",
+            "begin_line": 321,
+            "end_line": 324,
+            "comment": "    \n     * Checks the default value for the tickMarksVisible flag.\n     ",
+            "child_ranges": [
+                "(line 322,col 9)-(line 322,col 47)",
+                "(line 323,col 9)-(line 323,col 46)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(XYAreaChartTests.class);\n}",
+            "begin_line": 79,
+            "end_line": 81,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 80,col 9)-(line 80,col 53)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.XYAreaChartTests(String name)",
+            "snippet": "public XYAreaChartTests(String name) {\nsuper(name);\n}",
+            "begin_line": 88,
+            "end_line": 90,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 89,col 9)-(line 89,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.setUp()",
+            "snippet": "protected void setUp() {\nthis.chart = createChart();\n}",
+            "begin_line": 95,
+            "end_line": 97,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 96,col 9)-(line 96,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.testDrawWithNullInfo()",
+            "snippet": "public void testDrawWithNullInfo() {\n\nboolean success = false;\ntry {",
+            "begin_line": 103,
+            "end_line": 106,
+            "comment": "    \n     * Draws the chart with a null info object to make sure that no exceptions\n     * are thrown (a problem that was occurring at one point).\n     ",
+            "child_ranges": [
+                "(line 104,col 0)-(line 104,col 0)",
+                "(line 105,col 9)-(line 105,col 32)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.testReplaceDataset()",
+            "snippet": "public void testReplaceDataset() {\n\n// create a dataset...",
+            "begin_line": 126,
+            "end_line": 128,
+            "comment": "    \n     * Replaces the dataset and checks that it has changed as expected.\n     ",
+            "child_ranges": [
+                "(line 127,col 0)-(line 127,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.testSetSeriesToolTipGenerator()",
+            "snippet": "public void testSetSeriesToolTipGenerator() {\nXYPlot plot = (XYPlot) this.chart.getPlot();\nXYItemRenderer renderer = plot.getRenderer();\nStandardXYToolTipGenerator tt = new StandardXYToolTipGenerator();\nrenderer.setSeriesToolTipGenerator(0, tt);\nXYToolTipGenerator tt2 = renderer.getToolTipGenerator(0, 0,",
+            "begin_line": 153,
+            "end_line": 158,
+            "comment": "    \n     * Check that setting a tool tip generator for a series does override the\n     * default generator.\n     ",
+            "child_ranges": [
+                "(line 154,col 9)-(line 154,col 52)",
+                "(line 155,col 9)-(line 155,col 53)",
+                "(line 156,col 9)-(line 156,col 73)",
+                "(line 157,col 9)-(line 157,col 50)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.createChart()",
+            "snippet": "private static JFreeChart createChart() {\n\n// create a dataset...",
+            "begin_line": 168,
+            "end_line": 170,
+            "comment": "    \n     * Create a horizontal bar chart with sample data in the range -3 to +3.\n     *\n     * @return The chart.\n     ",
+            "child_ranges": [
+                "(line 169,col 0)-(line 169,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYAreaChartTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.flag = true;\n}",
+            "begin_line": 205,
+            "end_line": 207,
+            "comment": "        \n         * Event handler.\n         *\n         * @param event  the event.\n         ",
+            "child_ranges": [
+                "(line 206,col 13)-(line 206,col 29)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.axis.junit.ValueAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/ValueAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.ValueAxisTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(ValueAxisTests.class);\n}",
+            "begin_line": 74,
+            "end_line": 76,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 75,col 9)-(line 75,col 51)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.ValueAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/ValueAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.ValueAxisTests.ValueAxisTests(String name)",
+            "snippet": "public ValueAxisTests(String name) {\nsuper(name);\n}",
+            "begin_line": 83,
+            "end_line": 85,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 84,col 9)-(line 84,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.ValueAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/ValueAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.ValueAxisTests.testCloning()",
+            "snippet": "public void testCloning() {\nValueAxis a1 = new NumberAxis(\"Test\");\nValueAxis a2 = null;\ntry {",
+            "begin_line": 90,
+            "end_line": 93,
+            "comment": "    \n     * Confirm that cloning works.\n     ",
+            "child_ranges": [
+                "(line 91,col 9)-(line 91,col 46)",
+                "(line 92,col 9)-(line 92,col 28)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.ValueAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/ValueAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.ValueAxisTests.testEquals()",
+            "snippet": "public void testEquals() {\n\nNumberAxis a1 = new NumberAxis(\"Test\");\nNumberAxis a2 = new NumberAxis(\"Test\");\nassertTrue(a1.equals(a2));\n\n// axis line visible flag...",
+            "begin_line": 107,
+            "end_line": 113,
+            "comment": "    \n     * Confirm that the equals method can distinguish all the required fields.\n     ",
+            "child_ranges": [
+                "(line 108,col 0)-(line 108,col 0)",
+                "(line 109,col 9)-(line 109,col 47)",
+                "(line 110,col 9)-(line 110,col 47)",
+                "(line 111,col 9)-(line 111,col 34)",
+                "(line 112,col 0)-(line 112,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.axis.junit.ValueAxisTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/axis/junit/ValueAxisTests.java",
+            "signature": "org.jfree.chart.axis.junit.ValueAxisTests.testAxisMargins()",
+            "snippet": "public void testAxisMargins() {\nXYSeries series = new XYSeries(\"S1\");\nseries.add(100.0, 1.1);\nseries.add(200.0, 2.2);\nXYSeriesCollection dataset = new XYSeriesCollection(series);\ndataset.setIntervalWidth(0.0);\nJFreeChart chart = ChartFactory.createScatterPlot(",
+            "begin_line": 228,
+            "end_line": 234,
+            "comment": "    \n     * Tests the the lower and upper margin settings produce the expected\n     * results.\n     ",
+            "child_ranges": [
+                "(line 229,col 9)-(line 229,col 45)",
+                "(line 230,col 9)-(line 230,col 31)",
+                "(line 231,col 9)-(line 231,col 31)",
+                "(line 232,col 9)-(line 232,col 68)",
+                "(line 233,col 9)-(line 233,col 38)"
+            ]
+        }
+    ],
+    [
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.suite()",
+            "snippet": "public static Test suite() {\nreturn new TestSuite(XYStepAreaChartTests.class);\n}",
+            "begin_line": 79,
+            "end_line": 81,
+            "comment": "    \n     * Returns the tests as a test suite.\n     *\n     * @return The test suite.\n     ",
+            "child_ranges": [
+                "(line 80,col 9)-(line 80,col 57)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.XYStepAreaChartTests(String name)",
+            "snippet": "public XYStepAreaChartTests(String name) {\nsuper(name);\n}",
+            "begin_line": 88,
+            "end_line": 90,
+            "comment": "    \n     * Constructs a new set of tests.\n     *\n     * @param name  the name of the tests.\n     ",
+            "child_ranges": [
+                "(line 89,col 9)-(line 89,col 20)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.setUp()",
+            "snippet": "protected void setUp() {\nthis.chart = createChart();\n}",
+            "begin_line": 95,
+            "end_line": 97,
+            "comment": "    \n     * Common test setup.\n     ",
+            "child_ranges": [
+                "(line 96,col 9)-(line 96,col 35)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.testDrawWithNullInfo()",
+            "snippet": "public void testDrawWithNullInfo() {\n\nboolean success = false;\ntry {",
+            "begin_line": 103,
+            "end_line": 106,
+            "comment": "    \n     * Draws the chart with a null info object to make sure that no exceptions\n     * are thrown (a problem that was occurring at one point).\n     ",
+            "child_ranges": [
+                "(line 104,col 0)-(line 104,col 0)",
+                "(line 105,col 9)-(line 105,col 32)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.testReplaceDataset()",
+            "snippet": "public void testReplaceDataset() {\n\n// create a dataset...",
+            "begin_line": 126,
+            "end_line": 128,
+            "comment": "    \n     * Replaces the dataset and checks that it has changed as expected.\n     ",
+            "child_ranges": [
+                "(line 127,col 0)-(line 127,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.testSetSeriesToolTipGenerator()",
+            "snippet": "public void testSetSeriesToolTipGenerator() {\nXYPlot plot = (XYPlot) this.chart.getPlot();\nXYItemRenderer renderer = plot.getRenderer();\nStandardXYToolTipGenerator tt = new StandardXYToolTipGenerator();\nrenderer.setSeriesToolTipGenerator(0, tt);\nXYToolTipGenerator tt2 = renderer.getToolTipGenerator(0, 0, false);\nassertTrue(tt2 == tt);\n}",
+            "begin_line": 153,
+            "end_line": 160,
+            "comment": "    \n     * Check that setting a tool tip generator for a series does override the\n     * default generator.\n     ",
+            "child_ranges": [
+                "(line 154,col 9)-(line 154,col 52)",
+                "(line 155,col 9)-(line 155,col 53)",
+                "(line 156,col 9)-(line 156,col 73)",
+                "(line 157,col 9)-(line 157,col 50)",
+                "(line 158,col 9)-(line 158,col 75)",
+                "(line 159,col 9)-(line 159,col 30)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.createChart()",
+            "snippet": "private static JFreeChart createChart() {\n\n// create a dataset...",
+            "begin_line": 167,
+            "end_line": 169,
+            "comment": "    \n     * Create a horizontal bar chart with sample data in the range -3 to +3.\n     *\n     * @return The chart.\n     ",
+            "child_ranges": [
+                "(line 168,col 0)-(line 168,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jfree.chart.junit.XYStepAreaChartTests",
+            "child_classes": [],
+            "src_path": "tests/org/jfree/chart/junit/XYStepAreaChartTests.java",
+            "signature": "org.jfree.chart.junit.XYStepAreaChartTests.chartChanged(ChartChangeEvent event)",
+            "snippet": "public void chartChanged(ChartChangeEvent event) {\nthis.flag = true;\n}",
+            "begin_line": 204,
+            "end_line": 206,
+            "comment": "        \n         * Event handler.\n         *\n         * @param event  the event.\n         ",
+            "child_ranges": [
+                "(line 205,col 13)-(line 205,col 29)"
+            ]
+        }
+    ]
+]

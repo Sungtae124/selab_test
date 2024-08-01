@@ -1,0 +1,243 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.Identifiable()",
+            "snippet": "public Identifiable() { this(0); }\npublic Identifiable(int v) {",
+            "begin_line": 41,
+            "end_line": 42,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.Identifiable(int v)",
+            "snippet": "public Identifiable(int v) {\nvalue = v;\n}",
+            "begin_line": 42,
+            "end_line": 44,
+            "comment": "      Classes for external id use",
+            "child_ranges": [
+                "(line 43,col 13)-(line 43,col 22)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.UUIDNode()",
+            "snippet": "public UUIDNode() { this(0); }\npublic UUIDNode(int v) { value = v; }",
+            "begin_line": 55,
+            "end_line": 56,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.UUIDNode(int v)",
+            "snippet": "public UUIDNode(int v) { value = v; }\n}",
+            "begin_line": 56,
+            "end_line": 57,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapper()",
+            "snippet": "public IdWrapper() { }\npublic IdWrapper(int v) {",
+            "begin_line": 66,
+            "end_line": 67,
+            "comment": "      Classes for external id from property annotations:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapper(int v)",
+            "snippet": "public IdWrapper(int v) {\nnode = new ValueNode(v);\n}",
+            "begin_line": 67,
+            "end_line": 69,
+            "comment": "      Classes for external id from property annotations:",
+            "child_ranges": [
+                "(line 68,col 13)-(line 68,col 36)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNode()",
+            "snippet": "public ValueNode() { this(0); }\npublic ValueNode(int v) { value = v; }",
+            "begin_line": 76,
+            "end_line": 77,
+            "comment": "      Classes for external id from property annotations:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNode(int v)",
+            "snippet": "public ValueNode(int v) { value = v; }\n}",
+            "begin_line": 77,
+            "end_line": 78,
+            "comment": "      Classes for external id from property annotations:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdentifiableCustom()",
+            "snippet": "public IdentifiableCustom() { this(-1, 0); }\npublic IdentifiableCustom(int i, int v) {",
+            "begin_line": 91,
+            "end_line": 92,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdentifiableCustom(int i, int v)",
+            "snippet": "public IdentifiableCustom(int i, int v) {\ncustomId = i;\nvalue = v;\n}",
+            "begin_line": 92,
+            "end_line": 95,
+            "comment": "      Classes for external id use",
+            "child_ranges": [
+                "(line 93,col 13)-(line 93,col 25)",
+                "(line 94,col 13)-(line 94,col 22)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapperExt()",
+            "snippet": "public IdWrapperExt() { }\npublic IdWrapperExt(int v) {",
+            "begin_line": 104,
+            "end_line": 105,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapperExt(int v)",
+            "snippet": "public IdWrapperExt(int v) {\nnode = new ValueNodeExt(v);\n}",
+            "begin_line": 105,
+            "end_line": 107,
+            "comment": "      Classes for external id use",
+            "child_ranges": [
+                "(line 106,col 13)-(line 106,col 39)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNodeExt()",
+            "snippet": "public ValueNodeExt() { this(0); }\npublic ValueNodeExt(int v) { value = v; }",
+            "begin_line": 116,
+            "end_line": 117,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNodeExt(int v)",
+            "snippet": "public ValueNodeExt(int v) { value = v; }\n\npublic void setCustomId(int i) {",
+            "begin_line": 117,
+            "end_line": 119,
+            "comment": "      Classes for external id use",
+            "child_ranges": [
+                "(line 118,col 0)-(line 118,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.setCustomId(int i)",
+            "snippet": "public void setCustomId(int i) {\ncustomId = i;\n}",
+            "begin_line": 119,
+            "end_line": 121,
+            "comment": "      Classes for external id use",
+            "child_ranges": [
+                "(line 120,col 9)-(line 120,col 22)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.anySet(String field, AnySetterObjectId value)",
+            "snippet": "public void anySet(String field, AnySetterObjectId value) {\n// Ensure that it is never called with null because of unresolved reference.",
+            "begin_line": 133,
+            "end_line": 134,
+            "comment": "      Classes for external id use",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.PoolResolver()",
+            "snippet": "public PoolResolver() {}\npublic PoolResolver(Map<Object,WithCustomResolution> pool){ _pool = pool; }",
+            "begin_line": 160,
+            "end_line": 161,
+            "comment": "             Ensure that it is never called with null because of unresolved reference.",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.PoolResolver(Map<Object,WithCustomResolution> pool)",
+            "snippet": "public PoolResolver(Map<Object,WithCustomResolution> pool){ _pool = pool; }\n\n@Override",
+            "begin_line": 161,
+            "end_line": 163,
+            "comment": "             Ensure that it is never called with null because of unresolved reference.",
+            "child_ranges": [
+                "(line 162,col 0)-(line 162,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.bindItem(IdKey id, Object pojo)",
+            "snippet": "public void bindItem(IdKey id, Object pojo){ }\n\n@Override",
+            "begin_line": 164,
+            "end_line": 166,
+            "comment": "             Ensure that it is never called with null because of unresolved reference.",
+            "child_ranges": [
+                "(line 165,col 0)-(line 165,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.resolveId(IdKey id)",
+            "snippet": "public Object resolveId(IdKey id){ return _pool.get(id.key); }\n\n@Override",
+            "begin_line": 167,
+            "end_line": 169,
+            "comment": "             Ensure that it is never called with null because of unresolved reference.",
+            "child_ranges": [
+                "(line 168,col 0)-(line 168,col 0)"
+            ]
+        }
+    ]
+]
