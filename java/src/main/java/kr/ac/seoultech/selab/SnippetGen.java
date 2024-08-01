@@ -171,7 +171,7 @@ public class SnippetGen {
             for (Object cl : classes) {
                 String parserUnitName = cl.toString().replace(".", "/") + ".java"; // org/apache/commons/lang3/StringUtils.java
                 String sourceFilePath = basePath + sourcePath + "/" + parserUnitName; // src/main/resources/Lang-20/buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
-                String parserClassPath = basePath + bugId + "/buggy/target/classes"; // Chart, Closure, Mockito-18 target/classes 없음.
+                String parserClassPath = basePath + bugId + "/lib/ "+ bugId + "_buggy_src.jar"; // src/main/resources/Lang-20/lib/Lang-20_buggy_src.jar
                 String parserSourcePath = basePath + sourcePath;
                 try {
                     String javaSourceCode = new String(Files.readAllBytes(Paths.get(sourceFilePath).toAbsolutePath()));
