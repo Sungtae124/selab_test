@@ -1,0 +1,321 @@
+[
+    [
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.moveByAppend()",
+            "snippet": "public void moveByAppend() {\n// test for https://github.com/jhy/jsoup/issues/239",
+            "begin_line": 725,
+            "end_line": 726,
+            "comment": "         size, get, set, add, remove",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.insertChildrenArgumentValidation()",
+            "snippet": "public void insertChildrenArgumentValidation() {\nDocument doc = Jsoup.parse(\"<div id=1>Text <p>One</p> Text <p>Two</p></div><div id=2></div>\");\nElement div1 = doc.select(\"div\").get(0);\nElement div2 = doc.select(\"div\").get(1);\nList<Node> children = div1.childNodes();\n\ntry {",
+            "begin_line": 746,
+            "end_line": 752,
+            "comment": "         can empty an element and append its children to another element",
+            "child_ranges": [
+                "(line 747,col 9)-(line 747,col 102)",
+                "(line 748,col 9)-(line 748,col 48)",
+                "(line 749,col 9)-(line 749,col 48)",
+                "(line 750,col 9)-(line 750,col 48)",
+                "(line 751,col 0)-(line 751,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.insertChildrenAtPosition()",
+            "snippet": "public void insertChildrenAtPosition() {\nDocument doc = Jsoup.parse(\"<div id=1>Text1 <p>One</p> Text2 <p>Two</p></div><div id=2>Text3 <p>Three</p></div>\");\nElement div1 = doc.select(\"div\").get(0);\nElements p1s = div1.select(\"p\");\nElement div2 = doc.select(\"div\").get(1);\n\nassertEquals(2, div2.childNodeSize());\ndiv2.insertChildren(-1, p1s);\nassertEquals(2, div1.childNodeSize()); // moved two out",
+            "begin_line": 771,
+            "end_line": 779,
+            "comment": "         can empty an element and append its children to another element",
+            "child_ranges": [
+                "(line 772,col 9)-(line 772,col 122)",
+                "(line 773,col 9)-(line 773,col 48)",
+                "(line 774,col 9)-(line 774,col 40)",
+                "(line 775,col 9)-(line 775,col 48)",
+                "(line 776,col 0)-(line 776,col 0)",
+                "(line 777,col 9)-(line 777,col 46)",
+                "(line 778,col 9)-(line 778,col 37)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.insertChildrenAsCopy()",
+            "snippet": "public void insertChildrenAsCopy() {\nDocument doc = Jsoup.parse(\"<div id=1>Text <p>One</p> Text <p>Two</p></div><div id=2></div>\");\nElement div1 = doc.select(\"div\").get(0);\nElement div2 = doc.select(\"div\").get(1);\nElements ps = doc.select(\"p\").clone();\nps.first().text(\"One cloned\");\ndiv2.insertChildren(-1, ps);\n\nassertEquals(4, div1.childNodeSize()); // not moved -- cloned",
+            "begin_line": 801,
+            "end_line": 809,
+            "comment": "         can empty an element and append its children to another element",
+            "child_ranges": [
+                "(line 802,col 9)-(line 802,col 102)",
+                "(line 803,col 9)-(line 803,col 48)",
+                "(line 804,col 9)-(line 804,col 48)",
+                "(line 805,col 9)-(line 805,col 46)",
+                "(line 806,col 9)-(line 806,col 38)",
+                "(line 807,col 9)-(line 807,col 36)",
+                "(line 808,col 0)-(line 808,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testCssPath()",
+            "snippet": "public void testCssPath() {\nDocument doc = Jsoup.parse(\"<div id=\\\"id1\\\">A</div><div>B</div><div class=\\\"c1 c2\\\">C</div>\");\nElement divA = doc.select(\"div\").get(0);\nElement divB = doc.select(\"div\").get(1);\nElement divC = doc.select(\"div\").get(2);\nassertEquals(divA.cssSelector(), \"#id1\");\nassertEquals(divB.cssSelector(), \"html > body > div:nth-child(2)\");\nassertEquals(divC.cssSelector(), \"html > body > div.c1.c2\");\n\nassertTrue(divA == doc.select(divA.cssSelector()).first());\nassertTrue(divB == doc.select(divB.cssSelector()).first());\nassertTrue(divC == doc.select(divC.cssSelector()).first());\n}",
+            "begin_line": 816,
+            "end_line": 828,
+            "comment": "         can empty an element and append its children to another element",
+            "child_ranges": [
+                "(line 817,col 9)-(line 817,col 102)",
+                "(line 818,col 9)-(line 818,col 48)",
+                "(line 819,col 9)-(line 819,col 48)",
+                "(line 820,col 9)-(line 820,col 48)",
+                "(line 821,col 9)-(line 821,col 49)",
+                "(line 822,col 9)-(line 822,col 75)",
+                "(line 823,col 9)-(line 823,col 68)",
+                "(line 824,col 0)-(line 824,col 0)",
+                "(line 825,col 9)-(line 825,col 67)",
+                "(line 826,col 9)-(line 826,col 67)",
+                "(line 827,col 9)-(line 827,col 67)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testClassNames()",
+            "snippet": "public void testClassNames() {\nDocument doc = Jsoup.parse(\"<div class=\\\"c1 c2\\\">C</div>\");\nElement div = doc.select(\"div\").get(0);\n\nassertEquals(\"c1 c2\", div.className());\n\nfinal Set<String> set1 = div.classNames();\nfinal Object[] arr1 = set1.toArray();\nassertTrue(arr1.length==2);\nassertEquals(\"c1\", arr1[0]);\nassertEquals(\"c2\", arr1[1]);\n\n// Changes to the set should not be reflected in the Elements getters",
+            "begin_line": 832,
+            "end_line": 844,
+            "comment": "         can empty an element and append its children to another element",
+            "child_ranges": [
+                "(line 833,col 9)-(line 833,col 67)",
+                "(line 834,col 9)-(line 834,col 47)",
+                "(line 835,col 0)-(line 835,col 0)",
+                "(line 836,col 9)-(line 836,col 47)",
+                "(line 837,col 0)-(line 837,col 0)",
+                "(line 838,col 9)-(line 838,col 50)",
+                "(line 839,col 9)-(line 839,col 45)",
+                "(line 840,col 9)-(line 840,col 35)",
+                "(line 841,col 9)-(line 841,col 36)",
+                "(line 842,col 9)-(line 842,col 36)",
+                "(line 843,col 0)-(line 843,col 0)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testHashAndEqualsAndValue()",
+            "snippet": "public void testHashAndEqualsAndValue() {\n// .equals and hashcode are identity. value is content.",
+            "begin_line": 868,
+            "end_line": 869,
+            "comment": "         Update the class names to a fresh set",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.appendMustCorrectlyMoveChildrenInsideOneParentElement()",
+            "snippet": "public void appendMustCorrectlyMoveChildrenInsideOneParentElement() {\nDocument doc = new Document(\"\");\nElement body = doc.appendElement(\"body\");\nbody.appendElement(\"div1\");\nbody.appendElement(\"div2\");\nfinal Element div3 = body.appendElement(\"div3\");\ndiv3.text(\"Check\");\nfinal Element div4 = body.appendElement(\"div4\");\n\nArrayList<Element> toMove = new ArrayList<>();\ntoMove.add(div3);\ntoMove.add(div4);\n\nbody.insertChildren(0, toMove);\n\nString result = doc.toString().replaceAll(\"\\\\s+\", \"\");\nassertEquals(\"<body><div3>Check</div3><div4></div4><div1></div1><div2></div2></body>\", result);\n}",
+            "begin_line": 931,
+            "end_line": 948,
+            "comment": "        /*\n        for (Element el : els) {\n            System.out.println(el.hashCode() + \" - \" + el.outerHtml());\n        }\n\n        0 1534787905 - <p class=\"one\">One</p>\n        1 1534787905 - <p class=\"one\">One</p>\n        2 1539683239 - <p class=\"one\">Two</p>\n        3 1535455211 - <p class=\"two\">One</p>\n        4 1534787905 - <p class=\"one\">One</p>\n        5 1534787905 - <p class=\"one\">One</p>\n        6 1539683239 - <p class=\"one\">Two</p>\n        7 1535455211 - <p class=\"two\">One</p>\n        ",
+            "child_ranges": [
+                "(line 932,col 9)-(line 932,col 40)",
+                "(line 933,col 9)-(line 933,col 49)",
+                "(line 934,col 9)-(line 934,col 35)",
+                "(line 935,col 9)-(line 935,col 35)",
+                "(line 936,col 9)-(line 936,col 56)",
+                "(line 937,col 9)-(line 937,col 27)",
+                "(line 938,col 9)-(line 938,col 56)",
+                "(line 939,col 0)-(line 939,col 0)",
+                "(line 940,col 9)-(line 940,col 54)",
+                "(line 941,col 9)-(line 941,col 25)",
+                "(line 942,col 9)-(line 942,col 25)",
+                "(line 943,col 0)-(line 943,col 0)",
+                "(line 944,col 9)-(line 944,col 39)",
+                "(line 945,col 0)-(line 945,col 0)",
+                "(line 946,col 9)-(line 946,col 62)",
+                "(line 947,col 9)-(line 947,col 103)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testHashcodeIsStableWithContentChanges()",
+            "snippet": "public void testHashcodeIsStableWithContentChanges() {\nElement root = new Element(Tag.valueOf(\"root\"), \"\");\n\nHashSet<Element> set = new HashSet<>();\n// Add root node:",
+            "begin_line": 951,
+            "end_line": 955,
+            "comment": "        /*\n        for (Element el : els) {\n            System.out.println(el.hashCode() + \" - \" + el.outerHtml());\n        }\n\n        0 1534787905 - <p class=\"one\">One</p>\n        1 1534787905 - <p class=\"one\">One</p>\n        2 1539683239 - <p class=\"one\">Two</p>\n        3 1535455211 - <p class=\"two\">One</p>\n        4 1534787905 - <p class=\"one\">One</p>\n        5 1534787905 - <p class=\"one\">One</p>\n        6 1539683239 - <p class=\"one\">Two</p>\n        7 1535455211 - <p class=\"two\">One</p>\n        ",
+            "child_ranges": [
+                "(line 952,col 9)-(line 952,col 60)",
+                "(line 953,col 0)-(line 953,col 0)",
+                "(line 954,col 9)-(line 954,col 47)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testNamespacedElements()",
+            "snippet": "public void testNamespacedElements() {\n// Namespaces with ns:tag in HTML must be translated to ns|tag in CSS.",
+            "begin_line": 963,
+            "end_line": 964,
+            "comment": "         Add root node:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testChainedRemoveAttributes()",
+            "snippet": "public void testChainedRemoveAttributes() {\nString html = \"<a one two three four>Text</a>\";\nDocument doc = Jsoup.parse(html);\nElement a = doc.select(\"a\").first();\na",
+            "begin_line": 973,
+            "end_line": 977,
+            "comment": "         Namespaces with ns:tag in HTML must be translated to ns|tag in CSS.",
+            "child_ranges": [
+                "(line 974,col 9)-(line 974,col 55)",
+                "(line 975,col 9)-(line 975,col 41)",
+                "(line 976,col 9)-(line 976,col 44)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testLoopedRemoveAttributes()",
+            "snippet": "public void testLoopedRemoveAttributes() {\nString html = \"<a one two three four>Text</a><p foo>Two</p>\";\nDocument doc = Jsoup.parse(html);\nfor (Element el : doc.getAllElements()) {",
+            "begin_line": 988,
+            "end_line": 991,
+            "comment": "         Namespaces with ns:tag in HTML must be translated to ns|tag in CSS.",
+            "child_ranges": [
+                "(line 989,col 9)-(line 989,col 69)",
+                "(line 990,col 9)-(line 990,col 41)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testIs()",
+            "snippet": "public void testIs() {\nString html = \"<div><p>One <a class=big>Two</a> Three</p><p>Another</p>\";\nDocument doc = Jsoup.parse(html);\nElement p = doc.select(\"p\").first();\n\nassertTrue(p.is(\"p\"));\nassertFalse(p.is(\"div\"));\nassertTrue(p.is(\"p:has(a)\"));\nassertTrue(p.is(\"p:first-child\"));\nassertFalse(p.is(\"p:last-child\"));\nassertTrue(p.is(\"*\"));\nassertTrue(p.is(\"div p\"));\n\nElement q = doc.select(\"p\").last();\nassertTrue(q.is(\"p\"));\nassertTrue(q.is(\"p ~ p\"));\nassertTrue(q.is(\"p + p\"));\nassertTrue(q.is(\"p:last-child\"));\nassertFalse(q.is(\"p a\"));\nassertFalse(q.is(\"a\"));\n}",
+            "begin_line": 999,
+            "end_line": 1019,
+            "comment": "         Namespaces with ns:tag in HTML must be translated to ns|tag in CSS.",
+            "child_ranges": [
+                "(line 1000,col 9)-(line 1000,col 81)",
+                "(line 1001,col 9)-(line 1001,col 41)",
+                "(line 1002,col 9)-(line 1002,col 44)",
+                "(line 1003,col 0)-(line 1003,col 0)",
+                "(line 1004,col 9)-(line 1004,col 30)",
+                "(line 1005,col 9)-(line 1005,col 33)",
+                "(line 1006,col 9)-(line 1006,col 37)",
+                "(line 1007,col 9)-(line 1007,col 42)",
+                "(line 1008,col 9)-(line 1008,col 42)",
+                "(line 1009,col 9)-(line 1009,col 30)",
+                "(line 1010,col 9)-(line 1010,col 34)",
+                "(line 1011,col 0)-(line 1011,col 0)",
+                "(line 1012,col 9)-(line 1012,col 43)",
+                "(line 1013,col 9)-(line 1013,col 30)",
+                "(line 1014,col 9)-(line 1014,col 34)",
+                "(line 1015,col 9)-(line 1015,col 34)",
+                "(line 1016,col 9)-(line 1016,col 41)",
+                "(line 1017,col 9)-(line 1017,col 33)",
+                "(line 1018,col 9)-(line 1018,col 31)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testAppendTo()",
+            "snippet": "public void testAppendTo() {\nString parentHtml = \"<div class='a'></div>\";\nString childHtml = \"<div class='b'></div><p>Two</p>\";\n\nDocument parentDoc = Jsoup.parse(parentHtml);\nElement parent = parentDoc.body();\nDocument childDoc = Jsoup.parse(childHtml);\n\nElement div = childDoc.select(\"div\").first();\nElement p = childDoc.select(\"p\").first();\nElement appendTo1 = div.appendTo(parent);\nassertEquals(div, appendTo1);\n\nElement appendTo2 = p.appendTo(div);\nassertEquals(p, appendTo2);\n\nassertEquals(\"<div class=\\\"a\\\"></div>\\n<div class=\\\"b\\\">\\n <p>Two</p>\\n</div>\", parentDoc.body().html());\nassertEquals(\"\", childDoc.body().html()); // got moved out",
+            "begin_line": 1133,
+            "end_line": 1150,
+            "comment": "         first els should not have changed",
+            "child_ranges": [
+                "(line 1134,col 1)-(line 1134,col 46)",
+                "(line 1135,col 1)-(line 1135,col 55)",
+                "(line 1136,col 0)-(line 1136,col 0)",
+                "(line 1137,col 1)-(line 1137,col 47)",
+                "(line 1138,col 1)-(line 1138,col 36)",
+                "(line 1139,col 9)-(line 1139,col 51)",
+                "(line 1140,col 0)-(line 1140,col 0)",
+                "(line 1141,col 9)-(line 1141,col 53)",
+                "(line 1142,col 9)-(line 1142,col 49)",
+                "(line 1143,col 9)-(line 1143,col 49)",
+                "(line 1144,col 9)-(line 1144,col 37)",
+                "(line 1145,col 0)-(line 1145,col 0)",
+                "(line 1146,col 9)-(line 1146,col 44)",
+                "(line 1147,col 9)-(line 1147,col 35)",
+                "(line 1148,col 0)-(line 1148,col 0)",
+                "(line 1149,col 9)-(line 1149,col 113)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testRemoveBeforeIndex()",
+            "snippet": "public void testRemoveBeforeIndex() {\nDocument doc = Jsoup.parse(",
+            "begin_line": 1170,
+            "end_line": 1171,
+            "comment": "         first els should not have changed",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testRemoveAfterIndex()",
+            "snippet": "public void testRemoveAfterIndex() {\nDocument doc2 = Jsoup.parse(",
+            "begin_line": 1187,
+            "end_line": 1188,
+            "comment": "         first els should not have changed",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.whiteSpaceClassElement()",
+            "snippet": "public void whiteSpaceClassElement(){\nTag tag = Tag.valueOf(\"a\");\nAttributes attribs = new Attributes();\nElement el = new Element(tag, \"\", attribs);\n\nattribs.put(\"class\", \"abc \");\nboolean hasClass = el.hasClass(\"ab\");\nassertFalse(hasClass);\n}",
+            "begin_line": 1204,
+            "end_line": 1212,
+            "comment": "         first els should not have changed",
+            "child_ranges": [
+                "(line 1205,col 1)-(line 1205,col 32)",
+                "(line 1206,col 1)-(line 1206,col 43)",
+                "(line 1207,col 1)-(line 1207,col 48)",
+                "(line 1208,col 1)-(line 1208,col 5)",
+                "(line 1209,col 1)-(line 1209,col 34)",
+                "(line 1210,col 1)-(line 1210,col 42)",
+                "(line 1211,col 1)-(line 1211,col 27)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.ElementTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/ElementTest.java",
+            "signature": "org.jsoup.nodes.ElementTest.testNextElementSiblingAfterClone()",
+            "snippet": "public void testNextElementSiblingAfterClone() {\n// via https://github.com/jhy/jsoup/issues/951",
+            "begin_line": 1215,
+            "end_line": 1216,
+            "comment": "         first els should not have changed",
+            "child_ranges": []
+        }
+    ]
+]

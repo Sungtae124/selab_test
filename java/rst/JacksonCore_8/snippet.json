@@ -1,0 +1,722 @@
+[
+  {
+    "name": "BufferRecycler.BufferRecycler#61",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.BufferRecycler()",
+    "snippet": "public BufferRecycler(){\n  this(4,4);\n}",
+    "begin_line": 61,
+    "end_line": 63,
+    "comment": "/** \n * Default constructor used for creating instances of this default implementation.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.BufferRecycler#71",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.BufferRecycler(int, int)",
+    "snippet": "protected BufferRecycler(int bbCount,int cbCount){\n  _byteBuffers\u003dnew byte[bbCount][];\n  _charBuffers\u003dnew char[cbCount][];\n}",
+    "begin_line": 71,
+    "end_line": 74,
+    "comment": "/** \n * Alternate constructor to be used by sub-classes, to allow customization of number of low-level buffers in use.\n * @since 2.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.allocByteBuffer#85",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.allocByteBuffer(int)",
+    "snippet": "public final byte[] allocByteBuffer(int ix){\n  return allocByteBuffer(ix,0);\n}",
+    "begin_line": 85,
+    "end_line": 87,
+    "comment": "/** \n * @param ix One of \u003ccode\u003eREAD_IO_BUFFER\u003c/code\u003e constants.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.allocByteBuffer#89",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.allocByteBuffer(int, int)",
+    "snippet": "public byte[] allocByteBuffer(int ix,int minSize){\n  final int DEF_SIZE\u003dbyteBufferLength(ix);\n  if (minSize \u003c DEF_SIZE) {\n    minSize\u003dDEF_SIZE;\n  }\n  byte[] buffer\u003d_byteBuffers[ix];\n  if (buffer \u003d\u003d null || buffer.length \u003c minSize) {\n    buffer\u003dballoc(minSize);\n  }\n else {\n    _byteBuffers[ix]\u003dnull;\n  }\n  return buffer;\n}",
+    "begin_line": 89,
+    "end_line": 101,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.releaseByteBuffer#103",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.releaseByteBuffer(int, byte[])",
+    "snippet": "public final void releaseByteBuffer(int ix,byte[] buffer){\n  _byteBuffers[ix]\u003dbuffer;\n}",
+    "begin_line": 103,
+    "end_line": 105,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.allocCharBuffer#113",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.allocCharBuffer(int)",
+    "snippet": "public final char[] allocCharBuffer(int ix){\n  return allocCharBuffer(ix,0);\n}",
+    "begin_line": 113,
+    "end_line": 115,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.allocCharBuffer#117",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.allocCharBuffer(int, int)",
+    "snippet": "public char[] allocCharBuffer(int ix,int minSize){\n  final int DEF_SIZE\u003dcharBufferLength(ix);\n  if (minSize \u003c DEF_SIZE) {\n    minSize\u003dDEF_SIZE;\n  }\n  char[] buffer\u003d_charBuffers[ix];\n  if (buffer \u003d\u003d null || buffer.length \u003c minSize) {\n    buffer\u003dcalloc(minSize);\n  }\n else {\n    _charBuffers[ix]\u003dnull;\n  }\n  return buffer;\n}",
+    "begin_line": 117,
+    "end_line": 129,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.releaseCharBuffer#131",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.releaseCharBuffer(int, char[])",
+    "snippet": "public void releaseCharBuffer(int ix,char[] buffer){\n  _charBuffers[ix]\u003dbuffer;\n}",
+    "begin_line": 131,
+    "end_line": 133,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.byteBufferLength#141",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.byteBufferLength(int)",
+    "snippet": "protected int byteBufferLength(int ix){\n  return BYTE_BUFFER_LENGTHS[ix];\n}",
+    "begin_line": 141,
+    "end_line": 143,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.charBufferLength#145",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.charBufferLength(int)",
+    "snippet": "protected int charBufferLength(int ix){\n  return CHAR_BUFFER_LENGTHS[ix];\n}",
+    "begin_line": 145,
+    "end_line": 147,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.balloc#155",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.balloc(int)",
+    "snippet": "protected byte[] balloc(int size){\n  return new byte[size];\n}",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "BufferRecycler.calloc#156",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/BufferRecycler.java",
+    "class_name": "com.fasterxml.jackson.core.util.BufferRecycler",
+    "signature": "com.fasterxml.jackson.core.util.BufferRecycler.calloc(int)",
+    "snippet": "protected char[] calloc(int size){\n  return new char[size];\n}",
+    "begin_line": 156,
+    "end_line": 156,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.TextBuffer#121",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.TextBuffer(com.fasterxml.jackson.core.util.BufferRecycler)",
+    "snippet": "public TextBuffer(BufferRecycler allocator){\n  _allocator\u003dallocator;\n}",
+    "begin_line": 121,
+    "end_line": 123,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.releaseBuffers#134",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.releaseBuffers()",
+    "snippet": "public void releaseBuffers(){\n  if (_allocator \u003d\u003d null) {\n    resetWithEmpty();\n  }\n else {\n    if (_currentSegment !\u003d null) {\n      resetWithEmpty();\n      char[] buf\u003d_currentSegment;\n      _currentSegment\u003dnull;\n      _allocator.releaseCharBuffer(BufferRecycler.CHAR_TEXT_BUFFER,buf);\n    }\n  }\n}",
+    "begin_line": 134,
+    "end_line": 148,
+    "comment": "/** \n * Method called to indicate that the underlying buffers should now be recycled if they haven\u0027t yet been recycled. Although caller can still use this text buffer, it is not advisable to call this method if that is likely, since next time a buffer is needed, buffers need to reallocated. Note: calling this method automatically also clears contents of the buffer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.resetWithEmpty#154",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.resetWithEmpty()",
+    "snippet": "public void resetWithEmpty(){\n  _inputStart\u003d-1;\n  _currentSize\u003d0;\n  _inputLen\u003d0;\n  _inputBuffer\u003dnull;\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  if (_hasSegments) {\n    clearSegments();\n  }\n}",
+    "begin_line": 154,
+    "end_line": 168,
+    "comment": "/** \n * Method called to clear out any content text buffer may have, and initializes buffer to use non-shared data.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.resetWithShared#176",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.resetWithShared(char[], int, int)",
+    "snippet": "public void resetWithShared(char[] buf,int start,int len){\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  _inputBuffer\u003dbuf;\n  _inputStart\u003dstart;\n  _inputLen\u003dlen;\n  if (_hasSegments) {\n    clearSegments();\n  }\n}",
+    "begin_line": 176,
+    "end_line": 191,
+    "comment": "/** \n * Method called to initialize the buffer with a shared copy of data; this means that buffer will just have pointers to actual data. It also means that if anything is to be appended to the buffer, it will first have to unshare it (make a local copy).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.resetWithCopy#193",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.resetWithCopy(char[], int, int)",
+    "snippet": "public void resetWithCopy(char[] buf,int start,int len){\n  _inputBuffer\u003dnull;\n  _inputStart\u003d-1;\n  _inputLen\u003d0;\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  if (_hasSegments) {\n    clearSegments();\n  }\n else   if (_currentSegment \u003d\u003d null) {\n    _currentSegment\u003dbuf(len);\n  }\n  _currentSize\u003d_segmentSize\u003d0;\n  append(buf,start,len);\n}",
+    "begin_line": 193,
+    "end_line": 210,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.resetWithString#212",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.resetWithString(java.lang.String)",
+    "snippet": "public void resetWithString(String value){\n  _inputBuffer\u003dnull;\n  _inputStart\u003d-1;\n  _inputLen\u003d0;\n  _resultString\u003dvalue;\n  _resultArray\u003dnull;\n  if (_hasSegments) {\n    clearSegments();\n  }\n  _currentSize\u003d0;\n}",
+    "begin_line": 212,
+    "end_line": 226,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.buf#232",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.buf(int)",
+    "snippet": "private char[] buf(int needed){\n  if (_allocator !\u003d null) {\n    return _allocator.allocCharBuffer(BufferRecycler.CHAR_TEXT_BUFFER,needed);\n  }\n  return new char[Math.max(needed,MIN_SEGMENT_LEN)];\n}",
+    "begin_line": 232,
+    "end_line": 238,
+    "comment": "/** \n * Helper method used to find a buffer to use, ideally one recycled earlier.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.clearSegments#240",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.clearSegments()",
+    "snippet": "private void clearSegments(){\n  _hasSegments\u003dfalse;\n  _segments.clear();\n  _currentSize\u003d_segmentSize\u003d0;\n}",
+    "begin_line": 240,
+    "end_line": 252,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.size#263",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.size()",
+    "snippet": "public int size(){\n  if (_inputStart \u003e\u003d 0) {\n    return _inputLen;\n  }\n  if (_resultArray !\u003d null) {\n    return _resultArray.length;\n  }\n  if (_resultString !\u003d null) {\n    return _resultString.length();\n  }\n  return _segmentSize + _currentSize;\n}",
+    "begin_line": 263,
+    "end_line": 275,
+    "comment": "/** \n * @return Number of characters currently stored by this collector\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.getTextOffset#277",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.getTextOffset()",
+    "snippet": "public int getTextOffset(){\n  return (_inputStart \u003e\u003d 0) ? _inputStart : 0;\n}",
+    "begin_line": 277,
+    "end_line": 283,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.hasTextAsCharacters#289",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.hasTextAsCharacters()",
+    "snippet": "public boolean hasTextAsCharacters(){\n  if (_inputStart \u003e\u003d 0 || _resultArray !\u003d null)   return true;\n  if (_resultString !\u003d null)   return false;\n  return true;\n}",
+    "begin_line": 289,
+    "end_line": 296,
+    "comment": "/** \n * Method that can be used to check whether textual contents can be efficiently accessed using  {@link #getTextBuffer}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.getTextBuffer#298",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.getTextBuffer()",
+    "snippet": "public char[] getTextBuffer(){\n  if (_inputStart \u003e\u003d 0)   return _inputBuffer;\n  if (_resultArray !\u003d null)   return _resultArray;\n  if (_resultString !\u003d null) {\n    return (_resultArray\u003d_resultString.toCharArray());\n  }\n  if (!_hasSegments)   return _currentSegment;\n  return contentsAsArray();\n}",
+    "begin_line": 298,
+    "end_line": 310,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.contentsAsString#318",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.contentsAsString()",
+    "snippet": "public String contentsAsString(){\n  if (_resultString \u003d\u003d null) {\n    if (_resultArray !\u003d null) {\n      _resultString\u003dnew String(_resultArray);\n    }\n else {\n      if (_inputStart \u003e\u003d 0) {\n        if (_inputLen \u003c 1) {\n          return (_resultString\u003d\"\");\n        }\n        _resultString\u003dnew String(_inputBuffer,_inputStart,_inputLen);\n      }\n else {\n        int segLen\u003d_segmentSize;\n        int currLen\u003d_currentSize;\n        if (segLen \u003d\u003d 0) {\n          _resultString\u003d(currLen \u003d\u003d 0) ? \"\" : new String(_currentSegment,0,currLen);\n        }\n else {\n          StringBuilder sb\u003dnew StringBuilder(segLen + currLen);\n          if (_segments !\u003d null) {\n            for (int i\u003d0, len\u003d_segments.size(); i \u003c len; ++i) {\n              char[] curr\u003d_segments.get(i);\n              sb.append(curr,0,curr.length);\n            }\n          }\n          sb.append(_currentSegment,0,_currentSize);\n          _resultString\u003dsb.toString();\n        }\n      }\n    }\n  }\n  return _resultString;\n}",
+    "begin_line": 318,
+    "end_line": 355,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.contentsAsArray#357",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.contentsAsArray()",
+    "snippet": "public char[] contentsAsArray(){\n  char[] result\u003d_resultArray;\n  if (result \u003d\u003d null) {\n    _resultArray\u003dresult\u003dresultArray();\n  }\n  return result;\n}",
+    "begin_line": 357,
+    "end_line": 363,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.contentsAsDecimal#369",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.contentsAsDecimal()",
+    "snippet": "public BigDecimal contentsAsDecimal() throws NumberFormatException {\n  if (_resultArray !\u003d null) {\n    return NumberInput.parseBigDecimal(_resultArray);\n  }\n  if ((_inputStart \u003e\u003d 0) \u0026\u0026 (_inputBuffer !\u003d null)) {\n    return NumberInput.parseBigDecimal(_inputBuffer,_inputStart,_inputLen);\n  }\n  if ((_segmentSize \u003d\u003d 0) \u0026\u0026 (_currentSegment !\u003d null)) {\n    return NumberInput.parseBigDecimal(_currentSegment,0,_currentSize);\n  }\n  return NumberInput.parseBigDecimal(contentsAsArray());\n}",
+    "begin_line": 369,
+    "end_line": 385,
+    "comment": "/** \n * Convenience method for converting contents of the buffer into a  {@link BigDecimal}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.contentsAsDouble#391",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.contentsAsDouble()",
+    "snippet": "public double contentsAsDouble() throws NumberFormatException {\n  return NumberInput.parseDouble(contentsAsString());\n}",
+    "begin_line": 391,
+    "end_line": 393,
+    "comment": "/** \n * Convenience method for converting contents of the buffer into a Double value.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.ensureNotShared#405",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.ensureNotShared()",
+    "snippet": "public void ensureNotShared(){\n  if (_inputStart \u003e\u003d 0) {\n    unshare(16);\n  }\n}",
+    "begin_line": 405,
+    "end_line": 409,
+    "comment": "/** \n * Method called to make sure that buffer is not using shared input buffer; if it is, it will copy such contents to private buffer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.append#411",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.append(char)",
+    "snippet": "public void append(char c){\n  if (_inputStart \u003e\u003d 0) {\n    unshare(16);\n  }\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  char[] curr\u003d_currentSegment;\n  if (_currentSize \u003e\u003d curr.length) {\n    expand(1);\n    curr\u003d_currentSegment;\n  }\n  curr[_currentSize++]\u003dc;\n}",
+    "begin_line": 411,
+    "end_line": 425,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.append#427",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.append(char[], int, int)",
+    "snippet": "public void append(char[] c,int start,int len){\n  if (_inputStart \u003e\u003d 0) {\n    unshare(len);\n  }\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  char[] curr\u003d_currentSegment;\n  int max\u003dcurr.length - _currentSize;\n  if (max \u003e\u003d len) {\n    System.arraycopy(c,start,curr,_currentSize,len);\n    _currentSize+\u003dlen;\n    return;\n  }\n  if (max \u003e 0) {\n    System.arraycopy(c,start,curr,_currentSize,max);\n    start+\u003dmax;\n    len-\u003dmax;\n  }\n  do {\n    expand(len);\n    int amount\u003dMath.min(_currentSegment.length,len);\n    System.arraycopy(c,start,_currentSegment,0,amount);\n    _currentSize+\u003damount;\n    start+\u003damount;\n    len-\u003damount;\n  }\n while (len \u003e 0);\n}",
+    "begin_line": 427,
+    "end_line": 463,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.append#465",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.append(java.lang.String, int, int)",
+    "snippet": "public void append(String str,int offset,int len){\n  if (_inputStart \u003e\u003d 0) {\n    unshare(len);\n  }\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  char[] curr\u003d_currentSegment;\n  int max\u003dcurr.length - _currentSize;\n  if (max \u003e\u003d len) {\n    str.getChars(offset,offset + len,curr,_currentSize);\n    _currentSize+\u003dlen;\n    return;\n  }\n  if (max \u003e 0) {\n    str.getChars(offset,offset + max,curr,_currentSize);\n    len-\u003dmax;\n    offset+\u003dmax;\n  }\n  do {\n    expand(len);\n    int amount\u003dMath.min(_currentSegment.length,len);\n    str.getChars(offset,offset + amount,_currentSegment,0);\n    _currentSize+\u003damount;\n    offset+\u003damount;\n    len-\u003damount;\n  }\n while (len \u003e 0);\n}",
+    "begin_line": 465,
+    "end_line": 500,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.getCurrentSegment#508",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.getCurrentSegment()",
+    "snippet": "public char[] getCurrentSegment(){\n  if (_inputStart \u003e\u003d 0) {\n    unshare(1);\n  }\n else {\n    char[] curr\u003d_currentSegment;\n    if (curr \u003d\u003d null) {\n      _currentSegment\u003dbuf(0);\n    }\n else     if (_currentSize \u003e\u003d curr.length) {\n      expand(1);\n    }\n  }\n  return _currentSegment;\n}",
+    "begin_line": 508,
+    "end_line": 526,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.emptyAndGetCurrentSegment#528",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.emptyAndGetCurrentSegment()",
+    "snippet": "public char[] emptyAndGetCurrentSegment(){\n  _inputStart\u003d-1;\n  _currentSize\u003d0;\n  _inputLen\u003d0;\n  _inputBuffer\u003dnull;\n  _resultString\u003dnull;\n  _resultArray\u003dnull;\n  if (_hasSegments) {\n    clearSegments();\n  }\n  char[] curr\u003d_currentSegment;\n  if (curr \u003d\u003d null) {\n    _currentSegment\u003dcurr\u003dbuf(0);\n  }\n  return curr;\n}",
+    "begin_line": 528,
+    "end_line": 548,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.getCurrentSegmentSize#550",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.getCurrentSegmentSize()",
+    "snippet": "public int getCurrentSegmentSize(){\n  return _currentSize;\n}",
+    "begin_line": 550,
+    "end_line": 550,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.setCurrentLength#551",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.setCurrentLength(int)",
+    "snippet": "public void setCurrentLength(int len){\n  _currentSize\u003dlen;\n}",
+    "begin_line": 551,
+    "end_line": 551,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.setCurrentAndReturn#556",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.setCurrentAndReturn(int)",
+    "snippet": "public String setCurrentAndReturn(int len){\n  _currentSize\u003dlen;\n  if (_segmentSize \u003e 0) {\n    return contentsAsString();\n  }\n  int currLen\u003d_currentSize;\n  String str\u003d(currLen \u003d\u003d 0) ? \"\" : new String(_currentSegment,0,currLen);\n  _resultString\u003dstr;\n  return str;\n}",
+    "begin_line": 556,
+    "end_line": 567,
+    "comment": "/** \n * @since 2.6\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.finishCurrentSegment#569",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.finishCurrentSegment()",
+    "snippet": "public char[] finishCurrentSegment(){\n  if (_segments \u003d\u003d null) {\n    _segments\u003dnew ArrayList\u003cchar[]\u003e();\n  }\n  _hasSegments\u003dtrue;\n  _segments.add(_currentSegment);\n  int oldLen\u003d_currentSegment.length;\n  _segmentSize+\u003doldLen;\n  _currentSize\u003d0;\n  int newLen\u003doldLen + (oldLen \u003e\u003e 1);\n  if (newLen \u003c MIN_SEGMENT_LEN) {\n    newLen\u003dMIN_SEGMENT_LEN;\n  }\n else   if (newLen \u003e MAX_SEGMENT_LEN) {\n    newLen\u003dMAX_SEGMENT_LEN;\n  }\n  char[] curr\u003dcarr(newLen);\n  _currentSegment\u003dcurr;\n  return curr;\n}",
+    "begin_line": 569,
+    "end_line": 589,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.expandCurrentSegment#596",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.expandCurrentSegment()",
+    "snippet": "public char[] expandCurrentSegment(){\n  final char[] curr\u003d_currentSegment;\n  final int len\u003dcurr.length;\n  int newLen\u003dlen + (len \u003e\u003e 1);\n  if (newLen \u003e MAX_SEGMENT_LEN) {\n    newLen\u003dlen + (len \u003e\u003e 2);\n  }\n  return (_currentSegment\u003dArrays.copyOf(curr,newLen));\n}",
+    "begin_line": 596,
+    "end_line": 607,
+    "comment": "/** \n * Method called to expand size of the current segment, to accommodate for more contiguous content. Usually only used when parsing tokens like names if even then.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.expandCurrentSegment#618",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.expandCurrentSegment(int)",
+    "snippet": "public char[] expandCurrentSegment(int minSize){\n  char[] curr\u003d_currentSegment;\n  if (curr.length \u003e\u003d minSize)   return curr;\n  _currentSegment\u003dcurr\u003dArrays.copyOf(curr,minSize);\n  return curr;\n}",
+    "begin_line": 618,
+    "end_line": 623,
+    "comment": "/** \n * Method called to expand size of the current segment, to accommodate for more contiguous content. Usually only used when parsing tokens like names if even then.\n * @param minSize Required minimum strength of the current segment\n * @since 2.4.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.toString#636",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.toString()",
+    "snippet": "@Override public String toString(){\n  return contentsAsString();\n}",
+    "begin_line": 636,
+    "end_line": 636,
+    "comment": "/** \n * Note: calling this method may not be as efficient as calling {@link #contentsAsString}, since it\u0027s not guaranteed that resulting String is cached.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.unshare#648",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.unshare(int)",
+    "snippet": "private void unshare(int needExtra){\n  int sharedLen\u003d_inputLen;\n  _inputLen\u003d0;\n  char[] inputBuf\u003d_inputBuffer;\n  _inputBuffer\u003dnull;\n  int start\u003d_inputStart;\n  _inputStart\u003d-1;\n  int needed\u003dsharedLen + needExtra;\n  if (_currentSegment \u003d\u003d null || needed \u003e _currentSegment.length) {\n    _currentSegment\u003dbuf(needed);\n  }\n  if (sharedLen \u003e 0) {\n    System.arraycopy(inputBuf,start,_currentSegment,0,sharedLen);\n  }\n  _segmentSize\u003d0;\n  _currentSize\u003dsharedLen;\n}",
+    "begin_line": 648,
+    "end_line": 667,
+    "comment": "/** \n * Method called if/when we need to append content when we have been initialized to use shared buffer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.expand#673",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.expand(int)",
+    "snippet": "private void expand(int minNewSegmentSize){\n  if (_segments \u003d\u003d null) {\n    _segments\u003dnew ArrayList\u003cchar[]\u003e();\n  }\n  char[] curr\u003d_currentSegment;\n  _hasSegments\u003dtrue;\n  _segments.add(curr);\n  _segmentSize+\u003dcurr.length;\n  _currentSize\u003d0;\n  int oldLen\u003dcurr.length;\n  int newLen\u003doldLen + (oldLen \u003e\u003e 1);\n  if (newLen \u003c MIN_SEGMENT_LEN) {\n    newLen\u003dMIN_SEGMENT_LEN;\n  }\n else   if (newLen \u003e MAX_SEGMENT_LEN) {\n    newLen\u003dMAX_SEGMENT_LEN;\n  }\n  _currentSegment\u003dcarr(newLen);\n}",
+    "begin_line": 673,
+    "end_line": 694,
+    "comment": "/** \n * Method called when current segment is full, to allocate new segment.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.resultArray#696",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.resultArray()",
+    "snippet": "private char[] resultArray(){\n  if (_resultString !\u003d null) {\n    return _resultString.toCharArray();\n  }\n  if (_inputStart \u003e\u003d 0) {\n    final int len\u003d_inputLen;\n    if (len \u003c 1) {\n      return NO_CHARS;\n    }\n    final int start\u003d_inputStart;\n    if (start \u003d\u003d 0) {\n      return Arrays.copyOf(_inputBuffer,len);\n    }\n    return Arrays.copyOfRange(_inputBuffer,start,start + len);\n  }\n  int size\u003dsize();\n  if (size \u003c 1) {\n    return NO_CHARS;\n  }\n  int offset\u003d0;\n  final char[] result\u003dcarr(size);\n  if (_segments !\u003d null) {\n    for (int i\u003d0, len\u003d_segments.size(); i \u003c len; ++i) {\n      char[] curr\u003d_segments.get(i);\n      int currLen\u003dcurr.length;\n      System.arraycopy(curr,0,result,offset,currLen);\n      offset+\u003dcurrLen;\n    }\n  }\n  System.arraycopy(_currentSegment,0,result,offset,_currentSize);\n  return result;\n}",
+    "begin_line": 696,
+    "end_line": 730,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "TextBuffer.carr#732",
+    "is_bug": true,
+    "src_path": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "class_name": "com.fasterxml.jackson.core.util.TextBuffer",
+    "signature": "com.fasterxml.jackson.core.util.TextBuffer.carr(int)",
+    "snippet": "private char[] carr(int len){\n  return new char[len];\n}",
+    "begin_line": 732,
+    "end_line": 732,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

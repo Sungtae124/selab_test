@@ -1,0 +1,30 @@
+[
+    [
+        {
+            "class_name": "org.jsoup.nodes.NodeTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/NodeTest.java",
+            "signature": "org.jsoup.nodes.NodeTest.head(Node node, int depth)",
+            "snippet": "public void head(Node node, int depth) {\naccum.append(\"<\" + node.nodeName() + \">\");\n}",
+            "begin_line": 174,
+            "end_line": 176,
+            "comment": "    /*\n    Test for an issue with Java's abs URL handler.\n     ",
+            "child_ranges": [
+                "(line 175,col 17)-(line 175,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.jsoup.nodes.NodeTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/jsoup/nodes/NodeTest.java",
+            "signature": "org.jsoup.nodes.NodeTest.tail(Node node, int depth)",
+            "snippet": "public void tail(Node node, int depth) {\naccum.append(\"</\" + node.nodeName() + \">\");\n}",
+            "begin_line": 178,
+            "end_line": 180,
+            "comment": "    /*\n    Test for an issue with Java's abs URL handler.\n     ",
+            "child_ranges": [
+                "(line 179,col 17)-(line 179,col 59)"
+            ]
+        }
+    ]
+]

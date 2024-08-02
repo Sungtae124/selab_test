@@ -1,0 +1,100 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.Bean1()",
+            "snippet": "private Bean1() { }\n\npublic Bean1(int x, int y, List<Bean2> beans)",
+            "begin_line": 30,
+            "end_line": 32,
+            "comment": "         Just for deserialization:",
+            "child_ranges": [
+                "(line 31,col 0)-(line 31,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.getX()",
+            "snippet": "public int getX() { return _x; }\npublic int getY() { return _y; }",
+            "begin_line": 39,
+            "end_line": 40,
+            "comment": "         Just for deserialization:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.getY()",
+            "snippet": "public int getY() { return _y; }\npublic List<Bean2> getBeans() { return _beans; }",
+            "begin_line": 40,
+            "end_line": 41,
+            "comment": "         Just for deserialization:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.getBeans()",
+            "snippet": "public List<Bean2> getBeans() { return _beans; }\n\npublic void setX(int x) { _x = x; }",
+            "begin_line": 41,
+            "end_line": 43,
+            "comment": "         Just for deserialization:",
+            "child_ranges": [
+                "(line 42,col 0)-(line 42,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.setX(int x)",
+            "snippet": "public void setX(int x) { _x = x; }\npublic void setY(int y) { _y = y; }",
+            "begin_line": 43,
+            "end_line": 44,
+            "comment": "         Just for deserialization:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.setY(int y)",
+            "snippet": "public void setY(int y) { _y = y; }\npublic void setBeans(List<Bean2> b) { _beans = b; }",
+            "begin_line": 44,
+            "end_line": 45,
+            "comment": "         Just for deserialization:",
+            "child_ranges": []
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.setBeans(List<Bean2> b)",
+            "snippet": "public void setBeans(List<Bean2> b) { _beans = b; }\n\n@Override public boolean equals(Object o) {",
+            "begin_line": 45,
+            "end_line": 47,
+            "comment": "         Just for deserialization:",
+            "child_ranges": [
+                "(line 46,col 0)-(line 46,col 0)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/TestArrayDeserialization.java",
+            "signature": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization.NonDeserializable(String v, boolean bogus)",
+            "snippet": "public NonDeserializable(String v, boolean bogus) {\nvalue = v;\n}",
+            "begin_line": 118,
+            "end_line": 120,
+            "comment": "    \n     * Simple bean that just gets serialized as a String value.\n     * Deserialization from String value will be done via single-arg\n     * constructor.\n     ",
+            "child_ranges": [
+                "(line 119,col 13)-(line 119,col 22)"
+            ]
+        }
+    ]
+]

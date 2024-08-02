@@ -1,0 +1,96 @@
+[
+    [
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.getInnerObjects()",
+            "snippet": "public Collection getInnerObjects() {\nreturn innerObjects;\n}",
+            "begin_line": 24,
+            "end_line": 26,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 25,col 13)-(line 25,col 32)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.setInnerObjects(Collection innerObjects)",
+            "snippet": "public void setInnerObjects(Collection innerObjects) {\nthis.innerObjects = innerObjects;\n}",
+            "begin_line": 28,
+            "end_line": 30,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 29,col 13)-(line 29,col 45)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.DummyContent()",
+            "snippet": "public DummyContent() {\nsuper();\n}",
+            "begin_line": 36,
+            "end_line": 38,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 37,col 13)-(line 37,col 20)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.DummyContent(String aField)",
+            "snippet": "public DummyContent(String aField) {\nsuper();\nthis.aField = aField;\n}",
+            "begin_line": 40,
+            "end_line": 43,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 41,col 13)-(line 41,col 20)",
+                "(line 42,col 13)-(line 42,col 33)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.getaField()",
+            "snippet": "public String getaField() {\nreturn aField;\n}",
+            "begin_line": 45,
+            "end_line": 47,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 46,col 13)-(line 46,col 26)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.setaField(String aField)",
+            "snippet": "public void setaField(String aField) {\nthis.aField = aField;\n}",
+            "begin_line": 49,
+            "end_line": 51,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 50,col 13)-(line 50,col 33)"
+            ]
+        },
+        {
+            "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+            "child_classes": [],
+            "src_path": "src/test/java/com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+            "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.toString()",
+            "snippet": "public String toString() {\nreturn \"DummyContent [aField=\" + aField + \"]\";\n}",
+            "begin_line": 54,
+            "end_line": 56,
+            "comment": " for [databind#2221]",
+            "child_ranges": [
+                "(line 55,col 13)-(line 55,col 58)"
+            ]
+        }
+    ]
+]

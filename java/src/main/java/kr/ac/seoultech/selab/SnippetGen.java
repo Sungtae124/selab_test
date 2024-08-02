@@ -73,7 +73,7 @@ public class SnippetGen {
 
             @Override
             public boolean visit(MethodDeclaration node) {
-                int rawBeginLine = cu.getLineNumber(node.getStartPosition());
+                int rawBeginLine = cu.getLineNumber(node.getName().getStartPosition());
                 int endLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
 
                 String rawSnippet = node.toString().trim();
@@ -98,7 +98,7 @@ public class SnippetGen {
                 String signature = className + "." + methodName + "(" + String.join(", ", paramTypes) + ")";
                 String name = currentClassName + "." + methodName + "#" + rawBeginLine;
 
-                methods.add(new MethodDeclarationInfo(name, unitName.substring(unitName.indexOf("buggy/") + 6), className, signature, snippet, rawBeginLine, endLine, comment));
+                methods.add(new MethodDeclarationInfo(name, unitName, className, signature, snippet, rawBeginLine, endLine, comment));
                 return super.visit(node);
             }
 
@@ -125,8 +125,8 @@ public class SnippetGen {
                     //Otherwise, returns the qualified name.
                     return tb.getQualifiedName();
                 }
-                System.out.println("Failed to resolve binding for type: " + type);
-                return "java.lang.Object"; // or throw an exception if tb is null
+//                System.out.println("Failed to resolve binding for type: " + type);
+                return type.toString(); // or throw an exception if tb is null
             }
         });
 
@@ -171,7 +171,7 @@ public class SnippetGen {
             for (Object cl : classes) {
                 String parserUnitName = cl.toString().replace(".", "/") + ".java"; // org/apache/commons/lang3/StringUtils.java
                 String sourceFilePath = basePath + sourcePath + "/" + parserUnitName; // src/main/resources/Lang-20/buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
-                String parserClassPath = basePath + bugId + "/buggy/target/classes"; // Chart, Closure만 target/classes 없음.
+                String parserClassPath = basePath + bugId + "/lib/ "+ bugId + "_buggy_src.jar"; // src/main/resources/Lang-20/lib/Lang-20_buggy_src.jar
                 String parserSourcePath = basePath + sourcePath;
                 try {
                     String javaSourceCode = new String(Files.readAllBytes(Paths.get(sourceFilePath).toAbsolutePath()));

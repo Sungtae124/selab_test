@@ -1,0 +1,196 @@
+[
+    [],
+    [
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testEndPoints()",
+            "snippet": "public void testEndPoints() {\nVector2D p1 = new Vector2D(-1, -7);\nVector2D p2 = new Vector2D(7, -1);\nSegment segment = new Segment(p1, p2, new Line(p1, p2));\nSubLine sub = new SubLine(segment);\nList<Segment> segments = sub.getSegments();\nAssert.assertEquals(1, segments.size());\nAssert.assertEquals(0.0, new Vector2D(-1, -7).distance(segments.get(0).getStart()), 1.0e-10);\nAssert.assertEquals(0.0, new Vector2D( 7, -1).distance(segments.get(0).getEnd()), 1.0e-10);\n}",
+            "begin_line": 30,
+            "end_line": 39,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 31,col 9)-(line 31,col 43)",
+                "(line 32,col 9)-(line 32,col 42)",
+                "(line 33,col 9)-(line 33,col 64)",
+                "(line 34,col 9)-(line 34,col 43)",
+                "(line 35,col 9)-(line 35,col 51)",
+                "(line 36,col 9)-(line 36,col 48)",
+                "(line 37,col 9)-(line 37,col 101)",
+                "(line 38,col 9)-(line 38,col 99)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testNoEndPoints()",
+            "snippet": "public void testNoEndPoints() {\nSubLine wholeLine = new Line(new Vector2D(-1, 7), new Vector2D(7, 1)).wholeHyperplane();\nList<Segment> segments = wholeLine.getSegments();\nAssert.assertEquals(1, segments.size());\nAssert.assertTrue(Double.isInfinite(segments.get(0).getStart().getX()) &&",
+            "begin_line": 42,
+            "end_line": 46,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 43,col 9)-(line 43,col 96)",
+                "(line 44,col 9)-(line 44,col 57)",
+                "(line 45,col 9)-(line 45,col 48)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testNoSegments()",
+            "snippet": "public void testNoSegments() {\nSubLine empty = new SubLine(new Line(new Vector2D(-1, -7), new Vector2D(7, -1)),",
+            "begin_line": 57,
+            "end_line": 58,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testSeveralSegments()",
+            "snippet": "public void testSeveralSegments() {\nSubLine twoSubs = new SubLine(new Line(new Vector2D(-1, -7), new Vector2D(7, -1)),",
+            "begin_line": 65,
+            "end_line": 66,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testHalfInfiniteNeg()",
+            "snippet": "public void testHalfInfiniteNeg() {\nSubLine empty = new SubLine(new Line(new Vector2D(-1, -7), new Vector2D(7, -1)),",
+            "begin_line": 74,
+            "end_line": 75,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testHalfInfinitePos()",
+            "snippet": "public void testHalfInfinitePos() {\nSubLine empty = new SubLine(new Line(new Vector2D(-1, -7), new Vector2D(7, -1)),",
+            "begin_line": 87,
+            "end_line": 88,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": []
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionInsideInside()",
+            "snippet": "public void testIntersectionInsideInside() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(3, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 2));\nAssert.assertEquals(0.0, new Vector2D(2, 1).distance(sub1.intersection(sub2, true)),  1.0e-12);\nAssert.assertEquals(0.0, new Vector2D(2, 1).distance(sub1.intersection(sub2, false)), 1.0e-12);\n}",
+            "begin_line": 100,
+            "end_line": 105,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 101,col 9)-(line 101,col 75)",
+                "(line 102,col 9)-(line 102,col 75)",
+                "(line 103,col 9)-(line 103,col 103)",
+                "(line 104,col 9)-(line 104,col 103)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionInsideBoundary()",
+            "snippet": "public void testIntersectionInsideBoundary() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(3, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 1));\nAssert.assertEquals(0.0, new Vector2D(2, 1).distance(sub1.intersection(sub2, true)),  1.0e-12);\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 108,
+            "end_line": 113,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 109,col 9)-(line 109,col 75)",
+                "(line 110,col 9)-(line 110,col 75)",
+                "(line 111,col 9)-(line 111,col 103)",
+                "(line 112,col 9)-(line 112,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionInsideOutside()",
+            "snippet": "public void testIntersectionInsideOutside() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(3, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 0.5));\nAssert.assertNull(sub1.intersection(sub2, true));\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 116,
+            "end_line": 121,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 117,col 9)-(line 117,col 75)",
+                "(line 118,col 9)-(line 118,col 77)",
+                "(line 119,col 9)-(line 119,col 57)",
+                "(line 120,col 9)-(line 120,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionBoundaryBoundary()",
+            "snippet": "public void testIntersectionBoundaryBoundary() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(2, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 1));\nAssert.assertEquals(0.0, new Vector2D(2, 1).distance(sub1.intersection(sub2, true)),  1.0e-12);\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 124,
+            "end_line": 129,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 125,col 9)-(line 125,col 75)",
+                "(line 126,col 9)-(line 126,col 75)",
+                "(line 127,col 9)-(line 127,col 103)",
+                "(line 128,col 9)-(line 128,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionBoundaryOutside()",
+            "snippet": "public void testIntersectionBoundaryOutside() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(2, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 0.5));\nAssert.assertNull(sub1.intersection(sub2, true));\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 132,
+            "end_line": 137,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 133,col 9)-(line 133,col 75)",
+                "(line 134,col 9)-(line 134,col 77)",
+                "(line 135,col 9)-(line 135,col 57)",
+                "(line 136,col 9)-(line 136,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionOutsideOutside()",
+            "snippet": "public void testIntersectionOutsideOutside() {\nSubLine sub1 = new SubLine(new Vector2D(1, 1), new Vector2D(1.5, 1));\nSubLine sub2 = new SubLine(new Vector2D(2, 0), new Vector2D(2, 0.5));\nAssert.assertNull(sub1.intersection(sub2, true));\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 140,
+            "end_line": 145,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 141,col 9)-(line 141,col 77)",
+                "(line 142,col 9)-(line 142,col 77)",
+                "(line 143,col 9)-(line 143,col 57)",
+                "(line 144,col 9)-(line 144,col 58)"
+            ]
+        },
+        {
+            "class_name": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest",
+            "child_classes": [],
+            "src_path": "src/test/java/org/apache/commons/math3/geometry/euclidean/twod/SubLineTest.java",
+            "signature": "org.apache.commons.math3.geometry.euclidean.twod.SubLineTest.testIntersectionParallel()",
+            "snippet": "public void testIntersectionParallel() {\nfinal SubLine sub1 = new SubLine(new Vector2D(0, 1), new Vector2D(0, 2));\nfinal SubLine sub2 = new SubLine(new Vector2D(66, 3), new Vector2D(66, 4));\nAssert.assertNull(sub1.intersection(sub2, true));\nAssert.assertNull(sub1.intersection(sub2, false));\n}",
+            "begin_line": 148,
+            "end_line": 153,
+            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
+            "child_ranges": [
+                "(line 149,col 9)-(line 149,col 81)",
+                "(line 150,col 9)-(line 150,col 83)",
+                "(line 151,col 9)-(line 151,col 57)",
+                "(line 152,col 9)-(line 152,col 58)"
+            ]
+        }
+    ]
+]

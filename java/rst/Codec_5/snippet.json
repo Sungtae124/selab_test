@@ -1,0 +1,1090 @@
+[
+  {
+    "name": "Base64.Base64#236",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.Base64()",
+    "snippet": "public Base64(){\n  this(0);\n}",
+    "begin_line": 236,
+    "end_line": 238,
+    "comment": "/** \n * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode. \u003cp\u003e When encoding the line length is 0 (no chunking), and the encoding table is STANDARD_ENCODE_TABLE. \u003c/p\u003e \u003cp\u003e When decoding all variants are supported. \u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.Base64#255",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.Base64(boolean)",
+    "snippet": "public Base64(boolean urlSafe){\n  this(MIME_CHUNK_SIZE,CHUNK_SEPARATOR,urlSafe);\n}",
+    "begin_line": 255,
+    "end_line": 257,
+    "comment": "/** \n * Creates a Base64 codec used for decoding (all modes) and encoding in the given URL-safe mode. \u003cp\u003e When encoding the line length is 76, the line separator is CRLF, and the encoding table is STANDARD_ENCODE_TABLE. \u003c/p\u003e \u003cp\u003e When decoding all variants are supported. \u003c/p\u003e\n * @param urlSafe if \u003ccode\u003etrue\u003c/code\u003e, URL-safe encoding is used. In most cases this should be set to \u003ccode\u003efalse\u003c/code\u003e.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.Base64#277",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.Base64(int)",
+    "snippet": "public Base64(int lineLength){\n  this(lineLength,CHUNK_SEPARATOR);\n}",
+    "begin_line": 277,
+    "end_line": 279,
+    "comment": "/** \n * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode. \u003cp\u003e When encoding the line length is given in the constructor, the line separator is CRLF, and the encoding table is STANDARD_ENCODE_TABLE. \u003c/p\u003e \u003cp\u003e Line lengths that aren\u0027t multiples of 4 will still essentially end up being multiples of 4 in the encoded data. \u003c/p\u003e \u003cp\u003e When decoding all variants are supported. \u003c/p\u003e\n * @param lineLength Each line of encoded data will be at most of the given length (rounded down to nearest multiple of 4). If lineLength \u003c\u003d 0, then the output will not be divided into lines (chunks). Ignored when decoding.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.Base64#303",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.Base64(int, byte[])",
+    "snippet": "public Base64(int lineLength,byte[] lineSeparator){\n  this(lineLength,lineSeparator,false);\n}",
+    "begin_line": 303,
+    "end_line": 305,
+    "comment": "/** \n * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode. \u003cp\u003e When encoding the line length and line separator are given in the constructor, and the encoding table is STANDARD_ENCODE_TABLE. \u003c/p\u003e \u003cp\u003e Line lengths that aren\u0027t multiples of 4 will still essentially end up being multiples of 4 in the encoded data. \u003c/p\u003e \u003cp\u003e When decoding all variants are supported. \u003c/p\u003e\n * @param lineLength Each line of encoded data will be at most of the given length (rounded down to nearest multiple of 4). If lineLength \u003c\u003d 0, then the output will not be divided into lines (chunks). Ignored when decoding.\n * @param lineSeparator Each line of encoded data will end with this sequence of bytes.\n * @throws IllegalArgumentException Thrown when the provided lineSeparator included some base64 characters.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.Base64#332",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.Base64(int, byte[], boolean)",
+    "snippet": "public Base64(int lineLength,byte[] lineSeparator,boolean urlSafe){\n  if (lineSeparator \u003d\u003d null) {\n    lineLength\u003d0;\n    lineSeparator\u003dCHUNK_SEPARATOR;\n  }\n  this.lineLength\u003dlineLength \u003e 0 ? (lineLength / 4) * 4 : 0;\n  this.lineSeparator\u003dnew byte[lineSeparator.length];\n  System.arraycopy(lineSeparator,0,this.lineSeparator,0,lineSeparator.length);\n  if (lineLength \u003e 0) {\n    this.encodeSize\u003d4 + lineSeparator.length;\n  }\n else {\n    this.encodeSize\u003d4;\n  }\n  this.decodeSize\u003dthis.encodeSize - 1;\n  if (containsBase64Byte(lineSeparator)) {\n    String sep\u003dStringUtils.newStringUtf8(lineSeparator);\n    throw new IllegalArgumentException(\"lineSeperator must not contain base64 characters: [\" + sep + \"]\");\n  }\n  this.encodeTable\u003durlSafe ? URL_SAFE_ENCODE_TABLE : STANDARD_ENCODE_TABLE;\n}",
+    "begin_line": 332,
+    "end_line": 351,
+    "comment": "/** \n * Creates a Base64 codec used for decoding (all modes) and encoding in URL-unsafe mode. \u003cp\u003e When encoding the line length and line separator are given in the constructor, and the encoding table is STANDARD_ENCODE_TABLE. \u003c/p\u003e \u003cp\u003e Line lengths that aren\u0027t multiples of 4 will still essentially end up being multiples of 4 in the encoded data. \u003c/p\u003e \u003cp\u003e When decoding all variants are supported. \u003c/p\u003e\n * @param lineLength Each line of encoded data will be at most of the given length (rounded down to nearest multiple of 4). If lineLength \u003c\u003d 0, then the output will not be divided into lines (chunks). Ignored when decoding.\n * @param lineSeparator Each line of encoded data will end with this sequence of bytes.\n * @param urlSafe Instead of emitting \u0027+\u0027 and \u0027/\u0027 we emit \u0027-\u0027 and \u0027_\u0027 respectively. urlSafe is only applied to encode operations. Decoding seamlessly handles both modes.\n * @throws IllegalArgumentException The provided lineSeparator included some base64 characters. That\u0027s not going to work!\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.isUrlSafe#359",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.isUrlSafe()",
+    "snippet": "public boolean isUrlSafe(){\n  return this.encodeTable \u003d\u003d URL_SAFE_ENCODE_TABLE;\n}",
+    "begin_line": 359,
+    "end_line": 361,
+    "comment": "/** \n * Returns our current encode mode. True if we\u0027re URL-SAFE, false otherwise.\n * @return true if we\u0027re in URL-SAFE mode, false otherwise.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.hasData#368",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.hasData()",
+    "snippet": "boolean hasData(){\n  return this.buffer !\u003d null;\n}",
+    "begin_line": 368,
+    "end_line": 370,
+    "comment": "/** \n * Returns true if this Base64 object has buffered data for reading.\n * @return true if there is Base64 object still available for reading.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.avail#377",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.avail()",
+    "snippet": "int avail(){\n  return buffer !\u003d null ? pos - readPos : 0;\n}",
+    "begin_line": 377,
+    "end_line": 379,
+    "comment": "/** \n * Returns the amount of buffered data available for reading.\n * @return The amount of buffered data available for reading.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.resizeBuffer#382",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.resizeBuffer()",
+    "snippet": "private void resizeBuffer(){\n  if (buffer \u003d\u003d null) {\n    buffer\u003dnew byte[DEFAULT_BUFFER_SIZE];\n    pos\u003d0;\n    readPos\u003d0;\n  }\n else {\n    byte[] b\u003dnew byte[buffer.length * DEFAULT_BUFFER_RESIZE_FACTOR];\n    System.arraycopy(buffer,0,b,0,buffer.length);\n    buffer\u003db;\n  }\n}",
+    "begin_line": 382,
+    "end_line": 392,
+    "comment": "/** \n * Doubles our buffer. \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.readResults#406",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.readResults(byte[], int, int)",
+    "snippet": "int readResults(byte[] b,int bPos,int bAvail){\n  if (buffer !\u003d null) {\n    int len\u003dMath.min(avail(),bAvail);\n    if (buffer !\u003d b) {\n      System.arraycopy(buffer,readPos,b,bPos,len);\n      readPos+\u003dlen;\n      if (readPos \u003e\u003d pos) {\n        buffer\u003dnull;\n      }\n    }\n else {\n      buffer\u003dnull;\n    }\n    return len;\n  }\n  return eof ? -1 : 0;\n}",
+    "begin_line": 406,
+    "end_line": 423,
+    "comment": "/** \n * Extracts buffered data into the provided byte[] array, starting at position bPos, up to a maximum of bAvail bytes. Returns how many bytes were actually extracted.\n * @param b byte[] array to extract the buffered data into.\n * @param bPos position in byte[] array to start extraction at.\n * @param bAvail amount of bytes we\u0027re allowed to extract. We may extract fewer (if fewer are available).\n * @return The number of bytes successfully extracted into the provided byte[] array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.setInitialBuffer#436",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.setInitialBuffer(byte[], int, int)",
+    "snippet": "void setInitialBuffer(byte[] out,int outPos,int outAvail){\n  if (out !\u003d null \u0026\u0026 out.length \u003d\u003d outAvail) {\n    buffer\u003dout;\n    pos\u003doutPos;\n    readPos\u003doutPos;\n  }\n}",
+    "begin_line": 436,
+    "end_line": 444,
+    "comment": "/** \n * Sets the streaming buffer. This is a small optimization where we try to buffer directly to the consumer\u0027s output array for one round (if the consumer calls this method first) instead of starting our own buffer.\n * @param out byte[] array to buffer directly to.\n * @param outPos Position to start buffering into.\n * @param outAvail Amount of bytes available for direct buffering.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encode#464",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encode(byte[], int, int)",
+    "snippet": "void encode(byte[] in,int inPos,int inAvail){\n  if (eof) {\n    return;\n  }\n  if (inAvail \u003c 0) {\n    eof\u003dtrue;\n    if (buffer \u003d\u003d null || buffer.length - pos \u003c encodeSize) {\n      resizeBuffer();\n    }\nswitch (modulus) {\ncase 1:      buffer[pos++]\u003dencodeTable[(x \u003e\u003e 2) \u0026 MASK_6BITS];\n    buffer[pos++]\u003dencodeTable[(x \u003c\u003c 4) \u0026 MASK_6BITS];\n  if (encodeTable \u003d\u003d STANDARD_ENCODE_TABLE) {\n    buffer[pos++]\u003dPAD;\n    buffer[pos++]\u003dPAD;\n  }\nbreak;\ncase 2:buffer[pos++]\u003dencodeTable[(x \u003e\u003e 10) \u0026 MASK_6BITS];\nbuffer[pos++]\u003dencodeTable[(x \u003e\u003e 4) \u0026 MASK_6BITS];\nbuffer[pos++]\u003dencodeTable[(x \u003c\u003c 2) \u0026 MASK_6BITS];\nif (encodeTable \u003d\u003d STANDARD_ENCODE_TABLE) {\nbuffer[pos++]\u003dPAD;\n}\nbreak;\n}\nif (lineLength \u003e 0 \u0026\u0026 pos \u003e 0) {\nSystem.arraycopy(lineSeparator,0,buffer,pos,lineSeparator.length);\npos+\u003dlineSeparator.length;\n}\n}\n else {\nfor (int i\u003d0; i \u003c inAvail; i++) {\nif (buffer \u003d\u003d null || buffer.length - pos \u003c encodeSize) {\nresizeBuffer();\n}\nmodulus\u003d(++modulus) % 3;\nint b\u003din[inPos++];\nif (b \u003c 0) {\nb+\u003d256;\n}\nx\u003d(x \u003c\u003c 8) + b;\nif (0 \u003d\u003d modulus) {\nbuffer[pos++]\u003dencodeTable[(x \u003e\u003e 18) \u0026 MASK_6BITS];\nbuffer[pos++]\u003dencodeTable[(x \u003e\u003e 12) \u0026 MASK_6BITS];\nbuffer[pos++]\u003dencodeTable[(x \u003e\u003e 6) \u0026 MASK_6BITS];\nbuffer[pos++]\u003dencodeTable[x \u0026 MASK_6BITS];\ncurrentLinePos+\u003d4;\nif (lineLength \u003e 0 \u0026\u0026 lineLength \u003c\u003d currentLinePos) {\nSystem.arraycopy(lineSeparator,0,buffer,pos,lineSeparator.length);\npos+\u003dlineSeparator.length;\ncurrentLinePos\u003d0;\n}\n}\n}\n}\n}",
+    "begin_line": 464,
+    "end_line": 525,
+    "comment": "/** \n * \u003cp\u003e Encodes all of the provided data, starting at inPos, for inAvail bytes. Must be called at least twice: once with the data to encode, and once with inAvail set to \"-1\" to alert encoder that EOF has been reached, so flush last remaining bytes (if not multiple of 3). \u003c/p\u003e \u003cp\u003e Thanks to \"commons\" project in ws.apache.org for the bitwise operations, and general approach. http://svn.apache.org/repos/asf/webservices/commons/trunk/modules/util/ \u003c/p\u003e\n * @param in byte[] array of binary data to base64 encode.\n * @param inPos Position to start reading data from.\n * @param inAvail Amount of bytes available from input for encoding.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decode#550",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decode(byte[], int, int)",
+    "snippet": "void decode(byte[] in,int inPos,int inAvail){\n  if (eof) {\n    return;\n  }\n  if (inAvail \u003c 0) {\n    eof\u003dtrue;\n  }\n  for (int i\u003d0; i \u003c inAvail; i++) {\n    if (buffer \u003d\u003d null || buffer.length - pos \u003c decodeSize) {\n      resizeBuffer();\n    }\n    byte b\u003din[inPos++];\n    if (b \u003d\u003d PAD) {\n      eof\u003dtrue;\n      break;\n    }\n else {\n      if (b \u003e\u003d 0 \u0026\u0026 b \u003c DECODE_TABLE.length) {\n        int result\u003dDECODE_TABLE[b];\n        if (result \u003e\u003d 0) {\n          modulus\u003d(++modulus) % 4;\n          x\u003d(x \u003c\u003c 6) + result;\n          if (modulus \u003d\u003d 0) {\n            buffer[pos++]\u003d(byte)((x \u003e\u003e 16) \u0026 MASK_8BITS);\n            buffer[pos++]\u003d(byte)((x \u003e\u003e 8) \u0026 MASK_8BITS);\n            buffer[pos++]\u003d(byte)(x \u0026 MASK_8BITS);\n          }\n        }\n      }\n    }\n  }\n  if (eof \u0026\u0026 modulus !\u003d 0) {\n    x\u003dx \u003c\u003c 6;\nswitch (modulus) {\ncase 2:      x\u003dx \u003c\u003c 6;\n    buffer[pos++]\u003d(byte)((x \u003e\u003e 16) \u0026 MASK_8BITS);\n  break;\ncase 3:buffer[pos++]\u003d(byte)((x \u003e\u003e 16) \u0026 MASK_8BITS);\nbuffer[pos++]\u003d(byte)((x \u003e\u003e 8) \u0026 MASK_8BITS);\nbreak;\n}\n}\n}",
+    "begin_line": 550,
+    "end_line": 599,
+    "comment": "/** \n * \u003cp\u003e Decodes all of the provided data, starting at inPos, for inAvail bytes. Should be called at least twice: once with the data to decode, and once with inAvail set to \"-1\" to alert decoder that EOF has been reached. The \"-1\" call is not necessary when decoding, but it doesn\u0027t hurt, either. \u003c/p\u003e \u003cp\u003e Ignores all non-base64 characters. This is how chunked (e.g. 76 character) data is handled, since CR and LF are silently ignored, but has implications for other bytes, too. This method subscribes to the garbage-in, garbage-out philosophy: it will not check the provided data for validity. \u003c/p\u003e \u003cp\u003e Thanks to \"commons\" project in ws.apache.org for the bitwise operations, and general approach. http://svn.apache.org/repos/asf/webservices/commons/trunk/modules/util/ \u003c/p\u003e\n * @param in byte[] array of ascii data to base64 decode.\n * @param inPos Position to start reading data from.\n * @param inAvail Amount of bytes available from input for encoding.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.isBase64#609",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.isBase64(byte)",
+    "snippet": "public static boolean isBase64(byte octet){\n  return octet \u003d\u003d PAD || (octet \u003e\u003d 0 \u0026\u0026 octet \u003c DECODE_TABLE.length \u0026\u0026 DECODE_TABLE[octet] !\u003d -1);\n}",
+    "begin_line": 609,
+    "end_line": 611,
+    "comment": "/** \n * Returns whether or not the \u003ccode\u003eoctet\u003c/code\u003e is in the base 64 alphabet.\n * @param octet The value to test\n * @return \u003ccode\u003etrue\u003c/code\u003e if the value is defined in the the base 64 alphabet, \u003ccode\u003efalse\u003c/code\u003e otherwise.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.isArrayByteBase64#622",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.isArrayByteBase64(byte[])",
+    "snippet": "public static boolean isArrayByteBase64(byte[] arrayOctet){\n  for (int i\u003d0; i \u003c arrayOctet.length; i++) {\n    if (!isBase64(arrayOctet[i]) \u0026\u0026 !isWhiteSpace(arrayOctet[i])) {\n      return false;\n    }\n  }\n  return true;\n}",
+    "begin_line": 622,
+    "end_line": 629,
+    "comment": "/** \n * Tests a given byte array to see if it contains only valid characters within the Base64 alphabet. Currently the method treats whitespace as valid.\n * @param arrayOctet byte array to test\n * @return \u003ccode\u003etrue\u003c/code\u003e if all bytes are valid characters in the Base64 alphabet or if the byte array is empty;false, otherwise\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.containsBase64Byte#638",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.containsBase64Byte(byte[])",
+    "snippet": "private static boolean containsBase64Byte(byte[] arrayOctet){\n  for (int i\u003d0; i \u003c arrayOctet.length; i++) {\n    if (isBase64(arrayOctet[i])) {\n      return true;\n    }\n  }\n  return false;\n}",
+    "begin_line": 638,
+    "end_line": 645,
+    "comment": "/** \n * Tests a given byte array to see if it contains only valid characters within the Base64 alphabet.\n * @param arrayOctet byte array to test\n * @return \u003ccode\u003etrue\u003c/code\u003e if any byte is a valid character in the Base64 alphabet; false herwise\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64#654",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64(byte[])",
+    "snippet": "public static byte[] encodeBase64(byte[] binaryData){\n  return encodeBase64(binaryData,false);\n}",
+    "begin_line": 654,
+    "end_line": 656,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm but does not chunk the output.\n * @param binaryData binary data to encode\n * @return byte[] containing Base64 characters in their UTF-8 representation.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64String#666",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64String(byte[])",
+    "snippet": "public static String encodeBase64String(byte[] binaryData){\n  return StringUtils.newStringUtf8(encodeBase64(binaryData,true));\n}",
+    "begin_line": 666,
+    "end_line": 668,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm into 76 character blocks separated by CRLF.\n * @param binaryData binary data to encode\n * @return String containing Base64 characters.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64URLSafe#679",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64URLSafe(byte[])",
+    "snippet": "public static byte[] encodeBase64URLSafe(byte[] binaryData){\n  return encodeBase64(binaryData,false,true);\n}",
+    "begin_line": 679,
+    "end_line": 681,
+    "comment": "/** \n * Encodes binary data using a URL-safe variation of the base64 algorithm but does not chunk the output. The url-safe variation emits - and _ instead of + and / characters.\n * @param binaryData binary data to encode\n * @return byte[] containing Base64 characters in their UTF-8 representation.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64URLSafeString#692",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString(byte[])",
+    "snippet": "public static String encodeBase64URLSafeString(byte[] binaryData){\n  return StringUtils.newStringUtf8(encodeBase64(binaryData,false,true));\n}",
+    "begin_line": 692,
+    "end_line": 694,
+    "comment": "/** \n * Encodes binary data using a URL-safe variation of the base64 algorithm but does not chunk the output. The url-safe variation emits - and _ instead of + and / characters.\n * @param binaryData binary data to encode\n * @return String containing Base64 characters\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64Chunked#703",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64Chunked(byte[])",
+    "snippet": "public static byte[] encodeBase64Chunked(byte[] binaryData){\n  return encodeBase64(binaryData,true);\n}",
+    "begin_line": 703,
+    "end_line": 705,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm and chunks the encoded output into 76 character blocks\n * @param binaryData binary data to encode\n * @return Base64 characters chunked in 76 character blocks\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decode#717",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decode(java.lang.Object)",
+    "snippet": "public Object decode(Object pObject) throws DecoderException {\n  if (pObject instanceof byte[]) {\n    return decode((byte[])pObject);\n  }\n else   if (pObject instanceof String) {\n    return decode((String)pObject);\n  }\n else {\n    throw new DecoderException(\"Parameter supplied to Base64 decode is not a byte[] or a String\");\n  }\n}",
+    "begin_line": 717,
+    "end_line": 725,
+    "comment": "/** \n * Decodes an Object using the base64 algorithm. This method is provided in order to satisfy the requirements of the Decoder interface, and will throw a DecoderException if the supplied object is not of type byte[] or String.\n * @param pObject Object to decode\n * @return An object (of type byte[]) containing the binary data which corresponds to the byte[] or String supplied.\n * @throws DecoderException if the parameter supplied is not of type byte[]\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decode#735",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decode(java.lang.String)",
+    "snippet": "public byte[] decode(String pArray){\n  return decode(StringUtils.getBytesUtf8(pArray));\n}",
+    "begin_line": 735,
+    "end_line": 737,
+    "comment": "/** \n * Decodes a String containing characters in the Base64 alphabet.\n * @param pArray A String containing Base64 character data\n * @return a byte array containing binary data\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decode#746",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decode(byte[])",
+    "snippet": "public byte[] decode(byte[] pArray){\n  reset();\n  if (pArray \u003d\u003d null || pArray.length \u003d\u003d 0) {\n    return pArray;\n  }\n  long len\u003d(pArray.length * 3) / 4;\n  byte[] buf\u003dnew byte[(int)len];\n  setInitialBuffer(buf,0,buf.length);\n  decode(pArray,0,pArray.length);\n  decode(pArray,0,-1);\n  byte[] result\u003dnew byte[pos];\n  readResults(result,0,result.length);\n  return result;\n}",
+    "begin_line": 746,
+    "end_line": 766,
+    "comment": "/** \n * Decodes a byte[] containing characters in the Base64 alphabet.\n * @param pArray A byte array containing Base64 character data\n * @return a byte array containing binary data\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64#779",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64(byte[], boolean)",
+    "snippet": "public static byte[] encodeBase64(byte[] binaryData,boolean isChunked){\n  return encodeBase64(binaryData,isChunked,false);\n}",
+    "begin_line": 779,
+    "end_line": 781,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm, optionally chunking the output into 76 character blocks.\n * @param binaryData Array containing binary data to encode.\n * @param isChunked if \u003ccode\u003etrue\u003c/code\u003e this encoder will chunk the base64 output into 76 character blocks\n * @return Base64-encoded data.\n * @throws IllegalArgumentException Thrown when the input array needs an output array bigger than  {@link Integer#MAX_VALUE}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64#797",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64(byte[], boolean, boolean)",
+    "snippet": "public static byte[] encodeBase64(byte[] binaryData,boolean isChunked,boolean urlSafe){\n  return encodeBase64(binaryData,isChunked,urlSafe,Integer.MAX_VALUE);\n}",
+    "begin_line": 797,
+    "end_line": 799,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm, optionally chunking the output into 76 character blocks.\n * @param binaryData Array containing binary data to encode.\n * @param isChunked if \u003ccode\u003etrue\u003c/code\u003e this encoder will chunk the base64 output into 76 character blocks\n * @param urlSafe if \u003ccode\u003etrue\u003c/code\u003e this encoder will emit - and _ instead of the usual + and / characters.\n * @return Base64-encoded data.\n * @throws IllegalArgumentException Thrown when the input array needs an output array bigger than  {@link Integer#MAX_VALUE}\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeBase64#817",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeBase64(byte[], boolean, boolean, int)",
+    "snippet": "public static byte[] encodeBase64(byte[] binaryData,boolean isChunked,boolean urlSafe,int maxResultSize){\n  if (binaryData \u003d\u003d null || binaryData.length \u003d\u003d 0) {\n    return binaryData;\n  }\n  long len\u003dgetEncodeLength(binaryData,MIME_CHUNK_SIZE,CHUNK_SEPARATOR);\n  if (len \u003e maxResultSize) {\n    throw new IllegalArgumentException(\"Input array too big, the output array would be bigger (\" + len + \") than the specified maxium size of \"+ maxResultSize);\n  }\n  Base64 b64\u003disChunked ? new Base64(urlSafe) : new Base64(0,CHUNK_SEPARATOR,urlSafe);\n  return b64.encode(binaryData);\n}",
+    "begin_line": 817,
+    "end_line": 832,
+    "comment": "/** \n * Encodes binary data using the base64 algorithm, optionally chunking the output into 76 character blocks.\n * @param binaryData Array containing binary data to encode.\n * @param isChunked if \u003ccode\u003etrue\u003c/code\u003e this encoder will chunk the base64 output into 76 character blocks\n * @param urlSafe if \u003ccode\u003etrue\u003c/code\u003e this encoder will emit - and _ instead of the usual + and / characters.\n * @param maxResultSize The maximum result size to accept.\n * @return Base64-encoded data.\n * @throws IllegalArgumentException Thrown when the input array needs an output array bigger than maxResultSize\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decodeBase64#842",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decodeBase64(java.lang.String)",
+    "snippet": "public static byte[] decodeBase64(String base64String){\n  return new Base64().decode(base64String);\n}",
+    "begin_line": 842,
+    "end_line": 844,
+    "comment": "/** \n * Decodes a Base64 String into octets\n * @param base64String String containing Base64 data\n * @return Array containing decoded data.\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decodeBase64#853",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decodeBase64(byte[])",
+    "snippet": "public static byte[] decodeBase64(byte[] base64Data){\n  return new Base64().decode(base64Data);\n}",
+    "begin_line": 853,
+    "end_line": 855,
+    "comment": "/** \n * Decodes Base64 data into octets\n * @param base64Data Byte array containing Base64 data\n * @return Array containing decoded data.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.discardWhitespace#865",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.discardWhitespace(byte[])",
+    "snippet": "static byte[] discardWhitespace(byte[] data){\n  byte groomedData[]\u003dnew byte[data.length];\n  int bytesCopied\u003d0;\n  for (int i\u003d0; i \u003c data.length; i++) {\nswitch (data[i]) {\ncase \u0027 \u0027:case \u0027\\n\u0027:case \u0027\\r\u0027:case \u0027\\t\u0027:      break;\ndefault:    groomedData[bytesCopied++]\u003ddata[i];\n}\n}\nbyte packedData[]\u003dnew byte[bytesCopied];\nSystem.arraycopy(groomedData,0,packedData,0,bytesCopied);\nreturn packedData;\n}",
+    "begin_line": 865,
+    "end_line": 882,
+    "comment": "/** \n * Discards any whitespace from a base-64 encoded block.\n * @param data The base-64 encoded data to discard the whitespace from.\n * @return The data, less whitespace (see RFC 2045).\n * @deprecated This method is no longer needed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.isWhiteSpace#891",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.isWhiteSpace(byte)",
+    "snippet": "private static boolean isWhiteSpace(byte byteToCheck){\nswitch (byteToCheck) {\ncase \u0027 \u0027:case \u0027\\n\u0027:case \u0027\\r\u0027:case \u0027\\t\u0027:    return true;\ndefault:  return false;\n}\n}",
+    "begin_line": 891,
+    "end_line": 901,
+    "comment": "/** \n * Checks if a byte value is whitespace or not.\n * @param byteToCheck the byte to check\n * @return true if byte is whitespace, false otherwise\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encode#915",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encode(java.lang.Object)",
+    "snippet": "public Object encode(Object pObject) throws EncoderException {\n  if (!(pObject instanceof byte[])) {\n    throw new EncoderException(\"Parameter supplied to Base64 encode is not a byte[]\");\n  }\n  return encode((byte[])pObject);\n}",
+    "begin_line": 915,
+    "end_line": 920,
+    "comment": "/** \n * Encodes an Object using the base64 algorithm. This method is provided in order to satisfy the requirements of the Encoder interface, and will throw an EncoderException if the supplied object is not of type byte[].\n * @param pObject Object to encode\n * @return An object (of type byte[]) containing the base64 encoded data which corresponds to the byte[] supplied.\n * @throws EncoderException if the parameter supplied is not of type byte[]\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeToString#930",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeToString(byte[])",
+    "snippet": "public String encodeToString(byte[] pArray){\n  return StringUtils.newStringUtf8(encode(pArray));\n}",
+    "begin_line": 930,
+    "end_line": 932,
+    "comment": "/** \n * Encodes a byte[] containing binary data, into a String containing characters in the Base64 alphabet.\n * @param pArray a byte array containing binary data\n * @return A String containing only Base64 character data\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encode#941",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encode(byte[])",
+    "snippet": "public byte[] encode(byte[] pArray){\n  reset();\n  if (pArray \u003d\u003d null || pArray.length \u003d\u003d 0) {\n    return pArray;\n  }\n  long len\u003dgetEncodeLength(pArray,lineLength,lineSeparator);\n  byte[] buf\u003dnew byte[(int)len];\n  setInitialBuffer(buf,0,buf.length);\n  encode(pArray,0,pArray.length);\n  encode(pArray,0,-1);\n  if (buffer !\u003d buf) {\n    readResults(buf,0,buf.length);\n  }\n  if (isUrlSafe() \u0026\u0026 pos \u003c buf.length) {\n    byte[] smallerBuf\u003dnew byte[pos];\n    System.arraycopy(buf,0,smallerBuf,0,pos);\n    buf\u003dsmallerBuf;\n  }\n  return buf;\n}",
+    "begin_line": 941,
+    "end_line": 963,
+    "comment": "/** \n * Encodes a byte[] containing binary data, into a byte[] containing characters in the Base64 alphabet.\n * @param pArray a byte array containing binary data\n * @return A byte array containing only Base64 character data\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.getEncodeLength#976",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.getEncodeLength(byte[], int, byte[])",
+    "snippet": "private static long getEncodeLength(byte[] pArray,int chunkSize,byte[] chunkSeparator){\n  chunkSize\u003d(chunkSize / 4) * 4;\n  long len\u003d(pArray.length * 4) / 3;\n  long mod\u003dlen % 4;\n  if (mod !\u003d 0) {\n    len+\u003d4 - mod;\n  }\n  if (chunkSize \u003e 0) {\n    boolean lenChunksPerfectly\u003dlen % chunkSize \u003d\u003d 0;\n    len+\u003d(len / chunkSize) * chunkSeparator.length;\n    if (!lenChunksPerfectly) {\n      len+\u003dchunkSeparator.length;\n    }\n  }\n  return len;\n}",
+    "begin_line": 976,
+    "end_line": 993,
+    "comment": "/** \n * Pre-calculates the amount of space needed to base64-encode the supplied array.\n * @param pArray byte[] array which will later be encoded\n * @param chunkSize line-length of the output (\u003c\u003d 0 means no chunking) between eachchunkSeparator (e.g. CRLF).\n * @param chunkSeparator the sequence of bytes used to separate chunks of output (e.g. CRLF).\n * @return amount of space needed to encoded the supplied array.  Returnsa long since a max-len array will require Integer.MAX_VALUE + 33%.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.decodeInteger#1004",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.decodeInteger(byte[])",
+    "snippet": "public static BigInteger decodeInteger(byte[] pArray){\n  return new BigInteger(1,decodeBase64(pArray));\n}",
+    "begin_line": 1004,
+    "end_line": 1006,
+    "comment": "/** \n * Decodes a byte64-encoded integer according to crypto standards such as W3C\u0027s XML-Signature\n * @param pArray a byte array containing base64 character data\n * @return A BigInteger\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.encodeInteger#1018",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeInteger(java.math.BigInteger)",
+    "snippet": "public static byte[] encodeInteger(BigInteger bigInt){\n  if (bigInt \u003d\u003d null) {\n    throw new NullPointerException(\"encodeInteger called with null parameter\");\n  }\n  return encodeBase64(toIntegerBytes(bigInt),false);\n}",
+    "begin_line": 1018,
+    "end_line": 1023,
+    "comment": "/** \n * Encodes to a byte64-encoded integer according to crypto standards such as W3C\u0027s XML-Signature\n * @param bigInt a BigInteger\n * @return A byte array containing base64 character data\n * @throws NullPointerException if null is passed in\n * @since 1.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.toIntegerBytes#1032",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.toIntegerBytes(java.math.BigInteger)",
+    "snippet": "static byte[] toIntegerBytes(BigInteger bigInt){\n  int bitlen\u003dbigInt.bitLength();\n  bitlen\u003d((bitlen + 7) \u003e\u003e 3) \u003c\u003c 3;\n  byte[] bigBytes\u003dbigInt.toByteArray();\n  if (((bigInt.bitLength() % 8) !\u003d 0) \u0026\u0026 (((bigInt.bitLength() / 8) + 1) \u003d\u003d (bitlen / 8))) {\n    return bigBytes;\n  }\n  int startSrc\u003d0;\n  int len\u003dbigBytes.length;\n  if ((bigInt.bitLength() % 8) \u003d\u003d 0) {\n    startSrc\u003d1;\n    len--;\n  }\n  int startDst\u003dbitlen / 8 - len;\n  byte[] resizedBytes\u003dnew byte[bitlen / 8];\n  System.arraycopy(bigBytes,startSrc,resizedBytes,startDst,len);\n  return resizedBytes;\n}",
+    "begin_line": 1032,
+    "end_line": 1054,
+    "comment": "/** \n * Returns a byte-array representation of a \u003ccode\u003eBigInteger\u003c/code\u003e without sign bit.\n * @param bigInt \u003ccode\u003eBigInteger\u003c/code\u003e to be converted\n * @return a byte array representation of the BigInteger parameter\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64.reset#1059",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "signature": "org.apache.commons.codec.binary.Base64.reset()",
+    "snippet": "private void reset(){\n  buffer\u003dnull;\n  pos\u003d0;\n  readPos\u003d0;\n  currentLinePos\u003d0;\n  modulus\u003d0;\n  eof\u003dfalse;\n}",
+    "begin_line": 1059,
+    "end_line": 1066,
+    "comment": "/** \n * Resets this Base64 object to its initial newly constructed state.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.Base64InputStream#60",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.Base64InputStream(java.io.InputStream)",
+    "snippet": "public Base64InputStream(InputStream in){\n  this(in,false);\n}",
+    "begin_line": 60,
+    "end_line": 62,
+    "comment": "/** \n * Creates a Base64InputStream such that all data read is Base64-decoded from the original provided InputStream.\n * @param in InputStream to wrap.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.Base64InputStream#73",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.Base64InputStream(java.io.InputStream, boolean)",
+    "snippet": "public Base64InputStream(InputStream in,boolean doEncode){\n  super(in);\n  this.doEncode\u003ddoEncode;\n  this.base64\u003dnew Base64(false);\n}",
+    "begin_line": 73,
+    "end_line": 77,
+    "comment": "/** \n * Creates a Base64InputStream such that all data read is either Base64-encoded or Base64-decoded from the original provided InputStream.\n * @param in InputStream to wrap.\n * @param doEncode true if we should encode all data read from us, false if we should decode.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.Base64InputStream#95",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.Base64InputStream(java.io.InputStream, boolean, int, byte[])",
+    "snippet": "public Base64InputStream(InputStream in,boolean doEncode,int lineLength,byte[] lineSeparator){\n  super(in);\n  this.doEncode\u003ddoEncode;\n  this.base64\u003dnew Base64(lineLength,lineSeparator);\n}",
+    "begin_line": 95,
+    "end_line": 99,
+    "comment": "/** \n * Creates a Base64InputStream such that all data read is either Base64-encoded or Base64-decoded from the original provided InputStream.\n * @param in InputStream to wrap.\n * @param doEncode true if we should encode all data read from us, false if we should decode.\n * @param lineLength If doEncode is true, each line of encoded data will contain lineLength characters (rounded down to nearest multiple of 4). If lineLength \u003c\u003d0, the encoded data is not divided into lines. If doEncode is false, lineLength is ignored.\n * @param lineSeparator If doEncode is true, each line of encoded data will be terminated with this byte sequence (e.g. \\r\\n). If lineLength \u003c\u003d 0, the lineSeparator is not used. If doEncode is false lineSeparator is ignored.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.read#108",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.read()",
+    "snippet": "public int read() throws IOException {\n  int r\u003dread(singleByte,0,1);\n  while (r \u003d\u003d 0) {\n    r\u003dread(singleByte,0,1);\n  }\n  if (r \u003e 0) {\n    return singleByte[0] \u003c 0 ? 256 + singleByte[0] : singleByte[0];\n  }\n  return -1;\n}",
+    "begin_line": 108,
+    "end_line": 117,
+    "comment": "/** \n * Reads one \u003ccode\u003ebyte\u003c/code\u003e from this input stream.\n * @return the byte as an integer in the range 0 to 255. Returns -1 if EOF has been reached.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.read#138",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.read(byte, int, int)",
+    "snippet": "public int read(byte b[],int offset,int len) throws IOException {\n  if (b \u003d\u003d null) {\n    throw new NullPointerException();\n  }\n else   if (offset \u003c 0 || len \u003c 0) {\n    throw new IndexOutOfBoundsException();\n  }\n else   if (offset \u003e b.length || offset + len \u003e b.length) {\n    throw new IndexOutOfBoundsException();\n  }\n else   if (len \u003d\u003d 0) {\n    return 0;\n  }\n else {\n    if (!base64.hasData()) {\n      byte[] buf\u003dnew byte[doEncode ? 4096 : 8192];\n      int c\u003din.read(buf);\n      if (c \u003e 0 \u0026\u0026 b.length \u003d\u003d len) {\n        base64.setInitialBuffer(b,offset,len);\n      }\n      if (doEncode) {\n        base64.encode(buf,0,c);\n      }\n else {\n        base64.decode(buf,0,c);\n      }\n    }\n    return base64.readResults(b,offset,len);\n  }\n}",
+    "begin_line": 138,
+    "end_line": 164,
+    "comment": "/** \n * Attempts to read \u003ccode\u003elen\u003c/code\u003e bytes into the specified \u003ccode\u003eb\u003c/code\u003e array starting at \u003ccode\u003eoffset\u003c/code\u003e from this InputStream.\n * @param b destination byte array\n * @param offset where to start writing the bytes\n * @param len maximum number of bytes to read\n * @return number of bytes read\n * @throws IOException if an I/O error occurs.\n * @throws NullPointerException if the byte array parameter is null\n * @throws IndexOutOfBoundsException if offset, len or buffer size are invalid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64InputStream.markSupported#171",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.markSupported()",
+    "snippet": "public boolean markSupported(){\n  return false;\n}",
+    "begin_line": 171,
+    "end_line": 173,
+    "comment": "/** \n * {@inheritDoc}\n * @return false\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.Base64OutputStream#59",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.Base64OutputStream(java.io.OutputStream)",
+    "snippet": "public Base64OutputStream(OutputStream out){\n  this(out,true);\n}",
+    "begin_line": 59,
+    "end_line": 61,
+    "comment": "/** \n * Creates a Base64OutputStream such that all data written is Base64-encoded to the original provided OutputStream.\n * @param out OutputStream to wrap.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.Base64OutputStream#72",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.Base64OutputStream(java.io.OutputStream, boolean)",
+    "snippet": "public Base64OutputStream(OutputStream out,boolean doEncode){\n  super(out);\n  this.doEncode\u003ddoEncode;\n  this.base64\u003dnew Base64(false);\n}",
+    "begin_line": 72,
+    "end_line": 76,
+    "comment": "/** \n * Creates a Base64OutputStream such that all data written is either Base64-encoded or Base64-decoded to the original provided OutputStream.\n * @param out OutputStream to wrap.\n * @param doEncode true if we should encode all data written to us, false if we should decode.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.Base64OutputStream#94",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.Base64OutputStream(java.io.OutputStream, boolean, int, byte[])",
+    "snippet": "public Base64OutputStream(OutputStream out,boolean doEncode,int lineLength,byte[] lineSeparator){\n  super(out);\n  this.doEncode\u003ddoEncode;\n  this.base64\u003dnew Base64(lineLength,lineSeparator);\n}",
+    "begin_line": 94,
+    "end_line": 98,
+    "comment": "/** \n * Creates a Base64OutputStream such that all data written is either Base64-encoded or Base64-decoded to the original provided OutputStream.\n * @param out OutputStream to wrap.\n * @param doEncode true if we should encode all data written to us, false if we should decode.\n * @param lineLength If doEncode is true, each line of encoded data will contain lineLength characters (rounded down to nearest multiple of 4). If lineLength \u003c\u003d0, the encoded data is not divided into lines. If doEncode is false, lineLength is ignored.\n * @param lineSeparator If doEncode is true, each line of encoded data will be terminated with this byte sequence (e.g. \\r\\n). If lineLength \u003c\u003d 0, the lineSeparator is not used. If doEncode is false lineSeparator is ignored.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.write#108",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.write(int)",
+    "snippet": "public void write(int i) throws IOException {\n  singleByte[0]\u003d(byte)i;\n  write(singleByte,0,1);\n}",
+    "begin_line": 108,
+    "end_line": 111,
+    "comment": "/** \n * Writes the specified \u003ccode\u003ebyte\u003c/code\u003e to this output stream.\n * @param i source byte\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.write#131",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.write(byte, int, int)",
+    "snippet": "public void write(byte b[],int offset,int len) throws IOException {\n  if (b \u003d\u003d null) {\n    throw new NullPointerException();\n  }\n else   if (offset \u003c 0 || len \u003c 0) {\n    throw new IndexOutOfBoundsException();\n  }\n else   if (offset \u003e b.length || offset + len \u003e b.length) {\n    throw new IndexOutOfBoundsException();\n  }\n else   if (len \u003e 0) {\n    if (doEncode) {\n      base64.encode(b,offset,len);\n    }\n else {\n      base64.decode(b,offset,len);\n    }\n    flush(false);\n  }\n}",
+    "begin_line": 131,
+    "end_line": 146,
+    "comment": "/** \n * Writes \u003ccode\u003elen\u003c/code\u003e bytes from the specified \u003ccode\u003eb\u003c/code\u003e array starting at \u003ccode\u003eoffset\u003c/code\u003e to this output stream.\n * @param b source byte array\n * @param offset where to start reading the bytes\n * @param len maximum number of bytes to write\n * @throws IOException if an I/O error occurs.\n * @throws NullPointerException if the byte array parameter is null\n * @throws IndexOutOfBoundsException if offset, len or buffer size are invalid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.flush#157",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.flush(boolean)",
+    "snippet": "private void flush(boolean propogate) throws IOException {\n  int avail\u003dbase64.avail();\n  if (avail \u003e 0) {\n    byte[] buf\u003dnew byte[avail];\n    int c\u003dbase64.readResults(buf,0,avail);\n    if (c \u003e 0) {\n      out.write(buf,0,c);\n    }\n  }\n  if (propogate) {\n    out.flush();\n  }\n}",
+    "begin_line": 157,
+    "end_line": 169,
+    "comment": "/** \n * Flushes this output stream and forces any buffered output bytes to be written out to the stream. If propogate is true, the wrapped stream will also be flushed.\n * @param propogate boolean flag to indicate whether the wrapped OutputStream should also be flushed.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.flush#177",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.flush()",
+    "snippet": "public void flush() throws IOException {\n  flush(true);\n}",
+    "begin_line": 177,
+    "end_line": 179,
+    "comment": "/** \n * Flushes this output stream and forces any buffered output bytes to be written out to the stream.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Base64OutputStream.close#187",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.close()",
+    "snippet": "public void close() throws IOException {\n  if (doEncode) {\n    base64.encode(singleByte,0,-1);\n  }\n else {\n    base64.decode(singleByte,0,-1);\n  }\n  flush();\n  out.close();\n}",
+    "begin_line": 187,
+    "end_line": 196,
+    "comment": "/** \n * Closes this output stream and releases any system resources associated with the stream.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesIso8859_1#48",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesIso8859_1(java.lang.String)",
+    "snippet": "public static byte[] getBytesIso8859_1(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.ISO_8859_1);\n}",
+    "begin_line": 48,
+    "end_line": 50,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the ISO-8859-1 charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUsAscii#64",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUsAscii(java.lang.String)",
+    "snippet": "public static byte[] getBytesUsAscii(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.US_ASCII);\n}",
+    "begin_line": 64,
+    "end_line": 66,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the US-ASCII charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUtf16#80",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUtf16(java.lang.String)",
+    "snippet": "public static byte[] getBytesUtf16(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.UTF_16);\n}",
+    "begin_line": 80,
+    "end_line": 82,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the UTF-16 charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUtf16Be#96",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUtf16Be(java.lang.String)",
+    "snippet": "public static byte[] getBytesUtf16Be(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.UTF_16BE);\n}",
+    "begin_line": 96,
+    "end_line": 98,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the UTF-16BE charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUtf16Le#112",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUtf16Le(java.lang.String)",
+    "snippet": "public static byte[] getBytesUtf16Le(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.UTF_16LE);\n}",
+    "begin_line": 112,
+    "end_line": 114,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the UTF-16LE charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUtf8#128",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUtf8(java.lang.String)",
+    "snippet": "public static byte[] getBytesUtf8(String string){\n  return StringUtils.getBytesUnchecked(string,CharEncoding.UTF_8);\n}",
+    "begin_line": 128,
+    "end_line": 130,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the UTF-8 charset, storing the result into a new byte array.\n * @param string the String to encode\n * @return encoded bytes\n * @throws IllegalStateException Thrown when the charset is missing, which should be never according the the Java specification.\n * @see \u003ca href\u003d\"http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @see #getBytesUnchecked(String,String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.getBytesUnchecked#151",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.getBytesUnchecked(java.lang.String, java.lang.String)",
+    "snippet": "public static byte[] getBytesUnchecked(String string,String charsetName){\n  if (string \u003d\u003d null) {\n    return null;\n  }\n  try {\n    return string.getBytes(charsetName);\n  }\n catch (  UnsupportedEncodingException e) {\n    throw StringUtils.newIllegalStateException(charsetName,e);\n  }\n}",
+    "begin_line": 151,
+    "end_line": 160,
+    "comment": "/** \n * Encodes the given string into a sequence of bytes using the named charset, storing the result into a new byte array. \u003cp\u003e This method catches  {@link UnsupportedEncodingException} and rethrows it as {@link IllegalStateException}, which should never happen for a required charset name. Use this method when the encoding is required to be in the JRE. \u003c/p\u003e\n * @param string the String to encode\n * @param charsetName The name of a required  {@link java.nio.charset.Charset}\n * @return encoded bytes\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen for arequired charset name.\n * @see CharEncoding\n * @see String#getBytes(String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newIllegalStateException#162",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newIllegalStateException(java.lang.String, java.io.UnsupportedEncodingException)",
+    "snippet": "private static IllegalStateException newIllegalStateException(String charsetName,UnsupportedEncodingException e){\n  return new IllegalStateException(charsetName + \": \" + e);\n}",
+    "begin_line": 162,
+    "end_line": 164,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newString#184",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newString(byte[], java.lang.String)",
+    "snippet": "public static String newString(byte[] bytes,String charsetName){\n  if (bytes \u003d\u003d null) {\n    return null;\n  }\n  try {\n    return new String(bytes,charsetName);\n  }\n catch (  UnsupportedEncodingException e) {\n    throw StringUtils.newIllegalStateException(charsetName,e);\n  }\n}",
+    "begin_line": 184,
+    "end_line": 193,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the given charset. \u003cp\u003e This method catches  {@link UnsupportedEncodingException} and re-throws it as {@link IllegalStateException}, which should never happen for a required charset name. Use this method when the encoding is required to be in the JRE. \u003c/p\u003e\n * @param bytes The bytes to be decoded into characters\n * @param charsetName The name of a required  {@link java.nio.charset.Charset}\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen for arequired charset name.\n * @see CharEncoding\n * @see String#String(byte[],String)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringIso8859_1#205",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringIso8859_1(byte[])",
+    "snippet": "public static String newStringIso8859_1(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.ISO_8859_1);\n}",
+    "begin_line": 205,
+    "end_line": 207,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the ISO-8859-1 charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringUsAscii#219",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringUsAscii(byte[])",
+    "snippet": "public static String newStringUsAscii(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.US_ASCII);\n}",
+    "begin_line": 219,
+    "end_line": 221,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the US-ASCII charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringUtf16#233",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringUtf16(byte[])",
+    "snippet": "public static String newStringUtf16(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.UTF_16);\n}",
+    "begin_line": 233,
+    "end_line": 235,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the UTF-16 charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringUtf16Be#247",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringUtf16Be(byte[])",
+    "snippet": "public static String newStringUtf16Be(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.UTF_16BE);\n}",
+    "begin_line": 247,
+    "end_line": 249,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the UTF-16BE charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringUtf16Le#261",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringUtf16Le(byte[])",
+    "snippet": "public static String newStringUtf16Le(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.UTF_16LE);\n}",
+    "begin_line": 261,
+    "end_line": 263,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the UTF-16LE charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "StringUtils.newStringUtf8#275",
+    "is_bug": true,
+    "src_path": "org/apache/commons/codec/binary/StringUtils.java",
+    "class_name": "org.apache.commons.codec.binary.StringUtils",
+    "signature": "org.apache.commons.codec.binary.StringUtils.newStringUtf8(byte[])",
+    "snippet": "public static String newStringUtf8(byte[] bytes){\n  return StringUtils.newString(bytes,CharEncoding.UTF_8);\n}",
+    "begin_line": 275,
+    "end_line": 277,
+    "comment": "/** \n * Constructs a new \u003ccode\u003eString\u003c/code\u003e by decoding the specified array of bytes using the UTF-8 charset.\n * @param bytes The bytes to be decoded into characters\n * @return A new \u003ccode\u003eString\u003c/code\u003e decoded from the specified array of bytes using the given charset.\n * @throws IllegalStateException Thrown when a  {@link UnsupportedEncodingException} is caught, which should never happen since thecharset is required.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]
