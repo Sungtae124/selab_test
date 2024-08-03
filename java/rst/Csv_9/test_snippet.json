@@ -1,218 +1,295 @@
 [
-    [
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetInt()",
-            "snippet": "public void testGetInt() {\nassertEquals(values[0], record.get(0));\nassertEquals(values[1], record.get(1));\nassertEquals(values[2], record.get(2));\n}",
-            "begin_line": 57,
-            "end_line": 61,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 58,col 9)-(line 58,col 47)",
-                "(line 59,col 9)-(line 59,col 47)",
-                "(line 60,col 9)-(line 60,col 47)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetString()",
-            "snippet": "public void testGetString() {\nassertEquals(values[0], recordWithHeader.get(\"first\"));\nassertEquals(values[1], recordWithHeader.get(\"second\"));\nassertEquals(values[2], recordWithHeader.get(\"third\"));\n}",
-            "begin_line": 64,
-            "end_line": 68,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 65,col 9)-(line 65,col 63)",
-                "(line 66,col 9)-(line 66,col 64)",
-                "(line 67,col 9)-(line 67,col 63)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetStringInconsistentRecord()",
-            "snippet": "public void testGetStringInconsistentRecord() {\nheader.put(\"fourth\", Integer.valueOf(4));\nrecordWithHeader.get(\"fourth\");\n}",
-            "begin_line": 71,
-            "end_line": 74,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 72,col 9)-(line 72,col 49)",
-                "(line 73,col 9)-(line 73,col 39)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetStringNoHeader()",
-            "snippet": "public void testGetStringNoHeader() {\nrecord.get(\"first\");\n}",
-            "begin_line": 77,
-            "end_line": 79,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 78,col 9)-(line 78,col 28)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedEnum()",
-            "snippet": "public void testGetUnmappedEnum() {\nassertNull(recordWithHeader.get(EnumFixture.UNKNOWN_COLUMN));\n}",
-            "begin_line": 82,
-            "end_line": 84,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 83,col 9)-(line 83,col 69)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedName()",
-            "snippet": "public void testGetUnmappedName() {\nassertNull(recordWithHeader.get(\"fourth\"));\n}",
-            "begin_line": 87,
-            "end_line": 89,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 88,col 9)-(line 88,col 51)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedNegativeInt()",
-            "snippet": "public void testGetUnmappedNegativeInt() {\nassertNull(recordWithHeader.get(Integer.MIN_VALUE));\n}",
-            "begin_line": 92,
-            "end_line": 94,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 93,col 9)-(line 93,col 60)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedPositiveInt()",
-            "snippet": "public void testGetUnmappedPositiveInt() {\nassertNull(recordWithHeader.get(Integer.MAX_VALUE));\n}",
-            "begin_line": 97,
-            "end_line": 99,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 98,col 9)-(line 98,col 60)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testIsConsistent()",
-            "snippet": "public void testIsConsistent() {\nassertTrue(record.isConsistent());\nassertTrue(recordWithHeader.isConsistent());\n\nheader.put(\"fourth\", Integer.valueOf(4));\nassertFalse(recordWithHeader.isConsistent());\n}",
-            "begin_line": 102,
-            "end_line": 108,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 103,col 9)-(line 103,col 42)",
-                "(line 104,col 9)-(line 104,col 52)",
-                "(line 105,col 0)-(line 105,col 0)",
-                "(line 106,col 9)-(line 106,col 49)",
-                "(line 107,col 9)-(line 107,col 53)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testIsMapped()",
-            "snippet": "public void testIsMapped() {\nassertFalse(record.isMapped(\"first\"));\nassertTrue(recordWithHeader.isMapped(\"first\"));\nassertFalse(recordWithHeader.isMapped(\"fourth\"));\n}",
-            "begin_line": 111,
-            "end_line": 115,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 112,col 9)-(line 112,col 46)",
-                "(line 113,col 9)-(line 113,col 55)",
-                "(line 114,col 9)-(line 114,col 57)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testIsSet()",
-            "snippet": "public void testIsSet() {\nassertFalse(record.isSet(\"first\"));\nassertTrue(recordWithHeader.isSet(\"first\"));\nassertFalse(recordWithHeader.isSet(\"fourth\"));\n}",
-            "begin_line": 118,
-            "end_line": 122,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 119,col 9)-(line 119,col 43)",
-                "(line 120,col 9)-(line 120,col 52)",
-                "(line 121,col 9)-(line 121,col 54)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testIterator()",
-            "snippet": "public void testIterator() {\nint i = 0;\nfor (final String value : record) {",
-            "begin_line": 125,
-            "end_line": 127,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 126,col 9)-(line 126,col 18)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testPutInMap()",
-            "snippet": "public void testPutInMap() {\nfinal Map<String, String> map = new ConcurrentHashMap<String, String>();\nthis.recordWithHeader.putIn(map);\nthis.validateMap(map, false);\n// Test that we can compile with assigment to the same map as the param.",
-            "begin_line": 134,
-            "end_line": 138,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": [
-                "(line 135,col 9)-(line 135,col 80)",
-                "(line 136,col 9)-(line 136,col 41)",
-                "(line 137,col 9)-(line 137,col 37)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.testToMap()",
-            "snippet": "public void testToMap() {\nfinal Map<String, String> map = this.recordWithHeader.toMap();\nthis.validateMap(map, true);\n}",
-            "begin_line": 159,
-            "end_line": 162,
-            "comment": "         check:",
-            "child_ranges": [
-                "(line 160,col 9)-(line 160,col 70)",
-                "(line 161,col 9)-(line 161,col 36)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.csv.CSVRecordTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVRecordTest.java",
-            "signature": "org.apache.commons.csv.CSVRecordTest.validateMap(final Map<String, String> map, final boolean allowsNulls)",
-            "snippet": "private void validateMap(final Map<String, String> map, final boolean allowsNulls) {\nassertTrue(map.containsKey(\"first\"));\nassertTrue(map.containsKey(\"second\"));\nassertTrue(map.containsKey(\"third\"));\nassertFalse(map.containsKey(\"fourth\"));\nif (allowsNulls) {",
-            "begin_line": 180,
-            "end_line": 185,
-            "comment": "         check:",
-            "child_ranges": [
-                "(line 181,col 9)-(line 181,col 45)",
-                "(line 182,col 9)-(line 182,col 46)",
-                "(line 183,col 9)-(line 183,col 45)",
-                "(line 184,col 9)-(line 184,col 47)"
-            ]
-        }
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.setUp()",
+    "snippet": "@Before public void setUp() throws Exception {\n  values\u003dnew String[]{\"A\",\"B\",\"C\"};\n  record\u003dnew CSVRecord(values,null,null,0);\n  header\u003dnew HashMap\u003cString,Integer\u003e();\n  header.put(\"first\",Integer.valueOf(0));\n  header.put(\"second\",Integer.valueOf(1));\n  header.put(\"third\",Integer.valueOf(2));\n  recordWithHeader\u003dnew CSVRecord(values,header,null,0);\n}",
+    "begin_line": 46,
+    "end_line": 54,
+    "comment": "",
+    "child_ranges": [
+      "(line 47,col 9)-(line 47,col 48)",
+      "(line 48,col 9)-(line 48,col 54)",
+      "(line 49,col 9)-(line 49,col 48)",
+      "(line 50,col 9)-(line 50,col 48)",
+      "(line 51,col 9)-(line 51,col 49)",
+      "(line 52,col 9)-(line 52,col 48)",
+      "(line 53,col 9)-(line 53,col 66)"
     ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetInt()",
+    "snippet": "@Test public void testGetInt(){\n  assertEquals(values[0],record.get(0));\n  assertEquals(values[1],record.get(1));\n  assertEquals(values[2],record.get(2));\n}",
+    "begin_line": 57,
+    "end_line": 61,
+    "comment": "",
+    "child_ranges": [
+      "(line 58,col 9)-(line 58,col 47)",
+      "(line 59,col 9)-(line 59,col 47)",
+      "(line 60,col 9)-(line 60,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetString()",
+    "snippet": "@Test public void testGetString(){\n  assertEquals(values[0],recordWithHeader.get(\"first\"));\n  assertEquals(values[1],recordWithHeader.get(\"second\"));\n  assertEquals(values[2],recordWithHeader.get(\"third\"));\n}",
+    "begin_line": 64,
+    "end_line": 68,
+    "comment": "",
+    "child_ranges": [
+      "(line 65,col 9)-(line 65,col 63)",
+      "(line 66,col 9)-(line 66,col 64)",
+      "(line 67,col 9)-(line 67,col 63)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetStringInconsistentRecord()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testGetStringInconsistentRecord(){\n  header.put(\"fourth\",Integer.valueOf(4));\n  recordWithHeader.get(\"fourth\");\n}",
+    "begin_line": 71,
+    "end_line": 74,
+    "comment": "",
+    "child_ranges": [
+      "(line 72,col 9)-(line 72,col 49)",
+      "(line 73,col 9)-(line 73,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetStringNoHeader()",
+    "snippet": "@Test(expected\u003dIllegalStateException.class) public void testGetStringNoHeader(){\n  record.get(\"first\");\n}",
+    "begin_line": 77,
+    "end_line": 79,
+    "comment": "",
+    "child_ranges": [
+      "(line 78,col 9)-(line 78,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedEnum()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testGetUnmappedEnum(){\n  assertNull(recordWithHeader.get(EnumFixture.UNKNOWN_COLUMN));\n}",
+    "begin_line": 82,
+    "end_line": 84,
+    "comment": "",
+    "child_ranges": [
+      "(line 83,col 9)-(line 83,col 69)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedName()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testGetUnmappedName(){\n  assertNull(recordWithHeader.get(\"fourth\"));\n}",
+    "begin_line": 87,
+    "end_line": 89,
+    "comment": "",
+    "child_ranges": [
+      "(line 88,col 9)-(line 88,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedNegativeInt()",
+    "snippet": "@Test(expected\u003dArrayIndexOutOfBoundsException.class) public void testGetUnmappedNegativeInt(){\n  assertNull(recordWithHeader.get(Integer.MIN_VALUE));\n}",
+    "begin_line": 92,
+    "end_line": 94,
+    "comment": "",
+    "child_ranges": [
+      "(line 93,col 9)-(line 93,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testGetUnmappedPositiveInt()",
+    "snippet": "@Test(expected\u003dArrayIndexOutOfBoundsException.class) public void testGetUnmappedPositiveInt(){\n  assertNull(recordWithHeader.get(Integer.MAX_VALUE));\n}",
+    "begin_line": 97,
+    "end_line": 99,
+    "comment": "",
+    "child_ranges": [
+      "(line 98,col 9)-(line 98,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testIsConsistent()",
+    "snippet": "@Test public void testIsConsistent(){\n  assertTrue(record.isConsistent());\n  assertTrue(recordWithHeader.isConsistent());\n  header.put(\"fourth\",Integer.valueOf(4));\n  assertFalse(recordWithHeader.isConsistent());\n}",
+    "begin_line": 102,
+    "end_line": 108,
+    "comment": "",
+    "child_ranges": [
+      "(line 103,col 9)-(line 103,col 42)",
+      "(line 104,col 9)-(line 104,col 52)",
+      "(line 106,col 9)-(line 106,col 49)",
+      "(line 107,col 9)-(line 107,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testIsMapped()",
+    "snippet": "@Test public void testIsMapped(){\n  assertFalse(record.isMapped(\"first\"));\n  assertTrue(recordWithHeader.isMapped(\"first\"));\n  assertFalse(recordWithHeader.isMapped(\"fourth\"));\n}",
+    "begin_line": 111,
+    "end_line": 115,
+    "comment": "",
+    "child_ranges": [
+      "(line 112,col 9)-(line 112,col 46)",
+      "(line 113,col 9)-(line 113,col 55)",
+      "(line 114,col 9)-(line 114,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testIsSet()",
+    "snippet": "@Test public void testIsSet(){\n  assertFalse(record.isSet(\"first\"));\n  assertTrue(recordWithHeader.isSet(\"first\"));\n  assertFalse(recordWithHeader.isSet(\"fourth\"));\n}",
+    "begin_line": 118,
+    "end_line": 122,
+    "comment": "",
+    "child_ranges": [
+      "(line 119,col 9)-(line 119,col 43)",
+      "(line 120,col 9)-(line 120,col 52)",
+      "(line 121,col 9)-(line 121,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testIterator()",
+    "snippet": "@Test public void testIterator(){\n  int i\u003d0;\n  for (  final String value : record) {\n    assertEquals(values[i],value);\n    i++;\n  }\n}",
+    "begin_line": 125,
+    "end_line": 131,
+    "comment": "",
+    "child_ranges": [
+      "(line 126,col 9)-(line 126,col 18)",
+      "(line 127,col 9)-(line 130,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testPutInMap()",
+    "snippet": "@Test public void testPutInMap(){\n  final Map\u003cString,String\u003e map\u003dnew ConcurrentHashMap\u003cString,String\u003e();\n  this.recordWithHeader.putIn(map);\n  this.validateMap(map,false);\n  final TreeMap\u003cString,String\u003e map2\u003drecordWithHeader.putIn(new TreeMap\u003cString,String\u003e());\n  this.validateMap(map2,false);\n}",
+    "begin_line": 134,
+    "end_line": 141,
+    "comment": "",
+    "child_ranges": [
+      "(line 135,col 9)-(line 135,col 80)",
+      "(line 136,col 9)-(line 136,col 41)",
+      "(line 137,col 9)-(line 137,col 37)",
+      "(line 139,col 9)-(line 139,col 99)",
+      "(line 140,col 9)-(line 140,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testRemoveAndAddColumns()",
+    "snippet": "@Test public void testRemoveAndAddColumns() throws IOException {\n  final CSVPrinter printer\u003dnew CSVPrinter(new StringBuilder(),CSVFormat.DEFAULT);\n  final Map\u003cString,String\u003e map\u003drecordWithHeader.toMap();\n  map.remove(\"OldColumn\");\n  map.put(\"ZColumn\",\"NewValue\");\n  final ArrayList\u003cString\u003e list\u003dnew ArrayList\u003cString\u003e(map.values());\n  Collections.sort(list);\n  printer.printRecord(list);\n  Assert.assertEquals(\"A,B,C,NewValue\" + CSVFormat.DEFAULT.getRecordSeparator(),printer.getOut().toString());\n  printer.close();\n}",
+    "begin_line": 144,
+    "end_line": 156,
+    "comment": "",
+    "child_ranges": [
+      "(line 146,col 9)-(line 146,col 90)",
+      "(line 147,col 9)-(line 147,col 65)",
+      "(line 148,col 9)-(line 148,col 32)",
+      "(line 149,col 9)-(line 149,col 39)",
+      "(line 151,col 9)-(line 151,col 75)",
+      "(line 152,col 9)-(line 152,col 31)",
+      "(line 153,col 9)-(line 153,col 34)",
+      "(line 154,col 9)-(line 154,col 116)",
+      "(line 155,col 9)-(line 155,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testToMap()",
+    "snippet": "@Test public void testToMap(){\n  final Map\u003cString,String\u003e map\u003dthis.recordWithHeader.toMap();\n  this.validateMap(map,true);\n}",
+    "begin_line": 159,
+    "end_line": 162,
+    "comment": "",
+    "child_ranges": [
+      "(line 160,col 9)-(line 160,col 70)",
+      "(line 161,col 9)-(line 161,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testToMapWithShortRecord()",
+    "snippet": "@Test public void testToMapWithShortRecord() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"a,b\",CSVFormat.DEFAULT.withHeader(\"A\",\"B\",\"C\"));\n  final CSVRecord shortRec\u003dparser.iterator().next();\n  shortRec.toMap();\n}",
+    "begin_line": 165,
+    "end_line": 169,
+    "comment": "",
+    "child_ranges": [
+      "(line 166,col 8)-(line 166,col 101)",
+      "(line 167,col 8)-(line 167,col 59)",
+      "(line 168,col 8)-(line 168,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.testToMapWithNoHeader()",
+    "snippet": "@Test public void testToMapWithNoHeader() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"a,b\",CSVFormat.newFormat(\u0027,\u0027));\n  final CSVRecord shortRec\u003dparser.iterator().next();\n  Map\u003cString,String\u003e map\u003dshortRec.toMap();\n  assertNotNull(\"Map is not null.\",map);\n  assertTrue(\"Map is empty.\",map.isEmpty());\n}",
+    "begin_line": 172,
+    "end_line": 178,
+    "comment": "",
+    "child_ranges": [
+      "(line 173,col 8)-(line 173,col 82)",
+      "(line 174,col 8)-(line 174,col 59)",
+      "(line 175,col 8)-(line 175,col 50)",
+      "(line 176,col 8)-(line 176,col 46)",
+      "(line 177,col 8)-(line 177,col 50)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVRecordTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVRecordTest.java",
+    "signature": "org.apache.commons.csv.CSVRecordTest.validateMap(java.util.Map\u003cjava.lang.String,java.lang.String\u003e, boolean)",
+    "snippet": "private void validateMap(final Map\u003cString,String\u003e map,final boolean allowsNulls){\n  assertTrue(map.containsKey(\"first\"));\n  assertTrue(map.containsKey(\"second\"));\n  assertTrue(map.containsKey(\"third\"));\n  assertFalse(map.containsKey(\"fourth\"));\n  if (allowsNulls) {\n    assertFalse(map.containsKey(null));\n  }\n  assertEquals(\"A\",map.get(\"first\"));\n  assertEquals(\"B\",map.get(\"second\"));\n  assertEquals(\"C\",map.get(\"third\"));\n  assertEquals(null,map.get(\"fourth\"));\n}",
+    "begin_line": 180,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 181,col 9)-(line 181,col 45)",
+      "(line 182,col 9)-(line 182,col 46)",
+      "(line 183,col 9)-(line 183,col 45)",
+      "(line 184,col 9)-(line 184,col 47)",
+      "(line 185,col 9)-(line 187,col 9)",
+      "(line 188,col 9)-(line 188,col 44)",
+      "(line 189,col 9)-(line 189,col 45)",
+      "(line 190,col 9)-(line 190,col 44)",
+      "(line 191,col 9)-(line 191,col 46)"
+    ]
+  }
 ]

@@ -1,15 +1,1040 @@
 [
-    [
-        {
-            "class_name": "org.apache.commons.csv.CSVParserTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/csv/CSVParserTest.java",
-            "signature": "org.apache.commons.csv.CSVParserTest.testBOMInputStream()",
-            "snippet": "public void testBOMInputStream() {}\n// Defects4J: flaky method",
-            "begin_line": 208,
-            "end_line": 209,
-            "comment": "                System.out.println(\"date: \" + record.get(\"Date\"));",
-            "child_ranges": []
-        }
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testBackslashEscaping()",
+    "snippet": "@Test public void testBackslashEscaping() throws IOException {\n  final String code\u003d\"one,two,three\\n\" + \"\u0027\u0027,\u0027\u0027\\n\" + \"/\u0027,/\u0027\\n\"+ \"\u0027/\u0027\u0027,\u0027/\u0027\u0027\\n\"+ \"\u0027\u0027\u0027\u0027,\u0027\u0027\u0027\u0027\\n\"+ \"/,,/,\\n\"+ \"",
+    "begin_line": 84,
+    "end_line": 125,
+    "comment": "",
+    "child_ranges": [
+      "(line 90,col 9)-(line 101,col 29)",
+      "(line 102,col 9)-(line 113,col 10)",
+      "(line 116,col 9)-(line 117,col 101)",
+      "(line 119,col 9)-(line 119,col 63)",
+      "(line 120,col 9)-(line 120,col 60)",
+      "(line 121,col 9)-(line 121,col 39)",
+      "(line 123,col 9)-(line 123,col 76)",
+      "(line 124,col 9)-(line 124,col 23)"
     ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testBackslashEscaping2()",
+    "snippet": "@Test public void testBackslashEscaping2() throws IOException {\n  final String code\u003d\"\" + \" , , \\n\" + \" \\t ,  , \\n\"+ \"",
+    "begin_line": 128,
+    "end_line": 155,
+    "comment": "",
+    "child_ranges": [
+      "(line 134,col 9)-(line 138,col 21)",
+      "(line 139,col 9)-(line 143,col 10)",
+      "(line 146,col 9)-(line 147,col 86)",
+      "(line 149,col 9)-(line 149,col 63)",
+      "(line 150,col 9)-(line 150,col 60)",
+      "(line 151,col 9)-(line 151,col 39)",
+      "(line 153,col 9)-(line 153,col 40)",
+      "(line 154,col 9)-(line 154,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testBackslashEscapingOld()",
+    "snippet": "@Test @Ignore public void testBackslashEscapingOld() throws IOException {\n  final String code\u003d\"one,two,three\\n\" + \"on\\\\\\\"e,two\\n\" + \"on\\\"e,two\\n\"+ \"one,\\\"tw\\\\\\\"o\\\"\\n\"+ \"one,\\\"t\\\\,wo\\\"\\n\"+ \"one,two,\\\"th,ree\\\"\\n\"+ \"\\\"a\\\\\\\\\\\"\\n\"+ \"a\\\\,b\\n\"+ \"\\\"a\\\\\\\\,b\\\"\";\n  final String[][] res\u003d{{\"one\",\"two\",\"three\"},{\"on\\\\\\\"e\",\"two\"},{\"on\\\"e\",\"two\"},{\"one\",\"tw\\\"o\"},{\"one\",\"t\\\\,wo\"},{\"one\",\"two\",\"th,ree\"},{\"a\\\\\\\\\"},{\"a\\\\\",\"b\"},{\"a\\\\\\\\,b\"}};\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(res.length,records.size());\n  assertTrue(records.size() \u003e 0);\n  for (int i\u003d0; i \u003c res.length; i++) {\n    assertArrayEquals(res[i],records.get(i).values());\n  }\n  parser.close();\n}",
+    "begin_line": 159,
+    "end_line": 189,
+    "comment": "",
+    "child_ranges": [
+      "(line 160,col 9)-(line 169,col 40)",
+      "(line 170,col 9)-(line 180,col 10)",
+      "(line 181,col 9)-(line 181,col 74)",
+      "(line 182,col 9)-(line 182,col 60)",
+      "(line 183,col 9)-(line 183,col 49)",
+      "(line 184,col 9)-(line 184,col 39)",
+      "(line 185,col 9)-(line 187,col 9)",
+      "(line 188,col 9)-(line 188,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testBOM()",
+    "snippet": "@Test @Ignore(\"CSV-107\") public void testBOM() throws IOException {\n  final URL url\u003dClassLoader.getSystemClassLoader().getResource(\"CSVFileParser/bom.csv\");\n  final CSVParser parser\u003dCSVParser.parse(url,Charset.forName(\"UTF-8\"),CSVFormat.EXCEL.withHeader());\n  try {\n    for (    final CSVRecord record : parser) {\n      final String string\u003drecord.get(\"Date\");\n      Assert.assertNotNull(string);\n    }\n  }\n  finally {\n    parser.close();\n  }\n}",
+    "begin_line": 193,
+    "end_line": 205,
+    "comment": "",
+    "child_ranges": [
+      "(line 194,col 9)-(line 194,col 96)",
+      "(line 195,col 9)-(line 195,col 110)",
+      "(line 196,col 9)-(line 204,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testBOMInputStream()",
+    "snippet": "@Test public void testBOMInputStream(){\n}",
+    "begin_line": 208,
+    "end_line": 208,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testCarriageReturnEndings()",
+    "snippet": "@Test public void testCarriageReturnEndings() throws IOException {\n  final String code\u003d\"foo\\rbaar,\\rhello,world\\r,kanu\";\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(4,records.size());\n  parser.close();\n}",
+    "begin_line": 228,
+    "end_line": 234,
+    "comment": "",
+    "child_ranges": [
+      "(line 229,col 9)-(line 229,col 61)",
+      "(line 230,col 9)-(line 230,col 74)",
+      "(line 231,col 9)-(line 231,col 60)",
+      "(line 232,col 9)-(line 232,col 40)",
+      "(line 233,col 9)-(line 233,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testCarriageReturnLineFeedEndings()",
+    "snippet": "@Test public void testCarriageReturnLineFeedEndings() throws IOException {\n  final String code\u003d\"foo\\r\\nbaar,\\r\\nhello,world\\r\\n,kanu\";\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(4,records.size());\n  parser.close();\n}",
+    "begin_line": 237,
+    "end_line": 243,
+    "comment": "",
+    "child_ranges": [
+      "(line 238,col 9)-(line 238,col 67)",
+      "(line 239,col 9)-(line 239,col 74)",
+      "(line 240,col 9)-(line 240,col 60)",
+      "(line 241,col 9)-(line 241,col 40)",
+      "(line 242,col 9)-(line 242,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testClose()",
+    "snippet": "@Test(expected\u003dNoSuchElementException.class) public void testClose() throws Exception {\n  final Reader in\u003dnew StringReader(\"# comment\\na,b,c\\n1,2,3\\nx,y,z\");\n  final CSVParser parser\u003dCSVFormat.DEFAULT.withCommentStart(\u0027#\u0027).withHeader().parse(in);\n  final Iterator\u003cCSVRecord\u003e records\u003dparser.iterator();\n  assertTrue(records.hasNext());\n  parser.close();\n  assertFalse(records.hasNext());\n  records.next();\n}",
+    "begin_line": 246,
+    "end_line": 254,
+    "comment": "",
+    "child_ranges": [
+      "(line 247,col 9)-(line 247,col 77)",
+      "(line 248,col 9)-(line 248,col 96)",
+      "(line 249,col 9)-(line 249,col 62)",
+      "(line 250,col 9)-(line 250,col 38)",
+      "(line 251,col 9)-(line 251,col 23)",
+      "(line 252,col 9)-(line 252,col 39)",
+      "(line 253,col 9)-(line 253,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testCSV57()",
+    "snippet": "@Test public void testCSV57() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"\",CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e list\u003dparser.getRecords();\n  assertNotNull(list);\n  assertEquals(0,list.size());\n  parser.close();\n}",
+    "begin_line": 257,
+    "end_line": 263,
+    "comment": "",
+    "child_ranges": [
+      "(line 258,col 9)-(line 258,col 72)",
+      "(line 259,col 9)-(line 259,col 57)",
+      "(line 260,col 9)-(line 260,col 28)",
+      "(line 261,col 9)-(line 261,col 37)",
+      "(line 262,col 9)-(line 262,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testDefaultFormat()",
+    "snippet": "@Test public void testDefaultFormat() throws IOException {\n  final String code\u003d\"\" + \"a,b#\\n\" + \"\\\"\\n\\\",\\\" \\\",#\\n\"+ \"#,\\\"\\\"\\n\"+ \"# Final comment\\n\";\n  final String[][] res\u003d{{\"a\",\"b#\"},{\"\\n\",\" \",\"#\"},{\"#\",\"\"},{\"# Final comment\"}};\n  CSVFormat format\u003dCSVFormat.DEFAULT;\n  assertFalse(format.isCommentingEnabled());\n  CSVParser parser\u003dCSVParser.parse(code,format);\n  List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertTrue(records.size() \u003e 0);\n  Utils.compare(\"Failed to parse without comments\",res,records);\n  final String[][] res_comments\u003d{{\"a\",\"b#\"},{\"\\n\",\" \",\"#\"}};\n  format\u003dCSVFormat.DEFAULT.withCommentStart(\u0027#\u0027);\n  parser.close();\n  parser\u003dCSVParser.parse(code,format);\n  records\u003dparser.getRecords();\n  Utils.compare(\"Failed to parse with comments\",res_comments,records);\n  parser.close();\n}",
+    "begin_line": 266,
+    "end_line": 301,
+    "comment": "",
+    "child_ranges": [
+      "(line 267,col 9)-(line 272,col 17)",
+      "(line 273,col 9)-(line 278,col 10)",
+      "(line 280,col 9)-(line 280,col 45)",
+      "(line 281,col 9)-(line 281,col 50)",
+      "(line 283,col 9)-(line 283,col 57)",
+      "(line 284,col 9)-(line 284,col 54)",
+      "(line 285,col 9)-(line 285,col 39)",
+      "(line 287,col 9)-(line 287,col 72)",
+      "(line 289,col 9)-(line 292,col 10)",
+      "(line 294,col 9)-(line 294,col 57)",
+      "(line 295,col 9)-(line 295,col 23)",
+      "(line 296,col 9)-(line 296,col 47)",
+      "(line 297,col 9)-(line 297,col 38)",
+      "(line 299,col 9)-(line 299,col 78)",
+      "(line 300,col 9)-(line 300,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testEmptyFile()",
+    "snippet": "@Test public void testEmptyFile() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"\",CSVFormat.DEFAULT);\n  assertNull(parser.nextRecord());\n  parser.close();\n}",
+    "begin_line": 304,
+    "end_line": 308,
+    "comment": "",
+    "child_ranges": [
+      "(line 305,col 9)-(line 305,col 72)",
+      "(line 306,col 9)-(line 306,col 40)",
+      "(line 307,col 9)-(line 307,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testEmptyLineBehaviourCSV()",
+    "snippet": "@Test public void testEmptyLineBehaviourCSV() throws Exception {\n  final String[] codes\u003d{\"hello,\\r\\n\\r\\n\\r\\n\",\"hello,\\n\\n\\n\",\"hello,\\\"\\\"\\r\\n\\r\\n\\r\\n\",\"hello,\\\"\\\"\\n\\n\\n\"};\n  final String[][] res\u003d{{\"hello\",\"\"}};\n  for (  final String code : codes) {\n    final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n    final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n    assertEquals(res.length,records.size());\n    assertTrue(records.size() \u003e 0);\n    for (int i\u003d0; i \u003c res.length; i++) {\n      assertArrayEquals(res[i],records.get(i).values());\n    }\n    parser.close();\n  }\n}",
+    "begin_line": 311,
+    "end_line": 331,
+    "comment": "",
+    "child_ranges": [
+      "(line 312,col 9)-(line 317,col 10)",
+      "(line 318,col 9)-(line 320,col 10)",
+      "(line 321,col 9)-(line 330,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testEmptyLineBehaviourExcel()",
+    "snippet": "@Test public void testEmptyLineBehaviourExcel() throws Exception {\n  final String[] codes\u003d{\"hello,\\r\\n\\r\\n\\r\\n\",\"hello,\\n\\n\\n\",\"hello,\\\"\\\"\\r\\n\\r\\n\\r\\n\",\"hello,\\\"\\\"\\n\\n\\n\"};\n  final String[][] res\u003d{{\"hello\",\"\"},{\"\"},{\"\"}};\n  for (  final String code : codes) {\n    final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.EXCEL);\n    final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n    assertEquals(res.length,records.size());\n    assertTrue(records.size() \u003e 0);\n    for (int i\u003d0; i \u003c res.length; i++) {\n      assertArrayEquals(res[i],records.get(i).values());\n    }\n    parser.close();\n  }\n}",
+    "begin_line": 334,
+    "end_line": 356,
+    "comment": "",
+    "child_ranges": [
+      "(line 335,col 9)-(line 340,col 10)",
+      "(line 341,col 9)-(line 345,col 10)",
+      "(line 346,col 9)-(line 355,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testEndOfFileBehaviorCSV()",
+    "snippet": "@Test public void testEndOfFileBehaviorCSV() throws Exception {\n  final String[] codes\u003d{\"hello,\\r\\n\\r\\nworld,\\r\\n\",\"hello,\\r\\n\\r\\nworld,\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\\r\\n\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\",\"hello,\\r\\n\\r\\nworld,\\n\",\"hello,\\r\\n\\r\\nworld,\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\\n\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\"};\n  final String[][] res\u003d{{\"hello\",\"\"},{\"world\",\"\"}};\n  for (  final String code : codes) {\n    final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n    final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n    assertEquals(res.length,records.size());\n    assertTrue(records.size() \u003e 0);\n    for (int i\u003d0; i \u003c res.length; i++) {\n      assertArrayEquals(res[i],records.get(i).values());\n    }\n    parser.close();\n  }\n}",
+    "begin_line": 359,
+    "end_line": 384,
+    "comment": "",
+    "child_ranges": [
+      "(line 360,col 9)-(line 369,col 10)",
+      "(line 370,col 9)-(line 373,col 10)",
+      "(line 374,col 9)-(line 383,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testEndOfFileBehaviourExcel()",
+    "snippet": "@Test public void testEndOfFileBehaviourExcel() throws Exception {\n  final String[] codes\u003d{\"hello,\\r\\n\\r\\nworld,\\r\\n\",\"hello,\\r\\n\\r\\nworld,\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\\r\\n\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\",\"hello,\\r\\n\\r\\nworld,\\n\",\"hello,\\r\\n\\r\\nworld,\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\\n\",\"hello,\\r\\n\\r\\nworld,\\\"\\\"\"};\n  final String[][] res\u003d{{\"hello\",\"\"},{\"\"},{\"world\",\"\"}};\n  for (  final String code : codes) {\n    final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.EXCEL);\n    final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n    assertEquals(res.length,records.size());\n    assertTrue(records.size() \u003e 0);\n    for (int i\u003d0; i \u003c res.length; i++) {\n      assertArrayEquals(res[i],records.get(i).values());\n    }\n    parser.close();\n  }\n}",
+    "begin_line": 387,
+    "end_line": 414,
+    "comment": "",
+    "child_ranges": [
+      "(line 388,col 9)-(line 397,col 10)",
+      "(line 398,col 9)-(line 402,col 10)",
+      "(line 404,col 9)-(line 413,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testExcelFormat1()",
+    "snippet": "@Test public void testExcelFormat1() throws IOException {\n  final String code\u003d\"value1,value2,value3,value4\\r\\na,b,c,d\\r\\n  x,,,\" + \"\\r\\n\\r\\n\\\"\\\"\\\"hello\\\"\\\"\\\",\\\"  \\\"\\\"world\\\"\\\"\\\",\\\"abc\\ndef\\\",\\r\\n\";\n  final String[][] res\u003d{{\"value1\",\"value2\",\"value3\",\"value4\"},{\"a\",\"b\",\"c\",\"d\"},{\"  x\",\"\",\"\",\"\"},{\"\"},{\"\\\"hello\\\"\",\"  \\\"world\\\"\",\"abc\\ndef\",\"\"}};\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.EXCEL);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(res.length,records.size());\n  assertTrue(records.size() \u003e 0);\n  for (int i\u003d0; i \u003c res.length; i++) {\n    assertArrayEquals(res[i],records.get(i).values());\n  }\n  parser.close();\n}",
+    "begin_line": 417,
+    "end_line": 436,
+    "comment": "",
+    "child_ranges": [
+      "(line 418,col 9)-(line 420,col 92)",
+      "(line 421,col 9)-(line 427,col 10)",
+      "(line 428,col 9)-(line 428,col 72)",
+      "(line 429,col 9)-(line 429,col 60)",
+      "(line 430,col 9)-(line 430,col 49)",
+      "(line 431,col 9)-(line 431,col 39)",
+      "(line 432,col 9)-(line 434,col 9)",
+      "(line 435,col 9)-(line 435,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testExcelFormat2()",
+    "snippet": "@Test public void testExcelFormat2() throws Exception {\n  final String code\u003d\"foo,baar\\r\\n\\r\\nhello,\\r\\n\\r\\nworld,\\r\\n\";\n  final String[][] res\u003d{{\"foo\",\"baar\"},{\"\"},{\"hello\",\"\"},{\"\"},{\"world\",\"\"}};\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.EXCEL);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(res.length,records.size());\n  assertTrue(records.size() \u003e 0);\n  for (int i\u003d0; i \u003c res.length; i++) {\n    assertArrayEquals(res[i],records.get(i).values());\n  }\n  parser.close();\n}",
+    "begin_line": 439,
+    "end_line": 456,
+    "comment": "",
+    "child_ranges": [
+      "(line 440,col 9)-(line 440,col 71)",
+      "(line 441,col 9)-(line 447,col 10)",
+      "(line 448,col 9)-(line 448,col 72)",
+      "(line 449,col 9)-(line 449,col 60)",
+      "(line 450,col 9)-(line 450,col 49)",
+      "(line 451,col 9)-(line 451,col 39)",
+      "(line 452,col 9)-(line 454,col 9)",
+      "(line 455,col 9)-(line 455,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testForEach()",
+    "snippet": "@Test public void testForEach() throws Exception {\n  final List\u003cCSVRecord\u003e records\u003dnew ArrayList\u003cCSVRecord\u003e();\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  for (  final CSVRecord record : CSVFormat.DEFAULT.parse(in)) {\n    records.add(record);\n  }\n  assertEquals(3,records.size());\n  assertArrayEquals(new String[]{\"a\",\"b\",\"c\"},records.get(0).values());\n  assertArrayEquals(new String[]{\"1\",\"2\",\"3\"},records.get(1).values());\n  assertArrayEquals(new String[]{\"x\",\"y\",\"z\"},records.get(2).values());\n}",
+    "begin_line": 459,
+    "end_line": 472,
+    "comment": "",
+    "child_ranges": [
+      "(line 460,col 9)-(line 460,col 67)",
+      "(line 462,col 9)-(line 462,col 66)",
+      "(line 464,col 9)-(line 466,col 9)",
+      "(line 468,col 9)-(line 468,col 40)",
+      "(line 469,col 9)-(line 469,col 80)",
+      "(line 470,col 9)-(line 470,col 80)",
+      "(line 471,col 9)-(line 471,col 80)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetHeaderMap()",
+    "snippet": "@Test public void testGetHeaderMap() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"a,b,c\\n1,2,3\\nx,y,z\",CSVFormat.DEFAULT.withHeader(\"A\",\"B\",\"C\"));\n  final Map\u003cString,Integer\u003e headerMap\u003dparser.getHeaderMap();\n  final Iterator\u003cString\u003e columnNames\u003dheaderMap.keySet().iterator();\n  Assert.assertEquals(\"A\",columnNames.next());\n  Assert.assertEquals(\"B\",columnNames.next());\n  Assert.assertEquals(\"C\",columnNames.next());\n  final Iterator\u003cCSVRecord\u003e records\u003dparser.iterator();\n  for (int i\u003d0; i \u003c 3; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertEquals(record.get(0),record.get(\"A\"));\n    assertEquals(record.get(1),record.get(\"B\"));\n    assertEquals(record.get(2),record.get(\"C\"));\n  }\n  assertFalse(records.hasNext());\n  parser.close();\n}",
+    "begin_line": 475,
+    "end_line": 496,
+    "comment": "",
+    "child_ranges": [
+      "(line 476,col 9)-(line 476,col 117)",
+      "(line 477,col 9)-(line 477,col 69)",
+      "(line 478,col 9)-(line 478,col 75)",
+      "(line 480,col 9)-(line 480,col 53)",
+      "(line 481,col 9)-(line 481,col 53)",
+      "(line 482,col 9)-(line 482,col 53)",
+      "(line 483,col 9)-(line 483,col 62)",
+      "(line 486,col 9)-(line 492,col 9)",
+      "(line 494,col 9)-(line 494,col 39)",
+      "(line 495,col 9)-(line 495,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testDuplicateHeaders()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testDuplicateHeaders() throws Exception {\n  CSVParser.parse(\"a,b,a\\n1,2,3\\nx,y,z\",CSVFormat.DEFAULT.withHeader(new String[]{}));\n}",
+    "begin_line": 499,
+    "end_line": 501,
+    "comment": "",
+    "child_ranges": [
+      "(line 500,col 9)-(line 500,col 93)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetLine()",
+    "snippet": "@Test public void testGetLine() throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(CSV_INPUT,CSVFormat.DEFAULT.withIgnoreSurroundingSpaces(true));\n  for (  final String[] re : RESULT) {\n    assertArrayEquals(re,parser.nextRecord().values());\n  }\n  assertNull(parser.nextRecord());\n  parser.close();\n}",
+    "begin_line": 504,
+    "end_line": 512,
+    "comment": "",
+    "child_ranges": [
+      "(line 505,col 9)-(line 505,col 113)",
+      "(line 506,col 9)-(line 508,col 9)",
+      "(line 510,col 9)-(line 510,col 40)",
+      "(line 511,col 9)-(line 511,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetLineNumberWithCR()",
+    "snippet": "@Test public void testGetLineNumberWithCR() throws Exception {\n  this.validateLineNumbers(String.valueOf(CR));\n}",
+    "begin_line": 515,
+    "end_line": 517,
+    "comment": "",
+    "child_ranges": [
+      "(line 516,col 9)-(line 516,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetLineNumberWithCRLF()",
+    "snippet": "@Test public void testGetLineNumberWithCRLF() throws Exception {\n  this.validateLineNumbers(CRLF);\n}",
+    "begin_line": 520,
+    "end_line": 522,
+    "comment": "",
+    "child_ranges": [
+      "(line 521,col 9)-(line 521,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetLineNumberWithLF()",
+    "snippet": "@Test public void testGetLineNumberWithLF() throws Exception {\n  this.validateLineNumbers(String.valueOf(LF));\n}",
+    "begin_line": 525,
+    "end_line": 527,
+    "comment": "",
+    "child_ranges": [
+      "(line 526,col 9)-(line 526,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetOneLine()",
+    "snippet": "@Test public void testGetOneLine() throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(CSV_INPUT_1,CSVFormat.DEFAULT);\n  final CSVRecord record\u003dparser.getRecords().get(0);\n  assertArrayEquals(RESULT[0],record.values());\n  parser.close();\n}",
+    "begin_line": 530,
+    "end_line": 535,
+    "comment": "",
+    "child_ranges": [
+      "(line 531,col 9)-(line 531,col 81)",
+      "(line 532,col 9)-(line 532,col 60)",
+      "(line 533,col 9)-(line 533,col 54)",
+      "(line 534,col 9)-(line 534,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetOneLineCustomCollection()",
+    "snippet": "@Test public void testGetOneLineCustomCollection() throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(CSV_INPUT_1,CSVFormat.DEFAULT);\n  final CSVRecord record\u003dparser.getRecords(new LinkedList\u003cCSVRecord\u003e()).getFirst();\n  assertArrayEquals(RESULT[0],record.values());\n  parser.close();\n}",
+    "begin_line": 538,
+    "end_line": 543,
+    "comment": "",
+    "child_ranges": [
+      "(line 539,col 9)-(line 539,col 81)",
+      "(line 540,col 9)-(line 540,col 91)",
+      "(line 541,col 9)-(line 541,col 54)",
+      "(line 542,col 9)-(line 542,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetOneLineOneParser()",
+    "snippet": "@Test public void testGetOneLineOneParser() throws IOException {\n  final PipedWriter writer\u003dnew PipedWriter();\n  final PipedReader reader\u003dnew PipedReader(writer);\n  final CSVFormat format\u003dCSVFormat.DEFAULT;\n  final CSVParser parser\u003dnew CSVParser(reader,format);\n  try {\n    writer.append(CSV_INPUT_1);\n    writer.append(format.getRecordSeparator());\n    final CSVRecord record1\u003dparser.nextRecord();\n    assertArrayEquals(RESULT[0],record1.values());\n    writer.append(CSV_INPUT_2);\n    writer.append(format.getRecordSeparator());\n    final CSVRecord record2\u003dparser.nextRecord();\n    assertArrayEquals(RESULT[1],record2.values());\n  }\n  finally {\n    parser.close();\n  }\n}",
+    "begin_line": 551,
+    "end_line": 568,
+    "comment": "/** \n * Tests reusing a parser to process new string records one at a time as they are being discovered. See [CSV-110].\n * @throws IOException\n */\n",
+    "child_ranges": [
+      "(line 552,col 9)-(line 552,col 53)",
+      "(line 553,col 9)-(line 553,col 59)",
+      "(line 554,col 9)-(line 554,col 51)",
+      "(line 555,col 9)-(line 555,col 63)",
+      "(line 556,col 9)-(line 567,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetRecordNumberWithCR()",
+    "snippet": "@Test public void testGetRecordNumberWithCR() throws Exception {\n  this.validateRecordNumbers(String.valueOf(CR));\n}",
+    "begin_line": 571,
+    "end_line": 573,
+    "comment": "",
+    "child_ranges": [
+      "(line 572,col 9)-(line 572,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetRecordNumberWithCRLF()",
+    "snippet": "@Test public void testGetRecordNumberWithCRLF() throws Exception {\n  this.validateRecordNumbers(CRLF);\n}",
+    "begin_line": 576,
+    "end_line": 578,
+    "comment": "",
+    "child_ranges": [
+      "(line 577,col 9)-(line 577,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetRecordNumberWithLF()",
+    "snippet": "@Test public void testGetRecordNumberWithLF() throws Exception {\n  this.validateRecordNumbers(String.valueOf(LF));\n}",
+    "begin_line": 581,
+    "end_line": 583,
+    "comment": "",
+    "child_ranges": [
+      "(line 582,col 9)-(line 582,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetRecords()",
+    "snippet": "@Test public void testGetRecords() throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(CSV_INPUT,CSVFormat.DEFAULT.withIgnoreSurroundingSpaces(true));\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(RESULT.length,records.size());\n  assertTrue(records.size() \u003e 0);\n  for (int i\u003d0; i \u003c RESULT.length; i++) {\n    assertArrayEquals(RESULT[i],records.get(i).values());\n  }\n  parser.close();\n}",
+    "begin_line": 586,
+    "end_line": 595,
+    "comment": "",
+    "child_ranges": [
+      "(line 587,col 9)-(line 587,col 113)",
+      "(line 588,col 9)-(line 588,col 60)",
+      "(line 589,col 9)-(line 589,col 52)",
+      "(line 590,col 9)-(line 590,col 39)",
+      "(line 591,col 9)-(line 593,col 9)",
+      "(line 594,col 9)-(line 594,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testGetRecordWithMultiLineValues()",
+    "snippet": "@Test public void testGetRecordWithMultiLineValues() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"\\\"a\\r\\n1\\\",\\\"a\\r\\n2\\\"\" + CRLF + \"\\\"b\\r\\n1\\\",\\\"b\\r\\n2\\\"\"+ CRLF+ \"\\\"c\\r\\n1\\\",\\\"c\\r\\n2\\\"\",CSVFormat.DEFAULT.withRecordSeparator(CRLF));\n  CSVRecord record;\n  assertEquals(0,parser.getRecordNumber());\n  assertEquals(0,parser.getCurrentLineNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(3,parser.getCurrentLineNumber());\n  assertEquals(1,record.getRecordNumber());\n  assertEquals(1,parser.getRecordNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(6,parser.getCurrentLineNumber());\n  assertEquals(2,record.getRecordNumber());\n  assertEquals(2,parser.getRecordNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(8,parser.getCurrentLineNumber());\n  assertEquals(3,record.getRecordNumber());\n  assertEquals(3,parser.getRecordNumber());\n  assertNull(record\u003dparser.nextRecord());\n  assertEquals(8,parser.getCurrentLineNumber());\n  assertEquals(3,parser.getRecordNumber());\n  parser.close();\n}",
+    "begin_line": 598,
+    "end_line": 620,
+    "comment": "",
+    "child_ranges": [
+      "(line 599,col 9)-(line 600,col 61)",
+      "(line 601,col 9)-(line 601,col 25)",
+      "(line 602,col 9)-(line 602,col 50)",
+      "(line 603,col 9)-(line 603,col 55)",
+      "(line 604,col 9)-(line 604,col 52)",
+      "(line 605,col 9)-(line 605,col 55)",
+      "(line 606,col 9)-(line 606,col 50)",
+      "(line 607,col 9)-(line 607,col 50)",
+      "(line 608,col 9)-(line 608,col 52)",
+      "(line 609,col 9)-(line 609,col 55)",
+      "(line 610,col 9)-(line 610,col 50)",
+      "(line 611,col 9)-(line 611,col 50)",
+      "(line 612,col 9)-(line 612,col 52)",
+      "(line 613,col 9)-(line 613,col 55)",
+      "(line 614,col 9)-(line 614,col 50)",
+      "(line 615,col 9)-(line 615,col 50)",
+      "(line 616,col 9)-(line 616,col 49)",
+      "(line 617,col 9)-(line 617,col 55)",
+      "(line 618,col 9)-(line 618,col 50)",
+      "(line 619,col 9)-(line 619,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeader()",
+    "snippet": "@Test public void testHeader() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader().parse(in).iterator();\n  for (int i\u003d0; i \u003c 2; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertEquals(record.get(0),record.get(\"a\"));\n    assertEquals(record.get(1),record.get(\"b\"));\n    assertEquals(record.get(2),record.get(\"c\"));\n  }\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 623,
+    "end_line": 637,
+    "comment": "",
+    "child_ranges": [
+      "(line 624,col 9)-(line 624,col 66)",
+      "(line 626,col 9)-(line 626,col 96)",
+      "(line 628,col 9)-(line 634,col 9)",
+      "(line 636,col 9)-(line 636,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeaderMissing()",
+    "snippet": "@Test public void testHeaderMissing() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader().parse(in).iterator();\n  for (int i\u003d0; i \u003c 2; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertEquals(record.get(0),record.get(\"a\"));\n    assertEquals(record.get(2),record.get(\"c\"));\n  }\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 640,
+    "end_line": 653,
+    "comment": "",
+    "child_ranges": [
+      "(line 641,col 9)-(line 641,col 65)",
+      "(line 643,col 9)-(line 643,col 96)",
+      "(line 645,col 9)-(line 650,col 9)",
+      "(line 652,col 9)-(line 652,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeadersMissingException()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testHeadersMissingException() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,,c,,d\\n1,2,3,4\\nx,y,z,zz\");\n  CSVFormat.DEFAULT.withHeader().parse(in).iterator();\n}",
+    "begin_line": 656,
+    "end_line": 659,
+    "comment": "",
+    "child_ranges": [
+      "(line 657,col 9)-(line 657,col 73)",
+      "(line 658,col 9)-(line 658,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeadersMissing()",
+    "snippet": "@Test public void testHeadersMissing() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,,c,,d\\n1,2,3,4\\nx,y,z,zz\");\n  CSVFormat.DEFAULT.withHeader().withIgnoreEmptyHeaders(true).parse(in).iterator();\n}",
+    "begin_line": 662,
+    "end_line": 665,
+    "comment": "",
+    "child_ranges": [
+      "(line 663,col 9)-(line 663,col 73)",
+      "(line 664,col 9)-(line 664,col 89)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeaderMissingWithNull()",
+    "snippet": "@Test public void testHeaderMissingWithNull() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,,c,,d\\n1,2,3,4\\nx,y,z,zz\");\n  CSVFormat.DEFAULT.withHeader().withNullString(\"\").withIgnoreEmptyHeaders(true).parse(in).iterator();\n}",
+    "begin_line": 668,
+    "end_line": 671,
+    "comment": "",
+    "child_ranges": [
+      "(line 669,col 9)-(line 669,col 73)",
+      "(line 670,col 9)-(line 670,col 108)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testHeaderComment()",
+    "snippet": "@Test public void testHeaderComment() throws Exception {\n  final Reader in\u003dnew StringReader(\"# comment\\na,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withCommentStart(\u0027#\u0027).withHeader().parse(in).iterator();\n  for (int i\u003d0; i \u003c 2; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertEquals(record.get(0),record.get(\"a\"));\n    assertEquals(record.get(1),record.get(\"b\"));\n    assertEquals(record.get(2),record.get(\"c\"));\n  }\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 674,
+    "end_line": 688,
+    "comment": "",
+    "child_ranges": [
+      "(line 675,col 9)-(line 675,col 77)",
+      "(line 677,col 9)-(line 677,col 118)",
+      "(line 679,col 9)-(line 685,col 9)",
+      "(line 687,col 9)-(line 687,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testIgnoreEmptyLines()",
+    "snippet": "@Test public void testIgnoreEmptyLines() throws IOException {\n  final String code\u003d\"\\nfoo,baar\\n\\r\\n,\\n\\n,world\\r\\n\\n\";\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(3,records.size());\n  parser.close();\n}",
+    "begin_line": 691,
+    "end_line": 699,
+    "comment": "",
+    "child_ranges": [
+      "(line 692,col 9)-(line 692,col 64)",
+      "(line 695,col 9)-(line 695,col 74)",
+      "(line 696,col 9)-(line 696,col 60)",
+      "(line 697,col 9)-(line 697,col 40)",
+      "(line 698,col 9)-(line 698,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testInvalidFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testInvalidFormat() throws Exception {\n  final CSVFormat invalidFormat\u003dCSVFormat.DEFAULT.withDelimiter(CR);\n  new CSVParser(null,invalidFormat).close();\n}",
+    "begin_line": 702,
+    "end_line": 705,
+    "comment": "",
+    "child_ranges": [
+      "(line 703,col 9)-(line 703,col 76)",
+      "(line 704,col 9)-(line 704,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testIterator()",
+    "snippet": "@Test public void testIterator() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e iterator\u003dCSVFormat.DEFAULT.parse(in).iterator();\n  assertTrue(iterator.hasNext());\n  try {\n    iterator.remove();\n    fail(\"expected UnsupportedOperationException\");\n  }\n catch (  final UnsupportedOperationException expected) {\n  }\n  assertArrayEquals(new String[]{\"a\",\"b\",\"c\"},iterator.next().values());\n  assertArrayEquals(new String[]{\"1\",\"2\",\"3\"},iterator.next().values());\n  assertTrue(iterator.hasNext());\n  assertTrue(iterator.hasNext());\n  assertTrue(iterator.hasNext());\n  assertArrayEquals(new String[]{\"x\",\"y\",\"z\"},iterator.next().values());\n  assertFalse(iterator.hasNext());\n  try {\n    iterator.next();\n    fail(\"NoSuchElementException expected\");\n  }\n catch (  final NoSuchElementException e) {\n  }\n}",
+    "begin_line": 708,
+    "end_line": 734,
+    "comment": "",
+    "child_ranges": [
+      "(line 709,col 9)-(line 709,col 66)",
+      "(line 711,col 9)-(line 711,col 84)",
+      "(line 713,col 9)-(line 713,col 39)",
+      "(line 714,col 9)-(line 719,col 9)",
+      "(line 720,col 9)-(line 720,col 81)",
+      "(line 721,col 9)-(line 721,col 81)",
+      "(line 722,col 9)-(line 722,col 39)",
+      "(line 723,col 9)-(line 723,col 39)",
+      "(line 724,col 9)-(line 724,col 39)",
+      "(line 725,col 9)-(line 725,col 81)",
+      "(line 726,col 9)-(line 726,col 40)",
+      "(line 728,col 9)-(line 733,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testLineFeedEndings()",
+    "snippet": "@Test public void testLineFeedEndings() throws IOException {\n  final String code\u003d\"foo\\nbaar,\\nhello,world\\n,kanu\";\n  final CSVParser parser\u003dCSVParser.parse(code,CSVFormat.DEFAULT);\n  final List\u003cCSVRecord\u003e records\u003dparser.getRecords();\n  assertEquals(4,records.size());\n  parser.close();\n}",
+    "begin_line": 737,
+    "end_line": 743,
+    "comment": "",
+    "child_ranges": [
+      "(line 738,col 9)-(line 738,col 61)",
+      "(line 739,col 9)-(line 739,col 74)",
+      "(line 740,col 9)-(line 740,col 60)",
+      "(line 741,col 9)-(line 741,col 40)",
+      "(line 742,col 9)-(line 742,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testMappedButNotSetAsOutlook2007ContactExport()",
+    "snippet": "@Test public void testMappedButNotSetAsOutlook2007ContactExport() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader(\"A\",\"B\",\"C\").withSkipHeaderRecord(true).parse(in).iterator();\n  CSVRecord record;\n  record\u003drecords.next();\n  assertTrue(record.isMapped(\"A\"));\n  assertTrue(record.isMapped(\"B\"));\n  assertTrue(record.isMapped(\"C\"));\n  assertTrue(record.isSet(\"A\"));\n  assertTrue(record.isSet(\"B\"));\n  assertFalse(record.isSet(\"C\"));\n  assertEquals(\"1\",record.get(\"A\"));\n  assertEquals(\"2\",record.get(\"B\"));\n  assertFalse(record.isConsistent());\n  record\u003drecords.next();\n  assertTrue(record.isMapped(\"A\"));\n  assertTrue(record.isMapped(\"B\"));\n  assertTrue(record.isMapped(\"C\"));\n  assertTrue(record.isSet(\"A\"));\n  assertTrue(record.isSet(\"B\"));\n  assertTrue(record.isSet(\"C\"));\n  assertEquals(\"x\",record.get(\"A\"));\n  assertEquals(\"y\",record.get(\"B\"));\n  assertEquals(\"z\",record.get(\"C\"));\n  assertTrue(record.isConsistent());\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 746,
+    "end_line": 778,
+    "comment": "",
+    "child_ranges": [
+      "(line 747,col 9)-(line 747,col 64)",
+      "(line 748,col 9)-(line 749,col 38)",
+      "(line 750,col 9)-(line 750,col 25)",
+      "(line 753,col 9)-(line 753,col 32)",
+      "(line 754,col 9)-(line 754,col 41)",
+      "(line 755,col 9)-(line 755,col 41)",
+      "(line 756,col 9)-(line 756,col 41)",
+      "(line 757,col 9)-(line 757,col 38)",
+      "(line 758,col 9)-(line 758,col 38)",
+      "(line 759,col 9)-(line 759,col 39)",
+      "(line 760,col 9)-(line 760,col 43)",
+      "(line 761,col 9)-(line 761,col 43)",
+      "(line 762,col 9)-(line 762,col 43)",
+      "(line 765,col 9)-(line 765,col 32)",
+      "(line 766,col 9)-(line 766,col 41)",
+      "(line 767,col 9)-(line 767,col 41)",
+      "(line 768,col 9)-(line 768,col 41)",
+      "(line 769,col 9)-(line 769,col 38)",
+      "(line 770,col 9)-(line 770,col 38)",
+      "(line 771,col 9)-(line 771,col 38)",
+      "(line 772,col 9)-(line 772,col 43)",
+      "(line 773,col 9)-(line 773,col 43)",
+      "(line 774,col 9)-(line 774,col 43)",
+      "(line 775,col 9)-(line 775,col 42)",
+      "(line 777,col 9)-(line 777,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testMultipleIterators()",
+    "snippet": "@Test public void testMultipleIterators() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"a,b,c\" + CR + \"d,e,f\",CSVFormat.DEFAULT);\n  final Iterator\u003cCSVRecord\u003e itr1\u003dparser.iterator();\n  final Iterator\u003cCSVRecord\u003e itr2\u003dparser.iterator();\n  final CSVRecord first\u003ditr1.next();\n  assertEquals(\"a\",first.get(0));\n  assertEquals(\"b\",first.get(1));\n  assertEquals(\"c\",first.get(2));\n  final CSVRecord second\u003ditr2.next();\n  assertEquals(\"d\",second.get(0));\n  assertEquals(\"e\",second.get(1));\n  assertEquals(\"f\",second.get(2));\n  parser.close();\n}",
+    "begin_line": 781,
+    "end_line": 797,
+    "comment": "",
+    "child_ranges": [
+      "(line 782,col 9)-(line 782,col 92)",
+      "(line 784,col 9)-(line 784,col 59)",
+      "(line 785,col 9)-(line 785,col 59)",
+      "(line 787,col 9)-(line 787,col 44)",
+      "(line 788,col 9)-(line 788,col 40)",
+      "(line 789,col 9)-(line 789,col 40)",
+      "(line 790,col 9)-(line 790,col 40)",
+      "(line 792,col 9)-(line 792,col 45)",
+      "(line 793,col 9)-(line 793,col 41)",
+      "(line 794,col 9)-(line 794,col 41)",
+      "(line 795,col 9)-(line 795,col 41)",
+      "(line 796,col 9)-(line 796,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testNewCSVParserNullReaderFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testNewCSVParserNullReaderFormat() throws Exception {\n  new CSVParser(null,CSVFormat.DEFAULT).close();\n}",
+    "begin_line": 800,
+    "end_line": 802,
+    "comment": "",
+    "child_ranges": [
+      "(line 801,col 9)-(line 801,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testNewCSVParserReaderNullFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testNewCSVParserReaderNullFormat() throws Exception {\n  new CSVParser(new StringReader(\"\"),null).close();\n}",
+    "begin_line": 805,
+    "end_line": 807,
+    "comment": "",
+    "child_ranges": [
+      "(line 806,col 9)-(line 806,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testNoHeaderMap()",
+    "snippet": "@Test public void testNoHeaderMap() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(\"a,b,c\\n1,2,3\\nx,y,z\",CSVFormat.DEFAULT);\n  Assert.assertNull(parser.getHeaderMap());\n  parser.close();\n}",
+    "begin_line": 810,
+    "end_line": 814,
+    "comment": "",
+    "child_ranges": [
+      "(line 811,col 9)-(line 811,col 91)",
+      "(line 812,col 9)-(line 812,col 49)",
+      "(line 813,col 9)-(line 813,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseFileNullFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseFileNullFormat() throws Exception {\n  CSVParser.parse(new File(\"\"),Charset.defaultCharset(),null);\n}",
+    "begin_line": 817,
+    "end_line": 819,
+    "comment": "",
+    "child_ranges": [
+      "(line 818,col 9)-(line 818,col 70)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseNullFileFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseNullFileFormat() throws Exception {\n  CSVParser.parse((File)null,Charset.defaultCharset(),CSVFormat.DEFAULT);\n}",
+    "begin_line": 822,
+    "end_line": 824,
+    "comment": "",
+    "child_ranges": [
+      "(line 823,col 9)-(line 823,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseNullStringFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseNullStringFormat() throws Exception {\n  CSVParser.parse((String)null,CSVFormat.DEFAULT);\n}",
+    "begin_line": 827,
+    "end_line": 829,
+    "comment": "",
+    "child_ranges": [
+      "(line 828,col 9)-(line 828,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseNullUrlCharsetFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseNullUrlCharsetFormat() throws Exception {\n  CSVParser.parse((File)null,Charset.defaultCharset(),CSVFormat.DEFAULT);\n}",
+    "begin_line": 832,
+    "end_line": 834,
+    "comment": "",
+    "child_ranges": [
+      "(line 833,col 9)-(line 833,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParserUrlNullCharsetFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParserUrlNullCharsetFormat() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(new URL(\"http:",
+    "begin_line": 837,
+    "end_line": 840,
+    "comment": "",
+    "child_ranges": [
+      "(line 838,col 9)-(line 838,col 112)",
+      "(line 839,col 9)-(line 839,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseStringNullFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseStringNullFormat() throws Exception {\n  CSVParser.parse(\"csv data\",null);\n}",
+    "begin_line": 843,
+    "end_line": 845,
+    "comment": "",
+    "child_ranges": [
+      "(line 844,col 9)-(line 844,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testParseUrlCharsetNullFormat()",
+    "snippet": "@Test(expected\u003dIllegalArgumentException.class) public void testParseUrlCharsetNullFormat() throws Exception {\n  final CSVParser parser\u003dCSVParser.parse(new URL(\"http:",
+    "begin_line": 848,
+    "end_line": 851,
+    "comment": "",
+    "child_ranges": [
+      "(line 849,col 9)-(line 849,col 119)",
+      "(line 850,col 9)-(line 850,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testProvidedHeader()",
+    "snippet": "@Test public void testProvidedHeader() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader(\"A\",\"B\",\"C\").parse(in).iterator();\n  for (int i\u003d0; i \u003c 3; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertTrue(record.isMapped(\"A\"));\n    assertTrue(record.isMapped(\"B\"));\n    assertTrue(record.isMapped(\"C\"));\n    assertFalse(record.isMapped(\"NOT MAPPED\"));\n    assertEquals(record.get(0),record.get(\"A\"));\n    assertEquals(record.get(1),record.get(\"B\"));\n    assertEquals(record.get(2),record.get(\"C\"));\n  }\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 854,
+    "end_line": 872,
+    "comment": "",
+    "child_ranges": [
+      "(line 855,col 9)-(line 855,col 66)",
+      "(line 857,col 9)-(line 857,col 109)",
+      "(line 859,col 9)-(line 869,col 9)",
+      "(line 871,col 9)-(line 871,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testProvidedHeaderAuto()",
+    "snippet": "@Test public void testProvidedHeaderAuto() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader().parse(in).iterator();\n  for (int i\u003d0; i \u003c 2; i++) {\n    assertTrue(records.hasNext());\n    final CSVRecord record\u003drecords.next();\n    assertTrue(record.isMapped(\"a\"));\n    assertTrue(record.isMapped(\"b\"));\n    assertTrue(record.isMapped(\"c\"));\n    assertFalse(record.isMapped(\"NOT MAPPED\"));\n    assertEquals(record.get(0),record.get(\"a\"));\n    assertEquals(record.get(1),record.get(\"b\"));\n    assertEquals(record.get(2),record.get(\"c\"));\n  }\n  assertFalse(records.hasNext());\n}",
+    "begin_line": 875,
+    "end_line": 893,
+    "comment": "",
+    "child_ranges": [
+      "(line 876,col 9)-(line 876,col 66)",
+      "(line 878,col 9)-(line 878,col 96)",
+      "(line 880,col 9)-(line 890,col 9)",
+      "(line 892,col 9)-(line 892,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testRoundtrip()",
+    "snippet": "@Test public void testRoundtrip() throws Exception {\n  final StringWriter out\u003dnew StringWriter();\n  final CSVPrinter printer\u003dnew CSVPrinter(out,CSVFormat.DEFAULT);\n  final String input\u003d\"a,b,c\\r\\n1,2,3\\r\\nx,y,z\\r\\n\";\n  for (  final CSVRecord record : CSVParser.parse(input,CSVFormat.DEFAULT)) {\n    printer.printRecord(record);\n  }\n  assertEquals(input,out.toString());\n  printer.close();\n}",
+    "begin_line": 896,
+    "end_line": 905,
+    "comment": "",
+    "child_ranges": [
+      "(line 897,col 9)-(line 897,col 52)",
+      "(line 898,col 9)-(line 898,col 74)",
+      "(line 899,col 9)-(line 899,col 59)",
+      "(line 900,col 9)-(line 902,col 9)",
+      "(line 903,col 9)-(line 903,col 44)",
+      "(line 904,col 9)-(line 904,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testSkipAutoHeader()",
+    "snippet": "@Test public void testSkipAutoHeader() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader().parse(in).iterator();\n  final CSVRecord record\u003drecords.next();\n  assertEquals(\"1\",record.get(\"a\"));\n  assertEquals(\"2\",record.get(\"b\"));\n  assertEquals(\"3\",record.get(\"c\"));\n}",
+    "begin_line": 908,
+    "end_line": 915,
+    "comment": "",
+    "child_ranges": [
+      "(line 909,col 9)-(line 909,col 66)",
+      "(line 910,col 9)-(line 910,col 96)",
+      "(line 911,col 9)-(line 911,col 48)",
+      "(line 912,col 9)-(line 912,col 43)",
+      "(line 913,col 9)-(line 913,col 43)",
+      "(line 914,col 9)-(line 914,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.testSkipSetHeader()",
+    "snippet": "@Test public void testSkipSetHeader() throws Exception {\n  final Reader in\u003dnew StringReader(\"a,b,c\\n1,2,3\\nx,y,z\");\n  final Iterator\u003cCSVRecord\u003e records\u003dCSVFormat.DEFAULT.withHeader(\"a\",\"b\",\"c\").withSkipHeaderRecord(true).parse(in).iterator();\n  final CSVRecord record\u003drecords.next();\n  assertEquals(\"1\",record.get(\"a\"));\n  assertEquals(\"2\",record.get(\"b\"));\n  assertEquals(\"3\",record.get(\"c\"));\n}",
+    "begin_line": 918,
+    "end_line": 926,
+    "comment": "",
+    "child_ranges": [
+      "(line 919,col 9)-(line 919,col 66)",
+      "(line 920,col 9)-(line 921,col 38)",
+      "(line 922,col 9)-(line 922,col 48)",
+      "(line 923,col 9)-(line 923,col 43)",
+      "(line 924,col 9)-(line 924,col 43)",
+      "(line 925,col 9)-(line 925,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.validateLineNumbers(java.lang.String)",
+    "snippet": "private void validateLineNumbers(final String lineSeparator) throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(\"a\" + lineSeparator + \"b\"+ lineSeparator+ \"c\",CSVFormat.DEFAULT.withRecordSeparator(lineSeparator));\n  assertEquals(0,parser.getCurrentLineNumber());\n  assertNotNull(parser.nextRecord());\n  assertEquals(1,parser.getCurrentLineNumber());\n  assertNotNull(parser.nextRecord());\n  assertEquals(2,parser.getCurrentLineNumber());\n  assertNotNull(parser.nextRecord());\n  assertEquals(2,parser.getCurrentLineNumber());\n  assertNull(parser.nextRecord());\n  assertEquals(2,parser.getCurrentLineNumber());\n  parser.close();\n}",
+    "begin_line": 928,
+    "end_line": 942,
+    "comment": "",
+    "child_ranges": [
+      "(line 929,col 9)-(line 929,col 152)",
+      "(line 930,col 9)-(line 930,col 55)",
+      "(line 931,col 9)-(line 931,col 43)",
+      "(line 932,col 9)-(line 932,col 55)",
+      "(line 933,col 9)-(line 933,col 43)",
+      "(line 934,col 9)-(line 934,col 55)",
+      "(line 935,col 9)-(line 935,col 43)",
+      "(line 937,col 9)-(line 937,col 55)",
+      "(line 938,col 9)-(line 938,col 40)",
+      "(line 940,col 9)-(line 940,col 55)",
+      "(line 941,col 9)-(line 941,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.csv.CSVParserTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/csv/CSVParserTest.java",
+    "signature": "org.apache.commons.csv.CSVParserTest.validateRecordNumbers(java.lang.String)",
+    "snippet": "private void validateRecordNumbers(final String lineSeparator) throws IOException {\n  final CSVParser parser\u003dCSVParser.parse(\"a\" + lineSeparator + \"b\"+ lineSeparator+ \"c\",CSVFormat.DEFAULT.withRecordSeparator(lineSeparator));\n  CSVRecord record;\n  assertEquals(0,parser.getRecordNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(1,record.getRecordNumber());\n  assertEquals(1,parser.getRecordNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(2,record.getRecordNumber());\n  assertEquals(2,parser.getRecordNumber());\n  assertNotNull(record\u003dparser.nextRecord());\n  assertEquals(3,record.getRecordNumber());\n  assertEquals(3,parser.getRecordNumber());\n  assertNull(record\u003dparser.nextRecord());\n  assertEquals(3,parser.getRecordNumber());\n  parser.close();\n}",
+    "begin_line": 944,
+    "end_line": 960,
+    "comment": "",
+    "child_ranges": [
+      "(line 945,col 9)-(line 945,col 152)",
+      "(line 946,col 9)-(line 946,col 25)",
+      "(line 947,col 9)-(line 947,col 50)",
+      "(line 948,col 9)-(line 948,col 52)",
+      "(line 949,col 9)-(line 949,col 50)",
+      "(line 950,col 9)-(line 950,col 50)",
+      "(line 951,col 9)-(line 951,col 52)",
+      "(line 952,col 9)-(line 952,col 50)",
+      "(line 953,col 9)-(line 953,col 50)",
+      "(line 954,col 9)-(line 954,col 52)",
+      "(line 955,col 9)-(line 955,col 50)",
+      "(line 956,col 9)-(line 956,col 50)",
+      "(line 957,col 9)-(line 957,col 49)",
+      "(line 958,col 9)-(line 958,col 50)",
+      "(line 959,col 9)-(line 959,col 23)"
+    ]
+  }
 ]
