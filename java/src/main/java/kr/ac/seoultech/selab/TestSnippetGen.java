@@ -65,9 +65,8 @@ public class TestSnippetGen {
                 int rawBeginLine = cu.getLineNumber(node.getName().getStartPosition());
                 int endLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
 
-                String rawSnippet = node.toString().trim();
                 String comment = node.getJavadoc() != null ? node.getJavadoc().toString() : "";
-                String snippet = rawSnippet.replaceAll("(?s)/\\*.*?\\*/|//.*", "").trim(); // 주석 제거
+                String snippet = source.substring(node.getStartPosition(), node.getName().getStartPosition()).replaceAll("(?s)/\\*.*?\\*/|//.*", "").trim() + " " + source.substring(node.getName().getStartPosition(), node.getStartPosition() + node.getLength()); // 주석 제거
 
                 String methodName = node.getName().getFullyQualifiedName();
 
