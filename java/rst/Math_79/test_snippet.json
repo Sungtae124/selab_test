@@ -1,26 +1,46 @@
 [
-    [
-        {
-            "class_name": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClustererTest.java",
-            "signature": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest.dimension2()",
-            "snippet": "public void dimension2() {\nKMeansPlusPlusClusterer<EuclideanIntegerPoint> transformer =",
-            "begin_line": 32,
-            "end_line": 33,
-            "comment": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http:www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n ",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClustererTest.java",
-            "signature": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest.testPerformClusterAnalysisDegenerate()",
-            "snippet": "public void testPerformClusterAnalysisDegenerate() {\nKMeansPlusPlusClusterer<EuclideanIntegerPoint> transformer = new KMeansPlusPlusClusterer<EuclideanIntegerPoint>(",
-            "begin_line": 103,
-            "end_line": 104,
-            "comment": "    \n     * JIRA: MATH-305\n     * \n     * Two points, one cluster, one iteration\n     ",
-            "child_ranges": []
-        }
+  {
+    "class_name": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/stat/clustering/KMeansPlusPlusClustererTest.java",
+    "signature": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest.dimension2()",
+    "snippet": "@Test public void dimension2(){\n  KMeansPlusPlusClusterer\u003cEuclideanIntegerPoint\u003e transformer\u003dnew KMeansPlusPlusClusterer\u003cEuclideanIntegerPoint\u003e(new Random(1746432956321l));\n  EuclideanIntegerPoint[] points\u003dnew EuclideanIntegerPoint[]{new EuclideanIntegerPoint(new int[]{-15,3}),new EuclideanIntegerPoint(new int[]{-15,4}),new EuclideanIntegerPoint(new int[]{-15,5}),new EuclideanIntegerPoint(new int[]{-14,3}),new EuclideanIntegerPoint(new int[]{-14,5}),new EuclideanIntegerPoint(new int[]{-13,3}),new EuclideanIntegerPoint(new int[]{-13,4}),new EuclideanIntegerPoint(new int[]{-13,5}),new EuclideanIntegerPoint(new int[]{-1,0}),new EuclideanIntegerPoint(new int[]{-1,-1}),new EuclideanIntegerPoint(new int[]{0,-1}),new EuclideanIntegerPoint(new int[]{1,-1}),new EuclideanIntegerPoint(new int[]{1,-2}),new EuclideanIntegerPoint(new int[]{13,3}),new EuclideanIntegerPoint(new int[]{13,4}),new EuclideanIntegerPoint(new int[]{14,4}),new EuclideanIntegerPoint(new int[]{14,7}),new EuclideanIntegerPoint(new int[]{16,5}),new EuclideanIntegerPoint(new int[]{16,6}),new EuclideanIntegerPoint(new int[]{17,4}),new EuclideanIntegerPoint(new int[]{17,7})};\n  List\u003cCluster\u003cEuclideanIntegerPoint\u003e\u003e clusters\u003dtransformer.cluster(Arrays.asList(points),3,10);\n  assertEquals(3,clusters.size());\n  boolean cluster1Found\u003dfalse;\n  boolean cluster2Found\u003dfalse;\n  boolean cluster3Found\u003dfalse;\n  for (  Cluster\u003cEuclideanIntegerPoint\u003e cluster : clusters) {\n    int[] center\u003dcluster.getCenter().getPoint();\n    if (center[0] \u003c 0) {\n      cluster1Found\u003dtrue;\n      assertEquals(8,cluster.getPoints().size());\n      assertEquals(-14,center[0]);\n      assertEquals(4,center[1]);\n    }\n else     if (center[1] \u003c 0) {\n      cluster2Found\u003dtrue;\n      assertEquals(5,cluster.getPoints().size());\n      assertEquals(0,center[0]);\n      assertEquals(-1,center[1]);\n    }\n else {\n      cluster3Found\u003dtrue;\n      assertEquals(8,cluster.getPoints().size());\n      assertEquals(15,center[0]);\n      assertEquals(5,center[1]);\n    }\n  }\n  assertTrue(cluster1Found);\n  assertTrue(cluster2Found);\n  assertTrue(cluster3Found);\n}",
+    "begin_line": 32,
+    "end_line": 95,
+    "comment": "",
+    "child_ranges": [
+      "(line 33,col 9)-(line 34,col 91)",
+      "(line 35,col 9)-(line 64,col 10)",
+      "(line 65,col 9)-(line 66,col 62)",
+      "(line 68,col 9)-(line 68,col 41)",
+      "(line 69,col 9)-(line 69,col 38)",
+      "(line 70,col 9)-(line 70,col 38)",
+      "(line 71,col 9)-(line 71,col 38)",
+      "(line 72,col 9)-(line 90,col 9)",
+      "(line 91,col 9)-(line 91,col 34)",
+      "(line 92,col 9)-(line 92,col 34)",
+      "(line 93,col 9)-(line 93,col 34)"
     ]
+  },
+  {
+    "class_name": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/stat/clustering/KMeansPlusPlusClustererTest.java",
+    "signature": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest.testPerformClusterAnalysisDegenerate()",
+    "snippet": "@Test public void testPerformClusterAnalysisDegenerate(){\n  KMeansPlusPlusClusterer\u003cEuclideanIntegerPoint\u003e transformer\u003dnew KMeansPlusPlusClusterer\u003cEuclideanIntegerPoint\u003e(new Random(1746432956321l));\n  EuclideanIntegerPoint[] points\u003dnew EuclideanIntegerPoint[]{new EuclideanIntegerPoint(new int[]{1959,325100}),new EuclideanIntegerPoint(new int[]{1960,373200})};\n  List\u003cCluster\u003cEuclideanIntegerPoint\u003e\u003e clusters\u003dtransformer.cluster(Arrays.asList(points),1,1);\n  assertEquals(1,clusters.size());\n  assertEquals(2,(clusters.get(0).getPoints().size()));\n  EuclideanIntegerPoint pt1\u003dnew EuclideanIntegerPoint(new int[]{1959,325100});\n  EuclideanIntegerPoint pt2\u003dnew EuclideanIntegerPoint(new int[]{1960,373200});\n  assertTrue(clusters.get(0).getPoints().contains(pt1));\n  assertTrue(clusters.get(0).getPoints().contains(pt2));\n}",
+    "begin_line": 103,
+    "end_line": 117,
+    "comment": "/** \n * JIRA: MATH-305 Two points, one cluster, one iteration\n */\n",
+    "child_ranges": [
+      "(line 104,col 9)-(line 105,col 44)",
+      "(line 106,col 9)-(line 108,col 73)",
+      "(line 109,col 9)-(line 109,col 105)",
+      "(line 110,col 9)-(line 110,col 41)",
+      "(line 111,col 9)-(line 111,col 62)",
+      "(line 112,col 9)-(line 112,col 90)",
+      "(line 113,col 9)-(line 113,col 90)",
+      "(line 114,col 9)-(line 114,col 62)",
+      "(line 115,col 9)-(line 115,col 62)"
+    ]
+  }
 ]

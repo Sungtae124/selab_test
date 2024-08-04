@@ -1,20 +1,35 @@
 [
-    [],
-    [
-        {
-            "class_name": "org.apache.commons.cli.UtilTest",
-            "child_classes": [],
-            "src_path": "src/test/org/apache/commons/cli/UtilTest.java",
-            "signature": "org.apache.commons.cli.UtilTest.testStripLeadingHyphens()",
-            "snippet": "public void testStripLeadingHyphens() {\nassertEquals(\"f\", Util.stripLeadingHyphens(\"-f\"));\nassertEquals(\"foo\", Util.stripLeadingHyphens(\"--foo\"));\nassertNull(Util.stripLeadingHyphens(null));\n}",
-            "begin_line": 25,
-            "end_line": 29,
-            "comment": "\n * @author brianegge\n ",
-            "child_ranges": [
-                "(line 26,col 9)-(line 26,col 58)",
-                "(line 27,col 9)-(line 27,col 63)",
-                "(line 28,col 9)-(line 28,col 51)"
-            ]
-        }
+  {
+    "class_name": "org.apache.commons.cli.bug.BugCLI133Test",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/bug/BugCLI133Test.java",
+    "signature": "org.apache.commons.cli.bug.BugCLI133Test.testOrder()",
+    "snippet": "public void testOrder() throws ParseException {\n  Option optionA\u003dnew Option(\"a\",\"first\");\n  Options opts\u003dnew Options();\n  opts.addOption(optionA);\n  PosixParser posixParser\u003dnew PosixParser();\n  CommandLine line\u003dposixParser.parse(opts,null);\n  assertFalse(line.hasOption(null));\n}",
+    "begin_line": 26,
+    "end_line": 33,
+    "comment": "",
+    "child_ranges": [
+      "(line 27,col 9)-(line 27,col 50)",
+      "(line 28,col 9)-(line 28,col 37)",
+      "(line 29,col 9)-(line 29,col 32)",
+      "(line 30,col 9)-(line 30,col 52)",
+      "(line 31,col 9)-(line 31,col 57)",
+      "(line 32,col 9)-(line 32,col 42)"
     ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.UtilTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/UtilTest.java",
+    "signature": "org.apache.commons.cli.UtilTest.testStripLeadingHyphens()",
+    "snippet": "public void testStripLeadingHyphens(){\n  assertEquals(\"f\",Util.stripLeadingHyphens(\"-f\"));\n  assertEquals(\"foo\",Util.stripLeadingHyphens(\"--foo\"));\n  assertNull(Util.stripLeadingHyphens(null));\n}",
+    "begin_line": 25,
+    "end_line": 29,
+    "comment": "",
+    "child_ranges": [
+      "(line 26,col 9)-(line 26,col 58)",
+      "(line 27,col 9)-(line 27,col 63)",
+      "(line 28,col 9)-(line 28,col 51)"
+    ]
+  }
 ]

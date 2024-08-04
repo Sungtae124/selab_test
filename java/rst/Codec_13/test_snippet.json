@@ -1,263 +1,305 @@
 [
-    [
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.assertDoubleMetaphone(final String expected, final String source)",
-            "snippet": "private void assertDoubleMetaphone(final String expected, final String source) {\nassertEquals(expected, this.getStringEncoder().encode(source));\ntry {",
-            "begin_line": 1010,
-            "end_line": 1012,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1011,col 9)-(line 1011,col 71)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.assertDoubleMetaphoneAlt(final String expected, final String source)",
-            "snippet": "public void assertDoubleMetaphoneAlt(final String expected, final String source) {\nassertEquals(expected, this.getStringEncoder().doubleMetaphone(source, true));\n}",
-            "begin_line": 1024,
-            "end_line": 1026,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1025,col 9)-(line 1025,col 86)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.createStringEncoder()",
-            "snippet": "protected DoubleMetaphone createStringEncoder() {\nreturn new DoubleMetaphone();\n}",
-            "begin_line": 1029,
-            "end_line": 1031,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1030,col 9)-(line 1030,col 37)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.doubleMetaphoneEqualTest(final String[][] pairs, final boolean useAlternate)",
-            "snippet": "public void doubleMetaphoneEqualTest(final String[][] pairs, final boolean useAlternate) {\nthis.validateFixture(pairs);\nfor (final String[] pair : pairs) {",
-            "begin_line": 1033,
-            "end_line": 1035,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1034,col 9)-(line 1034,col 36)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.doubleMetaphoneNotEqualTest(final boolean alternate)",
-            "snippet": "public void doubleMetaphoneNotEqualTest(final boolean alternate) {\nassertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Brain\", \"Band\", alternate));\nassertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Band\", \"Brain\", alternate));\n\nif (!alternate) {",
-            "begin_line": 1048,
-            "end_line": 1052,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1049,col 9)-(line 1049,col 96)",
-                "(line 1050,col 9)-(line 1050,col 96)",
-                "(line 1051,col 0)-(line 1051,col 0)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testCCedilla()",
-            "snippet": "public void testCCedilla() {\nassertTrue(this.getStringEncoder().isDoubleMetaphoneEqual(\"\\u00e7\", \"S\")); // c-cedilla",
-            "begin_line": 1059,
-            "end_line": 1060,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testDoubleMetaphone()",
-            "snippet": "public void testDoubleMetaphone() {\nassertDoubleMetaphone(\"TSTN\", \"testing\");\nassertDoubleMetaphone(\"0\", \"The\");\nassertDoubleMetaphone(\"KK\", \"quick\");\nassertDoubleMetaphone(\"PRN\", \"brown\");\nassertDoubleMetaphone(\"FKS\", \"fox\");\nassertDoubleMetaphone(\"JMPT\", \"jumped\");\nassertDoubleMetaphone(\"AFR\", \"over\");\nassertDoubleMetaphone(\"0\", \"the\");\nassertDoubleMetaphone(\"LS\", \"lazy\");\nassertDoubleMetaphone(\"TKS\", \"dogs\");\nassertDoubleMetaphone(\"MKFR\", \"MacCafferey\");\nassertDoubleMetaphone(\"STFN\", \"Stephan\");\nassertDoubleMetaphone(\"KSSK\", \"Kuczewski\");\nassertDoubleMetaphone(\"MKLL\", \"McClelland\");\nassertDoubleMetaphone(\"SNHS\", \"san jose\");\nassertDoubleMetaphone(\"SNFP\", \"xenophobia\");\n\nassertDoubleMetaphoneAlt(\"TSTN\", \"testing\");\nassertDoubleMetaphoneAlt(\"T\", \"The\");\nassertDoubleMetaphoneAlt(\"KK\", \"quick\");\nassertDoubleMetaphoneAlt(\"PRN\", \"brown\");\nassertDoubleMetaphoneAlt(\"FKS\", \"fox\");\nassertDoubleMetaphoneAlt(\"AMPT\", \"jumped\");\nassertDoubleMetaphoneAlt(\"AFR\", \"over\");\nassertDoubleMetaphoneAlt(\"T\", \"the\");\nassertDoubleMetaphoneAlt(\"LS\", \"lazy\");\nassertDoubleMetaphoneAlt(\"TKS\", \"dogs\");\nassertDoubleMetaphoneAlt(\"MKFR\", \"MacCafferey\");\nassertDoubleMetaphoneAlt(\"STFN\", \"Stephan\");\nassertDoubleMetaphoneAlt(\"KXFS\", \"Kutchefski\");\nassertDoubleMetaphoneAlt(\"MKLL\", \"McClelland\");\nassertDoubleMetaphoneAlt(\"SNHS\", \"san jose\");\nassertDoubleMetaphoneAlt(\"SNFP\", \"xenophobia\");\nassertDoubleMetaphoneAlt(\"FKR\", \"Fokker\");\nassertDoubleMetaphoneAlt(\"AK\", \"Joqqi\");\nassertDoubleMetaphoneAlt(\"HF\", \"Hovvi\");\nassertDoubleMetaphoneAlt(\"XRN\", \"Czerny\");\n}",
-            "begin_line": 1074,
-            "end_line": 1112,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1075,col 9)-(line 1075,col 49)",
-                "(line 1076,col 9)-(line 1076,col 42)",
-                "(line 1077,col 9)-(line 1077,col 45)",
-                "(line 1078,col 9)-(line 1078,col 46)",
-                "(line 1079,col 9)-(line 1079,col 44)",
-                "(line 1080,col 9)-(line 1080,col 48)",
-                "(line 1081,col 9)-(line 1081,col 45)",
-                "(line 1082,col 9)-(line 1082,col 42)",
-                "(line 1083,col 9)-(line 1083,col 44)",
-                "(line 1084,col 9)-(line 1084,col 45)",
-                "(line 1085,col 9)-(line 1085,col 53)",
-                "(line 1086,col 9)-(line 1086,col 49)",
-                "(line 1087,col 9)-(line 1087,col 51)",
-                "(line 1088,col 9)-(line 1088,col 52)",
-                "(line 1089,col 9)-(line 1089,col 50)",
-                "(line 1090,col 9)-(line 1090,col 52)",
-                "(line 1091,col 0)-(line 1091,col 0)",
-                "(line 1092,col 9)-(line 1092,col 52)",
-                "(line 1093,col 9)-(line 1093,col 45)",
-                "(line 1094,col 9)-(line 1094,col 48)",
-                "(line 1095,col 9)-(line 1095,col 49)",
-                "(line 1096,col 9)-(line 1096,col 47)",
-                "(line 1097,col 9)-(line 1097,col 51)",
-                "(line 1098,col 9)-(line 1098,col 48)",
-                "(line 1099,col 9)-(line 1099,col 45)",
-                "(line 1100,col 9)-(line 1100,col 47)",
-                "(line 1101,col 9)-(line 1101,col 48)",
-                "(line 1102,col 9)-(line 1102,col 56)",
-                "(line 1103,col 9)-(line 1103,col 52)",
-                "(line 1104,col 9)-(line 1104,col 55)",
-                "(line 1105,col 9)-(line 1105,col 55)",
-                "(line 1106,col 9)-(line 1106,col 53)",
-                "(line 1107,col 9)-(line 1107,col 55)",
-                "(line 1108,col 9)-(line 1108,col 50)",
-                "(line 1109,col 9)-(line 1109,col 48)",
-                "(line 1110,col 9)-(line 1110,col 48)",
-                "(line 1111,col 9)-(line 1111,col 50)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testEmpty()",
-            "snippet": "public void testEmpty() {\nassertEquals(null, this.getStringEncoder().doubleMetaphone(null));\nassertEquals(null, this.getStringEncoder().doubleMetaphone(\"\"));\nassertEquals(null, this.getStringEncoder().doubleMetaphone(\" \"));\nassertEquals(null, this.getStringEncoder().doubleMetaphone(\"\\t\\n\\r \"));\n}",
-            "begin_line": 1115,
-            "end_line": 1120,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": [
-                "(line 1116,col 9)-(line 1116,col 74)",
-                "(line 1117,col 9)-(line 1117,col 72)",
-                "(line 1118,col 9)-(line 1118,col 73)",
-                "(line 1119,col 9)-(line 1119,col 79)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualBasic()",
-            "snippet": "public void testIsDoubleMetaphoneEqualBasic() {\nfinal String[][] testFixture = new String[][] { {",
-            "begin_line": 1123,
-            "end_line": 1124,
-            "comment": "    \n     * Tests encoding APIs in one place.\n     ",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended1()",
-            "snippet": "public void testIsDoubleMetaphoneEqualExtended1() {\n//        String[][] testFixture = new String[][] { { \"Smith\", \"Schmidt\" }",
-            "begin_line": 1144,
-            "end_line": 1145,
-            "comment": "    \n     * Example in the original article but failures in this Java impl:\n     ",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended2()",
-            "snippet": "public void testIsDoubleMetaphoneEqualExtended2() {\nfinal String[][] testFixture = new String[][] { { \"Jablonski\", \"Yablonsky\" }",
-            "begin_line": 1152,
-            "end_line": 1153,
-            "comment": "                doubleMetaphoneEqualTest(testFixture, true);",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended3()",
-            "snippet": "public void testIsDoubleMetaphoneEqualExtended3() {\nthis.validateFixture(FIXTURE);\nfinal StringBuilder failures = new StringBuilder();\nfinal StringBuilder matches = new StringBuilder();\nfinal String cr = System.getProperty(\"line.separator\");\nmatches.append(\"private static final String[][] MATCHES = {\" + cr);\nint failCount = 0;\nfor (int i = 0; i < FIXTURE.length; i++) {",
-            "begin_line": 1164,
-            "end_line": 1171,
-            "comment": "    \n     * Used to generate the MATCHES array and test possible matches from the\n     * FIXTURE array.\n     ",
-            "child_ranges": [
-                "(line 1165,col 9)-(line 1165,col 38)",
-                "(line 1166,col 9)-(line 1166,col 59)",
-                "(line 1167,col 9)-(line 1167,col 58)",
-                "(line 1168,col 9)-(line 1168,col 63)",
-                "(line 1169,col 9)-(line 1169,col 75)",
-                "(line 1170,col 9)-(line 1170,col 26)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualWithMATCHES()",
-            "snippet": "public void testIsDoubleMetaphoneEqualWithMATCHES() {\nthis.validateFixture(MATCHES);\nfor (int i = 0; i < MATCHES.length; i++) {",
-            "begin_line": 1196,
-            "end_line": 1198,
-            "comment": "             following could be made to match: \" + cr + msg);",
-            "child_ranges": [
-                "(line 1197,col 9)-(line 1197,col 38)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneNotEqual()",
-            "snippet": "public void testIsDoubleMetaphoneNotEqual() {\ndoubleMetaphoneNotEqualTest(false);\ndoubleMetaphoneNotEqualTest(true);\n}",
-            "begin_line": 1210,
-            "end_line": 1213,
-            "comment": "             following could be made to match: \" + cr + msg);",
-            "child_ranges": [
-                "(line 1211,col 9)-(line 1211,col 43)",
-                "(line 1212,col 9)-(line 1212,col 42)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testNTilde()",
-            "snippet": "public void testNTilde() {\nassertTrue(this.getStringEncoder().isDoubleMetaphoneEqual(\"\\u00f1\", \"N\")); // n-tilde",
-            "begin_line": 1216,
-            "end_line": 1217,
-            "comment": "             following could be made to match: \" + cr + msg);",
-            "child_ranges": []
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testSetMaxCodeLength()",
-            "snippet": "public void testSetMaxCodeLength() {\nfinal String value = \"jumped\";\n\nfinal DoubleMetaphone doubleMetaphone = new DoubleMetaphone();\n\n// Sanity check of default settings",
-            "begin_line": 1224,
-            "end_line": 1229,
-            "comment": "    \n     * Test setting maximum length\n     ",
-            "child_ranges": [
-                "(line 1225,col 9)-(line 1225,col 38)",
-                "(line 1226,col 0)-(line 1226,col 0)",
-                "(line 1227,col 9)-(line 1227,col 70)",
-                "(line 1228,col 0)-(line 1228,col 0)"
-            ]
-        },
-        {
-            "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
-            "child_classes": [],
-            "src_path": "src/test/java/org/apache/commons/codec/language/DoubleMetaphoneTest.java",
-            "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.validateFixture(final String[][] pairs)",
-            "snippet": "public void validateFixture(final String[][] pairs) {\nif (pairs.length == 0) {",
-            "begin_line": 1241,
-            "end_line": 1242,
-            "comment": "         Check setting Max Code Length",
-            "child_ranges": []
-        }
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.assertDoubleMetaphone(java.lang.String, java.lang.String)",
+    "snippet": "private void assertDoubleMetaphone(final String expected,final String source){\n  assertEquals(expected,this.getStringEncoder().encode(source));\n  try {\n    assertEquals(expected,this.getStringEncoder().encode((Object)source));\n  }\n catch (  final EncoderException e) {\n    fail(\"Unexpected expection: \" + e);\n  }\n  assertEquals(expected,this.getStringEncoder().doubleMetaphone(source));\n  assertEquals(expected,this.getStringEncoder().doubleMetaphone(source,false));\n}",
+    "begin_line": 1010,
+    "end_line": 1019,
+    "comment": "/** \n * Tests encoding APIs in one place.\n */\n",
+    "child_ranges": [
+      "(line 1011,col 9)-(line 1011,col 71)",
+      "(line 1012,col 9)-(line 1016,col 9)",
+      "(line 1017,col 9)-(line 1017,col 80)",
+      "(line 1018,col 9)-(line 1018,col 87)"
     ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.assertDoubleMetaphoneAlt(java.lang.String, java.lang.String)",
+    "snippet": "public void assertDoubleMetaphoneAlt(final String expected,final String source){\n  assertEquals(expected,this.getStringEncoder().doubleMetaphone(source,true));\n}",
+    "begin_line": 1024,
+    "end_line": 1026,
+    "comment": "/** \n * Tests encoding APIs in one place.\n */\n",
+    "child_ranges": [
+      "(line 1025,col 9)-(line 1025,col 86)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.createStringEncoder()",
+    "snippet": "@Override protected DoubleMetaphone createStringEncoder(){\n  return new DoubleMetaphone();\n}",
+    "begin_line": 1029,
+    "end_line": 1031,
+    "comment": "",
+    "child_ranges": [
+      "(line 1030,col 9)-(line 1030,col 37)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.doubleMetaphoneEqualTest(java.lang.String[][], boolean)",
+    "snippet": "public void doubleMetaphoneEqualTest(final String[][] pairs,final boolean useAlternate){\n  this.validateFixture(pairs);\n  for (  final String[] pair : pairs) {\n    final String name0\u003dpair[0];\n    final String name1\u003dpair[1];\n    final String failMsg\u003d\"Expected match between \" + name0 + \" and \"+ name1+ \" (use alternate: \"+ useAlternate+ \")\";\n    assertTrue(failMsg,this.getStringEncoder().isDoubleMetaphoneEqual(name0,name1,useAlternate));\n    assertTrue(failMsg,this.getStringEncoder().isDoubleMetaphoneEqual(name1,name0,useAlternate));\n    if (!useAlternate) {\n      assertTrue(failMsg,this.getStringEncoder().isDoubleMetaphoneEqual(name0,name1));\n      assertTrue(failMsg,this.getStringEncoder().isDoubleMetaphoneEqual(name1,name0));\n    }\n  }\n}",
+    "begin_line": 1033,
+    "end_line": 1046,
+    "comment": "",
+    "child_ranges": [
+      "(line 1034,col 9)-(line 1034,col 36)",
+      "(line 1035,col 9)-(line 1045,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.doubleMetaphoneNotEqualTest(boolean)",
+    "snippet": "public void doubleMetaphoneNotEqualTest(final boolean alternate){\n  assertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Brain\",\"Band\",alternate));\n  assertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Band\",\"Brain\",alternate));\n  if (!alternate) {\n    assertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Brain\",\"Band\"));\n    assertFalse(this.getStringEncoder().isDoubleMetaphoneEqual(\"Band\",\"Brain\"));\n  }\n}",
+    "begin_line": 1048,
+    "end_line": 1056,
+    "comment": "",
+    "child_ranges": [
+      "(line 1049,col 9)-(line 1049,col 96)",
+      "(line 1050,col 9)-(line 1050,col 96)",
+      "(line 1052,col 9)-(line 1055,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testCCedilla()",
+    "snippet": "@Test public void testCCedilla(){\n  assertTrue(this.getStringEncoder().isDoubleMetaphoneEqual(\"\\u00e7\",\"S\"));\n}",
+    "begin_line": 1059,
+    "end_line": 1061,
+    "comment": "",
+    "child_ranges": [
+      "(line 1060,col 9)-(line 1060,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testCodec184()",
+    "snippet": "@Test public void testCodec184() throws Throwable {\n  assertTrue(new DoubleMetaphone().isDoubleMetaphoneEqual(\"\",\"\",false));\n  assertTrue(new DoubleMetaphone().isDoubleMetaphoneEqual(\"\",\"\",true));\n  assertFalse(new DoubleMetaphone().isDoubleMetaphoneEqual(\"aa\",\"\",false));\n  assertFalse(new DoubleMetaphone().isDoubleMetaphoneEqual(\"aa\",\"\",true));\n  assertFalse(new DoubleMetaphone().isDoubleMetaphoneEqual(\"\",\"aa\",false));\n  assertFalse(new DoubleMetaphone().isDoubleMetaphoneEqual(\"\",\"aa\",true));\n}",
+    "begin_line": 1064,
+    "end_line": 1071,
+    "comment": "",
+    "child_ranges": [
+      "(line 1065,col 9)-(line 1065,col 80)",
+      "(line 1066,col 9)-(line 1066,col 79)",
+      "(line 1067,col 9)-(line 1067,col 83)",
+      "(line 1068,col 9)-(line 1068,col 82)",
+      "(line 1069,col 9)-(line 1069,col 83)",
+      "(line 1070,col 9)-(line 1070,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testDoubleMetaphone()",
+    "snippet": "@Test public void testDoubleMetaphone(){\n  assertDoubleMetaphone(\"TSTN\",\"testing\");\n  assertDoubleMetaphone(\"0\",\"The\");\n  assertDoubleMetaphone(\"KK\",\"quick\");\n  assertDoubleMetaphone(\"PRN\",\"brown\");\n  assertDoubleMetaphone(\"FKS\",\"fox\");\n  assertDoubleMetaphone(\"JMPT\",\"jumped\");\n  assertDoubleMetaphone(\"AFR\",\"over\");\n  assertDoubleMetaphone(\"0\",\"the\");\n  assertDoubleMetaphone(\"LS\",\"lazy\");\n  assertDoubleMetaphone(\"TKS\",\"dogs\");\n  assertDoubleMetaphone(\"MKFR\",\"MacCafferey\");\n  assertDoubleMetaphone(\"STFN\",\"Stephan\");\n  assertDoubleMetaphone(\"KSSK\",\"Kuczewski\");\n  assertDoubleMetaphone(\"MKLL\",\"McClelland\");\n  assertDoubleMetaphone(\"SNHS\",\"san jose\");\n  assertDoubleMetaphone(\"SNFP\",\"xenophobia\");\n  assertDoubleMetaphoneAlt(\"TSTN\",\"testing\");\n  assertDoubleMetaphoneAlt(\"T\",\"The\");\n  assertDoubleMetaphoneAlt(\"KK\",\"quick\");\n  assertDoubleMetaphoneAlt(\"PRN\",\"brown\");\n  assertDoubleMetaphoneAlt(\"FKS\",\"fox\");\n  assertDoubleMetaphoneAlt(\"AMPT\",\"jumped\");\n  assertDoubleMetaphoneAlt(\"AFR\",\"over\");\n  assertDoubleMetaphoneAlt(\"T\",\"the\");\n  assertDoubleMetaphoneAlt(\"LS\",\"lazy\");\n  assertDoubleMetaphoneAlt(\"TKS\",\"dogs\");\n  assertDoubleMetaphoneAlt(\"MKFR\",\"MacCafferey\");\n  assertDoubleMetaphoneAlt(\"STFN\",\"Stephan\");\n  assertDoubleMetaphoneAlt(\"KXFS\",\"Kutchefski\");\n  assertDoubleMetaphoneAlt(\"MKLL\",\"McClelland\");\n  assertDoubleMetaphoneAlt(\"SNHS\",\"san jose\");\n  assertDoubleMetaphoneAlt(\"SNFP\",\"xenophobia\");\n  assertDoubleMetaphoneAlt(\"FKR\",\"Fokker\");\n  assertDoubleMetaphoneAlt(\"AK\",\"Joqqi\");\n  assertDoubleMetaphoneAlt(\"HF\",\"Hovvi\");\n  assertDoubleMetaphoneAlt(\"XRN\",\"Czerny\");\n}",
+    "begin_line": 1074,
+    "end_line": 1112,
+    "comment": "",
+    "child_ranges": [
+      "(line 1075,col 9)-(line 1075,col 49)",
+      "(line 1076,col 9)-(line 1076,col 42)",
+      "(line 1077,col 9)-(line 1077,col 45)",
+      "(line 1078,col 9)-(line 1078,col 46)",
+      "(line 1079,col 9)-(line 1079,col 44)",
+      "(line 1080,col 9)-(line 1080,col 48)",
+      "(line 1081,col 9)-(line 1081,col 45)",
+      "(line 1082,col 9)-(line 1082,col 42)",
+      "(line 1083,col 9)-(line 1083,col 44)",
+      "(line 1084,col 9)-(line 1084,col 45)",
+      "(line 1085,col 9)-(line 1085,col 53)",
+      "(line 1086,col 9)-(line 1086,col 49)",
+      "(line 1087,col 9)-(line 1087,col 51)",
+      "(line 1088,col 9)-(line 1088,col 52)",
+      "(line 1089,col 9)-(line 1089,col 50)",
+      "(line 1090,col 9)-(line 1090,col 52)",
+      "(line 1092,col 9)-(line 1092,col 52)",
+      "(line 1093,col 9)-(line 1093,col 45)",
+      "(line 1094,col 9)-(line 1094,col 48)",
+      "(line 1095,col 9)-(line 1095,col 49)",
+      "(line 1096,col 9)-(line 1096,col 47)",
+      "(line 1097,col 9)-(line 1097,col 51)",
+      "(line 1098,col 9)-(line 1098,col 48)",
+      "(line 1099,col 9)-(line 1099,col 45)",
+      "(line 1100,col 9)-(line 1100,col 47)",
+      "(line 1101,col 9)-(line 1101,col 48)",
+      "(line 1102,col 9)-(line 1102,col 56)",
+      "(line 1103,col 9)-(line 1103,col 52)",
+      "(line 1104,col 9)-(line 1104,col 55)",
+      "(line 1105,col 9)-(line 1105,col 55)",
+      "(line 1106,col 9)-(line 1106,col 53)",
+      "(line 1107,col 9)-(line 1107,col 55)",
+      "(line 1108,col 9)-(line 1108,col 50)",
+      "(line 1109,col 9)-(line 1109,col 48)",
+      "(line 1110,col 9)-(line 1110,col 48)",
+      "(line 1111,col 9)-(line 1111,col 50)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testEmpty()",
+    "snippet": "@Test public void testEmpty(){\n  assertEquals(null,this.getStringEncoder().doubleMetaphone(null));\n  assertEquals(null,this.getStringEncoder().doubleMetaphone(\"\"));\n  assertEquals(null,this.getStringEncoder().doubleMetaphone(\" \"));\n  assertEquals(null,this.getStringEncoder().doubleMetaphone(\"\\t\\n\\r \"));\n}",
+    "begin_line": 1115,
+    "end_line": 1120,
+    "comment": "",
+    "child_ranges": [
+      "(line 1116,col 9)-(line 1116,col 74)",
+      "(line 1117,col 9)-(line 1117,col 72)",
+      "(line 1118,col 9)-(line 1118,col 73)",
+      "(line 1119,col 9)-(line 1119,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualBasic()",
+    "snippet": "@Test public void testIsDoubleMetaphoneEqualBasic(){\n  final String[][] testFixture\u003dnew String[][]{{\"\",\"\"},{\"Case\",\"case\"},{\"CASE\",\"Case\"},{\"caSe\",\"cAsE\"},{\"cookie\",\"quick\"},{\"quick\",\"cookie\"},{\"Brian\",\"Bryan\"},{\"Auto\",\"Otto\"},{\"Steven\",\"Stefan\"},{\"Philipowitz\",\"Filipowicz\"}};\n  doubleMetaphoneEqualTest(testFixture,false);\n  doubleMetaphoneEqualTest(testFixture,true);\n}",
+    "begin_line": 1123,
+    "end_line": 1138,
+    "comment": "",
+    "child_ranges": [
+      "(line 1124,col 9)-(line 1135,col 10)",
+      "(line 1136,col 9)-(line 1136,col 53)",
+      "(line 1137,col 9)-(line 1137,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended1()",
+    "snippet": "@Test public void testIsDoubleMetaphoneEqualExtended1(){\n}",
+    "begin_line": 1144,
+    "end_line": 1149,
+    "comment": "/** \n * Example in the original article but failures in this Java impl:\n */\n",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended2()",
+    "snippet": "@Test public void testIsDoubleMetaphoneEqualExtended2(){\n  final String[][] testFixture\u003dnew String[][]{{\"Jablonski\",\"Yablonsky\"}};\n  doubleMetaphoneEqualTest(testFixture,true);\n}",
+    "begin_line": 1152,
+    "end_line": 1157,
+    "comment": "",
+    "child_ranges": [
+      "(line 1153,col 9)-(line 1154,col 10)",
+      "(line 1156,col 9)-(line 1156,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualExtended3()",
+    "snippet": "@Test public void testIsDoubleMetaphoneEqualExtended3(){\n  this.validateFixture(FIXTURE);\n  final StringBuilder failures\u003dnew StringBuilder();\n  final StringBuilder matches\u003dnew StringBuilder();\n  final String cr\u003dSystem.getProperty(\"line.separator\");\n  matches.append(\"private static final String[][] MATCHES \u003d {\" + cr);\n  int failCount\u003d0;\n  for (int i\u003d0; i \u003c FIXTURE.length; i++) {\n    final String name0\u003dFIXTURE[i][0];\n    final String name1\u003dFIXTURE[i][1];\n    final boolean match1\u003dthis.getStringEncoder().isDoubleMetaphoneEqual(name0,name1,false);\n    final boolean match2\u003dthis.getStringEncoder().isDoubleMetaphoneEqual(name0,name1,true);\n    if (match1 \u003d\u003d false \u0026\u0026 match2 \u003d\u003d false) {\n      final String failMsg\u003d\"[\" + i + \"] \"+ name0+ \" and \"+ name1+ cr;\n      failures.append(failMsg);\n      failCount++;\n    }\n else {\n      matches.append(\"{\\\"\" + name0 + \"\\\", \\\"\"+ name1+ \"\\\"},\"+ cr);\n    }\n  }\n  matches.append(\"};\");\n  if (failCount \u003e 0) {\n  }\n}",
+    "begin_line": 1164,
+    "end_line": 1193,
+    "comment": "/** \n * Used to generate the MATCHES array and test possible matches from the FIXTURE array.\n */\n",
+    "child_ranges": [
+      "(line 1165,col 9)-(line 1165,col 38)",
+      "(line 1166,col 9)-(line 1166,col 59)",
+      "(line 1167,col 9)-(line 1167,col 58)",
+      "(line 1168,col 9)-(line 1168,col 63)",
+      "(line 1169,col 9)-(line 1169,col 75)",
+      "(line 1170,col 9)-(line 1170,col 26)",
+      "(line 1171,col 9)-(line 1183,col 9)",
+      "(line 1184,col 9)-(line 1184,col 29)",
+      "(line 1187,col 9)-(line 1192,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneEqualWithMATCHES()",
+    "snippet": "@Test public void testIsDoubleMetaphoneEqualWithMATCHES(){\n  this.validateFixture(MATCHES);\n  for (int i\u003d0; i \u003c MATCHES.length; i++) {\n    final String name0\u003dMATCHES[i][0];\n    final String name1\u003dMATCHES[i][1];\n    final boolean match1\u003dthis.getStringEncoder().isDoubleMetaphoneEqual(name0,name1,false);\n    final boolean match2\u003dthis.getStringEncoder().isDoubleMetaphoneEqual(name0,name1,true);\n    if (match1 \u003d\u003d false \u0026\u0026 match2 \u003d\u003d false) {\n      fail(\"Expected match [\" + i + \"] \"+ name0+ \" and \"+ name1);\n    }\n  }\n}",
+    "begin_line": 1196,
+    "end_line": 1207,
+    "comment": "",
+    "child_ranges": [
+      "(line 1197,col 9)-(line 1197,col 38)",
+      "(line 1198,col 9)-(line 1206,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testIsDoubleMetaphoneNotEqual()",
+    "snippet": "@Test public void testIsDoubleMetaphoneNotEqual(){\n  doubleMetaphoneNotEqualTest(false);\n  doubleMetaphoneNotEqualTest(true);\n}",
+    "begin_line": 1210,
+    "end_line": 1213,
+    "comment": "",
+    "child_ranges": [
+      "(line 1211,col 9)-(line 1211,col 43)",
+      "(line 1212,col 9)-(line 1212,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testNTilde()",
+    "snippet": "@Test public void testNTilde(){\n  assertTrue(this.getStringEncoder().isDoubleMetaphoneEqual(\"\\u00f1\",\"N\"));\n}",
+    "begin_line": 1216,
+    "end_line": 1218,
+    "comment": "",
+    "child_ranges": [
+      "(line 1217,col 9)-(line 1217,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.testSetMaxCodeLength()",
+    "snippet": "@Test public void testSetMaxCodeLength(){\n  final String value\u003d\"jumped\";\n  final DoubleMetaphone doubleMetaphone\u003dnew DoubleMetaphone();\n  assertEquals(\"Default Max Code Length\",4,doubleMetaphone.getMaxCodeLen());\n  assertEquals(\"Default Primary\",\"JMPT\",doubleMetaphone.doubleMetaphone(value,false));\n  assertEquals(\"Default Alternate\",\"AMPT\",doubleMetaphone.doubleMetaphone(value,true));\n  doubleMetaphone.setMaxCodeLen(3);\n  assertEquals(\"Set Max Code Length\",3,doubleMetaphone.getMaxCodeLen());\n  assertEquals(\"Max\u003d3 Primary\",\"JMP\",doubleMetaphone.doubleMetaphone(value,false));\n  assertEquals(\"Max\u003d3 Alternate\",\"AMP\",doubleMetaphone.doubleMetaphone(value,true));\n}",
+    "begin_line": 1224,
+    "end_line": 1239,
+    "comment": "/** \n * Test setting maximum length\n */\n",
+    "child_ranges": [
+      "(line 1225,col 9)-(line 1225,col 38)",
+      "(line 1227,col 9)-(line 1227,col 70)",
+      "(line 1230,col 9)-(line 1230,col 84)",
+      "(line 1231,col 9)-(line 1231,col 97)",
+      "(line 1232,col 9)-(line 1232,col 96)",
+      "(line 1235,col 9)-(line 1235,col 41)",
+      "(line 1236,col 9)-(line 1236,col 80)",
+      "(line 1237,col 9)-(line 1237,col 94)",
+      "(line 1238,col 9)-(line 1238,col 93)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.language.DoubleMetaphoneTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/language/DoubleMetaphoneTest.java",
+    "signature": "org.apache.commons.codec.language.DoubleMetaphoneTest.validateFixture(java.lang.String[][])",
+    "snippet": "public void validateFixture(final String[][] pairs){\n  if (pairs.length \u003d\u003d 0) {\n    fail(\"Test fixture is empty\");\n  }\n  for (int i\u003d0; i \u003c pairs.length; i++) {\n    if (pairs[i].length !\u003d 2) {\n      fail(\"Error in test fixture in the data array at index \" + i);\n    }\n  }\n}",
+    "begin_line": 1241,
+    "end_line": 1250,
+    "comment": "",
+    "child_ranges": [
+      "(line 1242,col 9)-(line 1244,col 9)",
+      "(line 1245,col 9)-(line 1249,col 9)"
+    ]
+  }
 ]
