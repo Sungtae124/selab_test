@@ -83,7 +83,7 @@ public class TestSnippetGen {
                     }
                 }
 
-                String className = unitName.replace("/", ".").replace(".java", "");
+                String className = unitName.replace(".java", "").replace("/", ".");
                 String signature = className + "." + methodName + "(" + String.join(", ", paramTypes) + ")";
                 String name = currentClassName + "." + methodName + "#" + rawBeginLine;
 

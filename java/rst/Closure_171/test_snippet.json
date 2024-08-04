@@ -1,9 +1,9 @@
 [
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.getNumRepetitions()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNumRepetitions()",
     "snippet": "@Override public int getNumRepetitions(){\n  return 1;\n}",
     "begin_line": 56,
     "end_line": 58,
@@ -13,10 +13,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.visit(NodeTraversal, Node, Node)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.visit(NodeTraversal, Node, Node)",
     "snippet": "@Override public void visit(NodeTraversal t,Node n,Node parent){\n  Scope s\u003dt.getScope();\n  if (s.isGlobal()) {\n    globalScope\u003ds;\n  }\n else {\n    lastLocalScope\u003ds;\n  }\n}",
     "begin_line": 62,
     "end_line": 69,
@@ -27,10 +27,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.getProcessor(java.lang.Compiler)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getProcessor(java.lang.Compiler)",
     "snippet": "@Override public CompilerPass getProcessor(final Compiler compiler){\n  registry\u003dcompiler.getTypeRegistry();\n  return new CompilerPass(){\n    @Override public void process(    Node externs,    Node root){\n      MemoizedScopeCreator scopeCreator\u003dnew MemoizedScopeCreator(new TypedScopeCreator(compiler));\n      Scope topScope\u003dscopeCreator.createScope(root.getParent(),null);\n      (new TypeInferencePass(compiler,compiler.getReverseAbstractInterpreter(),topScope,scopeCreator)).process(externs,root);\n      NodeTraversal t\u003dnew NodeTraversal(compiler,callback,scopeCreator);\n      t.traverseRoots(Lists.newArrayList(externs,root));\n    }\n  }\n;\n}",
     "begin_line": 73,
     "end_line": 89,
@@ -41,10 +41,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.process(Node, Node)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.process(Node, Node)",
     "snippet": "@Override public void process(Node externs,Node root){\n  MemoizedScopeCreator scopeCreator\u003dnew MemoizedScopeCreator(new TypedScopeCreator(compiler));\n  Scope topScope\u003dscopeCreator.createScope(root.getParent(),null);\n  (new TypeInferencePass(compiler,compiler.getReverseAbstractInterpreter(),topScope,scopeCreator)).process(externs,root);\n  NodeTraversal t\u003dnew NodeTraversal(compiler,callback,scopeCreator);\n  t.traverseRoots(Lists.newArrayList(externs,root));\n}",
     "begin_line": 77,
     "end_line": 87,
@@ -58,10 +58,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testStubProperty()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubProperty()",
     "snippet": "public void testStubProperty(){\n  testSame(\"function Foo() {}; Foo.bar;\");\n  ObjectType foo\u003d(ObjectType)globalScope.getVar(\"Foo\").getType();\n  assertFalse(foo.hasProperty(\"bar\"));\n  Asserts.assertTypeEquals(registry.getNativeType(UNKNOWN_TYPE),foo.getPropertyType(\"bar\"));\n  Asserts.assertTypeCollectionEquals(Lists.newArrayList(foo),registry.getTypesWithProperty(\"bar\"));\n}",
     "begin_line": 91,
     "end_line": 99,
@@ -75,10 +75,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testConstructorProperty()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorProperty()",
     "snippet": "public void testConstructorProperty(){\n  testSame(\"var foo \u003d {};  foo.Bar \u003d function() {};\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.hasProperty(\"Bar\"));\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n  JSType fooBar\u003dfoo.getPropertyType(\"Bar\");\n  assertEquals(\"function (new:foo.Bar): undefined\",fooBar.toString());\n  Asserts.assertTypeCollectionEquals(Lists.newArrayList(foo),registry.getTypesWithProperty(\"Bar\"));\n}",
     "begin_line": 101,
     "end_line": 111,
@@ -94,10 +94,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPrototypePropertyMethodWithoutAnnotation()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPrototypePropertyMethodWithoutAnnotation()",
     "snippet": "public void testPrototypePropertyMethodWithoutAnnotation(){\n  testSame(\"var Foo \u003d function Foo() {};\" + \"var proto \u003d Foo.prototype \u003d {\" + \"   bar: function(a, b){}\"+ \"};\"+ \"proto.baz \u003d function(c) {};\"+ \"(function() { proto.baz \u003d function() {}; })();\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"Foo\",globalScope);\n  assertTrue(foo.hasProperty(\"prototype\"));\n  ObjectType fooProto\u003d(ObjectType)foo.getPropertyType(\"prototype\");\n  assertTrue(fooProto.hasProperty(\"bar\"));\n  assertEquals(\"function (?, ?): undefined\",fooProto.getPropertyType(\"bar\").toString());\n  assertTrue(fooProto.hasProperty(\"baz\"));\n  assertEquals(\"function (?): undefined\",fooProto.getPropertyType(\"baz\").toString());\n}",
     "begin_line": 113,
     "end_line": 131,
@@ -114,10 +114,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testEnumProperty()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumProperty()",
     "snippet": "public void testEnumProperty(){\n  testSame(\"var foo \u003d {};  foo.Bar \u003d {XXX: \u0027xxx\u0027};\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.hasProperty(\"Bar\"));\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n  assertTrue(foo.isPropertyTypeDeclared(\"Bar\"));\n  JSType fooBar\u003dfoo.getPropertyType(\"Bar\");\n  assertEquals(\"enum{foo.Bar}\",fooBar.toString());\n  Asserts.assertTypeCollectionEquals(Lists.newArrayList(foo),registry.getTypesWithProperty(\"Bar\"));\n}",
     "begin_line": 133,
     "end_line": 144,
@@ -134,10 +134,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty1()",
     "snippet": "public void testInferredProperty1(){\n  testSame(\"var foo \u003d {}; foo.Bar \u003d 3;\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 146,
     "end_line": 152,
@@ -151,10 +151,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty1a()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty1a()",
     "snippet": "public void testInferredProperty1a(){\n  testSame(\"var foo \u003d {};  foo.Bar \u003d 3;\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 154,
     "end_line": 160,
@@ -168,10 +168,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2()",
     "snippet": "public void testInferredProperty2(){\n  testSame(\"var foo \u003d { Bar: 3 };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 162,
     "end_line": 168,
@@ -185,10 +185,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty2b()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2b()",
     "snippet": "public void testInferredProperty2b(){\n  testSame(\"var foo \u003d {  Bar: 3 };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 170,
     "end_line": 176,
@@ -202,10 +202,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty2c()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty2c()",
     "snippet": "public void testInferredProperty2c(){\n  testSame(\"var foo \u003d {  Bar: 3 };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"function (): number\",foo.getPropertyType(\"Bar\").toString());\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 178,
     "end_line": 184,
@@ -219,10 +219,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty3()",
     "snippet": "public void testInferredProperty3(){\n  testSame(\"var foo \u003d {  get Bar() { return 3 } };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"?\",foo.getPropertyType(\"Bar\").toString());\n  assertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 186,
     "end_line": 192,
@@ -236,10 +236,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty4()",
     "snippet": "public void testInferredProperty4(){\n  testSame(\"var foo \u003d {  set Bar(a) {} };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"?\",foo.getPropertyType(\"Bar\").toString());\n  assertTrue(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 194,
     "end_line": 200,
@@ -253,10 +253,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty5()",
     "snippet": "public void testInferredProperty5(){\n  testSame(\"var foo \u003d {  get Bar() { return 3 } };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 202,
     "end_line": 208,
@@ -270,10 +270,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredProperty6()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredProperty6()",
     "snippet": "public void testInferredProperty6(){\n  testSame(\"var foo \u003d {  set Bar(a) {} };\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.toString(),foo.hasProperty(\"Bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"Bar\").toString());\n  assertFalse(foo.isPropertyTypeInferred(\"Bar\"));\n}",
     "begin_line": 210,
     "end_line": 216,
@@ -287,10 +287,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPrototypeInit()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPrototypeInit()",
     "snippet": "public void testPrototypeInit(){\n  testSame(\" var Foo \u003d function() {};\" + \"Foo.prototype \u003d {bar: 1}; var foo \u003d new Foo();\");\n  ObjectType foo\u003d(ObjectType)findNameType(\"foo\",globalScope);\n  assertTrue(foo.hasProperty(\"bar\"));\n  assertEquals(\"number\",foo.getPropertyType(\"bar\").toString());\n  assertTrue(foo.isPropertyTypeInferred(\"bar\"));\n}",
     "begin_line": 218,
     "end_line": 225,
@@ -304,10 +304,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBogusPrototypeInit()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBogusPrototypeInit()",
     "snippet": "public void testBogusPrototypeInit(){\n  testSame(\" var goog \u003d {}; \" + \"goog.F \u003d {};  goog.F.prototype \u003d {};\" + \" goog.F \u003d function() {};\");\n}",
     "begin_line": 227,
     "end_line": 232,
@@ -317,10 +317,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty1()",
     "snippet": "public void testInferredPrototypeProperty1(){\n  testSame(\" var Foo \u003d function() {};\" + \"Foo.prototype.bar \u003d 1; var x \u003d new Foo();\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertTrue(x.hasProperty(\"bar\"));\n  assertEquals(\"number\",x.getPropertyType(\"bar\").toString());\n  assertTrue(x.isPropertyTypeInferred(\"bar\"));\n}",
     "begin_line": 234,
     "end_line": 242,
@@ -334,10 +334,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredPrototypeProperty2()",
     "snippet": "public void testInferredPrototypeProperty2(){\n  testSame(\" var Foo \u003d function() {};\" + \"Foo.prototype \u003d {bar: 1}; var x \u003d new Foo();\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertTrue(x.hasProperty(\"bar\"));\n  assertEquals(\"number\",x.getPropertyType(\"bar\").toString());\n  assertTrue(x.isPropertyTypeInferred(\"bar\"));\n}",
     "begin_line": 244,
     "end_line": 252,
@@ -351,10 +351,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testEnum()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnum()",
     "snippet": "public void testEnum(){\n  testSame(\" var Foo \u003d {BAR: 1}; var f \u003d Foo;\");\n  ObjectType f\u003d(ObjectType)findNameType(\"f\",globalScope);\n  assertTrue(f.hasProperty(\"BAR\"));\n  assertEquals(\"Foo.\u003cnumber\u003e\",f.getPropertyType(\"BAR\").toString());\n  assertTrue(f instanceof EnumType);\n}",
     "begin_line": 254,
     "end_line": 260,
@@ -368,10 +368,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testEnumElement()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumElement()",
     "snippet": "public void testEnumElement(){\n  testSame(\" var Foo \u003d {BAR: 1}; var f \u003d Foo;\");\n  Var bar\u003dglobalScope.getVar(\"Foo.BAR\");\n  assertNotNull(bar);\n  assertEquals(\"Foo.\u003cnumber\u003e\",bar.getType().toString());\n}",
     "begin_line": 262,
     "end_line": 267,
@@ -384,10 +384,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testNamespacedEnum()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedEnum()",
     "snippet": "public void testNamespacedEnum(){\n  testSame(\"var goog \u003d {}; goog.ui \u003d {};\" + \"goog.ui.Zippy \u003d function() {};\" + \"goog.ui.Zippy.EventType \u003d { TOGGLE: \u0027toggle\u0027 };\"+ \"var x \u003d goog.ui.Zippy.EventType;\"+ \"var y \u003d goog.ui.Zippy.EventType.TOGGLE;\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertTrue(x.isEnumType());\n  assertTrue(x.hasProperty(\"TOGGLE\"));\n  assertEquals(\"enum{goog.ui.Zippy.EventType}\",x.getReferenceName());\n  ObjectType y\u003d(ObjectType)findNameType(\"y\",globalScope);\n  assertTrue(y.isSubtype(getNativeType(STRING_TYPE)));\n  assertTrue(y.isEnumElementType());\n  assertEquals(\"goog.ui.Zippy.EventType\",y.getReferenceName());\n}",
     "begin_line": 269,
     "end_line": 285,
@@ -405,10 +405,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testEnumAlias()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testEnumAlias()",
     "snippet": "public void testEnumAlias(){\n  testSame(\" var Foo \u003d {BAR: 1}; \" + \" var FooAlias \u003d Foo; var f \u003d FooAlias;\");\n  assertEquals(\"Foo.\u003cnumber\u003e\",registry.getType(\"FooAlias\").toString());\n  Asserts.assertTypeEquals(registry.getType(\"FooAlias\"),registry.getType(\"Foo\"));\n  ObjectType f\u003d(ObjectType)findNameType(\"f\",globalScope);\n  assertTrue(f.hasProperty(\"BAR\"));\n  assertEquals(\"Foo.\u003cnumber\u003e\",f.getPropertyType(\"BAR\").toString());\n  assertTrue(f instanceof EnumType);\n}",
     "begin_line": 287,
     "end_line": 300,
@@ -424,10 +424,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testNamespacesEnumAlias()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacesEnumAlias()",
     "snippet": "public void testNamespacesEnumAlias(){\n  testSame(\"var goog \u003d {};  goog.Foo \u003d {BAR: 1}; \" + \" goog.FooAlias \u003d goog.Foo;\");\n  assertEquals(\"goog.Foo.\u003cnumber\u003e\",registry.getType(\"goog.FooAlias\").toString());\n  Asserts.assertTypeEquals(registry.getType(\"goog.Foo\"),registry.getType(\"goog.FooAlias\"));\n}",
     "begin_line": 302,
     "end_line": 310,
@@ -439,10 +439,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStub()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStub()",
     "snippet": "public void testCollectedFunctionStub(){\n  testSame(\" function f() { \" + \"   this.foo;\" + \"}\"+ \"var x \u003d new f();\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"f\",x.toString());\n  assertTrue(x.hasProperty(\"foo\"));\n  assertEquals(\"function (this:f): number\",x.getPropertyType(\"foo\").toString());\n  assertFalse(x.isPropertyTypeInferred(\"foo\"));\n}",
     "begin_line": 312,
     "end_line": 324,
@@ -457,10 +457,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStubLocal()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedFunctionStubLocal()",
     "snippet": "public void testCollectedFunctionStubLocal(){\n  testSame(\"(function() {\" + \" function f() { \" + \"   this.foo;\"+ \"}\"+ \"var x \u003d new f();\"+ \"});\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",lastLocalScope);\n  assertEquals(\"f\",x.toString());\n  assertTrue(x.hasProperty(\"foo\"));\n  assertEquals(\"function (this:f): number\",x.getPropertyType(\"foo\").toString());\n  assertFalse(x.isPropertyTypeInferred(\"foo\"));\n}",
     "begin_line": 326,
     "end_line": 340,
@@ -475,10 +475,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStub()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStub()",
     "snippet": "public void testNamespacedFunctionStub(){\n  testSame(\"var goog \u003d {};\" + \" goog.foo;\");\n  ObjectType goog\u003d(ObjectType)findNameType(\"goog\",globalScope);\n  assertTrue(goog.hasProperty(\"foo\"));\n  assertEquals(\"function (number): ?\",goog.getPropertyType(\"foo\").toString());\n  assertTrue(goog.isPropertyTypeDeclared(\"foo\"));\n  Asserts.assertTypeEquals(globalScope.getVar(\"goog.foo\").getType(),goog.getPropertyType(\"foo\"));\n}",
     "begin_line": 342,
     "end_line": 355,
@@ -493,10 +493,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStubLocal()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedFunctionStubLocal()",
     "snippet": "public void testNamespacedFunctionStubLocal(){\n  testSame(\"(function() {\" + \"var goog \u003d {};\" + \" goog.foo;\"+ \"});\");\n  ObjectType goog\u003d(ObjectType)findNameType(\"goog\",lastLocalScope);\n  assertTrue(goog.hasProperty(\"foo\"));\n  assertEquals(\"function (number): ?\",goog.getPropertyType(\"foo\").toString());\n  assertTrue(goog.isPropertyTypeDeclared(\"foo\"));\n  Asserts.assertTypeEquals(lastLocalScope.getVar(\"goog.foo\").getType(),goog.getPropertyType(\"foo\"));\n}",
     "begin_line": 357,
     "end_line": 372,
@@ -511,10 +511,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testCollectedCtorProperty()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testCollectedCtorProperty()",
     "snippet": "public void testCollectedCtorProperty(){\n  testSame(\" function f() { \" + \"   this.foo \u003d 3;\" + \"}\"+ \"var x \u003d new f();\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"f\",x.toString());\n  assertTrue(x.hasProperty(\"foo\"));\n  assertEquals(\"number\",x.getPropertyType(\"foo\").toString());\n  assertFalse(x.isPropertyTypeInferred(\"foo\"));\n}",
     "begin_line": 374,
     "end_line": 385,
@@ -529,10 +529,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass1()",
     "snippet": "public void testPropertyOnUnknownSuperClass1(){\n  testSame(\"var goog \u003d this.foo();\" + \"\" + \"function Foo() {}\"+ \"Foo.prototype.bar \u003d 1;\"+ \"var x \u003d new Foo();\",RhinoErrorReporter.TYPE_PARSE_ERROR);\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"Foo\",x.toString());\n  assertTrue(x.getImplicitPrototype().hasOwnProperty(\"bar\"));\n  assertEquals(\"?\",x.getPropertyType(\"bar\").toString());\n  assertTrue(x.isPropertyTypeInferred(\"bar\"));\n}",
     "begin_line": 387,
     "end_line": 400,
@@ -547,10 +547,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass2()",
     "snippet": "public void testPropertyOnUnknownSuperClass2(){\n  testSame(\"var goog \u003d this.foo();\" + \"\" + \"function Foo() {}\"+ \"Foo.prototype \u003d {bar: 1};\"+ \"var x \u003d new Foo();\",RhinoErrorReporter.TYPE_PARSE_ERROR);\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"Foo\",x.toString());\n  assertEquals(\"Foo.prototype\",x.getImplicitPrototype().toString());\n  assertTrue(x.getImplicitPrototype().hasOwnProperty(\"bar\"));\n  assertEquals(\"?\",x.getPropertyType(\"bar\").toString());\n  assertTrue(x.isPropertyTypeInferred(\"bar\"));\n}",
     "begin_line": 402,
     "end_line": 416,
@@ -566,10 +566,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testMethodBeforeFunction1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testMethodBeforeFunction1()",
     "snippet": "public void testMethodBeforeFunction1() throws Exception {\n  testSame(\"var y \u003d Window.prototype;\" + \"Window.prototype.alert \u003d function(message) {};\" + \" function Window() {}\\n\"+ \"var window \u003d new Window(); \\n\"+ \"var x \u003d window;\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"Window\",x.toString());\n  assertTrue(x.getImplicitPrototype().hasOwnProperty(\"alert\"));\n  assertEquals(\"function (this:Window, ?): undefined\",x.getPropertyType(\"alert\").toString());\n  assertTrue(x.isPropertyTypeDeclared(\"alert\"));\n  ObjectType y\u003d(ObjectType)findNameType(\"y\",globalScope);\n  assertEquals(\"function (this:Window, ?): undefined\",y.getPropertyType(\"alert\").toString());\n}",
     "begin_line": 418,
     "end_line": 435,
@@ -586,10 +586,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testMethodBeforeFunction2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testMethodBeforeFunction2()",
     "snippet": "public void testMethodBeforeFunction2() throws Exception {\n  testSame(\"var y \u003d Window.prototype;\" + \"Window.prototype \u003d {alert: function(message) {}};\" + \" function Window() {}\\n\"+ \"var window \u003d new Window(); \\n\"+ \"var x \u003d window;\");\n  ObjectType x\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(\"Window\",x.toString());\n  assertTrue(x.getImplicitPrototype().hasOwnProperty(\"alert\"));\n  assertEquals(\"function (this:Window, ?): undefined\",x.getPropertyType(\"alert\").toString());\n  assertFalse(x.isPropertyTypeDeclared(\"alert\"));\n  ObjectType y\u003d(ObjectType)findNameType(\"y\",globalScope);\n  assertEquals(\"function (this:Window, ?): undefined\",y.getPropertyType(\"alert\").toString());\n}",
     "begin_line": 437,
     "end_line": 454,
@@ -606,10 +606,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testAddMethodsPrototypeTwoWays()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAddMethodsPrototypeTwoWays()",
     "snippet": "public void testAddMethodsPrototypeTwoWays() throws Exception {\n  testSame(\"function A() {}\" + \"A.prototype \u003d {m1: 5, m2: true};\" + \"A.prototype.m3 \u003d \u0027third property!\u0027;\"+ \"var x \u003d new A();\");\n  ObjectType instanceType\u003d(ObjectType)findNameType(\"x\",globalScope);\n  assertEquals(getNativeObjectType(OBJECT_TYPE).getPropertiesCount() + 3,instanceType.getPropertiesCount());\n  Asserts.assertTypeEquals(getNativeType(NUMBER_TYPE),instanceType.getPropertyType(\"m1\"));\n  Asserts.assertTypeEquals(getNativeType(BOOLEAN_TYPE),instanceType.getPropertyType(\"m2\"));\n  Asserts.assertTypeEquals(getNativeType(STRING_TYPE),instanceType.getPropertyType(\"m3\"));\n  assertFalse(instanceType.hasOwnProperty(\"m1\"));\n  assertFalse(instanceType.hasOwnProperty(\"m2\"));\n  assertFalse(instanceType.hasOwnProperty(\"m3\"));\n  ObjectType proto1\u003dinstanceType.getImplicitPrototype();\n  assertTrue(proto1.hasOwnProperty(\"m1\"));\n  assertTrue(proto1.hasOwnProperty(\"m2\"));\n  assertTrue(proto1.hasOwnProperty(\"m3\"));\n  ObjectType proto2\u003dproto1.getImplicitPrototype();\n  assertFalse(proto2.hasProperty(\"m1\"));\n  assertFalse(proto2.hasProperty(\"m2\"));\n  assertFalse(proto2.hasProperty(\"m3\"));\n}",
     "begin_line": 456,
     "end_line": 490,
@@ -635,10 +635,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredVar()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredVar()",
     "snippet": "public void testInferredVar() throws Exception {\n  testSame(\"var x \u003d 3; x \u003d \u0027x\u0027; x \u003d true;\");\n  Var x\u003dglobalScope.getVar(\"x\");\n  assertEquals(\"(boolean|number|string)\",x.getType().toString());\n  assertTrue(x.isTypeInferred());\n}",
     "begin_line": 492,
     "end_line": 498,
@@ -651,10 +651,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredVar()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredVar()",
     "snippet": "public void testDeclaredVar() throws Exception {\n  testSame(\" var x \u003d 3; var y \u003d x;\");\n  Var x\u003dglobalScope.getVar(\"x\");\n  assertEquals(\"(null|number)\",x.getType().toString());\n  assertFalse(x.isTypeInferred());\n  JSType y\u003dfindNameType(\"y\",globalScope);\n  assertEquals(\"(null|number)\",y.toString());\n}",
     "begin_line": 500,
     "end_line": 509,
@@ -669,10 +669,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertiesOnInterface()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertiesOnInterface()",
     "snippet": "public void testPropertiesOnInterface() throws Exception {\n  testSame(\" var I \u003d function() {};\" + \" I.prototype.bar;\" + \"I.prototype.baz \u003d function(){};\");\n  Var i\u003dglobalScope.getVar(\"I\");\n  assertEquals(\"function (this:I): ?\",i.getType().toString());\n  assertTrue(i.getType().isInterface());\n  ObjectType iPrototype\u003d(ObjectType)((ObjectType)i.getType()).getPropertyType(\"prototype\");\n  assertEquals(\"I.prototype\",iPrototype.toString());\n  assertTrue(iPrototype.isFunctionPrototypeType());\n  assertEquals(\"number\",iPrototype.getPropertyType(\"bar\").toString());\n  assertEquals(\"function (this:I): undefined\",iPrototype.getPropertyType(\"baz\").toString());\n  Asserts.assertTypeEquals(iPrototype,globalScope.getVar(\"I.prototype\").getType());\n}",
     "begin_line": 511,
     "end_line": 530,
@@ -691,10 +691,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertiesOnInterface2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertiesOnInterface2()",
     "snippet": "public void testPropertiesOnInterface2() throws Exception {\n  testSame(\" var I \u003d function() {};\" + \"I.prototype \u003d {baz: function(){}};\" + \" I.prototype.bar;\");\n  Var i\u003dglobalScope.getVar(\"I\");\n  assertEquals(\"function (this:I): ?\",i.getType().toString());\n  assertTrue(i.getType().isInterface());\n  ObjectType iPrototype\u003d(ObjectType)((ObjectType)i.getType()).getPropertyType(\"prototype\");\n  assertEquals(\"I.prototype\",iPrototype.toString());\n  assertTrue(iPrototype.isFunctionPrototypeType());\n  assertEquals(\"number\",iPrototype.getPropertyType(\"bar\").toString());\n  assertEquals(\"function (this:I): undefined\",iPrototype.getPropertyType(\"baz\").toString());\n  assertEquals(iPrototype,globalScope.getVar(\"I.prototype\").getType());\n}",
     "begin_line": 532,
     "end_line": 552,
@@ -713,10 +713,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testStubsInExterns()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns()",
     "snippet": "public void testStubsInExterns(){\n  testSame(\" function Extern() {}\" + \"Extern.prototype.bar;\" + \"var e \u003d new Extern(); e.baz;\",\" function Foo() {}\" + \"Foo.prototype.bar;\" + \"var f \u003d new Foo(); f.baz;\",null);\n  ObjectType e\u003d(ObjectType)globalScope.getVar(\"e\").getType();\n  assertEquals(\"?\",e.getPropertyType(\"bar\").toString());\n  assertEquals(\"?\",e.getPropertyType(\"baz\").toString());\n  ObjectType f\u003d(ObjectType)globalScope.getVar(\"f\").getType();\n  assertEquals(\"?\",f.getPropertyType(\"bar\").toString());\n  assertFalse(f.hasProperty(\"baz\"));\n}",
     "begin_line": 556,
     "end_line": 572,
@@ -732,10 +732,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testStubsInExterns2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns2()",
     "snippet": "public void testStubsInExterns2(){\n  testSame(\" function Extern() {}\" + \" var myExtern;\" + \" myExtern.foo;\",\"\",null);\n  JSType e\u003dglobalScope.getVar(\"myExtern\").getType();\n  assertEquals(\"(Extern|null)\",e.toString());\n  ObjectType externType\u003d(ObjectType)e.restrictByNotNullOrUndefined();\n  assertTrue(globalScope.getRootNode().toStringTree(),externType.hasOwnProperty(\"foo\"));\n  assertTrue(externType.isPropertyTypeDeclared(\"foo\"));\n  assertEquals(\"number\",externType.getPropertyType(\"foo\").toString());\n  assertTrue(externType.isPropertyInExterns(\"foo\"));\n}",
     "begin_line": 574,
     "end_line": 590,
@@ -752,10 +752,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testStubsInExterns3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns3()",
     "snippet": "public void testStubsInExterns3(){\n  testSame(\" myExtern.foo;\" + \" var myExtern;\" + \" function Extern() {}\",\"\",null);\n  JSType e\u003dglobalScope.getVar(\"myExtern\").getType();\n  assertEquals(\"(Extern|null)\",e.toString());\n  ObjectType externType\u003d(ObjectType)e.restrictByNotNullOrUndefined();\n  assertTrue(globalScope.getRootNode().toStringTree(),externType.hasOwnProperty(\"foo\"));\n  assertTrue(externType.isPropertyTypeDeclared(\"foo\"));\n  assertEquals(\"number\",externType.getPropertyType(\"foo\").toString());\n  assertTrue(externType.isPropertyInExterns(\"foo\"));\n}",
     "begin_line": 592,
     "end_line": 608,
@@ -772,10 +772,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testStubsInExterns4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testStubsInExterns4()",
     "snippet": "public void testStubsInExterns4(){\n  testSame(\"Extern.prototype.foo;\" + \" function Extern() {}\",\"\",null);\n  JSType e\u003dglobalScope.getVar(\"Extern\").getType();\n  assertEquals(\"function (new:Extern): ?\",e.toString());\n  ObjectType externProto\u003d((FunctionType)e).getPrototype();\n  assertTrue(globalScope.getRootNode().toStringTree(),externProto.hasOwnProperty(\"foo\"));\n  assertTrue(externProto.isPropertyTypeInferred(\"foo\"));\n  assertEquals(\"?\",externProto.getPropertyType(\"foo\").toString());\n  assertTrue(externProto.isPropertyInExterns(\"foo\"));\n}",
     "begin_line": 610,
     "end_line": 625,
@@ -792,10 +792,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyInExterns1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns1()",
     "snippet": "public void testPropertyInExterns1(){\n  testSame(\" function Extern() {}\" + \" var extern;\" + \" extern.one;\",\" function Normal() {}\" + \" var normal;\" + \" normal.one;\",null);\n  JSType e\u003dglobalScope.getVar(\"Extern\").getType();\n  ObjectType externInstance\u003d((FunctionType)e).getInstanceType();\n  assertTrue(externInstance.hasOwnProperty(\"one\"));\n  assertTrue(externInstance.isPropertyTypeDeclared(\"one\"));\n  assertEquals(\"function (): number\",externInstance.getPropertyType(\"one\").toString());\n  JSType n\u003dglobalScope.getVar(\"Normal\").getType();\n  ObjectType normalInstance\u003d((FunctionType)n).getInstanceType();\n  assertFalse(normalInstance.hasOwnProperty(\"one\"));\n}",
     "begin_line": 627,
     "end_line": 646,
@@ -813,10 +813,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyInExterns2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns2()",
     "snippet": "public void testPropertyInExterns2(){\n  testSame(\" var extern;\" + \" extern.one;\",\" var normal;\" + \" normal.one;\",null);\n  JSType e\u003dglobalScope.getVar(\"extern\").getType();\n  assertFalse(e.dereference().hasOwnProperty(\"one\"));\n  JSType normal\u003dglobalScope.getVar(\"normal\").getType();\n  assertFalse(normal.dereference().hasOwnProperty(\"one\"));\n}",
     "begin_line": 648,
     "end_line": 660,
@@ -830,10 +830,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyInExterns3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyInExterns3()",
     "snippet": "public void testPropertyInExterns3(){\n  testSame(\" function Object(x) {}\" + \" Object.one;\",\"\",null);\n  ObjectType obj\u003dglobalScope.getVar(\"Object\").getType().dereference();\n  assertTrue(obj.hasOwnProperty(\"one\"));\n  assertEquals(\"number\",obj.getPropertyType(\"one\").toString());\n}",
     "begin_line": 662,
     "end_line": 670,
@@ -846,10 +846,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTypedStubsInExterns()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTypedStubsInExterns()",
     "snippet": "public void testTypedStubsInExterns(){\n  testSame(\" \" + \"function Function(var_args) {}\" + \" Function.prototype.apply;\",\"var f \u003d new Function();\",null);\n  ObjectType f\u003d(ObjectType)globalScope.getVar(\"f\").getType();\n  assertEquals(\"function (?\u003d, (Object|null)\u003d): ?\",f.getPropertyType(\"apply\").toString());\n  FunctionType func\u003d(FunctionType)globalScope.getVar(\"Function\").getType();\n  assertEquals(\"Function\",func.getPrototype().getPropertyType(\"apply\").toString());\n}",
     "begin_line": 672,
     "end_line": 692,
@@ -863,10 +863,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTypesInExterns()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTypesInExterns()",
     "snippet": "public void testTypesInExterns() throws Exception {\n  testSame(CompilerTypeTestCase.DEFAULT_EXTERNS,\"\",null);\n  Var v\u003dglobalScope.getVar(\"Object\");\n  FunctionType obj\u003d(FunctionType)v.getType();\n  assertEquals(\"function (new:Object, *\u003d): ?\",obj.toString());\n  assertNotNull(v.getNode());\n  assertNotNull(v.input);\n}",
     "begin_line": 694,
     "end_line": 704,
@@ -881,10 +881,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnInstanceType()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnInstanceType()",
     "snippet": "public void testPropertyDeclarationOnInstanceType(){\n  testSame(\" var a \u003d {};\" + \" a.name \u003d 0;\");\n  assertEquals(\"number\",globalScope.getVar(\"a.name\").getType().toString());\n  ObjectType a\u003d(ObjectType)(globalScope.getVar(\"a\").getType());\n  assertFalse(a.hasProperty(\"name\"));\n  assertFalse(getNativeObjectType(OBJECT_TYPE).hasProperty(\"name\"));\n}",
     "begin_line": 706,
     "end_line": 716,
@@ -898,10 +898,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnRecordType()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyDeclarationOnRecordType()",
     "snippet": "public void testPropertyDeclarationOnRecordType(){\n  testSame(\" var a \u003d {foo: 3};\" + \" a.name \u003d 0;\");\n  assertEquals(\"number\",globalScope.getVar(\"a.name\").getType().toString());\n  ObjectType a\u003d(ObjectType)(globalScope.getVar(\"a\").getType());\n  assertEquals(\"{foo: number}\",a.toString());\n  assertFalse(a.hasProperty(\"name\"));\n}",
     "begin_line": 718,
     "end_line": 728,
@@ -915,10 +915,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testGlobalThis1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalThis1()",
     "snippet": "public void testGlobalThis1(){\n  testSame(\" function Window() {}\" + \"Window.prototype.alert \u003d function() {};\" + \"var x \u003d this;\");\n  ObjectType x\u003d(ObjectType)(globalScope.getVar(\"x\").getType());\n  FunctionType windowCtor\u003d(FunctionType)(globalScope.getVar(\"Window\").getType());\n  assertEquals(\"global this\",x.toString());\n  assertTrue(x.isSubtype(windowCtor.getInstanceType()));\n  assertFalse(x.isEquivalentTo(windowCtor.getInstanceType()));\n  assertTrue(x.hasProperty(\"alert\"));\n}",
     "begin_line": 730,
     "end_line": 743,
@@ -934,10 +934,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testGlobalThis2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalThis2()",
     "snippet": "public void testGlobalThis2(){\n  testSame(\" function Window() {}\" + \"Window.prototype \u003d {alert: function() {}};\" + \"var x \u003d this;\");\n  ObjectType x\u003d(ObjectType)(globalScope.getVar(\"x\").getType());\n  FunctionType windowCtor\u003d(FunctionType)(globalScope.getVar(\"Window\").getType());\n  assertEquals(\"global this\",x.toString());\n  assertTrue(x.isSubtype(windowCtor.getInstanceType()));\n  assertFalse(x.isEquivalentTo(windowCtor.getInstanceType()));\n  assertTrue(x.hasProperty(\"alert\"));\n}",
     "begin_line": 745,
     "end_line": 758,
@@ -953,10 +953,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testObjectLiteralCast()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testObjectLiteralCast()",
     "snippet": "public void testObjectLiteralCast(){\n  testSame(\" A.B \u003d function() {}\\n\" + \"A.B.prototype.isEnabled \u003d true;\\n\" + \"goog.reflect.object(A.B, {isEnabled: 3})\\n\"+ \"var x \u003d (new A.B()).isEnabled;\");\n  assertEquals(\"A.B\",findTokenType(Token.OBJECTLIT,globalScope).toString());\n  assertEquals(\"boolean\",findNameType(\"x\",globalScope).toString());\n}",
     "begin_line": 760,
     "end_line": 772,
@@ -968,10 +968,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast1()",
     "snippet": "public void testBadObjectLiteralCast1(){\n  testSame(\" A.B \u003d function() {}\\n\" + \"goog.reflect.object(A.B, 1)\",ClosureCodingConvention.OBJECTLIT_EXPECTED);\n}",
     "begin_line": 774,
     "end_line": 778,
@@ -981,10 +981,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadObjectLiteralCast2()",
     "snippet": "public void testBadObjectLiteralCast2(){\n  testSame(\"goog.reflect.object(A.B, {})\",TypedScopeCreator.CONSTRUCTOR_EXPECTED);\n}",
     "begin_line": 780,
     "end_line": 783,
@@ -994,10 +994,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testConstructorNode()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorNode()",
     "snippet": "public void testConstructorNode(){\n  testSame(\"var goog \u003d {};  goog.Foo \u003d function() {};\");\n  ObjectType ctor\u003d(ObjectType)(findNameType(\"goog.Foo\",globalScope));\n  assertNotNull(ctor);\n  assertTrue(ctor.isConstructor());\n  assertEquals(\"function (new:goog.Foo): undefined\",ctor.toString());\n}",
     "begin_line": 785,
     "end_line": 792,
@@ -1011,10 +1011,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testForLoopIntegration()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testForLoopIntegration()",
     "snippet": "public void testForLoopIntegration(){\n  testSame(\"var y \u003d 3; for (var x \u003d true; x; y \u003d x) {}\");\n  Var y\u003dglobalScope.getVar(\"y\");\n  assertTrue(y.isTypeInferred());\n  assertEquals(\"(boolean|number)\",y.getType().toString());\n}",
     "begin_line": 794,
     "end_line": 800,
@@ -1027,10 +1027,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testConstructorAlias()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testConstructorAlias()",
     "snippet": "public void testConstructorAlias(){\n  testSame(\" var Foo \u003d function() {};\" + \" var FooAlias \u003d Foo;\");\n  assertEquals(\"Foo\",registry.getType(\"FooAlias\").toString());\n  Asserts.assertTypeEquals(registry.getType(\"Foo\"),registry.getType(\"FooAlias\"));\n}",
     "begin_line": 802,
     "end_line": 808,
@@ -1042,10 +1042,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testNamespacedConstructorAlias()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testNamespacedConstructorAlias()",
     "snippet": "public void testNamespacedConstructorAlias(){\n  testSame(\"var goog \u003d {};\" + \" goog.Foo \u003d function() {};\" + \" goog.FooAlias \u003d goog.Foo;\");\n  assertEquals(\"goog.Foo\",registry.getType(\"goog.FooAlias\").toString());\n  Asserts.assertTypeEquals(registry.getType(\"goog.Foo\"),registry.getType(\"goog.FooAlias\"));\n}",
     "begin_line": 810,
     "end_line": 818,
@@ -1057,10 +1057,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType1()",
     "snippet": "public void testTemplateType1(){\n  testSame(\"\\n\"+ \"function bind(fn, thisObj) {}\"+ \"\\n\"+ \"function Foo() {}\\n\"+ \"\\n\"+ \"Foo.prototype.baz \u003d function() {};\\n\"+ \"bind(function() { var g \u003d this; var f \u003d this.baz(); }, new Foo());\");\n  assertEquals(\"Foo\",findNameType(\"g\",lastLocalScope).toString());\n  assertEquals(\"number\",findNameType(\"f\",lastLocalScope).toString());\n}",
     "begin_line": 820,
     "end_line": 835,
@@ -1072,10 +1072,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2()",
     "snippet": "public void testTemplateType2(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var val \u003d \u0027hi\u0027;\\n\"+ \"var result \u003d f(val);\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 837,
     "end_line": 851,
@@ -1086,10 +1086,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType2a()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2a()",
     "snippet": "public void testTemplateType2a(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var val \u003d \u0027hi\u0027;\\n\"+ \"var result \u003d f(val);\");\n  assertEquals(\"(string|undefined)\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 853,
     "end_line": 868,
@@ -1100,10 +1100,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType2b()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType2b()",
     "snippet": "public void testTemplateType2b(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var val \u003d \u0027hi\u0027;\\n\"+ \"var result \u003d f(val);\");\n  assertEquals(\"(string|undefined)\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 870,
     "end_line": 885,
@@ -1114,10 +1114,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType3()",
     "snippet": "public void testTemplateType3(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var val1 \u003d \u0027hi\u0027;\\n\"+ \"var result1 \u003d f(val1);\"+ \"\\n\"+ \"var val2 \u003d 0;\\n\"+ \"var result2 \u003d f(val2);\");\n  assertEquals(\"string\",findNameType(\"result1\",globalScope).toString());\n  assertEquals(\"number\",findNameType(\"result2\",globalScope).toString());\n}",
     "begin_line": 887,
     "end_line": 906,
@@ -1129,10 +1129,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4()",
     "snippet": "public void testTemplateType4(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"(function () {var result \u003d f(arr);})();\");\n  JSType resultType\u003dfindNameType(\"result\",lastLocalScope);\n  assertEquals(\"Array.\u003cstring\u003e\",resultType.toString());\n}",
     "begin_line": 908,
     "end_line": 924,
@@ -1144,10 +1144,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType4a()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4a()",
     "snippet": "public void testTemplateType4a(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var g \u003d function(){return \u0027hi\u0027};\\n\"+ \"(function () {var result \u003d f(g);})();\");\n  JSType resultType\u003dfindNameType(\"result\",lastLocalScope);\n  assertEquals(\"string\",resultType.toString());\n}",
     "begin_line": 926,
     "end_line": 942,
@@ -1159,10 +1159,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType4b()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType4b()",
     "snippet": "public void testTemplateType4b(){\n  testSame(\"\\n\"+ \"function f(x) {\\n\"+ \"  return x;\\n\"+ \"}\"+ \"\\n\"+ \"var g \u003d function(x){};\\n\"+ \"(function () {var result \u003d f(g);})();\");\n  JSType resultType\u003dfindNameType(\"result\",lastLocalScope);\n  assertEquals(\"string\",resultType.toString());\n}",
     "begin_line": 944,
     "end_line": 960,
@@ -1174,10 +1174,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType5()",
     "snippet": "public void testTemplateType5(){\n  testSame(\"\\n\"+ \"function f(arr) {\\n\"+ \"  return arr;\\n\"+ \"}\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"var result \u003d f(arr);\");\n  assertEquals(\"Array.\u003cstring\u003e\",findNameTypeStr(\"result\",globalScope));\n}",
     "begin_line": 962,
     "end_line": 977,
@@ -1188,10 +1188,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType6()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType6()",
     "snippet": "public void testTemplateType6(){\n  testSame(\"\\n\"+ \"function f(arr) {\\n\"+ \"  return arr;\\n\"+ \"}\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"var result \u003d f(arr);\");\n  assertEquals(\"Array.\u003cstring\u003e\",findNameTypeStr(\"result\",globalScope));\n}",
     "begin_line": 979,
     "end_line": 994,
@@ -1202,10 +1202,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType7()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7()",
     "snippet": "public void testTemplateType7(){\n  testSame(\"var goog \u003d {};\\n\" + \"goog.array \u003d {};\\n\" + \"\\n\"+ \"goog.array.filter \u003d function(arr, f, opt_obj) {\\n\"+ \"  var res \u003d [];\\n\"+ \"  for (var i \u003d 0; i \u003c arr.length; i++) {\\n\"+ \"     if (f.call(opt_obj, arr[i], i, arr)) {\\n\"+ \"        res.push(val);\\n\"+ \"     }\\n\"+ \"  }\\n\"+ \"  return res;\\n\"+ \"}\"+ \"\\n\"+ \"function Foo() {}\\n\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"var result \u003d goog.array.filter(arr,\"+ \"  function(a,b,c) {var self\u003dthis;}, new Foo());\");\n  assertEquals(\"Foo\",findNameType(\"self\",lastLocalScope).toString());\n  assertEquals(\"string\",findNameType(\"a\",lastLocalScope).toString());\n  assertEquals(\"number\",findNameType(\"b\",lastLocalScope).toString());\n  assertEquals(\"Array.\u003cstring\u003e\",findNameType(\"c\",lastLocalScope).toString());\n  assertEquals(\"Array.\u003cstring\u003e\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 997,
     "end_line": 1031,
@@ -1220,10 +1220,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType7b()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7b()",
     "snippet": "public void testTemplateType7b(){\n  testSame(\"var goog \u003d {};\\n\" + \"goog.array \u003d {};\\n\" + \"\\n\"+ \"goog.array.filter \u003d function(arr, f, opt_obj) {\\n\"+ \"  var res \u003d [];\\n\"+ \"  for (var i \u003d 0; i \u003c arr.length; i++) {\\n\"+ \"     if (f.call(opt_obj, arr[i], i, arr)) {\\n\"+ \"        res.push(val);\\n\"+ \"     }\\n\"+ \"  }\\n\"+ \"  return res;\\n\"+ \"}\"+ \"\\n\"+ \"function Foo() {}\\n\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"var result \u003d goog.array.filter(arr,\"+ \"  function(a,b,c) {var self\u003dthis;}, new Foo());\");\n  assertEquals(\"Foo\",findNameType(\"self\",lastLocalScope).toString());\n  assertEquals(\"string\",findNameType(\"a\",lastLocalScope).toString());\n  assertEquals(\"number\",findNameType(\"b\",lastLocalScope).toString());\n  assertEquals(\"Array.\u003cstring\u003e\",findNameType(\"c\",lastLocalScope).toString());\n  assertEquals(\"Array.\u003cstring\u003e\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1033,
     "end_line": 1067,
@@ -1238,10 +1238,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType7c()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType7c()",
     "snippet": "public void testTemplateType7c(){\n  testSame(\"var goog \u003d {};\\n\" + \"goog.array \u003d {};\\n\" + \"\\n\"+ \"goog.array.filter \u003d function(arr, f, opt_obj) {\\n\"+ \"  var res \u003d [];\\n\"+ \"  for (var i \u003d 0; i \u003c arr.length; i++) {\\n\"+ \"     if (f.call(opt_obj, arr[i], i, arr)) {\\n\"+ \"        res.push(val);\\n\"+ \"     }\\n\"+ \"  }\\n\"+ \"  return res;\\n\"+ \"}\"+ \"\\n\"+ \"function Foo() {}\\n\"+ \"\\n\"+ \"var arr \u003d [];\\n\"+ \"var result \u003d goog.array.filter(arr,\"+ \"  function(a,b,c) {var self\u003dthis;}, new Foo());\");\n  assertEquals(\"Foo\",findNameType(\"self\",lastLocalScope).toString());\n  assertEquals(\"string\",findNameType(\"a\",lastLocalScope).toString());\n  assertEquals(\"number\",findNameType(\"b\",lastLocalScope).toString());\n  assertEquals(\"(Array.\u003cstring\u003e|null)\",findNameType(\"c\",lastLocalScope).toString());\n  assertEquals(\"Array.\u003cstring\u003e\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1069,
     "end_line": 1103,
@@ -1256,10 +1256,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.disable_testTemplateType8()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.disable_testTemplateType8()",
     "snippet": "public void disable_testTemplateType8(){\n  testSame(\" NodeList \u003d function() {};\" + \" Arguments \u003d function() {};\" + \"var goog \u003d {};\"+ \"goog.array \u003d {};\"+ \"\\n\"+ \"goog.array.ArrayLike;\"+ \"\\n\"+ \"function bind(fn, thisObj) {}\"+ \"\\n\"+ \"function Foo() {}\\n\"+ \"\\n\"+ \"Foo.prototype.baz \u003d function() {};\\n\"+ \"bind(function() { var g \u003d this; var f \u003d this.baz(); }, new Foo());\");\n  assertEquals(\"T\",findNameType(\"g\",lastLocalScope).toString());\n  assertTrue(findNameType(\"g\",lastLocalScope).isEquivalentTo(registry.getType(\"Foo\")));\n  assertEquals(\"number\",findNameType(\"f\",lastLocalScope).toString());\n}",
     "begin_line": 1105,
     "end_line": 1132,
@@ -1272,10 +1272,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType9()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType9()",
     "snippet": "public void testTemplateType9(){\n  testSame(\"\\n\" + \"function Foo() {}\\n\" + \"\\n\"+ \"Foo.prototype.method \u003d function() {};\\n\"+ \"\\n\"+ \"function Bar() {}\\n\"+ \"\\n\"+ \"var g \u003d new Bar().method();\\n\");\n  assertEquals(\"Bar\",findNameType(\"g\",globalScope).toString());\n}",
     "begin_line": 1134,
     "end_line": 1152,
@@ -1286,10 +1286,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType10()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType10()",
     "snippet": "public void testTemplateType10(){\n  testSame(\"\\n\" + \"function Foo() {}\\n\" + \"\\n\"+ \"\\n\"+ \"Foo.prototype.method \u003d function() {var g \u003d this;};\\n\");\n  assertEquals(\"T\",findNameType(\"g\",lastLocalScope).toString());\n}",
     "begin_line": 1154,
     "end_line": 1169,
@@ -1300,10 +1300,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType11()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType11()",
     "snippet": "public void testTemplateType11(){\n  testSame(\"\\n\"+ \"var method \u003d function() {};\\n\"+ \"\\n\"+ \"function Bar() {}\\n\"+ \"\\n\"+ \"var g \u003d method().call(new Bar());\\n\");\n  assertEquals(\"?\",findNameType(\"g\",globalScope).toString());\n}",
     "begin_line": 1171,
     "end_line": 1187,
@@ -1314,10 +1314,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testTemplateType12()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testTemplateType12()",
     "snippet": "public void testTemplateType12(){\n  testSame(\"\\n\" + \"function Foo() {}\\n\" + \"\\n\"+ \"\\n\"+ \"Foo.prototype.method \u003d function() {var g \u003d this;};\\n\");\n  assertEquals(\"(Array.\u003cT\u003e|{length: number})\",findNameType(\"g\",lastLocalScope).toString());\n}",
     "begin_line": 1189,
     "end_line": 1202,
@@ -1328,10 +1328,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.disable_testTemplateType13()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.disable_testTemplateType13()",
     "snippet": "public void disable_testTemplateType13(){\n  testSame(\"\\n\"+ \"var f;\"+ \"\\n\"+ \"var val \u003d \u0027hi\u0027;\\n\"+ \"var result \u003d f(val);\");\n  assertEquals(\"(string|undefined)\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1204,
     "end_line": 1217,
@@ -1342,10 +1342,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType1()",
     "snippet": "public void testClassTemplateType1(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"\\n\"+ \"C.prototype.method \u003d function() {}\\n\"+ \"\"+ \" var x \u003d new C();\\n\"+ \"var result \u003d x.method();\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1219,
     "end_line": 1234,
@@ -1356,10 +1356,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType2()",
     "snippet": "public void testClassTemplateType2(){\n  testSame(\" var ns \u003d {};\" + \"\\n\"+ \"ns.C \u003d function() {};\\n\"+ \"\"+ \"\\n\"+ \"ns.C.prototype.method \u003d function() {}\\n\"+ \"\"+ \" var x \u003d new ns.C();\\n\"+ \"var result \u003d x.method();\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1236,
     "end_line": 1253,
@@ -1370,10 +1370,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType3()",
     "snippet": "public void testClassTemplateType3(){\n  testSame(\"\\n\"+ \"function C() {\\n\"+ \"  \\n\"+ \"  this.foo;\"+ \"};\\n\"+ \"\"+ \" var x \u003d new C();\\n\"+ \"var result \u003d x.foo;\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1255,
     "end_line": 1270,
@@ -1384,10 +1384,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType4()",
     "snippet": "public void testClassTemplateType4(){\n  testSame(\" var ns \u003d {};\" + \"\\n\"+ \"ns.C \u003d function() {\\n\"+ \"  \\n\"+ \"  this.foo;\"+ \"};\\n\"+ \"\"+ \" var x \u003d new ns.C();\\n\"+ \"var result \u003d x.foo;\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1272,
     "end_line": 1288,
@@ -1398,10 +1398,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType5()",
     "snippet": "public void testClassTemplateType5(){\n  testSame(\"\\n\"+ \"function C() {\\n\"+ \"};\\n\"+ \"\"+ \"\"+ \"C.prototype.foo;\\n\"+ \"\"+ \" var x \u003d new C();\\n\"+ \"var result \u003d x.foo;\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1290,
     "end_line": 1307,
@@ -1412,10 +1412,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType6()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType6()",
     "snippet": "public void testClassTemplateType6(){\n  testSame(\"\\n\"+ \"function C() {\\n\"+ \"};\\n\"+ \"\"+ \"\"+ \"C.prototype.foo \u003d 1;\\n\"+ \"\"+ \" var x \u003d new C();\\n\"+ \"var result \u003d x.foo;\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1309,
     "end_line": 1326,
@@ -1426,10 +1426,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType7()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType7()",
     "snippet": "public void testClassTemplateType7(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"C.prototype.method \u003d function() {\\n\"+ \"   var local;\"+ \"}\\n\");\n  assertEquals(\"T\",findNameType(\"local\",lastLocalScope).toString());\n}",
     "begin_line": 1328,
     "end_line": 1341,
@@ -1440,10 +1440,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateType8()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateType8()",
     "snippet": "public void testClassTemplateType8(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"C.prototype.method \u003d function() {\\n\"+ \"  var local \u003d  (x);\"+ \"}\\n\");\n  assertEquals(\"T\",findNameType(\"local\",lastLocalScope).toString());\n}",
     "begin_line": 1343,
     "end_line": 1356,
@@ -1454,10 +1454,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance1()",
     "snippet": "public void testClassTemplateInheritance1(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"\"+ \"C.prototype.foo \u003d 1;\\n\"+ \"\"+ \"\\n\"+ \"function D() {};\\n\"+ \"\"+ \"\"+ \"D.prototype.bar;\\n\"+ \"\"+ \" var x \u003d new D();\\n\"+ \"var result1 \u003d x.foo;\\n\"+ \"var result2 \u003d x.bar;\\n\");\n  assertEquals(\"number\",findNameType(\"result1\",globalScope).toString());\n  assertEquals(\"string\",findNameType(\"result2\",globalScope).toString());\n}",
     "begin_line": 1358,
     "end_line": 1385,
@@ -1469,10 +1469,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance2()",
     "snippet": "public void testClassTemplateInheritance2(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"\\n\"+ \"C.prototype.method1 \u003d function() {}\\n\"+ \"\"+ \"\\n\"+ \"function D() {};\\n\"+ \"\"+ \"\\n\"+ \"D.prototype.method2 \u003d function() {}\\n\"+ \"\"+ \" var x \u003d new D();\\n\"+ \"var result1 \u003d x.method1();\\n\"+ \"var result2 \u003d x.method2();\\n\");\n  assertEquals(\"string\",findNameType(\"result1\",globalScope).toString());\n  assertEquals(\"boolean\",findNameType(\"result2\",globalScope).toString());\n}",
     "begin_line": 1387,
     "end_line": 1414,
@@ -1484,10 +1484,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance3()",
     "snippet": "public void testClassTemplateInheritance3(){\n  testSame(\"\\n\"+ \"function C() {\\n\"+ \"  \\n\"+ \"  this.foo;\"+ \"};\\n\"+ \"\"+ \"\\n\"+ \"function D() {\\n\"+ \"  \\n\"+ \"  this.bar;\"+ \"};\\n\"+ \"\"+ \" var x \u003d new D();\\n\"+ \"var result1 \u003d x.foo;\\n\"+ \"var result2 \u003d x.bar;\\n\");\n  assertEquals(\"?\",findNameType(\"result1\",globalScope).toString());\n  assertEquals(\"boolean\",findNameType(\"result2\",globalScope).toString());\n}",
     "begin_line": 1416,
     "end_line": 1444,
@@ -1499,10 +1499,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance4()",
     "snippet": "public void testClassTemplateInheritance4(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"\\n\"+ \"C.prototype.method \u003d function() {}\\n\"+ \"\"+ \"\\n\"+ \"function D() {};\\n\"+ \"\"+ \"\\n\"+ \"D.prototype.method \u003d function() {}\\n\"+ \"\"+ \" var x \u003d new D();\\n\"+ \"var result \u003d x.method();\\n\");\n  assertEquals(\"string\",findNameType(\"result\",globalScope).toString());\n}",
     "begin_line": 1446,
     "end_line": 1471,
@@ -1513,10 +1513,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClassTemplateInheritance5()",
     "snippet": "public void testClassTemplateInheritance5(){\n  testSame(\"\\n\"+ \"function C() {};\\n\"+ \"\"+ \"\\n\"+ \"C.prototype.method1 \u003d function() {}\\n\"+ \"\"+ \"\\n\"+ \"function D() {};\\n\"+ \"\"+ \"\\n\"+ \"D.prototype.method2 \u003d function() {}\\n\"+ \"\"+ \" var x \u003d new D();\\n\"+ \" var y \u003d x;\\n\"+ \" var z \u003d y;\\n\"+ \"var result1 \u003d x.method2();\\n\"+ \"var result2 \u003d y.method1();\\n\"+ \"var result3 \u003d z.method1();\\n\");\n  assertEquals(\"string\",findNameType(\"result1\",globalScope).toString());\n  assertEquals(\"boolean\",findNameType(\"result2\",globalScope).toString());\n  assertEquals(\"T\",findNameType(\"result3\",globalScope).toString());\n}",
     "begin_line": 1473,
     "end_line": 1504,
@@ -1529,10 +1529,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithoutJSDoc()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithoutJSDoc()",
     "snippet": "public void testClosureParameterTypesWithoutJSDoc(){\n  testSame(\"\\n\"+ \"function foo(bar) {}\\n\"+ \"foo(function(baz) { var f \u003d baz; })\\n\");\n  assertEquals(\"Object\",findNameType(\"f\",lastLocalScope).toString());\n}",
     "begin_line": 1506,
     "end_line": 1514,
@@ -1543,10 +1543,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithJSDoc()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testClosureParameterTypesWithJSDoc()",
     "snippet": "public void testClosureParameterTypesWithJSDoc(){\n  testSame(\"\\n\"+ \"function foo(bar) {}\\n\"+ \"foo(\"+ \"  (function(baz) { var f \u003d baz; }))\\n\");\n  assertEquals(\"string\",findNameType(\"f\",lastLocalScope).toString());\n}",
     "begin_line": 1516,
     "end_line": 1525,
@@ -1557,10 +1557,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty1()",
     "snippet": "public void testDuplicateExternProperty1(){\n  testSame(\" function Foo() {}\" + \"Foo.prototype.bar;\" + \" Foo.prototype.bar; var x \u003d (new Foo).bar;\",null);\n  assertEquals(\"number\",findNameType(\"x\",globalScope).toString());\n}",
     "begin_line": 1527,
     "end_line": 1534,
@@ -1571,10 +1571,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDuplicateExternProperty2()",
     "snippet": "public void testDuplicateExternProperty2(){\n  testSame(\" function Foo() {}\" + \" Foo.prototype.bar;\" + \"Foo.prototype.bar; var x \u003d (new Foo).bar;\",null);\n  assertEquals(\"number\",findNameType(\"x\",globalScope).toString());\n}",
     "begin_line": 1536,
     "end_line": 1542,
@@ -1585,10 +1585,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testAbstractMethod()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod()",
     "snippet": "public void testAbstractMethod(){\n  testSame(\" var abstractMethod;\" + \" function Foo() {}\" + \" Foo.prototype.bar \u003d abstractMethod;\");\n  assertEquals(\"Function\",findNameType(\"abstractMethod\",globalScope).toString());\n  FunctionType ctor\u003d(FunctionType)findNameType(\"Foo\",globalScope);\n  ObjectType instance\u003dctor.getInstanceType();\n  assertEquals(\"Foo\",instance.toString());\n  ObjectType proto\u003dinstance.getImplicitPrototype();\n  assertEquals(\"Foo.prototype\",proto.toString());\n  assertEquals(\"function (this:Foo, number): ?\",proto.getPropertyType(\"bar\").toString());\n}",
     "begin_line": 1544,
     "end_line": 1562,
@@ -1605,10 +1605,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testAbstractMethod2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod2()",
     "snippet": "public void testAbstractMethod2(){\n  testSame(\" var abstractMethod;\" + \" var y \u003d abstractMethod;\");\n  assertEquals(\"Function\",findNameType(\"y\",globalScope).toString());\n  assertEquals(\"function (number): ?\",globalScope.getVar(\"y\").getType().toString());\n}",
     "begin_line": 1564,
     "end_line": 1574,
@@ -1620,10 +1620,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testAbstractMethod3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod3()",
     "snippet": "public void testAbstractMethod3(){\n  testSame(\" var abstractMethod;\" + \" var y \u003d abstractMethod; y;\");\n  assertEquals(\"function (number): ?\",findNameType(\"y\",globalScope).toString());\n}",
     "begin_line": 1576,
     "end_line": 1583,
@@ -1634,10 +1634,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testAbstractMethod4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testAbstractMethod4()",
     "snippet": "public void testAbstractMethod4(){\n  testSame(\" var abstractMethod;\" + \" function Foo() {}\" + \"Foo.prototype \u003d { bar: abstractMethod};\");\n  assertEquals(\"Function\",findNameType(\"abstractMethod\",globalScope).toString());\n  FunctionType ctor\u003d(FunctionType)findNameType(\"Foo\",globalScope);\n  ObjectType instance\u003dctor.getInstanceType();\n  assertEquals(\"Foo\",instance.toString());\n  ObjectType proto\u003dinstance.getImplicitPrototype();\n  assertEquals(\"Foo.prototype\",proto.toString());\n  assertEquals(\"function (this:Foo, number): ?\",proto.getPropertyType(\"bar\").toString());\n}",
     "begin_line": 1585,
     "end_line": 1604,
@@ -1654,10 +1654,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testActiveXObject()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testActiveXObject()",
     "snippet": "public void testActiveXObject(){\n  testSame(CompilerTypeTestCase.ACTIVE_X_OBJECT_DEF,\"var x \u003d new ActiveXObject();\",null);\n  assertEquals(\"?\",findNameType(\"x\",globalScope).toString());\n}",
     "begin_line": 1606,
     "end_line": 1613,
@@ -1668,10 +1668,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testReturnTypeInference1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference1()",
     "snippet": "public void testReturnTypeInference1(){\n  testSame(\"function f() {}\");\n  assertEquals(\"function (): undefined\",findNameType(\"f\",globalScope).toString());\n}",
     "begin_line": 1615,
     "end_line": 1620,
@@ -1682,10 +1682,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testReturnTypeInference2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference2()",
     "snippet": "public void testReturnTypeInference2(){\n  testSame(\" function f() {}\");\n  assertEquals(\"function (): ?\",findNameType(\"f\",globalScope).toString());\n}",
     "begin_line": 1622,
     "end_line": 1627,
@@ -1696,10 +1696,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testReturnTypeInference3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference3()",
     "snippet": "public void testReturnTypeInference3(){\n  testSame(\"function f() {x: return 3;}\");\n  assertEquals(\"function (): ?\",findNameType(\"f\",globalScope).toString());\n}",
     "begin_line": 1629,
     "end_line": 1634,
@@ -1710,10 +1710,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testReturnTypeInference4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference4()",
     "snippet": "public void testReturnTypeInference4(){\n  testSame(\"function f() { throw Error(); }\");\n  assertEquals(\"function (): ?\",findNameType(\"f\",globalScope).toString());\n}",
     "begin_line": 1636,
     "end_line": 1641,
@@ -1724,10 +1724,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testReturnTypeInference5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testReturnTypeInference5()",
     "snippet": "public void testReturnTypeInference5(){\n  testSame(\"function f() { if (true) { return 1; } }\");\n  assertEquals(\"function (): ?\",findNameType(\"f\",globalScope).toString());\n}",
     "begin_line": 1643,
     "end_line": 1648,
@@ -1738,10 +1738,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testLiteralTypesInferred()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testLiteralTypesInferred()",
     "snippet": "public void testLiteralTypesInferred(){\n  testSame(\"null + true + false + 0 + \u0027\u0027 + {}\");\n  assertEquals(\"null\",findTokenType(Token.NULL,globalScope).toString());\n  assertEquals(\"boolean\",findTokenType(Token.TRUE,globalScope).toString());\n  assertEquals(\"boolean\",findTokenType(Token.FALSE,globalScope).toString());\n  assertEquals(\"number\",findTokenType(Token.NUMBER,globalScope).toString());\n  assertEquals(\"string\",findTokenType(Token.STRING,globalScope).toString());\n  assertEquals(\"{}\",findTokenType(Token.OBJECTLIT,globalScope).toString());\n}",
     "begin_line": 1650,
     "end_line": 1664,
@@ -1757,10 +1757,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testGlobalQualifiedNameInLocalScope()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testGlobalQualifiedNameInLocalScope()",
     "snippet": "public void testGlobalQualifiedNameInLocalScope(){\n  testSame(\"var ns \u003d {}; \" + \"(function() { \" + \"     ns.foo \u003d function(x) {}; })();\"+ \"(function() { ns.foo(3); })();\");\n  assertNotNull(globalScope.getVar(\"ns.foo\"));\n  assertEquals(\"function (number): undefined\",globalScope.getVar(\"ns.foo\").getType().toString());\n}",
     "begin_line": 1666,
     "end_line": 1676,
@@ -1772,10 +1772,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty1()",
     "snippet": "public void testDeclaredObjectLitProperty1() throws Exception {\n  testSame(\"var x \u003d { y: 3};\");\n  ObjectType xType\u003dObjectType.cast(globalScope.getVar(\"x\").getType());\n  assertEquals(\"number\",xType.getPropertyType(\"y\").toString());\n  assertEquals(\"{y: number}\",xType.toString());\n}",
     "begin_line": 1678,
     "end_line": 1687,
@@ -1788,10 +1788,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty2()",
     "snippet": "public void testDeclaredObjectLitProperty2() throws Exception {\n  testSame(\"var x \u003d { y: function(z){}};\");\n  ObjectType xType\u003dObjectType.cast(globalScope.getVar(\"x\").getType());\n  assertEquals(\"function (number): undefined\",xType.getPropertyType(\"y\").toString());\n  assertEquals(\"{y: function (number): undefined}\",xType.toString());\n}",
     "begin_line": 1689,
     "end_line": 1698,
@@ -1804,10 +1804,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty3()",
     "snippet": "public void testDeclaredObjectLitProperty3() throws Exception {\n  testSame(\"function f() {\" + \"  var x \u003d { y: function(z){ return 3; }};\" + \"}\");\n  ObjectType xType\u003dObjectType.cast(lastLocalScope.getVar(\"x\").getType());\n  assertEquals(\"function (?): number\",xType.getPropertyType(\"y\").toString());\n  assertEquals(\"{y: function (?): number}\",xType.toString());\n}",
     "begin_line": 1700,
     "end_line": 1711,
@@ -1820,10 +1820,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty4()",
     "snippet": "public void testDeclaredObjectLitProperty4() throws Exception {\n  testSame(\"var x \u003d {y: 5,  z: 3};\");\n  ObjectType xType\u003dObjectType.cast(globalScope.getVar(\"x\").getType());\n  assertEquals(\"number\",xType.getPropertyType(\"y\").toString());\n  assertFalse(xType.isPropertyTypeDeclared(\"y\"));\n  assertTrue(xType.isPropertyTypeDeclared(\"z\"));\n  assertEquals(\"{y: number, z: number}\",xType.toString());\n}",
     "begin_line": 1713,
     "end_line": 1723,
@@ -1838,10 +1838,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty5()",
     "snippet": "public void testDeclaredObjectLitProperty5() throws Exception {\n  testSame(\"var x \u003d { prop: 3};\" + \"function f() { var y \u003d x.prop; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"number\",yType.toString());\n}",
     "begin_line": 1725,
     "end_line": 1730,
@@ -1853,10 +1853,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty6()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredObjectLitProperty6()",
     "snippet": "public void testDeclaredObjectLitProperty6() throws Exception {\n  testSame(\"var x \u003d { prop: function(){}};\");\n  Var prop\u003dglobalScope.getVar(\"x.prop\");\n  JSType propType\u003dprop.getType();\n  assertEquals(\"function (): undefined\",propType.toString());\n  assertFalse(prop.isTypeInferred());\n  assertFalse(ObjectType.cast(globalScope.getVar(\"x\").getType()).isPropertyTypeInferred(\"prop\"));\n}",
     "begin_line": 1732,
     "end_line": 1741,
@@ -1871,10 +1871,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredObjectLitProperty1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredObjectLitProperty1()",
     "snippet": "public void testInferredObjectLitProperty1() throws Exception {\n  testSame(\"var x \u003d {prop: 3};\");\n  Var prop\u003dglobalScope.getVar(\"x.prop\");\n  JSType propType\u003dprop.getType();\n  assertEquals(\"number\",propType.toString());\n  assertTrue(prop.isTypeInferred());\n  assertTrue(ObjectType.cast(globalScope.getVar(\"x\").getType()).isPropertyTypeInferred(\"prop\"));\n}",
     "begin_line": 1743,
     "end_line": 1752,
@@ -1889,10 +1889,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testInferredObjectLitProperty2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testInferredObjectLitProperty2()",
     "snippet": "public void testInferredObjectLitProperty2() throws Exception {\n  testSame(\"var x \u003d {prop: function(){}};\");\n  Var prop\u003dglobalScope.getVar(\"x.prop\");\n  JSType propType\u003dprop.getType();\n  assertEquals(\"function (): undefined\",propType.toString());\n  assertTrue(prop.isTypeInferred());\n  assertTrue(ObjectType.cast(globalScope.getVar(\"x\").getType()).isPropertyTypeInferred(\"prop\"));\n}",
     "begin_line": 1754,
     "end_line": 1763,
@@ -1907,10 +1907,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredConstType1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType1()",
     "snippet": "public void testDeclaredConstType1() throws Exception {\n  testSame(\" var x \u003d 3;\" + \"function f() { var y \u003d x; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"number\",yType.toString());\n}",
     "begin_line": 1765,
     "end_line": 1771,
@@ -1922,10 +1922,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredConstType2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType2()",
     "snippet": "public void testDeclaredConstType2() throws Exception {\n  testSame(\" var x \u003d {};\" + \"function f() { var y \u003d x; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"{}\",yType.toString());\n}",
     "begin_line": 1773,
     "end_line": 1779,
@@ -1937,10 +1937,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredConstType3()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType3()",
     "snippet": "public void testDeclaredConstType3() throws Exception {\n  testSame(\" var x \u003d {};\" + \" x.z \u003d \u0027hi\u0027;\" + \"function f() { var y \u003d x.z; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"string\",yType.toString());\n}",
     "begin_line": 1781,
     "end_line": 1788,
@@ -1952,10 +1952,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredConstType4()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType4()",
     "snippet": "public void testDeclaredConstType4() throws Exception {\n  testSame(\" function Foo() {}\" + \" Foo.prototype.z \u003d \u0027hi\u0027;\" + \"function f() { var y \u003d (new Foo()).z; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"string\",yType.toString());\n  ObjectType fooType\u003d((FunctionType)globalScope.getVar(\"Foo\").getType()).getInstanceType();\n  assertTrue(fooType.isPropertyTypeDeclared(\"z\"));\n}",
     "begin_line": 1790,
     "end_line": 1801,
@@ -1969,10 +1969,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredConstType5()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType5()",
     "snippet": "public void testDeclaredConstType5() throws Exception {\n  testSame(\" var goog \u003d goog || {};\" + \" var foo \u003d goog || {};\" + \"function f() { var y \u003d goog; var z \u003d foo; }\");\n  JSType yType\u003dlastLocalScope.getVar(\"y\").getType();\n  assertEquals(\"{}\",yType.toString());\n  JSType zType\u003dlastLocalScope.getVar(\"z\").getType();\n  assertEquals(\"?\",zType.toString());\n}",
     "begin_line": 1803,
     "end_line": 1813,
@@ -1986,10 +1986,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadCtorInit1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadCtorInit1()",
     "snippet": "public void testBadCtorInit1() throws Exception {\n  testSame(\" var f;\",CTOR_INITIALIZER);\n}",
     "begin_line": 1815,
     "end_line": 1817,
@@ -1999,10 +1999,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadCtorInit2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadCtorInit2()",
     "snippet": "public void testBadCtorInit2() throws Exception {\n  testSame(\"var x \u003d {};  x.f;\",CTOR_INITIALIZER);\n}",
     "begin_line": 1819,
     "end_line": 1821,
@@ -2012,10 +2012,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadIfaceInit1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadIfaceInit1()",
     "snippet": "public void testBadIfaceInit1() throws Exception {\n  testSame(\" var f;\",IFACE_INITIALIZER);\n}",
     "begin_line": 1823,
     "end_line": 1825,
@@ -2025,10 +2025,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testBadIfaceInit2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testBadIfaceInit2()",
     "snippet": "public void testBadIfaceInit2() throws Exception {\n  testSame(\"var x \u003d {};  x.f;\",IFACE_INITIALIZER);\n}",
     "begin_line": 1827,
     "end_line": 1829,
@@ -2038,10 +2038,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testFunctionInHook()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testFunctionInHook()",
     "snippet": "public void testFunctionInHook() throws Exception {\n  testSame(\" var f \u003d Math.random() ? \" + \"function(x) {} : function(x) {};\");\n  assertEquals(\"number\",lastLocalScope.getVar(\"x\").getType().toString());\n}",
     "begin_line": 1831,
     "end_line": 1835,
@@ -2052,10 +2052,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testFunctionInAnd()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testFunctionInAnd()",
     "snippet": "public void testFunctionInAnd() throws Exception {\n  testSame(\" var f \u003d Math.random() \u0026\u0026 \" + \"function(x) {};\");\n  assertEquals(\"number\",lastLocalScope.getVar(\"x\").getType().toString());\n}",
     "begin_line": 1837,
     "end_line": 1841,
@@ -2066,10 +2066,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testFunctionInOr()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testFunctionInOr()",
     "snippet": "public void testFunctionInOr() throws Exception {\n  testSame(\" var f \u003d Math.random() || \" + \"function(x) {};\");\n  assertEquals(\"number\",lastLocalScope.getVar(\"x\").getType().toString());\n}",
     "begin_line": 1843,
     "end_line": 1847,
@@ -2080,10 +2080,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testFunctionInComma()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testFunctionInComma()",
     "snippet": "public void testFunctionInComma() throws Exception {\n  testSame(\" var f \u003d (Math.random(), \" + \"function(x) {});\");\n  assertEquals(\"number\",lastLocalScope.getVar(\"x\").getType().toString());\n}",
     "begin_line": 1849,
     "end_line": 1853,
@@ -2094,10 +2094,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression1()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression1()",
     "snippet": "public void testDeclaredCatchExpression1(){\n  testSame(\"try {} catch (e) {}\");\n  assertEquals(null,globalScope.getVar(\"e\").getType());\n}",
     "begin_line": 1855,
     "end_line": 1861,
@@ -2108,10 +2108,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression2()",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredCatchExpression2()",
     "snippet": "public void testDeclaredCatchExpression2(){\n  testSame(\"try {} catch ( e) {}\");\n  assertEquals(\"string\",globalScope.getVar(\"e\").getType().toString());\n}",
     "begin_line": 1863,
     "end_line": 1869,
@@ -2122,10 +2122,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.findNameType(java.lang.String, Scope)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findNameType(java.lang.String, Scope)",
     "snippet": "private JSType findNameType(final String name,Scope scope){\n  return findTypeOnMatchedNode(new Predicate\u003cNode\u003e(){\n    @Override public boolean apply(    Node n){\n      return name.equals(n.getQualifiedName());\n    }\n  }\n,scope);\n}",
     "begin_line": 1871,
     "end_line": 1877,
@@ -2135,10 +2135,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.apply(Node)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.apply(Node)",
     "snippet": "@Override public boolean apply(Node n){\n  return name.equals(n.getQualifiedName());\n}",
     "begin_line": 1873,
     "end_line": 1875,
@@ -2148,10 +2148,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.findNameTypeStr(java.lang.String, Scope)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findNameTypeStr(java.lang.String, Scope)",
     "snippet": "private String findNameTypeStr(final String name,Scope scope){\n  return findNameType(name,scope).toString();\n}",
     "begin_line": 1879,
     "end_line": 1881,
@@ -2161,10 +2161,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.findTokenType(int, Scope)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTokenType(int, Scope)",
     "snippet": "private JSType findTokenType(final int type,Scope scope){\n  return findTypeOnMatchedNode(new Predicate\u003cNode\u003e(){\n    @Override public boolean apply(    Node n){\n      return type \u003d\u003d n.getType();\n    }\n  }\n,scope);\n}",
     "begin_line": 1883,
     "end_line": 1889,
@@ -2174,10 +2174,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.apply(Node)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.apply(Node)",
     "snippet": "@Override public boolean apply(Node n){\n  return type \u003d\u003d n.getType();\n}",
     "begin_line": 1885,
     "end_line": 1887,
@@ -2187,10 +2187,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.findTypeOnMatchedNode(Predicate\u003cNode\u003e, Scope)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.findTypeOnMatchedNode(Predicate\u003cNode\u003e, Scope)",
     "snippet": "private JSType findTypeOnMatchedNode(Predicate\u003cNode\u003e matcher,Scope scope){\n  Node root\u003dscope.getRootNode();\n  Deque\u003cNode\u003e queue\u003dLists.newLinkedList();\n  queue.push(root);\n  while (!queue.isEmpty()) {\n    Node current\u003dqueue.pop();\n    if (matcher.apply(current) \u0026\u0026 current.getJSType() !\u003d null) {\n      return current.getJSType();\n    }\n    for (    Node child : current.children()) {\n      queue.push(child);\n    }\n  }\n  return null;\n}",
     "begin_line": 1891,
     "end_line": 1907,
@@ -2204,10 +2204,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.getNativeType(JSTypeNative)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNativeType(JSTypeNative)",
     "snippet": "private JSType getNativeType(JSTypeNative type){\n  return registry.getNativeType(type);\n}",
     "begin_line": 1909,
     "end_line": 1911,
@@ -2217,10 +2217,10 @@
     ]
   },
   {
-    "class_name": "com.googlescript.jscomp.TypedScopeCreatorTest",
+    "class_name": "com.google.javascript.jscomp.TypedScopeCreatorTest",
     "child_classes": [],
     "src_path": "com/google/javascript/jscomp/TypedScopeCreatorTest.java",
-    "signature": "com.googlescript.jscomp.TypedScopeCreatorTest.getNativeObjectType(JSTypeNative)",
+    "signature": "com.google.javascript.jscomp.TypedScopeCreatorTest.getNativeObjectType(JSTypeNative)",
     "snippet": "private ObjectType getNativeObjectType(JSTypeNative type){\n  return (ObjectType)registry.getNativeType(type);\n}",
     "begin_line": 1913,
     "end_line": 1915,
