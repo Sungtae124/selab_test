@@ -1,0 +1,101 @@
+[
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.REPLACEMENT_CHARS",
+    "snippet": "private static final String[] REPLACEMENT_CHARS;",
+    "begin_line": 142,
+    "end_line": 142,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.HTML_SAFE_REPLACEMENT_CHARS",
+    "snippet": "private static final String[] HTML_SAFE_REPLACEMENT_CHARS;",
+    "begin_line": 143,
+    "end_line": 143,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.out",
+    "snippet": "private final Writer out;",
+    "begin_line": 165,
+    "end_line": 165,
+    "comment": "/** \n * The output data, containing at most one top-level array or object. \n */\n"
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.stack",
+    "snippet": "private int[] stack \u003d new int[32];",
+    "begin_line": 167,
+    "end_line": 167,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.stackSize",
+    "snippet": "private int stackSize \u003d 0;",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.indent",
+    "snippet": "private String indent;",
+    "begin_line": 177,
+    "end_line": 177,
+    "comment": "/** \n * A string containing a full set of spaces for a single level of indentation, or null for no pretty printing.\n */\n"
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.separator",
+    "snippet": "private String separator \u003d \":\";",
+    "begin_line": 182,
+    "end_line": 182,
+    "comment": "/** \n * The name/value separator; either \":\" or \": \".\n */\n"
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.lenient",
+    "snippet": "private boolean lenient;",
+    "begin_line": 184,
+    "end_line": 184,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.htmlSafe",
+    "snippet": "private boolean htmlSafe;",
+    "begin_line": 186,
+    "end_line": 186,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.deferredName",
+    "snippet": "private String deferredName;",
+    "begin_line": 188,
+    "end_line": 188,
+    "comment": ""
+  },
+  {
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "signature": "com.google.gson.stream.JsonWriter.serializeNulls",
+    "snippet": "private boolean serializeNulls \u003d true;",
+    "begin_line": 190,
+    "end_line": 190,
+    "comment": ""
+  }
+]

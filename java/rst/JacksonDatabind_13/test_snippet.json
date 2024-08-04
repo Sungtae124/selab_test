@@ -1,0 +1,622 @@
+[
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.Identifiable()",
+    "snippet": "public Identifiable() { this(0); }",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "",
+    "child_ranges": [
+      "(line 41,col 33)-(line 41,col 40)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.Identifiable(int)",
+    "snippet": "public Identifiable(int v) {\n            value \u003d v;\n        }",
+    "begin_line": 42,
+    "end_line": 44,
+    "comment": "",
+    "child_ranges": [
+      "(line 43,col 13)-(line 43,col 22)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.UUIDNode()",
+    "snippet": "public UUIDNode() { this(0); }",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "",
+    "child_ranges": [
+      "(line 55,col 29)-(line 55,col 36)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.UUIDNode(int)",
+    "snippet": "public UUIDNode(int v) { value \u003d v; }",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "",
+    "child_ranges": [
+      "(line 56,col 34)-(line 56,col 43)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapper()",
+    "snippet": "public IdWrapper() { }",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapper(int)",
+    "snippet": "public IdWrapper(int v) {\n            node \u003d new ValueNode(v);\n        }",
+    "begin_line": 67,
+    "end_line": 69,
+    "comment": "",
+    "child_ranges": [
+      "(line 68,col 13)-(line 68,col 36)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNode()",
+    "snippet": "public ValueNode() { this(0); }",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": "",
+    "child_ranges": [
+      "(line 76,col 30)-(line 76,col 37)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNode(int)",
+    "snippet": "public ValueNode(int v) { value \u003d v; }",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "",
+    "child_ranges": [
+      "(line 77,col 35)-(line 77,col 44)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdentifiableCustom()",
+    "snippet": "public IdentifiableCustom() { this(-1, 0); }",
+    "begin_line": 91,
+    "end_line": 91,
+    "comment": "",
+    "child_ranges": [
+      "(line 91,col 39)-(line 91,col 50)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdentifiableCustom(int, int)",
+    "snippet": "public IdentifiableCustom(int i, int v) {\n            customId \u003d i;\n            value \u003d v;\n        }",
+    "begin_line": 92,
+    "end_line": 95,
+    "comment": "",
+    "child_ranges": [
+      "(line 93,col 13)-(line 93,col 25)",
+      "(line 94,col 13)-(line 94,col 22)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapperExt()",
+    "snippet": "public IdWrapperExt() { }",
+    "begin_line": 104,
+    "end_line": 104,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.IdWrapperExt(int)",
+    "snippet": "public IdWrapperExt(int v) {\n            node \u003d new ValueNodeExt(v);\n        }",
+    "begin_line": 105,
+    "end_line": 107,
+    "comment": "",
+    "child_ranges": [
+      "(line 106,col 13)-(line 106,col 39)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNodeExt()",
+    "snippet": "public ValueNodeExt() { this(0); }",
+    "begin_line": 116,
+    "end_line": 116,
+    "comment": "",
+    "child_ranges": [
+      "(line 116,col 33)-(line 116,col 40)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.ValueNodeExt(int)",
+    "snippet": "public ValueNodeExt(int v) { value \u003d v; }",
+    "begin_line": 117,
+    "end_line": 117,
+    "comment": "",
+    "child_ranges": [
+      "(line 117,col 38)-(line 117,col 47)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.setCustomId(int)",
+    "snippet": "public void setCustomId(int i) {\n        \tcustomId \u003d i;\n        }",
+    "begin_line": 119,
+    "end_line": 121,
+    "comment": "",
+    "child_ranges": [
+      "(line 120,col 10)-(line 120,col 22)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.anySet(java.lang.String, com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.AnySetterObjectId)",
+    "snippet": "@JsonAnySetter\n        public void anySet(String field, AnySetterObjectId value) {\n            // Ensure that it is never called with null because of unresolved reference.\n            assertNotNull(value);\n            values.put(field, value);\n        }",
+    "begin_line": 133,
+    "end_line": 137,
+    "comment": "",
+    "child_ranges": [
+      "(line 135,col 13)-(line 135,col 33)",
+      "(line 136,col 13)-(line 136,col 37)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.WithCustomResolution(int, int)",
+    "snippet": "public WithCustomResolution(int id, int data)\n        {\n            this.id \u003d id;\n            this.data \u003d data;\n        }",
+    "begin_line": 150,
+    "end_line": 154,
+    "comment": "",
+    "child_ranges": [
+      "(line 152,col 13)-(line 152,col 25)",
+      "(line 153,col 13)-(line 153,col 29)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.PoolResolver()",
+    "snippet": "public PoolResolver() {}",
+    "begin_line": 160,
+    "end_line": 160,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.PoolResolver(java.util.Map\u003cjava.lang.Object,com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.WithCustomResolution\u003e)",
+    "snippet": "public PoolResolver(Map\u003cObject,WithCustomResolution\u003e pool){ _pool \u003d pool; }",
+    "begin_line": 161,
+    "end_line": 161,
+    "comment": "",
+    "child_ranges": [
+      "(line 161,col 69)-(line 161,col 81)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.bindItem(IdKey, java.lang.Object)",
+    "snippet": "@Override\n        public void bindItem(IdKey id, Object pojo){ }",
+    "begin_line": 164,
+    "end_line": 164,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.resolveId(IdKey)",
+    "snippet": "@Override\n        public Object resolveId(IdKey id){ return _pool.get(id.key); }",
+    "begin_line": 167,
+    "end_line": 167,
+    "comment": "",
+    "child_ranges": [
+      "(line 167,col 44)-(line 167,col 68)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.canUseFor(ObjectIdResolver)",
+    "snippet": "@Override\n        public boolean canUseFor(ObjectIdResolver resolverType)\n        {\n            return resolverType.getClass() \u003d\u003d getClass() \u0026\u0026 _pool !\u003d null \u0026\u0026 !_pool.isEmpty();\n        }",
+    "begin_line": 170,
+    "end_line": 173,
+    "comment": "",
+    "child_ranges": [
+      "(line 172,col 13)-(line 172,col 94)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.newForDeserialization(java.lang.Object)",
+    "snippet": "@Override\n        public ObjectIdResolver newForDeserialization(Object c)\n        {\n            DeserializationContext context \u003d (DeserializationContext)c;\n            @SuppressWarnings(\"unchecked\")\n            Map\u003cObject,WithCustomResolution\u003e pool \u003d (Map\u003cObject,WithCustomResolution\u003e)context.getAttribute(POOL_KEY);\n            return new PoolResolver(pool);\n        }",
+    "begin_line": 176,
+    "end_line": 182,
+    "comment": "",
+    "child_ranges": [
+      "(line 178,col 13)-(line 178,col 71)",
+      "(line 179,col 13)-(line 180,col 117)",
+      "(line 181,col 13)-(line 181,col 42)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testSimpleDeserializationClass()",
+    "snippet": "public void testSimpleDeserializationClass() throws Exception\n    {\n        // then bring back...\n        Identifiable result \u003d MAPPER.readValue(EXP_SIMPLE_INT_CLASS, Identifiable.class);\n        assertEquals(13, result.value);\n        assertSame(result, result.next);\n    }",
+    "begin_line": 195,
+    "end_line": 201,
+    "comment": "",
+    "child_ranges": [
+      "(line 198,col 9)-(line 198,col 89)",
+      "(line 199,col 9)-(line 199,col 39)",
+      "(line 200,col 9)-(line 200,col 40)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testMissingObjectId()",
+    "snippet": "public void testMissingObjectId() throws Exception\n    {\n        Identifiable result \u003d MAPPER.readValue(aposToQuotes(\"{\u0027value\u0027:28, \u0027next\u0027:{\u0027value\u0027:29}}\"),\n                Identifiable.class);\n        assertNotNull(result);\n        assertEquals(28, result.value);\n        assertNotNull(result.next);\n        assertEquals(29, result.next.value);\n    }",
+    "begin_line": 204,
+    "end_line": 212,
+    "comment": "",
+    "child_ranges": [
+      "(line 206,col 9)-(line 207,col 36)",
+      "(line 208,col 9)-(line 208,col 30)",
+      "(line 209,col 9)-(line 209,col 39)",
+      "(line 210,col 9)-(line 210,col 35)",
+      "(line 211,col 9)-(line 211,col 44)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testSimpleUUIDForClassRoundTrip()",
+    "snippet": "public void testSimpleUUIDForClassRoundTrip() throws Exception\n    {\n        UUIDNode root \u003d new UUIDNode(1);\n        UUIDNode child1 \u003d new UUIDNode(2);\n        UUIDNode child2 \u003d new UUIDNode(3);\n        root.first \u003d child1;\n        root.second \u003d child2;\n        child1.parent \u003d root;\n        child2.parent \u003d root;\n        child1.first \u003d child2;\n\n        String json \u003d MAPPER.writeValueAsString(root);\n\n        // and should come back the same too...\n        UUIDNode result \u003d MAPPER.readValue(json, UUIDNode.class);\n        assertEquals(1, result.value);\n        UUIDNode result2 \u003d result.first;\n        UUIDNode result3 \u003d result.second;\n        assertNotNull(result2);\n        assertNotNull(result3);\n        assertEquals(2, result2.value);\n        assertEquals(3, result3.value);\n\n        assertSame(result, result2.parent);\n        assertSame(result, result3.parent);\n        assertSame(result3, result2.first);\n    }",
+    "begin_line": 214,
+    "end_line": 240,
+    "comment": "",
+    "child_ranges": [
+      "(line 216,col 9)-(line 216,col 40)",
+      "(line 217,col 9)-(line 217,col 42)",
+      "(line 218,col 9)-(line 218,col 42)",
+      "(line 219,col 9)-(line 219,col 28)",
+      "(line 220,col 9)-(line 220,col 29)",
+      "(line 221,col 9)-(line 221,col 29)",
+      "(line 222,col 9)-(line 222,col 29)",
+      "(line 223,col 9)-(line 223,col 30)",
+      "(line 225,col 9)-(line 225,col 54)",
+      "(line 228,col 9)-(line 228,col 65)",
+      "(line 229,col 9)-(line 229,col 38)",
+      "(line 230,col 9)-(line 230,col 40)",
+      "(line 231,col 9)-(line 231,col 41)",
+      "(line 232,col 9)-(line 232,col 31)",
+      "(line 233,col 9)-(line 233,col 31)",
+      "(line 234,col 9)-(line 234,col 39)",
+      "(line 235,col 9)-(line 235,col 39)",
+      "(line 237,col 9)-(line 237,col 43)",
+      "(line 238,col 9)-(line 238,col 43)",
+      "(line 239,col 9)-(line 239,col 43)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testSimpleDeserializationProperty()",
+    "snippet": "public void testSimpleDeserializationProperty() throws Exception\n    {\n        IdWrapper result \u003d MAPPER.readValue(EXP_SIMPLE_INT_PROP, IdWrapper.class);\n        assertEquals(7, result.node.value);\n        assertSame(result.node, result.node.next.node);\n    }",
+    "begin_line": 245,
+    "end_line": 250,
+    "comment": "",
+    "child_ranges": [
+      "(line 247,col 9)-(line 247,col 82)",
+      "(line 248,col 9)-(line 248,col 43)",
+      "(line 249,col 9)-(line 249,col 55)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testSimpleDeserWithForwardRefs()",
+    "snippet": "public void testSimpleDeserWithForwardRefs() throws Exception\n    {\n        IdWrapper result \u003d MAPPER.readValue(\"{\\\"node\\\":{\\\"value\\\":7,\\\"next\\\":{\\\"node\\\":1}, \\\"@id\\\":1}}\"\n                ,IdWrapper.class);\n        assertEquals(7, result.node.value);\n        assertSame(result.node, result.node.next.node);\n    }",
+    "begin_line": 253,
+    "end_line": 259,
+    "comment": "",
+    "child_ranges": [
+      "(line 255,col 9)-(line 256,col 34)",
+      "(line 257,col 9)-(line 257,col 43)",
+      "(line 258,col 9)-(line 258,col 55)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testForwardReference()",
+    "snippet": "public void testForwardReference()\n        throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":[\"\n                      + \"{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":2,\\\"reports\\\":[]},\"\n                      + \"{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":null,\\\"reports\\\":[1]}\"\n                      + \"]}\";\n        Company company \u003d MAPPER.readValue(json, Company.class);\n        assertEquals(2, company.employees.size());\n        Employee firstEmployee \u003d company.employees.get(0);\n        Employee secondEmployee \u003d company.employees.get(1);\n        assertEquals(1, firstEmployee.id);\n        assertEquals(2, secondEmployee.id);\n        assertEquals(secondEmployee, firstEmployee.manager); // Ensure that forward reference was properly resolved.\n        assertEquals(firstEmployee, secondEmployee.reports.get(0)); // And that back reference is also properly resolved.\n    }",
+    "begin_line": 261,
+    "end_line": 276,
+    "comment": "",
+    "child_ranges": [
+      "(line 264,col 9)-(line 267,col 29)",
+      "(line 268,col 9)-(line 268,col 64)",
+      "(line 269,col 9)-(line 269,col 50)",
+      "(line 270,col 9)-(line 270,col 58)",
+      "(line 271,col 9)-(line 271,col 59)",
+      "(line 272,col 9)-(line 272,col 42)",
+      "(line 273,col 9)-(line 273,col 43)",
+      "(line 274,col 9)-(line 274,col 60)",
+      "(line 275,col 9)-(line 275,col 67)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testForwardReferenceInCollection()",
+    "snippet": "public void testForwardReferenceInCollection()\n        throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":[\"\n                      + \"{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":null,\\\"reports\\\":[2]},\"\n                      + \"{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":1,\\\"reports\\\":[]}\"\n                      + \"]}\";\n        Company company \u003d MAPPER.readValue(json, Company.class);\n        assertEquals(2, company.employees.size());\n        Employee firstEmployee \u003d company.employees.get(0);\n        Employee secondEmployee \u003d company.employees.get(1);\n        assertEmployees(firstEmployee, secondEmployee);\n    }",
+    "begin_line": 278,
+    "end_line": 290,
+    "comment": "",
+    "child_ranges": [
+      "(line 281,col 9)-(line 284,col 29)",
+      "(line 285,col 9)-(line 285,col 64)",
+      "(line 286,col 9)-(line 286,col 50)",
+      "(line 287,col 9)-(line 287,col 58)",
+      "(line 288,col 9)-(line 288,col 59)",
+      "(line 289,col 9)-(line 289,col 55)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testForwardReferenceInMap()",
+    "snippet": "public void testForwardReferenceInMap()\n        throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":{\"\n                      + \"\\\"1\\\":{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":null,\\\"reports\\\":[2]},\"\n                      + \"\\\"2\\\": 2,\"\n                      + \"\\\"3\\\":{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":1,\\\"reports\\\":[]}\"\n                      + \"}}\";\n        MappedCompany company \u003d MAPPER.readValue(json, MappedCompany.class);\n        assertEquals(3, company.employees.size());\n        Employee firstEmployee \u003d company.employees.get(1);\n        Employee secondEmployee \u003d company.employees.get(3);\n        assertEmployees(firstEmployee, secondEmployee);\n    }",
+    "begin_line": 292,
+    "end_line": 305,
+    "comment": "",
+    "child_ranges": [
+      "(line 295,col 9)-(line 299,col 29)",
+      "(line 300,col 9)-(line 300,col 76)",
+      "(line 301,col 9)-(line 301,col 50)",
+      "(line 302,col 9)-(line 302,col 58)",
+      "(line 303,col 9)-(line 303,col 59)",
+      "(line 304,col 9)-(line 304,col 55)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.assertEmployees(com.fasterxml.jackson.databind.struct.TestObjectId.Employee, com.fasterxml.jackson.databind.struct.TestObjectId.Employee)",
+    "snippet": "private void assertEmployees(Employee firstEmployee, Employee secondEmployee)\n    {\n        assertEquals(1, firstEmployee.id);\n        assertEquals(2, secondEmployee.id);\n        assertEquals(1, firstEmployee.reports.size());\n        assertSame(secondEmployee, firstEmployee.reports.get(0)); // Ensure that forward reference was properly resolved and in order.\n        assertSame(firstEmployee, secondEmployee.manager); // And that back reference is also properly resolved.\n    }",
+    "begin_line": 307,
+    "end_line": 314,
+    "comment": "",
+    "child_ranges": [
+      "(line 309,col 9)-(line 309,col 42)",
+      "(line 310,col 9)-(line 310,col 43)",
+      "(line 311,col 9)-(line 311,col 54)",
+      "(line 312,col 9)-(line 312,col 65)",
+      "(line 313,col 9)-(line 313,col 58)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testForwardReferenceAnySetterCombo()",
+    "snippet": "public void testForwardReferenceAnySetterCombo() throws Exception {\n        String json \u003d \"{\\\"@id\\\":1, \\\"foo\\\":2, \\\"bar\\\":{\\\"@id\\\":2, \\\"foo\\\":1}}\";\n        AnySetterObjectId value \u003d MAPPER.readValue(json, AnySetterObjectId.class);\n        assertSame(value.values.get(\"bar\"), value.values.get(\"foo\"));\n    }",
+    "begin_line": 316,
+    "end_line": 320,
+    "comment": "",
+    "child_ranges": [
+      "(line 317,col 9)-(line 317,col 79)",
+      "(line 318,col 9)-(line 318,col 82)",
+      "(line 319,col 9)-(line 319,col 69)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testUnresolvedForwardReference()",
+    "snippet": "public void testUnresolvedForwardReference()\n        throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":[\" \n                      + \"{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":null,\\\"reports\\\":[3]},\"\n                      + \"{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":3,\\\"reports\\\":[]}\" \n                      + \"]}\";\n        try {\n            MAPPER.readValue(json, Company.class);\n            fail(\"Should have thrown.\");\n        } catch (UnresolvedForwardReference exception) {\n            // Expected\n            List\u003cUnresolvedId\u003e unresolvedIds \u003d exception.getUnresolvedIds();\n            assertEquals(2, unresolvedIds.size());\n            UnresolvedId firstUnresolvedId \u003d unresolvedIds.get(0);\n            assertEquals(3, firstUnresolvedId.getId());\n            assertEquals(Employee.class, firstUnresolvedId.getType());\n            UnresolvedId secondUnresolvedId \u003d unresolvedIds.get(1);\n            assertEquals(firstUnresolvedId.getId(), secondUnresolvedId.getId());\n            assertEquals(Employee.class, secondUnresolvedId.getType());\n        }\n    }",
+    "begin_line": 322,
+    "end_line": 343,
+    "comment": "",
+    "child_ranges": [
+      "(line 325,col 9)-(line 328,col 29)",
+      "(line 329,col 9)-(line 342,col 9)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testUnresolvableAsNull()",
+    "snippet": "public void testUnresolvableAsNull() throws Exception\n    {\n        IdWrapper w \u003d MAPPER.reader(IdWrapper.class)\n                .without(DeserializationFeature.FAIL_ON_UNRESOLVED_OBJECT_IDS)\n                .readValue(aposToQuotes(\"{\u0027node\u0027:123}\"));\n        assertNotNull(w);\n        assertNull(w.node);\n    }",
+    "begin_line": 346,
+    "end_line": 353,
+    "comment": "",
+    "child_ranges": [
+      "(line 348,col 9)-(line 350,col 57)",
+      "(line 351,col 9)-(line 351,col 25)",
+      "(line 352,col 9)-(line 352,col 27)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testKeepCollectionOrdering()",
+    "snippet": "public void testKeepCollectionOrdering() throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":[2,1,\"\n                + \"{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":null,\\\"reports\\\":[2]},\"\n                + \"{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":1,\\\"reports\\\":[]}\"\n                + \"]}\";\n        Company company \u003d MAPPER.readValue(json, Company.class);\n        assertEquals(4, company.employees.size());\n        // Deser must keep object ordering.\n        Employee firstEmployee \u003d company.employees.get(1);\n        Employee secondEmployee \u003d company.employees.get(0);\n        assertSame(firstEmployee, company.employees.get(2));\n        assertSame(secondEmployee, company.employees.get(3));\n        assertEmployees(firstEmployee, secondEmployee);\n    }",
+    "begin_line": 355,
+    "end_line": 369,
+    "comment": "",
+    "child_ranges": [
+      "(line 357,col 9)-(line 360,col 23)",
+      "(line 361,col 9)-(line 361,col 64)",
+      "(line 362,col 9)-(line 362,col 50)",
+      "(line 364,col 9)-(line 364,col 58)",
+      "(line 365,col 9)-(line 365,col 59)",
+      "(line 366,col 9)-(line 366,col 60)",
+      "(line 367,col 9)-(line 367,col 61)",
+      "(line 368,col 9)-(line 368,col 55)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testKeepMapOrdering()",
+    "snippet": "public void testKeepMapOrdering()\n        throws Exception\n    {\n        String json \u003d \"{\\\"employees\\\":{\"\n                      + \"\\\"1\\\":2, \\\"2\\\":1,\"\n                      + \"\\\"3\\\":{\\\"id\\\":1,\\\"name\\\":\\\"First\\\",\\\"manager\\\":null,\\\"reports\\\":[2]},\"\n                      + \"\\\"4\\\":{\\\"id\\\":2,\\\"name\\\":\\\"Second\\\",\\\"manager\\\":1,\\\"reports\\\":[]}\"\n                      + \"}}\";\n        MappedCompany company \u003d MAPPER.readValue(json, MappedCompany.class);\n        assertEquals(4, company.employees.size());\n        Employee firstEmployee \u003d company.employees.get(2);\n        Employee secondEmployee \u003d company.employees.get(1);\n        assertEmployees(firstEmployee, secondEmployee);\n        // Deser must keep object ordering. Not sure if it\u0027s really important for maps,\n        // but since default map is LinkedHashMap might as well ensure it does...\n        Iterator\u003cEntry\u003cInteger,Employee\u003e\u003e iterator \u003d company.employees.entrySet().iterator();\n        assertSame(secondEmployee, iterator.next().getValue());\n        assertSame(firstEmployee, iterator.next().getValue());\n        assertSame(firstEmployee, iterator.next().getValue());\n        assertSame(secondEmployee, iterator.next().getValue());\n    }",
+    "begin_line": 371,
+    "end_line": 391,
+    "comment": "",
+    "child_ranges": [
+      "(line 374,col 9)-(line 378,col 29)",
+      "(line 379,col 9)-(line 379,col 76)",
+      "(line 380,col 9)-(line 380,col 50)",
+      "(line 381,col 9)-(line 381,col 58)",
+      "(line 382,col 9)-(line 382,col 59)",
+      "(line 383,col 9)-(line 383,col 55)",
+      "(line 386,col 9)-(line 386,col 93)",
+      "(line 387,col 9)-(line 387,col 63)",
+      "(line 388,col 9)-(line 388,col 62)",
+      "(line 389,col 9)-(line 389,col 62)",
+      "(line 390,col 9)-(line 390,col 63)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testCustomDeserializationClass()",
+    "snippet": "public void testCustomDeserializationClass() throws Exception\n    {\n        // then bring back...\n        IdentifiableCustom result \u003d MAPPER.readValue(EXP_CUSTOM_VIA_CLASS, IdentifiableCustom.class);\n        assertEquals(-900, result.value);\n        assertSame(result, result.next);\n    }",
+    "begin_line": 401,
+    "end_line": 407,
+    "comment": "",
+    "child_ranges": [
+      "(line 404,col 9)-(line 404,col 101)",
+      "(line 405,col 9)-(line 405,col 41)",
+      "(line 406,col 9)-(line 406,col 40)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testCustomDeserializationProperty()",
+    "snippet": "public void testCustomDeserializationProperty() throws Exception\n    {\n        // then bring back...\n        IdWrapperExt result \u003d MAPPER.readValue(EXP_CUSTOM_VIA_PROP, IdWrapperExt.class);\n        assertEquals(99, result.node.value);\n        assertSame(result.node, result.node.next.node);\n        assertEquals(3, result.node.customId);\n    }",
+    "begin_line": 411,
+    "end_line": 418,
+    "comment": "",
+    "child_ranges": [
+      "(line 414,col 9)-(line 414,col 88)",
+      "(line 415,col 9)-(line 415,col 44)",
+      "(line 416,col 9)-(line 416,col 55)",
+      "(line 417,col 9)-(line 417,col 46)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testCustomPoolResolver()",
+    "snippet": "public void testCustomPoolResolver() throws Exception\n    {\n        Map\u003cObject,WithCustomResolution\u003e pool \u003d new HashMap\u003cObject,WithCustomResolution\u003e();\n        pool.put(1, new WithCustomResolution(1, 1));\n        pool.put(2, new WithCustomResolution(2, 2));\n        pool.put(3, new WithCustomResolution(3, 3));\n        pool.put(4, new WithCustomResolution(4, 4));\n        pool.put(5, new WithCustomResolution(5, 5));\n        ContextAttributes attrs \u003d MAPPER.getDeserializationConfig().getAttributes().withSharedAttribute(POOL_KEY, pool);\n        String content \u003d \"{\\\"data\\\":[1,2,3,4,5]}\";\n        CustomResolutionWrapper wrapper \u003d MAPPER.reader(CustomResolutionWrapper.class).with(attrs).readValue(content);\n        assertFalse(wrapper.data.isEmpty());\n        for (WithCustomResolution ob : wrapper.data) {\n            assertSame(pool.get(ob.id), ob);\n        }\n    }",
+    "begin_line": 426,
+    "end_line": 441,
+    "comment": "",
+    "child_ranges": [
+      "(line 428,col 9)-(line 428,col 91)",
+      "(line 429,col 9)-(line 429,col 52)",
+      "(line 430,col 9)-(line 430,col 52)",
+      "(line 431,col 9)-(line 431,col 52)",
+      "(line 432,col 9)-(line 432,col 52)",
+      "(line 433,col 9)-(line 433,col 52)",
+      "(line 434,col 9)-(line 434,col 120)",
+      "(line 435,col 9)-(line 435,col 50)",
+      "(line 436,col 9)-(line 436,col 118)",
+      "(line 437,col 9)-(line 437,col 44)",
+      "(line 438,col 9)-(line 440,col 9)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/struct/TestObjectIdDeserialization.java",
+    "signature": "com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization.testNullObjectId()",
+    "snippet": "public void testNullObjectId() throws Exception\n    {\n        // Ok, so missing Object Id is ok, but so is null.\n        \n        Identifiable value \u003d MAPPER.readValue\n                (aposToQuotes(\"{\u0027value\u0027:3, \u0027next\u0027:null, \u0027id\u0027:null}\"), Identifiable.class);\n        assertNotNull(value);\n        assertEquals(3, value.value);\n    }",
+    "begin_line": 460,
+    "end_line": 468,
+    "comment": "",
+    "child_ranges": [
+      "(line 464,col 9)-(line 465,col 90)",
+      "(line 466,col 9)-(line 466,col 29)",
+      "(line 467,col 9)-(line 467,col 37)"
+    ]
+  }
+]

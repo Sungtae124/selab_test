@@ -1,0 +1,338 @@
+[
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.simpleBehaviourTest()",
+    "snippet": "@Test public void simpleBehaviourTest() {\n        String h \u003d \"\u003cdiv\u003e\u003cp class\u003dfoo\u003e\u003ca href\u003d\u0027http://evil.com\u0027\u003eHello \u003cb id\u003dbar\u003ethere\u003c/b\u003e!\u003c/a\u003e\u003c/div\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.simpleText());\n\n        assertEquals(\"Hello \u003cb\u003ethere\u003c/b\u003e!\", TextUtil.stripNewlines(cleanHtml));\n    }",
+    "begin_line": 16,
+    "end_line": 21,
+    "comment": "",
+    "child_ranges": [
+      "(line 17,col 9)-(line 17,col 102)",
+      "(line 18,col 9)-(line 18,col 66)",
+      "(line 20,col 9)-(line 20,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.simpleBehaviourTest2()",
+    "snippet": "@Test public void simpleBehaviourTest2() {\n        String h \u003d \"Hello \u003cb\u003ethere\u003c/b\u003e!\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.simpleText());\n\n        assertEquals(\"Hello \u003cb\u003ethere\u003c/b\u003e!\", TextUtil.stripNewlines(cleanHtml));\n    }",
+    "begin_line": 23,
+    "end_line": 28,
+    "comment": "",
+    "child_ranges": [
+      "(line 24,col 9)-(line 24,col 41)",
+      "(line 25,col 9)-(line 25,col 66)",
+      "(line 27,col 9)-(line 27,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.basicBehaviourTest()",
+    "snippet": "@Test public void basicBehaviourTest() {\n        String h \u003d \"\u003cdiv\u003e\u003cp\u003e\u003ca href\u003d\u0027javascript:sendAllMoney()\u0027\u003eDodgy\u003c/a\u003e \u003cA HREF\u003d\u0027HTTP://nice.com\u0027\u003eNice\u003c/a\u003e\u003c/p\u003e\u003cblockquote\u003eHello\u003c/blockquote\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.basic());\n\n        assertEquals(\"\u003cp\u003e\u003ca rel\u003d\\\"nofollow\\\"\u003eDodgy\u003c/a\u003e \u003ca href\u003d\\\"http://nice.com\\\" rel\u003d\\\"nofollow\\\"\u003eNice\u003c/a\u003e\u003c/p\u003e\u003cblockquote\u003eHello\u003c/blockquote\u003e\",\n                TextUtil.stripNewlines(cleanHtml));\n    }",
+    "begin_line": 30,
+    "end_line": 36,
+    "comment": "",
+    "child_ranges": [
+      "(line 31,col 9)-(line 31,col 144)",
+      "(line 32,col 9)-(line 32,col 61)",
+      "(line 34,col 9)-(line 35,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.basicWithImagesTest()",
+    "snippet": "@Test public void basicWithImagesTest() {\n        String h \u003d \"\u003cdiv\u003e\u003cp\u003e\u003cimg src\u003d\u0027http://example.com/\u0027 alt\u003dImage\u003e\u003c/p\u003e\u003cp\u003e\u003cimg src\u003d\u0027ftp://ftp.example.com\u0027\u003e\u003c/p\u003e\u003c/div\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.basicWithImages());\n        assertEquals(\"\u003cp\u003e\u003cimg src\u003d\\\"http://example.com/\\\" alt\u003d\\\"Image\\\" /\u003e\u003c/p\u003e\u003cp\u003e\u003cimg /\u003e\u003c/p\u003e\", TextUtil.stripNewlines(cleanHtml));\n    }",
+    "begin_line": 38,
+    "end_line": 42,
+    "comment": "",
+    "child_ranges": [
+      "(line 39,col 9)-(line 39,col 121)",
+      "(line 40,col 9)-(line 40,col 71)",
+      "(line 41,col 9)-(line 41,col 130)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testRelaxed()",
+    "snippet": "@Test public void testRelaxed() {\n        String h \u003d \"\u003ch1\u003eHead\u003c/h1\u003e\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eOne\u003ctd\u003eTwo\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003ch1\u003eHead\u003c/h1\u003e\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eOne\u003c/td\u003e\u003ctd\u003eTwo\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\", TextUtil.stripNewlines(cleanHtml));\n    }",
+    "begin_line": 44,
+    "end_line": 48,
+    "comment": "",
+    "child_ranges": [
+      "(line 45,col 9)-(line 45,col 78)",
+      "(line 46,col 9)-(line 46,col 63)",
+      "(line 47,col 9)-(line 47,col 136)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testDropComments()",
+    "snippet": "@Test public void testDropComments() {\n        String h \u003d \"\u003cp\u003eHello\u003c!-- no --\u003e\u003c/p\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003cp\u003eHello\u003c/p\u003e\", cleanHtml);\n    }",
+    "begin_line": 50,
+    "end_line": 54,
+    "comment": "",
+    "child_ranges": [
+      "(line 51,col 9)-(line 51,col 45)",
+      "(line 52,col 9)-(line 52,col 63)",
+      "(line 53,col 9)-(line 53,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testDropXmlProc()",
+    "snippet": "@Test public void testDropXmlProc() {\n        String h \u003d \"\u003c?import namespace\u003d\\\"xss\\\"\u003e\u003cp\u003eHello\u003c/p\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003cp\u003eHello\u003c/p\u003e\", cleanHtml);\n    }",
+    "begin_line": 56,
+    "end_line": 60,
+    "comment": "",
+    "child_ranges": [
+      "(line 57,col 9)-(line 57,col 61)",
+      "(line 58,col 9)-(line 58,col 63)",
+      "(line 59,col 9)-(line 59,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testDropScript()",
+    "snippet": "@Test public void testDropScript() {\n        String h \u003d \"\u003cSCRIPT SRC\u003d//ha.ckers.org/.j\u003e\u003cSCRIPT\u003ealert(/XSS/.source)\u003c/SCRIPT\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\", cleanHtml);\n    }",
+    "begin_line": 62,
+    "end_line": 66,
+    "comment": "",
+    "child_ranges": [
+      "(line 63,col 9)-(line 63,col 88)",
+      "(line 64,col 9)-(line 64,col 63)",
+      "(line 65,col 9)-(line 65,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testDropImageScript()",
+    "snippet": "@Test public void testDropImageScript() {\n        String h \u003d \"\u003cIMG SRC\u003d\\\"javascript:alert(\u0027XSS\u0027)\\\"\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003cimg /\u003e\", cleanHtml);\n    }",
+    "begin_line": 68,
+    "end_line": 72,
+    "comment": "",
+    "child_ranges": [
+      "(line 69,col 9)-(line 69,col 59)",
+      "(line 70,col 9)-(line 70,col 63)",
+      "(line 71,col 9)-(line 71,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testCleanJavascriptHref()",
+    "snippet": "@Test public void testCleanJavascriptHref() {\n        String h \u003d \"\u003cA HREF\u003d\\\"javascript:document.location\u003d\u0027http://www.google.com/\u0027\\\"\u003eXSS\u003c/A\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003ca\u003eXSS\u003c/a\u003e\", cleanHtml);\n    }",
+    "begin_line": 74,
+    "end_line": 78,
+    "comment": "",
+    "child_ranges": [
+      "(line 75,col 9)-(line 75,col 95)",
+      "(line 76,col 9)-(line 76,col 63)",
+      "(line 77,col 9)-(line 77,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testDropsUnknownTags()",
+    "snippet": "@Test public void testDropsUnknownTags() {\n        String h \u003d \"\u003cp\u003e\u003ccustom foo\u003dtrue\u003eTest\u003c/custom\u003e\u003c/p\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.relaxed());\n        assertEquals(\"\u003cp\u003eTest\u003c/p\u003e\", cleanHtml);\n    }",
+    "begin_line": 80,
+    "end_line": 84,
+    "comment": "",
+    "child_ranges": [
+      "(line 81,col 9)-(line 81,col 59)",
+      "(line 82,col 9)-(line 82,col 63)",
+      "(line 83,col 9)-(line 83,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testHandlesEmptyAttributes()",
+    "snippet": "@Test public void testHandlesEmptyAttributes() {\n        String h \u003d \"\u003cimg alt\u003d\\\"\\\" src\u003d unknown\u003d\u0027\u0027\u003e\";\n        String cleanHtml \u003d Jsoup.clean(h, Whitelist.basicWithImages());\n        assertEquals(\"\u003cimg alt\u003d\\\"\\\" /\u003e\", cleanHtml);\n    }",
+    "begin_line": 86,
+    "end_line": 90,
+    "comment": "",
+    "child_ranges": [
+      "(line 87,col 9)-(line 87,col 52)",
+      "(line 88,col 9)-(line 88,col 71)",
+      "(line 89,col 9)-(line 89,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.testIsValid()",
+    "snippet": "@Test public void testIsValid() {\n        String ok \u003d \"\u003cp\u003eTest \u003cb\u003e\u003ca href\u003d\u0027http://example.com/\u0027\u003eOK\u003c/a\u003e\u003c/b\u003e\u003c/p\u003e\";\n        String nok1 \u003d \"\u003cp\u003e\u003cscript\u003e\u003c/script\u003eNot \u003cb\u003eOK\u003c/b\u003e\u003c/p\u003e\";\n        String nok2 \u003d \"\u003cp align\u003dright\u003eTest Not \u003cb\u003eOK\u003c/b\u003e\u003c/p\u003e\";\n        assertTrue(Jsoup.isValid(ok, Whitelist.basic()));\n        assertFalse(Jsoup.isValid(nok1, Whitelist.basic()));\n        assertFalse(Jsoup.isValid(nok2, Whitelist.basic()));\n    }",
+    "begin_line": 92,
+    "end_line": 99,
+    "comment": "",
+    "child_ranges": [
+      "(line 93,col 9)-(line 93,col 78)",
+      "(line 94,col 9)-(line 94,col 62)",
+      "(line 95,col 9)-(line 95,col 62)",
+      "(line 96,col 9)-(line 96,col 57)",
+      "(line 97,col 9)-(line 97,col 60)",
+      "(line 98,col 9)-(line 98,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.resolvesRelativeLinks()",
+    "snippet": "@Test public void resolvesRelativeLinks() {\n        String html \u003d \"\u003ca href\u003d\u0027/foo\u0027\u003eLink\u003c/a\u003e\u003cimg src\u003d\u0027/bar\u0027\u003e\";\n        String clean \u003d Jsoup.clean(html, \"http://example.com/\", Whitelist.basicWithImages());\n        assertEquals(\"\u003ca href\u003d\\\"http://example.com/foo\\\" rel\u003d\\\"nofollow\\\"\u003eLink\u003c/a\u003e\\n\u003cimg src\u003d\\\"http://example.com/bar\\\" /\u003e\", clean);\n    }",
+    "begin_line": 101,
+    "end_line": 105,
+    "comment": "",
+    "child_ranges": [
+      "(line 102,col 9)-(line 102,col 64)",
+      "(line 103,col 9)-(line 103,col 93)",
+      "(line 104,col 9)-(line 104,col 132)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.preservesRelatedLinksIfConfigured()",
+    "snippet": "@Test public void preservesRelatedLinksIfConfigured() {\n        String html \u003d \"\u003ca href\u003d\u0027/foo\u0027\u003eLink\u003c/a\u003e\u003cimg src\u003d\u0027/bar\u0027\u003e \u003cimg src\u003d\u0027javascript:alert()\u0027\u003e\";\n        String clean \u003d Jsoup.clean(html, \"http://example.com/\", Whitelist.basicWithImages().preserveRelativeLinks(true));\n        assertEquals(\"\u003ca href\u003d\\\"/foo\\\" rel\u003d\\\"nofollow\\\"\u003eLink\u003c/a\u003e\\n\u003cimg src\u003d\\\"/bar\\\" /\u003e \\n\u003cimg /\u003e\", clean);\n    }",
+    "begin_line": 107,
+    "end_line": 111,
+    "comment": "",
+    "child_ranges": [
+      "(line 108,col 9)-(line 108,col 95)",
+      "(line 109,col 9)-(line 109,col 121)",
+      "(line 110,col 9)-(line 110,col 106)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.dropsUnresolvableRelativeLinks()",
+    "snippet": "@Test public void dropsUnresolvableRelativeLinks() {\n        String html \u003d \"\u003ca href\u003d\u0027/foo\u0027\u003eLink\u003c/a\u003e\";\n        String clean \u003d Jsoup.clean(html, Whitelist.basic());\n        assertEquals(\"\u003ca rel\u003d\\\"nofollow\\\"\u003eLink\u003c/a\u003e\", clean);\n    }",
+    "begin_line": 113,
+    "end_line": 117,
+    "comment": "",
+    "child_ranges": [
+      "(line 114,col 9)-(line 114,col 48)",
+      "(line 115,col 9)-(line 115,col 60)",
+      "(line 116,col 9)-(line 116,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.handlesCustomProtocols()",
+    "snippet": "@Test public void handlesCustomProtocols() {\n        String html \u003d \"\u003cimg src\u003d\u0027cid:12345\u0027 /\u003e \u003cimg src\u003d\u0027data:gzzt\u0027 /\u003e\";\n        String dropped \u003d Jsoup.clean(html, Whitelist.basicWithImages());\n        assertEquals(\"\u003cimg /\u003e \\n\u003cimg /\u003e\", dropped);\n\n        String preserved \u003d Jsoup.clean(html, Whitelist.basicWithImages().addProtocols(\"img\", \"src\", \"cid\", \"data\"));\n        assertEquals(\"\u003cimg src\u003d\\\"cid:12345\\\" /\u003e \\n\u003cimg src\u003d\\\"data:gzzt\\\" /\u003e\", preserved);\n    }",
+    "begin_line": 119,
+    "end_line": 126,
+    "comment": "",
+    "child_ranges": [
+      "(line 120,col 9)-(line 120,col 72)",
+      "(line 121,col 9)-(line 121,col 72)",
+      "(line 122,col 9)-(line 122,col 51)",
+      "(line 124,col 9)-(line 124,col 116)",
+      "(line 125,col 9)-(line 125,col 89)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.handlesAllPseudoTag()",
+    "snippet": "@Test public void handlesAllPseudoTag() {\n        String html \u003d \"\u003cp class\u003d\u0027foo\u0027 src\u003d\u0027bar\u0027\u003e\u003ca class\u003d\u0027qux\u0027\u003elink\u003c/a\u003e\u003c/p\u003e\";\n        Whitelist whitelist \u003d new Whitelist()\n                .addAttributes(\":all\", \"class\")\n                .addAttributes(\"p\", \"style\")\n                .addTags(\"p\", \"a\");\n\n        String clean \u003d Jsoup.clean(html, whitelist);\n        assertEquals(\"\u003cp class\u003d\\\"foo\\\"\u003e\u003ca class\u003d\\\"qux\\\"\u003elink\u003c/a\u003e\u003c/p\u003e\", clean);\n    }",
+    "begin_line": 128,
+    "end_line": 137,
+    "comment": "",
+    "child_ranges": [
+      "(line 129,col 9)-(line 129,col 77)",
+      "(line 130,col 9)-(line 133,col 35)",
+      "(line 135,col 9)-(line 135,col 52)",
+      "(line 136,col 9)-(line 136,col 78)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.addsTagOnAttributesIfNotSet()",
+    "snippet": "@Test public void addsTagOnAttributesIfNotSet() {\n        String html \u003d \"\u003cp class\u003d\u0027foo\u0027 src\u003d\u0027bar\u0027\u003eOne\u003c/p\u003e\";\n        Whitelist whitelist \u003d new Whitelist()\n            .addAttributes(\"p\", \"class\");\n        // ^^ whitelist does not have explicit tag add for p, inferred from add attributes.\n        String clean \u003d Jsoup.clean(html, whitelist);\n        assertEquals(\"\u003cp class\u003d\\\"foo\\\"\u003eOne\u003c/p\u003e\", clean);\n    }",
+    "begin_line": 139,
+    "end_line": 146,
+    "comment": "",
+    "child_ranges": [
+      "(line 140,col 9)-(line 140,col 57)",
+      "(line 141,col 9)-(line 142,col 41)",
+      "(line 144,col 9)-(line 144,col 52)",
+      "(line 145,col 9)-(line 145,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.supplyOutputSettings()",
+    "snippet": "@Test public void supplyOutputSettings() {\n        // test that one can override the default document output settings\n        Document.OutputSettings os \u003d new Document.OutputSettings();\n        os.prettyPrint(false);\n        os.escapeMode(Entities.EscapeMode.extended);\n\n        String html \u003d \"\u003cdiv\u003e\u003cp\u003e\u0026bernou;\u003c/p\u003e\u003c/div\u003e\";\n        String customOut \u003d Jsoup.clean(html, \"http://foo.com/\", Whitelist.relaxed(), os);\n        String defaultOut \u003d Jsoup.clean(html, \"http://foo.com/\", Whitelist.relaxed());\n        assertNotSame(defaultOut, customOut);\n\n        assertEquals(\"\u003cdiv\u003e\u003cp\u003e\u0026bernou;\u003c/p\u003e\u003c/div\u003e\", customOut);\n        assertEquals(\"\u003cdiv\u003e\\n\" +\n            \" \u003cp\u003eℬ\u003c/p\u003e\\n\" +\n            \"\u003c/div\u003e\", defaultOut);\n\n        os.charset(\"ASCII\");\n        os.escapeMode(Entities.EscapeMode.base);\n        String customOut2 \u003d Jsoup.clean(html, \"http://foo.com/\", Whitelist.relaxed(), os);\n        assertEquals(\"\u003cdiv\u003e\u003cp\u003e\u0026#8492;\u003c/p\u003e\u003c/div\u003e\", customOut2);\n    }",
+    "begin_line": 148,
+    "end_line": 168,
+    "comment": "",
+    "child_ranges": [
+      "(line 150,col 9)-(line 150,col 67)",
+      "(line 151,col 9)-(line 151,col 30)",
+      "(line 152,col 9)-(line 152,col 52)",
+      "(line 154,col 9)-(line 154,col 51)",
+      "(line 155,col 9)-(line 155,col 89)",
+      "(line 156,col 9)-(line 156,col 86)",
+      "(line 157,col 9)-(line 157,col 45)",
+      "(line 159,col 9)-(line 159,col 62)",
+      "(line 160,col 9)-(line 162,col 34)",
+      "(line 164,col 9)-(line 164,col 28)",
+      "(line 165,col 9)-(line 165,col 48)",
+      "(line 166,col 9)-(line 166,col 90)",
+      "(line 167,col 9)-(line 167,col 62)"
+    ]
+  },
+  {
+    "class_name": "org.jsoup.safety.CleanerTest",
+    "child_classes": [],
+    "src_path": "org/jsoup/safety/CleanerTest.java",
+    "signature": "org.jsoup.safety.CleanerTest.handlesFramesets()",
+    "snippet": "@Test public void handlesFramesets() {\n        String dirty \u003d \"\u003chtml\u003e\u003chead\u003e\u003cscript\u003e\u003c/script\u003e\u003cnoscript\u003e\u003c/noscript\u003e\u003c/head\u003e\u003cframeset\u003e\u003cframe src\u003d\\\"foo\\\" /\u003e\u003cframe src\u003d\\\"foo\\\" /\u003e\u003c/frameset\u003e\u003c/html\u003e\";\n        String clean \u003d Jsoup.clean(dirty, Whitelist.basic());\n        assertEquals(\"\", clean); // nothing good can come out of that\n\n        Document dirtyDoc \u003d Jsoup.parse(dirty);\n        Document cleanDoc \u003d new Cleaner(Whitelist.basic()).clean(dirtyDoc);\n        assertFalse(cleanDoc \u003d\u003d null);\n        assertEquals(0, cleanDoc.body().childNodes().size());\n    }",
+    "begin_line": 170,
+    "end_line": 179,
+    "comment": "",
+    "child_ranges": [
+      "(line 171,col 9)-(line 171,col 153)",
+      "(line 172,col 9)-(line 172,col 61)",
+      "(line 173,col 9)-(line 173,col 32)",
+      "(line 175,col 9)-(line 175,col 47)",
+      "(line 176,col 9)-(line 176,col 75)",
+      "(line 177,col 9)-(line 177,col 38)",
+      "(line 178,col 9)-(line 178,col 61)"
+    ]
+  }
+]

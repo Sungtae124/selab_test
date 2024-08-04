@@ -1,0 +1,2810 @@
+[
+  {
+    "class_name": "com.fasterxml.jackson.databind.AnnotationIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/AnnotationIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.AnnotationIntrospector._type",
+    "snippet": "private final Type _type;",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.AnnotationIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/AnnotationIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.AnnotationIntrospector._name",
+    "snippet": "private final String _name;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.BeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/BeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.BeanDescription._type",
+    "snippet": "protected final JavaType _type;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Bean type information, including raw class and possible * generics information\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationConfig.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -4227480407273773599L;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationConfig._deserFeatures",
+    "snippet": "protected final int _deserFeatures;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": "/** \n * Set of features enabled; actual type (kind of features) depends on sub-classes.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationConfig._problemHandlers",
+    "snippet": "protected final LinkedNode\u003cDeserializationProblemHandler\u003e _problemHandlers;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * Linked list that contains all registered problem handlers. Implementation as front-added linked list allows for sharing of the list (tail) without copying the list.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationConfig._nodeFactory",
+    "snippet": "protected final JsonNodeFactory _nodeFactory;",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": "/** \n * Factory used for constructing  {@link com.fasterxml.jackson.databind.JsonNode} instances.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -4290063686213707727L;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext.MAX_ERROR_STR_LEN",
+    "snippet": "private final static int MAX_ERROR_STR_LEN \u003d 500;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Let\u0027s limit length of error messages, for cases where underlying data may be very large -- no point in spamming logs with megs of meaningless data.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._cache",
+    "snippet": "protected final DeserializerCache _cache;",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * Object that handle details of  {@link JsonDeserializer} caching.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._factory",
+    "snippet": "protected final DeserializerFactory _factory;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": "/** \n * Read-only factory instance; exposed to let owners (\u003ccode\u003eObjectMapper\u003c/code\u003e, \u003ccode\u003eObjectReader\u003c/code\u003e) access it.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._config",
+    "snippet": "protected final DeserializationConfig _config;",
+    "begin_line": 88,
+    "end_line": 88,
+    "comment": "/** \n * Generic deserialization processing configuration\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._featureFlags",
+    "snippet": "protected final int _featureFlags;",
+    "begin_line": 93,
+    "end_line": 93,
+    "comment": "/** \n * Bitmap of  {@link DeserializationFeature}s that are enabled\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._view",
+    "snippet": "protected final Class\u003c?\u003e _view;",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": "/** \n * Currently active view, if any.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._parser",
+    "snippet": "protected transient JsonParser _parser;",
+    "begin_line": 105,
+    "end_line": 105,
+    "comment": "/** \n * Currently active parser used for deserialization. May be different from the outermost parser when content is buffered.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._injectableValues",
+    "snippet": "protected final InjectableValues _injectableValues;",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": "/** \n * Object used for resolving references to injectable values.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._arrayBuilders",
+    "snippet": "protected transient ArrayBuilders _arrayBuilders;",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._objectBuffer",
+    "snippet": "protected transient ObjectBuffer _objectBuffer;",
+    "begin_line": 121,
+    "end_line": 121,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._dateFormat",
+    "snippet": "protected transient DateFormat _dateFormat;",
+    "begin_line": 123,
+    "end_line": 123,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationContext._attributes",
+    "snippet": "protected transient ContextAttributes _attributes;",
+    "begin_line": 130,
+    "end_line": 130,
+    "comment": "/** \n * Lazily-constructed holder for per-call attributes.\n * @since 2.3\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.DeserializationFeature",
+    "src_path": "com/fasterxml/jackson/databind/DeserializationFeature.java",
+    "signature": "com.fasterxml.jackson.databind.DeserializationFeature._defaultState",
+    "snippet": "private final boolean _defaultState;",
+    "begin_line": 321,
+    "end_line": 321,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1;",
+    "begin_line": 22,
+    "end_line": 22,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType._class",
+    "snippet": "protected final Class\u003c?\u003e _class;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": "/** \n * This is the nominal type-erased Class that would be close to the type represented (but not exactly type, due to type erasure: type instance may have more information on this). May be an interface or abstract class, so instantiation may not be possible.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType._hash",
+    "snippet": "protected final int _hash;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType._valueHandler",
+    "snippet": "protected final Object _valueHandler;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * Optional handler (codec) that can be attached to indicate  what to use for handling (serializing, deserializing) values of this specific type. \u003cp\u003e Note: untyped (i.e. caller has to cast) because it is used for different kinds of handlers, with unrelated types.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType._typeHandler",
+    "snippet": "protected final Object _typeHandler;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Optional handler that can be attached to indicate how to handle additional type metadata associated with this type. \u003cp\u003e Note: untyped (i.e. caller has to cast) because it is used for different kinds of handlers, with unrelated types.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.JavaType",
+    "src_path": "com/fasterxml/jackson/databind/JavaType.java",
+    "signature": "com.fasterxml.jackson.databind.JavaType._asStatic",
+    "snippet": "protected final boolean _asStatic;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": "/** \n * Whether entities defined with this type should be handled using static typing (as opposed to dynamic runtime type) or not.\n * @since 2.2\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.MapperFeature",
+    "src_path": "com/fasterxml/jackson/databind/MapperFeature.java",
+    "signature": "com.fasterxml.jackson.databind.MapperFeature._defaultState",
+    "snippet": "private final boolean _defaultState;",
+    "begin_line": 278,
+    "end_line": 278,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.MappingJsonFactory",
+    "src_path": "com/fasterxml/jackson/databind/MappingJsonFactory.java",
+    "signature": "com.fasterxml.jackson.databind.MappingJsonFactory.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6744103724013275513L;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 134,
+    "end_line": 134,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._appliesFor",
+    "snippet": "protected final DefaultTyping _appliesFor;",
+    "begin_line": 139,
+    "end_line": 139,
+    "comment": "/** \n * Definition of what types is this default typer valid for.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.JSON_NODE_TYPE",
+    "snippet": "private final static JavaType JSON_NODE_TYPE \u003d SimpleType.constructUnsafe(JsonNode.class);",
+    "begin_line": 199,
+    "end_line": 199,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.DEFAULT_INTROSPECTOR",
+    "snippet": "protected final static ClassIntrospector DEFAULT_INTROSPECTOR \u003d BasicClassIntrospector.instance;",
+    "begin_line": 204,
+    "end_line": 204,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.DEFAULT_ANNOTATION_INTROSPECTOR",
+    "snippet": "protected final static AnnotationIntrospector DEFAULT_ANNOTATION_INTROSPECTOR \u003d new JacksonAnnotationIntrospector();",
+    "begin_line": 207,
+    "end_line": 207,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.STD_VISIBILITY_CHECKER",
+    "snippet": "protected final static VisibilityChecker\u003c?\u003e STD_VISIBILITY_CHECKER \u003d VisibilityChecker.Std.defaultInstance();",
+    "begin_line": 209,
+    "end_line": 209,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._defaultPrettyPrinter",
+    "snippet": "protected final static PrettyPrinter _defaultPrettyPrinter \u003d new DefaultPrettyPrinter();",
+    "begin_line": 211,
+    "end_line": 211,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper.DEFAULT_BASE",
+    "snippet": "protected final static BaseSettings DEFAULT_BASE \u003d new BaseSettings(DEFAULT_INTROSPECTOR,\n            DEFAULT_ANNOTATION_INTROSPECTOR, STD_VISIBILITY_CHECKER, null, TypeFactory.defaultInstance(),\n            null, StdDateFormat.instance, null,\n            Locale.getDefault(),\n//            TimeZone.getDefault()\n            TimeZone.getTimeZone(\"GMT\"),\n            Base64Variants.getDefaultVariant() // 2.1\n    );",
+    "begin_line": 217,
+    "end_line": 224,
+    "comment": "/** \n * Base settings contain defaults used for all  {@link ObjectMapper}instances.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._jsonFactory",
+    "snippet": "protected final JsonFactory _jsonFactory;",
+    "begin_line": 236,
+    "end_line": 236,
+    "comment": "/** \n * Factory used to create  {@link JsonParser} and {@link JsonGenerator}instances as necessary.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._typeFactory",
+    "snippet": "protected TypeFactory _typeFactory;",
+    "begin_line": 243,
+    "end_line": 243,
+    "comment": "/** \n * Specific factory used for creating  {@link JavaType} instances;needed to allow modules to add more custom type handling (mostly to support types of non-Java JVM languages)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._injectableValues",
+    "snippet": "protected InjectableValues _injectableValues;",
+    "begin_line": 248,
+    "end_line": 248,
+    "comment": "/** \n * Provider for values to inject in deserialized POJOs.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._subtypeResolver",
+    "snippet": "protected SubtypeResolver _subtypeResolver;",
+    "begin_line": 254,
+    "end_line": 254,
+    "comment": "/** \n * Thing used for registering sub-types, resolving them to super/sub-types as needed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._rootNames",
+    "snippet": "protected final RootNameLookup _rootNames;",
+    "begin_line": 259,
+    "end_line": 259,
+    "comment": "/** \n * Cache for root names used when root-wrapping is enabled.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._mixInAnnotations",
+    "snippet": "protected final HashMap\u003cClassKey,Class\u003c?\u003e\u003e _mixInAnnotations;",
+    "begin_line": 278,
+    "end_line": 278,
+    "comment": "/** \n * Mapping that defines how to apply mix-in annotations: key is the type to received additional annotations, and value is the type that has annotations to \"mix in\". \u003cp\u003e Annotations associated with the value classes will be used to override annotations of the key class, associated with the same field or method. They can be further masked by sub-classes: you can think of it as injecting annotations between the target class and its sub-classes (or interfaces)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._serializationConfig",
+    "snippet": "protected SerializationConfig _serializationConfig;",
+    "begin_line": 290,
+    "end_line": 290,
+    "comment": "/** \n * Configuration object that defines basic global settings for the serialization process\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._serializerProvider",
+    "snippet": "protected DefaultSerializerProvider _serializerProvider;",
+    "begin_line": 302,
+    "end_line": 302,
+    "comment": "/** \n * Object that manages access to serializers used for serialization, including caching. It is configured with  {@link #_serializerFactory} to allowfor constructing custom serializers. \u003cp\u003e Note: while serializers are only exposed  {@link SerializerProvider}, mappers and readers need to access additional API defined by {@link DefaultSerializerProvider}\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._serializerFactory",
+    "snippet": "protected SerializerFactory _serializerFactory;",
+    "begin_line": 307,
+    "end_line": 307,
+    "comment": "/** \n * Serializer factory used for constructing serializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._deserializationConfig",
+    "snippet": "protected DeserializationConfig _deserializationConfig;",
+    "begin_line": 319,
+    "end_line": 319,
+    "comment": "/** \n * Configuration object that defines basic global settings for the serialization process\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._deserializationContext",
+    "snippet": "protected DefaultDeserializationContext _deserializationContext;",
+    "begin_line": 326,
+    "end_line": 326,
+    "comment": "/** \n * Blueprint context object; stored here to allow custom sub-classes. Contains references to objects needed for deserialization construction (cache, factory).\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ObjectMapper",
+    "src_path": "com/fasterxml/jackson/databind/ObjectMapper.java",
+    "signature": "com.fasterxml.jackson.databind.ObjectMapper._rootDeserializers",
+    "snippet": "final protected ConcurrentHashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e _rootDeserializers\n        \u003d new ConcurrentHashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e(64, 0.6f, 2);",
+    "begin_line": 356,
+    "end_line": 357,
+    "comment": "/** \n * We will use a separate main-level Map for keeping track of root-level deserializers. This is where most succesful cache lookups get resolved. Map will contain resolvers for all kinds of types, including container types: this is different from the component cache which will only cache bean deserializers. \u003cp\u003e Given that we don\u0027t expect much concurrency for additions (should very quickly converge to zero after startup), let\u0027s explicitly define a low concurrency setting. \u003cp\u003e Since version 1.5, these may are either \"raw\" deserializers (when no type information is needed for base type), or type-wrapped deserializers (if it is needed)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 7930806520033045126L;",
+    "begin_line": 17,
+    "end_line": 17,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName._USE_DEFAULT",
+    "snippet": "private final static String _USE_DEFAULT \u003d \"\";",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName._NO_NAME",
+    "snippet": "private final static String _NO_NAME \u003d \"\";",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName.USE_DEFAULT",
+    "snippet": "public final static PropertyName USE_DEFAULT \u003d new PropertyName(_USE_DEFAULT, null);",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": "/** \n * Special placeholder value that indicates that name to use should be based on the standard heuristics. This can be different from returning null, as null means \"no information available, whereas this value indicates explicit defaulting.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName.NO_NAME",
+    "snippet": "public final static PropertyName NO_NAME \u003d new PropertyName(new String(_NO_NAME), null);",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Special placeholder value that indicates that there is no name associated. Exact semantics to use (if any) depend on actual annotation in use, but commonly this value disables behavior for which name would be needed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName._simpleName",
+    "snippet": "protected final String _simpleName;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Basic name of the property.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName._namespace",
+    "snippet": "protected final String _namespace;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Additional namespace, for formats that have such concept (JSON does not, XML does, for example).\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.PropertyName",
+    "src_path": "com/fasterxml/jackson/databind/PropertyName.java",
+    "signature": "com.fasterxml.jackson.databind.PropertyName._encodedSimple",
+    "snippet": "protected SerializableString _encodedSimple;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * Lazily-constructed efficient representation of the simple name. \u003cp\u003e NOTE: not defined as volatile to avoid performance problem with concurrent access in multi-core environments; due to statelessness of  {@link SerializedString} at most leads to multiple instantiations.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/SerializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.SerializationConfig.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -1278867172535832879L;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/SerializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.SerializationConfig._serFeatures",
+    "snippet": "protected final int _serFeatures;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Set of features enabled; actual type (kind of features) depends on sub-classes.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/SerializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.SerializationConfig._serializationInclusion",
+    "snippet": "protected JsonInclude.Include _serializationInclusion \u003d null;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Which Bean/Map properties are to be included in serialization? Default settings is to include all regardless of value; can be changed to only include non-null properties, or properties with non-default values.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializationConfig",
+    "src_path": "com/fasterxml/jackson/databind/SerializationConfig.java",
+    "signature": "com.fasterxml.jackson.databind.SerializationConfig._filterProvider",
+    "snippet": "protected final FilterProvider _filterProvider;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * Object used for resolving filter ids to filter instances. Non-null if explicitly defined; null by default.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializationFeature",
+    "src_path": "com/fasterxml/jackson/databind/SerializationFeature.java",
+    "signature": "com.fasterxml.jackson.databind.SerializationFeature._defaultState",
+    "snippet": "private final boolean _defaultState;",
+    "begin_line": 367,
+    "end_line": 367,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider.TYPE_OBJECT",
+    "snippet": "@Deprecated JavaType TYPE_OBJECT \u003d TypeFactory.defaultInstance().uncheckedSimpleType(Object.class);",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider.CACHE_UNKNOWN_MAPPINGS",
+    "snippet": "protected final static boolean CACHE_UNKNOWN_MAPPINGS \u003d false;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": "/** \n * Setting for determining whether mappings for \"unknown classes\" should be cached for faster resolution. Usually this isn\u0027t needed, but maybe it is in some cases?\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider.DEFAULT_NULL_KEY_SERIALIZER",
+    "snippet": "public final static JsonSerializer\u003cObject\u003e DEFAULT_NULL_KEY_SERIALIZER \u003d\n        new FailingSerializer(\"Null key for a Map not allowed in JSON (use a converting NullKeySerializer?)\");",
+    "begin_line": 50,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider.DEFAULT_UNKNOWN_SERIALIZER",
+    "snippet": "protected final static JsonSerializer\u003cObject\u003e DEFAULT_UNKNOWN_SERIALIZER \u003d new UnknownSerializer();",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * NOTE: changed to \u003ccode\u003eprotected\u003c/code\u003e for 2.3; no need to be publicly available.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._config",
+    "snippet": "final protected SerializationConfig _config;",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * Serialization configuration to use for serialization processing.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._serializationView",
+    "snippet": "final protected Class\u003c?\u003e _serializationView;",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": "/** \n * View used for currently active serialization, if any.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._serializerFactory",
+    "snippet": "final protected SerializerFactory _serializerFactory;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * Factory used for constructing actual serializer instances.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._serializerCache",
+    "snippet": "final protected SerializerCache _serializerCache;",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": "/** \n * Cache for doing type-to-value-serializer lookups.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._rootNames",
+    "snippet": "final protected RootNameLookup _rootNames;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": "/** \n * Helper object for keeping track of introspected root names\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._attributes",
+    "snippet": "protected transient ContextAttributes _attributes;",
+    "begin_line": 106,
+    "end_line": 106,
+    "comment": "/** \n * Lazily-constructed holder for per-call attributes.\n * @since 2.3\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._unknownTypeSerializer",
+    "snippet": "protected JsonSerializer\u003cObject\u003e _unknownTypeSerializer \u003d DEFAULT_UNKNOWN_SERIALIZER;",
+    "begin_line": 120,
+    "end_line": 120,
+    "comment": "/** \n * Serializer that gets called for values of types for which no serializers can be constructed. \u003cp\u003e The default serializer will simply thrown an exception.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._keySerializer",
+    "snippet": "protected JsonSerializer\u003cObject\u003e _keySerializer;",
+    "begin_line": 127,
+    "end_line": 127,
+    "comment": "/** \n * Serializer used to output non-null keys of Maps (which will get output as JSON Objects), if not null; if null, us the standard default key serializer.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._nullValueSerializer",
+    "snippet": "protected JsonSerializer\u003cObject\u003e _nullValueSerializer \u003d NullSerializer.instance;",
+    "begin_line": 133,
+    "end_line": 133,
+    "comment": "/** \n * Serializer used to output a null value. Default implementation writes nulls using  {@link JsonGenerator#writeNull}.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._nullKeySerializer",
+    "snippet": "protected JsonSerializer\u003cObject\u003e _nullKeySerializer \u003d DEFAULT_NULL_KEY_SERIALIZER;",
+    "begin_line": 142,
+    "end_line": 142,
+    "comment": "/** \n * Serializer used to (try to) output a null key, due to an entry of {@link java.util.Map} having null key.The default implementation will throw an exception if this happens; alternative implementation (like one that would write an Empty String) can be defined.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._knownSerializers",
+    "snippet": "protected final ReadOnlyClassToSerializerMap _knownSerializers;",
+    "begin_line": 154,
+    "end_line": 154,
+    "comment": "/** \n * For fast lookups, we will have a local non-shared read-only map that contains serializers previously fetched.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._dateFormat",
+    "snippet": "protected DateFormat _dateFormat;",
+    "begin_line": 161,
+    "end_line": 161,
+    "comment": "/** \n * Lazily acquired and instantiated formatter object: initialized first time it is needed, reused afterwards. Used via instances (not blueprints), so that access need not be thread-safe.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.SerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/SerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.SerializerProvider._stdNullValueSerializer",
+    "snippet": "protected final boolean _stdNullValueSerializer;",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": "/** \n * Flag set to indicate that we are using vanilla null value serialization\n * @since 2.3\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 4939673998947122190L;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._classIntrospector",
+    "snippet": "protected final ClassIntrospector _classIntrospector;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Introspector used to figure out Bean properties needed for bean serialization and deserialization. Overridable so that it is possible to change low-level details of introspection, like adding new annotation types.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._annotationIntrospector",
+    "snippet": "protected final AnnotationIntrospector _annotationIntrospector;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": "/** \n * Introspector used for accessing annotation value based configuration.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._visibilityChecker",
+    "snippet": "protected final VisibilityChecker\u003c?\u003e _visibilityChecker;",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * Object used for determining whether specific property elements (method, constructors, fields) can be auto-detected based on their visibility (access modifiers). Can be changed to allow different minimum visibility levels for auto-detection. Note that this is the global handler; individual types (classes) can further override active checker used (using {@link JsonAutoDetect} annotation)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._propertyNamingStrategy",
+    "snippet": "protected final PropertyNamingStrategy _propertyNamingStrategy;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * Custom property naming strategy in use, if any.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._typeFactory",
+    "snippet": "protected final TypeFactory _typeFactory;",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * Specific factory used for creating  {@link JavaType} instances;needed to allow modules to add more custom type handling (mostly to support types of non-Java JVM languages)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._typeResolverBuilder",
+    "snippet": "protected final TypeResolverBuilder\u003c?\u003e _typeResolverBuilder;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * Type information handler used for \"untyped\" values (ones declared to have type \u003ccode\u003eObject.class\u003c/code\u003e)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._dateFormat",
+    "snippet": "protected final DateFormat _dateFormat;",
+    "begin_line": 95,
+    "end_line": 95,
+    "comment": "/** \n * Custom date format to use for de-serialization. If specified, will be used instead of  {@link com.fasterxml.jackson.databind.util.StdDateFormat}. \u003cp\u003e Note that the configured format object will be cloned once per deserialization process (first time it is needed)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._handlerInstantiator",
+    "snippet": "protected final HandlerInstantiator _handlerInstantiator;",
+    "begin_line": 103,
+    "end_line": 103,
+    "comment": "/** \n * Object used for creating instances of handlers (serializers, deserializers, type and type id resolvers), given class to instantiate. This is typically used to do additional configuration (with dependency injection, for example) beyond simply construction of instances; or to use alternative constructors.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._locale",
+    "snippet": "protected final Locale _locale;",
+    "begin_line": 109,
+    "end_line": 109,
+    "comment": "/** \n * Default  {@link java.util.Locale} used with serialization formats.Default value is  {@link Locale#getDefault()}.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._timeZone",
+    "snippet": "protected final TimeZone _timeZone;",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": "/** \n * Default  {@link java.util.TimeZone} used with serialization formats.Default value is  {@link TimeZone#getDefault()}, which is typically the local time zone (unless overridden for JVM). \u003cp\u003e Note that if a new value is set, time zone is also assigned to {@link #_dateFormat} of this object.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.BaseSettings",
+    "src_path": "com/fasterxml/jackson/databind/cfg/BaseSettings.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.BaseSettings._defaultBase64",
+    "snippet": "protected final Base64Variant _defaultBase64;",
+    "begin_line": 128,
+    "end_line": 128,
+    "comment": "/** \n * Explicitly default  {@link Base64Variant} to use for handlingbinary data (\u003ccode\u003ebyte[]\u003c/code\u003e), used with data formats that use base64 encoding (like JSON, CSV).\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.ContextAttributes",
+    "src_path": "com/fasterxml/jackson/databind/cfg/ContextAttributes.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.ContextAttributes.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.ContextAttributes",
+    "src_path": "com/fasterxml/jackson/databind/cfg/ContextAttributes.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.ContextAttributes.EMPTY",
+    "snippet": "protected final static Impl EMPTY \u003d new Impl(Collections.emptyMap());",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.ContextAttributes",
+    "src_path": "com/fasterxml/jackson/databind/cfg/ContextAttributes.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.ContextAttributes.NULL_SURROGATE",
+    "snippet": "protected final static Object NULL_SURROGATE \u003d new Object();",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.ContextAttributes",
+    "src_path": "com/fasterxml/jackson/databind/cfg/ContextAttributes.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.ContextAttributes._shared",
+    "snippet": "protected final Map\u003cObject,Object\u003e _shared;",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * Shared attributes that we can not modify in-place.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.ContextAttributes",
+    "src_path": "com/fasterxml/jackson/databind/cfg/ContextAttributes.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.ContextAttributes._nonShared",
+    "snippet": "protected transient Map\u003cObject,Object\u003e _nonShared;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * Per-call attributes that we can directly modify, since they are not shared between threads.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 3683541151102256824L;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.NO_DESERIALIZERS",
+    "snippet": "protected final static Deserializers[] NO_DESERIALIZERS \u003d new Deserializers[0];",
+    "begin_line": 17,
+    "end_line": 17,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.NO_MODIFIERS",
+    "snippet": "protected final static BeanDeserializerModifier[] NO_MODIFIERS \u003d new BeanDeserializerModifier[0];",
+    "begin_line": 18,
+    "end_line": 18,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.NO_ABSTRACT_TYPE_RESOLVERS",
+    "snippet": "protected final static AbstractTypeResolver[] NO_ABSTRACT_TYPE_RESOLVERS \u003d new AbstractTypeResolver[0];",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.NO_VALUE_INSTANTIATORS",
+    "snippet": "protected final static ValueInstantiators[] NO_VALUE_INSTANTIATORS \u003d new ValueInstantiators[0];",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig.DEFAULT_KEY_DESERIALIZERS",
+    "snippet": "protected final static KeyDeserializers[] DEFAULT_KEY_DESERIALIZERS \u003d new KeyDeserializers[] {\n        new StdKeyDeserializers()\n    };",
+    "begin_line": 28,
+    "end_line": 30,
+    "comment": "/** \n * By default we plug default key deserializers using as \"just another\" set of of key deserializers.\n * @since 2.2\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._additionalDeserializers",
+    "snippet": "protected final Deserializers[] _additionalDeserializers;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": "/** \n * List of providers for additional deserializers, checked before considering default basic or bean deserializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._additionalKeyDeserializers",
+    "snippet": "protected final KeyDeserializers[] _additionalKeyDeserializers;",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": "/** \n * List of providers for additional key deserializers, checked before considering standard key deserializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._modifiers",
+    "snippet": "protected final BeanDeserializerModifier[] _modifiers;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": "/** \n * List of modifiers that can change the way  {@link BeanDeserializer} instancesare configured and constructed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._abstractTypeResolvers",
+    "snippet": "protected final AbstractTypeResolver[] _abstractTypeResolvers;",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * List of objects that may be able to resolve abstract types to concrete types. Used by functionality like \"mr Bean\" to materialize types as needed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/DeserializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig._valueInstantiators",
+    "snippet": "protected final ValueInstantiators[] _valueInstantiators;",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * List of objects that know how to create instances of POJO types; possibly using custom construction (non-annoted constructors; factory methods external to value type etc). Used to support objects that are created using non-standard methods; or to support post-constructor functionality.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfig.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 8891625428805876137L;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfig._mapperFeatures",
+    "snippet": "protected final int _mapperFeatures;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * Set of shared mapper features enabled.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfig._base",
+    "snippet": "protected final BaseSettings _base;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * Immutable container object for simple configuration settings.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 6062961959359172474L;",
+    "begin_line": 26,
+    "end_line": 26,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase.DEFAULT_MAPPER_FEATURES",
+    "snippet": "private final static int DEFAULT_MAPPER_FEATURES \u003d collectFeatureDefaults(MapperFeature.class);",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase._mixInAnnotations",
+    "snippet": "protected final Map\u003cClassKey,Class\u003c?\u003e\u003e _mixInAnnotations;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Mix-in annotation mappings to use, if any: immutable, can not be changed once defined.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase._subtypeResolver",
+    "snippet": "protected final SubtypeResolver _subtypeResolver;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Registered concrete subtypes that can be used instead of (or in addition to) ones declared using annotations.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase._rootName",
+    "snippet": "protected final String _rootName;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * Explicitly defined root name to use, if any; if empty String, will disable root-name wrapping; if null, will use defaults\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase._view",
+    "snippet": "protected final Class\u003c?\u003e _view;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * View to use for filtering out properties to serialize or deserialize. Null if none (will also be assigned null if \u003ccode\u003eObject.class\u003c/code\u003e is defined), meaning that all properties are to be included.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.MapperConfigBase",
+    "src_path": "com/fasterxml/jackson/databind/cfg/MapperConfigBase.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.MapperConfigBase._attributes",
+    "snippet": "protected final ContextAttributes _attributes;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Contextual attributes accessible (get and set) during processing, on per-call basis.\n * @since 2.3\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig.NO_SERIALIZERS",
+    "snippet": "protected final static Serializers[] NO_SERIALIZERS \u003d new Serializers[0];",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": "/** \n * Constant for empty \u003ccode\u003eSerializers\u003c/code\u003e array (which by definition is stateless and reusable)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig.NO_MODIFIERS",
+    "snippet": "protected final static BeanSerializerModifier[] NO_MODIFIERS \u003d new BeanSerializerModifier[0];",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._additionalSerializers",
+    "snippet": "protected final Serializers[] _additionalSerializers;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * List of providers for additional serializers, checked before considering default basic or bean serialializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._additionalKeySerializers",
+    "snippet": "protected final Serializers[] _additionalKeySerializers;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * List of providers for additional key serializers, checked before considering default key serialializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig",
+    "src_path": "com/fasterxml/jackson/databind/cfg/SerializerFactoryConfig.java",
+    "signature": "com.fasterxml.jackson.databind.cfg.SerializerFactoryConfig._modifiers",
+    "snippet": "protected final BeanSerializerModifier[] _modifiers;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": "/** \n * List of modifiers that can change the way  {@link BeanSerializer} instancesare configured and constructed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.CLASS_OBJECT",
+    "snippet": "private final static Class\u003c?\u003e CLASS_OBJECT \u003d Object.class;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.CLASS_STRING",
+    "snippet": "private final static Class\u003c?\u003e CLASS_STRING \u003d String.class;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.CLASS_CHAR_BUFFER",
+    "snippet": "private final static Class\u003c?\u003e CLASS_CHAR_BUFFER \u003d CharSequence.class;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.CLASS_ITERABLE",
+    "snippet": "private final static Class\u003c?\u003e CLASS_ITERABLE \u003d Iterable.class;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory.UNWRAPPED_CREATOR_PARAM_NAME",
+    "snippet": "protected final static PropertyName UNWRAPPED_CREATOR_PARAM_NAME \u003d new PropertyName(\"@JsonUnwrapped\");",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * We need a placeholder for creator properties that don\u0027t have name but are marked with `@JsonWrapped` annotation.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory._mapFallbacks",
+    "snippet": "@SuppressWarnings(\"rawtypes\")\n    final static HashMap\u003cString, Class\u003c? extends Map\u003e\u003e _mapFallbacks \u003d\n        new HashMap\u003cString, Class\u003c? extends Map\u003e\u003e();",
+    "begin_line": 54,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory._collectionFallbacks",
+    "snippet": "@SuppressWarnings(\"rawtypes\")\n    final static HashMap\u003cString, Class\u003c? extends Collection\u003e\u003e _collectionFallbacks \u003d\n        new HashMap\u003cString, Class\u003c? extends Collection\u003e\u003e();",
+    "begin_line": 83,
+    "end_line": 84,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BasicDeserializerFactory._factoryConfig",
+    "snippet": "protected final DeserializerFactoryConfig _factoryConfig;",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": "/** \n * Configuration settings for this factory; immutable instance (just like this factory), new version created via copy-constructor (fluent-style)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.INIT_CAUSE_PARAMS",
+    "snippet": "private final static Class\u003c?\u003e[] INIT_CAUSE_PARAMS \u003d new Class\u003c?\u003e[] { Throwable.class };",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * Signature of \u003cb\u003eThrowable.initCause\u003c/b\u003e method.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.NO_VIEWS",
+    "snippet": "private final static Class\u003c?\u003e[] NO_VIEWS \u003d new Class\u003c?\u003e[0];",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.instance",
+    "snippet": "public final static BeanDeserializerFactory instance \u003d new BeanDeserializerFactory(\n            new DeserializerFactoryConfig());",
+    "begin_line": 58,
+    "end_line": 59,
+    "comment": "/** \n * Globally shareable thread-safe instance which has no additional custom deserializers registered\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext._objectIds",
+    "snippet": "protected transient LinkedHashMap\u003cObjectIdGenerator.IdKey, ReadableObjectId\u003e _objectIds;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext._objectIdResolvers",
+    "snippet": "private List\u003cObjectIdResolver\u003e _objectIdResolvers;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
+    "src_path": "com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 251,
+    "end_line": 251,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DeserializerCache",
+    "src_path": "com/fasterxml/jackson/databind/deser/DeserializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DeserializerCache.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DeserializerCache",
+    "src_path": "com/fasterxml/jackson/databind/deser/DeserializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DeserializerCache._cachedDeserializers",
+    "snippet": "final protected ConcurrentHashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e _cachedDeserializers\n        \u003d new ConcurrentHashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e(64, 0.75f, 2);",
+    "begin_line": 42,
+    "end_line": 43,
+    "comment": "/** \n * We will also cache some dynamically constructed deserializers; specifically, ones that are expensive to construct. This currently means bean and Enum deserializers; array, List and Map deserializers will not be cached. \u003cp\u003e Given that we don\u0027t expect much concurrency for additions (should very quickly converge to zero after startup), let\u0027s explicitly define a low concurrency setting.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DeserializerCache",
+    "src_path": "com/fasterxml/jackson/databind/deser/DeserializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DeserializerCache._incompleteDeserializers",
+    "snippet": "final protected HashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e _incompleteDeserializers\n        \u003d new HashMap\u003cJavaType, JsonDeserializer\u003cObject\u003e\u003e(8);",
+    "begin_line": 50,
+    "end_line": 51,
+    "comment": "/** \n * During deserializer construction process we may need to keep track of partially completed deserializers, to resolve cyclic dependencies. This is the map used for storing deserializers before they are fully complete.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.DeserializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/deser/DeserializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.deser.DeserializerFactory.NO_DESERIALIZERS",
+    "snippet": "protected final static Deserializers[] NO_DESERIALIZERS \u003d new Deserializers[0];",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StdDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StdDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StdDeserializer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StdDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StdDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StdDeserializer._valueClass",
+    "snippet": "final protected Class\u003c?\u003e _valueClass;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Type of values this deserializer handles: sometimes exact types, other time most specific supertype of types deserializer handles (which may be as generic as  {@link Object} in some case)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StdKeyDeserializers",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StdKeyDeserializers.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StdKeyDeserializers.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 923268084968181479L;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StdScalarDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -7589512013334920693L;",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer.instance",
+    "snippet": "public final static StringArrayDeserializer instance \u003d new StringArrayDeserializer();",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StringArrayDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer._elementDeserializer",
+    "snippet": "protected JsonDeserializer\u003cString\u003e _elementDeserializer;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": "/** \n * Value serializer to use, if not the standard one (which is inlined)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StringDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StringDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StringDeserializer.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.std.StringDeserializer",
+    "src_path": "com/fasterxml/jackson/databind/deser/std/StringDeserializer.java",
+    "signature": "com.fasterxml.jackson.databind.deser.std.StringDeserializer.instance",
+    "snippet": "public final static StringDeserializer instance \u003d new StringDeserializer();",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": "/** \n * @since 2.2\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass.NO_ANNOTATION_MAPS",
+    "snippet": "private final static AnnotationMap[] NO_ANNOTATION_MAPS \u003d new AnnotationMap[0];",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._class",
+    "snippet": "final protected Class\u003c?\u003e _class;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * Class for which annotations apply, and that owns other components (constructors, methods)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._superTypes",
+    "snippet": "final protected List\u003cClass\u003c?\u003e\u003e _superTypes;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * Ordered set of super classes and interfaces of the class itself: included in order of precedence\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._annotationIntrospector",
+    "snippet": "final protected AnnotationIntrospector _annotationIntrospector;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Filter used to determine which annotations to gather; used to optimize things so that unnecessary annotations are ignored.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._mixInResolver",
+    "snippet": "final protected MixInResolver _mixInResolver;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Object that knows mapping of mix-in classes (ones that contain annotations to add) with their target classes (ones that get these additional annotations \"mixed in\").\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._primaryMixIn",
+    "snippet": "final protected Class\u003c?\u003e _primaryMixIn;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * Primary mix-in class; one to use for the annotated class itself. Can be null.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._classAnnotations",
+    "snippet": "protected AnnotationMap _classAnnotations;",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * Combined list of Jackson annotations that the class has, including inheritable ones from super classes and interfaces\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._creatorsResolved",
+    "snippet": "protected boolean _creatorsResolved \u003d false;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Flag to indicate whether creator information has been resolved or not.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._defaultConstructor",
+    "snippet": "protected AnnotatedConstructor _defaultConstructor;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": "/** \n * Default constructor of the annotated class, if it has one.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._constructors",
+    "snippet": "protected List\u003cAnnotatedConstructor\u003e _constructors;",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * Single argument constructors the class has, if any.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._creatorMethods",
+    "snippet": "protected List\u003cAnnotatedMethod\u003e _creatorMethods;",
+    "begin_line": 87,
+    "end_line": 87,
+    "comment": "/** \n * Single argument static methods that might be usable as factory methods\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._memberMethods",
+    "snippet": "protected AnnotatedMethodMap  _memberMethods;",
+    "begin_line": 93,
+    "end_line": 93,
+    "comment": "/** \n * Member methods of interest; for now ones with 0 or 1 arguments (just optimization, since others won\u0027t be used now)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedClass",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedClass.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedClass._fields",
+    "snippet": "protected List\u003cAnnotatedField\u003e _fields;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": "/** \n * Member fields of interest: ones that are either public, or have at least one annotation.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotatedMethodMap",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotatedMethodMap.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotatedMethodMap._methods",
+    "snippet": "protected LinkedHashMap\u003cMemberKey,AnnotatedMethod\u003e _methods;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.AnnotationMap",
+    "src_path": "com/fasterxml/jackson/databind/introspect/AnnotationMap.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.AnnotationMap._annotations",
+    "snippet": "protected HashMap\u003cClass\u003c? extends Annotation\u003e,Annotation\u003e _annotations;",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._config",
+    "snippet": "final protected MapperConfig\u003c?\u003e _config;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._annotationIntrospector",
+    "snippet": "final protected AnnotationIntrospector _annotationIntrospector;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._classInfo",
+    "snippet": "final protected AnnotatedClass _classInfo;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": "/** \n * Information collected about the class introspected.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._bindings",
+    "snippet": "protected TypeBindings _bindings;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * We may need type bindings for the bean type. If so, we\u0027ll construct it lazily\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._properties",
+    "snippet": "protected final List\u003cBeanPropertyDefinition\u003e _properties;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Properties collected for the POJO.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._objectIdInfo",
+    "snippet": "protected ObjectIdInfo _objectIdInfo;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": "/** \n * Details of Object Id to include, if any\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._anySetterMethod",
+    "snippet": "protected AnnotatedMethod _anySetterMethod;",
+    "begin_line": 64,
+    "end_line": 64,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._injectables",
+    "snippet": "protected Map\u003cObject, AnnotatedMember\u003e _injectables;",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._ignoredPropertyNames",
+    "snippet": "protected Set\u003cString\u003e _ignoredPropertyNames;",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": "/** \n * Set of properties that can be ignored during deserialization, due to being marked as ignored.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._jsonValueMethod",
+    "snippet": "protected AnnotatedMethod _jsonValueMethod;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicBeanDescription._anyGetter",
+    "snippet": "protected AnnotatedMember _anyGetter;",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.STRING_DESC",
+    "snippet": "protected final static BasicBeanDescription STRING_DESC;",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.BOOLEAN_DESC",
+    "snippet": "protected final static BasicBeanDescription BOOLEAN_DESC;",
+    "begin_line": 29,
+    "end_line": 29,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.INT_DESC",
+    "snippet": "protected final static BasicBeanDescription INT_DESC;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.LONG_DESC",
+    "snippet": "protected final static BasicBeanDescription LONG_DESC;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.BasicClassIntrospector.instance",
+    "snippet": "public final static BasicClassIntrospector instance \u003d new BasicClassIntrospector();",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 29,
+    "end_line": 29,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._config",
+    "snippet": "protected final MapperConfig\u003c?\u003e _config;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * Configuration settings\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._forSerialization",
+    "snippet": "protected final boolean _forSerialization;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * True if introspection is done for serialization (giving precedence for serialization annotations), or not (false, deserialization)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._type",
+    "snippet": "protected final JavaType _type;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": "/** \n * Type of POJO for which properties are being collected.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._classDef",
+    "snippet": "protected final AnnotatedClass _classDef;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * Low-level introspected class information (methods, fields etc)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._visibilityChecker",
+    "snippet": "protected final VisibilityChecker\u003c?\u003e _visibilityChecker;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._annotationIntrospector",
+    "snippet": "protected final AnnotationIntrospector _annotationIntrospector;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._mutatorPrefix",
+    "snippet": "protected final String _mutatorPrefix;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * Prefix used by auto-detected mutators (\"setters\"): usually \"set\", but differs for builder objects (\"with\" by default).\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._properties",
+    "snippet": "protected final LinkedHashMap\u003cString, POJOPropertyBuilder\u003e _properties\n        \u003d new LinkedHashMap\u003cString, POJOPropertyBuilder\u003e();",
+    "begin_line": 64,
+    "end_line": 65,
+    "comment": "/** \n * Set of logical property information collected so far\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._creatorProperties",
+    "snippet": "protected LinkedList\u003cPOJOPropertyBuilder\u003e _creatorProperties \u003d null;",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._anyGetters",
+    "snippet": "protected LinkedList\u003cAnnotatedMember\u003e _anyGetters \u003d null;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._anySetters",
+    "snippet": "protected LinkedList\u003cAnnotatedMethod\u003e _anySetters \u003d null;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._jsonValueGetters",
+    "snippet": "protected LinkedList\u003cAnnotatedMethod\u003e _jsonValueGetters \u003d null;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": "/** \n * Method(s) marked with \u0027JsonValue\u0027 annotation\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._ignoredPropertyNames",
+    "snippet": "protected HashSet\u003cString\u003e _ignoredPropertyNames;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * Lazily collected list of properties that can be implicitly ignored during serialization; only updated when collecting information for deserialization purposes\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector",
+    "src_path": "com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.POJOPropertiesCollector._injectables",
+    "snippet": "protected LinkedHashMap\u003cObject, AnnotatedMember\u003e _injectables;",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": "/** \n * Lazily collected list of members that were annotated to indicate that they represent mutators for deserializer value injection.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -7073939237187922755L;",
+    "begin_line": 166,
+    "end_line": 166,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker.DEFAULT",
+    "snippet": "protected final static Std DEFAULT \u003d new Std(Std.class.getAnnotation(JsonAutoDetect.class));",
+    "begin_line": 172,
+    "end_line": 172,
+    "comment": "/** \n * This is the canonical base instance, configured with default visibility values\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker._getterMinLevel",
+    "snippet": "protected final Visibility _getterMinLevel;",
+    "begin_line": 174,
+    "end_line": 174,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker._isGetterMinLevel",
+    "snippet": "protected final Visibility _isGetterMinLevel;",
+    "begin_line": 175,
+    "end_line": 175,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker._setterMinLevel",
+    "snippet": "protected final Visibility _setterMinLevel;",
+    "begin_line": 176,
+    "end_line": 176,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker._creatorMinLevel",
+    "snippet": "protected final Visibility _creatorMinLevel;",
+    "begin_line": 177,
+    "end_line": 177,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.introspect.VisibilityChecker",
+    "src_path": "com/fasterxml/jackson/databind/introspect/VisibilityChecker.java",
+    "signature": "com.fasterxml.jackson.databind.introspect.VisibilityChecker._fieldMinLevel",
+    "snippet": "protected final Visibility _fieldMinLevel;",
+    "begin_line": 178,
+    "end_line": 178,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.jsontype.impl.StdSubtypeResolver",
+    "src_path": "com/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver.java",
+    "signature": "com.fasterxml.jackson.databind.jsontype.impl.StdSubtypeResolver.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.jsontype.impl.StdSubtypeResolver",
+    "src_path": "com/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver.java",
+    "signature": "com.fasterxml.jackson.databind.jsontype.impl.StdSubtypeResolver._registeredSubtypes",
+    "snippet": "protected LinkedHashSet\u003cNamedType\u003e _registeredSubtypes;",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.node.JsonNodeFactory",
+    "src_path": "com/fasterxml/jackson/databind/node/JsonNodeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.node.JsonNodeFactory.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -3271940633258788634L;",
+    "begin_line": 18,
+    "end_line": 18,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.node.JsonNodeFactory",
+    "src_path": "com/fasterxml/jackson/databind/node/JsonNodeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.node.JsonNodeFactory._cfgBigDecimalExact",
+    "snippet": "private final boolean _cfgBigDecimalExact;",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.node.JsonNodeFactory",
+    "src_path": "com/fasterxml/jackson/databind/node/JsonNodeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.node.JsonNodeFactory.decimalsNormalized",
+    "snippet": "private static final JsonNodeFactory decimalsNormalized\n        \u003d new JsonNodeFactory(false);",
+    "begin_line": 22,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.node.JsonNodeFactory",
+    "src_path": "com/fasterxml/jackson/databind/node/JsonNodeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.node.JsonNodeFactory.decimalsAsIs",
+    "snippet": "private static final JsonNodeFactory decimalsAsIs\n        \u003d new JsonNodeFactory(true);",
+    "begin_line": 24,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.node.JsonNodeFactory",
+    "src_path": "com/fasterxml/jackson/databind/node/JsonNodeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.node.JsonNodeFactory.instance",
+    "snippet": "public final static JsonNodeFactory instance \u003d decimalsNormalized;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Default singleton instance that construct \"standard\" node instances: given that this class is stateless, a globally shared singleton can be used.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/ser/BasicSerializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory._concrete",
+    "snippet": "protected final static HashMap\u003cString, JsonSerializer\u003c?\u003e\u003e _concrete \u003d\n        new HashMap\u003cString, JsonSerializer\u003c?\u003e\u003e();",
+    "begin_line": 53,
+    "end_line": 54,
+    "comment": "/** \n * Since these are all JDK classes, we shouldn\u0027t have to worry about ClassLoader used to load them. Rather, we can just use the class name, and keep things simple and efficient.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/ser/BasicSerializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory._concreteLazy",
+    "snippet": "protected final static HashMap\u003cString, Class\u003c? extends JsonSerializer\u003c?\u003e\u003e\u003e _concreteLazy \u003d\n        new HashMap\u003cString, Class\u003c? extends JsonSerializer\u003c?\u003e\u003e\u003e();",
+    "begin_line": 61,
+    "end_line": 62,
+    "comment": "/** \n * Actually it may not make much sense to eagerly instantiate all kinds of serializers: so this Map actually contains class references, not instances\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/ser/BasicSerializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.ser.BasicSerializerFactory._factoryConfig",
+    "snippet": "protected final SerializerFactoryConfig _factoryConfig;",
+    "begin_line": 126,
+    "end_line": 126,
+    "comment": "/** \n * Configuration settings for this factory; immutable instance (just like this factory), new version created via copy-constructor (fluent-style)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.BeanSerializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/ser/BeanSerializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.ser.BeanSerializerFactory.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.BeanSerializerFactory",
+    "src_path": "com/fasterxml/jackson/databind/ser/BeanSerializerFactory.java",
+    "signature": "com.fasterxml.jackson.databind.ser.BeanSerializerFactory.instance",
+    "snippet": "public final static BeanSerializerFactory instance \u003d new BeanSerializerFactory(null);",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": "/** \n * Like  {@link BasicSerializerFactory}, this factory is stateless, and thus a single shared global (\u003d\u003d singleton) instance can be used without thread-safety issues.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._seenObjectIds",
+    "snippet": "protected transient Map\u003cObject, WritableObjectId\u003e _seenObjectIds;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": "/** \n * Per-serialization map Object Ids that have seen so far, iff Object Id handling is enabled.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._objectIdGenerators",
+    "snippet": "protected transient ArrayList\u003cObjectIdGenerator\u003c?\u003e\u003e _objectIdGenerators;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
+    "src_path": "com/fasterxml/jackson/databind/ser/DefaultSerializerProvider.java",
+    "signature": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 492,
+    "end_line": 492,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._sharedMap",
+    "snippet": "private HashMap\u003cTypeKey, JsonSerializer\u003cObject\u003e\u003e _sharedMap \u003d new HashMap\u003cTypeKey, JsonSerializer\u003cObject\u003e\u003e(64);",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": "/** \n * Shared, modifiable map; all access needs to be through synchronized blocks. \u003cp\u003e NOTE: keys are of various types (see below for key types), in addition to basic  {@link JavaType} used for \"untyped\" serializers.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._readOnlyMap",
+    "snippet": "private volatile ReadOnlyClassToSerializerMap _readOnlyMap \u003d null;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": "/** \n * Most recent read-only instance, created from _sharedMap, if any.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._hashCode",
+    "snippet": "protected int _hashCode;",
+    "begin_line": 196,
+    "end_line": 196,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._class",
+    "snippet": "protected Class\u003c?\u003e _class;",
+    "begin_line": 198,
+    "end_line": 198,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._type",
+    "snippet": "protected JavaType _type;",
+    "begin_line": 200,
+    "end_line": 200,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.SerializerCache",
+    "src_path": "com/fasterxml/jackson/databind/ser/SerializerCache.java",
+    "signature": "com.fasterxml.jackson.databind.ser.SerializerCache._isTyped",
+    "snippet": "protected boolean _isTyped;",
+    "begin_line": 207,
+    "end_line": 207,
+    "comment": "/** \n * Indicator of whether serializer stored has a type serializer wrapper around it or not; if not, it is \"untyped\" serializer; if it has, it is \"typed\"\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.impl.FailingSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/impl/FailingSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.impl.FailingSerializer._msg",
+    "snippet": "final String _msg;",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.BooleanSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/BooleanSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.BooleanSerializer._forPrimitive",
+    "snippet": "protected final boolean _forPrimitive;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": "/** \n * Whether type serialized is primitive (boolean) or wrapper (java.lang.Boolean); if true, former, if false, latter.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.CalendarSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/CalendarSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.CalendarSerializer.instance",
+    "snippet": "public static final CalendarSerializer instance \u003d new CalendarSerializer();",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.DateSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/DateSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.DateSerializer.instance",
+    "snippet": "public static final DateSerializer instance \u003d new DateSerializer();",
+    "begin_line": 24,
+    "end_line": 24,
+    "comment": "/** \n * Default instance that is used when no contextual configuration is needed.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.DateTimeSerializerBase",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.DateTimeSerializerBase._useTimestamp",
+    "snippet": "protected final Boolean _useTimestamp;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": "/** \n * Flag that indicates that serialization must be done as the Java timestamp, regardless of other settings.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.DateTimeSerializerBase",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.DateTimeSerializerBase._customFormat",
+    "snippet": "protected final DateFormat _customFormat;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Specific format to use, if not default format: non null value also indicates that serialization is to be done as JSON String, not numeric timestamp, unless  {@link #_useTimestamp} is true.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NullSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NullSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NullSerializer.instance",
+    "snippet": "public final static NullSerializer instance \u003d new NullSerializer();",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializer.instance",
+    "snippet": "public final static NumberSerializer instance \u003d new NumberSerializer();",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers._numberType",
+    "snippet": "protected final JsonParser.NumberType _numberType;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers._schemaType",
+    "snippet": "protected final String _schemaType;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers.instance",
+    "snippet": "final static ShortSerializer instance \u003d new ShortSerializer();",
+    "begin_line": 101,
+    "end_line": 101,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers.instance",
+    "snippet": "final static IntLikeSerializer instance \u003d new IntLikeSerializer();",
+    "begin_line": 145,
+    "end_line": 145,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers.instance",
+    "snippet": "final static LongSerializer instance \u003d new LongSerializer();",
+    "begin_line": 160,
+    "end_line": 160,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers.instance",
+    "snippet": "final static FloatSerializer instance \u003d new FloatSerializer();",
+    "begin_line": 173,
+    "end_line": 173,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.NumberSerializers",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/NumberSerializers.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.NumberSerializers.instance",
+    "snippet": "final static DoubleSerializer instance \u003d new DoubleSerializer();",
+    "begin_line": 193,
+    "end_line": 193,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.StdSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/StdSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.StdSerializer._handledType",
+    "snippet": "protected final Class\u003cT\u003e _handledType;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Nominal type supported, usually declared type of property for which serializer is used.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.ToStringSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/ToStringSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.ToStringSerializer.instance",
+    "snippet": "public final static ToStringSerializer instance \u003d new ToStringSerializer();",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": "/** \n * Singleton instance to use.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.ser.std.UUIDSerializer",
+    "src_path": "com/fasterxml/jackson/databind/ser/std/UUIDSerializer.java",
+    "signature": "com.fasterxml.jackson.databind.ser.std.UUIDSerializer.HEX_CHARS",
+    "snippet": "final static char[] HEX_CHARS \u003d \"0123456789abcdef\".toCharArray();",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ArrayType",
+    "src_path": "com/fasterxml/jackson/databind/type/ArrayType.java",
+    "signature": "com.fasterxml.jackson.databind.type.ArrayType.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 9040058063449087477L;",
+    "begin_line": 15,
+    "end_line": 15,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ArrayType",
+    "src_path": "com/fasterxml/jackson/databind/type/ArrayType.java",
+    "signature": "com.fasterxml.jackson.databind.type.ArrayType._componentType",
+    "snippet": "protected final JavaType _componentType;",
+    "begin_line": 20,
+    "end_line": 20,
+    "comment": "/** \n * Type of elements in the array.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ArrayType",
+    "src_path": "com/fasterxml/jackson/databind/type/ArrayType.java",
+    "signature": "com.fasterxml.jackson.databind.type.ArrayType._emptyArray",
+    "snippet": "protected final Object _emptyArray;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * We will also keep track of shareable instance of empty array, since it usually needs to be constructed any way; and because it is essentially immutable and thus can be shared.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ClassKey",
+    "src_path": "com/fasterxml/jackson/databind/type/ClassKey.java",
+    "signature": "com.fasterxml.jackson.databind.type.ClassKey.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 23,
+    "end_line": 23,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ClassKey",
+    "src_path": "com/fasterxml/jackson/databind/type/ClassKey.java",
+    "signature": "com.fasterxml.jackson.databind.type.ClassKey._className",
+    "snippet": "private String _className;",
+    "begin_line": 25,
+    "end_line": 25,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ClassKey",
+    "src_path": "com/fasterxml/jackson/databind/type/ClassKey.java",
+    "signature": "com.fasterxml.jackson.databind.type.ClassKey._class",
+    "snippet": "private Class\u003c?\u003e _class;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.ClassKey",
+    "src_path": "com/fasterxml/jackson/databind/type/ClassKey.java",
+    "signature": "com.fasterxml.jackson.databind.type.ClassKey._hashCode",
+    "snippet": "private int _hashCode;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * Let\u0027s cache hash code straight away, since we are almost certain to need it.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.SimpleType",
+    "src_path": "com/fasterxml/jackson/databind/type/SimpleType.java",
+    "signature": "com.fasterxml.jackson.databind.type.SimpleType.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -800374828948534376L;",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.SimpleType",
+    "src_path": "com/fasterxml/jackson/databind/type/SimpleType.java",
+    "signature": "com.fasterxml.jackson.databind.type.SimpleType._typeParameters",
+    "snippet": "protected final JavaType[] _typeParameters;",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": "/** \n * Generic type arguments for this type.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.SimpleType",
+    "src_path": "com/fasterxml/jackson/databind/type/SimpleType.java",
+    "signature": "com.fasterxml.jackson.databind.type.SimpleType._typeNames",
+    "snippet": "protected final String[] _typeNames;",
+    "begin_line": 27,
+    "end_line": 27,
+    "comment": "/** \n * Names of generic type arguments for this type; will match values in  {@link #_typeParameters}\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeBase",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeBase.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeBase.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -3581199092426900829L;",
+    "begin_line": 16,
+    "end_line": 16,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeBase",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeBase.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeBase._canonicalName",
+    "snippet": "volatile transient String _canonicalName;",
+    "begin_line": 21,
+    "end_line": 21,
+    "comment": "/** \n * Lazily initialized external representation of the type\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.NO_TYPES",
+    "snippet": "private final static JavaType[] NO_TYPES \u003d new JavaType[0];",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.instance",
+    "snippet": "protected final static TypeFactory instance \u003d new TypeFactory();",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * Globally shared singleton. Not accessed directly; non-core code should use per-ObjectMapper instance (via configuration objects). Core Jackson code uses  {@link #defaultInstance} for accessing it.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.CORE_TYPE_STRING",
+    "snippet": "protected final static SimpleType CORE_TYPE_STRING \u003d new SimpleType(String.class);",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.CORE_TYPE_BOOL",
+    "snippet": "protected final static SimpleType CORE_TYPE_BOOL \u003d new SimpleType(Boolean.TYPE);",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.CORE_TYPE_INT",
+    "snippet": "protected final static SimpleType CORE_TYPE_INT \u003d new SimpleType(Integer.TYPE);",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory.CORE_TYPE_LONG",
+    "snippet": "protected final static SimpleType CORE_TYPE_LONG \u003d new SimpleType(Long.TYPE);",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory._typeCache",
+    "snippet": "protected final LRUMap\u003cClassKey, JavaType\u003e _typeCache \u003d new LRUMap\u003cClassKey, JavaType\u003e(16, 100);",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": "/** \n * Since type resolution can be expensive (specifically when resolving actual generic types), we will use small cache to avoid repetitive resolution of core types\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory._cachedHashMapType",
+    "snippet": "protected transient HierarchicType _cachedHashMapType;",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": "/** \n * Lazily constructed copy of type hierarchy from  {@link java.util.HashMap}to its supertypes.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory._cachedArrayListType",
+    "snippet": "protected transient HierarchicType _cachedArrayListType;",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": "/** \n * Lazily constructed copy of type hierarchy from  {@link java.util.ArrayList}to its supertypes.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory._modifiers",
+    "snippet": "protected final TypeModifier[] _modifiers;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": "/** \n * Registered  {@link TypeModifier}s: objects that can change details of  {@link JavaType} instances factory constructs.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeFactory",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeFactory.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeFactory._parser",
+    "snippet": "protected final TypeParser _parser;",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeParser",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeParser.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeParser.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 17,
+    "end_line": 17,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeParser",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeParser.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeParser._factory",
+    "snippet": "protected final TypeFactory _factory;",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeParser",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeParser.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeParser._input",
+    "snippet": "protected final String _input;",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeParser",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeParser.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeParser._index",
+    "snippet": "protected int _index;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.type.TypeParser",
+    "src_path": "com/fasterxml/jackson/databind/type/TypeParser.java",
+    "signature": "com.fasterxml.jackson.databind.type.TypeParser._pushbackToken",
+    "snippet": "protected String _pushbackToken;",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ArrayIterator",
+    "src_path": "com/fasterxml/jackson/databind/util/ArrayIterator.java",
+    "signature": "com.fasterxml.jackson.databind.util.ArrayIterator._a",
+    "snippet": "private final T[] _a;",
+    "begin_line": 12,
+    "end_line": 12,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ArrayIterator",
+    "src_path": "com/fasterxml/jackson/databind/util/ArrayIterator.java",
+    "signature": "com.fasterxml.jackson.databind.util.ArrayIterator._index",
+    "snippet": "private int _index;",
+    "begin_line": 14,
+    "end_line": 14,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ClassUtil",
+    "src_path": "com/fasterxml/jackson/databind/util/ClassUtil.java",
+    "signature": "com.fasterxml.jackson.databind.util.ClassUtil.instance",
+    "snippet": "final static EnumTypeLocator instance \u003d new EnumTypeLocator();",
+    "begin_line": 620,
+    "end_line": 620,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ClassUtil",
+    "src_path": "com/fasterxml/jackson/databind/util/ClassUtil.java",
+    "signature": "com.fasterxml.jackson.databind.util.ClassUtil.enumSetTypeField",
+    "snippet": "private final Field enumSetTypeField;",
+    "begin_line": 622,
+    "end_line": 622,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ClassUtil",
+    "src_path": "com/fasterxml/jackson/databind/util/ClassUtil.java",
+    "signature": "com.fasterxml.jackson.databind.util.ClassUtil.enumMapTypeField",
+    "snippet": "private final Field enumMapTypeField;",
+    "begin_line": 623,
+    "end_line": 623,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.LRUMap",
+    "src_path": "com/fasterxml/jackson/databind/util/LRUMap.java",
+    "signature": "com.fasterxml.jackson.databind.util.LRUMap.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 28,
+    "end_line": 28,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.LRUMap",
+    "src_path": "com/fasterxml/jackson/databind/util/LRUMap.java",
+    "signature": "com.fasterxml.jackson.databind.util.LRUMap._readLock",
+    "snippet": "protected final transient Lock _readLock, _writeLock;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.LRUMap",
+    "src_path": "com/fasterxml/jackson/databind/util/LRUMap.java",
+    "signature": "com.fasterxml.jackson.databind.util.LRUMap._writeLock",
+    "snippet": "protected final transient Lock _readLock, _writeLock;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.LRUMap",
+    "src_path": "com/fasterxml/jackson/databind/util/LRUMap.java",
+    "signature": "com.fasterxml.jackson.databind.util.LRUMap._maxEntries",
+    "snippet": "protected final transient int _maxEntries;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.LRUMap",
+    "src_path": "com/fasterxml/jackson/databind/util/LRUMap.java",
+    "signature": "com.fasterxml.jackson.databind.util.LRUMap._jdkSerializeMaxEntries",
+    "snippet": "protected transient int _jdkSerializeMaxEntries;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": "/** \n * Ugly hack, to work through the requirement that _value is indeed final, and that JDK serialization won\u0027t call ctor(s) if Serializable is implemented.\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer.SMALL_CHUNK",
+    "snippet": "private final static int SMALL_CHUNK \u003d (1 \u003c\u003c 14);",
+    "begin_line": 18,
+    "end_line": 18,
+    "comment": "/** \n * Also: let\u0027s expand by doubling up until 64k chunks (which is 16k entries for 32-bit machines)\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer.MAX_CHUNK",
+    "snippet": "private final static int MAX_CHUNK \u003d (1 \u003c\u003c 18);",
+    "begin_line": 26,
+    "end_line": 26,
+    "comment": "/** \n * Let\u0027s limit maximum size of chunks we use; helps avoid excessive allocation overhead for huge data sets. For now, let\u0027s limit to quarter million entries, 1 meg chunks for 32-bit machines.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer._head",
+    "snippet": "private LinkedNode\u003cObject[]\u003e _head;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer._tail",
+    "snippet": "private LinkedNode\u003cObject[]\u003e _tail;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer._size",
+    "snippet": "private int _size;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": "/** \n * Number of total buffered entries in this buffer, counting all instances within linked list formed by following  {@link #_head}.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.ObjectBuffer",
+    "src_path": "com/fasterxml/jackson/databind/util/ObjectBuffer.java",
+    "signature": "com.fasterxml.jackson.databind.util.ObjectBuffer._freeBuffer",
+    "snippet": "private Object[] _freeBuffer;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Reusable Object array, stored here after buffer has been released having been used previously.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.RootNameLookup",
+    "src_path": "com/fasterxml/jackson/databind/util/RootNameLookup.java",
+    "signature": "com.fasterxml.jackson.databind.util.RootNameLookup.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 13,
+    "end_line": 13,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.RootNameLookup",
+    "src_path": "com/fasterxml/jackson/databind/util/RootNameLookup.java",
+    "signature": "com.fasterxml.jackson.databind.util.RootNameLookup._rootNames",
+    "snippet": "protected transient LRUMap\u003cClassKey,PropertyName\u003e _rootNames;",
+    "begin_line": 19,
+    "end_line": 19,
+    "comment": "/** \n * For efficient operation, let\u0027s try to minimize number of times we need to introspect root element name to use.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_STR_ISO8601",
+    "snippet": "protected final static String DATE_FORMAT_STR_ISO8601 \u003d \"yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ\";",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Defines a commonly used date format that conforms to ISO-8601 date formatting standard, when it includes basic undecorated timezone definition\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_STR_ISO8601_Z",
+    "snippet": "protected final static String DATE_FORMAT_STR_ISO8601_Z \u003d \"yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSS\u0027Z\u0027\";",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": "/** \n * Same as \u0027regular\u0027 8601, but handles \u0027Z\u0027 as an alias for \"+0000\" (or \"GMT\")\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_STR_PLAIN",
+    "snippet": "protected final static String DATE_FORMAT_STR_PLAIN \u003d \"yyyy-MM-dd\";",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * ISO-8601 with just the Date part, no time\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_STR_RFC1123",
+    "snippet": "protected final static String DATE_FORMAT_STR_RFC1123 \u003d \"EEE, dd MMM yyyy HH:mm:ss zzz\";",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * This constant defines the date format specified by RFC 1123 / RFC 822.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.ALL_FORMATS",
+    "snippet": "protected final static String[] ALL_FORMATS \u003d new String[] {\n        DATE_FORMAT_STR_ISO8601,\n        DATE_FORMAT_STR_ISO8601_Z,\n        DATE_FORMAT_STR_RFC1123,\n        DATE_FORMAT_STR_PLAIN\n    };",
+    "begin_line": 54,
+    "end_line": 59,
+    "comment": "/** \n * For error messages we\u0027ll also need a list of all formats.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DEFAULT_TIMEZONE",
+    "snippet": "private final static TimeZone DEFAULT_TIMEZONE;",
+    "begin_line": 64,
+    "end_line": 64,
+    "comment": "/** \n * By default we use GMT for everything.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DEFAULT_LOCALE",
+    "snippet": "private final static Locale DEFAULT_LOCALE \u003d Locale.US;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_RFC1123",
+    "snippet": "protected final static DateFormat DATE_FORMAT_RFC1123;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_ISO8601",
+    "snippet": "protected final static DateFormat DATE_FORMAT_ISO8601;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_ISO8601_Z",
+    "snippet": "protected final static DateFormat DATE_FORMAT_ISO8601_Z;",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.DATE_FORMAT_PLAIN",
+    "snippet": "protected final static DateFormat DATE_FORMAT_PLAIN;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat.instance",
+    "snippet": "public final static StdDateFormat instance \u003d new StdDateFormat();",
+    "begin_line": 100,
+    "end_line": 100,
+    "comment": "/** \n * A singleton instance can be used for cloning purposes, as a blueprint of sorts.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._timezone",
+    "snippet": "protected transient TimeZone _timezone;",
+    "begin_line": 106,
+    "end_line": 106,
+    "comment": "/** \n * Caller may want to explicitly override timezone to use; if so, we will have non-null value here.\n */\n"
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._locale",
+    "snippet": "protected final Locale _locale;",
+    "begin_line": 108,
+    "end_line": 108,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._formatRFC1123",
+    "snippet": "protected transient DateFormat _formatRFC1123;",
+    "begin_line": 110,
+    "end_line": 110,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._formatISO8601",
+    "snippet": "protected transient DateFormat _formatISO8601;",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._formatISO8601_z",
+    "snippet": "protected transient DateFormat _formatISO8601_z;",
+    "begin_line": 112,
+    "end_line": 112,
+    "comment": ""
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.util.StdDateFormat",
+    "src_path": "com/fasterxml/jackson/databind/util/StdDateFormat.java",
+    "signature": "com.fasterxml.jackson.databind.util.StdDateFormat._formatPlain",
+    "snippet": "protected transient DateFormat _formatPlain;",
+    "begin_line": 113,
+    "end_line": 113,
+    "comment": ""
+  }
+]

@@ -1,0 +1,9 @@
+--- com.fasterxml.jackson.databind.struct.TestObjectIdDeserialization::testNullObjectId
+java.lang.NullPointerException
+	at com.fasterxml.jackson.annotation.ObjectIdGenerator$IdKey.<init>(ObjectIdGenerator.java:158)
+	at com.fasterxml.jackson.annotation.ObjectIdGenerators$IntSequenceGenerator.key(ObjectIdGenerators.java:95)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.findObjectId(DefaultDeserializationContext.java:88)
+	at com.fasterxml.jackson.databind.deser.impl.ObjectIdValueProperty.deserializeSetAndReturn(ObjectIdValueProperty.java:93)
+	at com.fasterxml.jackson.databind.deser.impl.ObjectIdValueProperty.deserializeAndSet(ObjectIdValueProperty.java:77)
+	at com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap._findDeserializeAndSet2(BeanPropertyMap.java:313)
+	... 20 more

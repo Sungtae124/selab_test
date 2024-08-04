@@ -1,0 +1,101 @@
+[
+  {
+    "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/core/util/TestTextBuffer.java",
+    "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testSimple()",
+    "snippet": "public void testSimple()\n    {\n        TextBuffer tb \u003d new TextBuffer(new BufferRecycler());\n        tb.append(\u0027a\u0027);\n        tb.append(new char[] { \u0027X\u0027, \u0027b\u0027 }, 1, 1);\n        tb.append(\"c\", 0, 1);\n        assertEquals(3, tb.contentsAsArray().length);\n        assertEquals(\"abc\", tb.toString());\n\n        assertNotNull(tb.expandCurrentSegment());\n    }",
+    "begin_line": 10,
+    "end_line": 20,
+    "comment": "/** \n * Trivially simple basic test to ensure all basic append methods work\n */\n",
+    "child_ranges": [
+      "(line 12,col 9)-(line 12,col 61)",
+      "(line 13,col 9)-(line 13,col 23)",
+      "(line 14,col 9)-(line 14,col 49)",
+      "(line 15,col 9)-(line 15,col 29)",
+      "(line 16,col 9)-(line 16,col 53)",
+      "(line 17,col 9)-(line 17,col 43)",
+      "(line 19,col 9)-(line 19,col 49)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/core/util/TestTextBuffer.java",
+    "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testLonger()",
+    "snippet": "public void testLonger()\n    {\n        TextBuffer tb \u003d new TextBuffer(new BufferRecycler());\n        for (int i \u003d 0; i \u003c 2000; ++i) {\n            tb.append(\"abc\", 0, 3);\n        }\n        String str \u003d tb.contentsAsString();\n        assertEquals(6000, str.length());\n        assertEquals(6000, tb.contentsAsArray().length);\n\n        tb.resetWithShared(new char[] { \u0027a\u0027 }, 0, 1);\n        assertEquals(1, tb.toString().length());\n    }",
+    "begin_line": 22,
+    "end_line": 34,
+    "comment": "",
+    "child_ranges": [
+      "(line 24,col 9)-(line 24,col 61)",
+      "(line 25,col 9)-(line 27,col 9)",
+      "(line 28,col 9)-(line 28,col 43)",
+      "(line 29,col 9)-(line 29,col 41)",
+      "(line 30,col 9)-(line 30,col 56)",
+      "(line 32,col 9)-(line 32,col 53)",
+      "(line 33,col 9)-(line 33,col 48)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/core/util/TestTextBuffer.java",
+    "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testLongAppend()",
+    "snippet": "public void testLongAppend()\n      {\n          final int len \u003d TextBuffer.MAX_SEGMENT_LEN * 3 / 2;\n          StringBuilder sb \u003d new StringBuilder(len);\n          for (int i \u003d 0; i \u003c len; ++i) {\n              sb.append(\u0027x\u0027);\n          }\n         final String STR \u003d sb.toString();\n         final String EXP \u003d \"a\" + STR + \"c\";\n \n         // ok: first test with String:\n         TextBuffer tb \u003d new TextBuffer(new BufferRecycler());\n         tb.append(\u0027a\u0027);\n         tb.append(STR, 0, len);\n         tb.append(\u0027c\u0027);\n         assertEquals(len+2, tb.size());\n         assertEquals(EXP, tb.contentsAsString());\n \n         // then char[]\n         tb \u003d new TextBuffer(new BufferRecycler());\n         tb.append(\u0027a\u0027);\n         tb.append(STR.toCharArray(), 0, len);\n         tb.append(\u0027c\u0027);\n         assertEquals(len+2, tb.size());\n         assertEquals(EXP, tb.contentsAsString());\n      }",
+    "begin_line": 36,
+    "end_line": 61,
+    "comment": "",
+    "child_ranges": [
+      "(line 38,col 11)-(line 38,col 61)",
+      "(line 39,col 11)-(line 39,col 52)",
+      "(line 40,col 11)-(line 42,col 11)",
+      "(line 43,col 10)-(line 43,col 42)",
+      "(line 44,col 10)-(line 44,col 44)",
+      "(line 47,col 10)-(line 47,col 62)",
+      "(line 48,col 10)-(line 48,col 24)",
+      "(line 49,col 10)-(line 49,col 32)",
+      "(line 50,col 10)-(line 50,col 24)",
+      "(line 51,col 10)-(line 51,col 40)",
+      "(line 52,col 10)-(line 52,col 50)",
+      "(line 55,col 10)-(line 55,col 51)",
+      "(line 56,col 10)-(line 56,col 24)",
+      "(line 57,col 10)-(line 57,col 46)",
+      "(line 58,col 10)-(line 58,col 24)",
+      "(line 59,col 10)-(line 59,col 40)",
+      "(line 60,col 10)-(line 60,col 50)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/core/util/TestTextBuffer.java",
+    "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testExpand()",
+    "snippet": "public void testExpand()\n      {\n          TextBuffer tb \u003d new TextBuffer(new BufferRecycler());\n          char[] buf \u003d tb.getCurrentSegment();\n\n          while (buf.length \u003c 500 * 1000) {\n              char[] old \u003d buf;\n              buf \u003d tb.expandCurrentSegment();\n              if (old.length \u003e\u003d buf.length) {\n                  fail(\"Expected buffer of \"+old.length+\" to expand, did not, length now \"+buf.length);\n              }\n          }\n      }",
+    "begin_line": 64,
+    "end_line": 76,
+    "comment": "",
+    "child_ranges": [
+      "(line 66,col 11)-(line 66,col 63)",
+      "(line 67,col 11)-(line 67,col 46)",
+      "(line 69,col 11)-(line 75,col 11)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.core.util.TestTextBuffer",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/core/util/TestTextBuffer.java",
+    "signature": "com.fasterxml.jackson.core.util.TestTextBuffer.testEmpty()",
+    "snippet": "public void testEmpty() {\n        TextBuffer tb \u003d new TextBuffer(new BufferRecycler());\n        tb.resetWithEmpty();\n\n        assertTrue(tb.getTextBuffer().length \u003d\u003d 0);\n        tb.contentsAsString();\n        assertTrue(tb.getTextBuffer().length \u003d\u003d 0);\n    }",
+    "begin_line": 79,
+    "end_line": 86,
+    "comment": "",
+    "child_ranges": [
+      "(line 80,col 9)-(line 80,col 61)",
+      "(line 81,col 9)-(line 81,col 28)",
+      "(line 83,col 9)-(line 83,col 51)",
+      "(line 84,col 9)-(line 84,col 30)",
+      "(line 85,col 9)-(line 85,col 51)"
+    ]
+  }
+]

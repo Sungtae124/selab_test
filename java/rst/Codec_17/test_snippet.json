@@ -1,0 +1,319 @@
+[
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testConstructor()",
+    "snippet": "@Test\n    public void testConstructor() {\n        new StringUtils();\n    }",
+    "begin_line": 48,
+    "end_line": 50,
+    "comment": "/** \n * We could make the constructor private but there does not seem to be a point to jumping through extra code hoops to restrict instantiation right now.\n */\n",
+    "child_ranges": [
+      "(line 49,col 9)-(line 49,col 26)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesIso8859_1()",
+    "snippet": "@Test\n    public void testGetBytesIso8859_1() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"ISO-8859-1\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesIso8859_1(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 53,
+    "end_line": 59,
+    "comment": "",
+    "child_ranges": [
+      "(line 54,col 9)-(line 54,col 48)",
+      "(line 55,col 9)-(line 55,col 43)",
+      "(line 56,col 9)-(line 56,col 69)",
+      "(line 57,col 9)-(line 57,col 76)",
+      "(line 58,col 9)-(line 58,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUnchecked(java.lang.String)",
+    "snippet": "private void testGetBytesUnchecked(final String charsetName) throws UnsupportedEncodingException {\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUnchecked(STRING_FIXTURE, charsetName);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 61,
+    "end_line": 65,
+    "comment": "",
+    "child_ranges": [
+      "(line 62,col 9)-(line 62,col 69)",
+      "(line 63,col 9)-(line 63,col 89)",
+      "(line 64,col 9)-(line 64,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUsAscii()",
+    "snippet": "@Test\n    public void testGetBytesUsAscii() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"US-ASCII\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUsAscii(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 68,
+    "end_line": 74,
+    "comment": "",
+    "child_ranges": [
+      "(line 69,col 9)-(line 69,col 46)",
+      "(line 70,col 9)-(line 70,col 43)",
+      "(line 71,col 9)-(line 71,col 69)",
+      "(line 72,col 9)-(line 72,col 74)",
+      "(line 73,col 9)-(line 73,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUtf16()",
+    "snippet": "@Test\n    public void testGetBytesUtf16() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUtf16(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 77,
+    "end_line": 83,
+    "comment": "",
+    "child_ranges": [
+      "(line 78,col 9)-(line 78,col 44)",
+      "(line 79,col 9)-(line 79,col 43)",
+      "(line 80,col 9)-(line 80,col 69)",
+      "(line 81,col 9)-(line 81,col 72)",
+      "(line 82,col 9)-(line 82,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUtf16Be()",
+    "snippet": "@Test\n    public void testGetBytesUtf16Be() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16BE\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUtf16Be(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 86,
+    "end_line": 92,
+    "comment": "",
+    "child_ranges": [
+      "(line 87,col 9)-(line 87,col 46)",
+      "(line 88,col 9)-(line 88,col 43)",
+      "(line 89,col 9)-(line 89,col 69)",
+      "(line 90,col 9)-(line 90,col 74)",
+      "(line 91,col 9)-(line 91,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUtf16Le()",
+    "snippet": "@Test\n    public void testGetBytesUtf16Le() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16LE\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUtf16Le(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 95,
+    "end_line": 101,
+    "comment": "",
+    "child_ranges": [
+      "(line 96,col 9)-(line 96,col 46)",
+      "(line 97,col 9)-(line 97,col 43)",
+      "(line 98,col 9)-(line 98,col 69)",
+      "(line 99,col 9)-(line 99,col 74)",
+      "(line 100,col 9)-(line 100,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUtf8()",
+    "snippet": "@Test\n    public void testGetBytesUtf8() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-8\";\n        testGetBytesUnchecked(charsetName);\n        final byte[] expected \u003d STRING_FIXTURE.getBytes(charsetName);\n        final byte[] actual \u003d StringUtils.getBytesUtf8(STRING_FIXTURE);\n        Assert.assertTrue(Arrays.equals(expected, actual));\n    }",
+    "begin_line": 104,
+    "end_line": 110,
+    "comment": "",
+    "child_ranges": [
+      "(line 105,col 9)-(line 105,col 43)",
+      "(line 106,col 9)-(line 106,col 43)",
+      "(line 107,col 9)-(line 107,col 69)",
+      "(line 108,col 9)-(line 108,col 71)",
+      "(line 109,col 9)-(line 109,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUncheckedBadName()",
+    "snippet": "@Test\n    public void testGetBytesUncheckedBadName() {\n        try {\n            StringUtils.getBytesUnchecked(STRING_FIXTURE, \"UNKNOWN\");\n            Assert.fail(\"Expected \" + IllegalStateException.class.getName());\n        } catch (final IllegalStateException e) {\n            // Expected\n        }\n    }",
+    "begin_line": 113,
+    "end_line": 120,
+    "comment": "",
+    "child_ranges": [
+      "(line 114,col 9)-(line 119,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testGetBytesUncheckedNullInput()",
+    "snippet": "@Test\n    public void testGetBytesUncheckedNullInput() {\n        Assert.assertNull(StringUtils.getBytesUnchecked(null, \"UNKNOWN\"));\n    }",
+    "begin_line": 123,
+    "end_line": 125,
+    "comment": "",
+    "child_ranges": [
+      "(line 124,col 9)-(line 124,col 74)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewString(java.lang.String)",
+    "snippet": "private void testNewString(final String charsetName) throws UnsupportedEncodingException {\n        final String expected \u003d new String(BYTES_FIXTURE, charsetName);\n        final String actual \u003d StringUtils.newString(BYTES_FIXTURE, charsetName);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 127,
+    "end_line": 131,
+    "comment": "",
+    "child_ranges": [
+      "(line 128,col 9)-(line 128,col 71)",
+      "(line 129,col 9)-(line 129,col 80)",
+      "(line 130,col 9)-(line 130,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringBadEnc()",
+    "snippet": "@Test\n    public void testNewStringBadEnc() {\n        try {\n            StringUtils.newString(BYTES_FIXTURE, \"UNKNOWN\");\n            Assert.fail(\"Expected \" + IllegalStateException.class.getName());\n        } catch (final IllegalStateException e) {\n            // Expected\n        }\n    }",
+    "begin_line": 134,
+    "end_line": 141,
+    "comment": "",
+    "child_ranges": [
+      "(line 135,col 9)-(line 140,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringNullInput()",
+    "snippet": "@Test\n    public void testNewStringNullInput() {\n        Assert.assertNull(StringUtils.newString(null, \"UNKNOWN\"));\n    }",
+    "begin_line": 144,
+    "end_line": 146,
+    "comment": "",
+    "child_ranges": [
+      "(line 145,col 9)-(line 145,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringNullInput_CODEC229()",
+    "snippet": "@Test\n    public void testNewStringNullInput_CODEC229() {\n        Assert.assertNull(StringUtils.newStringUtf8(null));\n        Assert.assertNull(StringUtils.newStringIso8859_1(null));\n        Assert.assertNull(StringUtils.newStringUsAscii(null));\n        Assert.assertNull(StringUtils.newStringUtf16(null));\n        Assert.assertNull(StringUtils.newStringUtf16Be(null));\n        Assert.assertNull(StringUtils.newStringUtf16Le(null));\n    }",
+    "begin_line": 149,
+    "end_line": 156,
+    "comment": "",
+    "child_ranges": [
+      "(line 150,col 9)-(line 150,col 59)",
+      "(line 151,col 9)-(line 151,col 64)",
+      "(line 152,col 9)-(line 152,col 62)",
+      "(line 153,col 9)-(line 153,col 60)",
+      "(line 154,col 9)-(line 154,col 62)",
+      "(line 155,col 9)-(line 155,col 62)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringIso8859_1()",
+    "snippet": "@Test\n    public void testNewStringIso8859_1() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"ISO-8859-1\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE, charsetName);\n        final String actual \u003d StringUtils.newStringIso8859_1(BYTES_FIXTURE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 159,
+    "end_line": 165,
+    "comment": "",
+    "child_ranges": [
+      "(line 160,col 9)-(line 160,col 48)",
+      "(line 161,col 9)-(line 161,col 35)",
+      "(line 162,col 9)-(line 162,col 71)",
+      "(line 163,col 9)-(line 163,col 76)",
+      "(line 164,col 9)-(line 164,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringUsAscii()",
+    "snippet": "@Test\n    public void testNewStringUsAscii() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"US-ASCII\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE, charsetName);\n        final String actual \u003d StringUtils.newStringUsAscii(BYTES_FIXTURE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 168,
+    "end_line": 174,
+    "comment": "",
+    "child_ranges": [
+      "(line 169,col 9)-(line 169,col 46)",
+      "(line 170,col 9)-(line 170,col 35)",
+      "(line 171,col 9)-(line 171,col 71)",
+      "(line 172,col 9)-(line 172,col 74)",
+      "(line 173,col 9)-(line 173,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringUtf16()",
+    "snippet": "@Test\n    public void testNewStringUtf16() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE, charsetName);\n        final String actual \u003d StringUtils.newStringUtf16(BYTES_FIXTURE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 177,
+    "end_line": 183,
+    "comment": "",
+    "child_ranges": [
+      "(line 178,col 9)-(line 178,col 44)",
+      "(line 179,col 9)-(line 179,col 35)",
+      "(line 180,col 9)-(line 180,col 71)",
+      "(line 181,col 9)-(line 181,col 72)",
+      "(line 182,col 9)-(line 182,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringUtf16Be()",
+    "snippet": "@Test\n    public void testNewStringUtf16Be() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16BE\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE_16BE, charsetName);\n        final String actual \u003d StringUtils.newStringUtf16Be(BYTES_FIXTURE_16BE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 186,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 187,col 9)-(line 187,col 46)",
+      "(line 188,col 9)-(line 188,col 35)",
+      "(line 189,col 9)-(line 189,col 76)",
+      "(line 190,col 9)-(line 190,col 79)",
+      "(line 191,col 9)-(line 191,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringUtf16Le()",
+    "snippet": "@Test\n    public void testNewStringUtf16Le() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-16LE\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE_16LE, charsetName);\n        final String actual \u003d StringUtils.newStringUtf16Le(BYTES_FIXTURE_16LE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 195,
+    "end_line": 201,
+    "comment": "",
+    "child_ranges": [
+      "(line 196,col 9)-(line 196,col 46)",
+      "(line 197,col 9)-(line 197,col 35)",
+      "(line 198,col 9)-(line 198,col 76)",
+      "(line 199,col 9)-(line 199,col 79)",
+      "(line 200,col 9)-(line 200,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.StringUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/codec/binary/StringUtilsTest.java",
+    "signature": "org.apache.commons.codec.binary.StringUtilsTest.testNewStringUtf8()",
+    "snippet": "@Test\n    public void testNewStringUtf8() throws UnsupportedEncodingException {\n        final String charsetName \u003d \"UTF-8\";\n        testNewString(charsetName);\n        final String expected \u003d new String(BYTES_FIXTURE, charsetName);\n        final String actual \u003d StringUtils.newStringUtf8(BYTES_FIXTURE);\n        Assert.assertEquals(expected, actual);\n    }",
+    "begin_line": 204,
+    "end_line": 210,
+    "comment": "",
+    "child_ranges": [
+      "(line 205,col 9)-(line 205,col 43)",
+      "(line 206,col 9)-(line 206,col 35)",
+      "(line 207,col 9)-(line 207,col 71)",
+      "(line 208,col 9)-(line 208,col 71)",
+      "(line 209,col 9)-(line 209,col 46)"
+    ]
+  }
+]

@@ -1,0 +1,263 @@
+[
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.DEFAULT_BUFFER_RESIZE_FACTOR",
+    "snippet": "private static final int DEFAULT_BUFFER_RESIZE_FACTOR \u003d 2;",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.DEFAULT_BUFFER_SIZE",
+    "snippet": "private static final int DEFAULT_BUFFER_SIZE \u003d 8192;",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.MIME_CHUNK_SIZE",
+    "snippet": "public static final int MIME_CHUNK_SIZE \u003d 76;",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * MIME chunk size per RFC 2045 section 6.8. \u003cp\u003e The  {@value} character limit does not count the trailing CRLF, but counts all other characters, including anyequal signs. \u003c/p\u003e\n * @see \u003ca href\u003d\"http://www.ietf.org/rfc/rfc2045.txt\"\u003eRFC 2045 section 6.8\u003c/a\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.PEM_CHUNK_SIZE",
+    "snippet": "public static final int PEM_CHUNK_SIZE \u003d 64;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * PEM chunk size per RFC 1421 section 4.3.2.4. \u003cp\u003e The  {@value} character limit does not count the trailing CRLF, but counts all other characters, including anyequal signs. \u003c/p\u003e\n * @see \u003ca href\u003d\"http://tools.ietf.org/html/rfc1421\"\u003eRFC 1421 section 4.3.2.4\u003c/a\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.CHUNK_SEPARATOR",
+    "snippet": "static final byte[] CHUNK_SEPARATOR \u003d {\u0027\\r\u0027, \u0027\\n\u0027};",
+    "begin_line": 91,
+    "end_line": 91,
+    "comment": "/** \n * Chunk separator per RFC 2045 section 2.1. \u003cp\u003e N.B. The next major release may break compatibility and make this field private. \u003c/p\u003e\n * @see \u003ca href\u003d\"http://www.ietf.org/rfc/rfc2045.txt\"\u003eRFC 2045 section 2.1\u003c/a\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.STANDARD_ENCODE_TABLE",
+    "snippet": "private static final byte[] STANDARD_ENCODE_TABLE \u003d {\n            \u0027A\u0027, \u0027B\u0027, \u0027C\u0027, \u0027D\u0027, \u0027E\u0027, \u0027F\u0027, \u0027G\u0027, \u0027H\u0027, \u0027I\u0027, \u0027J\u0027, \u0027K\u0027, \u0027L\u0027, \u0027M\u0027,\n            \u0027N\u0027, \u0027O\u0027, \u0027P\u0027, \u0027Q\u0027, \u0027R\u0027, \u0027S\u0027, \u0027T\u0027, \u0027U\u0027, \u0027V\u0027, \u0027W\u0027, \u0027X\u0027, \u0027Y\u0027, \u0027Z\u0027,\n            \u0027a\u0027, \u0027b\u0027, \u0027c\u0027, \u0027d\u0027, \u0027e\u0027, \u0027f\u0027, \u0027g\u0027, \u0027h\u0027, \u0027i\u0027, \u0027j\u0027, \u0027k\u0027, \u0027l\u0027, \u0027m\u0027,\n            \u0027n\u0027, \u0027o\u0027, \u0027p\u0027, \u0027q\u0027, \u0027r\u0027, \u0027s\u0027, \u0027t\u0027, \u0027u\u0027, \u0027v\u0027, \u0027w\u0027, \u0027x\u0027, \u0027y\u0027, \u0027z\u0027,\n            \u00270\u0027, \u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027, \u00276\u0027, \u00277\u0027, \u00278\u0027, \u00279\u0027, \u0027+\u0027, \u0027/\u0027\n    };",
+    "begin_line": 100,
+    "end_line": 106,
+    "comment": "/** \n * This array is a lookup table that translates 6-bit positive integer index values into their \"Base64 Alphabet\" equivalents as specified in Table 1 of RFC 2045. Thanks to \"commons\" project in ws.apache.org for this code. http://svn.apache.org/repos/asf/webservices/commons/trunk/modules/util/\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.URL_SAFE_ENCODE_TABLE",
+    "snippet": "private static final byte[] URL_SAFE_ENCODE_TABLE \u003d {\n            \u0027A\u0027, \u0027B\u0027, \u0027C\u0027, \u0027D\u0027, \u0027E\u0027, \u0027F\u0027, \u0027G\u0027, \u0027H\u0027, \u0027I\u0027, \u0027J\u0027, \u0027K\u0027, \u0027L\u0027, \u0027M\u0027,\n            \u0027N\u0027, \u0027O\u0027, \u0027P\u0027, \u0027Q\u0027, \u0027R\u0027, \u0027S\u0027, \u0027T\u0027, \u0027U\u0027, \u0027V\u0027, \u0027W\u0027, \u0027X\u0027, \u0027Y\u0027, \u0027Z\u0027,\n            \u0027a\u0027, \u0027b\u0027, \u0027c\u0027, \u0027d\u0027, \u0027e\u0027, \u0027f\u0027, \u0027g\u0027, \u0027h\u0027, \u0027i\u0027, \u0027j\u0027, \u0027k\u0027, \u0027l\u0027, \u0027m\u0027,\n            \u0027n\u0027, \u0027o\u0027, \u0027p\u0027, \u0027q\u0027, \u0027r\u0027, \u0027s\u0027, \u0027t\u0027, \u0027u\u0027, \u0027v\u0027, \u0027w\u0027, \u0027x\u0027, \u0027y\u0027, \u0027z\u0027,\n            \u00270\u0027, \u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027, \u00276\u0027, \u00277\u0027, \u00278\u0027, \u00279\u0027, \u0027-\u0027, \u0027_\u0027\n    };",
+    "begin_line": 113,
+    "end_line": 119,
+    "comment": "/** \n * This is a copy of the STANDARD_ENCODE_TABLE above, but with + and / changed to - and _ to make the encoded Base64 results more URL-SAFE. This table is only used when the Base64\u0027s mode is set to URL-SAFE.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.PAD",
+    "snippet": "private static final byte PAD \u003d \u0027\u003d\u0027;",
+    "begin_line": 124,
+    "end_line": 124,
+    "comment": "/** \n * Byte used to pad output.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.DECODE_TABLE",
+    "snippet": "private static final byte[] DECODE_TABLE \u003d {\n            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,\n            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,\n            -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, 62, -1, 63, 52, 53, 54,\n            55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4,\n            5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,\n            24, 25, -1, -1, -1, -1, 63, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34,\n            35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51\n    };",
+    "begin_line": 137,
+    "end_line": 145,
+    "comment": "/** \n * This array is a lookup table that translates Unicode characters drawn from the \"Base64 Alphabet\" (as specified in Table 1 of RFC 2045) into their 6-bit positive integer equivalents. Characters that are not in the Base64 alphabet but fall within the bounds of the array are translated to -1. Note: \u0027+\u0027 and \u0027-\u0027 both decode to 62. \u0027/\u0027 and \u0027_\u0027 both decode to 63. This means decoder seamlessly handles both URL_SAFE and STANDARD base64. (The encoder, on the other hand, needs to know ahead of time what to emit). Thanks to \"commons\" project in ws.apache.org for this code. http://svn.apache.org/repos/asf/webservices/commons/trunk/modules/util/\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.MASK_6BITS",
+    "snippet": "private static final int MASK_6BITS \u003d 0x3f;",
+    "begin_line": 148,
+    "end_line": 148,
+    "comment": "/** \n * Mask used to extract 6 bits, used when encoding \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.MASK_8BITS",
+    "snippet": "private static final int MASK_8BITS \u003d 0xff;",
+    "begin_line": 151,
+    "end_line": 151,
+    "comment": "/** \n * Mask used to extract 8 bits, used in decoding base64 bytes \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeTable",
+    "snippet": "private final byte[] encodeTable;",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * Encode table to use: either STANDARD or URL_SAFE. Note: the DECODE_TABLE above remains static because it is able to decode both STANDARD and URL_SAFE streams, but the encodeTable must be a member variable so we can switch between the two modes.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.lineLength",
+    "snippet": "private final int lineLength;",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": "/** \n * Line length for encoding. Not used when decoding. A value of zero or less implies no chunking of the base64 encoded data.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.lineSeparator",
+    "snippet": "private final byte[] lineSeparator;",
+    "begin_line": 173,
+    "end_line": 173,
+    "comment": "/** \n * Line separator for encoding. Not used when decoding. Only used if lineLength \u003e 0.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.decodeSize",
+    "snippet": "private final int decodeSize;",
+    "begin_line": 179,
+    "end_line": 179,
+    "comment": "/** \n * Convenience variable to help us determine when our buffer is going to run out of room and needs resizing. \u003ccode\u003edecodeSize \u003d 3 + lineSeparator.length;\u003c/code\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.encodeSize",
+    "snippet": "private final int encodeSize;",
+    "begin_line": 185,
+    "end_line": 185,
+    "comment": "/** \n * Convenience variable to help us determine when our buffer is going to run out of room and needs resizing. \u003ccode\u003eencodeSize \u003d 4 + lineSeparator.length;\u003c/code\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.buffer",
+    "snippet": "private byte[] buffer;",
+    "begin_line": 190,
+    "end_line": 190,
+    "comment": "/** \n * Buffer for streaming.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.pos",
+    "snippet": "private int pos;",
+    "begin_line": 195,
+    "end_line": 195,
+    "comment": "/** \n * Position where next character should be written in the buffer.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.readPos",
+    "snippet": "private int readPos;",
+    "begin_line": 200,
+    "end_line": 200,
+    "comment": "/** \n * Position where next character should be read from the buffer.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.currentLinePos",
+    "snippet": "private int currentLinePos;",
+    "begin_line": 206,
+    "end_line": 206,
+    "comment": "/** \n * Variable tracks how many characters have been written to the current line. Only used when encoding. We use it to make sure each encoded line never goes beyond lineLength (if lineLength \u003e 0).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.modulus",
+    "snippet": "private int modulus;",
+    "begin_line": 212,
+    "end_line": 212,
+    "comment": "/** \n * Writes to the buffer only occur after every 3 reads when encoding, an every 4 reads when decoding. This variable helps track that.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.eof",
+    "snippet": "private boolean eof;",
+    "begin_line": 218,
+    "end_line": 218,
+    "comment": "/** \n * Boolean flag to indicate the EOF has been reached. Once EOF has been reached, this Base64 object becomes useless, and must be thrown away.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64",
+    "src_path": "org/apache/commons/codec/binary/Base64.java",
+    "signature": "org.apache.commons.codec.binary.Base64.x",
+    "snippet": "private int x;",
+    "begin_line": 224,
+    "end_line": 224,
+    "comment": "/** \n * Place holder for the 3 bytes we\u0027re dealing with for our base64 logic. Bitwise operations store and extract the base64 encoding or decoding from this variable.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.doEncode",
+    "snippet": "private final boolean doEncode;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.base64",
+    "snippet": "private final Base64 base64;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64InputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64InputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64InputStream.singleByte",
+    "snippet": "private final byte[] singleByte \u003d new byte[1];",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.doEncode",
+    "snippet": "private final boolean doEncode;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.base64",
+    "snippet": "private final Base64 base64;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.codec.binary.Base64OutputStream",
+    "src_path": "org/apache/commons/codec/binary/Base64OutputStream.java",
+    "signature": "org.apache.commons.codec.binary.Base64OutputStream.singleByte",
+    "snippet": "private final byte[] singleByte \u003d new byte[1];",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  }
+]

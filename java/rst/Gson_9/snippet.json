@@ -1,0 +1,514 @@
+[
+  {
+    "name": "JsonWriter.JsonWriter#197",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.JsonWriter(java.io.Writer)",
+    "snippet": "public JsonWriter(Writer out) {\n    if (out \u003d\u003d null) {\n      throw new NullPointerException(\"out \u003d\u003d null\");\n    }\n    this.out \u003d out;\n  }",
+    "begin_line": 197,
+    "end_line": 202,
+    "comment": "/** \n * Creates a new instance that writes a JSON-encoded stream to  {@code out}. For best performance, ensure  {@link Writer} is buffered; wrapping in{@link java.io.BufferedWriter BufferedWriter} if necessary.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.setIndent#212",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.setIndent(java.lang.String)",
+    "snippet": "public final void setIndent(String indent) {\n    if (indent.length() \u003d\u003d 0) {\n      this.indent \u003d null;\n      this.separator \u003d \":\";\n    } else {\n      this.indent \u003d indent;\n      this.separator \u003d \": \";\n    }\n  }",
+    "begin_line": 212,
+    "end_line": 220,
+    "comment": "/** \n * Sets the indentation string to be repeated for each level of indentation in the encoded document. If  {@code indent.isEmpty()} the encoded documentwill be compact. Otherwise the encoded document will be more human-readable.\n * @param indent a string containing only whitespace.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.setLenient#234",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.setLenient(boolean)",
+    "snippet": "public final void setLenient(boolean lenient) {\n    this.lenient \u003d lenient;\n  }",
+    "begin_line": 234,
+    "end_line": 236,
+    "comment": "/** \n * Configure this writer to relax its syntax rules. By default, this writer only emits well-formed JSON as specified by \u003ca href\u003d\"http://www.ietf.org/rfc/rfc7159.txt\"\u003eRFC 7159\u003c/a\u003e. Setting the writer to lenient permits the following: \u003cul\u003e \u003cli\u003eTop-level values of any type. With strict writing, the top-level value must be an object or an array. \u003cli\u003eNumbers may be  {@link Double#isNaN() NaNs} or {@link Double#isInfinite() infinities}. \u003c/ul\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.isLenient#241",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.isLenient()",
+    "snippet": "public boolean isLenient() {\n    return lenient;\n  }",
+    "begin_line": 241,
+    "end_line": 243,
+    "comment": "/** \n * Returns true if this writer has relaxed syntax rules.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.setHtmlSafe#252",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.setHtmlSafe(boolean)",
+    "snippet": "public final void setHtmlSafe(boolean htmlSafe) {\n    this.htmlSafe \u003d htmlSafe;\n  }",
+    "begin_line": 252,
+    "end_line": 254,
+    "comment": "/** \n * Configure this writer to emit JSON that\u0027s safe for direct inclusion in HTML and XML documents. This escapes the HTML characters  {@code \u003c},  {@code \u003e}, {@code \u0026} and {@code \u003d} before writing them to the stream. Without thissetting, your XML/HTML encoder should replace these characters with the corresponding escape sequences.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.isHtmlSafe#260",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.isHtmlSafe()",
+    "snippet": "public final boolean isHtmlSafe() {\n    return htmlSafe;\n  }",
+    "begin_line": 260,
+    "end_line": 262,
+    "comment": "/** \n * Returns true if this writer writes JSON that\u0027s safe for inclusion in HTML and XML documents.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.setSerializeNulls#268",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.setSerializeNulls(boolean)",
+    "snippet": "public final void setSerializeNulls(boolean serializeNulls) {\n    this.serializeNulls \u003d serializeNulls;\n  }",
+    "begin_line": 268,
+    "end_line": 270,
+    "comment": "/** \n * Sets whether object members are serialized when their value is null. This has no impact on array elements. The default is true.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.getSerializeNulls#276",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.getSerializeNulls()",
+    "snippet": "public final boolean getSerializeNulls() {\n    return serializeNulls;\n  }",
+    "begin_line": 276,
+    "end_line": 278,
+    "comment": "/** \n * Returns true if object members are serialized when their value is null. This has no impact on array elements. The default is true.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.beginArray#286",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.beginArray()",
+    "snippet": "public JsonWriter beginArray() throws IOException {\n    writeDeferredName();\n    return open(EMPTY_ARRAY, \"[\");\n  }",
+    "begin_line": 286,
+    "end_line": 289,
+    "comment": "/** \n * Begins encoding a new array. Each call to this method must be paired with a call to  {@link #endArray}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.endArray#296",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.endArray()",
+    "snippet": "public JsonWriter endArray() throws IOException {\n    return close(EMPTY_ARRAY, NONEMPTY_ARRAY, \"]\");\n  }",
+    "begin_line": 296,
+    "end_line": 298,
+    "comment": "/** \n * Ends encoding the current array.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.beginObject#306",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.beginObject()",
+    "snippet": "public JsonWriter beginObject() throws IOException {\n    writeDeferredName();\n    return open(EMPTY_OBJECT, \"{\");\n  }",
+    "begin_line": 306,
+    "end_line": 309,
+    "comment": "/** \n * Begins encoding a new object. Each call to this method must be paired with a call to  {@link #endObject}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.endObject#316",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.endObject()",
+    "snippet": "public JsonWriter endObject() throws IOException {\n    return close(EMPTY_OBJECT, NONEMPTY_OBJECT, \"}\");\n  }",
+    "begin_line": 316,
+    "end_line": 318,
+    "comment": "/** \n * Ends encoding the current object.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.open#324",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.open(int, java.lang.String)",
+    "snippet": "private JsonWriter open(int empty, String openBracket) throws IOException {\n    beforeValue();\n    push(empty);\n    out.write(openBracket);\n    return this;\n  }",
+    "begin_line": 324,
+    "end_line": 329,
+    "comment": "/** \n * Enters a new scope by appending any necessary whitespace and the given bracket.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.close#335",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.close(int, int, java.lang.String)",
+    "snippet": "private JsonWriter close(int empty, int nonempty, String closeBracket)\n      throws IOException {\n    int context \u003d peek();\n    if (context !\u003d nonempty \u0026\u0026 context !\u003d empty) {\n      throw new IllegalStateException(\"Nesting problem.\");\n    }\n    if (deferredName !\u003d null) {\n      throw new IllegalStateException(\"Dangling name: \" + deferredName);\n    }\n\n    stackSize--;\n    if (context \u003d\u003d nonempty) {\n      newline();\n    }\n    out.write(closeBracket);\n    return this;\n  }",
+    "begin_line": 335,
+    "end_line": 351,
+    "comment": "/** \n * Closes the current scope by appending any necessary whitespace and the given bracket.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.push#353",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.push(int)",
+    "snippet": "private void push(int newTop) {\n    if (stackSize \u003d\u003d stack.length) {\n      int[] newStack \u003d new int[stackSize * 2];\n      System.arraycopy(stack, 0, newStack, 0, stackSize);\n      stack \u003d newStack;\n    }\n    stack[stackSize++] \u003d newTop;\n  }",
+    "begin_line": 353,
+    "end_line": 360,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.peek#365",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.peek()",
+    "snippet": "private int peek() {\n    if (stackSize \u003d\u003d 0) {\n      throw new IllegalStateException(\"JsonWriter is closed.\");\n    }\n    return stack[stackSize - 1];\n  }",
+    "begin_line": 365,
+    "end_line": 370,
+    "comment": "/** \n * Returns the value on the top of the stack.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.replaceTop#375",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.replaceTop(int)",
+    "snippet": "private void replaceTop(int topOfStack) {\n    stack[stackSize - 1] \u003d topOfStack;\n  }",
+    "begin_line": 375,
+    "end_line": 377,
+    "comment": "/** \n * Replace the value on the top of the stack with the given value.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.name#385",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.name(java.lang.String)",
+    "snippet": "public JsonWriter name(String name) throws IOException {\n    if (name \u003d\u003d null) {\n      throw new NullPointerException(\"name \u003d\u003d null\");\n    }\n    if (deferredName !\u003d null) {\n      throw new IllegalStateException();\n    }\n    if (stackSize \u003d\u003d 0) {\n      throw new IllegalStateException(\"JsonWriter is closed.\");\n    }\n    deferredName \u003d name;\n    return this;\n  }",
+    "begin_line": 385,
+    "end_line": 397,
+    "comment": "/** \n * Encodes the property name.\n * @param name the name of the forthcoming value. May not be null.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.writeDeferredName#399",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.writeDeferredName()",
+    "snippet": "private void writeDeferredName() throws IOException {\n    if (deferredName !\u003d null) {\n      beforeName();\n      string(deferredName);\n      deferredName \u003d null;\n    }\n  }",
+    "begin_line": 399,
+    "end_line": 405,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.value#413",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.value(java.lang.String)",
+    "snippet": "public JsonWriter value(String value) throws IOException {\n    if (value \u003d\u003d null) {\n      return nullValue();\n    }\n    writeDeferredName();\n    beforeValue();\n    string(value);\n    return this;\n  }",
+    "begin_line": 413,
+    "end_line": 421,
+    "comment": "/** \n * Encodes  {@code value}.\n * @param value the literal string value, or null to encode a null literal.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.jsonValue#430",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.jsonValue(java.lang.String)",
+    "snippet": "public JsonWriter jsonValue(String value) throws IOException {\n    if (value \u003d\u003d null) {\n      return nullValue();\n    }\n    writeDeferredName();\n    beforeValue();\n    out.append(value);\n    return this;\n  }",
+    "begin_line": 430,
+    "end_line": 438,
+    "comment": "/** \n * Writes  {@code value} directly to the writer without quoting orescaping.\n * @param value the literal string value, or null to encode a null literal.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.nullValue#445",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.nullValue()",
+    "snippet": "public JsonWriter nullValue() throws IOException {\n    if (deferredName !\u003d null) {\n      if (serializeNulls) {\n        writeDeferredName();\n      } else {\n        deferredName \u003d null;\n        return this; // skip the name and the value\n      }\n    }\n    beforeValue();\n    out.write(\"null\");\n    return this;\n  }",
+    "begin_line": 445,
+    "end_line": 457,
+    "comment": "/** \n * Encodes  {@code null}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.value#464",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.value(boolean)",
+    "snippet": "public JsonWriter value(boolean value) throws IOException {\n    writeDeferredName();\n    beforeValue();\n    out.write(value ? \"true\" : \"false\");\n    return this;\n  }",
+    "begin_line": 464,
+    "end_line": 469,
+    "comment": "/** \n * Encodes  {@code value}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.value#484",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.value(double)",
+    "snippet": "public JsonWriter value(double value) throws IOException {\n    if (Double.isNaN(value) || Double.isInfinite(value)) {\n      throw new IllegalArgumentException(\"Numeric values must be finite, but was \" + value);\n    }\n    writeDeferredName();\n    beforeValue();\n    out.append(Double.toString(value));\n    return this;\n  }",
+    "begin_line": 484,
+    "end_line": 492,
+    "comment": "/** \n * Encodes  {@code value}.\n * @param value a finite value. May not be {@link Double#isNaN() NaNs} or{@link Double#isInfinite() infinities}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.value#499",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.value(long)",
+    "snippet": "public JsonWriter value(long value) throws IOException {\n    writeDeferredName();\n    beforeValue();\n    out.write(Long.toString(value));\n    return this;\n  }",
+    "begin_line": 499,
+    "end_line": 504,
+    "comment": "/** \n * Encodes  {@code value}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.value#513",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.value(java.lang.Number)",
+    "snippet": "public JsonWriter value(Number value) throws IOException {\n    if (value \u003d\u003d null) {\n      return nullValue();\n    }\n\n    writeDeferredName();\n    String string \u003d value.toString();\n    if (!lenient\n        \u0026\u0026 (string.equals(\"-Infinity\") || string.equals(\"Infinity\") || string.equals(\"NaN\"))) {\n      throw new IllegalArgumentException(\"Numeric values must be finite, but was \" + value);\n    }\n    beforeValue();\n    out.append(string);\n    return this;\n  }",
+    "begin_line": 513,
+    "end_line": 527,
+    "comment": "/** \n * Encodes  {@code value}.\n * @param value a finite value. May not be {@link Double#isNaN() NaNs} or{@link Double#isInfinite() infinities}.\n * @return this writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.flush#533",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.flush()",
+    "snippet": "public void flush() throws IOException {\n    if (stackSize \u003d\u003d 0) {\n      throw new IllegalStateException(\"JsonWriter is closed.\");\n    }\n    out.flush();\n  }",
+    "begin_line": 533,
+    "end_line": 538,
+    "comment": "/** \n * Ensures all buffered data is written to the underlying  {@link Writer}and flushes that writer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.close#545",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.close()",
+    "snippet": "public void close() throws IOException {\n    out.close();\n\n    int size \u003d stackSize;\n    if (size \u003e 1 || size \u003d\u003d 1 \u0026\u0026 stack[size - 1] !\u003d NONEMPTY_DOCUMENT) {\n      throw new IOException(\"Incomplete document\");\n    }\n    stackSize \u003d 0;\n  }",
+    "begin_line": 545,
+    "end_line": 553,
+    "comment": "/** \n * Flushes and closes this writer and the underlying  {@link Writer}.\n * @throws IOException if the JSON document is incomplete.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.string#555",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.string(java.lang.String)",
+    "snippet": "private void string(String value) throws IOException {\n    String[] replacements \u003d htmlSafe ? HTML_SAFE_REPLACEMENT_CHARS : REPLACEMENT_CHARS;\n    out.write(\"\\\"\");\n    int last \u003d 0;\n    int length \u003d value.length();\n    for (int i \u003d 0; i \u003c length; i++) {\n      char c \u003d value.charAt(i);\n      String replacement;\n      if (c \u003c 128) {\n        replacement \u003d replacements[c];\n        if (replacement \u003d\u003d null) {\n          continue;\n        }\n      } else if (c \u003d\u003d \u0027\\u2028\u0027) {\n        replacement \u003d \"\\\\u2028\";\n      } else if (c \u003d\u003d \u0027\\u2029\u0027) {\n        replacement \u003d \"\\\\u2029\";\n      } else {\n        continue;\n      }\n      if (last \u003c i) {\n        out.write(value, last, i - last);\n      }\n      out.write(replacement);\n      last \u003d i + 1;\n    }\n    if (last \u003c length) {\n      out.write(value, last, length - last);\n    }\n    out.write(\"\\\"\");\n  }",
+    "begin_line": 555,
+    "end_line": 585,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.newline#587",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.newline()",
+    "snippet": "private void newline() throws IOException {\n    if (indent \u003d\u003d null) {\n      return;\n    }\n\n    out.write(\"\\n\");\n    for (int i \u003d 1, size \u003d stackSize; i \u003c size; i++) {\n      out.write(indent);\n    }\n  }",
+    "begin_line": 587,
+    "end_line": 596,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.beforeName#602",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.beforeName()",
+    "snippet": "private void beforeName() throws IOException {\n    int context \u003d peek();\n    if (context \u003d\u003d NONEMPTY_OBJECT) { // first in object\n      out.write(\u0027,\u0027);\n    } else if (context !\u003d EMPTY_OBJECT) { // not in an object!\n      throw new IllegalStateException(\"Nesting problem.\");\n    }\n    newline();\n    replaceTop(DANGLING_NAME);\n  }",
+    "begin_line": 602,
+    "end_line": 611,
+    "comment": "/** \n * Inserts any necessary separators and whitespace before a name. Also adjusts the stack to expect the name\u0027s value.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonWriter.beforeValue#619",
+    "is_bug": true,
+    "src_path": "com/google/gson/stream/JsonWriter.java",
+    "class_name": "com.google.gson.stream.JsonWriter",
+    "signature": "com.google.gson.stream.JsonWriter.beforeValue()",
+    "snippet": "@SuppressWarnings(\"fallthrough\")\n  private void beforeValue() throws IOException {\n    switch (peek()) {\n    case NONEMPTY_DOCUMENT:\n      if (!lenient) {\n        throw new IllegalStateException(\n            \"JSON must have only one top-level value.\");\n      }\n      // fall-through\n    case EMPTY_DOCUMENT: // first in document\n      replaceTop(NONEMPTY_DOCUMENT);\n      break;\n\n    case EMPTY_ARRAY: // first in array\n      replaceTop(NONEMPTY_ARRAY);\n      newline();\n      break;\n\n    case NONEMPTY_ARRAY: // another in array\n      out.append(\u0027,\u0027);\n      newline();\n      break;\n\n    case DANGLING_NAME: // value for name\n      out.append(separator);\n      replaceTop(NONEMPTY_OBJECT);\n      break;\n\n    default:\n      throw new IllegalStateException(\"Nesting problem.\");\n    }\n  }",
+    "begin_line": 619,
+    "end_line": 649,
+    "comment": "/** \n * Inserts any necessary separators and whitespace before a literal value, inline array, or inline object. Also adjusts the stack to expect either a closing bracket or another element.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

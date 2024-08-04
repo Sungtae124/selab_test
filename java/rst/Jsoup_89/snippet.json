@@ -1,0 +1,514 @@
+[
+  {
+    "name": "Validate.Validate#8",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.Validate()",
+    "snippet": "private Validate() {}",
+    "begin_line": 8,
+    "end_line": 8,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.notNull#14",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.notNull(java.lang.Object)",
+    "snippet": "public static void notNull(Object obj) {\n        if (obj \u003d\u003d null)\n            throw new IllegalArgumentException(\"Object must not be null\");\n    }",
+    "begin_line": 14,
+    "end_line": 17,
+    "comment": "/** \n * Validates that the object is not null\n * @param obj object to test\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.notNull#24",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.notNull(java.lang.Object, java.lang.String)",
+    "snippet": "public static void notNull(Object obj, String msg) {\n        if (obj \u003d\u003d null)\n            throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 24,
+    "end_line": 27,
+    "comment": "/** \n * Validates that the object is not null\n * @param obj object to test\n * @param msg message to output if validation fails\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.isTrue#33",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.isTrue(boolean)",
+    "snippet": "public static void isTrue(boolean val) {\n        if (!val)\n            throw new IllegalArgumentException(\"Must be true\");\n    }",
+    "begin_line": 33,
+    "end_line": 36,
+    "comment": "/** \n * Validates that the value is true\n * @param val object to test\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.isTrue#43",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.isTrue(boolean, java.lang.String)",
+    "snippet": "public static void isTrue(boolean val, String msg) {\n        if (!val)\n            throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 43,
+    "end_line": 46,
+    "comment": "/** \n * Validates that the value is true\n * @param val object to test\n * @param msg message to output if validation fails\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.isFalse#52",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.isFalse(boolean)",
+    "snippet": "public static void isFalse(boolean val) {\n        if (val)\n            throw new IllegalArgumentException(\"Must be false\");\n    }",
+    "begin_line": 52,
+    "end_line": 55,
+    "comment": "/** \n * Validates that the value is false\n * @param val object to test\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.isFalse#62",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.isFalse(boolean, java.lang.String)",
+    "snippet": "public static void isFalse(boolean val, String msg) {\n        if (val)\n            throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 62,
+    "end_line": 65,
+    "comment": "/** \n * Validates that the value is false\n * @param val object to test\n * @param msg message to output if validation fails\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.noNullElements#71",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.noNullElements(java.lang.Object[])",
+    "snippet": "public static void noNullElements(Object[] objects) {\n        noNullElements(objects, \"Array must not contain any null objects\");\n    }",
+    "begin_line": 71,
+    "end_line": 73,
+    "comment": "/** \n * Validates that the array contains no null elements\n * @param objects the array to test\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.noNullElements#80",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.noNullElements(java.lang.Object[], java.lang.String)",
+    "snippet": "public static void noNullElements(Object[] objects, String msg) {\n        for (Object obj : objects)\n            if (obj \u003d\u003d null)\n                throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 80,
+    "end_line": 84,
+    "comment": "/** \n * Validates that the array contains no null elements\n * @param objects the array to test\n * @param msg message to output if validation fails\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.notEmpty#90",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.notEmpty(java.lang.String)",
+    "snippet": "public static void notEmpty(String string) {\n        if (string \u003d\u003d null || string.length() \u003d\u003d 0)\n            throw new IllegalArgumentException(\"String must not be empty\");\n    }",
+    "begin_line": 90,
+    "end_line": 93,
+    "comment": "/** \n * Validates that the string is not empty\n * @param string the string to test\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.notEmpty#100",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.notEmpty(java.lang.String, java.lang.String)",
+    "snippet": "public static void notEmpty(String string, String msg) {\n        if (string \u003d\u003d null || string.length() \u003d\u003d 0)\n            throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 100,
+    "end_line": 103,
+    "comment": "/** \n * Validates that the string is not empty\n * @param string the string to test\n * @param msg message to output if validation fails\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Validate.fail#109",
+    "is_bug": true,
+    "src_path": "org/jsoup/helper/Validate.java",
+    "class_name": "org.jsoup.helper.Validate",
+    "signature": "org.jsoup.helper.Validate.fail(java.lang.String)",
+    "snippet": "public static void fail(String msg) {\n        throw new IllegalArgumentException(msg);\n    }",
+    "begin_line": 109,
+    "end_line": 111,
+    "comment": "/** \n * Cause a failure.\n * @param msg message to output.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.Attribute#32",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.Attribute(java.lang.String, java.lang.String)",
+    "snippet": "public Attribute(String key, String value) {\n        this(key, value, null);\n    }",
+    "begin_line": 32,
+    "end_line": 34,
+    "comment": "/** \n * Create a new attribute from unencoded (raw) key and value.\n * @param key attribute key; case is preserved.\n * @param value attribute value\n * @see #createFromEncoded\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.Attribute#42",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.Attribute(java.lang.String, java.lang.String, org.jsoup.nodes.Attributes)",
+    "snippet": "public Attribute(String key, String val, Attributes parent) {\n        Validate.notNull(key);\n        key \u003d key.trim();\n        Validate.notEmpty(key); // trimming could potentially make empty, so validate here\n        this.key \u003d key;\n        this.val \u003d val;\n        this.parent \u003d parent;\n    }",
+    "begin_line": 42,
+    "end_line": 49,
+    "comment": "/** \n * Create a new attribute from unencoded (raw) key and value.\n * @param key attribute key; case is preserved.\n * @param val attribute value\n * @param parent the containing Attributes (this Attribute is not automatically added to said Attributes)\n * @see #createFromEncoded\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.getKey#55",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.getKey()",
+    "snippet": "public String getKey() {\n        return key;\n    }",
+    "begin_line": 55,
+    "end_line": 57,
+    "comment": "/** \n * Get the attribute key.\n * @return the attribute key\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.setKey#63",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.setKey(java.lang.String)",
+    "snippet": "public void setKey(String key) {\n        Validate.notNull(key);\n        key \u003d key.trim();\n        Validate.notEmpty(key); // trimming could potentially make empty, so validate here\n        if (parent !\u003d null) {\n            int i \u003d parent.indexOfKey(this.key);\n            if (i !\u003d Attributes.NotFound)\n                parent.keys[i] \u003d key;\n        }\n        this.key \u003d key;\n    }",
+    "begin_line": 63,
+    "end_line": 73,
+    "comment": "/** \n * Set the attribute key; case is preserved.\n * @param key the new key; must not be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.getValue#79",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.getValue()",
+    "snippet": "public String getValue() {\n        return Attributes.checkNotNull(val);\n    }",
+    "begin_line": 79,
+    "end_line": 81,
+    "comment": "/** \n * Get the attribute value.\n * @return the attribute value\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.setValue#87",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.setValue(java.lang.String)",
+    "snippet": "public String setValue(String val) {\n        String oldVal \u003d parent.get(this.key);\n        if (parent !\u003d null) {\n            int i \u003d parent.indexOfKey(this.key);\n            if (i !\u003d Attributes.NotFound)\n                parent.vals[i] \u003d val;\n        }\n        this.val \u003d val;\n        return Attributes.checkNotNull(oldVal);\n    }",
+    "begin_line": 87,
+    "end_line": 96,
+    "comment": "/** \n * Set the attribute value.\n * @param val the new attribute value; must not be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.html#102",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.html()",
+    "snippet": "public String html() {\n        StringBuilder sb \u003d StringUtil.borrowBuilder();\n        \n        try {\n        \thtml(sb, (new Document(\"\")).outputSettings());\n        } catch(IOException exception) {\n        \tthrow new SerializationException(exception);\n        }\n        return StringUtil.releaseBuilder(sb);\n    }",
+    "begin_line": 102,
+    "end_line": 111,
+    "comment": "/** \n * Get the HTML representation of this attribute; e.g.  {@code href\u003d\"index.html\"}.\n * @return HTML\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.html#113",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.html(java.lang.String, java.lang.String, java.lang.Appendable, org.jsoup.nodes.Document.OutputSettings)",
+    "snippet": "protected static void html(String key, String val, Appendable accum, Document.OutputSettings out) throws IOException {\n        accum.append(key);\n        if (!shouldCollapseAttribute(key, val, out)) {\n            accum.append(\"\u003d\\\"\");\n            Entities.escape(accum, Attributes.checkNotNull(val) , out, true, false, false);\n            accum.append(\u0027\"\u0027);\n        }\n    }",
+    "begin_line": 113,
+    "end_line": 120,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.html#122",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.html(java.lang.Appendable, org.jsoup.nodes.Document.OutputSettings)",
+    "snippet": "protected void html(Appendable accum, Document.OutputSettings out) throws IOException {\n        html(key, val, accum, out);\n    }",
+    "begin_line": 122,
+    "end_line": 124,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.toString#131",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.toString()",
+    "snippet": "@Override\n    public String toString() {\n        return html();\n    }",
+    "begin_line": 131,
+    "end_line": 133,
+    "comment": "/** \n * Get the string representation of this attribute, implemented as  {@link #html()}.\n * @return string\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.createFromEncoded#141",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.createFromEncoded(java.lang.String, java.lang.String)",
+    "snippet": "public static Attribute createFromEncoded(String unencodedKey, String encodedValue) {\n        String value \u003d Entities.unescape(encodedValue, true);\n        return new Attribute(unencodedKey, value, null); // parent will get set when Put\n    }",
+    "begin_line": 141,
+    "end_line": 144,
+    "comment": "/** \n * Create a new Attribute from an unencoded key and a HTML attribute encoded value.\n * @param unencodedKey assumes the key is not encoded, as can be only run of simple \\w chars.\n * @param encodedValue HTML attribute encoded value\n * @return attribute\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.isDataAttribute#146",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.isDataAttribute()",
+    "snippet": "protected boolean isDataAttribute() {\n        return isDataAttribute(key);\n    }",
+    "begin_line": 146,
+    "end_line": 148,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.isDataAttribute#150",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.isDataAttribute(java.lang.String)",
+    "snippet": "protected static boolean isDataAttribute(String key) {\n        return key.startsWith(Attributes.dataPrefix) \u0026\u0026 key.length() \u003e Attributes.dataPrefix.length();\n    }",
+    "begin_line": 150,
+    "end_line": 152,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.shouldCollapseAttribute#160",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.shouldCollapseAttribute(org.jsoup.nodes.Document.OutputSettings)",
+    "snippet": "protected final boolean shouldCollapseAttribute(Document.OutputSettings out) {\n        return shouldCollapseAttribute(key, val, out);\n    }",
+    "begin_line": 160,
+    "end_line": 162,
+    "comment": "/** \n * Collapsible if it\u0027s a boolean attribute and value is empty or same as name\n * @param out output settings\n * @return  Returns whether collapsible or not\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.shouldCollapseAttribute#164",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.shouldCollapseAttribute(java.lang.String, java.lang.String, org.jsoup.nodes.Document.OutputSettings)",
+    "snippet": "protected static boolean shouldCollapseAttribute(final String key, final String val, final Document.OutputSettings out) {\n        return (\n            out.syntax() \u003d\u003d Document.OutputSettings.Syntax.html \u0026\u0026\n                (val \u003d\u003d null || (\"\".equals(val) || val.equalsIgnoreCase(key)) \u0026\u0026 Attribute.isBooleanAttribute(key)));\n    }",
+    "begin_line": 164,
+    "end_line": 168,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.isBooleanAttribute#173",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.isBooleanAttribute()",
+    "snippet": "protected boolean isBooleanAttribute() {\n        return Arrays.binarySearch(booleanAttributes, key) \u003e\u003d 0 || val \u003d\u003d null;\n    }",
+    "begin_line": 173,
+    "end_line": 175,
+    "comment": "/** \n * @deprecated\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.isBooleanAttribute#180",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.isBooleanAttribute(java.lang.String)",
+    "snippet": "protected static boolean isBooleanAttribute(final String key) {\n        return Arrays.binarySearch(booleanAttributes, key) \u003e\u003d 0;\n    }",
+    "begin_line": 180,
+    "end_line": 182,
+    "comment": "/** \n * Checks if this attribute name is defined as a boolean attribute in HTML5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.equals#185",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.equals(java.lang.Object)",
+    "snippet": "@Override\n    public boolean equals(Object o) { // note parent not considered\n        if (this \u003d\u003d o) return true;\n        if (o \u003d\u003d null || getClass() !\u003d o.getClass()) return false;\n        Attribute attribute \u003d (Attribute) o;\n        if (key !\u003d null ? !key.equals(attribute.key) : attribute.key !\u003d null) return false;\n        return val !\u003d null ? val.equals(attribute.val) : attribute.val \u003d\u003d null;\n    }",
+    "begin_line": 185,
+    "end_line": 191,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.hashCode#194",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.hashCode()",
+    "snippet": "@Override\n    public int hashCode() { // note parent not considered\n        int result \u003d key !\u003d null ? key.hashCode() : 0;\n        result \u003d 31 * result + (val !\u003d null ? val.hashCode() : 0);\n        return result;\n    }",
+    "begin_line": 194,
+    "end_line": 198,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Attribute.clone#201",
+    "is_bug": true,
+    "src_path": "org/jsoup/nodes/Attribute.java",
+    "class_name": "org.jsoup.nodes.Attribute",
+    "signature": "org.jsoup.nodes.Attribute.clone()",
+    "snippet": "@Override\n    public Attribute clone() {\n        try {\n            return (Attribute) super.clone();\n        } catch (CloneNotSupportedException e) {\n            throw new RuntimeException(e);\n        }\n    }",
+    "begin_line": 201,
+    "end_line": 207,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

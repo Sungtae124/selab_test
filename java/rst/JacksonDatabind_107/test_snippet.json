@@ -1,0 +1,140 @@
+[
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.getInnerObjects()",
+    "snippet": "public Collection getInnerObjects() {\n            return innerObjects;\n        }",
+    "begin_line": 24,
+    "end_line": 26,
+    "comment": "",
+    "child_ranges": [
+      "(line 25,col 13)-(line 25,col 32)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.setInnerObjects(java.util.Collection)",
+    "snippet": "public void setInnerObjects(Collection innerObjects) {\n            this.innerObjects \u003d innerObjects;\n        }",
+    "begin_line": 28,
+    "end_line": 30,
+    "comment": "",
+    "child_ranges": [
+      "(line 29,col 13)-(line 29,col 45)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.DummyContent()",
+    "snippet": "public DummyContent() {\n            super();\n        }",
+    "begin_line": 36,
+    "end_line": 38,
+    "comment": "",
+    "child_ranges": [
+      "(line 37,col 13)-(line 37,col 20)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.DummyContent(java.lang.String)",
+    "snippet": "public DummyContent(String aField) {\n            super();\n            this.aField \u003d aField;\n        }",
+    "begin_line": 40,
+    "end_line": 43,
+    "comment": "",
+    "child_ranges": [
+      "(line 41,col 13)-(line 41,col 20)",
+      "(line 42,col 13)-(line 42,col 33)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.getaField()",
+    "snippet": "public String getaField() {\n            return aField;\n        }",
+    "begin_line": 45,
+    "end_line": 47,
+    "comment": "",
+    "child_ranges": [
+      "(line 46,col 13)-(line 46,col 26)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.setaField(java.lang.String)",
+    "snippet": "public void setaField(String aField) {\n            this.aField \u003d aField;\n        }",
+    "begin_line": 49,
+    "end_line": 51,
+    "comment": "",
+    "child_ranges": [
+      "(line 50,col 13)-(line 50,col 33)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return \"DummyContent [aField\u003d\" + aField + \"]\";\n        }",
+    "begin_line": 54,
+    "end_line": 56,
+    "comment": "",
+    "child_ranges": [
+      "(line 55,col 13)-(line 55,col 58)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.testWithDeserializationProblemHandler()",
+    "snippet": "public void testWithDeserializationProblemHandler() throws Exception {\n        final ObjectMapper mapper \u003d new ObjectMapper()\n                .enableDefaultTyping();\n        mapper.addHandler(new DeserializationProblemHandler() {\n            @Override\n            public JavaType handleUnknownTypeId(DeserializationContext ctxt, JavaType baseType, String subTypeId, TypeIdResolver idResolver, String failureMsg) throws IOException {\n//                System.out.println(\"Print out a warning here\");\n                return ctxt.constructType(Void.class);\n            }\n        });\n        GenericContent processableContent \u003d mapper.readValue(JSON, GenericContent.class);\n        assertNotNull(processableContent.getInnerObjects());\n        assertEquals(2, processableContent.getInnerObjects().size());\n    }",
+    "begin_line": 85,
+    "end_line": 98,
+    "comment": "",
+    "child_ranges": [
+      "(line 86,col 9)-(line 87,col 39)",
+      "(line 88,col 9)-(line 94,col 11)",
+      "(line 95,col 9)-(line 95,col 89)",
+      "(line 96,col 9)-(line 96,col 60)",
+      "(line 97,col 9)-(line 97,col 69)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.handleUnknownTypeId(DeserializationContext, JavaType, java.lang.String, TypeIdResolver, java.lang.String)",
+    "snippet": "@Override\n            public JavaType handleUnknownTypeId(DeserializationContext ctxt, JavaType baseType, String subTypeId, TypeIdResolver idResolver, String failureMsg) throws IOException {\n//                System.out.println(\"Print out a warning here\");\n                return ctxt.constructType(Void.class);\n            }",
+    "begin_line": 90,
+    "end_line": 93,
+    "comment": "",
+    "child_ranges": [
+      "(line 92,col 17)-(line 92,col 54)"
+    ]
+  },
+  {
+    "class_name": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test",
+    "child_classes": [],
+    "src_path": "com/fasterxml/jackson/databind/deser/filter/ProblemHandlerUnknownTypeId2221Test.java",
+    "signature": "com.fasterxml.jackson.databind.deser.filter.ProblemHandlerUnknownTypeId2221Test.testWithDisabledFAIL_ON_INVALID_SUBTYPE()",
+    "snippet": "public void testWithDisabledFAIL_ON_INVALID_SUBTYPE() throws Exception {\n        final ObjectMapper mapper \u003d new ObjectMapper()\n                .disable(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE)\n                .enableDefaultTyping()\n        ;\n        GenericContent processableContent \u003d mapper.readValue(JSON, GenericContent.class);\n        assertNotNull(processableContent.getInnerObjects());\n        assertEquals(2, processableContent.getInnerObjects().size());\n    }",
+    "begin_line": 100,
+    "end_line": 108,
+    "comment": "",
+    "child_ranges": [
+      "(line 101,col 9)-(line 104,col 9)",
+      "(line 105,col 9)-(line 105,col 89)",
+      "(line 106,col 9)-(line 106,col 60)",
+      "(line 107,col 9)-(line 107,col 69)"
+    ]
+  }
+]

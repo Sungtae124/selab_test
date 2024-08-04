@@ -1,0 +1,137 @@
+[
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.absoluteAccuracy",
+    "snippet": "protected double absoluteAccuracy;",
+    "begin_line": 31,
+    "end_line": 31,
+    "comment": "/** \n * Maximum absolute error. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.relativeAccuracy",
+    "snippet": "protected double relativeAccuracy;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Maximum relative error. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.maximalIterationCount",
+    "snippet": "protected int maximalIterationCount;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * Maximum number of iterations. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.defaultAbsoluteAccuracy",
+    "snippet": "protected double defaultAbsoluteAccuracy;",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * Default maximum absolute error. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.defaultRelativeAccuracy",
+    "snippet": "protected double defaultRelativeAccuracy;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * Default maximum relative error. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.defaultMaximalIterationCount",
+    "snippet": "protected int defaultMaximalIterationCount;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Default maximum number of iterations. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.ConvergingAlgorithmImpl",
+    "src_path": "org/apache/commons/math/ConvergingAlgorithmImpl.java",
+    "signature": "org.apache.commons.math.ConvergingAlgorithmImpl.iterationCount",
+    "snippet": "protected int iterationCount;",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": "/** \n * The last iteration count. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.functionValueAccuracy",
+    "snippet": "protected double functionValueAccuracy;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Maximum error of function. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.defaultFunctionValueAccuracy",
+    "snippet": "protected double defaultFunctionValueAccuracy;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": "/** \n * Default maximum error of function. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.resultComputed",
+    "snippet": "protected boolean resultComputed \u003d false;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "/** \n * Indicates where a root has been computed. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.result",
+    "snippet": "protected double result;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * The last computed root. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.functionValue",
+    "snippet": "protected double functionValue;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Value of the function at the last computed result. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.f",
+    "snippet": "@Deprecated\n    protected UnivariateRealFunction f;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * The function to solve.\n * @deprecated as of 2.0 the function to solve is passed as an argumentto the  {@link #solve(UnivariateRealFunction,double,double)} or{@link UnivariateRealSolverImpl#solve(UnivariateRealFunction,double,double,double)}method. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.NULL_FUNCTION_MESSAGE",
+    "snippet": "private static final String NULL_FUNCTION_MESSAGE \u003d\n        \"function is null\";",
+    "begin_line": 32,
+    "end_line": 33,
+    "comment": "/** \n * Message for null function.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+    "src_path": "org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java",
+    "signature": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.FACTORY",
+    "snippet": "private static final UnivariateRealSolverFactory FACTORY \u003d UnivariateRealSolverFactory.newInstance();",
+    "begin_line": 243,
+    "end_line": 243,
+    "comment": "/** \n * Cached solver factory \n */\n"
+  }
+]
