@@ -2,6 +2,7 @@ package kr.ac.seoultech.selab;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.*;
 import org.json.*;
 
@@ -34,10 +35,16 @@ public class FieldSnippetGen {
         }
     }
 
-    public List<VariableDeclaration> parse(String sourceCode, String filePath) {
+    public List<VariableDeclaration> parse(String unitName, String[] classPath, String[] sourcePath, String source) {
         ASTParser parser = ASTParser.newParser(AST.getJLSLatest());
-        parser.setSource(sourceCode.toCharArray());
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
+        Map<String, String> options = JavaCore.getOptions();
+        JavaCore.setComplianceOptions(JavaCore.latestSupportedJavaVersion(), options);
+        parser.setCompilerOptions(options);
+        parser.setEnvironment(classPath, sourcePath, null, true);
+        parser.setUnitName(unitName);
+        parser.setResolveBindings(true);
+        parser.setSource(source.toCharArray());
 
         CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 
@@ -54,32 +61,19 @@ public class FieldSnippetGen {
 
             @Override
             public boolean visit(FieldDeclaration node) {
-                int rawBeginLine = cu.getLineNumber(node.getStartPosition());
+                int rawBeginLine = cu.getLineNumber(node.getType().getStartPosition());
                 int rawEndLine = cu.getLineNumber(node.getStartPosition() + node.getLength());
 
-                String rawSnippet = node.toString().trim();
                 String comment = node.getJavadoc() != null ? node.getJavadoc().toString() : "";
-                String snippet = rawSnippet.replaceAll("(?s)/\\*.*?\\*/|//.*", "").trim(); // 주석 제거
+                String snippet = source.substring(node.getStartPosition(), node.getType().getStartPosition()).replaceAll("(?s)/\\*.*?\\*/|//.*", "").trim() + " " + source.substring(node.getType().getStartPosition(), node.getStartPosition() + node.getLength()); // 주석 제거
 
-                // 주석 제거 후 실제 선언부의 시작 라인을 찾기 위해 라인 단위로 나누고, 주석 제거된 라인의 인덱스를 찾음
-                String[] lines = rawSnippet.split("\n");
-                int offset = 0;
-
-                for (int i = lines.length - 1; i >= 0; i--) {
-                    if (lines[i].contains(snippet.split("\\s+")[0])) { // snippet의 첫 번째 단어가 포함된 라인 찾기
-                        break;
-                    }
-                    offset++;
-                }
-
-                int beginLine = rawEndLine - offset;
-
+                int beginLine = rawBeginLine;
                 for (Object fragment : node.fragments()) {
                     VariableDeclarationFragment vdf = (VariableDeclarationFragment) fragment;
                     String variableName = vdf.getName().getFullyQualifiedName();
-                    String className = filePath.substring(filePath.indexOf("org")).replace("/", ".").replace(".java", "");
+                    String className = unitName.replace(".java", "").replace("/", ".");
                     String signature = className + "." + variableName;
-                    declarations.add(new VariableDeclaration(className, filePath.substring(filePath.indexOf("buggy/") + 6), signature, snippet, beginLine, rawEndLine, comment));
+                    declarations.add(new VariableDeclaration(className, unitName, signature, snippet, beginLine, rawEndLine, comment));
                 }
                 return super.visit(node);
             }
@@ -119,17 +113,20 @@ public class FieldSnippetGen {
 
             List<VariableDeclaration> declarations = new ArrayList<>();
             FieldSnippetGen parser = new FieldSnippetGen();
-            String outputJsonFilePath = "rst/" + bugId + "/field_snippet.json";
-
+            String outputJsonFilePath = "rst/" + bugId.replace('-', '_') + "/field_snippet.json";
 
             for (Object cl : classes) {
-                String classPath = cl.toString().replace(".", "/") + ".java";
-                String sourceFilePath = basePath + sourcePath + "/" + classPath;
+                String parserUnitName = cl.toString().replace(".", "/") + ".java";
+                String sourceFilePath = basePath + sourcePath + "/" + parserUnitName;
+                String parserClassPath = basePath + bugId + "/lib/ " + bugId + "_buggy_src.jar";
+                String parserSourcePath = basePath + sourcePath;
                 try {
                     String javaSourceCode = new String(Files.readAllBytes(Paths.get(sourceFilePath).toAbsolutePath()));
-                    declarations.addAll(parser.parse(javaSourceCode, sourceFilePath));
+                    declarations.addAll(parser.parse(parserUnitName, new String[]{parserClassPath}, new String[]{parserSourcePath}, javaSourceCode));
+                } catch (java.nio.file.NoSuchFileException e) {
+
                 } catch (Exception e) {
-                    System.out.println("Error: " + sourceFilePath);
+                    System.out.println(bugId + ")Error: " + e);
                 }
             }
             parser.saveAsJson(declarations, outputJsonFilePath);

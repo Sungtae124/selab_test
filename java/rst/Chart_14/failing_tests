@@ -1,4 +1,5 @@
---- Object::java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.remove
+--- org.jfree.chart.plot.junit.XYPlotTests::testRemoveRangeMarker
+java.lang.NullPointerException
 	at org.jfree.chart.plot.XYPlot.removeRangeMarker(XYPlot.java:2529)
 	at org.jfree.chart.plot.XYPlot.removeRangeMarker(XYPlot.java:2498)
 	at org.jfree.chart.plot.XYPlot.removeRangeMarker(XYPlot.java:2481)
@@ -17,7 +18,8 @@
 	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
 	at kr.ac.seoultech.selab.logicfl.coverage.JUnit4TestRunner.main(JUnit4TestRunner.java:33)
---- Object::java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.remove
+--- org.jfree.chart.plot.junit.XYPlotTests::testRemoveDomainMarker
+java.lang.NullPointerException
 	at org.jfree.chart.plot.XYPlot.removeDomainMarker(XYPlot.java:2293)
 	at org.jfree.chart.plot.XYPlot.removeDomainMarker(XYPlot.java:2265)
 	at org.jfree.chart.plot.XYPlot.removeDomainMarker(XYPlot.java:2248)
@@ -36,7 +38,8 @@
 	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
 	at kr.ac.seoultech.selab.logicfl.coverage.JUnit4TestRunner.main(JUnit4TestRunner.java:33)
---- Object::java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.remove
+--- org.jfree.chart.plot.junit.CategoryPlotTests::testRemoveRangeMarker
+java.lang.NullPointerException
 	at org.jfree.chart.plot.CategoryPlot.removeRangeMarker(CategoryPlot.java:2448)
 	at org.jfree.chart.plot.CategoryPlot.removeRangeMarker(CategoryPlot.java:2415)
 	at org.jfree.chart.plot.CategoryPlot.removeRangeMarker(CategoryPlot.java:2396)
@@ -55,7 +58,8 @@
 	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
 	at kr.ac.seoultech.selab.logicfl.coverage.JUnit4TestRunner.main(JUnit4TestRunner.java:33)
---- Object::java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.remove
+--- org.jfree.chart.plot.junit.CategoryPlotTests::testRemoveDomainMarker
+java.lang.NullPointerException
 	at org.jfree.chart.plot.CategoryPlot.removeDomainMarker(CategoryPlot.java:2166)
 	at org.jfree.chart.plot.CategoryPlot.removeDomainMarker(CategoryPlot.java:2139)
 	at org.jfree.chart.plot.CategoryPlot.removeDomainMarker(CategoryPlot.java:2122)

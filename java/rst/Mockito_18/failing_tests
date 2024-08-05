@@ -1,4 +1,5 @@
---- ::java.lang.NullPointerException: Cannot invoke "java.lang.Iterable.iterator
+--- org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+java.lang.NullPointerException
 	at org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest.should_return_empty_iterable(ReturnsEmptyValuesTest.java:57)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)

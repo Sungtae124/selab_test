@@ -1,27 +1,27 @@
 [
   {
-    "class_name": "StringUtils",
-    "src_path": "src/main/resources/Lang-39/buggy/src/java/org/apache/commons/lang3/StringUtils.java",
-    "signature": "StringUtils.EMPTY",
-    "snippet": "public static final String EMPTY\u003d\"\";",
+    "class_name": "org.apache.commons.lang3.StringUtils",
+    "src_path": "org/apache/commons/lang3/StringUtils.java",
+    "signature": "org.apache.commons.lang3.StringUtils.EMPTY",
+    "snippet": "public static final String EMPTY \u003d \"\";",
     "begin_line": 145,
     "end_line": 145,
     "comment": "/** \n * The empty String \u003ccode\u003e\"\"\u003c/code\u003e.\n * @since 2.0\n */\n"
   },
   {
-    "class_name": "StringUtils",
-    "src_path": "src/main/resources/Lang-39/buggy/src/java/org/apache/commons/lang3/StringUtils.java",
-    "signature": "StringUtils.INDEX_NOT_FOUND",
-    "snippet": "public static final int INDEX_NOT_FOUND\u003d-1;",
+    "class_name": "org.apache.commons.lang3.StringUtils",
+    "src_path": "org/apache/commons/lang3/StringUtils.java",
+    "signature": "org.apache.commons.lang3.StringUtils.INDEX_NOT_FOUND",
+    "snippet": "public static final int INDEX_NOT_FOUND \u003d -1;",
     "begin_line": 151,
     "end_line": 151,
     "comment": "/** \n * Represents a failed index search.\n * @since 2.1\n */\n"
   },
   {
-    "class_name": "StringUtils",
-    "src_path": "src/main/resources/Lang-39/buggy/src/java/org/apache/commons/lang3/StringUtils.java",
-    "signature": "StringUtils.PAD_LIMIT",
-    "snippet": "private static final int PAD_LIMIT\u003d8192;",
+    "class_name": "org.apache.commons.lang3.StringUtils",
+    "src_path": "org/apache/commons/lang3/StringUtils.java",
+    "signature": "org.apache.commons.lang3.StringUtils.PAD_LIMIT",
+    "snippet": "private static final int PAD_LIMIT \u003d 8192;",
     "begin_line": 156,
     "end_line": 156,
     "comment": "/** \n * \u003cp\u003eThe maximum size to which the padding constant(s) can expand.\u003c/p\u003e\n */\n"
