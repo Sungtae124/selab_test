@@ -1,0 +1,7 @@
+--- org.apache.commons.io.input.ReaderInputStreamTest::testResetCharsetEncoder
+java.lang.NullPointerException
+       org.apache.commons.io.input.ReaderInputStream$Builder.setCharsetEncoder(ReaderInputStream.java:140)
+       org.apache.commons.io.input.ReaderInputStreamTest.testResetCharsetEncoder(ReaderInputStreamTest.java:247)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

@@ -1,0 +1,2050 @@
+[
+  {
+    "name": "DimensionMismatchException.DimensionMismatchException#41",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/DimensionMismatchException.java",
+    "class_name": "org.apache.commons.math.exception.DimensionMismatchException",
+    "signature": "org.apache.commons.math.exception.DimensionMismatchException.DimensionMismatchException(org.apache.commons.math.exception.util.Localizable, int, int)",
+    "snippet": "public DimensionMismatchException(Localizable specific,\n                                      int wrong,\n                                      int expected) {\n        super(specific, wrong, expected);\n        dimension \u003d expected;\n    }",
+    "begin_line": 41,
+    "end_line": 46,
+    "comment": "/** \n * Construct an exception from the mismatched dimensions.\n * @param specific Specific context information pattern.\n * @param wrong Wrong dimension.\n * @param expected Expected dimension.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DimensionMismatchException.DimensionMismatchException#54",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/DimensionMismatchException.java",
+    "class_name": "org.apache.commons.math.exception.DimensionMismatchException",
+    "signature": "org.apache.commons.math.exception.DimensionMismatchException.DimensionMismatchException(int, int)",
+    "snippet": "public DimensionMismatchException(int wrong,\n                                      int expected) {\n        this(LocalizedFormats.DIMENSIONS_MISMATCH_SIMPLE, wrong, expected);\n    }",
+    "begin_line": 54,
+    "end_line": 57,
+    "comment": "/** \n * Construct an exception from the mismatched dimensions.\n * @param wrong Wrong dimension.\n * @param expected Expected dimension.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DimensionMismatchException.getDimension#62",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/DimensionMismatchException.java",
+    "class_name": "org.apache.commons.math.exception.DimensionMismatchException",
+    "signature": "org.apache.commons.math.exception.DimensionMismatchException.getDimension()",
+    "snippet": "public int getDimension() {\n        return dimension;\n    }",
+    "begin_line": 62,
+    "end_line": 64,
+    "comment": "/** \n * @return the expected dimension.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalArgumentException.MathIllegalArgumentException#43",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.MathIllegalArgumentException(org.apache.commons.math.exception.util.Localizable, java.lang.Object)",
+    "snippet": "public MathIllegalArgumentException(Localizable pattern,\n                                        Object ... args) {\n        context \u003d new ExceptionContext(this);\n        context.addMessage(pattern, args);\n    }",
+    "begin_line": 43,
+    "end_line": 47,
+    "comment": "/** \n * @param pattern Message pattern explaining the cause of the error.\n * @param args Arguments.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalArgumentException.getContext#50",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.getContext()",
+    "snippet": "public ExceptionContext getContext() {\n        return context;\n    }",
+    "begin_line": 50,
+    "end_line": 52,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalArgumentException.getMessage#56",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.getMessage()",
+    "snippet": "@Override\n    public String getMessage() {\n        return context.getMessage();\n    }",
+    "begin_line": 56,
+    "end_line": 58,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalArgumentException.getLocalizedMessage#62",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.getLocalizedMessage()",
+    "snippet": "@Override\n    public String getLocalizedMessage() {\n        return context.getLocalizedMessage();\n    }",
+    "begin_line": 62,
+    "end_line": 64,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalNumberException.MathIllegalNumberException#43",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.MathIllegalNumberException(org.apache.commons.math.exception.util.Localizable, java.lang.Number, java.lang.Object)",
+    "snippet": "protected MathIllegalNumberException(Localizable pattern,\n                                         Number wrong,\n                                         Object ... arguments) {\n        super(pattern, wrong, arguments);\n        argument \u003d wrong;\n    }",
+    "begin_line": 43,
+    "end_line": 48,
+    "comment": "/** \n * Construct an exception.\n * @param pattern Localizable pattern.\n * @param wrong Wrong number.\n * @param arguments Arguments.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathIllegalNumberException.getArgument#53",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.getArgument()",
+    "snippet": "public Number getArgument() {\n        return argument;\n    }",
+    "begin_line": 53,
+    "end_line": 55,
+    "comment": "/** \n * @return the requested value.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArgUtils.ArgUtils#32",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ArgUtils.java",
+    "class_name": "org.apache.commons.math.exception.util.ArgUtils",
+    "signature": "org.apache.commons.math.exception.util.ArgUtils.ArgUtils()",
+    "snippet": "private ArgUtils() {}",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Class contains only static methods.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArgUtils.flatten#41",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ArgUtils.java",
+    "class_name": "org.apache.commons.math.exception.util.ArgUtils",
+    "signature": "org.apache.commons.math.exception.util.ArgUtils.flatten(java.lang.Object[])",
+    "snippet": "public static Object[] flatten(Object[] array) {\n        final List\u003cObject\u003e list \u003d new ArrayList\u003cObject\u003e();\n        if (array !\u003d null) {\n            for (Object o : array) {\n                if (o instanceof Object[]) {\n                    for (Object oR : flatten((Object[]) o)) {\n                        list.add(oR);\n                    }\n                } else {\n                    list.add(o);\n                }\n            }\n        }\n        return list.toArray();\n    }",
+    "begin_line": 41,
+    "end_line": 55,
+    "comment": "/** \n * Transform a multidimensional array into a one-dimensional list.\n * @param array Array (possibly multidimensional).\n * @return a list of all the {@code Object} instances contained in{@code array}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.ExceptionContext#64",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.ExceptionContext(java.lang.Throwable)",
+    "snippet": "public ExceptionContext(final Throwable throwable) {\n        this.throwable \u003d throwable;\n        msgPatterns    \u003d new ArrayList\u003cLocalizable\u003e();\n        msgArguments   \u003d new ArrayList\u003cObject[]\u003e();\n        context        \u003d new HashMap\u003cString, Object\u003e();\n    }",
+    "begin_line": 64,
+    "end_line": 69,
+    "comment": "/** \n * Simple constructor.\n * @param throwable the exception this context refers too\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getThrowable#74",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getThrowable()",
+    "snippet": "public Throwable getThrowable() {\n        return throwable;\n    }",
+    "begin_line": 74,
+    "end_line": 76,
+    "comment": "/** \n * Get a reference to the exception to which the context relates.\n * @return a reference to the exception to which the context relates\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.addMessage#85",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.addMessage(org.apache.commons.math.exception.util.Localizable, java.lang.Object)",
+    "snippet": "public void addMessage(Localizable pattern,\n                           Object ... arguments) {\n        msgPatterns.add(pattern);\n        msgArguments.add(ArgUtils.flatten(arguments));\n    }",
+    "begin_line": 85,
+    "end_line": 89,
+    "comment": "/** \n * Adds a message.\n * @param pattern Message pattern.\n * @param arguments Values for replacing the placeholders in the messagepattern.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.setValue#99",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.setValue(java.lang.String, java.lang.Object)",
+    "snippet": "public void setValue(String key, Object value) {\n        context.put(key, value);\n    }",
+    "begin_line": 99,
+    "end_line": 101,
+    "comment": "/** \n * Sets the context (key, value) pair. Keys are assumed to be unique within an instance. If the same key is assigned a new value, the previous one will be lost.\n * @param key Context key (not null).\n * @param value Context value.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getValue#109",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getValue(java.lang.String)",
+    "snippet": "public Object getValue(String key) {\n        return context.get(key);\n    }",
+    "begin_line": 109,
+    "end_line": 111,
+    "comment": "/** \n * Gets the value associated to the given context key.\n * @param key Context key.\n * @return the context value or {@code null} if the key does not exist.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getKeys#118",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getKeys()",
+    "snippet": "public Set\u003cString\u003e getKeys() {\n        return context.keySet();\n    }",
+    "begin_line": 118,
+    "end_line": 120,
+    "comment": "/** \n * Gets all the keys stored in the exception\n * @return the set of keys.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getMessage#127",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getMessage()",
+    "snippet": "public String getMessage() {\n        return getMessage(Locale.US);\n    }",
+    "begin_line": 127,
+    "end_line": 129,
+    "comment": "/** \n * Gets the default message.\n * @return the message.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getLocalizedMessage#136",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getLocalizedMessage()",
+    "snippet": "public String getLocalizedMessage() {\n        return getMessage(Locale.getDefault());\n    }",
+    "begin_line": 136,
+    "end_line": 138,
+    "comment": "/** \n * Gets the message in the default locale.\n * @return the localized message.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getMessage#146",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getMessage(java.util.Locale)",
+    "snippet": "public String getMessage(final Locale locale) {\n        return buildMessage(locale, \": \");\n    }",
+    "begin_line": 146,
+    "end_line": 148,
+    "comment": "/** \n * Gets the message in a specified locale.\n * @param locale Locale in which the message should be translated.\n * @return the localized message.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.getMessage#157",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.getMessage(java.util.Locale, java.lang.String)",
+    "snippet": "public String getMessage(final Locale locale,\n                             final String separator) {\n        return buildMessage(locale, separator);\n    }",
+    "begin_line": 157,
+    "end_line": 160,
+    "comment": "/** \n * Gets the message in a specified locale.\n * @param locale Locale in which the message should be translated.\n * @param separator Separator inserted between the message parts.\n * @return the localized message.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.buildMessage#169",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.buildMessage(java.util.Locale, java.lang.String)",
+    "snippet": "private String buildMessage(Locale locale,\n                                String separator) {\n        final StringBuilder sb \u003d new StringBuilder();\n        int count \u003d 0;\n        final int len \u003d msgPatterns.size();\n        for (int i \u003d 0; i \u003c len; i++) {\n            final Localizable pat \u003d msgPatterns.get(i);\n            final Object[] args \u003d msgArguments.get(i);\n            final MessageFormat fmt \u003d new MessageFormat(pat.getLocalizedString(locale),\n                                                        locale);\n            sb.append(fmt.format(args));\n            if (++count \u003c len) {\n                // Add a separator if there are other messages.\n                sb.append(separator);\n            }\n        }\n\n        return sb.toString();\n    }",
+    "begin_line": 169,
+    "end_line": 187,
+    "comment": "/** \n * Builds a message string.\n * @param locale Locale in which the message should be translated.\n * @param separator Message separator.\n * @return a localized message string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.writeObject#195",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.writeObject(java.io.ObjectOutputStream)",
+    "snippet": "private void writeObject(ObjectOutputStream out)\n        throws IOException {\n        out.writeObject(throwable);\n        serializeMessages(out);\n        serializeContext(out);\n    }",
+    "begin_line": 195,
+    "end_line": 200,
+    "comment": "/** \n * Serialize this object to the given stream.\n * @param out Stream.\n * @throws IOException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.readObject#208",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.readObject(java.io.ObjectInputStream)",
+    "snippet": "private void readObject(ObjectInputStream in)\n        throws IOException,\n               ClassNotFoundException {\n        throwable \u003d (Throwable) in.readObject();\n        deSerializeMessages(in);\n        deSerializeContext(in);\n    }",
+    "begin_line": 208,
+    "end_line": 214,
+    "comment": "/** \n * Deserialize this object from the given stream.\n * @param in Stream.\n * @throws IOException This should never happen.\n * @throws ClassNotFoundException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.serializeMessages#222",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.serializeMessages(java.io.ObjectOutputStream)",
+    "snippet": "private void serializeMessages(ObjectOutputStream out)\n        throws IOException {\n        // Step 1.\n        final int len \u003d msgPatterns.size();\n        out.writeInt(len);\n        // Step 2.\n        for (int i \u003d 0; i \u003c len; i++) {\n            final Localizable pat \u003d msgPatterns.get(i);\n            // Step 3.\n            out.writeObject(pat);\n            final Object[] args \u003d msgArguments.get(i);\n            final int aLen \u003d args.length;\n            // Step 4.\n            out.writeInt(aLen);\n            for (int j \u003d 0; j \u003c aLen; j++) {\n                if (args[j] instanceof Serializable) {\n                    // Step 5a.\n                    out.writeObject(args[j]);\n                } else {\n                    // Step 5b.\n                    out.writeObject(nonSerializableReplacement(args[j]));\n                }\n            }\n        }\n    }",
+    "begin_line": 222,
+    "end_line": 246,
+    "comment": "/** \n * Serialize   {@link #msgPatterns} and {@link #msgArguments}.\n * @param out Stream.\n * @throws IOException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.deSerializeMessages#255",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.deSerializeMessages(java.io.ObjectInputStream)",
+    "snippet": "private void deSerializeMessages(ObjectInputStream in)\n        throws IOException,\n               ClassNotFoundException {\n        // Step 1.\n        final int len \u003d in.readInt();\n        msgPatterns \u003d new ArrayList\u003cLocalizable\u003e(len);\n        msgArguments \u003d new ArrayList\u003cObject[]\u003e(len);\n        // Step 2.\n        for (int i \u003d 0; i \u003c len; i++) {\n            // Step 3.\n            final Localizable pat \u003d (Localizable) in.readObject();\n            msgPatterns.add(pat);\n            // Step 4.\n            final int aLen \u003d in.readInt();\n            final Object[] args \u003d new Object[aLen];\n            for (int j \u003d 0; j \u003c aLen; j++) {\n                // Step 5.\n                args[j] \u003d in.readObject();\n            }\n            msgArguments.add(args);\n        }\n    }",
+    "begin_line": 255,
+    "end_line": 276,
+    "comment": "/** \n * Deserialize  {@link #msgPatterns} and {@link #msgArguments}.\n * @param in Stream.\n * @throws IOException This should never happen.\n * @throws ClassNotFoundException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.serializeContext#284",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.serializeContext(java.io.ObjectOutputStream)",
+    "snippet": "private void serializeContext(ObjectOutputStream out)\n        throws IOException {\n        // Step 1.\n        final int len \u003d context.keySet().size();\n        out.writeInt(len);\n        for (String key : context.keySet()) {\n            // Step 2.\n            out.writeObject(key);\n            final Object value \u003d context.get(key);\n            if (value instanceof Serializable) {\n                // Step 3a.\n                out.writeObject(value);\n            } else {\n                // Step 3b.\n                out.writeObject(nonSerializableReplacement(value));\n            }\n        }\n    }",
+    "begin_line": 284,
+    "end_line": 301,
+    "comment": "/** \n * Serialize  {@link #context}.\n * @param out Stream.\n * @throws IOException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.deSerializeContext#310",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.deSerializeContext(java.io.ObjectInputStream)",
+    "snippet": "private void deSerializeContext(ObjectInputStream in)\n        throws IOException,\n               ClassNotFoundException {\n        // Step 1.\n        final int len \u003d in.readInt();\n        context \u003d new HashMap\u003cString, Object\u003e();\n        for (int i \u003d 0; i \u003c len; i++) {\n            // Step 2.\n            final String key \u003d (String) in.readObject();\n            // Step 3.\n            final Object value \u003d in.readObject();\n            context.put(key, value);\n        }\n    }",
+    "begin_line": 310,
+    "end_line": 323,
+    "comment": "/** \n * Deserialize  {@link #context}.\n * @param in Stream.\n * @throws IOException This should never happen.\n * @throws ClassNotFoundException This should never happen.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionContext.nonSerializableReplacement#332",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.nonSerializableReplacement(java.lang.Object)",
+    "snippet": "private String nonSerializableReplacement(Object obj) {\n        return \"[Object could not be serialized: \" + obj.getClass().getName() + \"]\";\n    }",
+    "begin_line": 332,
+    "end_line": 334,
+    "comment": "/** \n * Replaces a non-serializable object with an error message string.\n * @param obj Object that does not implement the {@code Serializable}interface.\n * @return a string that mentions which class could not be serialized.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.LocalizedFormats#358",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/LocalizedFormats.java",
+    "class_name": "org.apache.commons.math.exception.util.LocalizedFormats",
+    "signature": "org.apache.commons.math.exception.util.LocalizedFormats.LocalizedFormats(java.lang.String)",
+    "snippet": "private LocalizedFormats(final String sourceFormat) {\n        this.sourceFormat \u003d sourceFormat;\n    }",
+    "begin_line": 358,
+    "end_line": 360,
+    "comment": "/** \n * Simple constructor.\n * @param sourceFormat source English format to use when nolocalized version is available\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.getSourceString#363",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/LocalizedFormats.java",
+    "class_name": "org.apache.commons.math.exception.util.LocalizedFormats",
+    "signature": "org.apache.commons.math.exception.util.LocalizedFormats.getSourceString()",
+    "snippet": "public String getSourceString() {\n        return sourceFormat;\n    }",
+    "begin_line": 363,
+    "end_line": 365,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.getLocalizedString#368",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/LocalizedFormats.java",
+    "class_name": "org.apache.commons.math.exception.util.LocalizedFormats",
+    "signature": "org.apache.commons.math.exception.util.LocalizedFormats.getLocalizedString(java.util.Locale)",
+    "snippet": "public String getLocalizedString(final Locale locale) {\n        try {\n            ResourceBundle bundle \u003d\n                    ResourceBundle.getBundle(\"META-INF/localization/LocalizedFormats\", locale);\n            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {\n                // the value of the resource is the translated format\n                return bundle.getString(toString());\n            }\n\n        } catch (MissingResourceException mre) {\n            // do nothing here\n        }\n\n        // either the locale is not supported or the resource is unknown\n        // don\u0027t translate and fall back to using the source format\n        return sourceFormat;\n\n    }",
+    "begin_line": 368,
+    "end_line": 385,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.MathUtils#101",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.MathUtils()",
+    "snippet": "private MathUtils() {\n        super();\n    }",
+    "begin_line": 101,
+    "end_line": 103,
+    "comment": "/** \n * Private Constructor\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.addAndCheck#115",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.addAndCheck(int, int)",
+    "snippet": "public static int addAndCheck(int x, int y) {\n        long s \u003d (long)x + (long)y;\n        if (s \u003c Integer.MIN_VALUE || s \u003e Integer.MAX_VALUE) {\n            throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_ADDITION, x, y);\n        }\n        return (int)s;\n    }",
+    "begin_line": 115,
+    "end_line": 121,
+    "comment": "/** \n * Add two integers, checking for overflow.\n * @param x an addend\n * @param y an addend\n * @return the sum {@code x+y}\n * @throws MathArithmeticException if the result can not be representedas an  {@code int}.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.addAndCheck#133",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.addAndCheck(long, long)",
+    "snippet": "public static long addAndCheck(long a, long b) {\n        return addAndCheck(a, b, LocalizedFormats.OVERFLOW_IN_ADDITION);\n    }",
+    "begin_line": 133,
+    "end_line": 135,
+    "comment": "/** \n * Add two long integers, checking for overflow.\n * @param a an addend\n * @param b an addend\n * @return the sum {@code a+b}\n * @throws MathArithmeticException if the result can not be represented as anlong\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.addAndCheck#148",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.addAndCheck(long, long, org.apache.commons.math.exception.util.Localizable)",
+    "snippet": "private static long addAndCheck(long a, long b, Localizable pattern) {\n        long ret;\n        if (a \u003e b) {\n            // use symmetry to reduce boundary cases\n            ret \u003d addAndCheck(b, a, pattern);\n        } else {\n            // assert a \u003c\u003d b\n\n            if (a \u003c 0) {\n                if (b \u003c 0) {\n                    // check for negative overflow\n                    if (Long.MIN_VALUE - b \u003c\u003d a) {\n                        ret \u003d a + b;\n                    } else {\n                        throw new MathArithmeticException(pattern, a, b);\n                    }\n                } else {\n                    // opposite sign addition is always safe\n                    ret \u003d a + b;\n                }\n            } else {\n                // assert a \u003e\u003d 0\n                // assert b \u003e\u003d 0\n\n                // check for positive overflow\n                if (a \u003c\u003d Long.MAX_VALUE - b) {\n                    ret \u003d a + b;\n                } else {\n                    throw new MathArithmeticException(pattern, a, b);\n                }\n            }\n        }\n        return ret;\n    }",
+    "begin_line": 148,
+    "end_line": 181,
+    "comment": "/** \n * Add two long integers, checking for overflow.\n * @param a Addend.\n * @param b Addend.\n * @param pattern Pattern to use for any thrown exception.\n * @return the sum {@code a + b}.\n * @throws MathArithmeticException if the result cannot be representedas a  {@code long}.\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.binomialCoefficient#208",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.binomialCoefficient(int, int)",
+    "snippet": "public static long binomialCoefficient(final int n, final int k) {\n        checkBinomial(n, k);\n        if ((n \u003d\u003d k) || (k \u003d\u003d 0)) {\n            return 1;\n        }\n        if ((k \u003d\u003d 1) || (k \u003d\u003d n - 1)) {\n            return n;\n        }\n        // Use symmetry for large k\n        if (k \u003e n / 2) {\n            return binomialCoefficient(n, n - k);\n        }\n\n        // We use the formula\n        // (n choose k) \u003d n! / (n-k)! / k!\n        // (n choose k) \u003d\u003d ((n-k+1)*...*n) / (1*...*k)\n        // which could be written\n        // (n choose k) \u003d\u003d (n-1 choose k-1) * n / k\n        long result \u003d 1;\n        if (n \u003c\u003d 61) {\n            // For n \u003c\u003d 61, the naive implementation cannot overflow.\n            int i \u003d n - k + 1;\n            for (int j \u003d 1; j \u003c\u003d k; j++) {\n                result \u003d result * i / j;\n                i++;\n            }\n        } else if (n \u003c\u003d 66) {\n            // For n \u003e 61 but n \u003c\u003d 66, the result cannot overflow,\n            // but we must take care not to overflow intermediate values.\n            int i \u003d n - k + 1;\n            for (int j \u003d 1; j \u003c\u003d k; j++) {\n                // We know that (result * i) is divisible by j,\n                // but (result * i) may overflow, so we split j:\n                // Filter out the gcd, d, so j/d and i/d are integer.\n                // result is divisible by (j/d) because (j/d)\n                // is relative prime to (i/d) and is a divisor of\n                // result * (i/d).\n                final long d \u003d gcd(i, j);\n                result \u003d (result / (j / d)) * (i / d);\n                i++;\n            }\n        } else {\n            // For n \u003e 66, a result overflow might occur, so we check\n            // the multiplication, taking care to not overflow\n            // unnecessary.\n            int i \u003d n - k + 1;\n            for (int j \u003d 1; j \u003c\u003d k; j++) {\n                final long d \u003d gcd(i, j);\n                result \u003d mulAndCheck(result / (j / d), i / d);\n                i++;\n            }\n        }\n        return result;\n    }",
+    "begin_line": 208,
+    "end_line": 261,
+    "comment": "/** \n * Returns an exact representation of the \u003ca href\u003d\"http://mathworld.wolfram.com/BinomialCoefficient.html\"\u003e Binomial Coefficient\u003c/a\u003e, \" {@code n choose k}\", the number of {@code k}-element subsets that can be selected from an {@code n}-element set. \u003cp\u003e \u003cStrong\u003ePreconditions\u003c/strong\u003e: \u003cul\u003e \u003cli\u003e  {@code 0 \u003c\u003d k \u003c\u003d n } (otherwise{@code IllegalArgumentException} is thrown)\u003c/li\u003e\u003cli\u003e The result is small enough to fit into a  {@code long}. The largest value of  {@code n} for which all coefficients are{@code  \u003c Long.MAX_VALUE} is 66. If the computed value exceeds{@code Long.MAX_VALUE} an {@code ArithMeticException} isthrown.\u003c/li\u003e \u003c/ul\u003e\u003c/p\u003e\n * @param n the size of the set\n * @param k the size of the subsets to be counted\n * @return {@code n choose k}\n * @throws MathIllegalArgumentException if preconditions are not met.\n * @throws MathArithmeticException if the result is too large to berepresented by a long integer.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.binomialCoefficientDouble#285",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.binomialCoefficientDouble(int, int)",
+    "snippet": "public static double binomialCoefficientDouble(final int n, final int k) {\n        checkBinomial(n, k);\n        if ((n \u003d\u003d k) || (k \u003d\u003d 0)) {\n            return 1d;\n        }\n        if ((k \u003d\u003d 1) || (k \u003d\u003d n - 1)) {\n            return n;\n        }\n        if (k \u003e n/2) {\n            return binomialCoefficientDouble(n, n - k);\n        }\n        if (n \u003c 67) {\n            return binomialCoefficient(n,k);\n        }\n\n        double result \u003d 1d;\n        for (int i \u003d 1; i \u003c\u003d k; i++) {\n             result *\u003d (double)(n - k + i) / (double)i;\n        }\n\n        return FastMath.floor(result + 0.5);\n    }",
+    "begin_line": 285,
+    "end_line": 306,
+    "comment": "/** \n * Returns a  {@code double} representation of the \u003cahref\u003d\"http://mathworld.wolfram.com/BinomialCoefficient.html\"\u003e Binomial Coefficient\u003c/a\u003e, \" {@code n choose k}\", the number of {@code k}-element subsets that can be selected from an {@code n}-element set. \u003cp\u003e \u003cStrong\u003ePreconditions\u003c/strong\u003e: \u003cul\u003e \u003cli\u003e  {@code 0 \u003c\u003d k \u003c\u003d n } (otherwise{@code IllegalArgumentException} is thrown)\u003c/li\u003e\u003cli\u003e The result is small enough to fit into a  {@code double}. The largest value of  {@code n} for which all coefficients are \u003cDouble.MAX_VALUE is 1029. If the computed value exceeds Double.MAX_VALUE, Double.POSITIVE_INFINITY is returned\u003c/li\u003e \u003c/ul\u003e\u003c/p\u003e\n * @param n the size of the set\n * @param k the size of the subsets to be counted\n * @return {@code n choose k}\n * @throws IllegalArgumentException if preconditions are not met.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.binomialCoefficientLog#326",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.binomialCoefficientLog(int, int)",
+    "snippet": "public static double binomialCoefficientLog(final int n, final int k) {\n        checkBinomial(n, k);\n        if ((n \u003d\u003d k) || (k \u003d\u003d 0)) {\n            return 0;\n        }\n        if ((k \u003d\u003d 1) || (k \u003d\u003d n - 1)) {\n            return FastMath.log(n);\n        }\n\n        /*\n         * For values small enough to do exact integer computation,\n         * return the log of the exact value\n         */\n        if (n \u003c 67) {\n            return FastMath.log(binomialCoefficient(n,k));\n        }\n\n        /*\n         * Return the log of binomialCoefficientDouble for values that will not\n         * overflow binomialCoefficientDouble\n         */\n        if (n \u003c 1030) {\n            return FastMath.log(binomialCoefficientDouble(n, k));\n        }\n\n        if (k \u003e n / 2) {\n            return binomialCoefficientLog(n, n - k);\n        }\n\n        /*\n         * Sum logs for values that could overflow\n         */\n        double logSum \u003d 0;\n\n        // n!/(n-k)!\n        for (int i \u003d n - k + 1; i \u003c\u003d n; i++) {\n            logSum +\u003d FastMath.log(i);\n        }\n\n        // divide by k!\n        for (int i \u003d 2; i \u003c\u003d k; i++) {\n            logSum -\u003d FastMath.log(i);\n        }\n\n        return logSum;\n    }",
+    "begin_line": 326,
+    "end_line": 371,
+    "comment": "/** \n * Returns the natural  {@code log} of the \u003cahref\u003d\"http://mathworld.wolfram.com/BinomialCoefficient.html\"\u003e Binomial Coefficient\u003c/a\u003e, \" {@code n choose k}\", the number of {@code k}-element subsets that can be selected from an {@code n}-element set. \u003cp\u003e \u003cStrong\u003ePreconditions\u003c/strong\u003e: \u003cul\u003e \u003cli\u003e  {@code 0 \u003c\u003d k \u003c\u003d n } (otherwise{@code IllegalArgumentException} is thrown)\u003c/li\u003e\u003c/ul\u003e\u003c/p\u003e\n * @param n the size of the set\n * @param k the size of the subsets to be counted\n * @return {@code n choose k}\n * @throws IllegalArgumentException if preconditions are not met.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkBinomial#381",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkBinomial(int, int)",
+    "snippet": "private static void checkBinomial(final int n, final int k) {\n        if (n \u003c k) {\n            throw new NumberIsTooLargeException(LocalizedFormats.BINOMIAL_INVALID_PARAMETERS_ORDER,\n                                                k, n, true);\n        }\n        if (n \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.BINOMIAL_NEGATIVE_PARAMETER, n);\n        }\n    }",
+    "begin_line": 381,
+    "end_line": 389,
+    "comment": "/** \n * Check binomial preconditions.\n * @param n Size of the set.\n * @param k Size of the subsets to be counted.\n * @throws NotPositiveException if {@code n \u003c 0}.\n * @throws NumberIsTooLargeException if {@code k \u003e n}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.compareTo#401",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.compareTo(double, double, double)",
+    "snippet": "public static int compareTo(double x, double y, double eps) {\n        if (equals(x, y, eps)) {\n            return 0;\n        } else if (x \u003c y) {\n            return -1;\n        }\n        return 1;\n    }",
+    "begin_line": 401,
+    "end_line": 408,
+    "comment": "/** \n * Compares two numbers given some amount of allowed error.\n * @param x the first number\n * @param y the second number\n * @param eps the amount of error to allow when checking for equality\n * @return \u003cul\u003e\u003cli\u003e0 if  {@link #equals(double,double,double) equals(x, y, eps)}\u003c/li\u003e \u003cli\u003e\u0026lt; 0 if ! {@link #equals(double,double,double) equals(x, y, eps)} \u0026amp;\u0026amp; x \u0026lt; y\u003c/li\u003e\u003cli\u003e\u003e 0 if ! {@link #equals(double,double,double) equals(x, y, eps)} \u0026amp;\u0026amp; x \u003e y\u003c/li\u003e\u003c/ul\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.compareTo#427",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.compareTo(double, double, int)",
+    "snippet": "public static int compareTo(final double x, final double y, final int maxUlps) {\n        if (equals(x, y, maxUlps)) {\n            return 0;\n        } else if (x \u003c y) {\n            return -1;\n        }\n        return 1;\n    }",
+    "begin_line": 427,
+    "end_line": 434,
+    "comment": "/** \n * Compares two numbers given some amount of allowed error. Two float numbers are considered equal if there are  {@code (maxUlps - 1)}(or fewer) floating point numbers between them, i.e. two adjacent floating point numbers are considered equal. Adapted from \u003ca href\u003d\"http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm\"\u003e Bruce Dawson\u003c/a\u003e\n * @param x first value\n * @param y second value\n * @param maxUlps {@code (maxUlps - 1)} is the number of floating pointvalues between  {@code x} and {@code y}.\n * @return \u003cul\u003e\u003cli\u003e0 if  {@link #equals(double,double,int) equals(x, y, maxUlps)}\u003c/li\u003e \u003cli\u003e\u0026lt; 0 if ! {@link #equals(double,double,int) equals(x, y, maxUlps)} \u0026amp;\u0026amp; x \u0026lt; y\u003c/li\u003e\u003cli\u003e\u003e 0 if ! {@link #equals(double,double,int) equals(x, y, maxUlps)} \u0026amp;\u0026amp; x \u003e y\u003c/li\u003e\u003c/ul\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.cosh#443",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.cosh(double)",
+    "snippet": "public static double cosh(double x) {\n        return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;\n    }",
+    "begin_line": 443,
+    "end_line": 445,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/HyperbolicCosine.html\"\u003e hyperbolic cosine\u003c/a\u003e of x.\n * @param x double value for which to find the hyperbolic cosine\n * @return hyperbolic cosine of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#455",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(float, float)",
+    "snippet": "public static boolean equals(float x, float y) {\n        return equals(x, y, 1);\n    }",
+    "begin_line": 455,
+    "end_line": 457,
+    "comment": "/** \n * Returns true iff they are equal as defined by {@link #equals(float,float,int) equals(x, y, 1)}.\n * @param x first value\n * @param y second value\n * @return {@code true} if the values are equal.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#468",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(float, float)",
+    "snippet": "public static boolean equalsIncludingNaN(float x, float y) {\n        return (Float.isNaN(x) \u0026\u0026 Float.isNaN(y)) || equals(x, y, 1);\n    }",
+    "begin_line": 468,
+    "end_line": 470,
+    "comment": "/** \n * Returns true if both arguments are NaN or neither is NaN and they are equal as defined by  {@link #equals(float,float) equals(x, y, 1)}.\n * @param x first value\n * @param y second value\n * @return {@code true} if the values are equal or both are NaN.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#482",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(float, float, float)",
+    "snippet": "public static boolean equals(float x, float y, float eps) {\n        return equals(x, y, 1) || FastMath.abs(y - x) \u003c\u003d eps;\n    }",
+    "begin_line": 482,
+    "end_line": 484,
+    "comment": "/** \n * Returns true if both arguments are equal or within the range of allowed error (inclusive).\n * @param x first value\n * @param y second value\n * @param eps the amount of absolute error to allow.\n * @return {@code true} if the values are equal or within range of each other.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#497",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(float, float, float)",
+    "snippet": "public static boolean equalsIncludingNaN(float x, float y, float eps) {\n        return equalsIncludingNaN(x, y) || (FastMath.abs(y - x) \u003c\u003d eps);\n    }",
+    "begin_line": 497,
+    "end_line": 499,
+    "comment": "/** \n * Returns true if both arguments are NaN or are equal or within the range of allowed error (inclusive).\n * @param x first value\n * @param y second value\n * @param eps the amount of absolute error to allow.\n * @return {@code true} if the values are equal or within range of each other,or both are NaN.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#519",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(float, float, int)",
+    "snippet": "public static boolean equals(float x, float y, int maxUlps) {\n        int xInt \u003d Float.floatToIntBits(x);\n        int yInt \u003d Float.floatToIntBits(y);\n\n        // Make lexicographically ordered as a two\u0027s-complement integer.\n        if (xInt \u003c 0) {\n            xInt \u003d SGN_MASK_FLOAT - xInt;\n        }\n        if (yInt \u003c 0) {\n            yInt \u003d SGN_MASK_FLOAT - yInt;\n        }\n\n        final boolean isEqual \u003d FastMath.abs(xInt - yInt) \u003c\u003d maxUlps;\n\n        return isEqual \u0026\u0026 !Float.isNaN(x) \u0026\u0026 !Float.isNaN(y);\n    }",
+    "begin_line": 519,
+    "end_line": 534,
+    "comment": "/** \n * Returns true if both arguments are equal or within the range of allowed error (inclusive). Two float numbers are considered equal if there are  {@code (maxUlps - 1)}(or fewer) floating point numbers between them, i.e. two adjacent floating point numbers are considered equal. Adapted from \u003ca href\u003d\"http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm\"\u003e Bruce Dawson\u003c/a\u003e\n * @param x first value\n * @param y second value\n * @param maxUlps {@code (maxUlps - 1)} is the number of floating pointvalues between  {@code x} and {@code y}.\n * @return {@code true} if there are fewer than {@code maxUlps} floatingpoint values between  {@code x} and {@code y}.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#548",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(float, float, int)",
+    "snippet": "public static boolean equalsIncludingNaN(float x, float y, int maxUlps) {\n        return (Float.isNaN(x) \u0026\u0026 Float.isNaN(y)) || equals(x, y, maxUlps);\n    }",
+    "begin_line": 548,
+    "end_line": 550,
+    "comment": "/** \n * Returns true if both arguments are NaN or if they are equal as defined by  {@link #equals(float,float,int) equals(x, y, maxUlps)}.\n * @param x first value\n * @param y second value\n * @param maxUlps {@code (maxUlps - 1)} is the number of floating pointvalues between  {@code x} and {@code y}.\n * @return {@code true} if both arguments are NaN or if there are less than{@code maxUlps} floating point values between {@code x} and {@code y}.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#562",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(float[], float[])",
+    "snippet": "public static boolean equals(float[] x, float[] y) {\n        if ((x \u003d\u003d null) || (y \u003d\u003d null)) {\n            return !((x \u003d\u003d null) ^ (y \u003d\u003d null));\n        }\n        if (x.length !\u003d y.length) {\n            return false;\n        }\n        for (int i \u003d 0; i \u003c x.length; ++i) {\n            if (!equals(x[i], y[i])) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 562,
+    "end_line": 575,
+    "comment": "/** \n * Returns true iff both arguments are null or have same dimensions and all their elements are equal as defined by {@link #equals(float,float)}.\n * @param x first array\n * @param y second array\n * @return true if the values are both null or have same dimensionand equal elements.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#588",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(float[], float[])",
+    "snippet": "public static boolean equalsIncludingNaN(float[] x, float[] y) {\n        if ((x \u003d\u003d null) || (y \u003d\u003d null)) {\n            return !((x \u003d\u003d null) ^ (y \u003d\u003d null));\n        }\n        if (x.length !\u003d y.length) {\n            return false;\n        }\n        for (int i \u003d 0; i \u003c x.length; ++i) {\n            if (!equalsIncludingNaN(x[i], y[i])) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 588,
+    "end_line": 601,
+    "comment": "/** \n * Returns true iff both arguments are null or have same dimensions and all their elements are equal as defined by {@link #equalsIncludingNaN(double,double) this method}.\n * @param x first array\n * @param y second array\n * @return true if the values are both null or have same dimension andequal elements\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#611",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(double, double)",
+    "snippet": "public static boolean equals(double x, double y) {\n        return equals(x, y, 1);\n    }",
+    "begin_line": 611,
+    "end_line": 613,
+    "comment": "/** \n * Returns true iff they are equal as defined by {@link #equals(double,double,int) equals(x, y, 1)}.\n * @param x first value\n * @param y second value\n * @return {@code true} if the values are equal.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#624",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(double, double)",
+    "snippet": "public static boolean equalsIncludingNaN(double x, double y) {\n        return (Double.isNaN(x) \u0026\u0026 Double.isNaN(y)) || equals(x, y, 1);\n    }",
+    "begin_line": 624,
+    "end_line": 626,
+    "comment": "/** \n * Returns true if both arguments are NaN or neither is NaN and they are equal as defined by  {@link #equals(double,double) equals(x, y, 1)}.\n * @param x first value\n * @param y second value\n * @return {@code true} if the values are equal or both are NaN.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#639",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(double, double, double)",
+    "snippet": "public static boolean equals(double x, double y, double eps) {\n        return equals(x, y, 1) || FastMath.abs(y - x) \u003c\u003d eps;\n    }",
+    "begin_line": 639,
+    "end_line": 641,
+    "comment": "/** \n * Returns  {@code true} if there is no double value strictly between thearguments or the difference between them is within the range of allowed error (inclusive).\n * @param x First value.\n * @param y Second value.\n * @param eps Amount of allowed absolute error.\n * @return {@code true} if the values are two adjacent floating pointnumbers or they are within range of each other.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#654",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(double, double, double)",
+    "snippet": "public static boolean equalsIncludingNaN(double x, double y, double eps) {\n        return equalsIncludingNaN(x, y) || (FastMath.abs(y - x) \u003c\u003d eps);\n    }",
+    "begin_line": 654,
+    "end_line": 656,
+    "comment": "/** \n * Returns true if both arguments are NaN or are equal or within the range of allowed error (inclusive).\n * @param x first value\n * @param y second value\n * @param eps the amount of absolute error to allow.\n * @return {@code true} if the values are equal or within range of each other,or both are NaN.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#675",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(double, double, int)",
+    "snippet": "public static boolean equals(double x, double y, int maxUlps) {\n        long xInt \u003d Double.doubleToLongBits(x);\n        long yInt \u003d Double.doubleToLongBits(y);\n\n        // Make lexicographically ordered as a two\u0027s-complement integer.\n        if (xInt \u003c 0) {\n            xInt \u003d SGN_MASK - xInt;\n        }\n        if (yInt \u003c 0) {\n            yInt \u003d SGN_MASK - yInt;\n        }\n\n        final boolean isEqual \u003d FastMath.abs(xInt - yInt) \u003c\u003d maxUlps;\n\n        return isEqual \u0026\u0026 !Double.isNaN(x) \u0026\u0026 !Double.isNaN(y);\n    }",
+    "begin_line": 675,
+    "end_line": 690,
+    "comment": "/** \n * Returns true if both arguments are equal or within the range of allowed error (inclusive). Two float numbers are considered equal if there are  {@code (maxUlps - 1)}(or fewer) floating point numbers between them, i.e. two adjacent floating point numbers are considered equal. Adapted from \u003ca href\u003d\"http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm\"\u003e Bruce Dawson\u003c/a\u003e\n * @param x first value\n * @param y second value\n * @param maxUlps {@code (maxUlps - 1)} is the number of floating pointvalues between  {@code x} and {@code y}.\n * @return {@code true} if there are fewer than {@code maxUlps} floatingpoint values between  {@code x} and {@code y}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#704",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(double, double, int)",
+    "snippet": "public static boolean equalsIncludingNaN(double x, double y, int maxUlps) {\n        return (Double.isNaN(x) \u0026\u0026 Double.isNaN(y)) || equals(x, y, maxUlps);\n    }",
+    "begin_line": 704,
+    "end_line": 706,
+    "comment": "/** \n * Returns true if both arguments are NaN or if they are equal as defined by  {@link #equals(double,double,int) equals(x, y, maxUlps)}.\n * @param x first value\n * @param y second value\n * @param maxUlps {@code (maxUlps - 1)} is the number of floating pointvalues between  {@code x} and {@code y}.\n * @return {@code true} if both arguments are NaN or if there are less than{@code maxUlps} floating point values between {@code x} and {@code y}.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equals#718",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equals(double[], double[])",
+    "snippet": "public static boolean equals(double[] x, double[] y) {\n        if ((x \u003d\u003d null) || (y \u003d\u003d null)) {\n            return !((x \u003d\u003d null) ^ (y \u003d\u003d null));\n        }\n        if (x.length !\u003d y.length) {\n            return false;\n        }\n        for (int i \u003d 0; i \u003c x.length; ++i) {\n            if (!equals(x[i], y[i])) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 718,
+    "end_line": 731,
+    "comment": "/** \n * Returns  {@code true} iff both arguments are {@code null} or have samedimensions and all their elements are equal as defined by {@link #equals(double,double)}.\n * @param x First array.\n * @param y Second array.\n * @return {@code true} if the values are both {@code null} or have samedimension and equal elements.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.equalsIncludingNaN#744",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.equalsIncludingNaN(double[], double[])",
+    "snippet": "public static boolean equalsIncludingNaN(double[] x, double[] y) {\n        if ((x \u003d\u003d null) || (y \u003d\u003d null)) {\n            return !((x \u003d\u003d null) ^ (y \u003d\u003d null));\n        }\n        if (x.length !\u003d y.length) {\n            return false;\n        }\n        for (int i \u003d 0; i \u003c x.length; ++i) {\n            if (!equalsIncludingNaN(x[i], y[i])) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 744,
+    "end_line": 757,
+    "comment": "/** \n * Returns  {@code true} iff both arguments are {@code null} or have samedimensions and all their elements are equal as defined by {@link #equalsIncludingNaN(double,double) this method}.\n * @param x First array.\n * @param y Second array.\n * @return {@code true} if the values are both {@code null} or have samedimension and equal elements.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.factorial#783",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.factorial(int)",
+    "snippet": "public static long factorial(final int n) {\n        if (n \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER,\n                                           n);\n        }\n        if (n \u003e 20) {\n            throw new MathArithmeticException();\n        }\n        return FACTORIALS[n];\n    }",
+    "begin_line": 783,
+    "end_line": 792,
+    "comment": "/** \n * Returns n!. Shorthand for  {@code n} \u003cahref\u003d\"http://mathworld.wolfram.com/Factorial.html\"\u003e Factorial\u003c/a\u003e, the product of the numbers  {@code 1,...,n}. \u003cp\u003e \u003cStrong\u003ePreconditions\u003c/strong\u003e: \u003cul\u003e \u003cli\u003e  {@code n \u003e\u003d 0} (otherwise{@code IllegalArgumentException} is thrown)\u003c/li\u003e\u003cli\u003e The result is small enough to fit into a  {@code long}. The largest value of  {@code n} for which {@code n!} \u003cLong.MAX_VALUE} is 20. If the computed value exceeds  {@code Long.MAX_VALUE}an  {@code ArithMeticException } is thrown.\u003c/li\u003e\u003c/ul\u003e \u003c/p\u003e\n * @param n argument\n * @return {@code n!}\n * @throws MathArithmeticException if the result is too large to be representedby a  {@code long}.\n * @throws NotPositiveException if {@code n \u003c 0}.\n * @throws MathArithmeticException if {@code n \u003e 20}: The factorial value is too large to fit in a  {@code long}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.factorialDouble#807",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.factorialDouble(int)",
+    "snippet": "public static double factorialDouble(final int n) {\n        if (n \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER,\n                                           n);\n        }\n        if (n \u003c 21) {\n            return factorial(n);\n        }\n        return FastMath.floor(FastMath.exp(factorialLog(n)) + 0.5);\n    }",
+    "begin_line": 807,
+    "end_line": 816,
+    "comment": "/** \n * Compute n!, the\u003ca href\u003d\"http://mathworld.wolfram.com/Factorial.html\"\u003e factorial\u003c/a\u003e of  {@code n} (the product of the numbers 1 to n), as a{@code double}. The result should be small enough to fit into a  {@code double}: The largest  {@code n} for which {@code n! \u003c Double.MAX_VALUE} is 170.If the computed value exceeds  {@code Double.MAX_VALUE}, {@code Double.POSITIVE_INFINITY} is returned.\n * @param n Argument.\n * @return {@code n!}\n * @throws NotPositiveException if {@code n \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.factorialLog#825",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.factorialLog(int)",
+    "snippet": "public static double factorialLog(final int n) {\n        if (n \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.FACTORIAL_NEGATIVE_PARAMETER,\n                                           n);\n        }\n        if (n \u003c 21) {\n            return FastMath.log(factorial(n));\n        }\n        double logSum \u003d 0;\n        for (int i \u003d 2; i \u003c\u003d n; i++) {\n            logSum +\u003d FastMath.log(i);\n        }\n        return logSum;\n    }",
+    "begin_line": 825,
+    "end_line": 838,
+    "comment": "/** \n * Compute the natural logarithm of the factorial of  {@code n}.\n * @param n Argument.\n * @return {@code n!}\n * @throws NotPositiveException if {@code n \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.gcd#869",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.gcd(int, int)",
+    "snippet": "public static int gcd(final int p, final int q) {\n        int u \u003d p;\n        int v \u003d q;\n        if ((u \u003d\u003d 0) || (v \u003d\u003d 0)) {\n            if ((u \u003d\u003d Integer.MIN_VALUE) || (v \u003d\u003d Integer.MIN_VALUE)) {\n                throw new MathArithmeticException(LocalizedFormats.GCD_OVERFLOW_32_BITS,\n                                                  p, q);\n            }\n            return FastMath.abs(u) + FastMath.abs(v);\n        }\n        // keep u and v negative, as negative integers range down to\n        // -2^31, while positive numbers can only be as large as 2^31-1\n        // (i.e. we can\u0027t necessarily negate a negative number without\n        // overflow)\n        /* assert u!\u003d0 \u0026\u0026 v!\u003d0; */\n        if (u \u003e 0) {\n            u \u003d -u;\n        } // make u negative\n        if (v \u003e 0) {\n            v \u003d -v;\n        } // make v negative\n        // B1. [Find power of 2]\n        int k \u003d 0;\n        while ((u \u0026 1) \u003d\u003d 0 \u0026\u0026 (v \u0026 1) \u003d\u003d 0 \u0026\u0026 k \u003c 31) { // while u and v are\n                                                            // both even...\n            u /\u003d 2;\n            v /\u003d 2;\n            k++; // cast out twos.\n        }\n        if (k \u003d\u003d 31) {\n            throw new MathArithmeticException(LocalizedFormats.GCD_OVERFLOW_32_BITS,\n                                              p, q);\n        }\n        // B2. Initialize: u and v have been divided by 2^k and at least\n        // one is odd.\n        int t \u003d ((u \u0026 1) \u003d\u003d 1) ? v : -(u / 2)/* B3 */;\n        // t negative: u was odd, v may be even (t replaces v)\n        // t positive: u was even, v is odd (t replaces u)\n        do {\n            /* assert u\u003c0 \u0026\u0026 v\u003c0; */\n            // B4/B3: cast out twos from t.\n            while ((t \u0026 1) \u003d\u003d 0) { // while t is even..\n                t /\u003d 2; // cast out twos\n            }\n            // B5 [reset max(u,v)]\n            if (t \u003e 0) {\n                u \u003d -t;\n            } else {\n                v \u003d t;\n            }\n            // B6/B3. at this point both u and v should be odd.\n            t \u003d (v - u) / 2;\n            // |u| larger: t positive (replace u)\n            // |v| larger: t negative (replace v)\n        } while (t !\u003d 0);\n        return -u * (1 \u003c\u003c k); // gcd is u*2^k\n    }",
+    "begin_line": 869,
+    "end_line": 925,
+    "comment": "/** \n * \u003cp\u003e Gets the greatest common divisor of the absolute value of two numbers, using the \"binary gcd\" method which avoids division and modulo operations. See Knuth 4.5.2 algorithm B. This algorithm is due to Josef Stein (1961). \u003c/p\u003e Special cases: \u003cul\u003e \u003cli\u003eThe invocations {@code gcd(Integer.MIN_VALUE, Integer.MIN_VALUE)}, {@code gcd(Integer.MIN_VALUE, 0)} and{@code gcd(0, Integer.MIN_VALUE)} throw an{@code ArithmeticException}, because the result would be 2^31, which is too large for an int value.\u003c/li\u003e \u003cli\u003eThe result of  {@code gcd(x, x)},  {@code gcd(0, x)} and{@code gcd(x, 0)} is the absolute value of {@code x}, except for the special cases above. \u003cli\u003eThe invocation  {@code gcd(0, 0)} is the only one which returns{@code 0}.\u003c/li\u003e \u003c/ul\u003e\n * @param p Number.\n * @param q Number.\n * @return the greatest common divisor, never negative.\n * @throws MathArithmeticException if the result cannot be represented asa non-negative  {@code int} value.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.gcd#956",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.gcd(long, long)",
+    "snippet": "public static long gcd(final long p, final long q) {\n        long u \u003d p;\n        long v \u003d q;\n        if ((u \u003d\u003d 0) || (v \u003d\u003d 0)) {\n            if ((u \u003d\u003d Long.MIN_VALUE) || (v \u003d\u003d Long.MIN_VALUE)){\n                throw new MathArithmeticException(LocalizedFormats.GCD_OVERFLOW_64_BITS,\n                                                  p, q);\n            }\n            return FastMath.abs(u) + FastMath.abs(v);\n        }\n        // keep u and v negative, as negative integers range down to\n        // -2^63, while positive numbers can only be as large as 2^63-1\n        // (i.e. we can\u0027t necessarily negate a negative number without\n        // overflow)\n        /* assert u!\u003d0 \u0026\u0026 v!\u003d0; */\n        if (u \u003e 0) {\n            u \u003d -u;\n        } // make u negative\n        if (v \u003e 0) {\n            v \u003d -v;\n        } // make v negative\n        // B1. [Find power of 2]\n        int k \u003d 0;\n        while ((u \u0026 1) \u003d\u003d 0 \u0026\u0026 (v \u0026 1) \u003d\u003d 0 \u0026\u0026 k \u003c 63) { // while u and v are\n                                                            // both even...\n            u /\u003d 2;\n            v /\u003d 2;\n            k++; // cast out twos.\n        }\n        if (k \u003d\u003d 63) {\n            throw new MathArithmeticException(LocalizedFormats.GCD_OVERFLOW_64_BITS,\n                                              p, q);\n        }\n        // B2. Initialize: u and v have been divided by 2^k and at least\n        // one is odd.\n        long t \u003d ((u \u0026 1) \u003d\u003d 1) ? v : -(u / 2)/* B3 */;\n        // t negative: u was odd, v may be even (t replaces v)\n        // t positive: u was even, v is odd (t replaces u)\n        do {\n            /* assert u\u003c0 \u0026\u0026 v\u003c0; */\n            // B4/B3: cast out twos from t.\n            while ((t \u0026 1) \u003d\u003d 0) { // while t is even..\n                t /\u003d 2; // cast out twos\n            }\n            // B5 [reset max(u,v)]\n            if (t \u003e 0) {\n                u \u003d -t;\n            } else {\n                v \u003d t;\n            }\n            // B6/B3. at this point both u and v should be odd.\n            t \u003d (v - u) / 2;\n            // |u| larger: t positive (replace u)\n            // |v| larger: t negative (replace v)\n        } while (t !\u003d 0);\n        return -u * (1L \u003c\u003c k); // gcd is u*2^k\n    }",
+    "begin_line": 956,
+    "end_line": 1012,
+    "comment": "/** \n * \u003cp\u003e Gets the greatest common divisor of the absolute value of two numbers, using the \"binary gcd\" method which avoids division and modulo operations. See Knuth 4.5.2 algorithm B. This algorithm is due to Josef Stein (1961). \u003c/p\u003e Special cases: \u003cul\u003e \u003cli\u003eThe invocations {@code gcd(Long.MIN_VALUE, Long.MIN_VALUE)}, {@code gcd(Long.MIN_VALUE, 0L)} and{@code gcd(0L, Long.MIN_VALUE)} throw an{@code ArithmeticException}, because the result would be 2^63, which is too large for a long value.\u003c/li\u003e \u003cli\u003eThe result of  {@code gcd(x, x)},  {@code gcd(0L, x)} and{@code gcd(x, 0L)} is the absolute value of {@code x}, except for the special cases above. \u003cli\u003eThe invocation  {@code gcd(0L, 0L)} is the only one which returns{@code 0L}.\u003c/li\u003e \u003c/ul\u003e\n * @param p Number.\n * @param q Number.\n * @return the greatest common divisor, never negative.\n * @throws MathArithmeticException if the result cannot be represented asa non-negative  {@code long} value.\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.hash#1020",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.hash(double)",
+    "snippet": "public static int hash(double value) {\n        return new Double(value).hashCode();\n    }",
+    "begin_line": 1020,
+    "end_line": 1022,
+    "comment": "/** \n * Returns an integer hash code representing the given double value.\n * @param value the value to be hashed\n * @return the hash code\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.hash#1031",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.hash(double[])",
+    "snippet": "public static int hash(double[] value) {\n        return Arrays.hashCode(value);\n    }",
+    "begin_line": 1031,
+    "end_line": 1033,
+    "comment": "/** \n * Returns an integer hash code representing the given double array.\n * @param value the value to be hashed (may be null)\n * @return the hash code\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1042",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(byte)",
+    "snippet": "public static byte indicator(final byte x) {\n        return (x \u003e\u003d ZB) ? PB : NB;\n    }",
+    "begin_line": 1042,
+    "end_line": 1044,
+    "comment": "/** \n * For a byte value x, this method returns (byte)(+1) if x \u003e\u003d 0 and (byte)(-1) if x \u003c 0.\n * @param x the value, a byte\n * @return (byte)(+1) or (byte)(-1), depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1054",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(double)",
+    "snippet": "public static double indicator(final double x) {\n        if (Double.isNaN(x)) {\n            return Double.NaN;\n        }\n        return (x \u003e\u003d 0.0) ? 1.0 : -1.0;\n    }",
+    "begin_line": 1054,
+    "end_line": 1059,
+    "comment": "/** \n * For a double precision value x, this method returns +1.0 if x \u003e\u003d 0 and -1.0 if x \u003c 0. Returns  {@code NaN} if {@code x} is{@code NaN}.\n * @param x the value, a double\n * @return +1.0 or -1.0, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1068",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(float)",
+    "snippet": "public static float indicator(final float x) {\n        if (Float.isNaN(x)) {\n            return Float.NaN;\n        }\n        return (x \u003e\u003d 0.0F) ? 1.0F : -1.0F;\n    }",
+    "begin_line": 1068,
+    "end_line": 1073,
+    "comment": "/** \n * For a float value x, this method returns +1.0F if x \u003e\u003d 0 and -1.0F if x \u003c 0. Returns  {@code NaN} if {@code x} is {@code NaN}.\n * @param x the value, a float\n * @return +1.0F or -1.0F, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1081",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(int)",
+    "snippet": "public static int indicator(final int x) {\n        return (x \u003e\u003d 0) ? 1 : -1;\n    }",
+    "begin_line": 1081,
+    "end_line": 1083,
+    "comment": "/** \n * For an int value x, this method returns +1 if x \u003e\u003d 0 and -1 if x \u003c 0.\n * @param x the value, an int\n * @return +1 or -1, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1091",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(long)",
+    "snippet": "public static long indicator(final long x) {\n        return (x \u003e\u003d 0L) ? 1L : -1L;\n    }",
+    "begin_line": 1091,
+    "end_line": 1093,
+    "comment": "/** \n * For a long value x, this method returns +1L if x \u003e\u003d 0 and -1L if x \u003c 0.\n * @param x the value, a long\n * @return +1L or -1L, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.indicator#1102",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.indicator(short)",
+    "snippet": "public static short indicator(final short x) {\n        return (x \u003e\u003d ZS) ? PS : NS;\n    }",
+    "begin_line": 1102,
+    "end_line": 1104,
+    "comment": "/** \n * For a short value x, this method returns (short)(+1) if x \u003e\u003d 0 and (short)(-1) if x \u003c 0.\n * @param x the value, a short\n * @return (short)(+1) or (short)(-1), depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.lcm#1128",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.lcm(int, int)",
+    "snippet": "public static int lcm(int a, int b) {\n        if (a \u003d\u003d 0 || b \u003d\u003d 0){\n            return 0;\n        }\n        int lcm \u003d FastMath.abs(mulAndCheck(a / gcd(a, b), b));\n        if (lcm \u003d\u003d Integer.MIN_VALUE) {\n            throw new MathArithmeticException(LocalizedFormats.LCM_OVERFLOW_32_BITS,\n                                              a, b);\n        }\n        return lcm;\n    }",
+    "begin_line": 1128,
+    "end_line": 1138,
+    "comment": "/** \n * \u003cp\u003e Returns the least common multiple of the absolute value of two numbers, using the formula  {@code lcm(a,b) \u003d (a / gcd(a,b)) * b}. \u003c/p\u003e Special cases: \u003cul\u003e \u003cli\u003eThe invocations  {@code lcm(Integer.MIN_VALUE, n)} and{@code lcm(n, Integer.MIN_VALUE)}, where  {@code abs(n)} is apower of 2, throw an  {@code ArithmeticException}, because the result would be 2^31, which is too large for an int value.\u003c/li\u003e \u003cli\u003eThe result of  {@code lcm(0, x)} and {@code lcm(x, 0)} is{@code 0} for any {@code x}. \u003c/ul\u003e\n * @param a Number.\n * @param b Number.\n * @return the least common multiple, never negative.\n * @throws MathArithmeticException if the result cannot be represented asa non-negative  {@code int} value.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.lcm#1162",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.lcm(long, long)",
+    "snippet": "public static long lcm(long a, long b) {\n        if (a \u003d\u003d 0 || b \u003d\u003d 0){\n            return 0;\n        }\n        long lcm \u003d FastMath.abs(mulAndCheck(a / gcd(a, b), b));\n        if (lcm \u003d\u003d Long.MIN_VALUE){\n            throw new MathArithmeticException(LocalizedFormats.LCM_OVERFLOW_64_BITS,\n                                              a, b);\n        }\n        return lcm;\n    }",
+    "begin_line": 1162,
+    "end_line": 1172,
+    "comment": "/** \n * \u003cp\u003e Returns the least common multiple of the absolute value of two numbers, using the formula  {@code lcm(a,b) \u003d (a / gcd(a,b)) * b}. \u003c/p\u003e Special cases: \u003cul\u003e \u003cli\u003eThe invocations  {@code lcm(Long.MIN_VALUE, n)} and{@code lcm(n, Long.MIN_VALUE)}, where  {@code abs(n)} is apower of 2, throw an  {@code ArithmeticException}, because the result would be 2^63, which is too large for an int value.\u003c/li\u003e \u003cli\u003eThe result of  {@code lcm(0L, x)} and {@code lcm(x, 0L)} is{@code 0L} for any {@code x}. \u003c/ul\u003e\n * @param a Number.\n * @param b Number.\n * @return the least common multiple, never negative.\n * @throws MathArithmeticException if the result cannot be representedas a non-negative  {@code long} value.\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.log#1190",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.log(double, double)",
+    "snippet": "public static double log(double base, double x) {\n        return FastMath.log(x)/FastMath.log(base);\n    }",
+    "begin_line": 1190,
+    "end_line": 1192,
+    "comment": "/** \n * \u003cp\u003eReturns the \u003ca href\u003d\"http://mathworld.wolfram.com/Logarithm.html\"\u003elogarithm\u003c/a\u003e for base  {@code b} of {@code x}. \u003c/p\u003e \u003cp\u003eReturns  {@code NaN} if either argument is negative. If{@code base} is 0 and {@code x} is positive, 0 is returned.If  {@code base} is positive and {@code x} is 0,{@code Double.NEGATIVE_INFINITY} is returned.  If both argumentsare 0, the result is  {@code NaN}.\u003c/p\u003e\n * @param base the base of the logarithm, must be greater than 0\n * @param x argument, must be greater than 0\n * @return the value of the logarithm - the number y such that base^y \u003d x.\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.mulAndCheck#1204",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.mulAndCheck(int, int)",
+    "snippet": "public static int mulAndCheck(int x, int y) {\n        long m \u003d ((long)x) * ((long)y);\n        if (m \u003c Integer.MIN_VALUE || m \u003e Integer.MAX_VALUE) {\n            throw new MathArithmeticException();\n        }\n        return (int)m;\n    }",
+    "begin_line": 1204,
+    "end_line": 1210,
+    "comment": "/** \n * Multiply two integers, checking for overflow.\n * @param x Factor.\n * @param y Factor.\n * @return the product {@code x * y}.\n * @throws MathArithmeticException if the result can not berepresented as an  {@code int}.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.mulAndCheck#1222",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.mulAndCheck(long, long)",
+    "snippet": "public static long mulAndCheck(long a, long b) {\n        long ret;\n        if (a \u003e b) {\n            // use symmetry to reduce boundary cases\n            ret \u003d mulAndCheck(b, a);\n        } else {\n            if (a \u003c 0) {\n                if (b \u003c 0) {\n                    // check for positive overflow with negative a, negative b\n                    if (a \u003e\u003d Long.MAX_VALUE / b) {\n                        ret \u003d a * b;\n                    } else {\n                        throw new MathArithmeticException();\n                    }\n                } else if (b \u003e 0) {\n                    // check for negative overflow with negative a, positive b\n                    if (Long.MIN_VALUE / b \u003c\u003d a) {\n                        ret \u003d a * b;\n                    } else {\n                        throw new MathArithmeticException();\n\n                    }\n                } else {\n                    // assert b \u003d\u003d 0\n                    ret \u003d 0;\n                }\n            } else if (a \u003e 0) {\n                // assert a \u003e 0\n                // assert b \u003e 0\n\n                // check for positive overflow with positive a, positive b\n                if (a \u003c\u003d Long.MAX_VALUE / b) {\n                    ret \u003d a * b;\n                } else {\n                    throw new MathArithmeticException();\n                }\n            } else {\n                // assert a \u003d\u003d 0\n                ret \u003d 0;\n            }\n        }\n        return ret;\n    }",
+    "begin_line": 1222,
+    "end_line": 1264,
+    "comment": "/** \n * Multiply two long integers, checking for overflow.\n * @param a Factor.\n * @param b Factor.\n * @return the product {@code a * b}.\n * @throws MathArithmeticException if the result can not be representedas a  {@code long}.\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.normalizeAngle#1285",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.normalizeAngle(double, double)",
+    "snippet": "public static double normalizeAngle(double a, double center) {\n         return a - TWO_PI * FastMath.floor((a + FastMath.PI - center) / TWO_PI);\n     }",
+    "begin_line": 1285,
+    "end_line": 1287,
+    "comment": "/** \n * Normalize an angle in a 2\u0026pi wide interval around a center value. \u003cp\u003eThis method has three main uses:\u003c/p\u003e \u003cul\u003e \u003cli\u003enormalize an angle between 0 and 2\u0026pi;:\u003cbr/\u003e {@code a \u003d MathUtils.normalizeAngle(a, FastMath.PI);}\u003c/li\u003e \u003cli\u003enormalize an angle between -\u0026pi; and +\u0026pi;\u003cbr/\u003e {@code a \u003d MathUtils.normalizeAngle(a, 0.0);}\u003c/li\u003e \u003cli\u003ecompute the angle between two defining angular positions:\u003cbr\u003e {@code angle \u003d MathUtils.normalizeAngle(end, start) - start;}\u003c/li\u003e \u003c/ul\u003e \u003cp\u003eNote that due to numerical accuracy and since \u0026pi; cannot be represented exactly, the result interval is \u003cem\u003eclosed\u003c/em\u003e, it cannot be half-closed as would be more satisfactory in a purely mathematical view.\u003c/p\u003e\n * @param a angle to normalize\n * @param center center of the desired 2\u0026pi; interval for the result\n * @return a-2k\u0026pi; with integer k and center-\u0026pi; \u0026lt;\u003d a-2k\u0026pi; \u0026lt;\u003d center+\u0026pi;\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.reduce#1305",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.reduce(double, double, double)",
+    "snippet": "public static double reduce(double a,\n                                double period,\n                                double offset) {\n        final double p \u003d FastMath.abs(period);\n        return a - p * FastMath.floor((a - offset) / p) - offset;\n    }",
+    "begin_line": 1305,
+    "end_line": 1310,
+    "comment": "/** \n * \u003cp\u003eReduce  {@code |a - offset|} to the primary interval{@code [0, |period|)}.\u003c/p\u003e \u003cp\u003eSpecifically, the value returned is \u003cbr/\u003e {@code a - |period| * floor((a - offset) / |period|) - offset}.\u003c/p\u003e \u003cp\u003eIf any of the parameters are  {@code NaN} or infinite, the result is{@code NaN}.\u003c/p\u003e\n * @param a Value to reduce.\n * @param period Period.\n * @param offset Value that will be mapped to {@code 0}.\n * @return the value, within the interval {@code [0 |period|)}, that corresponds to  {@code a}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.normalizeArray#1333",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.normalizeArray(double[], double)",
+    "snippet": "public static double[] normalizeArray(double[] values, double normalizedSum) {\n         if (Double.isInfinite(normalizedSum)) {\n             throw new MathIllegalArgumentException(LocalizedFormats.NORMALIZE_INFINITE);\n         }\n         if (Double.isNaN(normalizedSum)) {\n             throw new MathIllegalArgumentException(LocalizedFormats.NORMALIZE_NAN);\n         }\n         double sum \u003d 0d;\n         final int len \u003d values.length;\n         double[] out \u003d new double[len];\n         for (int i \u003d 0; i \u003c len; i++) {\n             if (Double.isInfinite(values[i])) {\n                 throw new MathIllegalArgumentException(LocalizedFormats.INFINITE_ARRAY_ELEMENT, values[i], i);\n             }\n             if (!Double.isNaN(values[i])) {\n                 sum +\u003d values[i];\n             }\n         }\n         if (sum \u003d\u003d 0) {\n             throw new MathArithmeticException(LocalizedFormats.ARRAY_SUMS_TO_ZERO);\n         }\n         for (int i \u003d 0; i \u003c len; i++) {\n             if (Double.isNaN(values[i])) {\n                 out[i] \u003d Double.NaN;\n             } else {\n                 out[i] \u003d values[i] * normalizedSum / sum;\n             }\n         }\n         return out;\n     }",
+    "begin_line": 1333,
+    "end_line": 1362,
+    "comment": "/** \n * \u003cp\u003eNormalizes an array to make it sum to a specified value. Returns the result of the transformation \u003cpre\u003e x |-\u003e x * normalizedSum / sum \u003c/pre\u003e applied to each non-NaN element x of the input array, where sum is the sum of the non-NaN entries in the input array.\u003c/p\u003e \u003cp\u003eThrows IllegalArgumentException if  {@code normalizedSum} is infiniteor NaN and ArithmeticException if the input array contains any infinite elements or sums to 0\u003c/p\u003e \u003cp\u003eIgnores (i.e., copies unchanged to the output array) NaNs in the input array.\u003c/p\u003e\n * @param values input array to be normalized\n * @param normalizedSum target sum for the normalized array\n * @return normalized array\n * @throws MathArithmeticException if the input array contains infinite elements or sums to zero\n * @throws MathIllegalArgumentException if the target sum is infinite or NaN\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.round#1373",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.round(double, int)",
+    "snippet": "public static double round(double x, int scale) {\n        return round(x, scale, BigDecimal.ROUND_HALF_UP);\n    }",
+    "begin_line": 1373,
+    "end_line": 1375,
+    "comment": "/** \n * Round the given value to the specified number of decimal places. The value is rounded using the  {@link BigDecimal#ROUND_HALF_UP} method.\n * @param x the value to round.\n * @param scale the number of digits to the right of the decimal point.\n * @return the rounded value.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.round#1396",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.round(double, int, int)",
+    "snippet": "public static double round(double x, int scale, int roundingMethod) {\n        try {\n            return (new BigDecimal\n                   (Double.toString(x))\n                   .setScale(scale, roundingMethod))\n                   .doubleValue();\n        } catch (NumberFormatException ex) {\n            if (Double.isInfinite(x)) {\n                return x;\n            } else {\n                return Double.NaN;\n            }\n        }\n    }",
+    "begin_line": 1396,
+    "end_line": 1409,
+    "comment": "/** \n * \u003cp\u003eRound the given value to the specified number of decimal places. The value is rounded using the given method which is any method defined in {@link BigDecimal}.\u003c/p\u003e \u003cp\u003eIf  {@code x} is infinite or NaN, then the value of {@code x} isreturned unchanged, regardless of the other parameters.\u003c/p\u003e\n * @param x the value to round.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMethod the rounding method as defined in{@link BigDecimal}.\n * @return the rounded value.\n * @throws ArithmeticException if roundingMethod\u003d\u003dROUND_UNNECESSARY and thespecified scaling operation would require rounding.\n * @throws IllegalArgumentException if roundingMethod does not represent avalid rounding mode.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.round#1420",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.round(float, int)",
+    "snippet": "public static float round(float x, int scale) {\n        return round(x, scale, BigDecimal.ROUND_HALF_UP);\n    }",
+    "begin_line": 1420,
+    "end_line": 1422,
+    "comment": "/** \n * Round the given value to the specified number of decimal places. The value is rounded using the  {@link BigDecimal#ROUND_HALF_UP} method.\n * @param x the value to round.\n * @param scale the number of digits to the right of the decimal point.\n * @return the rounded value.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.round#1436",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.round(float, int, int)",
+    "snippet": "public static float round(float x, int scale, int roundingMethod) {\n        float sign \u003d indicator(x);\n        float factor \u003d (float)FastMath.pow(10.0f, scale) * sign;\n        return (float)roundUnscaled(x * factor, sign, roundingMethod) / factor;\n    }",
+    "begin_line": 1436,
+    "end_line": 1440,
+    "comment": "/** \n * Round the given value to the specified number of decimal places. The value is rounded using the given method which is any method defined in {@link BigDecimal}.\n * @param x the value to round.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMethod the rounding method as defined in{@link BigDecimal}.\n * @return the rounded value.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.roundUnscaled#1454",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.roundUnscaled(double, double, int)",
+    "snippet": "private static double roundUnscaled(double unscaled,\n                                        double sign,\n                                        int roundingMethod) {\n        switch (roundingMethod) {\n        case BigDecimal.ROUND_CEILING :\n            if (sign \u003d\u003d -1) {\n                unscaled \u003d FastMath.floor(FastMath.nextAfter(unscaled, Double.NEGATIVE_INFINITY));\n            } else {\n                unscaled \u003d FastMath.ceil(FastMath.nextAfter(unscaled, Double.POSITIVE_INFINITY));\n            }\n            break;\n        case BigDecimal.ROUND_DOWN :\n            unscaled \u003d FastMath.floor(FastMath.nextAfter(unscaled, Double.NEGATIVE_INFINITY));\n            break;\n        case BigDecimal.ROUND_FLOOR :\n            if (sign \u003d\u003d -1) {\n                unscaled \u003d FastMath.ceil(FastMath.nextAfter(unscaled, Double.POSITIVE_INFINITY));\n            } else {\n                unscaled \u003d FastMath.floor(FastMath.nextAfter(unscaled, Double.NEGATIVE_INFINITY));\n            }\n            break;\n        case BigDecimal.ROUND_HALF_DOWN : {\n            unscaled \u003d FastMath.nextAfter(unscaled, Double.NEGATIVE_INFINITY);\n            double fraction \u003d unscaled - FastMath.floor(unscaled);\n            if (fraction \u003e 0.5) {\n                unscaled \u003d FastMath.ceil(unscaled);\n            } else {\n                unscaled \u003d FastMath.floor(unscaled);\n            }\n            break;\n        }\n        case BigDecimal.ROUND_HALF_EVEN : {\n            double fraction \u003d unscaled - FastMath.floor(unscaled);\n            if (fraction \u003e 0.5) {\n                unscaled \u003d FastMath.ceil(unscaled);\n            } else if (fraction \u003c 0.5) {\n                unscaled \u003d FastMath.floor(unscaled);\n            } else {\n                // The following equality test is intentional and needed for rounding purposes\n                if (FastMath.floor(unscaled) / 2.0 \u003d\u003d FastMath.floor(Math\n                    .floor(unscaled) / 2.0)) { // even\n                    unscaled \u003d FastMath.floor(unscaled);\n                } else { // odd\n                    unscaled \u003d FastMath.ceil(unscaled);\n                }\n            }\n            break;\n        }\n        case BigDecimal.ROUND_HALF_UP : {\n            unscaled \u003d FastMath.nextAfter(unscaled, Double.POSITIVE_INFINITY);\n            double fraction \u003d unscaled - FastMath.floor(unscaled);\n            if (fraction \u003e\u003d 0.5) {\n                unscaled \u003d FastMath.ceil(unscaled);\n            } else {\n                unscaled \u003d FastMath.floor(unscaled);\n            }\n            break;\n        }\n        case BigDecimal.ROUND_UNNECESSARY :\n            if (unscaled !\u003d FastMath.floor(unscaled)) {\n                throw new MathArithmeticException();\n            }\n            break;\n        case BigDecimal.ROUND_UP :\n            unscaled \u003d FastMath.ceil(FastMath.nextAfter(unscaled,  Double.POSITIVE_INFINITY));\n            break;\n        default :\n            throw new MathIllegalArgumentException(LocalizedFormats.INVALID_ROUNDING_METHOD,\n                                                   roundingMethod,\n                                                   \"ROUND_CEILING\", BigDecimal.ROUND_CEILING,\n                                                   \"ROUND_DOWN\", BigDecimal.ROUND_DOWN,\n                                                   \"ROUND_FLOOR\", BigDecimal.ROUND_FLOOR,\n                                                   \"ROUND_HALF_DOWN\", BigDecimal.ROUND_HALF_DOWN,\n                                                   \"ROUND_HALF_EVEN\", BigDecimal.ROUND_HALF_EVEN,\n                                                   \"ROUND_HALF_UP\", BigDecimal.ROUND_HALF_UP,\n                                                   \"ROUND_UNNECESSARY\", BigDecimal.ROUND_UNNECESSARY,\n                                                   \"ROUND_UP\", BigDecimal.ROUND_UP);\n        }\n        return unscaled;\n    }",
+    "begin_line": 1454,
+    "end_line": 1533,
+    "comment": "/** \n * Round the given non-negative value to the \"nearest\" integer. Nearest is determined by the rounding method specified. Rounding methods are defined in  {@link BigDecimal}.\n * @param unscaled Value to round.\n * @param sign Sign of the original, scaled value.\n * @param roundingMethod Rounding method, as defined in {@link BigDecimal}.\n * @return the rounded value.\n * @throws MathIllegalArgumentException if {@code roundingMethod} is not a valid rounding method.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1545",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(byte)",
+    "snippet": "public static byte sign(final byte x) {\n        return (x \u003d\u003d ZB) ? ZB : (x \u003e ZB) ? PB : NB;\n    }",
+    "begin_line": 1545,
+    "end_line": 1547,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003e sign\u003c/a\u003e for byte value  {@code x}. \u003cp\u003e For a byte value x, this method returns (byte)(+1) if x \u003e 0, (byte)(0) if x \u003d 0, and (byte)(-1) if x \u003c 0.\u003c/p\u003e\n * @param x the value, a byte\n * @return (byte)(+1), (byte)(0), or (byte)(-1), depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1561",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(double)",
+    "snippet": "public static double sign(final double x) {\n        if (Double.isNaN(x)) {\n            return Double.NaN;\n        }\n        return (x \u003d\u003d 0.0) ? 0.0 : (x \u003e 0.0) ? 1.0 : -1.0;\n    }",
+    "begin_line": 1561,
+    "end_line": 1566,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003e sign\u003c/a\u003e for double precision  {@code x}. \u003cp\u003e For a double value  {@code x}, this method returns {@code +1.0} if {@code x \u003e 0},  {@code 0.0} if{@code x \u003d 0.0}, and  {@code -1.0} if {@code x \u003c 0}. Returns  {@code NaN} if {@code x} is {@code NaN}.\u003c/p\u003e\n * @param x the value, a double\n * @return +1.0, 0.0, or -1.0, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1579",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(float)",
+    "snippet": "public static float sign(final float x) {\n        if (Float.isNaN(x)) {\n            return Float.NaN;\n        }\n        return (x \u003d\u003d 0.0F) ? 0.0F : (x \u003e 0.0F) ? 1.0F : -1.0F;\n    }",
+    "begin_line": 1579,
+    "end_line": 1584,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003e sign\u003c/a\u003e for float value  {@code x}. \u003cp\u003e For a float value x, this method returns +1.0F if x \u003e 0, 0.0F if x \u003d 0.0F, and -1.0F if x \u003c 0. Returns  {@code NaN} if {@code x}is  {@code NaN}.\u003c/p\u003e\n * @param x the value, a float\n * @return +1.0F, 0.0F, or -1.0F, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1596",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(int)",
+    "snippet": "public static int sign(final int x) {\n        return (x \u003d\u003d 0) ? 0 : (x \u003e 0) ? 1 : -1;\n    }",
+    "begin_line": 1596,
+    "end_line": 1598,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003e sign\u003c/a\u003e for int value  {@code x}. \u003cp\u003e For an int value x, this method returns +1 if x \u003e 0, 0 if x \u003d 0, and -1 if x \u003c 0.\u003c/p\u003e\n * @param x the value, an int\n * @return +1, 0, or -1, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1610",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(long)",
+    "snippet": "public static long sign(final long x) {\n        return (x \u003d\u003d 0L) ? 0L : (x \u003e 0L) ? 1L : -1L;\n    }",
+    "begin_line": 1610,
+    "end_line": 1612,
+    "comment": "/** \n * Returns the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003e sign\u003c/a\u003e for long value  {@code x}. \u003cp\u003e For a long value x, this method returns +1L if x \u003e 0, 0L if x \u003d 0, and -1L if x \u003c 0.\u003c/p\u003e\n * @param x the value, a long\n * @return +1L, 0L, or -1L, depending on the sign of x\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sign#1621",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sign(short)",
+    "snippet": "public static short sign(final short x) {\n        return (x \u003d\u003d ZS) ? ZS : (x \u003e ZS) ? PS : NS;\n    }",
+    "begin_line": 1621,
+    "end_line": 1623,
+    "comment": "/** \n * Compute the \u003ca href\u003d\"http://mathworld.wolfram.com/Sign.html\"\u003esign\u003c/a\u003e of the argument.\n * @param x the value, a short\n * @return 1 if {@code x \u003e 0}, 0 if  {@code x \u003d\u003d 0}, and -1 if  {@code x \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sinh#1632",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sinh(double)",
+    "snippet": "public static double sinh(double x) {\n        return (FastMath.exp(x) - FastMath.exp(-x)) / 2.0;\n    }",
+    "begin_line": 1632,
+    "end_line": 1634,
+    "comment": "/** \n * Compute the \u003ca href\u003d\"http://mathworld.wolfram.com/HyperbolicSine.html\"\u003e hyperbolic sine\u003c/a\u003e of the argument.\n * @param x Value for which to find the hyperbolic sine.\n * @return hyperbolic sine of {@code x}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.subAndCheck#1646",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.subAndCheck(int, int)",
+    "snippet": "public static int subAndCheck(int x, int y) {\n        long s \u003d (long)x - (long)y;\n        if (s \u003c Integer.MIN_VALUE || s \u003e Integer.MAX_VALUE) {\n            throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_SUBTRACTION, x, y);\n        }\n        return (int)s;\n    }",
+    "begin_line": 1646,
+    "end_line": 1652,
+    "comment": "/** \n * Subtract two integers, checking for overflow.\n * @param x Minuend.\n * @param y Subtrahend.\n * @return the difference {@code x - y}.\n * @throws MathArithmeticException if the result can not be representedas an  {@code int}.\n * @since 1.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.subAndCheck#1664",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.subAndCheck(long, long)",
+    "snippet": "public static long subAndCheck(long a, long b) {\n        long ret;\n        if (b \u003d\u003d Long.MIN_VALUE) {\n            if (a \u003c 0) {\n                ret \u003d a - b;\n            } else {\n                throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_ADDITION, a, -b);\n            }\n        } else {\n            // use additive inverse\n            ret \u003d addAndCheck(a, -b, LocalizedFormats.OVERFLOW_IN_ADDITION);\n        }\n        return ret;\n    }",
+    "begin_line": 1664,
+    "end_line": 1677,
+    "comment": "/** \n * Subtract two long integers, checking for overflow.\n * @param a Value.\n * @param b Value.\n * @return the difference {@code a - b}.\n * @throws MathArithmeticException if the result can not be represented as a{@code long}.\n * @since 1.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1687",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(int, int)",
+    "snippet": "public static int pow(final int k, int e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        int result \u003d 1;\n        int k2p    \u003d k;\n        while (e !\u003d 0) {\n            if ((e \u0026 0x1) !\u003d 0) {\n                result *\u003d k2p;\n            }\n            k2p *\u003d k2p;\n            e \u003d e \u003e\u003e 1;\n        }\n\n        return result;\n    }",
+    "begin_line": 1687,
+    "end_line": 1703,
+    "comment": "/** \n * Raise an int to an int power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1713",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(int, long)",
+    "snippet": "public static int pow(final int k, long e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        int result \u003d 1;\n        int k2p    \u003d k;\n        while (e !\u003d 0) {\n            if ((e \u0026 0x1) !\u003d 0) {\n                result *\u003d k2p;\n            }\n            k2p *\u003d k2p;\n            e \u003d e \u003e\u003e 1;\n        }\n\n        return result;\n    }",
+    "begin_line": 1713,
+    "end_line": 1729,
+    "comment": "/** \n * Raise an int to a long power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1739",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(long, int)",
+    "snippet": "public static long pow(final long k, int e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        long result \u003d 1l;\n        long k2p    \u003d k;\n        while (e !\u003d 0) {\n            if ((e \u0026 0x1) !\u003d 0) {\n                result *\u003d k2p;\n            }\n            k2p *\u003d k2p;\n            e \u003d e \u003e\u003e 1;\n        }\n\n        return result;\n    }",
+    "begin_line": 1739,
+    "end_line": 1755,
+    "comment": "/** \n * Raise a long to an int power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1765",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(long, long)",
+    "snippet": "public static long pow(final long k, long e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        long result \u003d 1l;\n        long k2p    \u003d k;\n        while (e !\u003d 0) {\n            if ((e \u0026 0x1) !\u003d 0) {\n                result *\u003d k2p;\n            }\n            k2p *\u003d k2p;\n            e \u003d e \u003e\u003e 1;\n        }\n\n        return result;\n    }",
+    "begin_line": 1765,
+    "end_line": 1781,
+    "comment": "/** \n * Raise a long to a long power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1791",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(java.math.BigInteger, int)",
+    "snippet": "public static BigInteger pow(final BigInteger k, int e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        return k.pow(e);\n    }",
+    "begin_line": 1791,
+    "end_line": 1797,
+    "comment": "/** \n * Raise a BigInteger to an int power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1807",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(java.math.BigInteger, long)",
+    "snippet": "public static BigInteger pow(final BigInteger k, long e) {\n        if (e \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        BigInteger result \u003d BigInteger.ONE;\n        BigInteger k2p    \u003d k;\n        while (e !\u003d 0) {\n            if ((e \u0026 0x1) !\u003d 0) {\n                result \u003d result.multiply(k2p);\n            }\n            k2p \u003d k2p.multiply(k2p);\n            e \u003d e \u003e\u003e 1;\n        }\n\n        return result;\n\n    }",
+    "begin_line": 1807,
+    "end_line": 1824,
+    "comment": "/** \n * Raise a BigInteger to a long power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.pow#1834",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.pow(java.math.BigInteger, java.math.BigInteger)",
+    "snippet": "public static BigInteger pow(final BigInteger k, BigInteger e) {\n        if (e.compareTo(BigInteger.ZERO) \u003c 0) {\n            throw new NotPositiveException(LocalizedFormats.EXPONENT, e);\n        }\n\n        BigInteger result \u003d BigInteger.ONE;\n        BigInteger k2p    \u003d k;\n        while (!BigInteger.ZERO.equals(e)) {\n            if (e.testBit(0)) {\n                result \u003d result.multiply(k2p);\n            }\n            k2p \u003d k2p.multiply(k2p);\n            e \u003d e.shiftRight(1);\n        }\n\n        return result;\n    }",
+    "begin_line": 1834,
+    "end_line": 1850,
+    "comment": "/** \n * Raise a BigInteger to a BigInteger power.\n * @param k Number to raise.\n * @param e Exponent (must be positive or zero).\n * @return k\u003csup\u003ee\u003c/sup\u003e\n * @throws NotPositiveException if {@code e \u003c 0}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distance1#1859",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distance1(double[], double[])",
+    "snippet": "public static double distance1(double[] p1, double[] p2) {\n        double sum \u003d 0;\n        for (int i \u003d 0; i \u003c p1.length; i++) {\n            sum +\u003d FastMath.abs(p1[i] - p2[i]);\n        }\n        return sum;\n    }",
+    "begin_line": 1859,
+    "end_line": 1865,
+    "comment": "/** \n * Calculates the L\u003csub\u003e1\u003c/sub\u003e (sum of abs) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e1\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distance1#1874",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distance1(int[], int[])",
+    "snippet": "public static int distance1(int[] p1, int[] p2) {\n      int sum \u003d 0;\n      for (int i \u003d 0; i \u003c p1.length; i++) {\n          sum +\u003d FastMath.abs(p1[i] - p2[i]);\n      }\n      return sum;\n    }",
+    "begin_line": 1874,
+    "end_line": 1880,
+    "comment": "/** \n * Calculates the L\u003csub\u003e1\u003c/sub\u003e (sum of abs) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e1\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distance#1889",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distance(double[], double[])",
+    "snippet": "public static double distance(double[] p1, double[] p2) {\n        double sum \u003d 0;\n        for (int i \u003d 0; i \u003c p1.length; i++) {\n            final double dp \u003d p1[i] - p2[i];\n            sum +\u003d dp * dp;\n        }\n        return FastMath.sqrt(sum);\n    }",
+    "begin_line": 1889,
+    "end_line": 1896,
+    "comment": "/** \n * Calculates the L\u003csub\u003e2\u003c/sub\u003e (Euclidean) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e2\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distance#1905",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distance(int[], int[])",
+    "snippet": "public static double distance(int[] p1, int[] p2) {\n      double sum \u003d 0;\n      for (int i \u003d 0; i \u003c p1.length; i++) {\n          final double dp \u003d p1[i] - p2[i];\n          sum +\u003d dp * dp;\n      }\n      return FastMath.sqrt(sum);\n    }",
+    "begin_line": 1905,
+    "end_line": 1912,
+    "comment": "/** \n * Calculates the L\u003csub\u003e2\u003c/sub\u003e (Euclidean) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e2\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distanceInf#1921",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distanceInf(double[], double[])",
+    "snippet": "public static double distanceInf(double[] p1, double[] p2) {\n        double max \u003d 0;\n        for (int i \u003d 0; i \u003c p1.length; i++) {\n            max \u003d FastMath.max(max, FastMath.abs(p1[i] - p2[i]));\n        }\n        return max;\n    }",
+    "begin_line": 1921,
+    "end_line": 1927,
+    "comment": "/** \n * Calculates the L\u003csub\u003e\u0026infin;\u003c/sub\u003e (max of abs) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e\u0026infin;\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.distanceInf#1936",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.distanceInf(int[], int[])",
+    "snippet": "public static int distanceInf(int[] p1, int[] p2) {\n        int max \u003d 0;\n        for (int i \u003d 0; i \u003c p1.length; i++) {\n            max \u003d FastMath.max(max, FastMath.abs(p1[i] - p2[i]));\n        }\n        return max;\n    }",
+    "begin_line": 1936,
+    "end_line": 1942,
+    "comment": "/** \n * Calculates the L\u003csub\u003e\u0026infin;\u003c/sub\u003e (max of abs) distance between two points.\n * @param p1 the first point\n * @param p2 the second point\n * @return the L\u003csub\u003e\u0026infin;\u003c/sub\u003e distance between the two points\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.isMonotone#1962",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.isMonotone(java.lang.Comparable[], org.apache.commons.math.util.MathUtils.OrderDirection, boolean)",
+    "snippet": "public static boolean isMonotone(Comparable[] val,\n                                     OrderDirection dir,\n                                     boolean strict){\n        Comparable previous \u003d val[0];\n        final int max \u003d val.length;\n        int comp;\n        for (int i \u003d 1; i \u003c max; i++) {\n            switch (dir) {\n            case INCREASING:\n                comp \u003d -val[i].compareTo(previous);\n                if (strict) {\n                    if (0 \u003c\u003d comp) {\n                        return false;\n                    }\n                } else {\n                    if ( comp \u003e 0) {\n                        return false;\n                    }\n                }\n                break;\n            case DECREASING:\n                comp \u003d val[i].compareTo(previous);\n                if (strict) {\n                    if (comp \u003e\u003d 0) {\n                        return false;\n                    }\n                } else {\n                    if (comp \u003e 0) {\n                       return false;\n                    }\n                }\n                break;\n            default:\n                // Should never happen.\n                throw new MathInternalError();\n            }\n\n            previous \u003d val[i];\n        }\n        return true;\n    }",
+    "begin_line": 1962,
+    "end_line": 2002,
+    "comment": "/** \n * Check that an array is monotone increasing or decreasing.\n * @param val Values.\n * @param dir Ordering direction.\n * @param strict Whether the order should be strict.\n * @return {@code true} if sorted, {@code false} otherwise.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.isMonotone#2012",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.isMonotone(double[], org.apache.commons.math.util.MathUtils.OrderDirection, boolean)",
+    "snippet": "public static boolean isMonotone(double[] val,\n                                     OrderDirection dir,\n                                     boolean strict){\n        double previous \u003d val[0];\n        final int max \u003d val.length;\n        for (int i \u003d 1; i \u003c max; i++) {\n            switch (dir) {\n            case INCREASING:\n                if (strict) {\n                    if (val[i] \u003c\u003d previous) {\n                        return false;\n                    }\n                } else {\n                    if (val[i] \u003c previous) {\n                        return false;\n                    }\n                }\n                break;\n            case DECREASING:\n                if (strict) {\n                    if (val[i] \u003e\u003d previous) {\n                        return false;\n                    }\n                } else {\n                    if (val[i] \u003e previous) {\n                        return false;\n                    }\n                }\n                break;\n            default:\n                // Should never happen.\n                throw new MathInternalError();\n            }\n            previous \u003d val[i];\n        }\n\n        return true;\n    }",
+    "begin_line": 2012,
+    "end_line": 2049,
+    "comment": "/** \n * Check that an array is monotone increasing or decreasing.\n * @param val Values.\n * @param dir Ordering direction.\n * @param strict Whether the order should be strict.\n * @return {@code true} if sorted, {@code false} otherwise.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkOrder#2062",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkOrder(double[], org.apache.commons.math.util.MathUtils.OrderDirection, boolean, boolean)",
+    "snippet": "public static boolean checkOrder(double[] val, OrderDirection dir,\n                                     boolean strict, boolean abort) {\n        double previous \u003d val[0];\n        final int max \u003d val.length;\n\n        int index;\n        ITEM:\n        for (index \u003d 1; index \u003c max; index++) {\n            switch (dir) {\n            case INCREASING:\n                if (strict) {\n                    if (val[index] \u003c\u003d previous) {\n                        break ITEM;\n                    }\n                } else {\n                    if (val[index] \u003c previous) {\n                        break ITEM;\n                    }\n                }\n                break;\n            case DECREASING:\n                if (strict) {\n                    if (val[index] \u003e\u003d previous) {\n                        break ITEM;\n                    }\n                } else {\n                    if (val[index] \u003e previous) {\n                        break ITEM;\n                    }\n                }\n                break;\n            default:\n                // Should never happen.\n                throw new MathInternalError();\n            }\n            previous \u003d val[index];\n        }\n\n        if (index \u003d\u003d max) {\n            // Loop completed.\n            return true;\n        }\n\n        // Loop early exit means wrong ordering.\n        if (abort) {\n            throw new NonMonotonicSequenceException(val[index], previous, index, dir, strict);\n        } else {\n            return false;\n        }\n    }",
+    "begin_line": 2062,
+    "end_line": 2111,
+    "comment": "/** \n * Check that the given array is sorted.\n * @param val Values.\n * @param dir Ordering direction.\n * @param strict Whether the order should be strict.\n * @param abort Whether to throw an exception if the check fails.\n * @return {@code true} if the array is sorted.\n * @throws NonMonotonicSequenceException if the array is not sortedand  {@code abort} is {@code true}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkOrder#2122",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkOrder(double[], org.apache.commons.math.util.MathUtils.OrderDirection, boolean)",
+    "snippet": "public static void checkOrder(double[] val, OrderDirection dir,\n                                  boolean strict) {\n        checkOrder(val, dir, strict, true);\n    }",
+    "begin_line": 2122,
+    "end_line": 2125,
+    "comment": "/** \n * Check that the given array is sorted.\n * @param val Values.\n * @param dir Ordering direction.\n * @param strict Whether the order should be strict.\n * @throws NonMonotonicSequenceException if the array is not sorted.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkOrder#2134",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkOrder(double[])",
+    "snippet": "public static void checkOrder(double[] val) {\n        checkOrder(val, OrderDirection.INCREASING, true);\n    }",
+    "begin_line": 2134,
+    "end_line": 2136,
+    "comment": "/** \n * Check that the given array is sorted in strictly increasing order.\n * @param val Values.\n * @throws NonMonotonicSequenceException if the array is not sorted.\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkFinite#2145",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkFinite(double)",
+    "snippet": "public static void checkFinite(final double x) {\n        if (Double.isInfinite(x) || Double.isNaN(x)) {\n            throw new NotFiniteNumberException(x);\n        }\n    }",
+    "begin_line": 2145,
+    "end_line": 2149,
+    "comment": "/** \n * Check that the argument is a real number.\n * @param x Argument.\n * @throws NotFiniteNumberException if {@code x} is not afinite real number.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkFinite#2158",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkFinite(double[])",
+    "snippet": "public static void checkFinite(final double[] val) {\n        for (int i \u003d 0; i \u003c val.length; i++) {\n            final double x \u003d val[i];\n            if (Double.isInfinite(x) || Double.isNaN(x)) {\n                throw new NotFiniteNumberException(LocalizedFormats.ARRAY_ELEMENT, x, i);\n            }\n        }\n    }",
+    "begin_line": 2158,
+    "end_line": 2165,
+    "comment": "/** \n * Check that all the elements are real number.\n * @param val Arguments.\n * @throws NotFiniteNumberException if any values of the array is not afinite real number.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.safeNorm#2227",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.safeNorm(double[])",
+    "snippet": "public static double safeNorm(double[] v) {\n        double rdwarf \u003d 3.834e-20;\n        double rgiant \u003d 1.304e+19;\n        double s1 \u003d 0;\n        double s2 \u003d 0;\n        double s3 \u003d 0;\n        double x1max \u003d 0;\n        double x3max \u003d 0;\n        double floatn \u003d (double) v.length;\n        double agiant \u003d rgiant / floatn;\n        for (int i \u003d 0; i \u003c v.length; i++) {\n            double xabs \u003d Math.abs(v[i]);\n            if (xabs \u003c rdwarf || xabs \u003e agiant) {\n                if (xabs \u003e rdwarf) {\n                    if (xabs \u003e x1max) {\n                        double r \u003d x1max / xabs;\n                        s1\u003d 1 + s1 * r * r;\n                        x1max \u003d xabs;\n                    } else {\n                        double r \u003d xabs / x1max;\n                        s1 +\u003d r * r;\n                    }\n                } else {\n                    if (xabs \u003e x3max) {\n                        double r \u003d x3max / xabs;\n                        s3\u003d 1 + s3 * r * r;\n                        x3max \u003d xabs;\n                    } else {\n                        if (xabs !\u003d 0) {\n                            double r \u003d xabs / x3max;\n                            s3 +\u003d r * r;\n                        }\n                    }\n                }\n            } else {\n                s2 +\u003d xabs * xabs;\n            }\n        }\n        double norm;\n        if (s1 !\u003d 0) {\n            norm \u003d x1max * Math.sqrt(s1 + (s2 / x1max) / x1max);\n        } else {\n            if (s2 \u003d\u003d 0) {\n                norm \u003d x3max * Math.sqrt(s3);\n            } else {\n                if (s2 \u003e\u003d x3max) {\n                    norm \u003d Math.sqrt(s2 * (1 + (x3max / s2) * (x3max * s3)));\n                } else {\n                    norm \u003d Math.sqrt(x3max * ((s2 / x3max) + (x3max * s3)));\n                }\n            }\n        }\n        return norm;\n    }",
+    "begin_line": 2227,
+    "end_line": 2280,
+    "comment": "/** \n * Returns the Cartesian norm (2-norm), handling both overflow and underflow. Translation of the minpack enorm subroutine. The redistribution policy for MINPACK is available \u003ca href\u003d\"http://www.netlib.org/minpack/disclaimer\"\u003ehere\u003c/a\u003e, for convenience, it is reproduced below.\u003c/p\u003e \u003ctable border\u003d\"0\" width\u003d\"80%\" cellpadding\u003d\"10\" align\u003d\"center\" bgcolor\u003d\"#E0E0E0\"\u003e \u003ctr\u003e\u003ctd\u003e Minpack Copyright Notice (1999) University of Chicago. All rights reserved \u003c/td\u003e\u003c/tr\u003e \u003ctr\u003e\u003ctd\u003e Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: \u003col\u003e \u003cli\u003eRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\u003c/li\u003e \u003cli\u003eRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\u003c/li\u003e \u003cli\u003eThe end-user documentation included with the redistribution, if any, must include the following acknowledgment: {@code This product includes software developed by the University ofChicago, as Operator of Argonne National Laboratory.}Alternately, this acknowledgment may appear in the software itself, if and wherever such third-party acknowledgments normally appear.\u003c/li\u003e \u003cli\u003e\u003cstrong\u003eWARRANTY DISCLAIMER. THE SOFTWARE IS SUPPLIED \"AS IS\" WITHOUT WARRANTY OF ANY KIND. THE COPYRIGHT HOLDER, THE UNITED STATES, THE UNITED STATES DEPARTMENT OF ENERGY, AND THEIR EMPLOYEES: (1) DISCLAIM ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT, (2) DO NOT ASSUME ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF THE SOFTWARE, (3) DO NOT REPRESENT THAT USE OF THE SOFTWARE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS, (4) DO NOT WARRANT THAT THE SOFTWARE WILL FUNCTION UNINTERRUPTED, THAT IT IS ERROR-FREE OR THAT ANY ERRORS WILL BE CORRECTED.\u003c/strong\u003e\u003c/li\u003e \u003cli\u003e\u003cstrong\u003eLIMITATION OF LIABILITY. IN NO EVENT WILL THE COPYRIGHT HOLDER, THE UNITED STATES, THE UNITED STATES DEPARTMENT OF ENERGY, OR THEIR EMPLOYEES: BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES OF ANY KIND OR NATURE, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS OR LOSS OF DATA, FOR ANY REASON WHATSOEVER, WHETHER SUCH LIABILITY IS ASSERTED ON THE BASIS OF CONTRACT, TORT (INCLUDING NEGLIGENCE OR STRICT LIABILITY), OR OTHERWISE, EVEN IF ANY OF SAID PARTIES HAS BEEN WARNED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGES.\u003c/strong\u003e\u003c/li\u003e \u003col\u003e\u003c/td\u003e\u003c/tr\u003e \u003c/table\u003e\n * @param v vector of doubles\n * @return the 2-norm of the vector\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sortInPlace#2292",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sortInPlace(double[], double[])",
+    "snippet": "public static void sortInPlace(double[] x,\n                                   double[] ... yList) {\n        sortInPlace(x, OrderDirection.INCREASING, yList);\n    }",
+    "begin_line": 2292,
+    "end_line": 2295,
+    "comment": "/** \n * Sort an array in increasing order, performing the same reordering of entries on other arrays.\n * @param x Array to be sorted.\n * @param yList Set of arrays whose permutations of entries must followthose performed on  {@code x}.\n * @throws DimensionMismatchException if any {@code y} has not the samesize as  {@code x}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.sortInPlace#2307",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.sortInPlace(double[], org.apache.commons.math.util.MathUtils.OrderDirection, double[])",
+    "snippet": "public static void sortInPlace(double[] x,\n                                   final OrderDirection dir,\n                                   double[] ... yList) {\n        if (x \u003d\u003d null ||\n            yList \u003d\u003d null) {\n            throw new NullArgumentException();\n        }\n\n        final int len \u003d x.length;\n        final List\u003cPair\u003cDouble, double[]\u003e\u003e list\n            \u003d new ArrayList\u003cPair\u003cDouble, double[]\u003e\u003e(len);\n\n        final int yListLen \u003d yList.length;\n        for (int i \u003d 0; i \u003c len; i++) {\n            final double[] yValues \u003d new double[yListLen];\n            for (int j \u003d 0; j \u003c yListLen; j++) {\n                double[] y \u003d yList[j];\n                if (y.length !\u003d len) {\n                    throw new DimensionMismatchException(y.length, len);\n                }\n                yValues[j] \u003d y[i];\n            }\n            list.add(new Pair\u003cDouble, double[]\u003e(x[i], yValues));\n        }\n\n        final Comparator\u003cPair\u003cDouble, double[]\u003e\u003e comp\n            \u003d new Comparator\u003cPair\u003cDouble, double[]\u003e\u003e() {\n            public int compare(Pair\u003cDouble, double[]\u003e o1,\n                               Pair\u003cDouble, double[]\u003e o2) {\n                int val;\n                switch (dir) {\n                case INCREASING:\n                    val \u003d o1.getKey().compareTo(o2.getKey());\n                break;\n                case DECREASING:\n                    val \u003d o2.getKey().compareTo(o1.getKey());\n                break;\n                default:\n                    // Should never happen.\n                    throw new MathInternalError();\n                }\n                return val;\n            }\n        };\n\n        Collections.sort(list, comp);\n\n        for (int i \u003d 0; i \u003c len; i++) {\n            final Pair\u003cDouble, double[]\u003e e \u003d list.get(i);\n            x[i] \u003d e.getKey();\n            final double[] yValues \u003d e.getValue();\n            for (int j \u003d 0; j \u003c yListLen; j++) {\n                yList[j][i] \u003d yValues[j];\n            }\n        }\n    }",
+    "begin_line": 2307,
+    "end_line": 2362,
+    "comment": "/** \n * Sort an array, performing the same reordering of entries on other arrays.\n * @param x Array to be sorted.\n * @param dir Order direction.\n * @param yList Set of arrays whose permutations of entries must followthose performed on  {@code x}.\n * @throws DimensionMismatchException if any {@code y} has not the samesize as  {@code x}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.compare#2334",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.compare(org.apache.commons.math.util.Pair\u003cjava.lang.Double,double[]\u003e, org.apache.commons.math.util.Pair\u003cjava.lang.Double,double[]\u003e)",
+    "snippet": "public int compare(Pair\u003cDouble, double[]\u003e o1,\n                               Pair\u003cDouble, double[]\u003e o2) {\n                int val;\n                switch (dir) {\n                case INCREASING:\n                    val \u003d o1.getKey().compareTo(o2.getKey());\n                break;\n                case DECREASING:\n                    val \u003d o2.getKey().compareTo(o1.getKey());\n                break;\n                default:\n                    // Should never happen.\n                    throw new MathInternalError();\n                }\n                return val;\n            }",
+    "begin_line": 2334,
+    "end_line": 2349,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.copyOf#2370",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.copyOf(int[])",
+    "snippet": "public static int[] copyOf(int[] source) {\n         return copyOf(source, source.length);\n     }",
+    "begin_line": 2370,
+    "end_line": 2372,
+    "comment": "/** \n * Creates a copy of the  {@code source} array.\n * @param source Array to be copied.\n * @return the copied array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.copyOf#2380",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.copyOf(double[])",
+    "snippet": "public static double[] copyOf(double[] source) {\n         return copyOf(source, source.length);\n     }",
+    "begin_line": 2380,
+    "end_line": 2382,
+    "comment": "/** \n * Creates a copy of the  {@code source} array.\n * @param source Array to be copied.\n * @return the copied array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.copyOf#2393",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.copyOf(int[], int)",
+    "snippet": "public static int[] copyOf(int[] source, int len) {\n         final int[] output \u003d new int[len];\n         System.arraycopy(source, 0, output, 0, FastMath.min(len, source.length));\n         return output;\n     }",
+    "begin_line": 2393,
+    "end_line": 2397,
+    "comment": "/** \n * Creates a copy of the  {@code source} array.\n * @param source Array to be copied.\n * @param len Number of entries to copy. If smaller then the sourcelength, the copy will be truncated, if larger it will padded with zeroes.\n * @return the copied array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.copyOf#2408",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.copyOf(double[], int)",
+    "snippet": "public static double[] copyOf(double[] source, int len) {\n         final double[] output \u003d new double[len];\n         System.arraycopy(source, 0, output, 0, FastMath.min(len, source.length));\n         return output;\n     }",
+    "begin_line": 2408,
+    "end_line": 2412,
+    "comment": "/** \n * Creates a copy of the  {@code source} array.\n * @param source Array to be copied.\n * @param len Number of entries to copy. If smaller then the sourcelength, the copy will be truncated, if larger it will padded with zeroes.\n * @return the copied array.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkNotNull#2422",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkNotNull(java.lang.Object, org.apache.commons.math.exception.util.Localizable, java.lang.Object)",
+    "snippet": "public static void checkNotNull(Object o,\n                                    Localizable pattern,\n                                    Object ... args) {\n        if (o \u003d\u003d null) {\n            throw new NullArgumentException(pattern, args);\n        }\n    }",
+    "begin_line": 2422,
+    "end_line": 2428,
+    "comment": "/** \n * Checks that an object is not null.\n * @param o Object to be checked.\n * @param pattern Message pattern.\n * @param args Arguments to replace the placeholders in {@code pattern}.\n * @throws NullArgumentException if {@code o} is {@code null}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.checkNotNull#2436",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.checkNotNull(java.lang.Object)",
+    "snippet": "public static void checkNotNull(Object o)\n        throws NullArgumentException {\n        if (o \u003d\u003d null) {\n            throw new NullArgumentException();\n        }\n    }",
+    "begin_line": 2436,
+    "end_line": 2441,
+    "comment": "/** \n * Checks that an object is not null.\n * @param o Object to be checked.\n * @throws NullArgumentException if {@code o} is {@code null}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.linearCombination#2464",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.linearCombination(double, double, double, double)",
+    "snippet": "public static double linearCombination(final double a1, final double b1,\n                                           final double a2, final double b2) {\n\n        // the code below is split in many additions/subtractions that may\n        // appear redundant. However, they shoud NOT be simplified, as they\n        // do use IEEE754 floating point arithmetic rouding properties.\n        // as an example, the expression \"ca1 - (ca1 - a1)\" is NOT the same as \"a1\"\n        // The variables naming conventions are that xyzHigh contains the most significant\n        // bits of xyz and xyzLow contains its least significant bits. So theoretically\n        // xyz is the sum xyzHigh + xyzLow, but in many cases below, this sum cannot\n        // be represented in only one double precision number so we preserve two numbers\n        // to hold it as long as we can, combining the high and low order bits together\n        // only at the end, after cancellation may have occurred on high order bits\n\n        // split a1 and b1 as two 26 bits numbers\n        final double ca1        \u003d SPLIT_FACTOR * a1;\n        final double a1High     \u003d ca1 - (ca1 - a1);\n        final double a1Low      \u003d a1 - a1High;\n        final double cb1        \u003d SPLIT_FACTOR * b1;\n        final double b1High     \u003d cb1 - (cb1 - b1);\n        final double b1Low      \u003d b1 - b1High;\n\n        // accurate multiplication a1 * b1\n        final double prod1High  \u003d a1 * b1;\n        final double prod1Low   \u003d a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);\n\n        // split a2 and b2 as two 26 bits numbers\n        final double ca2        \u003d SPLIT_FACTOR * a2;\n        final double a2High     \u003d ca2 - (ca2 - a2);\n        final double a2Low      \u003d a2 - a2High;\n        final double cb2        \u003d SPLIT_FACTOR * b2;\n        final double b2High     \u003d cb2 - (cb2 - b2);\n        final double b2Low      \u003d b2 - b2High;\n\n        // accurate multiplication a2 * b2\n        final double prod2High  \u003d a2 * b2;\n        final double prod2Low   \u003d a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);\n\n        // accurate addition a1 * b1 + a2 * b2\n        final double s12High    \u003d prod1High + prod2High;\n        final double s12Prime   \u003d s12High - prod2High;\n        final double s12Low     \u003d (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);\n\n        // final rounding, s12 may have suffered many cancellations, we try\n        // to recover some bits from the extra words we have saved up to now\n        double result \u003d s12High + (prod1Low + prod2Low + s12Low);\n\n        if (Double.isNaN(result)) {\n            // either we have split infinite numbers or some coefficients were NaNs,\n            // just rely on the naive implementation and let IEEE754 handle this\n            result \u003d a1 * b1 + a2 * b2;\n        }\n\n        return result;\n\n    }",
+    "begin_line": 2464,
+    "end_line": 2519,
+    "comment": "/** \n * Compute a linear combination accurately. \u003cp\u003e This method computes a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e + a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e to high accuracy. It does so by using specific multiplication and addition algorithms to preserve accuracy and reduce cancellation effects. It is based on the 2005 paper \u003ca href\u003d\"http://citeseerx.ist.psu.edu/viewdoc/summary?doi\u003d10.1.1.2.1547\"\u003e Accurate Sum and Dot Product\u003c/a\u003e by Takeshi Ogita, Siegfried M. Rump, and Shin\u0027ichi Oishi published in SIAM J. Sci. Comput. \u003c/p\u003e\n * @param a1 first factor of the first term\n * @param b1 second factor of the first term\n * @param a2 first factor of the second term\n * @param b2 second factor of the second term\n * @return a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e +a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e\n * @see #linearCombination(double,double,double,double,double,double)\n * @see #linearCombination(double,double,double,double,double,double,double,double)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.linearCombination#2544",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.linearCombination(double, double, double, double, double, double)",
+    "snippet": "public static double linearCombination(final double a1, final double b1,\n                                           final double a2, final double b2,\n                                           final double a3, final double b3) {\n\n        // the code below is split in many additions/subtractions that may\n        // appear redundant. However, they shoud NOT be simplified, as they\n        // do use IEEE754 floating point arithmetic rouding properties.\n        // as an example, the expression \"ca1 - (ca1 - a1)\" is NOT the same as \"a1\"\n        // The variables naming conventions are that xyzHigh contains the most significant\n        // bits of xyz and xyzLow contains its least significant bits. So theoretically\n        // xyz is the sum xyzHigh + xyzLow, but in many cases below, this sum cannot\n        // be represented in only one double precision number so we preserve two numbers\n        // to hold it as long as we can, combining the high and low order bits together\n        // only at the end, after cancellation may have occurred on high order bits\n\n        // split a1 and b1 as two 26 bits numbers\n        final double ca1        \u003d SPLIT_FACTOR * a1;\n        final double a1High     \u003d ca1 - (ca1 - a1);\n        final double a1Low      \u003d a1 - a1High;\n        final double cb1        \u003d SPLIT_FACTOR * b1;\n        final double b1High     \u003d cb1 - (cb1 - b1);\n        final double b1Low      \u003d b1 - b1High;\n\n        // accurate multiplication a1 * b1\n        final double prod1High  \u003d a1 * b1;\n        final double prod1Low   \u003d a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);\n\n        // split a2 and b2 as two 26 bits numbers\n        final double ca2        \u003d SPLIT_FACTOR * a2;\n        final double a2High     \u003d ca2 - (ca2 - a2);\n        final double a2Low      \u003d a2 - a2High;\n        final double cb2        \u003d SPLIT_FACTOR * b2;\n        final double b2High     \u003d cb2 - (cb2 - b2);\n        final double b2Low      \u003d b2 - b2High;\n\n        // accurate multiplication a2 * b2\n        final double prod2High  \u003d a2 * b2;\n        final double prod2Low   \u003d a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);\n\n        // split a3 and b3 as two 26 bits numbers\n        final double ca3        \u003d SPLIT_FACTOR * a3;\n        final double a3High     \u003d ca3 - (ca3 - a3);\n        final double a3Low      \u003d a3 - a3High;\n        final double cb3        \u003d SPLIT_FACTOR * b3;\n        final double b3High     \u003d cb3 - (cb3 - b3);\n        final double b3Low      \u003d b3 - b3High;\n\n        // accurate multiplication a3 * b3\n        final double prod3High  \u003d a3 * b3;\n        final double prod3Low   \u003d a3Low * b3Low - (((prod3High - a3High * b3High) - a3Low * b3High) - a3High * b3Low);\n\n        // accurate addition a1 * b1 + a2 * b2\n        final double s12High    \u003d prod1High + prod2High;\n        final double s12Prime   \u003d s12High - prod2High;\n        final double s12Low     \u003d (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);\n\n        // accurate addition a1 * b1 + a2 * b2 + a3 * b3\n        final double s123High   \u003d s12High + prod3High;\n        final double s123Prime  \u003d s123High - prod3High;\n        final double s123Low    \u003d (prod3High - (s123High - s123Prime)) + (s12High - s123Prime);\n\n        // final rounding, s123 may have suffered many cancellations, we try\n        // to recover some bits from the extra words we have saved up to now\n        double result \u003d s123High + (prod1Low + prod2Low + prod3Low + s12Low + s123Low);\n\n        if (Double.isNaN(result)) {\n            // either we have split infinite numbers or some coefficients were NaNs,\n            // just rely on the naive implementation and let IEEE754 handle this\n            result \u003d a1 * b1 + a2 * b2 + a3 * b3;\n        }\n\n        return result;\n\n    }",
+    "begin_line": 2544,
+    "end_line": 2617,
+    "comment": "/** \n * Compute a linear combination accurately. \u003cp\u003e This method computes a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e + a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e + a\u003csub\u003e3\u003c/sub\u003e\u0026times;b\u003csub\u003e3\u003c/sub\u003e to high accuracy. It does so by using specific multiplication and addition algorithms to preserve accuracy and reduce cancellation effects. It is based on the 2005 paper \u003ca href\u003d\"http://citeseerx.ist.psu.edu/viewdoc/summary?doi\u003d10.1.1.2.1547\"\u003e Accurate Sum and Dot Product\u003c/a\u003e by Takeshi Ogita, Siegfried M. Rump, and Shin\u0027ichi Oishi published in SIAM J. Sci. Comput. \u003c/p\u003e\n * @param a1 first factor of the first term\n * @param b1 second factor of the first term\n * @param a2 first factor of the second term\n * @param b2 second factor of the second term\n * @param a3 first factor of the third term\n * @param b3 second factor of the third term\n * @return a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e +a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e + a\u003csub\u003e3\u003c/sub\u003e\u0026times;b\u003csub\u003e3\u003c/sub\u003e\n * @see #linearCombination(double,double,double,double)\n * @see #linearCombination(double,double,double,double,double,double,double,double)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.linearCombination#2646",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.linearCombination(double, double, double, double, double, double, double, double)",
+    "snippet": "public static double linearCombination(final double a1, final double b1,\n                                           final double a2, final double b2,\n                                           final double a3, final double b3,\n                                           final double a4, final double b4) {\n\n        // the code below is split in many additions/subtractions that may\n        // appear redundant. However, they shoud NOT be simplified, as they\n        // do use IEEE754 floating point arithmetic rouding properties.\n        // as an example, the expression \"ca1 - (ca1 - a1)\" is NOT the same as \"a1\"\n        // The variables naming conventions are that xyzHigh contains the most significant\n        // bits of xyz and xyzLow contains its least significant bits. So theoretically\n        // xyz is the sum xyzHigh + xyzLow, but in many cases below, this sum cannot\n        // be represented in only one double precision number so we preserve two numbers\n        // to hold it as long as we can, combining the high and low order bits together\n        // only at the end, after cancellation may have occurred on high order bits\n\n        // split a1 and b1 as two 26 bits numbers\n        final double ca1        \u003d SPLIT_FACTOR * a1;\n        final double a1High     \u003d ca1 - (ca1 - a1);\n        final double a1Low      \u003d a1 - a1High;\n        final double cb1        \u003d SPLIT_FACTOR * b1;\n        final double b1High     \u003d cb1 - (cb1 - b1);\n        final double b1Low      \u003d b1 - b1High;\n\n        // accurate multiplication a1 * b1\n        final double prod1High  \u003d a1 * b1;\n        final double prod1Low   \u003d a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);\n\n        // split a2 and b2 as two 26 bits numbers\n        final double ca2        \u003d SPLIT_FACTOR * a2;\n        final double a2High     \u003d ca2 - (ca2 - a2);\n        final double a2Low      \u003d a2 - a2High;\n        final double cb2        \u003d SPLIT_FACTOR * b2;\n        final double b2High     \u003d cb2 - (cb2 - b2);\n        final double b2Low      \u003d b2 - b2High;\n\n        // accurate multiplication a2 * b2\n        final double prod2High  \u003d a2 * b2;\n        final double prod2Low   \u003d a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);\n\n        // split a3 and b3 as two 26 bits numbers\n        final double ca3        \u003d SPLIT_FACTOR * a3;\n        final double a3High     \u003d ca3 - (ca3 - a3);\n        final double a3Low      \u003d a3 - a3High;\n        final double cb3        \u003d SPLIT_FACTOR * b3;\n        final double b3High     \u003d cb3 - (cb3 - b3);\n        final double b3Low      \u003d b3 - b3High;\n\n        // accurate multiplication a3 * b3\n        final double prod3High  \u003d a3 * b3;\n        final double prod3Low   \u003d a3Low * b3Low - (((prod3High - a3High * b3High) - a3Low * b3High) - a3High * b3Low);\n\n        // split a4 and b4 as two 26 bits numbers\n        final double ca4        \u003d SPLIT_FACTOR * a4;\n        final double a4High     \u003d ca4 - (ca4 - a4);\n        final double a4Low      \u003d a4 - a4High;\n        final double cb4        \u003d SPLIT_FACTOR * b4;\n        final double b4High     \u003d cb4 - (cb4 - b4);\n        final double b4Low      \u003d b4 - b4High;\n\n        // accurate multiplication a4 * b4\n        final double prod4High  \u003d a4 * b4;\n        final double prod4Low   \u003d a4Low * b4Low - (((prod4High - a4High * b4High) - a4Low * b4High) - a4High * b4Low);\n\n        // accurate addition a1 * b1 + a2 * b2\n        final double s12High    \u003d prod1High + prod2High;\n        final double s12Prime   \u003d s12High - prod2High;\n        final double s12Low     \u003d (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);\n\n        // accurate addition a1 * b1 + a2 * b2 + a3 * b3\n        final double s123High   \u003d s12High + prod3High;\n        final double s123Prime  \u003d s123High - prod3High;\n        final double s123Low    \u003d (prod3High - (s123High - s123Prime)) + (s12High - s123Prime);\n\n        // accurate addition a1 * b1 + a2 * b2 + a3 * b3 + a4 * b4\n        final double s1234High  \u003d s123High + prod4High;\n        final double s1234Prime \u003d s1234High - prod4High;\n        final double s1234Low   \u003d (prod4High - (s1234High - s1234Prime)) + (s123High - s1234Prime);\n\n        // final rounding, s1234 may have suffered many cancellations, we try\n        // to recover some bits from the extra words we have saved up to now\n        double result \u003d s1234High + (prod1Low + prod2Low + prod3Low + prod4Low + s12Low + s123Low + s1234Low);\n\n        if (Double.isNaN(result)) {\n            // either we have split infinite numbers or some coefficients were NaNs,\n            // just rely on the naive implementation and let IEEE754 handle this\n            result \u003d a1 * b1 + a2 * b2 + a3 * b3 + a4 * b4;\n        }\n\n        return result;\n\n    }",
+    "begin_line": 2646,
+    "end_line": 2737,
+    "comment": "/** \n * Compute a linear combination accurately. \u003cp\u003e This method computes a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e + a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e + a\u003csub\u003e3\u003c/sub\u003e\u0026times;b\u003csub\u003e3\u003c/sub\u003e + a\u003csub\u003e4\u003c/sub\u003e\u0026times;b\u003csub\u003e4\u003c/sub\u003e to high accuracy. It does so by using specific multiplication and addition algorithms to preserve accuracy and reduce cancellation effects. It is based on the 2005 paper \u003ca href\u003d\"http://citeseerx.ist.psu.edu/viewdoc/summary?doi\u003d10.1.1.2.1547\"\u003e Accurate Sum and Dot Product\u003c/a\u003e by Takeshi Ogita, Siegfried M. Rump, and Shin\u0027ichi Oishi published in SIAM J. Sci. Comput. \u003c/p\u003e\n * @param a1 first factor of the first term\n * @param b1 second factor of the first term\n * @param a2 first factor of the second term\n * @param b2 second factor of the second term\n * @param a3 first factor of the third term\n * @param b3 second factor of the third term\n * @param a4 first factor of the third term\n * @param b4 second factor of the third term\n * @return a\u003csub\u003e1\u003c/sub\u003e\u0026times;b\u003csub\u003e1\u003c/sub\u003e +a\u003csub\u003e2\u003c/sub\u003e\u0026times;b\u003csub\u003e2\u003c/sub\u003e + a\u003csub\u003e3\u003c/sub\u003e\u0026times;b\u003csub\u003e3\u003c/sub\u003e + a\u003csub\u003e4\u003c/sub\u003e\u0026times;b\u003csub\u003e4\u003c/sub\u003e\n * @see #linearCombination(double,double,double,double)\n * @see #linearCombination(double,double,double,double,double,double)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MathUtils.linearCombination#2755",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "signature": "org.apache.commons.math.util.MathUtils.linearCombination(double[], double[])",
+    "snippet": "public static double linearCombination(final double[] a, final double[] b) {\n        final int len \u003d a.length;\n        if (len !\u003d b.length) {\n            throw new DimensionMismatchException(len, b.length);\n        }\n\n        final double[] prodHigh \u003d new double[len];\n        double prodLowSum \u003d 0;\n\n        for (int i \u003d 0; i \u003c len; i++) {\n            final double ai \u003d a[i];\n            final double ca \u003d SPLIT_FACTOR * ai;\n            final double aHigh \u003d ca - (ca - ai);\n            final double aLow \u003d ai - aHigh;\n\n            final double bi \u003d b[i];\n            final double cb \u003d SPLIT_FACTOR * bi;\n            final double bHigh \u003d cb - (cb - bi);\n            final double bLow \u003d bi - bHigh;\n            prodHigh[i] \u003d ai * bi;\n            final double prodLow \u003d aLow * bLow - (((prodHigh[i] -\n                                                    aHigh * bHigh) -\n                                                   aLow * bHigh) -\n                                                  aHigh * bLow);\n            prodLowSum +\u003d prodLow;\n        }\n\n\n        final double prodHighCur \u003d prodHigh[0];\n        double prodHighNext \u003d prodHigh[1];\n        double sHighPrev \u003d prodHighCur + prodHighNext;\n        double sPrime \u003d sHighPrev - prodHighNext;\n        double sLowSum \u003d (prodHighNext - (sHighPrev - sPrime)) + (prodHighCur - sPrime);\n\n        final int lenMinusOne \u003d len - 1;\n        for (int i \u003d 1; i \u003c lenMinusOne; i++) {\n            prodHighNext \u003d prodHigh[i + 1];\n            final double sHighCur \u003d sHighPrev + prodHighNext;\n            sPrime \u003d sHighCur - prodHighNext;\n            sLowSum +\u003d (prodHighNext - (sHighCur - sPrime)) + (sHighPrev - sPrime);\n            sHighPrev \u003d sHighCur;\n        }\n\n        double result \u003d sHighPrev + (prodLowSum + sLowSum);\n\n        if (Double.isNaN(result)) {\n            // either we have split infinite numbers or some coefficients were NaNs,\n            // just rely on the naive implementation and let IEEE754 handle this\n            result \u003d 0;\n            for (int i \u003d 0; i \u003c len; ++i) {\n                result +\u003d a[i] * b[i];\n            }\n        }\n\n        return result;\n\n    }",
+    "begin_line": 2755,
+    "end_line": 2811,
+    "comment": "/** \n * Compute a linear combination accurately. This method computes the sum of the products \u003ccode\u003ea\u003csub\u003ei\u003c/sub\u003e b\u003csub\u003ei\u003c/sub\u003e\u003c/code\u003e to high accuracy. It does so by using specific multiplication and addition algorithms to preserve accuracy and reduce cancellation effects. \u003cbr/\u003e It is based on the 2005 paper \u003ca href\u003d\"http://citeseerx.ist.psu.edu/viewdoc/summary?doi\u003d10.1.1.2.1547\"\u003e Accurate Sum and Dot Product\u003c/a\u003e by Takeshi Ogita, Siegfried M. Rump, and Shin\u0027ichi Oishi published in SIAM J. Sci. Comput.\n * @param a Factors.\n * @param b Factors.\n * @return \u003ccode\u003e\u0026Sigma;\u003csub\u003ei\u003c/sub\u003e a\u003csub\u003ei\u003c/sub\u003e b\u003csub\u003ei\u003c/sub\u003e\u003c/code\u003e.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

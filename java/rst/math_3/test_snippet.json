@@ -1,0 +1,62 @@
+[
+  {
+    "class_name": "org.apache.commons.math.exception.util.MessageFactoryTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/exception/util/MessageFactoryTest.java",
+    "signature": "org.apache.commons.math.exception.util.MessageFactoryTest.testSpecificGeneral()",
+    "snippet": "@Test\n    public void testSpecificGeneral() {\n        Localizable specific \u003d new DummyLocalizable(\"specific {0} - {1} - {2}\");\n        Localizable general  \u003d new DummyLocalizable(\"general  {0} / {1}\");\n        String message \u003d MessageFactory.buildMessage(Locale.FRENCH, specific, general,\n                                                     0, 1, 2, \u0027a\u0027, \u0027b\u0027);\n        Assert.assertEquals(\"specific 0 - 1 - 2: general  a / b\", message);\n    }",
+    "begin_line": 27,
+    "end_line": 33,
+    "comment": "",
+    "child_ranges": [
+      "(line 28,col 9)-(line 28,col 80)",
+      "(line 29,col 9)-(line 29,col 74)",
+      "(line 30,col 9)-(line 31,col 72)",
+      "(line 32,col 9)-(line 32,col 75)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.MessageFactoryTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/exception/util/MessageFactoryTest.java",
+    "signature": "org.apache.commons.math.exception.util.MessageFactoryTest.testNullSpecific()",
+    "snippet": "@Test\n    public void testNullSpecific() {\n        Localizable general  \u003d new DummyLocalizable(\"general  {0} / {1}\");\n        String message \u003d MessageFactory.buildMessage(Locale.FRENCH, null, general,\n                                                     \u0027a\u0027, \u0027b\u0027);\n        Assert.assertEquals(\"general  a / b\", message);\n    }",
+    "begin_line": 36,
+    "end_line": 41,
+    "comment": "",
+    "child_ranges": [
+      "(line 37,col 9)-(line 37,col 74)",
+      "(line 38,col 9)-(line 39,col 63)",
+      "(line 40,col 9)-(line 40,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.MessageFactoryTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/exception/util/MessageFactoryTest.java",
+    "signature": "org.apache.commons.math.exception.util.MessageFactoryTest.testNullGeneral()",
+    "snippet": "@Test\n    public void testNullGeneral() {\n        Localizable specific \u003d new DummyLocalizable(\"specific {0} - {1} - {2}\");\n        String message \u003d MessageFactory.buildMessage(Locale.FRENCH, specific, null,\n                                                     0, 1, 2);\n        Assert.assertEquals(\"specific 0 - 1 - 2\", message);\n    }",
+    "begin_line": 44,
+    "end_line": 49,
+    "comment": "",
+    "child_ranges": [
+      "(line 45,col 9)-(line 45,col 80)",
+      "(line 46,col 9)-(line 47,col 62)",
+      "(line 48,col 9)-(line 48,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.MessageFactoryTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/math/exception/util/MessageFactoryTest.java",
+    "signature": "org.apache.commons.math.exception.util.MessageFactoryTest.testNull()",
+    "snippet": "@Test\n    public void testNull() {\n        String message \u003d MessageFactory.buildMessage(Locale.FRENCH, null, null, \"nothing\");\n        Assert.assertEquals(\"\", message);\n    }",
+    "begin_line": 53,
+    "end_line": 56,
+    "comment": "",
+    "child_ranges": [
+      "(line 54,col 9)-(line 54,col 91)",
+      "(line 55,col 9)-(line 55,col 41)"
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+--- org.apache.commons.collections4.set.CompositeSetTest::testContainsAll
+java.lang.NullPointerException
+       org.apache.commons.collections4.set.CompositeSet.containsAll(CompositeSet.java:255)
+       org.apache.commons.collections4.set.CompositeSetTest.testContainsAll(CompositeSetTest.java:70)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.set.CompositeSetTest::testAddComposited
+java.lang.NullPointerException
+       org.apache.commons.collections4.CollectionUtils.getCardinalityMap(CollectionUtils.java:469)
+       org.apache.commons.collections4.CollectionUtils$CardinalityHelper.<init>(CollectionUtils.java:75)
+       org.apache.commons.collections4.CollectionUtils$SetOperationCardinalityHelper.<init>(CollectionUtils.java:141)
+       org.apache.commons.collections4.CollectionUtils.intersection(CollectionUtils.java:254)
+       org.apache.commons.collections4.set.CompositeSet.addComposited(CompositeSet.java:358)
+       org.apache.commons.collections4.set.CompositeSetTest.testAddComposited(CompositeSetTest.java:147)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       [...]
+  
+--- org.apache.commons.collections4.set.CompositeSetTest::testRemoveAll
+java.lang.NullPointerException
+       org.apache.commons.collections4.set.CompositeSet.removeAll(CompositeSet.java:294)
+       org.apache.commons.collections4.set.CompositeSetTest.testRemoveAll(CompositeSetTest.java:76)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+

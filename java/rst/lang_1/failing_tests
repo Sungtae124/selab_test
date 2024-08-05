@@ -1,0 +1,28 @@
+--- org.apache.commons.lang3.ClassLoaderUtilsTest::testToString_URLClassLoader
+java.lang.NullPointerException
+       org.apache.commons.lang3.ClassLoaderUtils.toString(ClassLoaderUtils.java:77)
+       org.apache.commons.lang3.ClassLoaderUtilsTest.testToString_URLClassLoader(ClassLoaderUtilsTest.java:64)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+       org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+       [...]
+  
+--- org.apache.commons.lang3.ClassLoaderUtilsTest::testToString_ClassLoader
+java.lang.NullPointerException
+       org.apache.commons.lang3.ClassLoaderUtils.toString(ClassLoaderUtils.java:67)
+       org.apache.commons.lang3.ClassLoaderUtilsTest.testToString_ClassLoader(ClassLoaderUtilsTest.java:55)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+       org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+       [...]
+

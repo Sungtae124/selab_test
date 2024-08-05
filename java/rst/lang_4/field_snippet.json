@@ -1,0 +1,128 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 20110706L;",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": "/** \n * The serialization version. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.exceptionContext",
+    "snippet": "private final ExceptionContext exceptionContext;",
+    "begin_line": 92,
+    "end_line": 92,
+    "comment": "/** \n * The context where the data is stored. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 20110706L;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * The serialization version. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.contextValues",
+    "snippet": "private final List\u003cPair\u003cString, Object\u003e\u003e contextValues \u003d new ArrayList\u003c\u003e();",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * The list storing the label-data pairs. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.NOT_FOUND",
+    "snippet": "private static final int NOT_FOUND \u003d -1;",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.CAUSE_METHOD_NAMES",
+    "snippet": " String[] CAUSE_METHOD_NAMES \u003d {\n        \"getCause\",\n        \"getNextException\",\n        \"getTargetException\",\n        \"getException\",\n        \"getSourceException\",\n        \"getRootCause\",\n        \"getCausedByException\",\n        \"getNested\",\n        \"getLinkedException\",\n        \"getNestedException\",\n        \"getLinkedCause\",\n        \"getThrowable\",\n    };",
+    "begin_line": 48,
+    "end_line": 61,
+    "comment": "/** \n * The names of methods commonly used to access a wrapped exception.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.WRAPPED_MARKER",
+    "snippet": "static final String WRAPPED_MARKER \u003d \" [wrapped] \";",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Used when printing stack frames to denote the start of a wrapped exception. \u003cp\u003ePackage private for accessibility by test suite.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.EMPTY_ARRAY",
+    "snippet": "public static final ImmutablePair\u003c?, ?\u003e[] EMPTY_ARRAY \u003d {};",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * An empty array. \u003cp\u003e Consider using  {@link #emptyArray()} to avoid generics warnings.\u003c/p\u003e\n * @since 3.10.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.NULL",
+    "snippet": " ImmutablePair NULL \u003d new ImmutablePair\u003c\u003e(null, null);",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": "/** \n * An immutable pair of nulls.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 4954918890077093841L;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * Serialization version \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.left",
+    "snippet": "public final L left;",
+    "begin_line": 169,
+    "end_line": 169,
+    "comment": "/** \n * Left object \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.right",
+    "snippet": "public final R right;",
+    "begin_line": 172,
+    "end_line": 172,
+    "comment": "/** \n * Right object \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "signature": "org.apache.commons.lang3.tuple.Pair.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 4954918890077093841L;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * Serialization version \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "signature": "org.apache.commons.lang3.tuple.Pair.EMPTY_ARRAY",
+    "snippet": "public static final Pair\u003c?, ?\u003e[] EMPTY_ARRAY \u003d {};",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": "/** \n * An empty array. \u003cp\u003e Consider using  {@link #emptyArray()} to avoid generics warnings.\u003c/p\u003e\n * @since 3.10.\n */\n"
+  }
+]

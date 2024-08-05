@@ -1,0 +1,1618 @@
+[
+  {
+    "name": "RelativeSortedPaths.RelativeSortedPaths#112",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.RelativeSortedPaths(java.nio.file.Path, java.nio.file.Path, int, java.nio.file.LinkOption[], java.nio.file.FileVisitOption[])",
+    "snippet": "private RelativeSortedPaths(final Path dir1, final Path dir2, final int maxDepth, final LinkOption[] linkOptions,\n                final FileVisitOption[] fileVisitOptions) throws IOException {\n            final List\u003cPath\u003e tmpRelativeDirList1;\n            final List\u003cPath\u003e tmpRelativeDirList2;\n            List\u003cPath\u003e tmpRelativeFileList1 \u003d null;\n            List\u003cPath\u003e tmpRelativeFileList2 \u003d null;\n            if (dir1 \u003d\u003d null \u0026\u0026 dir2 \u003d\u003d null) {\n                equals \u003d true;\n            } else if (dir1 \u003d\u003d null ^ dir2 \u003d\u003d null) {\n                equals \u003d false;\n            } else {\n                final boolean parentDirNotExists1 \u003d Files.notExists(dir1, linkOptions);\n                final boolean parentDirNotExists2 \u003d Files.notExists(dir2, linkOptions);\n                if (parentDirNotExists1 || parentDirNotExists2) {\n                    equals \u003d parentDirNotExists1 \u0026\u0026 parentDirNotExists2;\n                } else {\n                    final AccumulatorPathVisitor visitor1 \u003d accumulate(dir1, maxDepth, fileVisitOptions);\n                    final AccumulatorPathVisitor visitor2 \u003d accumulate(dir2, maxDepth, fileVisitOptions);\n                    if (visitor1.getDirList().size() !\u003d visitor2.getDirList().size() || visitor1.getFileList().size() !\u003d visitor2.getFileList().size()) {\n                        equals \u003d false;\n                    } else {\n                        tmpRelativeDirList1 \u003d visitor1.relativizeDirectories(dir1, true, null);\n                        tmpRelativeDirList2 \u003d visitor2.relativizeDirectories(dir2, true, null);\n                        if (!tmpRelativeDirList1.equals(tmpRelativeDirList2)) {\n                            equals \u003d false;\n                        } else {\n                            tmpRelativeFileList1 \u003d visitor1.relativizeFiles(dir1, true, null);\n                            tmpRelativeFileList2 \u003d visitor2.relativizeFiles(dir2, true, null);\n                            equals \u003d tmpRelativeFileList1.equals(tmpRelativeFileList2);\n                        }\n                    }\n                }\n            }\n            // relativeDirList1 \u003d tmpRelativeDirList1;\n            // relativeDirList2 \u003d tmpRelativeDirList2;\n            relativeFileList1 \u003d tmpRelativeFileList1;\n            relativeFileList2 \u003d tmpRelativeFileList2;\n        }",
+    "begin_line": 112,
+    "end_line": 149,
+    "comment": "/** \n * Constructs and initializes a new instance by accumulating directory and file info.\n * @param dir1             First directory to compare.\n * @param dir2             Seconds directory to compare.\n * @param maxDepth         See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param linkOptions      Options indicating how symbolic links are handled.\n * @param fileVisitOptions See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.accumulate#224",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.accumulate(java.nio.file.Path, int, java.nio.file.FileVisitOption[])",
+    "snippet": "private static AccumulatorPathVisitor accumulate(final Path directory, final int maxDepth, final FileVisitOption[] fileVisitOptions) throws IOException {\n        return visitFileTree(AccumulatorPathVisitor.withLongCounters(), directory, toFileVisitOptionSet(fileVisitOptions), maxDepth);\n    }",
+    "begin_line": 224,
+    "end_line": 226,
+    "comment": "/** \n * Accumulates file tree information in a  {@link AccumulatorPathVisitor}.\n * @param directory        The directory to accumulate information.\n * @param maxDepth         See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param fileVisitOptions See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @throws IOException if an I/O error is thrown by a visitor method.\n * @return file tree information.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.cleanDirectory#235",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.cleanDirectory(java.nio.file.Path)",
+    "snippet": "public static PathCounters cleanDirectory(final Path directory) throws IOException {\n        return cleanDirectory(directory, EMPTY_DELETE_OPTION_ARRAY);\n    }",
+    "begin_line": 235,
+    "end_line": 237,
+    "comment": "/** \n * Cleans a directory including subdirectories without deleting directories.\n * @param directory directory to clean.\n * @return The visitation path counters.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.cleanDirectory#248",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.cleanDirectory(java.nio.file.Path, org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters cleanDirectory(final Path directory, final DeleteOption... deleteOptions) throws IOException {\n        return visitFileTree(new CleaningPathVisitor(Counters.longPathCounters(), deleteOptions), directory).getPathCounters();\n    }",
+    "begin_line": 248,
+    "end_line": 250,
+    "comment": "/** \n * Cleans a directory including subdirectories without deleting directories.\n * @param directory     directory to clean.\n * @param deleteOptions How to handle deletion.\n * @return The visitation path counters.\n * @throws IOException if an I/O error is thrown by a visitor method.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.compareLastModifiedTimeTo#262",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.compareLastModifiedTimeTo(java.nio.file.Path, java.nio.file.attribute.FileTime, java.nio.file.LinkOption)",
+    "snippet": "private static int compareLastModifiedTimeTo(final Path file, final FileTime fileTime, final LinkOption... options) throws IOException {\n        return getLastModifiedTime(file, options).compareTo(fileTime);\n    }",
+    "begin_line": 262,
+    "end_line": 264,
+    "comment": "/** \n * Compares the given  {@link Path}\u0027s last modified time to the given file time.\n * @param file     the {@link Path} to test.\n * @param fileTime the time reference.\n * @param options  options indicating how to handle symbolic links.\n * @return See {@link FileTime#compareTo(FileTime)}\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.copy#276",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.copy(org.apache.commons.io.function.IOSupplier\u003cjava.io.InputStream\u003e, java.nio.file.Path, java.nio.file.CopyOption)",
+    "snippet": "public static long copy(final IOSupplier\u003cInputStream\u003e in, final Path target, final CopyOption... copyOptions) throws IOException {\n        try (InputStream inputStream \u003d in.get()) {\n            return Files.copy(inputStream, target, copyOptions);\n        }\n    }",
+    "begin_line": 276,
+    "end_line": 280,
+    "comment": "/** \n * Copies the InputStream from the supplier with  {@link Files#copy(InputStream,Path,CopyOption...)}.\n * @param in          Supplies the InputStream.\n * @param target      See {@link Files#copy(InputStream,Path,CopyOption...)}.\n * @param copyOptions See {@link Files#copy(InputStream,Path,CopyOption...)}.\n * @return See {@link Files#copy(InputStream,Path,CopyOption...)}\n * @throws IOException See {@link Files#copy(InputStream,Path,CopyOption...)}\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.copyDirectory#291",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.copyDirectory(java.nio.file.Path, java.nio.file.Path, java.nio.file.CopyOption)",
+    "snippet": "public static PathCounters copyDirectory(final Path sourceDirectory, final Path targetDirectory, final CopyOption... copyOptions) throws IOException {\n        final Path absoluteSource \u003d sourceDirectory.toAbsolutePath();\n        return visitFileTree(new CopyDirectoryVisitor(Counters.longPathCounters(), absoluteSource, targetDirectory, copyOptions), absoluteSource)\n                .getPathCounters();\n    }",
+    "begin_line": 291,
+    "end_line": 295,
+    "comment": "/** \n * Copies a directory to another directory.\n * @param sourceDirectory The source directory.\n * @param targetDirectory The target directory.\n * @param copyOptions     Specifies how the copying should be done.\n * @return The visitation path counters.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.copyFile#307",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.copyFile(java.net.URL, java.nio.file.Path, java.nio.file.CopyOption)",
+    "snippet": "public static Path copyFile(final URL sourceFile, final Path targetFile, final CopyOption... copyOptions) throws IOException {\n        copy(sourceFile::openStream, targetFile, copyOptions);\n        return targetFile;\n    }",
+    "begin_line": 307,
+    "end_line": 310,
+    "comment": "/** \n * Copies a URL to a directory.\n * @param sourceFile  The source URL.\n * @param targetFile  The target file.\n * @param copyOptions Specifies how the copying should be done.\n * @return The target file\n * @throws IOException if an I/O error occurs.\n * @see Files#copy(InputStream,Path,CopyOption...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.copyFileToDirectory#322",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.copyFileToDirectory(java.nio.file.Path, java.nio.file.Path, java.nio.file.CopyOption)",
+    "snippet": "public static Path copyFileToDirectory(final Path sourceFile, final Path targetDirectory, final CopyOption... copyOptions) throws IOException {\n        return Files.copy(sourceFile, targetDirectory.resolve(sourceFile.getFileName()), copyOptions);\n    }",
+    "begin_line": 322,
+    "end_line": 324,
+    "comment": "/** \n * Copies a file to a directory.\n * @param sourceFile      The source file.\n * @param targetDirectory The target directory.\n * @param copyOptions     Specifies how the copying should be done.\n * @return The target file\n * @throws IOException if an I/O error occurs.\n * @see Files#copy(Path,Path,CopyOption...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.copyFileToDirectory#336",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.copyFileToDirectory(java.net.URL, java.nio.file.Path, java.nio.file.CopyOption)",
+    "snippet": "public static Path copyFileToDirectory(final URL sourceFile, final Path targetDirectory, final CopyOption... copyOptions) throws IOException {\n        final Path resolve \u003d targetDirectory.resolve(FilenameUtils.getName(sourceFile.getFile()));\n        copy(sourceFile::openStream, resolve, copyOptions);\n        return resolve;\n    }",
+    "begin_line": 336,
+    "end_line": 340,
+    "comment": "/** \n * Copies a URL to a directory.\n * @param sourceFile      The source URL.\n * @param targetDirectory The target directory.\n * @param copyOptions     Specifies how the copying should be done.\n * @return The target file\n * @throws IOException if an I/O error occurs.\n * @see Files#copy(InputStream,Path,CopyOption...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.countDirectory#349",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.countDirectory(java.nio.file.Path)",
+    "snippet": "public static PathCounters countDirectory(final Path directory) throws IOException {\n        return visitFileTree(CountingPathVisitor.withLongCounters(), directory).getPathCounters();\n    }",
+    "begin_line": 349,
+    "end_line": 351,
+    "comment": "/** \n * Counts aspects of a directory including subdirectories.\n * @param directory directory to delete.\n * @return The visitor used to count the given directory.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.countDirectoryAsBigInteger#361",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.countDirectoryAsBigInteger(java.nio.file.Path)",
+    "snippet": "public static PathCounters countDirectoryAsBigInteger(final Path directory) throws IOException {\n        return visitFileTree(CountingPathVisitor.withBigIntegerCounters(), directory).getPathCounters();\n    }",
+    "begin_line": 361,
+    "end_line": 363,
+    "comment": "/** \n * Counts aspects of a directory including subdirectories.\n * @param directory directory to count.\n * @return The visitor used to count the given directory.\n * @throws IOException if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.createParentDirectories#377",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.createParentDirectories(java.nio.file.Path, java.nio.file.attribute.FileAttribute\u003c?\u003e)",
+    "snippet": "public static Path createParentDirectories(final Path path, final FileAttribute\u003c?\u003e... attrs) throws IOException {\n        return createParentDirectories(path, LinkOption.NOFOLLOW_LINKS, attrs);\n    }",
+    "begin_line": 377,
+    "end_line": 379,
+    "comment": "/** \n * Creates the parent directories for the given  {@code path}. \u003cp\u003e If the parent directory already exists, then return it. \u003c/p\u003e\n * @param path  The path to a file (or directory).\n * @param attrs An optional list of file attributes to set atomically when creating the directories.\n * @return The Path for the {@code path}\u0027s parent directory or null if the given path has no parent.\n * @throws IOException if an I/O error occurs.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.createParentDirectories#394",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.createParentDirectories(java.nio.file.Path, java.nio.file.LinkOption, java.nio.file.attribute.FileAttribute\u003c?\u003e)",
+    "snippet": "public static Path createParentDirectories(final Path path, final LinkOption linkOption, final FileAttribute\u003c?\u003e... attrs) throws IOException {\n        Path parent \u003d getParent(path);\n        parent \u003d linkOption \u003d\u003d LinkOption.NOFOLLOW_LINKS ? parent : readIfSymbolicLink(parent);\n        if (parent \u003d\u003d null) {\n            return null;\n        }\n        final boolean exists \u003d linkOption \u003d\u003d null ? Files.exists(parent) : Files.exists(parent, linkOption);\n        return exists ? parent : Files.createDirectories(parent, attrs);\n    }",
+    "begin_line": 394,
+    "end_line": 402,
+    "comment": "/** \n * Creates the parent directories for the given  {@code path}. \u003cp\u003e If the parent directory already exists, then return it. \u003c/p\u003e\n * @param path       The path to a file (or directory).\n * @param linkOption A {@link LinkOption} or null.\n * @param attrs      An optional list of file attributes to set atomically when creating the directories.\n * @return The Path for the {@code path}\u0027s parent directory or null if the given path has no parent.\n * @throws IOException if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.current#411",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.current()",
+    "snippet": "public static Path current() {\n        return Paths.get(\".\");\n    }",
+    "begin_line": 411,
+    "end_line": 413,
+    "comment": "/** \n * Gets the current directory.\n * @return the current directory.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.delete#430",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.delete(java.nio.file.Path)",
+    "snippet": "public static PathCounters delete(final Path path) throws IOException {\n        return delete(path, EMPTY_DELETE_OPTION_ARRAY);\n    }",
+    "begin_line": 430,
+    "end_line": 432,
+    "comment": "/** \n * Deletes a file or directory. If the path is a directory, delete it and all subdirectories. \u003cp\u003e The difference between File.delete() and this method are: \u003c/p\u003e \u003cul\u003e \u003cli\u003eA directory to delete does not have to be empty.\u003c/li\u003e \u003cli\u003eYou get exceptions when a file or directory cannot be deleted;  {@link java.io.File#delete()} returns a boolean.\u003c/ul\u003e\n * @param path file or directory to delete, must not be {@code null}\n * @return The visitor used to delete the given directory.\n * @throws NullPointerException if the directory is {@code null}\n * @throws IOException          if an I/O error is thrown by a visitor method or if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.delete#451",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.delete(java.nio.file.Path, org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters delete(final Path path, final DeleteOption... deleteOptions) throws IOException {\n        // File deletion through Files deletes links, not targets, so use LinkOption.NOFOLLOW_LINKS.\n        return Files.isDirectory(path, LinkOption.NOFOLLOW_LINKS) ? deleteDirectory(path, deleteOptions) : deleteFile(path, deleteOptions);\n    }",
+    "begin_line": 451,
+    "end_line": 454,
+    "comment": "/** \n * Deletes a file or directory. If the path is a directory, delete it and all subdirectories. \u003cp\u003e The difference between File.delete() and this method are: \u003c/p\u003e \u003cul\u003e \u003cli\u003eA directory to delete does not have to be empty.\u003c/li\u003e \u003cli\u003eYou get exceptions when a file or directory cannot be deleted;  {@link java.io.File#delete()} returns a boolean.\u003c/ul\u003e\n * @param path          file or directory to delete, must not be {@code null}\n * @param deleteOptions How to handle deletion.\n * @return The visitor used to delete the given directory.\n * @throws NullPointerException if the directory is {@code null}\n * @throws IOException          if an I/O error is thrown by a visitor method or if an I/O error occurs.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.delete#474",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.delete(java.nio.file.Path, java.nio.file.LinkOption[], org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters delete(final Path path, final LinkOption[] linkOptions, final DeleteOption... deleteOptions) throws IOException {\n        // File deletion through Files deletes links, not targets, so use LinkOption.NOFOLLOW_LINKS.\n        return Files.isDirectory(path, linkOptions) ? deleteDirectory(path, linkOptions, deleteOptions) : deleteFile(path, linkOptions, deleteOptions);\n    }",
+    "begin_line": 474,
+    "end_line": 477,
+    "comment": "/** \n * Deletes a file or directory. If the path is a directory, delete it and all subdirectories. \u003cp\u003e The difference between File.delete() and this method are: \u003c/p\u003e \u003cul\u003e \u003cli\u003eA directory to delete does not have to be empty.\u003c/li\u003e \u003cli\u003eYou get exceptions when a file or directory cannot be deleted;  {@link java.io.File#delete()} returns a boolean.\u003c/ul\u003e\n * @param path          file or directory to delete, must not be {@code null}\n * @param linkOptions   How to handle symbolic links.\n * @param deleteOptions How to handle deletion.\n * @return The visitor used to delete the given directory.\n * @throws NullPointerException if the directory is {@code null}\n * @throws IOException          if an I/O error is thrown by a visitor method or if an I/O error occurs.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteDirectory#486",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteDirectory(java.nio.file.Path)",
+    "snippet": "public static PathCounters deleteDirectory(final Path directory) throws IOException {\n        return deleteDirectory(directory, EMPTY_DELETE_OPTION_ARRAY);\n    }",
+    "begin_line": 486,
+    "end_line": 488,
+    "comment": "/** \n * Deletes a directory including subdirectories.\n * @param directory directory to delete.\n * @return The visitor used to delete the given directory.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteDirectory#499",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteDirectory(java.nio.file.Path, org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters deleteDirectory(final Path directory, final DeleteOption... deleteOptions) throws IOException {\n        final LinkOption[] linkOptions \u003d PathUtils.noFollowLinkOptionArray();\n        // POSIX ops will noop on non-POSIX.\n        return withPosixFileAttributes(getParent(directory), linkOptions, overrideReadOnly(deleteOptions),\n                pfa -\u003e visitFileTree(new DeletingPathVisitor(Counters.longPathCounters(), linkOptions, deleteOptions), directory).getPathCounters());\n    }",
+    "begin_line": 499,
+    "end_line": 504,
+    "comment": "/** \n * Deletes a directory including subdirectories.\n * @param directory     directory to delete.\n * @param deleteOptions How to handle deletion.\n * @return The visitor used to delete the given directory.\n * @throws IOException if an I/O error is thrown by a visitor method.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteDirectory#516",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteDirectory(java.nio.file.Path, java.nio.file.LinkOption[], org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters deleteDirectory(final Path directory, final LinkOption[] linkOptions, final DeleteOption... deleteOptions) throws IOException {\n        return visitFileTree(new DeletingPathVisitor(Counters.longPathCounters(), linkOptions, deleteOptions), directory).getPathCounters();\n    }",
+    "begin_line": 516,
+    "end_line": 518,
+    "comment": "/** \n * Deletes a directory including subdirectories.\n * @param directory     directory to delete.\n * @param linkOptions   How to handle symbolic links.\n * @param deleteOptions How to handle deletion.\n * @return The visitor used to delete the given directory.\n * @throws IOException if an I/O error is thrown by a visitor method.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteFile#528",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteFile(java.nio.file.Path)",
+    "snippet": "public static PathCounters deleteFile(final Path file) throws IOException {\n        return deleteFile(file, EMPTY_DELETE_OPTION_ARRAY);\n    }",
+    "begin_line": 528,
+    "end_line": 530,
+    "comment": "/** \n * Deletes the given file.\n * @param file The file to delete.\n * @return A visitor with path counts set to 1 file, 0 directories, and the size of the deleted file.\n * @throws IOException         if an I/O error occurs.\n * @throws NoSuchFileException if the file is a directory.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteFile#542",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteFile(java.nio.file.Path, org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters deleteFile(final Path file, final DeleteOption... deleteOptions) throws IOException {\n        // Files.deleteIfExists() never follows links, so use LinkOption.NOFOLLOW_LINKS in other calls to Files.\n        return deleteFile(file, noFollowLinkOptionArray(), deleteOptions);\n    }",
+    "begin_line": 542,
+    "end_line": 545,
+    "comment": "/** \n * Deletes the given file.\n * @param file          The file to delete.\n * @param deleteOptions How to handle deletion.\n * @return A visitor with path counts set to 1 file, 0 directories, and the size of the deleted file.\n * @throws IOException         if an I/O error occurs.\n * @throws NoSuchFileException if the file is a directory.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteFile#558",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteFile(java.nio.file.Path, java.nio.file.LinkOption[], org.apache.commons.io.file.DeleteOption)",
+    "snippet": "public static PathCounters deleteFile(final Path file, final LinkOption[] linkOptions, final DeleteOption... deleteOptions)\n            throws NoSuchFileException, IOException {\n        //\n        // TODO Needs clean up\n        //\n        if (Files.isDirectory(file, linkOptions)) {\n            throw new NoSuchFileException(file.toString());\n        }\n        final PathCounters pathCounts \u003d Counters.longPathCounters();\n        boolean exists \u003d exists(file, linkOptions);\n        long size \u003d exists \u0026\u0026 !Files.isSymbolicLink(file) ? Files.size(file) : 0;\n        try {\n            if (Files.deleteIfExists(file)) {\n                pathCounts.getFileCounter().increment();\n                pathCounts.getByteCounter().add(size);\n                return pathCounts;\n            }\n        } catch (final AccessDeniedException ignored) {\n            // Ignore and try again below.\n        }\n        final Path parent \u003d getParent(file);\n        PosixFileAttributes posixFileAttributes \u003d null;\n        try {\n            if (overrideReadOnly(deleteOptions)) {\n                posixFileAttributes \u003d readPosixFileAttributes(parent, linkOptions);\n                setReadOnly(file, false, linkOptions);\n            }\n            // Read size _after_ having read/execute access on POSIX.\n            exists \u003d exists(file, linkOptions);\n            size \u003d exists \u0026\u0026 !Files.isSymbolicLink(file) ? Files.size(file) : 0;\n            if (Files.deleteIfExists(file)) {\n                pathCounts.getFileCounter().increment();\n                pathCounts.getByteCounter().add(size);\n            }\n        } finally {\n            if (posixFileAttributes !\u003d null) {\n                Files.setPosixFilePermissions(parent, posixFileAttributes.permissions());\n            }\n        }\n        return pathCounts;\n    }",
+    "begin_line": 558,
+    "end_line": 598,
+    "comment": "/** \n * Deletes the given file.\n * @param file          The file to delete.\n * @param linkOptions   How to handle symbolic links.\n * @param deleteOptions How to handle deletion.\n * @return A visitor with path counts set to 1 file, 0 directories, and the size of the deleted file.\n * @throws IOException         if an I/O error occurs.\n * @throws NoSuchFileException if the file is a directory.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.deleteOnExit#606",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.deleteOnExit(java.nio.file.Path)",
+    "snippet": "public static void deleteOnExit(final Path path) {\n        Objects.requireNonNull(path.toFile()).deleteOnExit();\n    }",
+    "begin_line": 606,
+    "end_line": 608,
+    "comment": "/** \n * Delegates to  {@link File#deleteOnExit()}.\n * @param path the path to delete.\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.directoryAndFileContentEquals#619",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.directoryAndFileContentEquals(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static boolean directoryAndFileContentEquals(final Path path1, final Path path2) throws IOException {\n        return directoryAndFileContentEquals(path1, path2, EMPTY_LINK_OPTION_ARRAY, EMPTY_OPEN_OPTION_ARRAY, EMPTY_FILE_VISIT_OPTION_ARRAY);\n    }",
+    "begin_line": 619,
+    "end_line": 621,
+    "comment": "/** \n * Compares the file sets of two Paths to determine if they are equal or not while considering file contents. The comparison includes all files in all subdirectories.\n * @param path1 The first directory.\n * @param path2 The second directory.\n * @return Whether the two directories contain the same files while considering file contents.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.directoryAndFileContentEquals#635",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.directoryAndFileContentEquals(java.nio.file.Path, java.nio.file.Path, java.nio.file.LinkOption[], java.nio.file.OpenOption[], java.nio.file.FileVisitOption[])",
+    "snippet": "public static boolean directoryAndFileContentEquals(final Path path1, final Path path2, final LinkOption[] linkOptions, final OpenOption[] openOptions,\n            final FileVisitOption[] fileVisitOption) throws IOException {\n        // First walk both file trees and gather normalized paths.\n        if (path1 \u003d\u003d null \u0026\u0026 path2 \u003d\u003d null) {\n            return true;\n        }\n        if (path1 \u003d\u003d null || path2 \u003d\u003d null) {\n            return false;\n        }\n        if (notExists(path1) \u0026\u0026 notExists(path2)) {\n            return true;\n        }\n        final RelativeSortedPaths relativeSortedPaths \u003d new RelativeSortedPaths(path1, path2, Integer.MAX_VALUE, linkOptions, fileVisitOption);\n        // If the normalized path names and counts are not the same, no need to compare contents.\n        if (!relativeSortedPaths.equals) {\n            return false;\n        }\n        // Both visitors contain the same normalized paths, we can compare file contents.\n        final List\u003cPath\u003e fileList1 \u003d relativeSortedPaths.relativeFileList1;\n        final List\u003cPath\u003e fileList2 \u003d relativeSortedPaths.relativeFileList2;\n        for (final Path path : fileList1) {\n            final int binarySearch \u003d Collections.binarySearch(fileList2, path);\n            if (binarySearch \u003c\u003d -1) {\n                throw new IllegalStateException(\"Unexpected mismatch.\");\n            }\n            if (!fileContentEquals(path1.resolve(path), path2.resolve(path), linkOptions, openOptions)) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 635,
+    "end_line": 665,
+    "comment": "/** \n * Compares the file sets of two Paths to determine if they are equal or not while considering file contents. The comparison includes all files in all subdirectories.\n * @param path1           The first directory.\n * @param path2           The second directory.\n * @param linkOptions     options to follow links.\n * @param openOptions     options to open files.\n * @param fileVisitOption options to configure traversal.\n * @return Whether the two directories contain the same files while considering file contents.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.directoryContentEquals#676",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.directoryContentEquals(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static boolean directoryContentEquals(final Path path1, final Path path2) throws IOException {\n        return directoryContentEquals(path1, path2, Integer.MAX_VALUE, EMPTY_LINK_OPTION_ARRAY, EMPTY_FILE_VISIT_OPTION_ARRAY);\n    }",
+    "begin_line": 676,
+    "end_line": 678,
+    "comment": "/** \n * Compares the file sets of two Paths to determine if they are equal or not without considering file contents. The comparison includes all files in all subdirectories.\n * @param path1 The first directory.\n * @param path2 The second directory.\n * @return Whether the two directories contain the same files without considering file contents.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.directoryContentEquals#692",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.directoryContentEquals(java.nio.file.Path, java.nio.file.Path, int, java.nio.file.LinkOption[], java.nio.file.FileVisitOption[])",
+    "snippet": "public static boolean directoryContentEquals(final Path path1, final Path path2, final int maxDepth, final LinkOption[] linkOptions,\n            final FileVisitOption[] fileVisitOptions) throws IOException {\n        return new RelativeSortedPaths(path1, path2, maxDepth, linkOptions, fileVisitOptions).equals;\n    }",
+    "begin_line": 692,
+    "end_line": 695,
+    "comment": "/** \n * Compares the file sets of two Paths to determine if they are equal or not without considering file contents. The comparison includes all files in all subdirectories.\n * @param path1            The first directory.\n * @param path2            The second directory.\n * @param maxDepth         See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param linkOptions      options to follow links.\n * @param fileVisitOptions options to configure the traversal\n * @return Whether the two directories contain the same files without considering file contents.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.exists#697",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.exists(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "private static boolean exists(final Path path, final LinkOption... options) {\n        Objects.requireNonNull(path, \"path\");\n        return options !\u003d null ? Files.exists(path, options) : Files.exists(path);\n    }",
+    "begin_line": 697,
+    "end_line": 700,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.fileContentEquals#715",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.fileContentEquals(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static boolean fileContentEquals(final Path path1, final Path path2) throws IOException {\n        return fileContentEquals(path1, path2, EMPTY_LINK_OPTION_ARRAY, EMPTY_OPEN_OPTION_ARRAY);\n    }",
+    "begin_line": 715,
+    "end_line": 717,
+    "comment": "/** \n * Compares the file contents of two Paths to determine if they are equal or not. \u003cp\u003e File content is accessed through  {@link Files#newInputStream(Path,OpenOption...)}. \u003c/p\u003e\n * @param path1 the first stream.\n * @param path2 the second stream.\n * @return true if the content of the streams are equal or they both don\u0027t exist, false otherwise.\n * @throws NullPointerException if either input is null.\n * @throws IOException          if an I/O error occurs.\n * @see org.apache.commons.io.FileUtils#contentEquals(java.io.File,java.io.File)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.fileContentEquals#734",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.fileContentEquals(java.nio.file.Path, java.nio.file.Path, java.nio.file.LinkOption[], java.nio.file.OpenOption[])",
+    "snippet": "public static boolean fileContentEquals(final Path path1, final Path path2, final LinkOption[] linkOptions, final OpenOption[] openOptions)\n            throws IOException {\n        if (path1 \u003d\u003d null \u0026\u0026 path2 \u003d\u003d null) {\n            return true;\n        }\n        if (path1 \u003d\u003d null || path2 \u003d\u003d null) {\n            return false;\n        }\n        final Path nPath1 \u003d path1.normalize();\n        final Path nPath2 \u003d path2.normalize();\n        final boolean path1Exists \u003d exists(nPath1, linkOptions);\n        if (path1Exists !\u003d exists(nPath2, linkOptions)) {\n            return false;\n        }\n        if (!path1Exists) {\n            // Two not existing files are equal?\n            // Same as FileUtils\n            return true;\n        }\n        if (Files.isDirectory(nPath1, linkOptions)) {\n            // don\u0027t compare directory contents.\n            throw new IOException(\"Can\u0027t compare directories, only files: \" + nPath1);\n        }\n        if (Files.isDirectory(nPath2, linkOptions)) {\n            // don\u0027t compare directory contents.\n            throw new IOException(\"Can\u0027t compare directories, only files: \" + nPath2);\n        }\n        if (Files.size(nPath1) !\u003d Files.size(nPath2)) {\n            // lengths differ, cannot be equal\n            return false;\n        }\n        if (path1.equals(path2)) {\n            // same file\n            return true;\n        }\n        // Faster:\n        try (RandomAccessFile raf1 \u003d RandomAccessFileMode.READ_ONLY.create(path1.toRealPath(linkOptions));\n                RandomAccessFile raf2 \u003d RandomAccessFileMode.READ_ONLY.create(path2.toRealPath(linkOptions))) {\n            return RandomAccessFiles.contentEquals(raf1, raf2);\n        } catch (UnsupportedOperationException e) {\n            // Slower:\n            // Handle\n            // java.lang.UnsupportedOperationException\n            // at com.sun.nio.zipfs.ZipPath.toFile(ZipPath.java:656)\n            try (InputStream inputStream1 \u003d Files.newInputStream(nPath1, openOptions);\n                    InputStream inputStream2 \u003d Files.newInputStream(nPath2, openOptions)) {\n                return IOUtils.contentEquals(inputStream1, inputStream2);\n            }\n        }\n    }",
+    "begin_line": 734,
+    "end_line": 783,
+    "comment": "/** \n * Compares the file contents of two Paths to determine if they are equal or not. \u003cp\u003e File content is accessed through  {@link RandomAccessFileMode#create(Path)}. \u003c/p\u003e\n * @param path1       the first stream.\n * @param path2       the second stream.\n * @param linkOptions options specifying how files are followed.\n * @param openOptions ignored.\n * @return true if the content of the streams are equal or they both don\u0027t exist, false otherwise.\n * @throws NullPointerException if openOptions is null.\n * @throws IOException          if an I/O error occurs.\n * @see org.apache.commons.io.FileUtils#contentEquals(java.io.File,java.io.File)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.filter#810",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.filter(org.apache.commons.io.file.PathFilter, java.nio.file.Path)",
+    "snippet": "public static Path[] filter(final PathFilter filter, final Path... paths) {\n        Objects.requireNonNull(filter, \"filter\");\n        if (paths \u003d\u003d null) {\n            return EMPTY_PATH_ARRAY;\n        }\n        return filterPaths(filter, Stream.of(paths), Collectors.toList()).toArray(EMPTY_PATH_ARRAY);\n    }",
+    "begin_line": 810,
+    "end_line": 816,
+    "comment": "/** \n * \u003cp\u003e Applies an  {@link IOFileFilter} to the provided {@link File} objects. The resulting array is a subset of the original file list that matches the providedfilter. \u003c/p\u003e \u003cp\u003e The  {@link Set} returned by this method is not guaranteed to be thread safe.\u003c/p\u003e \u003cpre\u003e Set\u0026lt;File\u0026gt; allFiles \u003d ... Set\u0026lt;File\u0026gt; javaFiles \u003d FileFilterUtils.filterSet(allFiles, FileFilterUtils.suffixFileFilter(\".java\")); \u003c/pre\u003e\n * @param filter the filter to apply to the set of files.\n * @param paths  the array of files to apply the filter to.\n * @return a subset of {@code files} that is accepted by the file filter.\n * @throws NullPointerException     if the filter is {@code null}\n * @throws IllegalArgumentException if {@code files} contains a {@code null} value.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.filterPaths#818",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.filterPaths(org.apache.commons.io.file.PathFilter, java.util.stream.Stream\u003cjava.nio.file.Path\u003e, java.util.stream.Collector\u003c? super java.nio.file.Path,A,R\u003e)",
+    "snippet": "private static \u003cR, A\u003e R filterPaths(final PathFilter filter, final Stream\u003cPath\u003e stream, final Collector\u003c? super Path, A, R\u003e collector) {\n        Objects.requireNonNull(filter, \"filter\");\n        Objects.requireNonNull(collector, \"collector\");\n        if (stream \u003d\u003d null) {\n            return Stream.\u003cPath\u003eempty().collect(collector);\n        }\n        return stream.filter(p -\u003e {\n            try {\n                return p !\u003d null \u0026\u0026 filter.accept(p, readBasicFileAttributes(p)) \u003d\u003d FileVisitResult.CONTINUE;\n            } catch (final IOException e) {\n                return false;\n            }\n        }).collect(collector);\n    }",
+    "begin_line": 818,
+    "end_line": 831,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getAclEntryList#841",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getAclEntryList(java.nio.file.Path)",
+    "snippet": "public static List\u003cAclEntry\u003e getAclEntryList(final Path sourcePath) throws IOException {\n        final AclFileAttributeView fileAttributeView \u003d getAclFileAttributeView(sourcePath);\n        return fileAttributeView \u003d\u003d null ? null : fileAttributeView.getAcl();\n    }",
+    "begin_line": 841,
+    "end_line": 844,
+    "comment": "/** \n * Reads the access control list from a file attribute view.\n * @param sourcePath the path to the file.\n * @return a file attribute view of the given type, or null if the attribute view type is not available.\n * @throws IOException if an I/O error occurs.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getAclFileAttributeView#854",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getAclFileAttributeView(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static AclFileAttributeView getAclFileAttributeView(final Path path, final LinkOption... options) {\n        return Files.getFileAttributeView(path, AclFileAttributeView.class, options);\n    }",
+    "begin_line": 854,
+    "end_line": 856,
+    "comment": "/** \n * Shorthand for  {@code Files.getFileAttributeView(path, AclFileAttributeView.class)}.\n * @param path    the path to the file.\n * @param options how to handle symbolic links.\n * @return a AclFileAttributeView, or {@code null} if the attribute view type is not available.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getDosFileAttributeView#866",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getDosFileAttributeView(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static DosFileAttributeView getDosFileAttributeView(final Path path, final LinkOption... options) {\n        return Files.getFileAttributeView(path, DosFileAttributeView.class, options);\n    }",
+    "begin_line": 866,
+    "end_line": 868,
+    "comment": "/** \n * Shorthand for  {@code Files.getFileAttributeView(path, DosFileAttributeView.class)}.\n * @param path    the path to the file.\n * @param options how to handle symbolic links.\n * @return a DosFileAttributeView, or {@code null} if the attribute view type is not available.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getFileName#880",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getFileName(java.nio.file.Path, java.util.function.Function\u003cjava.nio.file.Path,R\u003e)",
+    "snippet": "public static \u003cR\u003e R getFileName(final Path path, Function\u003cPath, R\u003e function) {\n        final Path fileName \u003d path.getFileName();\n        return fileName !\u003d null ? function.apply(fileName) : null;\n    }",
+    "begin_line": 880,
+    "end_line": 883,
+    "comment": "/** \n * Gets the Path\u0027s file name and apply the given function if the file name is non-null.\n * @param \u003c R \u003e The function\u0027s result type.\n * @param path the path to query.\n * @param function function to apply to the file name.\n * @return the Path\u0027s file name as a string or null.\n * @see Path#getFileName()\n * @since 2.16.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getFileNameString#893",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getFileNameString(java.nio.file.Path)",
+    "snippet": "public static String getFileNameString(final Path path) {\n        return getFileName(path, Path::toString);\n    }",
+    "begin_line": 893,
+    "end_line": 895,
+    "comment": "/** \n * Gets the Path\u0027s file name as a string.\n * @param path the path to query.\n * @return the Path\u0027s file name as a string or null.\n * @see Path#getFileName()\n * @since 2.16.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedFileTime#909",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedFileTime(java.io.File)",
+    "snippet": "public static FileTime getLastModifiedFileTime(final File file) throws IOException {\n        return getLastModifiedFileTime(file.toPath(), null, EMPTY_LINK_OPTION_ARRAY);\n    }",
+    "begin_line": 909,
+    "end_line": 911,
+    "comment": "/** \n * Gets the file\u0027s last modified time or null if the file does not exist. \u003cp\u003e The method provides a workaround for bug \u003ca href\u003d\"https://bugs.openjdk.java.net/browse/JDK-8177809\"\u003eJDK-8177809\u003c/a\u003e where  {@link File#lastModified()}looses milliseconds and always ends in 000. This bug is in OpenJDK 8 and 9, and fixed in 11. \u003c/p\u003e\n * @param file the file to query.\n * @return the file\u0027s last modified time.\n * @throws IOException Thrown if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedFileTime#923",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedFileTime(java.nio.file.Path, java.nio.file.attribute.FileTime, java.nio.file.LinkOption)",
+    "snippet": "public static FileTime getLastModifiedFileTime(final Path path, final FileTime defaultIfAbsent, final LinkOption... options) throws IOException {\n        return Files.exists(path) ? getLastModifiedTime(path, options) : defaultIfAbsent;\n    }",
+    "begin_line": 923,
+    "end_line": 925,
+    "comment": "/** \n * Gets the file\u0027s last modified time or null if the file does not exist.\n * @param path            the file to query.\n * @param defaultIfAbsent Returns this file time of the file does not exist, may be null.\n * @param options         options indicating how symbolic links are handled.\n * @return the file\u0027s last modified time.\n * @throws IOException Thrown if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedFileTime#936",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedFileTime(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static FileTime getLastModifiedFileTime(final Path path, final LinkOption... options) throws IOException {\n        return getLastModifiedFileTime(path, null, options);\n    }",
+    "begin_line": 936,
+    "end_line": 938,
+    "comment": "/** \n * Gets the file\u0027s last modified time or null if the file does not exist.\n * @param path    the file to query.\n * @param options options indicating how symbolic links are handled.\n * @return the file\u0027s last modified time.\n * @throws IOException Thrown if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedFileTime#948",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedFileTime(java.net.URI)",
+    "snippet": "public static FileTime getLastModifiedFileTime(final URI uri) throws IOException {\n        return getLastModifiedFileTime(Paths.get(uri), null, EMPTY_LINK_OPTION_ARRAY);\n    }",
+    "begin_line": 948,
+    "end_line": 950,
+    "comment": "/** \n * Gets the file\u0027s last modified time or null if the file does not exist.\n * @param uri the file to query.\n * @return the file\u0027s last modified time.\n * @throws IOException Thrown if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedFileTime#961",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedFileTime(java.net.URL)",
+    "snippet": "public static FileTime getLastModifiedFileTime(final URL url) throws IOException, URISyntaxException {\n        return getLastModifiedFileTime(url.toURI());\n    }",
+    "begin_line": 961,
+    "end_line": 963,
+    "comment": "/** \n * Gets the file\u0027s last modified time or null if the file does not exist.\n * @param url the file to query.\n * @return the file\u0027s last modified time.\n * @throws IOException        Thrown if an I/O error occurs.\n * @throws URISyntaxException if the URL is not formatted strictly according to RFC2396 and cannot be converted to a URI.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getLastModifiedTime#965",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getLastModifiedTime(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "private static FileTime getLastModifiedTime(final Path path, final LinkOption... options) throws IOException {\n        return Files.getLastModifiedTime(Objects.requireNonNull(path, \"path\"), options);\n    }",
+    "begin_line": 965,
+    "end_line": 967,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getParent#969",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getParent(java.nio.file.Path)",
+    "snippet": "private static Path getParent(final Path path) {\n        return path \u003d\u003d null ? null : path.getParent();\n    }",
+    "begin_line": 969,
+    "end_line": 971,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getPosixFileAttributeView#981",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getPosixFileAttributeView(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static PosixFileAttributeView getPosixFileAttributeView(final Path path, final LinkOption... options) {\n        return Files.getFileAttributeView(path, PosixFileAttributeView.class, options);\n    }",
+    "begin_line": 981,
+    "end_line": 983,
+    "comment": "/** \n * Shorthand for  {@code Files.getFileAttributeView(path, PosixFileAttributeView.class)}.\n * @param path    the path to the file.\n * @param options how to handle symbolic links.\n * @return a PosixFileAttributeView, or {@code null} if the attribute view type is not available.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.getTempDirectory#991",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.getTempDirectory()",
+    "snippet": "public static Path getTempDirectory() {\n        return Paths.get(FileUtils.getTempDirectoryPath());\n    }",
+    "begin_line": 991,
+    "end_line": 993,
+    "comment": "/** \n * Gets a  {@link Path} representing the system temporary directory.\n * @return the system temporary directory.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isDirectory#1007",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isDirectory(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isDirectory(final Path path, final LinkOption... options) {\n        return path !\u003d null \u0026\u0026 Files.isDirectory(path, options);\n    }",
+    "begin_line": 1007,
+    "end_line": 1009,
+    "comment": "/** \n * Tests whether the given  {@link Path} is a directory or not. Implemented as a null-safe delegate to{@code Files.isDirectory(Path path, LinkOption... options)}.\n * @param path    the path to the file.\n * @param options options indicating how to handle symbolic links\n * @return {@code true} if the file is a directory; {@code false} if the path is null, the file does not exist, is not a directory, or it cannot bedetermined if the file is a directory or not.\n * @throws SecurityException In the case of the default provider, and a security manager is installed, the {@link SecurityManager#checkRead(String) checkRead} method is invoked to check read access to the directory.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isEmpty#1018",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isEmpty(java.nio.file.Path)",
+    "snippet": "public static boolean isEmpty(final Path path) throws IOException {\n        return Files.isDirectory(path) ? isEmptyDirectory(path) : isEmptyFile(path);\n    }",
+    "begin_line": 1018,
+    "end_line": 1020,
+    "comment": "/** \n * Tests whether the given file or directory is empty.\n * @param path the file or directory to query.\n * @return whether the file or directory is empty.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isEmptyDirectory#1032",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isEmptyDirectory(java.nio.file.Path)",
+    "snippet": "public static boolean isEmptyDirectory(final Path directory) throws IOException {\n        try (DirectoryStream\u003cPath\u003e directoryStream \u003d Files.newDirectoryStream(directory)) {\n            return !directoryStream.iterator().hasNext();\n        }\n    }",
+    "begin_line": 1032,
+    "end_line": 1036,
+    "comment": "/** \n * Tests whether the directory is empty.\n * @param directory the directory to query.\n * @return whether the directory is empty.\n * @throws NotDirectoryException if the file could not otherwise be opened because it is not a directory \u003ci\u003e(optional specific exception)\u003c/i\u003e.\n * @throws IOException           if an I/O error occurs.\n * @throws SecurityException     In the case of the default provider, and a security manager is installed, the {@link SecurityManager#checkRead(String) checkRead} method is invoked to check read access to the directory.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isEmptyFile#1047",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isEmptyFile(java.nio.file.Path)",
+    "snippet": "public static boolean isEmptyFile(final Path file) throws IOException {\n        return Files.size(file) \u003c\u003d 0;\n    }",
+    "begin_line": 1047,
+    "end_line": 1049,
+    "comment": "/** \n * Tests whether the given file is empty.\n * @param file the file to query.\n * @return whether the file is empty.\n * @throws IOException       if an I/O error occurs.\n * @throws SecurityException In the case of the default provider, and a security manager is installed, its {@link SecurityManager#checkRead(String) checkRead} method denies read access to the file.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isNewer#1062",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isNewer(java.nio.file.Path, java.time.chrono.ChronoZonedDateTime\u003c?\u003e, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isNewer(final Path file, final ChronoZonedDateTime\u003c?\u003e czdt, final LinkOption... options) throws IOException {\n        Objects.requireNonNull(czdt, \"czdt\");\n        return isNewer(file, czdt.toInstant(), options);\n    }",
+    "begin_line": 1062,
+    "end_line": 1065,
+    "comment": "/** \n * Tests if the given  {@link Path} is newer than the given time reference.\n * @param file    the {@link Path} to test.\n * @param czdt    the time reference.\n * @param options options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified after the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isNewer#1078",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isNewer(java.nio.file.Path, java.nio.file.attribute.FileTime, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isNewer(final Path file, final FileTime fileTime, final LinkOption... options) throws IOException {\n        if (notExists(file)) {\n            return false;\n        }\n        return compareLastModifiedTimeTo(file, fileTime, options) \u003e 0;\n    }",
+    "begin_line": 1078,
+    "end_line": 1083,
+    "comment": "/** \n * Tests if the given  {@link Path} is newer than the given time reference.\n * @param file     the {@link Path} to test.\n * @param fileTime the time reference.\n * @param options  options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified after the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isNewer#1096",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isNewer(java.nio.file.Path, java.time.Instant, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isNewer(final Path file, final Instant instant, final LinkOption... options) throws IOException {\n        return isNewer(file, FileTime.from(instant), options);\n    }",
+    "begin_line": 1096,
+    "end_line": 1098,
+    "comment": "/** \n * Tests if the given  {@link Path} is newer than the given time reference.\n * @param file    the {@link Path} to test.\n * @param instant the time reference.\n * @param options options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified after the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isNewer#1111",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isNewer(java.nio.file.Path, long, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isNewer(final Path file, final long timeMillis, final LinkOption... options) throws IOException {\n        return isNewer(file, FileTime.fromMillis(timeMillis), options);\n    }",
+    "begin_line": 1111,
+    "end_line": 1113,
+    "comment": "/** \n * Tests if the given  {@link Path} is newer than the given time reference.\n * @param file       the {@link Path} to test.\n * @param timeMillis the time reference measured in milliseconds since the epoch (00:00:00 GMT, January 1, 1970)\n * @param options    options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified after the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isNewer#1124",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isNewer(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static boolean isNewer(final Path file, final Path reference) throws IOException {\n        return isNewer(file, getLastModifiedTime(reference));\n    }",
+    "begin_line": 1124,
+    "end_line": 1126,
+    "comment": "/** \n * Tests if the given  {@link Path} is newer than the reference {@link Path}.\n * @param file      the {@link File} to test.\n * @param reference the {@link File} of which the modification date is used.\n * @return true if the {@link File} exists and has been modified more recently than the reference {@link File}.\n * @throws IOException if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isOlder#1139",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isOlder(java.nio.file.Path, java.nio.file.attribute.FileTime, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isOlder(final Path file, final FileTime fileTime, final LinkOption... options) throws IOException {\n        if (notExists(file)) {\n            return false;\n        }\n        return compareLastModifiedTimeTo(file, fileTime, options) \u003c 0;\n    }",
+    "begin_line": 1139,
+    "end_line": 1144,
+    "comment": "/** \n * Tests if the given  {@link Path} is older than the given time reference.\n * @param file     the {@link Path} to test.\n * @param fileTime the time reference.\n * @param options  options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified before the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isOlder#1157",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isOlder(java.nio.file.Path, java.time.Instant, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isOlder(final Path file, final Instant instant, final LinkOption... options) throws IOException {\n        return isOlder(file, FileTime.from(instant), options);\n    }",
+    "begin_line": 1157,
+    "end_line": 1159,
+    "comment": "/** \n * Tests if the given  {@link Path} is older than the given time reference.\n * @param file    the {@link Path} to test.\n * @param instant the time reference.\n * @param options options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified before the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isOlder#1172",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isOlder(java.nio.file.Path, long, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isOlder(final Path file, final long timeMillis, final LinkOption... options) throws IOException {\n        return isOlder(file, FileTime.fromMillis(timeMillis), options);\n    }",
+    "begin_line": 1172,
+    "end_line": 1174,
+    "comment": "/** \n * Tests if the given  {@link Path} is older than the given time reference.\n * @param file       the {@link Path} to test.\n * @param timeMillis the time reference measured in milliseconds since the epoch (00:00:00 GMT, January 1, 1970)\n * @param options    options indicating how to handle symbolic links.\n * @return true if the {@link Path} exists and has been modified before the given time reference.\n * @throws IOException          if an I/O error occurs.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isOlder#1185",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isOlder(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static boolean isOlder(final Path file, final Path reference) throws IOException {\n        return isOlder(file, getLastModifiedTime(reference));\n    }",
+    "begin_line": 1185,
+    "end_line": 1187,
+    "comment": "/** \n * Tests if the given  {@link Path} is older than the reference {@link Path}.\n * @param file      the {@link File} to test.\n * @param reference the {@link File} of which the modification date is used.\n * @return true if the {@link File} exists and has been modified before than the reference {@link File}.\n * @throws IOException if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isPosix#1197",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isPosix(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isPosix(final Path test, final LinkOption... options) {\n        return exists(test, options) \u0026\u0026 readPosixFileAttributes(test, options) !\u003d null;\n    }",
+    "begin_line": 1197,
+    "end_line": 1199,
+    "comment": "/** \n * Tests whether the given path is on a POSIX file system.\n * @param test    The Path to test.\n * @param options options indicating how to handle symbolic links.\n * @return true if test is on a POSIX file system.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.isRegularFile#1213",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.isRegularFile(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static boolean isRegularFile(final Path path, final LinkOption... options) {\n        return path !\u003d null \u0026\u0026 Files.isRegularFile(path, options);\n    }",
+    "begin_line": 1213,
+    "end_line": 1215,
+    "comment": "/** \n * Tests whether the given  {@link Path} is a regular file or not. Implemented as a null-safe delegate to{@code Files.isRegularFile(Path path, LinkOption... options)}.\n * @param path    the path to the file.\n * @param options options indicating how to handle symbolic links.\n * @return {@code true} if the file is a regular file; {@code false} if the path is null, the file does not exist, is not a directory, or it cannot bedetermined if the file is a regular file or not.\n * @throws SecurityException In the case of the default provider, and a security manager is installed, the {@link SecurityManager#checkRead(String) checkRead} method is invoked to check read access to the directory.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.newDirectoryStream#1229",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.newDirectoryStream(java.nio.file.Path, org.apache.commons.io.file.PathFilter)",
+    "snippet": "public static DirectoryStream\u003cPath\u003e newDirectoryStream(final Path dir, final PathFilter pathFilter) throws IOException {\n        return Files.newDirectoryStream(dir, new DirectoryStreamFilter(pathFilter));\n    }",
+    "begin_line": 1229,
+    "end_line": 1231,
+    "comment": "/** \n * Creates a new DirectoryStream for Paths rooted at the given directory. \u003cp\u003e If you don\u0027t use the try-with-resources construct, then you must call the stream\u0027s  {@link Stream#close()} method after iteration is complete to free anyresources held for the open directory. \u003c/p\u003e\n * @param dir        the path to the directory to stream.\n * @param pathFilter the directory stream filter.\n * @return a new instance.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.newOutputStream#1243",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.newOutputStream(java.nio.file.Path, boolean)",
+    "snippet": "public static OutputStream newOutputStream(final Path path, final boolean append) throws IOException {\n        return newOutputStream(path, EMPTY_LINK_OPTION_ARRAY, append ? OPEN_OPTIONS_APPEND : OPEN_OPTIONS_TRUNCATE);\n    }",
+    "begin_line": 1243,
+    "end_line": 1245,
+    "comment": "/** \n * Creates a new OutputStream by opening or creating a file, returning an output stream that may be used to write bytes to the file.\n * @param path   the Path.\n * @param append Whether or not to append.\n * @return a new OutputStream.\n * @throws IOException if an I/O error occurs.\n * @see Files#newOutputStream(Path,OpenOption...)\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.newOutputStream#1247",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.newOutputStream(java.nio.file.Path, java.nio.file.LinkOption[], java.nio.file.OpenOption)",
+    "snippet": "static OutputStream newOutputStream(final Path path, final LinkOption[] linkOptions, final OpenOption... openOptions) throws IOException {\n        if (!exists(path, linkOptions)) {\n            createParentDirectories(path, linkOptions !\u003d null \u0026\u0026 linkOptions.length \u003e 0 ? linkOptions[0] : NULL_LINK_OPTION);\n        }\n        final List\u003cOpenOption\u003e list \u003d new ArrayList\u003c\u003e(Arrays.asList(openOptions !\u003d null ? openOptions : EMPTY_OPEN_OPTION_ARRAY));\n        list.addAll(Arrays.asList(linkOptions !\u003d null ? linkOptions : EMPTY_LINK_OPTION_ARRAY));\n        return Files.newOutputStream(path, list.toArray(EMPTY_OPEN_OPTION_ARRAY));\n    }",
+    "begin_line": 1247,
+    "end_line": 1254,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.noFollowLinkOptionArray#1261",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.noFollowLinkOptionArray()",
+    "snippet": "public static LinkOption[] noFollowLinkOptionArray() {\n        return NOFOLLOW_LINK_OPTION_ARRAY.clone();\n    }",
+    "begin_line": 1261,
+    "end_line": 1263,
+    "comment": "/** \n * Copy of the  {@link LinkOption} array for {@link LinkOption#NOFOLLOW_LINKS}.\n * @return Copy of the {@link LinkOption} array for {@link LinkOption#NOFOLLOW_LINKS}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.notExists#1265",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.notExists(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "private static boolean notExists(final Path path, final LinkOption... options) {\n        return Files.notExists(Objects.requireNonNull(path, \"path\"), options);\n    }",
+    "begin_line": 1265,
+    "end_line": 1267,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.overrideReadOnly#1275",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.overrideReadOnly(org.apache.commons.io.file.DeleteOption)",
+    "snippet": "private static boolean overrideReadOnly(final DeleteOption... deleteOptions) {\n        if (deleteOptions \u003d\u003d null) {\n            return false;\n        }\n        return Stream.of(deleteOptions).anyMatch(e -\u003e e \u003d\u003d StandardDeleteOption.OVERRIDE_READ_ONLY);\n    }",
+    "begin_line": 1275,
+    "end_line": 1280,
+    "comment": "/** \n * Returns true if the given options contain  {@link StandardDeleteOption#OVERRIDE_READ_ONLY}.\n * @param deleteOptions the array to test\n * @return true if the given options contain {@link StandardDeleteOption#OVERRIDE_READ_ONLY}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readAttributes#1293",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readAttributes(java.nio.file.Path, java.lang.Class\u003cA\u003e, java.nio.file.LinkOption)",
+    "snippet": "public static \u003cA extends BasicFileAttributes\u003e A readAttributes(final Path path, final Class\u003cA\u003e type, final LinkOption... options) {\n        try {\n            return path \u003d\u003d null ? null : Files.readAttributes(path, type, options);\n        } catch (final UnsupportedOperationException | IOException e) {\n            // For example, on Windows.\n            return null;\n        }\n    }",
+    "begin_line": 1293,
+    "end_line": 1300,
+    "comment": "/** \n * Reads the BasicFileAttributes from the given path. Returns null if the attributes can\u0027t be read.\n * @param \u003c A \u003e     The {@link BasicFileAttributes} type\n * @param path    The Path to test.\n * @param type    the {@link Class} of the file attributes required to read.\n * @param options options indicating how to handle symbolic links.\n * @return the file attributes or null if the attributes can\u0027t be read.\n * @see Files#readAttributes(Path,Class,LinkOption...)\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readBasicFileAttributes#1310",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readBasicFileAttributes(java.nio.file.Path)",
+    "snippet": "public static BasicFileAttributes readBasicFileAttributes(final Path path) throws IOException {\n        return Files.readAttributes(path, BasicFileAttributes.class);\n    }",
+    "begin_line": 1310,
+    "end_line": 1312,
+    "comment": "/** \n * Reads the BasicFileAttributes from the given path.\n * @param path the path to read.\n * @return the path attributes.\n * @throws IOException if an I/O error occurs.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readBasicFileAttributes#1322",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readBasicFileAttributes(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static BasicFileAttributes readBasicFileAttributes(final Path path, final LinkOption... options) {\n        return readAttributes(path, BasicFileAttributes.class, options);\n    }",
+    "begin_line": 1322,
+    "end_line": 1324,
+    "comment": "/** \n * Reads the BasicFileAttributes from the given path. Returns null if the attributes can\u0027t be read.\n * @param path    the path to read.\n * @param options options indicating how to handle symbolic links.\n * @return the path attributes.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readBasicFileAttributesUnchecked#1335",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readBasicFileAttributesUnchecked(java.nio.file.Path)",
+    "snippet": "@Deprecated\n    public static BasicFileAttributes readBasicFileAttributesUnchecked(final Path path) {\n        return readBasicFileAttributes(path, EMPTY_LINK_OPTION_ARRAY);\n    }",
+    "begin_line": 1335,
+    "end_line": 1337,
+    "comment": "/** \n * Reads the BasicFileAttributes from the given path. Returns null if the attributes can\u0027t be read.\n * @param path the path to read.\n * @return the path attributes.\n * @since 2.9.0\n * @deprecated Use {@link #readBasicFileAttributes(Path,LinkOption...)}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readDosFileAttributes#1347",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readDosFileAttributes(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static DosFileAttributes readDosFileAttributes(final Path path, final LinkOption... options) {\n        return readAttributes(path, DosFileAttributes.class, options);\n    }",
+    "begin_line": 1347,
+    "end_line": 1349,
+    "comment": "/** \n * Reads the DosFileAttributes from the given path. Returns null if the attributes can\u0027t be read.\n * @param path    the path to read.\n * @param options options indicating how to handle symbolic links.\n * @return the path attributes.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readIfSymbolicLink#1351",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readIfSymbolicLink(java.nio.file.Path)",
+    "snippet": "private static Path readIfSymbolicLink(final Path path) throws IOException {\n        return path !\u003d null ? Files.isSymbolicLink(path) ? Files.readSymbolicLink(path) : path : null;\n    }",
+    "begin_line": 1351,
+    "end_line": 1353,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readOsFileAttributes#1363",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readOsFileAttributes(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static BasicFileAttributes readOsFileAttributes(final Path path, final LinkOption... options) {\n        final PosixFileAttributes fileAttributes \u003d readPosixFileAttributes(path, options);\n        return fileAttributes !\u003d null ? fileAttributes : readDosFileAttributes(path, options);\n    }",
+    "begin_line": 1363,
+    "end_line": 1366,
+    "comment": "/** \n * Reads the PosixFileAttributes or DosFileAttributes from the given path. Returns null if the attributes can\u0027t be read.\n * @param path    The Path to read.\n * @param options options indicating how to handle symbolic links.\n * @return the file attributes.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readPosixFileAttributes#1376",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readPosixFileAttributes(java.nio.file.Path, java.nio.file.LinkOption)",
+    "snippet": "public static PosixFileAttributes readPosixFileAttributes(final Path path, final LinkOption... options) {\n        return readAttributes(path, PosixFileAttributes.class, options);\n    }",
+    "begin_line": 1376,
+    "end_line": 1378,
+    "comment": "/** \n * Reads the PosixFileAttributes from the given path. Returns null instead of throwing  {@link UnsupportedOperationException}.\n * @param path    The Path to read.\n * @param options options indicating how to handle symbolic links.\n * @return the file attributes.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.readString#1390",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.readString(java.nio.file.Path, java.nio.charset.Charset)",
+    "snippet": "public static String readString(final Path path, final Charset charset) throws IOException {\n        return new String(Files.readAllBytes(path), Charsets.toCharset(charset));\n    }",
+    "begin_line": 1390,
+    "end_line": 1392,
+    "comment": "/** \n * Reads the given path as a String.\n * @param path    The source path.\n * @param charset How to convert bytes to a String, null uses the default Charset.\n * @return a new String.\n * @throws IOException if an I/O error occurs reading from the stream.\n * @see Files#readAllBytes(Path)\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.relativize#1403",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.relativize(java.util.Collection\u003cjava.nio.file.Path\u003e, java.nio.file.Path, boolean, java.util.Comparator\u003c? super java.nio.file.Path\u003e)",
+    "snippet": "static List\u003cPath\u003e relativize(final Collection\u003cPath\u003e collection, final Path parent, final boolean sort, final Comparator\u003c? super Path\u003e comparator) {\n        Stream\u003cPath\u003e stream \u003d collection.stream().map(parent::relativize);\n        if (sort) {\n            stream \u003d comparator \u003d\u003d null ? stream.sorted() : stream.sorted(comparator);\n        }\n        return stream.collect(Collectors.toList());\n    }",
+    "begin_line": 1403,
+    "end_line": 1409,
+    "comment": "/** \n * Relativizes all files in the given  {@code collection} against a {@code parent}.\n * @param collection The collection of paths to relativize.\n * @param parent     relativizes against this parent path.\n * @param sort       Whether to sort the result.\n * @param comparator How to sort.\n * @return A collection of relativized paths, optionally sorted.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.requireExists#1421",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.requireExists(java.nio.file.Path, java.lang.String, java.nio.file.LinkOption)",
+    "snippet": "private static Path requireExists(final Path file, final String fileParamName, final LinkOption... options) {\n        Objects.requireNonNull(file, fileParamName);\n        if (!exists(file, options)) {\n            throw new IllegalArgumentException(\"File system element for parameter \u0027\" + fileParamName + \"\u0027 does not exist: \u0027\" + file + \"\u0027\");\n        }\n        return file;\n    }",
+    "begin_line": 1421,
+    "end_line": 1427,
+    "comment": "/** \n * Requires that the given  {@link File} exists and throws an {@link IllegalArgumentException} if it doesn\u0027t.\n * @param file          The {@link File} to check.\n * @param fileParamName The parameter name to use in the exception message in case of {@code null} input.\n * @param options       options indicating how to handle symbolic links.\n * @return the given file.\n * @throws NullPointerException     if the given {@link File} is {@code null}.\n * @throws IllegalArgumentException if the given {@link File} does not exist.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setDosReadOnly#1429",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setDosReadOnly(java.nio.file.Path, boolean, java.nio.file.LinkOption)",
+    "snippet": "private static boolean setDosReadOnly(final Path path, final boolean readOnly, final LinkOption... linkOptions) throws IOException {\n        final DosFileAttributeView dosFileAttributeView \u003d getDosFileAttributeView(path, linkOptions);\n        if (dosFileAttributeView !\u003d null) {\n            dosFileAttributeView.setReadOnly(readOnly);\n            return true;\n        }\n        return false;\n    }",
+    "begin_line": 1429,
+    "end_line": 1436,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setLastModifiedTime#1448",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setLastModifiedTime(java.nio.file.Path, java.nio.file.Path)",
+    "snippet": "public static void setLastModifiedTime(final Path sourceFile, final Path targetFile) throws IOException {\n        Objects.requireNonNull(sourceFile, \"sourceFile\");\n        Files.setLastModifiedTime(targetFile, getLastModifiedTime(sourceFile));\n    }",
+    "begin_line": 1448,
+    "end_line": 1451,
+    "comment": "/** \n * Sets the given  {@code targetFile}\u0027s last modified time to the value from  {@code sourceFile}.\n * @param sourceFile The source path to query.\n * @param targetFile The target path to set.\n * @throws NullPointerException if sourceFile is {@code null}.\n * @throws NullPointerException if targetFile is {@code null}.\n * @throws IOException          if setting the last-modified time failed.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setPosixDeletePermissions#1462",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setPosixDeletePermissions(java.nio.file.Path, boolean, java.nio.file.LinkOption)",
+    "snippet": "private static boolean setPosixDeletePermissions(final Path parent, final boolean enableDeleteChildren, final LinkOption... linkOptions)\n            throws IOException {\n        // To delete a file in POSIX, you need write and execute permissions on its parent directory.\n        // @formatter:off\n        return setPosixPermissions(parent, enableDeleteChildren, Arrays.asList(\n            PosixFilePermission.OWNER_WRITE,\n            //PosixFilePermission.GROUP_WRITE,\n            //PosixFilePermission.OTHERS_WRITE,\n            PosixFilePermission.OWNER_EXECUTE\n            //PosixFilePermission.GROUP_EXECUTE,\n            //PosixFilePermission.OTHERS_EXECUTE\n            ), linkOptions);\n        // @formatter:on\n    }",
+    "begin_line": 1462,
+    "end_line": 1475,
+    "comment": "/** \n * To delete a file in POSIX, you need Write and Execute permissions on its parent directory.\n * @param parent               The parent path for a file element to delete which needs RW permissions.\n * @param enableDeleteChildren true to set permissions to delete.\n * @param linkOptions          options indicating how handle symbolic links.\n * @return true if the operation was attempted and succeeded, false if parent is null.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setPosixPermissions#1487",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setPosixPermissions(java.nio.file.Path, boolean, java.util.List\u003cjava.nio.file.attribute.PosixFilePermission\u003e, java.nio.file.LinkOption)",
+    "snippet": "private static boolean setPosixPermissions(final Path path, final boolean addPermissions, final List\u003cPosixFilePermission\u003e updatePermissions,\n            final LinkOption... linkOptions) throws IOException {\n        if (path !\u003d null) {\n            final Set\u003cPosixFilePermission\u003e permissions \u003d Files.getPosixFilePermissions(path, linkOptions);\n            if (addPermissions) {\n                permissions.addAll(updatePermissions);\n            } else {\n                permissions.removeAll(updatePermissions);\n            }\n            Files.setPosixFilePermissions(path, permissions);\n            return true;\n        }\n        return false;\n    }",
+    "begin_line": 1487,
+    "end_line": 1500,
+    "comment": "/** \n * Low-level POSIX permission operation to set permissions.\n * @param path              Set this path\u0027s permissions.\n * @param addPermissions    true to add, false to remove.\n * @param updatePermissions the List of PosixFilePermission to add or remove.\n * @param linkOptions       options indicating how handle symbolic links.\n * @return true if the operation was attempted and succeeded, false if parent is null.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setPosixReadOnlyFile#1502",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setPosixReadOnlyFile(java.nio.file.Path, boolean, java.nio.file.LinkOption)",
+    "snippet": "private static void setPosixReadOnlyFile(final Path path, final boolean readOnly, final LinkOption... linkOptions) throws IOException {\n        // Not Windows 10\n        final Set\u003cPosixFilePermission\u003e permissions \u003d Files.getPosixFilePermissions(path, linkOptions);\n        // @formatter:off\n        final List\u003cPosixFilePermission\u003e readPermissions \u003d Arrays.asList(\n                PosixFilePermission.OWNER_READ\n                //PosixFilePermission.GROUP_READ,\n                //PosixFilePermission.OTHERS_READ\n            );\n        final List\u003cPosixFilePermission\u003e writePermissions \u003d Arrays.asList(\n                PosixFilePermission.OWNER_WRITE\n                //PosixFilePermission.GROUP_WRITE,\n                //PosixFilePermission.OTHERS_WRITE\n            );\n        // @formatter:on\n        if (readOnly) {\n            // RO: We can read, we cannot write.\n            permissions.addAll(readPermissions);\n            permissions.removeAll(writePermissions);\n        } else {\n            // Not RO: We can read, we can write.\n            permissions.addAll(readPermissions);\n            permissions.addAll(writePermissions);\n        }\n        Files.setPosixFilePermissions(path, permissions);\n    }",
+    "begin_line": 1502,
+    "end_line": 1527,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.setReadOnly#1542",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.setReadOnly(java.nio.file.Path, boolean, java.nio.file.LinkOption)",
+    "snippet": "public static Path setReadOnly(final Path path, final boolean readOnly, final LinkOption... linkOptions) throws IOException {\n        try {\n            // Windows is simplest\n            if (setDosReadOnly(path, readOnly, linkOptions)) {\n                return path;\n            }\n        } catch (final IOException ignored) {\n            // Retry with POSIX below.\n        }\n        final Path parent \u003d getParent(path);\n        if (!isPosix(parent, linkOptions)) { // Test parent because we may not the permissions to test the file.\n            throw new IOException(String.format(\"DOS or POSIX file operations not available for \u0027%s\u0027 %s\", path, Arrays.toString(linkOptions)));\n        }\n        // POSIX\n        if (readOnly) {\n            // RO\n            // File, then parent dir (if any).\n            setPosixReadOnlyFile(path, readOnly, linkOptions);\n            setPosixDeletePermissions(parent, false, linkOptions);\n        } else {\n            // RE\n            // Parent dir (if any), then file.\n            setPosixDeletePermissions(parent, true, linkOptions);\n        }\n        return path;\n    }",
+    "begin_line": 1542,
+    "end_line": 1567,
+    "comment": "/** \n * Sets the given Path to the  {@code readOnly} value.\u003cp\u003e This behavior is OS dependent. \u003c/p\u003e\n * @param path        The path to set.\n * @param readOnly    true for read-only, false for not read-only.\n * @param linkOptions options indicating how to handle symbolic links.\n * @return The given path.\n * @throws IOException if an I/O error occurs.\n * @since 2.8.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.sizeOf#1584",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.sizeOf(java.nio.file.Path)",
+    "snippet": "public static long sizeOf(final Path path) throws IOException {\n        requireExists(path, \"path\");\n        return Files.isDirectory(path) ? sizeOfDirectory(path) : Files.size(path);\n    }",
+    "begin_line": 1584,
+    "end_line": 1587,
+    "comment": "/** \n * Returns the size of the given file or directory. If the provided  {@link Path} is a regular file, then the file\u0027s size is returned. If the argument is adirectory, then the size of the directory is calculated recursively. \u003cp\u003e Note that overflow is not detected, and the return value may be negative if overflow occurs. See  {@link #sizeOfAsBigInteger(Path)} for an alternativemethod that does not overflow. \u003c/p\u003e\n * @param path the regular file or directory to return the size of, must not be {@code null}.\n * @return the length of the file, or recursive size of the directory, in bytes.\n * @throws NullPointerException     if the file is {@code null}.\n * @throws IllegalArgumentException if the file does not exist.\n * @throws IOException              if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.sizeOfAsBigInteger#1600",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.sizeOfAsBigInteger(java.nio.file.Path)",
+    "snippet": "public static BigInteger sizeOfAsBigInteger(final Path path) throws IOException {\n        requireExists(path, \"path\");\n        return Files.isDirectory(path) ? sizeOfDirectoryAsBigInteger(path) : BigInteger.valueOf(Files.size(path));\n    }",
+    "begin_line": 1600,
+    "end_line": 1603,
+    "comment": "/** \n * Returns the size of the given file or directory. If the provided  {@link Path} is a regular file, then the file\u0027s size is returned. If the argument is adirectory, then the size of the directory is calculated recursively.\n * @param path the regular file or directory to return the size of (must not be {@code null}).\n * @return the length of the file, or recursive size of the directory, provided (in bytes).\n * @throws NullPointerException     if the file is {@code null}.\n * @throws IllegalArgumentException if the file does not exist.\n * @throws IOException              if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.sizeOfDirectory#1618",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.sizeOfDirectory(java.nio.file.Path)",
+    "snippet": "public static long sizeOfDirectory(final Path directory) throws IOException {\n        return countDirectory(directory).getByteCounter().getLong();\n    }",
+    "begin_line": 1618,
+    "end_line": 1620,
+    "comment": "/** \n * Counts the size of a directory recursively (sum of the size of all files). \u003cp\u003e Note that overflow is not detected, and the return value may be negative if overflow occurs. See  {@link #sizeOfDirectoryAsBigInteger(Path)} for analternative method that does not overflow. \u003c/p\u003e\n * @param directory directory to inspect, must not be {@code null}.\n * @return size of directory in bytes, 0 if directory is security restricted, a negative number when the real total is greater than {@link Long#MAX_VALUE}.\n * @throws NullPointerException if the directory is {@code null}.\n * @throws IOException          if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.sizeOfDirectoryAsBigInteger#1631",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.sizeOfDirectoryAsBigInteger(java.nio.file.Path)",
+    "snippet": "public static BigInteger sizeOfDirectoryAsBigInteger(final Path directory) throws IOException {\n        return countDirectoryAsBigInteger(directory).getByteCounter().getBigInteger();\n    }",
+    "begin_line": 1631,
+    "end_line": 1633,
+    "comment": "/** \n * Counts the size of a directory recursively (sum of the size of all files).\n * @param directory directory to inspect, must not be {@code null}.\n * @return size of directory in bytes, 0 if directory is security restricted.\n * @throws NullPointerException if the directory is {@code null}.\n * @throws IOException          if an I/O error occurs.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.toFileVisitOptionSet#1641",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.toFileVisitOptionSet(java.nio.file.FileVisitOption)",
+    "snippet": "static Set\u003cFileVisitOption\u003e toFileVisitOptionSet(final FileVisitOption... fileVisitOptions) {\n        return fileVisitOptions \u003d\u003d null ? EnumSet.noneOf(FileVisitOption.class) : Stream.of(fileVisitOptions).collect(Collectors.toSet());\n    }",
+    "begin_line": 1641,
+    "end_line": 1643,
+    "comment": "/** \n * Converts an array of  {@link FileVisitOption} to a {@link Set}.\n * @param fileVisitOptions input array.\n * @return a new Set.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.touch#1655",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.touch(java.nio.file.Path)",
+    "snippet": "public static Path touch(final Path file) throws IOException {\n        Objects.requireNonNull(file, \"file\");\n        if (!Files.exists(file)) {\n            createParentDirectories(file);\n            Files.createFile(file);\n        } else {\n            FileTimes.setLastModifiedTime(file);\n        }\n        return file;\n    }",
+    "begin_line": 1655,
+    "end_line": 1664,
+    "comment": "/** \n * Implements behavior similar to the Unix \"touch\" utility. Creates a new file with size 0, or, if the file exists, just updates the file\u0027s modified time. this method creates parent directories if they do not exist.\n * @param file the file to touch.\n * @return The given file.\n * @throws NullPointerException if the parameter is {@code null}.\n * @throws IOException          if setting the last-modified time failed or an I/O problem occurs.\\\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.visitFileTree#1680",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.visitFileTree(T, java.nio.file.Path)",
+    "snippet": "public static \u003cT extends FileVisitor\u003c? super Path\u003e\u003e T visitFileTree(final T visitor, final Path directory) throws IOException {\n        Files.walkFileTree(directory, visitor);\n        return visitor;\n    }",
+    "begin_line": 1680,
+    "end_line": 1683,
+    "comment": "/** \n * Performs  {@link Files#walkFileTree(Path,FileVisitor)} and returns the given visitor.Note that  {@link Files#walkFileTree(Path,FileVisitor)} returns the given path.\n * @param visitor   See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @param directory See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @param \u003c T \u003e       See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @return the given visitor.\n * @throws NoSuchFileException  if the directory does not exist.\n * @throws IOException          if an I/O error is thrown by a visitor method.\n * @throws NullPointerException if the directory is {@code null}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.visitFileTree#1699",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.visitFileTree(T, java.nio.file.Path, java.util.Set\u003cjava.nio.file.FileVisitOption\u003e, int)",
+    "snippet": "public static \u003cT extends FileVisitor\u003c? super Path\u003e\u003e T visitFileTree(final T visitor, final Path start, final Set\u003cFileVisitOption\u003e options,\n            final int maxDepth) throws IOException {\n        Files.walkFileTree(start, options, maxDepth, visitor);\n        return visitor;\n    }",
+    "begin_line": 1699,
+    "end_line": 1703,
+    "comment": "/** \n * Performs  {@link Files#walkFileTree(Path,FileVisitor)} and returns the given visitor.Note that  {@link Files#walkFileTree(Path,FileVisitor)} returns the given path.\n * @param start    See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param options  See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param maxDepth See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param visitor  See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @param \u003c T \u003e      See {@link Files#walkFileTree(Path,Set,int,FileVisitor)}.\n * @return the given visitor.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.visitFileTree#1718",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.visitFileTree(T, java.lang.String, java.lang.String)",
+    "snippet": "public static \u003cT extends FileVisitor\u003c? super Path\u003e\u003e T visitFileTree(final T visitor, final String first, final String... more) throws IOException {\n        return visitFileTree(visitor, Paths.get(first, more));\n    }",
+    "begin_line": 1718,
+    "end_line": 1720,
+    "comment": "/** \n * Performs  {@link Files#walkFileTree(Path,FileVisitor)} and returns the given visitor.Note that  {@link Files#walkFileTree(Path,FileVisitor)} returns the given path.\n * @param visitor See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @param first   See {@link Paths#get(String,String[])}.\n * @param more    See {@link Paths#get(String,String[])}.\n * @param \u003c T \u003e     See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @return the given visitor.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.visitFileTree#1734",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.visitFileTree(T, java.net.URI)",
+    "snippet": "public static \u003cT extends FileVisitor\u003c? super Path\u003e\u003e T visitFileTree(final T visitor, final URI uri) throws IOException {\n        return visitFileTree(visitor, Paths.get(uri));\n    }",
+    "begin_line": 1734,
+    "end_line": 1736,
+    "comment": "/** \n * Performs  {@link Files#walkFileTree(Path,FileVisitor)} and returns the given visitor.Note that  {@link Files#walkFileTree(Path,FileVisitor)} returns the given path.\n * @param visitor See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @param uri     See {@link Paths#get(URI)}.\n * @param \u003c T \u003e     See {@link Files#walkFileTree(Path,FileVisitor)}.\n * @return the given visitor.\n * @throws IOException if an I/O error is thrown by a visitor method.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.waitFor#1751",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.waitFor(java.nio.file.Path, java.time.Duration, java.nio.file.LinkOption)",
+    "snippet": "public static boolean waitFor(final Path file, final Duration timeout, final LinkOption... options) {\n        Objects.requireNonNull(file, \"file\");\n        final Instant finishInstant \u003d Instant.now().plus(timeout);\n        boolean interrupted \u003d false;\n        final long minSleepMillis \u003d 100;\n        try {\n            while (!exists(file, options)) {\n                final Instant now \u003d Instant.now();\n                if (now.isAfter(finishInstant)) {\n                    return false;\n                }\n                try {\n                    ThreadUtils.sleep(Duration.ofMillis(Math.min(minSleepMillis, finishInstant.minusMillis(now.toEpochMilli()).toEpochMilli())));\n                } catch (final InterruptedException ignore) {\n                    interrupted \u003d true;\n                } catch (final Exception ex) {\n                    break;\n                }\n            }\n        } finally {\n            if (interrupted) {\n                Thread.currentThread().interrupt();\n            }\n        }\n        return exists(file, options);\n    }",
+    "begin_line": 1751,
+    "end_line": 1776,
+    "comment": "/** \n * Waits for the file system to propagate a file creation, with a timeout. \u003cp\u003e This method repeatedly tests  {@link Files#exists(Path,LinkOption...)} until it returns true up to the maximum time given.\u003c/p\u003e\n * @param file    the file to check, must not be {@code null}.\n * @param timeout the maximum time to wait.\n * @param options options indicating how to handle symbolic links.\n * @return true if file exists.\n * @throws NullPointerException if the file is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.walk#1795",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.walk(java.nio.file.Path, org.apache.commons.io.file.PathFilter, int, boolean, java.nio.file.FileVisitOption)",
+    "snippet": "public static Stream\u003cPath\u003e walk(final Path start, final PathFilter pathFilter, final int maxDepth, final boolean readAttributes,\n            final FileVisitOption... options) throws IOException {\n        return Files.walk(start, maxDepth, options)\n                .filter(path -\u003e pathFilter.accept(path, readAttributes ? readBasicFileAttributesUnchecked(path) : null) \u003d\u003d FileVisitResult.CONTINUE);\n    }",
+    "begin_line": 1795,
+    "end_line": 1799,
+    "comment": "/** \n * Returns a stream of filtered paths. \u003cp\u003e The returned  {@link Stream} may wrap one or more {@link DirectoryStream}s. When you require timely disposal of file system resources, use a {@code try}-with-resources block to ensure invocation of the stream\u0027s  {@link Stream#close()} method after the stream operations are completed. Calling aclosed stream causes a  {@link IllegalStateException}. \u003c/p\u003e\n * @param start          the start path\n * @param pathFilter     the path filter\n * @param maxDepth       the maximum depth of directories to walk.\n * @param readAttributes whether to call the filters with file attributes (false passes null).\n * @param options        the options to configure the walk.\n * @return a filtered stream of paths.\n * @throws IOException if an I/O error is thrown when accessing the starting file.\n * @since 2.9.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.withPosixFileAttributes#1801",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.withPosixFileAttributes(java.nio.file.Path, java.nio.file.LinkOption[], boolean, org.apache.commons.io.function.IOFunction\u003cjava.nio.file.attribute.PosixFileAttributes,R\u003e)",
+    "snippet": "private static \u003cR\u003e R withPosixFileAttributes(final Path path, final LinkOption[] linkOptions, final boolean overrideReadOnly,\n            final IOFunction\u003cPosixFileAttributes, R\u003e function) throws IOException {\n        final PosixFileAttributes posixFileAttributes \u003d overrideReadOnly ? readPosixFileAttributes(path, linkOptions) : null;\n        try {\n            return function.apply(posixFileAttributes);\n        } finally {\n            if (posixFileAttributes !\u003d null \u0026\u0026 path !\u003d null \u0026\u0026 Files.exists(path, linkOptions)) {\n                Files.setPosixFilePermissions(path, posixFileAttributes.permissions());\n            }\n        }\n    }",
+    "begin_line": 1801,
+    "end_line": 1811,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.writeString#1825",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.writeString(java.nio.file.Path, java.lang.CharSequence, java.nio.charset.Charset, java.nio.file.OpenOption)",
+    "snippet": "public static Path writeString(final Path path, final CharSequence charSequence, final Charset charset, final OpenOption... openOptions)\n            throws IOException {\n        // Check the text is not null before opening file.\n        Objects.requireNonNull(path, \"path\");\n        Objects.requireNonNull(charSequence, \"charSequence\");\n        Files.write(path, String.valueOf(charSequence).getBytes(Charsets.toCharset(charset)), openOptions);\n        return path;\n    }",
+    "begin_line": 1825,
+    "end_line": 1832,
+    "comment": "/** \n * Writes the given character sequence to a file at the given path.\n * @param path         The target file.\n * @param charSequence The character sequence text.\n * @param charset      The Charset to encode the text.\n * @param openOptions  options How to open the file.\n * @return The given path.\n * @throws IOException          if an I/O error occurs writing to or creating the file.\n * @throws NullPointerException if either {@code path} or {@code charSequence} is {@code null}.\n * @since 2.12.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "RelativeSortedPaths.PathUtils#1837",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "signature": "org.apache.commons.io.file.PathUtils.PathUtils()",
+    "snippet": "private PathUtils() {\n        // do not instantiate.\n    }",
+    "begin_line": 1837,
+    "end_line": 1839,
+    "comment": "/** \n * Prevents instantiation.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

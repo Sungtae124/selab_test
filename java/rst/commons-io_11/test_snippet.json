@@ -1,0 +1,254 @@
+[
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testCharsetEncoderFlush(java.lang.String, java.lang.String)",
+    "snippet": "@ParameterizedTest\n    @MethodSource(\"charsetData\")\n    public void testCharsetEncoderFlush(final String charsetName, final String data) throws IOException {\n        final Charset charset \u003d Charset.forName(charsetName);\n        final byte[] expected \u003d data.getBytes(charset);\n        try (InputStream in \u003d new ReaderInputStream(new StringReader(data), charset)) {\n            final byte[] actual \u003d IOUtils.toByteArray(in);\n            assertEquals(Arrays.toString(expected), Arrays.toString(actual));\n        }\n    }",
+    "begin_line": 60,
+    "end_line": 67,
+    "comment": "",
+    "child_ranges": [
+      "(line 61,col 9)-(line 61,col 61)",
+      "(line 62,col 9)-(line 62,col 55)",
+      "(line 63,col 9)-(line 66,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.charsetData()",
+    "snippet": "static Stream\u003cArguments\u003e charsetData() {\n        // @formatter:off\n        return Stream.of(\n                Arguments.of(\"Cp930\", \"\\u0391\"),\n                Arguments.of(\"ISO_8859_1\", \"A\"),\n                Arguments.of(\"UTF-8\", \"\\u0391\"));\n        // @formatter:on\n    }",
+    "begin_line": 69,
+    "end_line": 76,
+    "comment": "",
+    "child_ranges": [
+      "(line 71,col 9)-(line 74,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testBufferTooSmall()",
+    "snippet": "@Test\n    public void testBufferTooSmall() throws IOException {\n        assertThrows(IllegalArgumentException.class, () -\u003e new ReaderInputStream(new StringReader(\"\\uD800\"), StandardCharsets.UTF_8, -1));\n        assertThrows(IllegalArgumentException.class, () -\u003e new ReaderInputStream(new StringReader(\"\\uD800\"), StandardCharsets.UTF_8, 0));\n        assertThrows(IllegalArgumentException.class, () -\u003e new ReaderInputStream(new StringReader(\"\\uD800\"), StandardCharsets.UTF_8, 1));\n    }",
+    "begin_line": 79,
+    "end_line": 83,
+    "comment": "",
+    "child_ranges": [
+      "(line 80,col 9)-(line 80,col 138)",
+      "(line 81,col 9)-(line 81,col 137)",
+      "(line 82,col 9)-(line 82,col 137)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testBufferSmallest()",
+    "snippet": "@Test\n    @Timeout(value \u003d 500, unit \u003d TimeUnit.MILLISECONDS)\n    public void testBufferSmallest() throws IOException {\n        final Charset charset \u003d StandardCharsets.UTF_8;\n        try (InputStream in \u003d new ReaderInputStream(new StringReader(\"\\uD800\"), charset, (int) ReaderInputStream.minBufferSize(charset.newEncoder()))) {\n            in.read();\n        }\n    }",
+    "begin_line": 87,
+    "end_line": 92,
+    "comment": "",
+    "child_ranges": [
+      "(line 88,col 9)-(line 88,col 55)",
+      "(line 89,col 9)-(line 91,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testCharsetMismatchInfiniteLoop()",
+    "snippet": "@Test\n    public void testCharsetMismatchInfiniteLoop() throws IOException {\n        // Input is UTF-8 bytes: 0xE0 0xB2 0xA0\n        final char[] inputChars \u003d {(char) 0xE0, (char) 0xB2, (char) 0xA0};\n        // Charset charset \u003d Charset.forName(\"UTF-8\"); // works\n        final Charset charset \u003d StandardCharsets.US_ASCII; // infinite loop\n        try (ReaderInputStream stream \u003d new ReaderInputStream(new CharArrayReader(inputChars), charset)) {\n            IOUtils.toCharArray(stream, charset);\n        }\n    }",
+    "begin_line": 98,
+    "end_line": 106,
+    "comment": "",
+    "child_ranges": [
+      "(line 100,col 9)-(line 100,col 74)",
+      "(line 102,col 9)-(line 102,col 58)",
+      "(line 103,col 9)-(line 105,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testCodingErrorAction()",
+    "snippet": "@Test\n    @Timeout(value \u003d 500, unit \u003d TimeUnit.MILLISECONDS)\n    public void testCodingErrorAction() throws IOException {\n        final Charset charset \u003d StandardCharsets.UTF_8;\n        final CharsetEncoder encoder \u003d charset.newEncoder().onMalformedInput(CodingErrorAction.REPORT);\n        try (InputStream in \u003d new ReaderInputStream(new StringReader(\"\\uD800aa\"), encoder, (int) ReaderInputStream.minBufferSize(charset.newEncoder()))) {\n            assertThrows(CharacterCodingException.class, in::read);\n        }\n    }",
+    "begin_line": 115,
+    "end_line": 121,
+    "comment": "/** \n * Tests IO-717 to avoid infinite loops. ReaderInputStream does not throw exception with  {@link CodingErrorAction#REPORT}.\n */\n",
+    "child_ranges": [
+      "(line 116,col 9)-(line 116,col 55)",
+      "(line 117,col 9)-(line 117,col 103)",
+      "(line 118,col 9)-(line 120,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testConstructNullCharsetEncoder()",
+    "snippet": "@Test\n    @Timeout(value \u003d 500, unit \u003d TimeUnit.MILLISECONDS)\n    public void testConstructNullCharsetEncoder() throws IOException {\n        final Charset charset \u003d Charset.defaultCharset();\n        final CharsetEncoder encoder \u003d null;\n        try (ReaderInputStream in \u003d new ReaderInputStream(new StringReader(\"ABC\"), encoder, (int) ReaderInputStream.minBufferSize(charset.newEncoder()))) {\n            IOUtils.toByteArray(in);\n            assertEquals(Charset.defaultCharset(), in.getCharsetEncoder().charset());\n        }\n    }",
+    "begin_line": 125,
+    "end_line": 132,
+    "comment": "",
+    "child_ranges": [
+      "(line 126,col 9)-(line 126,col 57)",
+      "(line 127,col 9)-(line 127,col 44)",
+      "(line 128,col 9)-(line 131,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testConstructNullCharset()",
+    "snippet": "@Test\n    @Timeout(value \u003d 500, unit \u003d TimeUnit.MILLISECONDS)\n    public void testConstructNullCharset() throws IOException {\n        final Charset charset \u003d Charset.defaultCharset();\n        final Charset encoder \u003d null;\n        try (ReaderInputStream in \u003d new ReaderInputStream(new StringReader(\"ABC\"), encoder, (int) ReaderInputStream.minBufferSize(charset.newEncoder()))) {\n            IOUtils.toByteArray(in);\n            assertEquals(Charset.defaultCharset(), in.getCharsetEncoder().charset());\n        }\n    }",
+    "begin_line": 136,
+    "end_line": 143,
+    "comment": "",
+    "child_ranges": [
+      "(line 137,col 9)-(line 137,col 57)",
+      "(line 138,col 9)-(line 138,col 37)",
+      "(line 139,col 9)-(line 142,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testConstructNullCharsetNameEncoder()",
+    "snippet": "@Test\n    @Timeout(value \u003d 500, unit \u003d TimeUnit.MILLISECONDS)\n    public void testConstructNullCharsetNameEncoder() throws IOException {\n        final Charset charset \u003d Charset.defaultCharset();\n        final String encoder \u003d null;\n        try (ReaderInputStream in \u003d new ReaderInputStream(new StringReader(\"ABC\"), encoder, (int) ReaderInputStream.minBufferSize(charset.newEncoder()))) {\n            IOUtils.toByteArray(in);\n            assertEquals(Charset.defaultCharset(), in.getCharsetEncoder().charset());\n        }\n    }",
+    "begin_line": 147,
+    "end_line": 154,
+    "comment": "",
+    "child_ranges": [
+      "(line 148,col 9)-(line 148,col 57)",
+      "(line 149,col 9)-(line 149,col 36)",
+      "(line 150,col 9)-(line 153,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testLargeUTF8WithBufferedRead()",
+    "snippet": "@Test\n    public void testLargeUTF8WithBufferedRead() throws IOException {\n        testWithBufferedRead(LARGE_TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 157,
+    "end_line": 159,
+    "comment": "",
+    "child_ranges": [
+      "(line 158,col 9)-(line 158,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testLargeUTF8WithSingleByteRead()",
+    "snippet": "@Test\n    public void testLargeUTF8WithSingleByteRead() throws IOException {\n        testWithSingleByteRead(LARGE_TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 162,
+    "end_line": 164,
+    "comment": "",
+    "child_ranges": [
+      "(line 163,col 9)-(line 163,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testReadZero()",
+    "snippet": "@SuppressWarnings(\"deprecation\")\n    @Test\n    public void testReadZero() throws Exception {\n        final String inStr \u003d \"test\";\n        try (final ReaderInputStream inputStream \u003d new ReaderInputStream(new StringReader(inStr))) {\n            final byte[] bytes \u003d new byte[30];\n            assertEquals(0, inputStream.read(bytes, 0, 0));\n            assertEquals(inStr.length(), inputStream.read(bytes, 0, inStr.length() + 1));\n            // Should always return 0 for length \u003d\u003d 0\n            assertEquals(0, inputStream.read(bytes, 0, 0));\n        }\n    }",
+    "begin_line": 168,
+    "end_line": 177,
+    "comment": "",
+    "child_ranges": [
+      "(line 169,col 9)-(line 169,col 36)",
+      "(line 170,col 9)-(line 176,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testReadZeroEmptyString()",
+    "snippet": "@SuppressWarnings(\"deprecation\")\n    @Test\n    public void testReadZeroEmptyString() throws Exception {\n        try (final ReaderInputStream inputStream \u003d new ReaderInputStream(new StringReader(\"\"))) {\n            final byte[] bytes \u003d new byte[30];\n            // Should always return 0 for length \u003d\u003d 0\n            assertEquals(0, inputStream.read(bytes, 0, 0));\n            assertEquals(-1, inputStream.read(bytes, 0, 1));\n            assertEquals(0, inputStream.read(bytes, 0, 0));\n            assertEquals(-1, inputStream.read(bytes, 0, 1));\n        }\n    }",
+    "begin_line": 181,
+    "end_line": 190,
+    "comment": "",
+    "child_ranges": [
+      "(line 182,col 9)-(line 189,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testUTF16WithSingleByteRead()",
+    "snippet": "@Test\n    public void testUTF16WithSingleByteRead() throws IOException {\n        testWithSingleByteRead(TEST_STRING, \"UTF-16\");\n    }",
+    "begin_line": 193,
+    "end_line": 195,
+    "comment": "",
+    "child_ranges": [
+      "(line 194,col 9)-(line 194,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testUTF8WithBufferedRead()",
+    "snippet": "@Test\n    public void testUTF8WithBufferedRead() throws IOException {\n        testWithBufferedRead(TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 198,
+    "end_line": 200,
+    "comment": "",
+    "child_ranges": [
+      "(line 199,col 9)-(line 199,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testUTF8WithSingleByteRead()",
+    "snippet": "@Test\n    public void testUTF8WithSingleByteRead() throws IOException {\n        testWithSingleByteRead(TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 203,
+    "end_line": 205,
+    "comment": "",
+    "child_ranges": [
+      "(line 204,col 9)-(line 204,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testWithBufferedRead(java.lang.String, java.lang.String)",
+    "snippet": "private void testWithBufferedRead(final String testString, final String charsetName) throws IOException {\n        final byte[] expected \u003d testString.getBytes(charsetName);\n        try (final ReaderInputStream in \u003d new ReaderInputStream(new StringReader(testString), charsetName)) {\n            final byte[] buffer \u003d new byte[128];\n            int offset \u003d 0;\n            while (true) {\n                int bufferOffset \u003d random.nextInt(64);\n                final int bufferLength \u003d random.nextInt(64);\n                int read \u003d in.read(buffer, bufferOffset, bufferLength);\n                if (read \u003d\u003d -1) {\n                    assertEquals(offset, expected.length);\n                    break;\n                }\n                assertTrue(read \u003c\u003d bufferLength);\n                while (read \u003e 0) {\n                    assertTrue(offset \u003c expected.length);\n                    assertEquals(expected[offset], buffer[bufferOffset]);\n                    offset++;\n                    bufferOffset++;\n                    read--;\n                }\n            }\n        }\n    }",
+    "begin_line": 207,
+    "end_line": 230,
+    "comment": "",
+    "child_ranges": [
+      "(line 208,col 9)-(line 208,col 65)",
+      "(line 209,col 9)-(line 229,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/input/ReaderInputStreamTest.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStreamTest.testWithSingleByteRead(java.lang.String, java.lang.String)",
+    "snippet": "private void testWithSingleByteRead(final String testString, final String charsetName) throws IOException {\n        final byte[] bytes \u003d testString.getBytes(charsetName);\n        try (final ReaderInputStream in \u003d new ReaderInputStream(new StringReader(testString), charsetName)) {\n            for (final byte b : bytes) {\n                final int read \u003d in.read();\n                assertTrue(read \u003e\u003d 0);\n                assertTrue(read \u003c\u003d 255);\n                assertEquals(b, (byte) read);\n            }\n            assertEquals(-1, in.read());\n        }\n    }",
+    "begin_line": 232,
+    "end_line": 243,
+    "comment": "",
+    "child_ranges": [
+      "(line 233,col 9)-(line 233,col 62)",
+      "(line 234,col 9)-(line 242,col 9)"
+    ]
+  }
+]

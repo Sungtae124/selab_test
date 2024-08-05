@@ -1,0 +1,633 @@
+[
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.CompositeCollectionTest(java.lang.String)",
+    "snippet": "public CompositeCollectionTest(final String name) {\n        super(name);\n    }",
+    "begin_line": 42,
+    "end_line": 44,
+    "comment": "",
+    "child_ranges": [
+      "(line 43,col 9)-(line 43,col 20)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.getCompatibilityVersion()",
+    "snippet": "@Override\n    public String getCompatibilityVersion() {\n        return \"4\";\n    }",
+    "begin_line": 47,
+    "end_line": 49,
+    "comment": "",
+    "child_ranges": [
+      "(line 48,col 9)-(line 48,col 19)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.getFullElements()",
+    "snippet": "@Override\n    @SuppressWarnings(\"unchecked\")\n    public E[] getFullElements() {\n        return (E[]) new Object[] { \"1\", \"2\", \"3\", \"4\" };\n    }",
+    "begin_line": 53,
+    "end_line": 55,
+    "comment": "",
+    "child_ranges": [
+      "(line 54,col 9)-(line 54,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.isAddSupported()",
+    "snippet": "@Override\n    public boolean isAddSupported() {\n        return false;\n    }",
+    "begin_line": 62,
+    "end_line": 64,
+    "comment": "/** \n * Run stock collection tests without Mutator, so turn off add, remove\n */\n",
+    "child_ranges": [
+      "(line 63,col 9)-(line 63,col 21)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.isRemoveSupported()",
+    "snippet": "@Override\n    public boolean isRemoveSupported() {\n        return false;\n    }",
+    "begin_line": 67,
+    "end_line": 69,
+    "comment": "",
+    "child_ranges": [
+      "(line 68,col 9)-(line 68,col 21)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.makeConfirmedCollection()",
+    "snippet": "@Override\n    public Collection\u003cE\u003e makeConfirmedCollection() {\n        return new HashSet\u003c\u003e();\n    }",
+    "begin_line": 72,
+    "end_line": 74,
+    "comment": "",
+    "child_ranges": [
+      "(line 73,col 9)-(line 73,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.makeConfirmedFullCollection()",
+    "snippet": "@Override\n    public Collection\u003cE\u003e makeConfirmedFullCollection() {\n        final Collection\u003cE\u003e collection \u003d new HashSet\u003c\u003e();\n        collection.addAll(Arrays.asList(getFullElements()));\n        return collection;\n    }",
+    "begin_line": 82,
+    "end_line": 86,
+    "comment": "/** \n * Full collection should look like a collection with 4 elements\n */\n",
+    "child_ranges": [
+      "(line 83,col 9)-(line 83,col 57)",
+      "(line 84,col 9)-(line 84,col 60)",
+      "(line 85,col 9)-(line 85,col 26)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.makeFullCollection()",
+    "snippet": "@Override\n    public Collection\u003cE\u003e makeFullCollection() {\n        final CompositeCollection\u003cE\u003e compositeCollection \u003d new CompositeCollection\u003c\u003e();\n        final E[] elements \u003d getFullElements();\n        for (final E element : elements) {\n            final Collection\u003cE\u003e summand \u003d new HashSet\u003c\u003e();\n            summand.add(element);\n            compositeCollection.addComposited(summand);\n        }\n        return compositeCollection;\n    }",
+    "begin_line": 91,
+    "end_line": 100,
+    "comment": "/** \n * Full collection consists of 4 collections, each with one element\n */\n",
+    "child_ranges": [
+      "(line 92,col 9)-(line 92,col 87)",
+      "(line 93,col 9)-(line 93,col 47)",
+      "(line 94,col 9)-(line 98,col 9)",
+      "(line 99,col 9)-(line 99,col 35)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.makeObject()",
+    "snippet": "@Override\n    public Collection\u003cE\u003e makeObject() {\n        return new CompositeCollection\u003c\u003e();\n    }",
+    "begin_line": 105,
+    "end_line": 107,
+    "comment": "/** \n * Empty collection is empty composite\n */\n",
+    "child_ranges": [
+      "(line 106,col 9)-(line 106,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.setUpMutatorTest()",
+    "snippet": "@SuppressWarnings(\"serial\")\n    protected void setUpMutatorTest() {\n        setUpTest();\n        c.setMutator(new CompositeCollection.CollectionMutator\u003cE\u003e() {\n\n            @Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite, final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e coll : collections) {\n                    coll.add(obj);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.remove(obj);\n                }\n                return true;\n            }\n        });\n    }",
+    "begin_line": 110,
+    "end_line": 140,
+    "comment": "",
+    "child_ranges": [
+      "(line 111,col 9)-(line 111,col 20)",
+      "(line 112,col 9)-(line 139,col 11)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.add(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, E)",
+    "snippet": "@Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite, final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e coll : collections) {\n                    coll.add(obj);\n                }\n                return true;\n            }",
+    "begin_line": 115,
+    "end_line": 120,
+    "comment": "",
+    "child_ranges": [
+      "(line 116,col 17)-(line 118,col 17)",
+      "(line 119,col 17)-(line 119,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.addAll(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Collection\u003c? extends E\u003e)",
+    "snippet": "@Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }",
+    "begin_line": 123,
+    "end_line": 129,
+    "comment": "",
+    "child_ranges": [
+      "(line 125,col 17)-(line 127,col 17)",
+      "(line 128,col 17)-(line 128,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.remove(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Object)",
+    "snippet": "@Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.remove(obj);\n                }\n                return true;\n            }",
+    "begin_line": 132,
+    "end_line": 138,
+    "comment": "",
+    "child_ranges": [
+      "(line 134,col 17)-(line 136,col 17)",
+      "(line 137,col 17)-(line 137,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.setUpTest()",
+    "snippet": "protected void setUpTest() {\n        c \u003d new CompositeCollection\u003c\u003e();\n        one \u003d new HashSet\u003c\u003e();\n        two \u003d new HashSet\u003c\u003e();\n    }",
+    "begin_line": 142,
+    "end_line": 146,
+    "comment": "",
+    "child_ranges": [
+      "(line 143,col 9)-(line 143,col 40)",
+      "(line 144,col 9)-(line 144,col 30)",
+      "(line 145,col 9)-(line 145,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddAllMutator()",
+    "snippet": "@SuppressWarnings({ \"unchecked\", \"serial\" })\n    public void testAddAllMutator() {\n        setUpTest();\n        c.setMutator(new CompositeCollection.CollectionMutator\u003cE\u003e() {\n            @Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.add(obj);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                return false;\n            }\n        });\n\n        c.addComposited(one);\n        two.add((E) \"foo\");\n        c.addAll(two);\n        assertTrue(c.contains(\"foo\"));\n        assertTrue(one.contains(\"foo\"));\n    }",
+    "begin_line": 149,
+    "end_line": 182,
+    "comment": "",
+    "child_ranges": [
+      "(line 150,col 9)-(line 150,col 20)",
+      "(line 151,col 9)-(line 175,col 11)",
+      "(line 177,col 9)-(line 177,col 29)",
+      "(line 178,col 9)-(line 178,col 27)",
+      "(line 179,col 9)-(line 179,col 22)",
+      "(line 180,col 9)-(line 180,col 38)",
+      "(line 181,col 9)-(line 181,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.add(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, E)",
+    "snippet": "@Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.add(obj);\n                }\n                return true;\n            }",
+    "begin_line": 153,
+    "end_line": 159,
+    "comment": "",
+    "child_ranges": [
+      "(line 155,col 17)-(line 157,col 17)",
+      "(line 158,col 17)-(line 158,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.addAll(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Collection\u003c? extends E\u003e)",
+    "snippet": "@Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }",
+    "begin_line": 162,
+    "end_line": 168,
+    "comment": "",
+    "child_ranges": [
+      "(line 164,col 17)-(line 166,col 17)",
+      "(line 167,col 17)-(line 167,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.remove(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Object)",
+    "snippet": "@Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                return false;\n            }",
+    "begin_line": 171,
+    "end_line": 174,
+    "comment": "",
+    "child_ranges": [
+      "(line 173,col 17)-(line 173,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddAllToCollection()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testAddAllToCollection() {\n        setUpTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        c.addComposited(one, two);\n        final Collection\u003cE\u003e toCollection \u003d new HashSet\u003c\u003e();\n        toCollection.addAll(c);\n        assertTrue(toCollection.containsAll(c));\n        assertEquals(c.size(), toCollection.size());\n    }",
+    "begin_line": 185,
+    "end_line": 194,
+    "comment": "",
+    "child_ranges": [
+      "(line 186,col 9)-(line 186,col 20)",
+      "(line 187,col 9)-(line 187,col 25)",
+      "(line 188,col 9)-(line 188,col 25)",
+      "(line 189,col 9)-(line 189,col 34)",
+      "(line 190,col 9)-(line 190,col 59)",
+      "(line 191,col 9)-(line 191,col 31)",
+      "(line 192,col 9)-(line 192,col 48)",
+      "(line 193,col 9)-(line 193,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddMutator()",
+    "snippet": "@SuppressWarnings({ \"unchecked\", \"serial\" })\n    public void testAddMutator() {\n        setUpTest();\n        c.setMutator(new CompositeCollection.CollectionMutator\u003cE\u003e() {\n            @Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.add(obj);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }\n\n            @Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                return false;\n            }\n        });\n\n        c.addComposited(one);\n        c.add((E) \"foo\");\n        assertTrue(c.contains(\"foo\"));\n        assertTrue(one.contains(\"foo\"));\n    }",
+    "begin_line": 197,
+    "end_line": 229,
+    "comment": "",
+    "child_ranges": [
+      "(line 198,col 9)-(line 198,col 20)",
+      "(line 199,col 9)-(line 223,col 11)",
+      "(line 225,col 9)-(line 225,col 29)",
+      "(line 226,col 9)-(line 226,col 25)",
+      "(line 227,col 9)-(line 227,col 38)",
+      "(line 228,col 9)-(line 228,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.add(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, E)",
+    "snippet": "@Override\n            public boolean add(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final E obj) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.add(obj);\n                }\n                return true;\n            }",
+    "begin_line": 201,
+    "end_line": 207,
+    "comment": "",
+    "child_ranges": [
+      "(line 203,col 17)-(line 205,col 17)",
+      "(line 206,col 17)-(line 206,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.addAll(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Collection\u003c? extends E\u003e)",
+    "snippet": "@Override\n            public boolean addAll(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                for (final Collection\u003cE\u003e collection : collections) {\n                    collection.addAll(coll);\n                }\n                return true;\n            }",
+    "begin_line": 210,
+    "end_line": 216,
+    "comment": "",
+    "child_ranges": [
+      "(line 212,col 17)-(line 214,col 17)",
+      "(line 215,col 17)-(line 215,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.remove(CompositeCollection\u003cE\u003e, List\u003cCollection\u003cE\u003e\u003e, Object)",
+    "snippet": "@Override\n            public boolean remove(final CompositeCollection\u003cE\u003e composite,\n                    final List\u003cCollection\u003cE\u003e\u003e collections, final Object obj) {\n                return false;\n            }",
+    "begin_line": 219,
+    "end_line": 222,
+    "comment": "",
+    "child_ranges": [
+      "(line 221,col 17)-(line 221,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testClear()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testClear() {\n        setUpTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        c.addComposited(one, two);\n        c.clear();\n        assertTrue(one.isEmpty());\n        assertTrue(two.isEmpty());\n        assertTrue(c.isEmpty());\n    }",
+    "begin_line": 233,
+    "end_line": 242,
+    "comment": "",
+    "child_ranges": [
+      "(line 234,col 9)-(line 234,col 20)",
+      "(line 235,col 9)-(line 235,col 25)",
+      "(line 236,col 9)-(line 236,col 25)",
+      "(line 237,col 9)-(line 237,col 34)",
+      "(line 238,col 9)-(line 238,col 18)",
+      "(line 239,col 9)-(line 239,col 34)",
+      "(line 240,col 9)-(line 240,col 34)",
+      "(line 241,col 9)-(line 241,col 32)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testContainsAll()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testContainsAll() {\n        setUpTest();\n        one.add((E) \"1\");\n        two.add((E) \"1\");\n        c.addComposited(one);\n        assertTrue(c.containsAll(two));\n        assertFalse(c.containsAll(null));\n    }",
+    "begin_line": 245,
+    "end_line": 252,
+    "comment": "",
+    "child_ranges": [
+      "(line 246,col 9)-(line 246,col 20)",
+      "(line 247,col 9)-(line 247,col 25)",
+      "(line 248,col 9)-(line 248,col 25)",
+      "(line 249,col 9)-(line 249,col 29)",
+      "(line 250,col 9)-(line 250,col 39)",
+      "(line 251,col 9)-(line 251,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullList()",
+    "snippet": "public void testAddNullList() {\n        ArrayList\u003cString\u003e nullList \u003d null;\n        CompositeCollection\u003cString\u003e cc \u003d new CompositeCollection\u003c\u003e();\n        cc.addComposited(nullList);\n        Assert.assertEquals(0, cc.size());\n    }",
+    "begin_line": 254,
+    "end_line": 259,
+    "comment": "",
+    "child_ranges": [
+      "(line 255,col 9)-(line 255,col 42)",
+      "(line 256,col 9)-(line 256,col 69)",
+      "(line 257,col 9)-(line 257,col 35)",
+      "(line 258,col 9)-(line 258,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullLists2Args()",
+    "snippet": "public void testAddNullLists2Args() {\n        ArrayList\u003cString\u003e nullList \u003d null;\n        CompositeCollection\u003cString\u003e cc \u003d new CompositeCollection\u003c\u003e();\n        cc.addComposited(nullList, nullList);\n        Assert.assertEquals(0, cc.size());\n    }",
+    "begin_line": 261,
+    "end_line": 266,
+    "comment": "",
+    "child_ranges": [
+      "(line 262,col 9)-(line 262,col 42)",
+      "(line 263,col 9)-(line 263,col 69)",
+      "(line 264,col 9)-(line 264,col 45)",
+      "(line 265,col 9)-(line 265,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullListsVarArgs()",
+    "snippet": "public void testAddNullListsVarArgs() {\n        ArrayList\u003cString\u003e nullList \u003d null;\n        CompositeCollection\u003cString\u003e cc \u003d new CompositeCollection\u003c\u003e();\n        cc.addComposited(nullList, nullList, nullList);\n        Assert.assertEquals(0, cc.size());\n    }",
+    "begin_line": 268,
+    "end_line": 273,
+    "comment": "",
+    "child_ranges": [
+      "(line 269,col 9)-(line 269,col 42)",
+      "(line 270,col 9)-(line 270,col 69)",
+      "(line 271,col 9)-(line 271,col 55)",
+      "(line 272,col 9)-(line 272,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testIsEmpty()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testIsEmpty() {\n        setUpTest();\n        assertTrue(c.isEmpty());\n        final HashSet\u003cE\u003e empty \u003d new HashSet\u003c\u003e();\n        c.addComposited(empty);\n        assertTrue(c.isEmpty());\n        empty.add((E) \"a\");\n        assertTrue(!c.isEmpty());\n    }",
+    "begin_line": 276,
+    "end_line": 284,
+    "comment": "",
+    "child_ranges": [
+      "(line 277,col 9)-(line 277,col 20)",
+      "(line 278,col 9)-(line 278,col 32)",
+      "(line 279,col 9)-(line 279,col 49)",
+      "(line 280,col 9)-(line 280,col 31)",
+      "(line 281,col 9)-(line 281,col 32)",
+      "(line 282,col 9)-(line 282,col 27)",
+      "(line 283,col 9)-(line 283,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testIterator()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testIterator() {\n        setUpTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        c.addComposited(one);\n        c.addComposited(two);\n        final Iterator\u003cE\u003e i \u003d c.iterator();\n        E next \u003d i.next();\n        assertTrue(c.contains(next));\n        assertTrue(one.contains(next));\n        next \u003d i.next();\n        i.remove();\n        assertTrue(!c.contains(next));\n        assertTrue(!two.contains(next));\n    }",
+    "begin_line": 287,
+    "end_line": 301,
+    "comment": "",
+    "child_ranges": [
+      "(line 288,col 9)-(line 288,col 20)",
+      "(line 289,col 9)-(line 289,col 25)",
+      "(line 290,col 9)-(line 290,col 25)",
+      "(line 291,col 9)-(line 291,col 29)",
+      "(line 292,col 9)-(line 292,col 29)",
+      "(line 293,col 9)-(line 293,col 43)",
+      "(line 294,col 9)-(line 294,col 26)",
+      "(line 295,col 9)-(line 295,col 37)",
+      "(line 296,col 9)-(line 296,col 39)",
+      "(line 297,col 9)-(line 297,col 24)",
+      "(line 298,col 9)-(line 298,col 19)",
+      "(line 299,col 9)-(line 299,col 38)",
+      "(line 300,col 9)-(line 300,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testMultipleCollectionsSize()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testMultipleCollectionsSize() {\n        setUpTest();\n        final HashSet\u003cE\u003e set \u003d new HashSet\u003c\u003e();\n        set.add((E) \"a\");\n        set.add((E) \"b\");\n        c.addComposited(set);\n        final HashSet\u003cE\u003e other \u003d new HashSet\u003c\u003e();\n        other.add((E) \"c\");\n        c.addComposited(other);\n        assertEquals(set.size() + other.size(), c.size());\n    }",
+    "begin_line": 304,
+    "end_line": 314,
+    "comment": "",
+    "child_ranges": [
+      "(line 305,col 9)-(line 305,col 20)",
+      "(line 306,col 9)-(line 306,col 47)",
+      "(line 307,col 9)-(line 307,col 25)",
+      "(line 308,col 9)-(line 308,col 25)",
+      "(line 309,col 9)-(line 309,col 29)",
+      "(line 310,col 9)-(line 310,col 49)",
+      "(line 311,col 9)-(line 311,col 27)",
+      "(line 312,col 9)-(line 312,col 31)",
+      "(line 313,col 9)-(line 313,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testRemove()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemove() {\n        setUpMutatorTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        two.add((E) \"1\");\n        c.addComposited(one, two);\n        c.remove(\"1\");\n        assertTrue(!c.contains(\"1\"));\n        assertTrue(!one.contains(\"1\"));\n        assertTrue(!two.contains(\"1\"));\n    }",
+    "begin_line": 317,
+    "end_line": 327,
+    "comment": "",
+    "child_ranges": [
+      "(line 318,col 9)-(line 318,col 27)",
+      "(line 319,col 9)-(line 319,col 25)",
+      "(line 320,col 9)-(line 320,col 25)",
+      "(line 321,col 9)-(line 321,col 25)",
+      "(line 322,col 9)-(line 322,col 34)",
+      "(line 323,col 9)-(line 323,col 22)",
+      "(line 324,col 9)-(line 324,col 37)",
+      "(line 325,col 9)-(line 325,col 39)",
+      "(line 326,col 9)-(line 326,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testRemoveAll()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemoveAll() {\n        setUpMutatorTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        two.add((E) \"1\");\n        // need separate list to remove, as otherwise one clears itself\n        final Collection\u003cE\u003e removing \u003d new ArrayList\u003c\u003e(one);\n        c.addComposited(one, two);\n        c.removeAll(removing);\n        assertTrue(!c.contains(\"1\"));\n        assertTrue(!one.contains(\"1\"));\n        assertTrue(!two.contains(\"1\"));\n        c.removeAll(null);\n        assertTrue(!c.contains(\"1\"));\n        assertTrue(!one.contains(\"1\"));\n        assertTrue(!two.contains(\"1\"));\n    }",
+    "begin_line": 330,
+    "end_line": 346,
+    "comment": "",
+    "child_ranges": [
+      "(line 331,col 9)-(line 331,col 27)",
+      "(line 332,col 9)-(line 332,col 25)",
+      "(line 333,col 9)-(line 333,col 25)",
+      "(line 334,col 9)-(line 334,col 25)",
+      "(line 336,col 9)-(line 336,col 60)",
+      "(line 337,col 9)-(line 337,col 34)",
+      "(line 338,col 9)-(line 338,col 30)",
+      "(line 339,col 9)-(line 339,col 37)",
+      "(line 340,col 9)-(line 340,col 39)",
+      "(line 341,col 9)-(line 341,col 39)",
+      "(line 342,col 9)-(line 342,col 26)",
+      "(line 343,col 9)-(line 343,col 37)",
+      "(line 344,col 9)-(line 344,col 39)",
+      "(line 345,col 9)-(line 345,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testRemoveComposited()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemoveComposited() {\n        setUpMutatorTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        two.add((E) \"1\");\n        c.addComposited(one, two);\n        c.removeComposited(one);\n        assertTrue(c.contains(\"1\"));\n        assertEquals(2, c.size());\n    }",
+    "begin_line": 349,
+    "end_line": 358,
+    "comment": "",
+    "child_ranges": [
+      "(line 350,col 9)-(line 350,col 27)",
+      "(line 351,col 9)-(line 351,col 25)",
+      "(line 352,col 9)-(line 352,col 25)",
+      "(line 353,col 9)-(line 353,col 25)",
+      "(line 354,col 9)-(line 354,col 34)",
+      "(line 355,col 9)-(line 355,col 32)",
+      "(line 356,col 9)-(line 356,col 36)",
+      "(line 357,col 9)-(line 357,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testRetainAll()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRetainAll() {\n        setUpTest();\n        one.add((E) \"1\");\n        one.add((E) \"2\");\n        two.add((E) \"1\");\n        c.addComposited(one);\n        c.retainAll(two);\n        assertTrue(!c.contains(\"2\"));\n        assertTrue(!one.contains(\"2\"));\n        assertTrue(c.contains(\"1\"));\n        assertTrue(one.contains(\"1\"));\n        c.retainAll(null);\n        assertTrue(!c.contains(\"2\"));\n        assertTrue(!one.contains(\"2\"));\n        assertTrue(c.contains(\"1\"));\n        assertTrue(one.contains(\"1\"));\n    }",
+    "begin_line": 361,
+    "end_line": 377,
+    "comment": "",
+    "child_ranges": [
+      "(line 362,col 9)-(line 362,col 20)",
+      "(line 363,col 9)-(line 363,col 25)",
+      "(line 364,col 9)-(line 364,col 25)",
+      "(line 365,col 9)-(line 365,col 25)",
+      "(line 366,col 9)-(line 366,col 29)",
+      "(line 367,col 9)-(line 367,col 25)",
+      "(line 368,col 9)-(line 368,col 37)",
+      "(line 369,col 9)-(line 369,col 39)",
+      "(line 370,col 9)-(line 370,col 36)",
+      "(line 371,col 9)-(line 371,col 38)",
+      "(line 372,col 9)-(line 372,col 26)",
+      "(line 373,col 9)-(line 373,col 37)",
+      "(line 374,col 9)-(line 374,col 39)",
+      "(line 375,col 9)-(line 375,col 36)",
+      "(line 376,col 9)-(line 376,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testSize()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testSize() {\n        setUpTest();\n        final HashSet\u003cE\u003e set \u003d new HashSet\u003c\u003e();\n        set.add((E) \"a\");\n        set.add((E) \"b\");\n        c.addComposited(set);\n        assertEquals(set.size(), c.size());\n    }",
+    "begin_line": 380,
+    "end_line": 387,
+    "comment": "",
+    "child_ranges": [
+      "(line 381,col 9)-(line 381,col 20)",
+      "(line 382,col 9)-(line 382,col 47)",
+      "(line 383,col 9)-(line 383,col 25)",
+      "(line 384,col 9)-(line 384,col 25)",
+      "(line 385,col 9)-(line 385,col 29)",
+      "(line 386,col 9)-(line 386,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testToCollection()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testToCollection() {\n        setUpTest();\n        one.add((E) \"1\");\n        two.add((E) \"2\");\n        c.addComposited(one, two);\n        final Collection\u003cE\u003e foo \u003d c.toCollection();\n        assertTrue(foo.containsAll(c));\n        assertEquals(c.size(), foo.size());\n        one.add((E) \"3\");\n        assertTrue(!foo.containsAll(c));\n    }",
+    "begin_line": 390,
+    "end_line": 400,
+    "comment": "",
+    "child_ranges": [
+      "(line 391,col 9)-(line 391,col 20)",
+      "(line 392,col 9)-(line 392,col 25)",
+      "(line 393,col 9)-(line 393,col 25)",
+      "(line 394,col 9)-(line 394,col 34)",
+      "(line 395,col 9)-(line 395,col 51)",
+      "(line 396,col 9)-(line 396,col 39)",
+      "(line 397,col 9)-(line 397,col 43)",
+      "(line 398,col 9)-(line 398,col 25)",
+      "(line 399,col 9)-(line 399,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollectionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollectionTest.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollectionTest.testUnsupportedRemove()",
+    "snippet": "@Override\n    public void testUnsupportedRemove() {\n        resetFull();\n        try {\n            getCollection().remove(null);\n            fail(\"remove should raise UnsupportedOperationException\");\n        } catch (final UnsupportedOperationException e) {\n            // expected\n        }\n        verify();\n    }",
+    "begin_line": 407,
+    "end_line": 416,
+    "comment": "/** \n * Override testUnsupportedRemove, since the default impl expects removeAll, retainAll and iterator().remove to throw\n */\n",
+    "child_ranges": [
+      "(line 408,col 9)-(line 408,col 20)",
+      "(line 409,col 9)-(line 414,col 9)",
+      "(line 415,col 9)-(line 415,col 17)"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+--- org.apache.commons.io.output.FileWriterWithEncodingTest::sameEncoding_null_Charset_constructor
+java.lang.NullPointerException
+       java.base/java.util.Objects.requireNonNull(Objects.java:235)
+       org.apache.commons.io.output.FileWriterWithEncoding.initWriter(FileWriterWithEncoding.java:226)
+       org.apache.commons.io.output.FileWriterWithEncoding.<init>(FileWriterWithEncoding.java:184)
+       org.apache.commons.io.output.FileWriterWithEncoding.<init>(FileWriterWithEncoding.java:171)
+       org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_null_Charset_constructor(FileWriterWithEncodingTest.java:124)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

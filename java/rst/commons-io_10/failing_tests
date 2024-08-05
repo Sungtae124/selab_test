@@ -1,0 +1,8 @@
+--- org.apache.commons.io.input.CharSequenceInputStreamTest::testNullCharset
+java.lang.NullPointerException
+       org.apache.commons.io.input.CharSequenceInputStream.<init>(CharSequenceInputStream.java:75)
+       org.apache.commons.io.input.CharSequenceInputStream.<init>(CharSequenceInputStream.java:62)
+       org.apache.commons.io.input.CharSequenceInputStreamTest.testNullCharset(CharSequenceInputStreamTest.java:79)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

@@ -1,0 +1,19 @@
+--- org.apache.commons.io.output.WriterOutputStreamTest::testNullCharsetDecoderWithSingleByteWrite
+java.lang.NullPointerException
+       org.apache.commons.io.output.WriterOutputStream.<init>(WriterOutputStream.java:206)
+       org.apache.commons.io.output.WriterOutputStream.<init>(WriterOutputStream.java:188)
+       org.apache.commons.io.output.WriterOutputStreamTest.testWithSingleByteWrite(WriterOutputStreamTest.java:174)
+       org.apache.commons.io.output.WriterOutputStreamTest.testNullCharsetDecoderWithSingleByteWrite(WriterOutputStreamTest.java:90)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.output.WriterOutputStreamTest::testNullCharsetWithSingleByteWrite
+java.lang.NullPointerException
+       org.apache.commons.io.output.WriterOutputStream.<init>(WriterOutputStream.java:170)
+       org.apache.commons.io.output.WriterOutputStream.<init>(WriterOutputStream.java:152)
+       org.apache.commons.io.output.WriterOutputStreamTest.testWithSingleByteWrite(WriterOutputStreamTest.java:163)
+       org.apache.commons.io.output.WriterOutputStreamTest.testNullCharsetWithSingleByteWrite(WriterOutputStreamTest.java:85)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

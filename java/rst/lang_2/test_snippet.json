@@ -1,0 +1,105 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObjectTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/mutable/MutableObjectTest.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObjectTest.testConstructors()",
+    "snippet": "@Test\n    public void testConstructors() {\n        assertNull(new MutableObject\u003cString\u003e().getValue());\n\n        final Integer i \u003d Integer.valueOf(6);\n        assertSame(i, new MutableObject\u003c\u003e(i).getValue());\n        assertSame(\"HI\", new MutableObject\u003c\u003e(\"HI\").getValue());\n        assertSame(null, new MutableObject\u003c\u003e(null).getValue());\n    }",
+    "begin_line": 36,
+    "end_line": 43,
+    "comment": "",
+    "child_ranges": [
+      "(line 37,col 9)-(line 37,col 59)",
+      "(line 39,col 9)-(line 39,col 45)",
+      "(line 40,col 9)-(line 40,col 57)",
+      "(line 41,col 9)-(line 41,col 63)",
+      "(line 42,col 9)-(line 42,col 63)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObjectTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/mutable/MutableObjectTest.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObjectTest.testEquals()",
+    "snippet": "@Test\n    public void testEquals() {\n        final MutableObject\u003cString\u003e mutNumA \u003d new MutableObject\u003c\u003e(\"ALPHA\");\n        final MutableObject\u003cString\u003e mutNumB \u003d new MutableObject\u003c\u003e(\"ALPHA\");\n        final MutableObject\u003cString\u003e mutNumC \u003d new MutableObject\u003c\u003e(\"BETA\");\n        final MutableObject\u003cString\u003e mutNumNull1 \u003d new MutableObject\u003c\u003e(null);\n        final MutableObject\u003cString\u003e mutNumNull2 \u003d new MutableObject\u003c\u003e(null);\n\n        assertEquals(mutNumA, mutNumA);\n        assertEquals(mutNumA, mutNumB);\n        assertEquals(mutNumB, mutNumA);\n        assertEquals(mutNumB, mutNumB);\n        assertNotEquals(mutNumA, mutNumC);\n        assertNotEquals(mutNumB, mutNumC);\n        assertEquals(mutNumC, mutNumC);\n        assertNotEquals(mutNumA, mutNumNull1);\n        assertEquals(mutNumNull1, mutNumNull1);\n        assertEquals(mutNumNull1, mutNumNull2);\n        assertEquals(mutNumNull2, mutNumNull1);\n\n        assertNotEquals(null, mutNumA);\n        assertNotEquals(mutNumA, new Object());\n        assertNotEquals(\"0\", mutNumA);\n    }",
+    "begin_line": 46,
+    "end_line": 68,
+    "comment": "",
+    "child_ranges": [
+      "(line 47,col 9)-(line 47,col 75)",
+      "(line 48,col 9)-(line 48,col 75)",
+      "(line 49,col 9)-(line 49,col 74)",
+      "(line 50,col 9)-(line 50,col 76)",
+      "(line 51,col 9)-(line 51,col 76)",
+      "(line 53,col 9)-(line 53,col 39)",
+      "(line 54,col 9)-(line 54,col 39)",
+      "(line 55,col 9)-(line 55,col 39)",
+      "(line 56,col 9)-(line 56,col 39)",
+      "(line 57,col 9)-(line 57,col 42)",
+      "(line 58,col 9)-(line 58,col 42)",
+      "(line 59,col 9)-(line 59,col 39)",
+      "(line 60,col 9)-(line 60,col 46)",
+      "(line 61,col 9)-(line 61,col 47)",
+      "(line 62,col 9)-(line 62,col 47)",
+      "(line 63,col 9)-(line 63,col 47)",
+      "(line 65,col 9)-(line 65,col 39)",
+      "(line 66,col 9)-(line 66,col 47)",
+      "(line 67,col 9)-(line 67,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObjectTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/mutable/MutableObjectTest.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObjectTest.testGetSet()",
+    "snippet": "@Test\n    public void testGetSet() {\n        final MutableObject\u003cString\u003e mutNum \u003d new MutableObject\u003c\u003e();\n        assertNull(new MutableObject\u003c\u003e().getValue());\n\n        mutNum.setValue(\"HELLO\");\n        assertSame(\"HELLO\", mutNum.getValue());\n\n        mutNum.setValue(null);\n        assertSame(null, mutNum.getValue());\n    }",
+    "begin_line": 71,
+    "end_line": 80,
+    "comment": "",
+    "child_ranges": [
+      "(line 72,col 9)-(line 72,col 67)",
+      "(line 73,col 9)-(line 73,col 53)",
+      "(line 75,col 9)-(line 75,col 33)",
+      "(line 76,col 9)-(line 76,col 47)",
+      "(line 78,col 9)-(line 78,col 30)",
+      "(line 79,col 9)-(line 79,col 44)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObjectTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/mutable/MutableObjectTest.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObjectTest.testHashCode()",
+    "snippet": "@Test\n    public void testHashCode() {\n        final MutableObject\u003cString\u003e mutNumA \u003d new MutableObject\u003c\u003e(\"ALPHA\");\n        final MutableObject\u003cString\u003e mutNumB \u003d new MutableObject\u003c\u003e(\"ALPHA\");\n        final MutableObject\u003cString\u003e mutNumC \u003d new MutableObject\u003c\u003e(\"BETA\");\n        final MutableObject\u003cString\u003e mutNumD \u003d new MutableObject\u003c\u003e(null);\n\n        assertEquals(mutNumA.hashCode(), mutNumA.hashCode());\n        assertEquals(mutNumA.hashCode(), mutNumB.hashCode());\n        assertNotEquals(mutNumA.hashCode(), mutNumC.hashCode());\n        assertNotEquals(mutNumA.hashCode(), mutNumD.hashCode());\n        assertEquals(mutNumA.hashCode(), \"ALPHA\".hashCode());\n        assertEquals(0, mutNumD.hashCode());\n    }",
+    "begin_line": 83,
+    "end_line": 95,
+    "comment": "",
+    "child_ranges": [
+      "(line 84,col 9)-(line 84,col 75)",
+      "(line 85,col 9)-(line 85,col 75)",
+      "(line 86,col 9)-(line 86,col 74)",
+      "(line 87,col 9)-(line 87,col 72)",
+      "(line 89,col 9)-(line 89,col 61)",
+      "(line 90,col 9)-(line 90,col 61)",
+      "(line 91,col 9)-(line 91,col 64)",
+      "(line 92,col 9)-(line 92,col 64)",
+      "(line 93,col 9)-(line 93,col 61)",
+      "(line 94,col 9)-(line 94,col 44)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObjectTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/mutable/MutableObjectTest.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObjectTest.testToString()",
+    "snippet": "@Test\n    public void testToString() {\n        assertEquals(\"HI\", new MutableObject\u003c\u003e(\"HI\").toString());\n        assertEquals(\"10.0\", new MutableObject\u003c\u003e(Double.valueOf(10)).toString());\n        assertEquals(\"null\", new MutableObject\u003c\u003e(null).toString());\n    }",
+    "begin_line": 98,
+    "end_line": 102,
+    "comment": "",
+    "child_ranges": [
+      "(line 99,col 9)-(line 99,col 65)",
+      "(line 100,col 9)-(line 100,col 81)",
+      "(line 101,col 9)-(line 101,col 67)"
+    ]
+  }
+]

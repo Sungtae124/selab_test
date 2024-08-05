@@ -1,0 +1,11 @@
+[
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.out",
+    "snippet": "private final Writer out;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * The writer to decorate. \n */\n"
+  }
+]

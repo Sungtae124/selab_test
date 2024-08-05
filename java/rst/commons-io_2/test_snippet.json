@@ -1,0 +1,485 @@
+[
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.assert0(byte[])",
+    "snippet": "private void assert0(final byte[] arr) {\n        for (final byte e : arr) {\n            assertEquals(0, e);\n        }\n    }",
+    "begin_line": 41,
+    "end_line": 45,
+    "comment": "",
+    "child_ranges": [
+      "(line 42,col 9)-(line 44,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.assert0(char[])",
+    "snippet": "private void assert0(final char[] arr) {\n        for (final char e : arr) {\n            assertEquals(0, e);\n        }\n    }",
+    "begin_line": 47,
+    "end_line": 51,
+    "comment": "",
+    "child_ranges": [
+      "(line 48,col 9)-(line 50,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.serialize(IOCase)",
+    "snippet": "private IOCase serialize(final IOCase value) throws Exception {\n        final ByteArrayOutputStream buf \u003d new ByteArrayOutputStream();\n        try (final ObjectOutputStream out \u003d new ObjectOutputStream(buf)) {\n            out.writeObject(value);\n            out.flush();\n        }\n\n        final ByteArrayInputStream bufin \u003d new ByteArrayInputStream(buf.toByteArray());\n        final ObjectInputStream in \u003d new ObjectInputStream(bufin);\n        return (IOCase) in.readObject();\n    }",
+    "begin_line": 53,
+    "end_line": 63,
+    "comment": "",
+    "child_ranges": [
+      "(line 54,col 9)-(line 54,col 70)",
+      "(line 55,col 9)-(line 58,col 9)",
+      "(line 60,col 9)-(line 60,col 87)",
+      "(line 61,col 9)-(line 61,col 66)",
+      "(line 62,col 9)-(line 62,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkCompare_case()",
+    "snippet": "@Test\n    public void test_checkCompare_case() {\n        assertEquals(0, IOCase.SENSITIVE.checkCompareTo(\"ABC\", \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"ABC\", \"abc\") \u003c 0);\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"abc\", \"ABC\") \u003e 0);\n\n        assertEquals(0, IOCase.INSENSITIVE.checkCompareTo(\"ABC\", \"ABC\"));\n        assertEquals(0, IOCase.INSENSITIVE.checkCompareTo(\"ABC\", \"abc\"));\n        assertEquals(0, IOCase.INSENSITIVE.checkCompareTo(\"abc\", \"ABC\"));\n\n        assertEquals(0, IOCase.SYSTEM.checkCompareTo(\"ABC\", \"ABC\"));\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkCompareTo(\"ABC\", \"abc\") \u003d\u003d 0);\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkCompareTo(\"abc\", \"ABC\") \u003d\u003d 0);\n    }",
+    "begin_line": 66,
+    "end_line": 78,
+    "comment": "",
+    "child_ranges": [
+      "(line 67,col 9)-(line 67,col 71)",
+      "(line 68,col 9)-(line 68,col 70)",
+      "(line 69,col 9)-(line 69,col 70)",
+      "(line 71,col 9)-(line 71,col 73)",
+      "(line 72,col 9)-(line 72,col 73)",
+      "(line 73,col 9)-(line 73,col 73)",
+      "(line 75,col 9)-(line 75,col 68)",
+      "(line 76,col 9)-(line 76,col 79)",
+      "(line 77,col 9)-(line 77,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkCompare_functionality()",
+    "snippet": "@Test\n    public void test_checkCompare_functionality() {\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"ABC\", \"\") \u003e 0);\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"\", \"ABC\") \u003c 0);\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"ABC\", \"DEF\") \u003c 0);\n        assertTrue(IOCase.SENSITIVE.checkCompareTo(\"DEF\", \"ABC\") \u003e 0);\n        assertEquals(0, IOCase.SENSITIVE.checkCompareTo(\"ABC\", \"ABC\"));\n        assertEquals(0, IOCase.SENSITIVE.checkCompareTo(\"\", \"\"));\n\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkCompareTo(\"ABC\", null));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkCompareTo(null, \"ABC\"));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkCompareTo(null, null));\n    }",
+    "begin_line": 81,
+    "end_line": 92,
+    "comment": "",
+    "child_ranges": [
+      "(line 82,col 9)-(line 82,col 67)",
+      "(line 83,col 9)-(line 83,col 67)",
+      "(line 84,col 9)-(line 84,col 70)",
+      "(line 85,col 9)-(line 85,col 70)",
+      "(line 86,col 9)-(line 86,col 71)",
+      "(line 87,col 9)-(line 87,col 65)",
+      "(line 89,col 9)-(line 89,col 101)",
+      "(line 90,col 9)-(line 90,col 101)",
+      "(line 91,col 9)-(line 91,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkEndsWith_case()",
+    "snippet": "@Test\n    public void test_checkEndsWith_case() {\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"BC\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"Bc\"));\n\n        assertTrue(IOCase.INSENSITIVE.checkEndsWith(\"ABC\", \"BC\"));\n        assertTrue(IOCase.INSENSITIVE.checkEndsWith(\"ABC\", \"Bc\"));\n\n        assertTrue(IOCase.SYSTEM.checkEndsWith(\"ABC\", \"BC\"));\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkEndsWith(\"ABC\", \"Bc\"));\n    }",
+    "begin_line": 94,
+    "end_line": 103,
+    "comment": "",
+    "child_ranges": [
+      "(line 95,col 9)-(line 95,col 64)",
+      "(line 96,col 9)-(line 96,col 65)",
+      "(line 98,col 9)-(line 98,col 66)",
+      "(line 99,col 9)-(line 99,col 66)",
+      "(line 101,col 9)-(line 101,col 61)",
+      "(line 102,col 9)-(line 102,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkEndsWith_functionality()",
+    "snippet": "@Test\n    public void test_checkEndsWith_functionality() {\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"A\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"AB\"));\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"BC\"));\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"C\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"ABC\", \"ABCD\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"\", \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkEndsWith(\"\", \"\"));\n\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(\"ABC\", null));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(null, \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkEndsWith(null, null));\n    }",
+    "begin_line": 106,
+    "end_line": 120,
+    "comment": "",
+    "child_ranges": [
+      "(line 107,col 9)-(line 107,col 62)",
+      "(line 108,col 9)-(line 108,col 64)",
+      "(line 109,col 9)-(line 109,col 65)",
+      "(line 110,col 9)-(line 110,col 65)",
+      "(line 111,col 9)-(line 111,col 64)",
+      "(line 112,col 9)-(line 112,col 63)",
+      "(line 113,col 9)-(line 113,col 67)",
+      "(line 114,col 9)-(line 114,col 63)",
+      "(line 115,col 9)-(line 115,col 59)",
+      "(line 117,col 9)-(line 117,col 65)",
+      "(line 118,col 9)-(line 118,col 65)",
+      "(line 119,col 9)-(line 119,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkEquals_case()",
+    "snippet": "@Test\n    public void test_checkEquals_case() {\n        assertTrue(IOCase.SENSITIVE.checkEquals(\"ABC\", \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"Abc\"));\n\n        assertTrue(IOCase.INSENSITIVE.checkEquals(\"ABC\", \"ABC\"));\n        assertTrue(IOCase.INSENSITIVE.checkEquals(\"ABC\", \"Abc\"));\n\n        assertTrue(IOCase.SYSTEM.checkEquals(\"ABC\", \"ABC\"));\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkEquals(\"ABC\", \"Abc\"));\n    }",
+    "begin_line": 123,
+    "end_line": 132,
+    "comment": "",
+    "child_ranges": [
+      "(line 124,col 9)-(line 124,col 63)",
+      "(line 125,col 9)-(line 125,col 64)",
+      "(line 127,col 9)-(line 127,col 65)",
+      "(line 128,col 9)-(line 128,col 65)",
+      "(line 130,col 9)-(line 130,col 60)",
+      "(line 131,col 9)-(line 131,col 71)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkEquals_functionality()",
+    "snippet": "@Test\n    public void test_checkEquals_functionality() {\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"A\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"AB\"));\n        assertTrue(IOCase.SENSITIVE.checkEquals(\"ABC\", \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"BC\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"C\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", \"ABCD\"));\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"\", \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkEquals(\"\", \"\"));\n\n        assertFalse(IOCase.SENSITIVE.checkEquals(\"ABC\", null));\n        assertFalse(IOCase.SENSITIVE.checkEquals(null, \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkEquals(null, null));\n    }",
+    "begin_line": 135,
+    "end_line": 149,
+    "comment": "",
+    "child_ranges": [
+      "(line 136,col 9)-(line 136,col 61)",
+      "(line 137,col 9)-(line 137,col 62)",
+      "(line 138,col 9)-(line 138,col 63)",
+      "(line 139,col 9)-(line 139,col 63)",
+      "(line 140,col 9)-(line 140,col 63)",
+      "(line 141,col 9)-(line 141,col 62)",
+      "(line 142,col 9)-(line 142,col 65)",
+      "(line 143,col 9)-(line 143,col 61)",
+      "(line 144,col 9)-(line 144,col 57)",
+      "(line 146,col 9)-(line 146,col 63)",
+      "(line 147,col 9)-(line 147,col 63)",
+      "(line 148,col 9)-(line 148,col 61)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkIndexOf_case()",
+    "snippet": "@Test\n    public void test_checkIndexOf_case() {\n        assertEquals(1,  IOCase.SENSITIVE.checkIndexOf(\"ABC\", 0, \"BC\"));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(\"ABC\", 0, \"Bc\"));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(null, 0, \"Bc\"));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(null, 0, null));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(\"ABC\", 0, null));\n\n        assertEquals(1, IOCase.INSENSITIVE.checkIndexOf(\"ABC\", 0, \"BC\"));\n        assertEquals(1, IOCase.INSENSITIVE.checkIndexOf(\"ABC\", 0, \"Bc\"));\n\n        assertEquals(1, IOCase.SYSTEM.checkIndexOf(\"ABC\", 0, \"BC\"));\n        assertEquals(WINDOWS ? 1 : -1, IOCase.SYSTEM.checkIndexOf(\"ABC\", 0, \"Bc\"));\n    }",
+    "begin_line": 152,
+    "end_line": 164,
+    "comment": "",
+    "child_ranges": [
+      "(line 153,col 9)-(line 153,col 72)",
+      "(line 154,col 9)-(line 154,col 72)",
+      "(line 155,col 9)-(line 155,col 71)",
+      "(line 156,col 9)-(line 156,col 71)",
+      "(line 157,col 9)-(line 157,col 72)",
+      "(line 159,col 9)-(line 159,col 73)",
+      "(line 160,col 9)-(line 160,col 73)",
+      "(line 162,col 9)-(line 162,col 68)",
+      "(line 163,col 9)-(line 163,col 83)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkIndexOf_functionality()",
+    "snippet": "@Test\n    public void test_checkIndexOf_functionality() {\n\n        // start\n        assertEquals(0,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"A\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 1, \"A\"));\n        assertEquals(0,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"AB\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 1, \"AB\"));\n        assertEquals(0,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"ABC\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 1, \"ABC\"));\n\n        // middle\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"D\"));\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 3, \"D\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 4, \"D\"));\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"DE\"));\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 3, \"DE\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 4, \"DE\"));\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"DEF\"));\n        assertEquals(3,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 3, \"DEF\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 4, \"DEF\"));\n\n        // end\n        assertEquals(9,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"J\"));\n        assertEquals(9,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 8, \"J\"));\n        assertEquals(9,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 9, \"J\"));\n        assertEquals(8,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"IJ\"));\n        assertEquals(8,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 8, \"IJ\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 9, \"IJ\"));\n        assertEquals(7,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 6, \"HIJ\"));\n        assertEquals(7,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 7, \"HIJ\"));\n        assertEquals(-1,  IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 8, \"HIJ\"));\n\n        // not found\n        assertEquals(-1,   IOCase.SENSITIVE.checkIndexOf(\"ABCDEFGHIJ\", 0, \"DED\"));\n\n        // too long\n        assertEquals(-1,   IOCase.SENSITIVE.checkIndexOf(\"DEF\", 0, \"ABCDEFGHIJ\"));\n\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(\"ABC\", 0, null));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(null, 0, \"ABC\"));\n        assertEquals(-1, IOCase.SENSITIVE.checkIndexOf(null, 0, null));\n    }",
+    "begin_line": 167,
+    "end_line": 208,
+    "comment": "",
+    "child_ranges": [
+      "(line 170,col 9)-(line 170,col 79)",
+      "(line 171,col 9)-(line 171,col 79)",
+      "(line 172,col 9)-(line 172,col 80)",
+      "(line 173,col 9)-(line 173,col 80)",
+      "(line 174,col 9)-(line 174,col 81)",
+      "(line 175,col 9)-(line 175,col 81)",
+      "(line 178,col 9)-(line 178,col 79)",
+      "(line 179,col 9)-(line 179,col 79)",
+      "(line 180,col 9)-(line 180,col 79)",
+      "(line 181,col 9)-(line 181,col 80)",
+      "(line 182,col 9)-(line 182,col 80)",
+      "(line 183,col 9)-(line 183,col 80)",
+      "(line 184,col 9)-(line 184,col 81)",
+      "(line 185,col 9)-(line 185,col 81)",
+      "(line 186,col 9)-(line 186,col 81)",
+      "(line 189,col 9)-(line 189,col 79)",
+      "(line 190,col 9)-(line 190,col 79)",
+      "(line 191,col 9)-(line 191,col 79)",
+      "(line 192,col 9)-(line 192,col 80)",
+      "(line 193,col 9)-(line 193,col 80)",
+      "(line 194,col 9)-(line 194,col 80)",
+      "(line 195,col 9)-(line 195,col 81)",
+      "(line 196,col 9)-(line 196,col 81)",
+      "(line 197,col 9)-(line 197,col 81)",
+      "(line 200,col 9)-(line 200,col 82)",
+      "(line 203,col 9)-(line 203,col 82)",
+      "(line 205,col 9)-(line 205,col 72)",
+      "(line 206,col 9)-(line 206,col 72)",
+      "(line 207,col 9)-(line 207,col 71)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkRegionMatches_case()",
+    "snippet": "@Test\n    public void test_checkRegionMatches_case() {\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"AB\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"Ab\"));\n\n        assertTrue(IOCase.INSENSITIVE.checkRegionMatches(\"ABC\", 0, \"AB\"));\n        assertTrue(IOCase.INSENSITIVE.checkRegionMatches(\"ABC\", 0, \"Ab\"));\n\n        assertTrue(IOCase.SYSTEM.checkRegionMatches(\"ABC\", 0, \"AB\"));\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkRegionMatches(\"ABC\", 0, \"Ab\"));\n    }",
+    "begin_line": 211,
+    "end_line": 220,
+    "comment": "",
+    "child_ranges": [
+      "(line 212,col 9)-(line 212,col 72)",
+      "(line 213,col 9)-(line 213,col 73)",
+      "(line 215,col 9)-(line 215,col 74)",
+      "(line 216,col 9)-(line 216,col 74)",
+      "(line 218,col 9)-(line 218,col 69)",
+      "(line 219,col 9)-(line 219,col 80)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkRegionMatches_functionality()",
+    "snippet": "@Test\n    public void test_checkRegionMatches_functionality() {\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"\"));\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"A\"));\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"AB\"));\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"BC\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"C\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, \"ABCD\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"\", 0, \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"\", 0, \"\"));\n\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"A\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"AB\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"BC\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"C\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, \"ABCD\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"\", 1, \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkRegionMatches(\"\", 1, \"\"));\n\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 0, null));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(null, 0, \"ABC\"));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(null, 0, null));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(\"ABC\", 1, null));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(null, 1, \"ABC\"));\n        assertThrows(NullPointerException.class, () -\u003e IOCase.SENSITIVE.checkRegionMatches(null, 1, null));\n    }",
+    "begin_line": 223,
+    "end_line": 250,
+    "comment": "",
+    "child_ranges": [
+      "(line 224,col 9)-(line 224,col 70)",
+      "(line 225,col 9)-(line 225,col 71)",
+      "(line 226,col 9)-(line 226,col 72)",
+      "(line 227,col 9)-(line 227,col 73)",
+      "(line 228,col 9)-(line 228,col 73)",
+      "(line 229,col 9)-(line 229,col 72)",
+      "(line 230,col 9)-(line 230,col 75)",
+      "(line 231,col 9)-(line 231,col 71)",
+      "(line 232,col 9)-(line 232,col 67)",
+      "(line 234,col 9)-(line 234,col 70)",
+      "(line 235,col 9)-(line 235,col 72)",
+      "(line 236,col 9)-(line 236,col 73)",
+      "(line 237,col 9)-(line 237,col 74)",
+      "(line 238,col 9)-(line 238,col 72)",
+      "(line 239,col 9)-(line 239,col 72)",
+      "(line 240,col 9)-(line 240,col 75)",
+      "(line 241,col 9)-(line 241,col 71)",
+      "(line 242,col 9)-(line 242,col 68)",
+      "(line 244,col 9)-(line 244,col 108)",
+      "(line 245,col 9)-(line 245,col 108)",
+      "(line 246,col 9)-(line 246,col 107)",
+      "(line 247,col 9)-(line 247,col 108)",
+      "(line 248,col 9)-(line 248,col 108)",
+      "(line 249,col 9)-(line 249,col 107)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkStartsWith_case()",
+    "snippet": "@Test\n    public void test_checkStartsWith_case() {\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"AB\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"Ab\"));\n\n        assertTrue(IOCase.INSENSITIVE.checkStartsWith(\"ABC\", \"AB\"));\n        assertTrue(IOCase.INSENSITIVE.checkStartsWith(\"ABC\", \"Ab\"));\n\n        assertTrue(IOCase.SYSTEM.checkStartsWith(\"ABC\", \"AB\"));\n        assertEquals(WINDOWS, IOCase.SYSTEM.checkStartsWith(\"ABC\", \"Ab\"));\n    }",
+    "begin_line": 253,
+    "end_line": 262,
+    "comment": "",
+    "child_ranges": [
+      "(line 254,col 9)-(line 254,col 66)",
+      "(line 255,col 9)-(line 255,col 67)",
+      "(line 257,col 9)-(line 257,col 68)",
+      "(line 258,col 9)-(line 258,col 68)",
+      "(line 260,col 9)-(line 260,col 63)",
+      "(line 261,col 9)-(line 261,col 74)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_checkStartsWith_functionality()",
+    "snippet": "@Test\n    public void test_checkStartsWith_functionality() {\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"\"));\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"A\"));\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"AB\"));\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"BC\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"C\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"ABC\", \"ABCD\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"\", \"ABC\"));\n        assertTrue(IOCase.SENSITIVE.checkStartsWith(\"\", \"\"));\n\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(\"ABC\", null));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(null, \"ABC\"));\n        assertFalse(IOCase.SENSITIVE.checkStartsWith(null, null));\n    }",
+    "begin_line": 265,
+    "end_line": 279,
+    "comment": "",
+    "child_ranges": [
+      "(line 266,col 9)-(line 266,col 64)",
+      "(line 267,col 9)-(line 267,col 65)",
+      "(line 268,col 9)-(line 268,col 66)",
+      "(line 269,col 9)-(line 269,col 67)",
+      "(line 270,col 9)-(line 270,col 67)",
+      "(line 271,col 9)-(line 271,col 66)",
+      "(line 272,col 9)-(line 272,col 69)",
+      "(line 273,col 9)-(line 273,col 65)",
+      "(line 274,col 9)-(line 274,col 61)",
+      "(line 276,col 9)-(line 276,col 67)",
+      "(line 277,col 9)-(line 277,col 67)",
+      "(line 278,col 9)-(line 278,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_forName()",
+    "snippet": "@Test\n    public void test_forName() {\n        assertEquals(IOCase.SENSITIVE, IOCase.forName(\"Sensitive\"));\n        assertEquals(IOCase.INSENSITIVE, IOCase.forName(\"Insensitive\"));\n        assertEquals(IOCase.SYSTEM, IOCase.forName(\"System\"));\n        assertThrows(IllegalArgumentException.class, () -\u003e IOCase.forName(\"Blah\"));\n        assertThrows(IllegalArgumentException.class, () -\u003e IOCase.forName(null));\n    }",
+    "begin_line": 282,
+    "end_line": 288,
+    "comment": "",
+    "child_ranges": [
+      "(line 283,col 9)-(line 283,col 68)",
+      "(line 284,col 9)-(line 284,col 72)",
+      "(line 285,col 9)-(line 285,col 62)",
+      "(line 286,col 9)-(line 286,col 83)",
+      "(line 287,col 9)-(line 287,col 81)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_getName()",
+    "snippet": "@Test\n    public void test_getName() {\n        assertEquals(\"Sensitive\", IOCase.SENSITIVE.getName());\n        assertEquals(\"Insensitive\", IOCase.INSENSITIVE.getName());\n        assertEquals(\"System\", IOCase.SYSTEM.getName());\n    }",
+    "begin_line": 291,
+    "end_line": 295,
+    "comment": "",
+    "child_ranges": [
+      "(line 292,col 9)-(line 292,col 62)",
+      "(line 293,col 9)-(line 293,col 66)",
+      "(line 294,col 9)-(line 294,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_getScratchByteArray()",
+    "snippet": "@Test\n    public void test_getScratchByteArray() {\n        final byte[] array \u003d IOUtils.getScratchByteArray();\n        assert0(array);\n        Arrays.fill(array, (byte) 1);\n        assert0(IOUtils.getScratchCharArray());\n    }",
+    "begin_line": 298,
+    "end_line": 303,
+    "comment": "",
+    "child_ranges": [
+      "(line 299,col 9)-(line 299,col 59)",
+      "(line 300,col 9)-(line 300,col 23)",
+      "(line 301,col 9)-(line 301,col 37)",
+      "(line 302,col 9)-(line 302,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_getScratchByteArrayWriteOnly()",
+    "snippet": "@Test\n    public void test_getScratchByteArrayWriteOnly() {\n        final byte[] array \u003d IOUtils.getScratchByteArrayWriteOnly();\n        assert0(array);\n        Arrays.fill(array, (byte) 1);\n        assert0(IOUtils.getScratchCharArray());\n    }",
+    "begin_line": 306,
+    "end_line": 311,
+    "comment": "",
+    "child_ranges": [
+      "(line 307,col 9)-(line 307,col 68)",
+      "(line 308,col 9)-(line 308,col 23)",
+      "(line 309,col 9)-(line 309,col 37)",
+      "(line 310,col 9)-(line 310,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_getScratchCharArray()",
+    "snippet": "@Test\n    public void test_getScratchCharArray() {\n        final char[] array \u003d IOUtils.getScratchCharArray();\n        assert0(array);\n        Arrays.fill(array, (char) 1);\n        assert0(IOUtils.getScratchCharArray());\n    }",
+    "begin_line": 314,
+    "end_line": 319,
+    "comment": "",
+    "child_ranges": [
+      "(line 315,col 9)-(line 315,col 59)",
+      "(line 316,col 9)-(line 316,col 23)",
+      "(line 317,col 9)-(line 317,col 37)",
+      "(line 318,col 9)-(line 318,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_getScratchCharArrayWriteOnly()",
+    "snippet": "@Test\n    public void test_getScratchCharArrayWriteOnly() {\n        final char[] array \u003d IOUtils.getScratchCharArrayWriteOnly();\n        assert0(array);\n        Arrays.fill(array, (char) 1);\n        assert0(IOUtils.getScratchCharArray());\n    }",
+    "begin_line": 322,
+    "end_line": 327,
+    "comment": "",
+    "child_ranges": [
+      "(line 323,col 9)-(line 323,col 68)",
+      "(line 324,col 9)-(line 324,col 23)",
+      "(line 325,col 9)-(line 325,col 37)",
+      "(line 326,col 9)-(line 326,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_isCaseSensitive()",
+    "snippet": "@Test\n    public void test_isCaseSensitive() {\n        assertTrue(IOCase.SENSITIVE.isCaseSensitive());\n        assertFalse(IOCase.INSENSITIVE.isCaseSensitive());\n        assertEquals(!WINDOWS, IOCase.SYSTEM.isCaseSensitive());\n    }",
+    "begin_line": 330,
+    "end_line": 334,
+    "comment": "",
+    "child_ranges": [
+      "(line 331,col 9)-(line 331,col 55)",
+      "(line 332,col 9)-(line 332,col 58)",
+      "(line 333,col 9)-(line 333,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_isCaseSensitive_static()",
+    "snippet": "@Test\n    public void test_isCaseSensitive_static() {\n        assertTrue(IOCase.isCaseSensitive(IOCase.SENSITIVE));\n        assertFalse(IOCase.isCaseSensitive(IOCase.INSENSITIVE));\n        assertEquals(!WINDOWS, IOCase.isCaseSensitive(IOCase.SYSTEM));\n    }",
+    "begin_line": 337,
+    "end_line": 341,
+    "comment": "",
+    "child_ranges": [
+      "(line 338,col 9)-(line 338,col 61)",
+      "(line 339,col 9)-(line 339,col 64)",
+      "(line 340,col 9)-(line 340,col 70)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_serialization()",
+    "snippet": "@Test\n    public void test_serialization() throws Exception {\n        assertSame(IOCase.SENSITIVE, serialize(IOCase.SENSITIVE));\n        assertSame(IOCase.INSENSITIVE, serialize(IOCase.INSENSITIVE));\n        assertSame(IOCase.SYSTEM, serialize(IOCase.SYSTEM));\n    }",
+    "begin_line": 344,
+    "end_line": 348,
+    "comment": "",
+    "child_ranges": [
+      "(line 345,col 9)-(line 345,col 66)",
+      "(line 346,col 9)-(line 346,col 70)",
+      "(line 347,col 9)-(line 347,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCaseTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOCaseTest.java",
+    "signature": "org.apache.commons.io.IOCaseTest.test_toString()",
+    "snippet": "@Test\n    public void test_toString() {\n        assertEquals(\"Sensitive\", IOCase.SENSITIVE.toString());\n        assertEquals(\"Insensitive\", IOCase.INSENSITIVE.toString());\n        assertEquals(\"System\", IOCase.SYSTEM.toString());\n    }",
+    "begin_line": 351,
+    "end_line": 355,
+    "comment": "",
+    "child_ranges": [
+      "(line 352,col 9)-(line 352,col 63)",
+      "(line 353,col 9)-(line 353,col 67)",
+      "(line 354,col 9)-(line 354,col 57)"
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+--- org.apache.commons.io.IOCaseTest::test_checkEquals_functionality
+java.lang.NullPointerException
+       java.base/java.util.Objects.requireNonNull(Objects.java:235)
+       org.apache.commons.io.IOCase.checkEquals(IOCase.java:174)
+       org.apache.commons.io.IOCaseTest.test_checkEquals_functionality(IOCaseTest.java:146)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testNameFilter
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.NameFileFilter.accept(NameFileFilter.java:166)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:50)
+       org.apache.commons.io.filefilter.FileFilterTest.testNameFilter(FileFilterTest.java:1066)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testEmpty
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.EmptyFileFilter.accept(EmptyFileFilter.java:107)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:50)
+       org.apache.commons.io.filefilter.FileFilterTest.testEmpty(FileFilterTest.java:408)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testFiles
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.FileFileFilter.accept(FileFileFilter.java:100)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:50)
+       org.apache.commons.io.filefilter.FileFilterTest.testFiles(FileFilterTest.java:503)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testCanRead
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.CanReadFileFilter.accept(CanReadFileFilter.java:95)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:50)
+       org.apache.commons.io.filefilter.FileFilterTest.testCanRead(FileFilterTest.java:231)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testCanWrite
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.CanWriteFileFilter.accept(CanWriteFileFilter.java:83)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:50)
+       org.apache.commons.io.filefilter.FileFilterTest.testCanWrite(FileFilterTest.java:258)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.filefilter.FileFilterTest::testHidden
+java.lang.NullPointerException
+       java.base/java.nio.file.Files.provider(Files.java:105)
+       java.base/java.nio.file.Files.isHidden(Files.java:1643)
+       org.apache.commons.io.filefilter.HiddenFileFilter.lambda$accept$0(HiddenFileFilter.java:117)
+       org.apache.commons.io.filefilter.AbstractFileFilter.get(AbstractFileFilter.java:122)
+       org.apache.commons.io.filefilter.HiddenFileFilter.accept(HiddenFileFilter.java:117)
+       org.apache.commons.io.filefilter.AbstractFilterTest.assertFiltering(AbstractFilterTest.java:73)
+       org.apache.commons.io.filefilter.FileFilterTest.testHidden(FileFilterTest.java:738)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

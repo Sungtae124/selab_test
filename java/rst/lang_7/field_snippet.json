@@ -1,0 +1,38 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "signature": "org.apache.commons.lang3.stream.Streams.characteristics",
+    "snippet": "private static final Set\u003cCharacteristics\u003e characteristics \u003d Collections.emptySet();",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "signature": "org.apache.commons.lang3.stream.Streams.elementType",
+    "snippet": "private final Class\u003cO\u003e elementType;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "signature": "org.apache.commons.lang3.stream.Streams.stream",
+    "snippet": "private Stream\u003cO\u003e stream;",
+    "begin_line": 123,
+    "end_line": 123,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "signature": "org.apache.commons.lang3.stream.Streams.terminated",
+    "snippet": "private boolean terminated;",
+    "begin_line": 124,
+    "end_line": 124,
+    "comment": ""
+  }
+]

@@ -1,0 +1,353 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -2587890625525655916L;",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * Serialization version ID.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.DEFAULT_STYLE",
+    "snippet": "public static final ToStringStyle DEFAULT_STYLE \u003d new DefaultToStringStyle();",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": "/** \n * The default toString style. Using the  {@code Person}example from  {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e Person@182f0db[name\u003dJohn Doe,age\u003d33,smoker\u003dfalse] \u003c/pre\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.MULTI_LINE_STYLE",
+    "snippet": "public static final ToStringStyle MULTI_LINE_STYLE \u003d new MultiLineToStringStyle();",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": "/** \n * The multi line toString style. Using the  {@code Person}example from  {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e Person@182f0db[ name\u003dJohn Doe age\u003d33 smoker\u003dfalse ] \u003c/pre\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.NO_FIELD_NAMES_STYLE",
+    "snippet": "public static final ToStringStyle NO_FIELD_NAMES_STYLE \u003d new NoFieldNameToStringStyle();",
+    "begin_line": 109,
+    "end_line": 109,
+    "comment": "/** \n * The no field names toString style. Using the {@code Person} example from {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e Person@182f0db[John Doe,33,false] \u003c/pre\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE",
+    "snippet": "public static final ToStringStyle SHORT_PREFIX_STYLE \u003d new ShortPrefixToStringStyle();",
+    "begin_line": 121,
+    "end_line": 121,
+    "comment": "/** \n * The short prefix toString style. Using the  {@code Person} examplefrom  {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e Person[name\u003dJohn Doe,age\u003d33,smoker\u003dfalse] \u003c/pre\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.SIMPLE_STYLE",
+    "snippet": "public static final ToStringStyle SIMPLE_STYLE \u003d new SimpleToStringStyle();",
+    "begin_line": 131,
+    "end_line": 131,
+    "comment": "/** \n * The simple toString style. Using the  {@code Person}example from  {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e John Doe,33,false \u003c/pre\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.NO_CLASS_NAME_STYLE",
+    "snippet": "public static final ToStringStyle NO_CLASS_NAME_STYLE \u003d new NoClassNameToStringStyle();",
+    "begin_line": 143,
+    "end_line": 143,
+    "comment": "/** \n * The no class name toString style. Using the  {@code Person}example from  {@link ToStringBuilder}, the output would look like this: \u003cpre\u003e [name\u003dJohn Doe,age\u003d33,smoker\u003dfalse] \u003c/pre\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE",
+    "snippet": "public static final ToStringStyle JSON_STYLE \u003d new JsonToStringStyle();",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * The JSON toString style. Using the  {@code Person} example from{@link ToStringBuilder}, the output would look like this: \u003cpre\u003e {\"name\": \"John Doe\", \"age\": 33, \"smoker\": true} \u003c/pre\u003e \u003cstrong\u003eNote:\u003c/strong\u003e Since field names are mandatory in JSON, this ToStringStyle will throw an  {@link UnsupportedOperationException} if nofield name is passed in while appending. Furthermore This ToStringStyle will only generate valid JSON if referenced objects also produce JSON when calling  {@code toString()} on them.\n * @since 3.4\n * @see \u003ca href\u003d\"https://www.json.org/\"\u003ejson.org\u003c/a\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.REGISTRY",
+    "snippet": "private static final ThreadLocal\u003cWeakHashMap\u003cObject, Object\u003e\u003e REGISTRY \u003d new ThreadLocal\u003c\u003e();",
+    "begin_line": 169,
+    "end_line": 169,
+    "comment": "/** \n * A registry of objects used by  {@code reflectionToString} methodsto detect cyclical object references and avoid infinite loops.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.useFieldNames",
+    "snippet": "private boolean useFieldNames \u003d true;",
+    "begin_line": 246,
+    "end_line": 246,
+    "comment": "/** \n * Whether to use the field names, the default is  {@code true}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.useClassName",
+    "snippet": "private boolean useClassName \u003d true;",
+    "begin_line": 251,
+    "end_line": 251,
+    "comment": "/** \n * Whether to use the class name, the default is  {@code true}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.useShortClassName",
+    "snippet": "private boolean useShortClassName;",
+    "begin_line": 256,
+    "end_line": 256,
+    "comment": "/** \n * Whether to use short class names, the default is  {@code false}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.useIdentityHashCode",
+    "snippet": "private boolean useIdentityHashCode \u003d true;",
+    "begin_line": 261,
+    "end_line": 261,
+    "comment": "/** \n * Whether to use the identity hash code, the default is  {@code true}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.contentStart",
+    "snippet": "private String contentStart \u003d \"[\";",
+    "begin_line": 266,
+    "end_line": 266,
+    "comment": "/** \n * The content start  {@code \u0027[\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.contentEnd",
+    "snippet": "private String contentEnd \u003d \"]\";",
+    "begin_line": 271,
+    "end_line": 271,
+    "comment": "/** \n * The content end  {@code \u0027]\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.fieldNameValueSeparator",
+    "snippet": "private String fieldNameValueSeparator \u003d \"\u003d\";",
+    "begin_line": 276,
+    "end_line": 276,
+    "comment": "/** \n * The field name value separator  {@code \u0027\u003d\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.fieldSeparatorAtStart",
+    "snippet": "private boolean fieldSeparatorAtStart;",
+    "begin_line": 281,
+    "end_line": 281,
+    "comment": "/** \n * Whether the field separator should be added before any other fields.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.fieldSeparatorAtEnd",
+    "snippet": "private boolean fieldSeparatorAtEnd;",
+    "begin_line": 286,
+    "end_line": 286,
+    "comment": "/** \n * Whether the field separator should be added after any other fields.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.fieldSeparator",
+    "snippet": "private String fieldSeparator \u003d \",\";",
+    "begin_line": 291,
+    "end_line": 291,
+    "comment": "/** \n * The field separator  {@code \u0027,\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.arrayStart",
+    "snippet": "private String arrayStart \u003d \"{\";",
+    "begin_line": 296,
+    "end_line": 296,
+    "comment": "/** \n * The array start \u003ccode\u003e\u0027{\u0027\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.arraySeparator",
+    "snippet": "private String arraySeparator \u003d \",\";",
+    "begin_line": 301,
+    "end_line": 301,
+    "comment": "/** \n * The array separator  {@code \u0027,\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.arrayContentDetail",
+    "snippet": "private boolean arrayContentDetail \u003d true;",
+    "begin_line": 306,
+    "end_line": 306,
+    "comment": "/** \n * The detail for array content.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.arrayEnd",
+    "snippet": "private String arrayEnd \u003d \"}\";",
+    "begin_line": 311,
+    "end_line": 311,
+    "comment": "/** \n * The array end  {@code \u0027}\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.defaultFullDetail",
+    "snippet": "private boolean defaultFullDetail \u003d true;",
+    "begin_line": 317,
+    "end_line": 317,
+    "comment": "/** \n * The value to use when fullDetail is  {@code null}, the default value is  {@code true}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.nullText",
+    "snippet": "private String nullText \u003d \"\u003cnull\u003e\";",
+    "begin_line": 322,
+    "end_line": 322,
+    "comment": "/** \n * The  {@code null} text {@code \u0027\u0026lt;null\u0026gt;\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.sizeStartText",
+    "snippet": "private String sizeStartText \u003d \"\u003csize\u003d\";",
+    "begin_line": 327,
+    "end_line": 327,
+    "comment": "/** \n * The summary size text start  {@code \u0027\u0026lt;size\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.sizeEndText",
+    "snippet": "private String sizeEndText \u003d \"\u003e\";",
+    "begin_line": 332,
+    "end_line": 332,
+    "comment": "/** \n * The summary size text start  {@code \u0027\u0026gt;\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.summaryObjectStartText",
+    "snippet": "private String summaryObjectStartText \u003d \"\u003c\";",
+    "begin_line": 337,
+    "end_line": 337,
+    "comment": "/** \n * The summary object text start  {@code \u0027\u0026lt;\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.summaryObjectEndText",
+    "snippet": "private String summaryObjectEndText \u003d \"\u003e\";",
+    "begin_line": 342,
+    "end_line": 342,
+    "comment": "/** \n * The summary object text start  {@code \u0027\u0026gt;\u0027}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2047,
+    "end_line": 2047,
+    "comment": "/** \n * Required for serialization support.\n * @see java.io.Serializable\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2077,
+    "end_line": 2077,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2108,
+    "end_line": 2108,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2139,
+    "end_line": 2139,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2172,
+    "end_line": 2172,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2206,
+    "end_line": 2206,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 2242,
+    "end_line": 2242,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.FIELD_NAME_QUOTE",
+    "snippet": "private static final String FIELD_NAME_QUOTE \u003d \"\\\"\";",
+    "begin_line": 2244,
+    "end_line": 2244,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObject",
+    "src_path": "org/apache/commons/lang3/mutable/MutableObject.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObject.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 86241875189L;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": "/** \n * Required for serialization support.\n * @see java.io.Serializable\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.mutable.MutableObject",
+    "src_path": "org/apache/commons/lang3/mutable/MutableObject.java",
+    "signature": "org.apache.commons.lang3.mutable.MutableObject.value",
+    "snippet": "private T value;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": "/** \n * The mutable value. \n */\n"
+  }
+]

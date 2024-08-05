@@ -1,0 +1,28 @@
+--- org.apache.commons.math.exception.util.MessageFactoryTest::testNull
+java.lang.NullPointerException
+       org.apache.commons.math.exception.util.MessageFactory.buildMessage(MessageFactory.java:66)
+       org.apache.commons.math.exception.util.MessageFactoryTest.testNull(MessageFactoryTest.java:54)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+  
+--- org.apache.commons.math.exception.util.MessageFactoryTest::testNullGeneral
+java.lang.NullPointerException
+       org.apache.commons.math.exception.util.MessageFactory.buildMessage(MessageFactory.java:66)
+       org.apache.commons.math.exception.util.MessageFactoryTest.testNullGeneral(MessageFactoryTest.java:46)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+

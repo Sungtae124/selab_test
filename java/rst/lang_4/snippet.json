@@ -1,0 +1,1266 @@
+[
+  {
+    "name": "ContextedException.ContextedException#99",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.ContextedException()",
+    "snippet": "public ContextedException() {\n        exceptionContext \u003d new DefaultExceptionContext();\n    }",
+    "begin_line": 99,
+    "end_line": 101,
+    "comment": "/** \n * Instantiates ContextedException without message or cause. \u003cp\u003e The context information is stored using a default implementation.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.ContextedException#110",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.ContextedException(java.lang.String)",
+    "snippet": "public ContextedException(final String message) {\n        super(message);\n        exceptionContext \u003d new DefaultExceptionContext();\n    }",
+    "begin_line": 110,
+    "end_line": 113,
+    "comment": "/** \n * Instantiates ContextedException with message, but without cause. \u003cp\u003e The context information is stored using a default implementation.\n * @param message  the exception message, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.ContextedException#122",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.ContextedException(java.lang.Throwable)",
+    "snippet": "public ContextedException(final Throwable cause) {\n        super(cause);\n        exceptionContext \u003d new DefaultExceptionContext();\n    }",
+    "begin_line": 122,
+    "end_line": 125,
+    "comment": "/** \n * Instantiates ContextedException with cause, but without message. \u003cp\u003e The context information is stored using a default implementation.\n * @param cause  the underlying cause of the exception, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.ContextedException#135",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.ContextedException(java.lang.String, java.lang.Throwable)",
+    "snippet": "public ContextedException(final String message, final Throwable cause) {\n        super(message, cause);\n        exceptionContext \u003d new DefaultExceptionContext();\n    }",
+    "begin_line": 135,
+    "end_line": 138,
+    "comment": "/** \n * Instantiates ContextedException with cause and message. \u003cp\u003e The context information is stored using a default implementation.\n * @param message  the exception message, may be null\n * @param cause  the underlying cause of the exception, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.ContextedException#147",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.ContextedException(java.lang.String, java.lang.Throwable, org.apache.commons.lang3.exception.ExceptionContext)",
+    "snippet": "public ContextedException(final String message, final Throwable cause, ExceptionContext context) {\n        super(message, cause);\n        if (context \u003d\u003d null) {\n            context \u003d new DefaultExceptionContext();\n        }\n        exceptionContext \u003d context;\n    }",
+    "begin_line": 147,
+    "end_line": 153,
+    "comment": "/** \n * Instantiates ContextedException with cause, message, and ExceptionContext.\n * @param message  the exception message, may be null\n * @param cause  the underlying cause of the exception, may be null\n * @param context  the context used to store the additional information, null uses default implementation\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.addContextValue#169",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.addContextValue(java.lang.String, java.lang.Object)",
+    "snippet": "@Override\n    public ContextedException addContextValue(final String label, final Object value) {\n        exceptionContext.addContextValue(label, value);\n        return this;\n    }",
+    "begin_line": 169,
+    "end_line": 172,
+    "comment": "/** \n * Adds information helpful to a developer in diagnosing and correcting the problem. For the information to be meaningful, the value passed should have a reasonable toString() implementation. Different values can be added with the same label multiple times. \u003cp\u003e Note: This exception is only serializable if the object added is serializable. \u003c/p\u003e\n * @param label  a textual label associated with information, {@code null} not recommended\n * @param value  information needed to understand exception, may be {@code null}\n * @return {@code this}, for method chaining, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.setContextValue#188",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.setContextValue(java.lang.String, java.lang.Object)",
+    "snippet": "@Override\n    public ContextedException setContextValue(final String label, final Object value) {\n        exceptionContext.setContextValue(label, value);\n        return this;\n    }",
+    "begin_line": 188,
+    "end_line": 191,
+    "comment": "/** \n * Sets information helpful to a developer in diagnosing and correcting the problem. For the information to be meaningful, the value passed should have a reasonable toString() implementation. Any existing values with the same labels are removed before the new one is added. \u003cp\u003e Note: This exception is only serializable if the object added as value is serializable. \u003c/p\u003e\n * @param label  a textual label associated with information, {@code null} not recommended\n * @param value  information needed to understand exception, may be {@code null}\n * @return {@code this}, for method chaining, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getContextValues#197",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getContextValues(java.lang.String)",
+    "snippet": "@Override\n    public List\u003cObject\u003e getContextValues(final String label) {\n        return this.exceptionContext.getContextValues(label);\n    }",
+    "begin_line": 197,
+    "end_line": 199,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getFirstContextValue#205",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getFirstContextValue(java.lang.String)",
+    "snippet": "@Override\n    public Object getFirstContextValue(final String label) {\n        return this.exceptionContext.getFirstContextValue(label);\n    }",
+    "begin_line": 205,
+    "end_line": 207,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getContextEntries#213",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getContextEntries()",
+    "snippet": "@Override\n    public List\u003cPair\u003cString, Object\u003e\u003e getContextEntries() {\n        return this.exceptionContext.getContextEntries();\n    }",
+    "begin_line": 213,
+    "end_line": 215,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getContextLabels#221",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getContextLabels()",
+    "snippet": "@Override\n    public Set\u003cString\u003e getContextLabels() {\n        return exceptionContext.getContextLabels();\n    }",
+    "begin_line": 221,
+    "end_line": 223,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getMessage#232",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getMessage()",
+    "snippet": "@Override\n    public String getMessage() {\n        return getFormattedExceptionMessage(super.getMessage());\n    }",
+    "begin_line": 232,
+    "end_line": 234,
+    "comment": "/** \n * Provides the message explaining the exception, including the contextual data.\n * @see java.lang.Throwable#getMessage()\n * @return the message, never null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getRawMessage#243",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getRawMessage()",
+    "snippet": "public String getRawMessage() {\n        return super.getMessage();\n    }",
+    "begin_line": 243,
+    "end_line": 245,
+    "comment": "/** \n * Provides the message explaining the exception without the contextual data.\n * @see java.lang.Throwable#getMessage()\n * @return the message\n * @since 3.0.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ContextedException.getFormattedExceptionMessage#251",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ContextedException.java",
+    "class_name": "org.apache.commons.lang3.exception.ContextedException",
+    "signature": "org.apache.commons.lang3.exception.ContextedException.getFormattedExceptionMessage(java.lang.String)",
+    "snippet": "@Override\n    public String getFormattedExceptionMessage(final String baseMessage) {\n        return exceptionContext.getFormattedExceptionMessage(baseMessage);\n    }",
+    "begin_line": 251,
+    "end_line": 253,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.addContextValue#52",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.addContextValue(java.lang.String, java.lang.Object)",
+    "snippet": "@Override\n    public DefaultExceptionContext addContextValue(final String label, final Object value) {\n        contextValues.add(new ImmutablePair\u003c\u003e(label, value));\n        return this;\n    }",
+    "begin_line": 52,
+    "end_line": 55,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.setContextValue#61",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.setContextValue(java.lang.String, java.lang.Object)",
+    "snippet": "@Override\n    public DefaultExceptionContext setContextValue(final String label, final Object value) {\n        contextValues.removeIf(p -\u003e StringUtils.equals(label, p.getKey()));\n        addContextValue(label, value);\n        return this;\n    }",
+    "begin_line": 61,
+    "end_line": 65,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.getContextValues#71",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.getContextValues(java.lang.String)",
+    "snippet": "@Override\n    public List\u003cObject\u003e getContextValues(final String label) {\n        final List\u003cObject\u003e values \u003d new ArrayList\u003c\u003e();\n        for (final Pair\u003cString, Object\u003e pair : contextValues) {\n            if (StringUtils.equals(label, pair.getKey())) {\n                values.add(pair.getValue());\n            }\n        }\n        return values;\n    }",
+    "begin_line": 71,
+    "end_line": 79,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.getFirstContextValue#85",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.getFirstContextValue(java.lang.String)",
+    "snippet": "@Override\n    public Object getFirstContextValue(final String label) {\n        for (final Pair\u003cString, Object\u003e pair : contextValues) {\n            if (StringUtils.equals(label, pair.getKey())) {\n                return pair.getValue();\n            }\n        }\n        return null;\n    }",
+    "begin_line": 85,
+    "end_line": 92,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.getContextLabels#98",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.getContextLabels()",
+    "snippet": "@Override\n    public Set\u003cString\u003e getContextLabels() {\n        final Set\u003cString\u003e labels \u003d new HashSet\u003c\u003e();\n        for (final Pair\u003cString, Object\u003e pair : contextValues) {\n            labels.add(pair.getKey());\n        }\n        return labels;\n    }",
+    "begin_line": 98,
+    "end_line": 104,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.getContextEntries#110",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.getContextEntries()",
+    "snippet": "@Override\n    public List\u003cPair\u003cString, Object\u003e\u003e getContextEntries() {\n        return contextValues;\n    }",
+    "begin_line": 110,
+    "end_line": 112,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultExceptionContext.getFormattedExceptionMessage#121",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/DefaultExceptionContext.java",
+    "class_name": "org.apache.commons.lang3.exception.DefaultExceptionContext",
+    "signature": "org.apache.commons.lang3.exception.DefaultExceptionContext.getFormattedExceptionMessage(java.lang.String)",
+    "snippet": "@Override\n    public String getFormattedExceptionMessage(final String baseMessage) {\n        final StringBuilder buffer \u003d new StringBuilder(256);\n        if (baseMessage !\u003d null) {\n            buffer.append(baseMessage);\n        }\n\n        if (!contextValues.isEmpty()) {\n            if (buffer.length() \u003e 0) {\n                buffer.append(\u0027\\n\u0027);\n            }\n            buffer.append(\"Exception Context:\\n\");\n\n            int i \u003d 0;\n            for (final Pair\u003cString, Object\u003e pair : contextValues) {\n                buffer.append(\"\\t[\");\n                buffer.append(++i);\n                buffer.append(\u0027:\u0027);\n                buffer.append(pair.getKey());\n                buffer.append(\"\u003d\");\n                final Object value \u003d pair.getValue();\n                if (value \u003d\u003d null) {\n                    buffer.append(\"null\");\n                } else {\n                    String valueStr;\n                    try {\n                        valueStr \u003d value.toString();\n                    } catch (final Exception e) {\n                        valueStr \u003d \"Exception thrown on toString(): \" + ExceptionUtils.getStackTrace(e);\n                    }\n                    buffer.append(valueStr);\n                }\n                buffer.append(\"]\\n\");\n            }\n            buffer.append(\"---------------------------------\");\n        }\n        return buffer.toString();\n    }",
+    "begin_line": 121,
+    "end_line": 157,
+    "comment": "/** \n * Builds the message containing the contextual information.\n * @param baseMessage  the base exception message \u003cb\u003ewithout\u003c/b\u003e context information appended\n * @return the exception message \u003cb\u003ewith\u003c/b\u003e context information appended, never null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.eraseType#78",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.eraseType(java.lang.Throwable)",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    private static \u003cR, T extends Throwable\u003e R eraseType(final Throwable throwable) throws T {\n        throw (T) throwable;\n    }",
+    "begin_line": 78,
+    "end_line": 80,
+    "comment": "/** \n * Claims a Throwable is another Throwable type using type erasure. This hides a checked exception from the Java compiler, allowing a checked exception to be thrown without having the exception in the method\u0027s throw clause.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getCause#111",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getCause(java.lang.Throwable)",
+    "snippet": "@Deprecated\n    public static Throwable getCause(final Throwable throwable) {\n        return getCause(throwable, null);\n    }",
+    "begin_line": 111,
+    "end_line": 113,
+    "comment": "/** \n * Introspects the  {@code Throwable} to obtain the cause.\u003cp\u003eThe method searches for methods with specific names that return a {@code Throwable} object. This will pick up most wrapping exceptions,including those from JDK 1.4. \u003c/p\u003e \u003cp\u003eThe default list searched for are:\u003c/p\u003e \u003cul\u003e \u003cli\u003e {@code getCause()}\u003c/li\u003e \u003cli\u003e {@code getNextException()}\u003c/li\u003e \u003cli\u003e {@code getTargetException()}\u003c/li\u003e \u003cli\u003e {@code getException()}\u003c/li\u003e \u003cli\u003e {@code getSourceException()}\u003c/li\u003e \u003cli\u003e {@code getRootCause()}\u003c/li\u003e \u003cli\u003e {@code getCausedByException()}\u003c/li\u003e \u003cli\u003e {@code getNested()}\u003c/li\u003e \u003c/ul\u003e \u003cp\u003eIf none of the above is found, returns  {@code null}.\u003c/p\u003e\n * @param throwable  the throwable to introspect for a cause, may be null\n * @return the cause of the {@code Throwable}, {@code null} if none found or null throwable input\n * @since 1.0\n * @deprecated This feature will be removed in Lang 4.0, use {@link Throwable#getCause} instead\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getCause#129",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getCause(java.lang.Throwable, java.lang.String[])",
+    "snippet": "@Deprecated\n    public static Throwable getCause(final Throwable throwable, String[] methodNames) {\n        if (throwable \u003d\u003d null) {\n            return null;\n        }\n\n        if (methodNames \u003d\u003d null) {\n            final Throwable cause \u003d throwable.getCause();\n            if (cause !\u003d null) {\n                return cause;\n            }\n\n            methodNames \u003d CAUSE_METHOD_NAMES;\n        }\n\n        for (final String methodName : methodNames) {\n            if (methodName !\u003d null) {\n                final Throwable legacyCause \u003d getCauseUsingMethodName(throwable, methodName);\n                if (legacyCause !\u003d null) {\n                    return legacyCause;\n                }\n            }\n        }\n\n        return null;\n    }",
+    "begin_line": 129,
+    "end_line": 153,
+    "comment": "/** \n * Introspects the  {@code Throwable} to obtain the cause.\u003cp\u003eA  {@code null} set of method names means use the default set.A  {@code null} in the set of method names will be ignored.\u003c/p\u003e\n * @param throwable  the throwable to introspect for a cause, may be null\n * @param methodNames  the method names, null treated as default set\n * @return the cause of the {@code Throwable}, {@code null} if none found or null throwable input\n * @since 1.0\n * @deprecated This feature will be removed in Lang 4.0, use {@link Throwable#getCause} instead\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getCauseUsingMethodName#163",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getCauseUsingMethodName(java.lang.Throwable, java.lang.String)",
+    "snippet": " getCauseUsingMethodName(final Throwable throwable, final String methodName) {\n        Method method \u003d null;\n        try {\n            method \u003d throwable.getClass().getMethod(methodName);\n        } catch (final NoSuchMethodException | SecurityException ignored) { // NOPMD\n            // exception ignored\n        }\n\n        if (method !\u003d null \u0026\u0026 Throwable.class.isAssignableFrom(method.getReturnType())) {\n            try {\n                return (Throwable) method.invoke(throwable);\n            } catch (final IllegalAccessException | IllegalArgumentException | InvocationTargetException ignored) { // NOPMD\n                // exception ignored\n            }\n        }\n        return null;\n    }",
+    "begin_line": 163,
+    "end_line": 179,
+    "comment": "/** \n * Gets a  {@code Throwable} by method name.\n * @param throwable  the exception to examine\n * @param methodName  the name of the method to find and invoke\n * @return the wrapped exception, or {@code null} if not found\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getDefaultCauseMethodNames#191",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getDefaultCauseMethodNames()",
+    "snippet": "@Deprecated\n    public static String[] getDefaultCauseMethodNames() {\n        return ArrayUtils.clone(CAUSE_METHOD_NAMES);\n    }",
+    "begin_line": 191,
+    "end_line": 193,
+    "comment": "/** \n * Gets the default names used when searching for the cause of an exception. \u003cp\u003eThis may be modified and used in the overloaded getCause(Throwable, String[]) method.\u003c/p\u003e\n * @return cloned array of the default method names\n * @since 3.0\n * @deprecated This feature will be removed in Lang 4.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getMessage#206",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getMessage(java.lang.Throwable)",
+    "snippet": "public static String getMessage(final Throwable th) {\n        if (th \u003d\u003d null) {\n            return StringUtils.EMPTY;\n        }\n        final String clsName \u003d ClassUtils.getShortClassName(th, null);\n        final String msg \u003d th.getMessage();\n        return clsName + \": \" + StringUtils.defaultString(msg);\n    }",
+    "begin_line": 206,
+    "end_line": 213,
+    "comment": "/** \n * Gets a short message summarizing the exception. \u003cp\u003e The message returned is of the form {ClassNameWithoutPackage}: {ThrowableMessage} \u003c/p\u003e\n * @param th  the throwable to get a message for, null returns empty string\n * @return the message, non-null\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getRootCause#232",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getRootCause(java.lang.Throwable)",
+    "snippet": "public static Throwable getRootCause(final Throwable throwable) {\n        final List\u003cThrowable\u003e list \u003d getThrowableList(throwable);\n        return list.isEmpty() ? null : list.get(list.size() - 1);\n    }",
+    "begin_line": 232,
+    "end_line": 235,
+    "comment": "/** \n * Introspects the  {@code Throwable} to obtain the root cause.\u003cp\u003eThis method walks through the exception chain to the last element, \"root\" of the tree, using  {@link Throwable#getCause()}, and returns that exception.\u003c/p\u003e \u003cp\u003eFrom version 2.2, this method handles recursive cause structures that might otherwise cause infinite loops. If the throwable parameter has a cause of itself, then null will be returned. If the throwable parameter cause chain loops, the last element in the chain before the loop is returned.\u003c/p\u003e\n * @param throwable  the throwable to get the root cause for, may be null\n * @return the root cause of the {@code Throwable}, {@code null} if null throwable input\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getRootCauseMessage#248",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getRootCauseMessage(java.lang.Throwable)",
+    "snippet": "public static String getRootCauseMessage(final Throwable throwable) {\n        Throwable root \u003d getRootCause(throwable);\n        root \u003d root \u003d\u003d null ? throwable : root;\n        return getMessage(root);\n    }",
+    "begin_line": 248,
+    "end_line": 252,
+    "comment": "/** \n * Gets a short message summarizing the root cause exception. \u003cp\u003e The message returned is of the form {ClassNameWithoutPackage}: {ThrowableMessage} \u003c/p\u003e\n * @param throwable  the throwable to get a message for, null returns empty string\n * @return the message, non-null\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getRootCauseStackTrace#267",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getRootCauseStackTrace(java.lang.Throwable)",
+    "snippet": "public static String[] getRootCauseStackTrace(final Throwable throwable) {\n        if (throwable \u003d\u003d null) {\n            return ArrayUtils.EMPTY_STRING_ARRAY;\n        }\n        final Throwable[] throwables \u003d getThrowables(throwable);\n        final int count \u003d throwables.length;\n        final List\u003cString\u003e frames \u003d new ArrayList\u003c\u003e();\n        List\u003cString\u003e nextTrace \u003d getStackFrameList(throwables[count - 1]);\n        for (int i \u003d count; --i \u003e\u003d 0;) {\n            final List\u003cString\u003e trace \u003d nextTrace;\n            if (i !\u003d 0) {\n                nextTrace \u003d getStackFrameList(throwables[i - 1]);\n                removeCommonFrames(trace, nextTrace);\n            }\n            if (i \u003d\u003d count - 1) {\n                frames.add(throwables[i].toString());\n            } else {\n                frames.add(WRAPPED_MARKER + throwables[i].toString());\n            }\n            frames.addAll(trace);\n        }\n        return frames.toArray(ArrayUtils.EMPTY_STRING_ARRAY);\n    }",
+    "begin_line": 267,
+    "end_line": 289,
+    "comment": "/** \n * Gets a compact stack trace for the root cause of the supplied {@code Throwable}. \u003cp\u003eThe output of this method is consistent across JDK versions. It consists of the root exception followed by each of its wrapping exceptions separated by \u0027[wrapped]\u0027. Note that this is the opposite order to the JDK1.4 display.\u003c/p\u003e\n * @param throwable  the throwable to examine, may be null\n * @return an array of stack trace frames, never null\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getStackFrameList#303",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getStackFrameList(java.lang.Throwable)",
+    "snippet": "static List\u003cString\u003e getStackFrameList(final Throwable throwable) {\n        final String stackTrace \u003d getStackTrace(throwable);\n        final String linebreak \u003d System.lineSeparator();\n        final StringTokenizer frames \u003d new StringTokenizer(stackTrace, linebreak);\n        final List\u003cString\u003e list \u003d new ArrayList\u003c\u003e();\n        boolean traceStarted \u003d false;\n        while (frames.hasMoreTokens()) {\n            final String token \u003d frames.nextToken();\n            // Determine if the line starts with \u003cwhitespace\u003eat\n            final int at \u003d token.indexOf(\"at\");\n            if (at !\u003d NOT_FOUND \u0026\u0026 token.substring(0, at).trim().isEmpty()) {\n                traceStarted \u003d true;\n                list.add(token);\n            } else if (traceStarted) {\n                break;\n            }\n        }\n        return list;\n    }",
+    "begin_line": 303,
+    "end_line": 321,
+    "comment": "/** \n * Gets a  {@code List} of stack frames - the messageis not included. Only the trace of the specified exception is returned, any caused by trace is stripped. \u003cp\u003eThis works in most cases - it will only fail if the exception message contains a line that starts with: {@code \u0026quot;\u0026nbsp;\u0026nbsp;\u0026nbsp;at\u0026quot;.}\u003c/p\u003e\n * @param throwable is any throwable\n * @return List of stack frames\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getStackFrames#331",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getStackFrames(java.lang.String)",
+    "snippet": "static String[] getStackFrames(final String stackTrace) {\n        final String linebreak \u003d System.lineSeparator();\n        final StringTokenizer frames \u003d new StringTokenizer(stackTrace, linebreak);\n        final List\u003cString\u003e list \u003d new ArrayList\u003c\u003e();\n        while (frames.hasMoreTokens()) {\n            list.add(frames.nextToken());\n        }\n        return list.toArray(ArrayUtils.EMPTY_STRING_ARRAY);\n    }",
+    "begin_line": 331,
+    "end_line": 339,
+    "comment": "/** \n * Gets an array where each element is a line from the argument. \u003cp\u003eThe end of line is determined by the value of  {@link System#lineSeparator()}.\u003c/p\u003e\n * @param stackTrace  a stack trace String\n * @return an array where each element is a line from the argument\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getStackFrames#354",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getStackFrames(java.lang.Throwable)",
+    "snippet": "public static String[] getStackFrames(final Throwable throwable) {\n        if (throwable \u003d\u003d null) {\n            return ArrayUtils.EMPTY_STRING_ARRAY;\n        }\n        return getStackFrames(getStackTrace(throwable));\n    }",
+    "begin_line": 354,
+    "end_line": 359,
+    "comment": "/** \n * Gets the stack trace associated with the specified {@code Throwable} object, decomposing it into a list ofstack frames. \u003cp\u003eThe result of this method vary by JDK version as this method uses  {@link Throwable#printStackTrace(java.io.PrintWriter)}. On JDK1.3 and earlier, the cause exception will not be shown unless the specified throwable alters printStackTrace.\u003c/p\u003e\n * @param throwable  the {@code Throwable} to examine, may be null\n * @return an array of strings describing each stack frame, never null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getStackTrace#373",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace(java.lang.Throwable)",
+    "snippet": "public static String getStackTrace(final Throwable throwable) {\n        final StringWriter sw \u003d new StringWriter();\n        final PrintWriter pw \u003d new PrintWriter(sw, true);\n        throwable.printStackTrace(pw);\n        return sw.getBuffer().toString();\n    }",
+    "begin_line": 373,
+    "end_line": 378,
+    "comment": "/** \n * Gets the stack trace from a Throwable as a String. \u003cp\u003eThe result of this method vary by JDK version as this method uses  {@link Throwable#printStackTrace(java.io.PrintWriter)}. On JDK1.3 and earlier, the cause exception will not be shown unless the specified throwable alters printStackTrace.\u003c/p\u003e\n * @param throwable  the {@code Throwable} to be examined\n * @return the stack trace as generated by the exception\u0027s{@code printStackTrace(PrintWriter)} method\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getThrowableCount#396",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getThrowableCount(java.lang.Throwable)",
+    "snippet": "public static int getThrowableCount(final Throwable throwable) {\n        return getThrowableList(throwable).size();\n    }",
+    "begin_line": 396,
+    "end_line": 398,
+    "comment": "/** \n * Gets a count of the number of  {@code Throwable} objects in theexception chain. \u003cp\u003eA throwable without cause will return  {@code 1}. A throwable with one cause will return  {@code 2} and so on.A  {@code null} throwable will return {@code 0}.\u003c/p\u003e \u003cp\u003eFrom version 2.2, this method handles recursive cause structures that might otherwise cause infinite loops. The cause chain is processed until the end is reached, or until the next item in the chain is already in the result set.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @return the count of throwables, zero if null input\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getThrowableList#419",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getThrowableList(java.lang.Throwable)",
+    "snippet": "public static List\u003cThrowable\u003e getThrowableList(Throwable throwable) {\n        final List\u003cThrowable\u003e list \u003d new ArrayList\u003c\u003e();\n        while (throwable !\u003d null \u0026\u0026 !list.contains(throwable)) {\n            list.add(throwable);\n            throwable \u003d throwable.getCause();\n        }\n        return list;\n    }",
+    "begin_line": 419,
+    "end_line": 426,
+    "comment": "/** \n * Gets the list of  {@code Throwable} objects in theexception chain. \u003cp\u003eA throwable without cause will return a list containing one element - the input throwable. A throwable with one cause will return a list containing two elements. - the input throwable and the cause throwable. A  {@code null} throwable will return a list of size zero.\u003c/p\u003e\u003cp\u003eThis method handles recursive cause structures that might otherwise cause infinite loops. The cause chain is processed until the end is reached, or until the next item in the chain is already in the result set.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @return the list of throwables, never null\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.getThrowables#447",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.getThrowables(java.lang.Throwable)",
+    "snippet": "public static Throwable[] getThrowables(final Throwable throwable) {\n        final List\u003cThrowable\u003e list \u003d getThrowableList(throwable);\n        return list.toArray(ArrayUtils.EMPTY_THROWABLE_ARRAY);\n    }",
+    "begin_line": 447,
+    "end_line": 450,
+    "comment": "/** \n * Gets the list of  {@code Throwable} objects in theexception chain. \u003cp\u003eA throwable without cause will return an array containing one element - the input throwable. A throwable with one cause will return an array containing two elements. - the input throwable and the cause throwable. A  {@code null} throwable will return an array of size zero.\u003c/p\u003e\u003cp\u003eFrom version 2.2, this method handles recursive cause structures that might otherwise cause infinite loops. The cause chain is processed until the end is reached, or until the next item in the chain is already in the result set.\u003c/p\u003e\n * @see #getThrowableList(Throwable)\n * @param throwable  the throwable to inspect, may be null\n * @return the array of throwables, never null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.hasCause#465",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.hasCause(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e)",
+    "snippet": "public static boolean hasCause(Throwable chain,\n            final Class\u003c? extends Throwable\u003e type) {\n        if (chain instanceof UndeclaredThrowableException) {\n            chain \u003d chain.getCause();\n        }\n        return type.isInstance(chain);\n    }",
+    "begin_line": 465,
+    "end_line": 471,
+    "comment": "/** \n * Tests if the throwable\u0027s causal chain have an immediate or wrapped exception of the given type?\n * @param chain The root of a Throwable causal chain.\n * @param type The exception type to test.\n * @return true, if chain is an instance of type or is anUndeclaredThrowableException wrapping a cause.\n * @since 3.5\n * @see #wrapAndThrow(Throwable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.indexOf#484",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.indexOf(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e, int, boolean)",
+    "snippet": "private static int indexOf(final Throwable throwable, final Class\u003c? extends Throwable\u003e type, int fromIndex, final boolean subclass) {\n        if (throwable \u003d\u003d null || type \u003d\u003d null) {\n            return NOT_FOUND;\n        }\n        if (fromIndex \u003c 0) {\n            fromIndex \u003d 0;\n        }\n        final Throwable[] throwables \u003d getThrowables(throwable);\n        if (fromIndex \u003e\u003d throwables.length) {\n            return NOT_FOUND;\n        }\n        if (subclass) {\n            for (int i \u003d fromIndex; i \u003c throwables.length; i++) {\n                if (type.isAssignableFrom(throwables[i].getClass())) {\n                    return i;\n                }\n            }\n        } else {\n            for (int i \u003d fromIndex; i \u003c throwables.length; i++) {\n                if (type.equals(throwables[i].getClass())) {\n                    return i;\n                }\n            }\n        }\n        return NOT_FOUND;\n    }",
+    "begin_line": 484,
+    "end_line": 509,
+    "comment": "/** \n * Worker method for the  {@code indexOfType} methods.\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search for, subclasses match, null returns -1\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns -1\n * @param subclass if {@code true}, compares with  {@link Class#isAssignableFrom(Class)}, otherwise compares using references\n * @return index of the {@code type} within throwables nested within the specified {@code throwable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.indexOfThrowable#525",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.indexOfThrowable(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e)",
+    "snippet": "public static int indexOfThrowable(final Throwable throwable, final Class\u003c? extends Throwable\u003e clazz) {\n        return indexOf(throwable, clazz, 0, false);\n    }",
+    "begin_line": 525,
+    "end_line": 527,
+    "comment": "/** \n * Returns the (zero-based) index of the first  {@code Throwable}that matches the specified class (exactly) in the exception chain. Subclasses of the specified class do not match - see {@link #indexOfType(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code -1}. A  {@code null} type returns {@code -1}. No match in the chain returns  {@code -1}.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @param clazz  the class to search for, subclasses do not match, null returns -1\n * @return the index into the throwable chain, -1 if no match or null input\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.indexOfThrowable#548",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.indexOfThrowable(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e, int)",
+    "snippet": "public static int indexOfThrowable(final Throwable throwable, final Class\u003c? extends Throwable\u003e clazz, final int fromIndex) {\n        return indexOf(throwable, clazz, fromIndex, false);\n    }",
+    "begin_line": 548,
+    "end_line": 550,
+    "comment": "/** \n * Returns the (zero-based) index of the first  {@code Throwable}that matches the specified type in the exception chain from a specified index. Subclasses of the specified class do not match - see {@link #indexOfType(Throwable,Class,int)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code -1}. A  {@code null} type returns {@code -1}. No match in the chain returns  {@code -1}. A negative start index is treated as zero. A start index greater than the number of throwables returns  {@code -1}.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @param clazz  the class to search for, subclasses do not match, null returns -1\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns -1\n * @return the index into the throwable chain, -1 if no match or null input\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.indexOfType#567",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.indexOfType(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e)",
+    "snippet": "public static int indexOfType(final Throwable throwable, final Class\u003c? extends Throwable\u003e type) {\n        return indexOf(throwable, type, 0, true);\n    }",
+    "begin_line": 567,
+    "end_line": 569,
+    "comment": "/** \n * Returns the (zero-based) index of the first  {@code Throwable}that matches the specified class or subclass in the exception chain. Subclasses of the specified class do match - see {@link #indexOfThrowable(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code -1}. A  {@code null} type returns {@code -1}. No match in the chain returns  {@code -1}.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search for, subclasses match, null returns -1\n * @return the index into the throwable chain, -1 if no match or null input\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.indexOfType#591",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.indexOfType(java.lang.Throwable, java.lang.Class\u003c? extends java.lang.Throwable\u003e, int)",
+    "snippet": "public static int indexOfType(final Throwable throwable, final Class\u003c? extends Throwable\u003e type, final int fromIndex) {\n        return indexOf(throwable, type, fromIndex, true);\n    }",
+    "begin_line": 591,
+    "end_line": 593,
+    "comment": "/** \n * Returns the (zero-based) index of the first  {@code Throwable}that matches the specified type in the exception chain from a specified index. Subclasses of the specified class do match - see {@link #indexOfThrowable(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code -1}. A  {@code null} type returns {@code -1}. No match in the chain returns  {@code -1}. A negative start index is treated as zero. A start index greater than the number of throwables returns  {@code -1}.\u003c/p\u003e\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search for, subclasses match, null returns -1\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns -1\n * @return the index into the throwable chain, -1 if no match or null input\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.printRootCauseStackTrace#613",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.printRootCauseStackTrace(java.lang.Throwable)",
+    "snippet": "public static void printRootCauseStackTrace(final Throwable throwable) {\n        printRootCauseStackTrace(throwable, System.err);\n    }",
+    "begin_line": 613,
+    "end_line": 615,
+    "comment": "/** \n * Prints a compact stack trace for the root cause of a throwable to  {@code System.err}. \u003cp\u003eThe compact stack trace starts with the root cause and prints stack frames up to the place where it was caught and wrapped. Then it prints the wrapped exception and continues with stack frames until the wrapper exception is caught and wrapped again, etc.\u003c/p\u003e \u003cp\u003eThe output of this method is consistent across JDK versions. Note that this is the opposite order to the JDK1.4 display.\u003c/p\u003e \u003cp\u003eThe method is equivalent to  {@code printStackTrace} for throwablesthat don\u0027t have nested causes.\u003c/p\u003e\n * @param throwable  the throwable to output\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.printRootCauseStackTrace#637",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.printRootCauseStackTrace(java.lang.Throwable, java.io.PrintStream)",
+    "snippet": "@SuppressWarnings(\"resource\")\n    public static void printRootCauseStackTrace(final Throwable throwable, final PrintStream printStream) {\n        if (throwable \u003d\u003d null) {\n            return;\n        }\n        Objects.requireNonNull(printStream, \"printStream\");\n        final String[] trace \u003d getRootCauseStackTrace(throwable);\n        for (final String element : trace) {\n            printStream.println(element);\n        }\n        printStream.flush();\n    }",
+    "begin_line": 637,
+    "end_line": 647,
+    "comment": "/** \n * Prints a compact stack trace for the root cause of a throwable. \u003cp\u003eThe compact stack trace starts with the root cause and prints stack frames up to the place where it was caught and wrapped. Then it prints the wrapped exception and continues with stack frames until the wrapper exception is caught and wrapped again, etc.\u003c/p\u003e \u003cp\u003eThe output of this method is consistent across JDK versions. Note that this is the opposite order to the JDK1.4 display.\u003c/p\u003e \u003cp\u003eThe method is equivalent to  {@code printStackTrace} for throwablesthat don\u0027t have nested causes.\u003c/p\u003e\n * @param throwable  the throwable to output, may be null\n * @param printStream  the stream to output to, may not be null\n * @throws NullPointerException if the printStream is {@code null}\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.printRootCauseStackTrace#669",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.printRootCauseStackTrace(java.lang.Throwable, java.io.PrintWriter)",
+    "snippet": "@SuppressWarnings(\"resource\")\n    public static void printRootCauseStackTrace(final Throwable throwable, final PrintWriter printWriter) {\n        if (throwable \u003d\u003d null) {\n            return;\n        }\n        Objects.requireNonNull(printWriter, \"printWriter\");\n        final String[] trace \u003d getRootCauseStackTrace(throwable);\n        for (final String element : trace) {\n            printWriter.println(element);\n        }\n        printWriter.flush();\n    }",
+    "begin_line": 669,
+    "end_line": 679,
+    "comment": "/** \n * Prints a compact stack trace for the root cause of a throwable. \u003cp\u003eThe compact stack trace starts with the root cause and prints stack frames up to the place where it was caught and wrapped. Then it prints the wrapped exception and continues with stack frames until the wrapper exception is caught and wrapped again, etc.\u003c/p\u003e \u003cp\u003eThe output of this method is consistent across JDK versions. Note that this is the opposite order to the JDK1.4 display.\u003c/p\u003e \u003cp\u003eThe method is equivalent to  {@code printStackTrace} for throwablesthat don\u0027t have nested causes.\u003c/p\u003e\n * @param throwable  the throwable to output, may be null\n * @param printWriter  the writer to output to, may not be null\n * @throws NullPointerException if the printWriter is {@code null}\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.removeCommonFrames#689",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.removeCommonFrames(java.util.List\u003cjava.lang.String\u003e, java.util.List\u003cjava.lang.String\u003e)",
+    "snippet": "public static void removeCommonFrames(final List\u003cString\u003e causeFrames, final List\u003cString\u003e wrapperFrames) {\n        if (causeFrames \u003d\u003d null || wrapperFrames \u003d\u003d null) {\n            throw new IllegalArgumentException(\"The List must not be null\");\n        }\n        int causeFrameIndex \u003d causeFrames.size() - 1;\n        int wrapperFrameIndex \u003d wrapperFrames.size() - 1;\n        while (causeFrameIndex \u003e\u003d 0 \u0026\u0026 wrapperFrameIndex \u003e\u003d 0) {\n            // Remove the frame from the cause trace if it is the same\n            // as in the wrapper trace\n            final String causeFrame \u003d causeFrames.get(causeFrameIndex);\n            final String wrapperFrame \u003d wrapperFrames.get(wrapperFrameIndex);\n            if (causeFrame.equals(wrapperFrame)) {\n                causeFrames.remove(causeFrameIndex);\n            }\n            causeFrameIndex--;\n            wrapperFrameIndex--;\n        }\n    }",
+    "begin_line": 689,
+    "end_line": 706,
+    "comment": "/** \n * Removes common frames from the cause trace given the two stack traces.\n * @param causeFrames  stack trace of a cause throwable\n * @param wrapperFrames  stack trace of a wrapper throwable\n * @throws IllegalArgumentException if either argument is null\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.rethrow#766",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.rethrow(java.lang.Throwable)",
+    "snippet": "public static \u003cR\u003e R rethrow(final Throwable throwable) {\n        // claim that the typeErasure invocation throws a RuntimeException\n        return ExceptionUtils.\u003cR, RuntimeException\u003eeraseType(throwable);\n    }",
+    "begin_line": 766,
+    "end_line": 769,
+    "comment": "/** \n * Throws a checked exception without adding the exception to the throws clause of the calling method. This method prevents throws clause pollution and reduces the clutter of \"Caused by\" exceptions in the stacktrace. \u003cp\u003e The use of this technique may be controversial, but exceedingly useful to library developers. \u003c/p\u003e \u003cpre\u003e public int propagateExample { // note that there is no throws clause try { return invocation(); // throws IOException } catch (Exception e) { return ExceptionUtils.rethrow(e);  // propagates a checked exception } } \u003c/pre\u003e \u003cp\u003e This is an alternative to the more conservative approach of wrapping the checked exception in a RuntimeException: \u003c/p\u003e \u003cpre\u003e public int wrapExample { // note that there is no throws clause try { return invocation(); // throws IOException } catch (Error e) { throw e; } catch (RuntimeException e) { throw e;  // wraps a checked exception } catch (Exception e) { throw new UndeclaredThrowableException(e);  // wraps a checked exception } } \u003c/pre\u003e \u003cp\u003e One downside to using this approach is that the java compiler will not allow invoking code to specify a checked exception in a catch clause unless there is some code path within the try block that has invoked a method declared with that checked exception. If the invoking site wishes to catch the shaded checked exception, it must either invoke the shaded code through a method re-declaring the desired checked exception, or catch Exception and use the instanceof operator. Either of these techniques are required when interacting with non-java jvm code such as Jython, Scala, or Groovy, since these languages do not consider any exceptions as checked. \u003c/p\u003e\n * @param throwable The throwable to rethrow.\n * @param \u003c R \u003e The type of the returned value.\n * @return Never actually returned, this generic type matches any typewhich the calling site requires. \"Returning\" the results of this method, as done in the propagateExample above, will satisfy the java compiler requirement that all code paths return a value.\n * @since 3.5\n * @see #wrapAndThrow(Throwable)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.throwableOf#783",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.throwableOf(java.lang.Throwable, java.lang.Class\u003cT\u003e, int, boolean)",
+    "snippet": "private static \u003cT extends Throwable\u003e T throwableOf(final Throwable throwable, final Class\u003cT\u003e type, int fromIndex, final boolean subclass) {\n        if (throwable \u003d\u003d null || type \u003d\u003d null) {\n            return null;\n        }\n        if (fromIndex \u003c 0) {\n            fromIndex \u003d 0;\n        }\n        final Throwable[] throwables \u003d getThrowables(throwable);\n        if (fromIndex \u003e\u003d throwables.length) {\n            return null;\n        }\n        if (subclass) {\n            for (int i \u003d fromIndex; i \u003c throwables.length; i++) {\n                if (type.isAssignableFrom(throwables[i].getClass())) {\n                    return type.cast(throwables[i]);\n                }\n            }\n        } else {\n            for (int i \u003d fromIndex; i \u003c throwables.length; i++) {\n                if (type.equals(throwables[i].getClass())) {\n                    return type.cast(throwables[i]);\n                }\n            }\n        }\n        return null;\n    }",
+    "begin_line": 783,
+    "end_line": 808,
+    "comment": "/** \n * Worker method for the  {@code throwableOfType} methods.\n * @param \u003c T \u003e the type of Throwable you are searching.\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search, subclasses match, null returns null\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns null\n * @param subclass if {@code true}, compares with  {@link Class#isAssignableFrom(Class)}, otherwise compares using references\n * @return throwable of the {@code type} within throwables nested within the specified {@code throwable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.throwableOfThrowable#826",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.throwableOfThrowable(java.lang.Throwable, java.lang.Class\u003cT\u003e)",
+    "snippet": "public static \u003cT extends Throwable\u003e T throwableOfThrowable(final Throwable throwable, final Class\u003cT\u003e clazz) {\n        return throwableOf(throwable, clazz, 0, false);\n    }",
+    "begin_line": 826,
+    "end_line": 828,
+    "comment": "/** \n * Returns the first  {@code Throwable}that matches the specified class (exactly) in the exception chain. Subclasses of the specified class do not match - see {@link #throwableOfType(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code null}. A  {@code null} type returns {@code null}. No match in the chain returns  {@code null}.\u003c/p\u003e\n * @param \u003c T \u003e the type of Throwable you are searching.\n * @param throwable  the throwable to inspect, may be null\n * @param clazz  the class to search for, subclasses do not match, null returns null\n * @return the first matching throwable from the throwable chain, null if no match or null input\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.throwableOfThrowable#851",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.throwableOfThrowable(java.lang.Throwable, java.lang.Class\u003cT\u003e, int)",
+    "snippet": "public static \u003cT extends Throwable\u003e T throwableOfThrowable(final Throwable throwable, final Class\u003cT\u003e clazz, final int fromIndex) {\n        return throwableOf(throwable, clazz, fromIndex, false);\n    }",
+    "begin_line": 851,
+    "end_line": 853,
+    "comment": "/** \n * Returns the first  {@code Throwable}that matches the specified type in the exception chain from a specified index. Subclasses of the specified class do not match - see {@link #throwableOfType(Throwable,Class,int)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code null}. A  {@code null} type returns {@code null}. No match in the chain returns  {@code null}. A negative start index is treated as zero. A start index greater than the number of throwables returns  {@code null}.\u003c/p\u003e\n * @param \u003c T \u003e the type of Throwable you are searching.\n * @param throwable  the throwable to inspect, may be null\n * @param clazz  the class to search for, subclasses do not match, null returns null\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns null\n * @return the first matching throwable from the throwable chain, null if no match or null input\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.throwableOfType#871",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.throwableOfType(java.lang.Throwable, java.lang.Class\u003cT\u003e)",
+    "snippet": "public static \u003cT extends Throwable\u003e T throwableOfType(final Throwable throwable, final Class\u003cT\u003e type) {\n        return throwableOf(throwable, type, 0, true);\n    }",
+    "begin_line": 871,
+    "end_line": 873,
+    "comment": "/** \n * Returns the throwable of the first  {@code Throwable}that matches the specified class or subclass in the exception chain. Subclasses of the specified class do match - see {@link #throwableOfThrowable(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code null}. A  {@code null} type returns {@code null}. No match in the chain returns  {@code null}.\u003c/p\u003e\n * @param \u003c T \u003e the type of Throwable you are searching.\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search for, subclasses match, null returns null\n * @return the first matching throwable from the throwable chain, null if no match or null input\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.throwableOfType#896",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.throwableOfType(java.lang.Throwable, java.lang.Class\u003cT\u003e, int)",
+    "snippet": "public static \u003cT extends Throwable\u003e T throwableOfType(final Throwable throwable, final Class\u003cT\u003e type, final int fromIndex) {\n        return throwableOf(throwable, type, fromIndex, true);\n    }",
+    "begin_line": 896,
+    "end_line": 898,
+    "comment": "/** \n * Returns the first  {@code Throwable}that matches the specified type in the exception chain from a specified index. Subclasses of the specified class do match - see {@link #throwableOfThrowable(Throwable,Class)} for the opposite.\u003cp\u003eA  {@code null} throwable returns {@code null}. A  {@code null} type returns {@code null}. No match in the chain returns  {@code null}. A negative start index is treated as zero. A start index greater than the number of throwables returns  {@code null}.\u003c/p\u003e\n * @param \u003c T \u003e the type of Throwable you are searching.\n * @param throwable  the throwable to inspect, may be null\n * @param type  the type to search for, subclasses match, null returns null\n * @param fromIndex  the (zero-based) index of the starting position,negative treated as zero, larger than chain size returns null\n * @return the first matching throwable from the throwable chain, null if no match or null input\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.wrapAndThrow#922",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.wrapAndThrow(java.lang.Throwable)",
+    "snippet": "public static \u003cR\u003e R wrapAndThrow(final Throwable throwable) {\n        if (throwable instanceof RuntimeException) {\n            throw (RuntimeException) throwable;\n        }\n        if (throwable instanceof Error) {\n            throw (Error) throwable;\n        }\n        throw new UndeclaredThrowableException(throwable);\n    }",
+    "begin_line": 922,
+    "end_line": 930,
+    "comment": "/** \n * Throws a checked exception without adding the exception to the throws clause of the calling method. For checked exceptions, this method throws an UndeclaredThrowableException wrapping the checked exception. For Errors and RuntimeExceptions, the original exception is rethrown. \u003cp\u003e The downside to using this approach is that invoking code which needs to handle specific checked exceptions must sniff up the exception chain to determine if the caught exception was caused by the checked exception. \u003c/p\u003e\n * @param throwable The throwable to rethrow.\n * @param \u003c R \u003e The type of the returned value.\n * @return Never actually returned, this generic type matches any typewhich the calling site requires. \"Returning\" the results of this method will satisfy the java compiler requirement that all code paths return a value.\n * @since 3.5\n * @see #rethrow(Throwable)\n * @see #hasCause(Throwable,Class)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ExceptionUtils.ExceptionUtils#936",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/exception/ExceptionUtils.java",
+    "class_name": "org.apache.commons.lang3.exception.ExceptionUtils",
+    "signature": "org.apache.commons.lang3.exception.ExceptionUtils.ExceptionUtils()",
+    "snippet": "public ExceptionUtils() {\n    }",
+    "begin_line": 936,
+    "end_line": 937,
+    "comment": "/** \n * Public constructor allows an instance of  {@code ExceptionUtils} to be created, although that is notnormally necessary.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.emptyArray#69",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.emptyArray()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public static \u003cL, R\u003e ImmutablePair\u003cL, R\u003e[] emptyArray() {\n        return (ImmutablePair\u003cL, R\u003e[]) EMPTY_ARRAY;\n    }",
+    "begin_line": 69,
+    "end_line": 71,
+    "comment": "/** \n * Returns the empty array singleton that can be assigned without compiler warning.\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @return the empty array singleton that can be assigned without compiler warning.\n * @since 3.10.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.left#85",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.left(L)",
+    "snippet": "public static \u003cL, R\u003e Pair\u003cL, R\u003e left(final L left) {\n        return ImmutablePair.of(left, null);\n    }",
+    "begin_line": 85,
+    "end_line": 87,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param left  the left element, may be null\n * @return a pair formed from the two parameters, not null\n * @since 3.11\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.nullPair#98",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.nullPair()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public static \u003cL, R\u003e ImmutablePair\u003cL, R\u003e nullPair() {\n        return NULL;\n    }",
+    "begin_line": 98,
+    "end_line": 100,
+    "comment": "/** \n * Returns an immutable pair of nulls.\n * @param \u003c L \u003e the left element of this pair. Value is {@code null}.\n * @param \u003c R \u003e the right element of this pair. Value is {@code null}.\n * @return an immutable pair of nulls.\n * @since 3.6\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.of#114",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.of(L, R)",
+    "snippet": "public static \u003cL, R\u003e ImmutablePair\u003cL, R\u003e of(final L left, final R right) {\n        return left !\u003d null || right !\u003d null ? new ImmutablePair\u003c\u003e(left, right) : nullPair();\n    }",
+    "begin_line": 114,
+    "end_line": 116,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param left  the left element, may be null\n * @param right  the right element, may be null\n * @return a pair formed from the two parameters, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.of#130",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.of(java.util.Map.Entry\u003cL,R\u003e)",
+    "snippet": "public static \u003cL, R\u003e ImmutablePair\u003cL, R\u003e of(final Map.Entry\u003cL, R\u003e pair) {\n        return pair !\u003d null ? new ImmutablePair\u003c\u003e(pair.getKey(), pair.getValue()) : nullPair();\n    }",
+    "begin_line": 130,
+    "end_line": 132,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair from a map entry.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param pair the existing map entry.\n * @return a pair formed from the map entry\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.ofNonNull#148",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.ofNonNull(L, R)",
+    "snippet": "public static \u003cL, R\u003e ImmutablePair\u003cL, R\u003e ofNonNull(final L left, final R right) {\n        return of(Objects.requireNonNull(left, \"left\"), Objects.requireNonNull(right, \"right\"));\n    }",
+    "begin_line": 148,
+    "end_line": 150,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two non-null objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param left  the left element, may not be null\n * @param right  the right element, may not  be null\n * @return a pair formed from the two parameters, not null\n * @throws NullPointerException if any input is null\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.right#164",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.right(R)",
+    "snippet": "public static \u003cL, R\u003e Pair\u003cL, R\u003e right(final R right) {\n        return ImmutablePair.of(null, right);\n    }",
+    "begin_line": 164,
+    "end_line": 166,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param right  the right element, may be null\n * @return a pair formed from the two parameters, not null\n * @since 3.11\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.ImmutablePair#180",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.ImmutablePair(L, R)",
+    "snippet": "public ImmutablePair(final L left, final R right) {\n        this.left \u003d left;\n        this.right \u003d right;\n    }",
+    "begin_line": 180,
+    "end_line": 183,
+    "comment": "/** \n * Create a new pair instance.\n * @param left  the left value, may be null\n * @param right  the right value, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.getLeft#189",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.getLeft()",
+    "snippet": "@Override\n    public L getLeft() {\n        return left;\n    }",
+    "begin_line": 189,
+    "end_line": 191,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.getRight#197",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.getRight()",
+    "snippet": "@Override\n    public R getRight() {\n        return right;\n    }",
+    "begin_line": 197,
+    "end_line": 199,
+    "comment": "/** \n * {@inheritDoc}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ImmutablePair.setValue#211",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/ImmutablePair.java",
+    "class_name": "org.apache.commons.lang3.tuple.ImmutablePair",
+    "signature": "org.apache.commons.lang3.tuple.ImmutablePair.setValue(R)",
+    "snippet": "@Override\n    public R setValue(final R value) {\n        throw new UnsupportedOperationException();\n    }",
+    "begin_line": 211,
+    "end_line": 213,
+    "comment": "/** \n * \u003cp\u003eThrows  {@code UnsupportedOperationException}.\u003c/p\u003e \u003cp\u003eThis pair is immutable, so this operation is not supported.\u003c/p\u003e\n * @param value  the value to set\n * @return never\n * @throws UnsupportedOperationException as this operation is not supported\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.emptyArray#66",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.emptyArray()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public static \u003cL, R\u003e Pair\u003cL, R\u003e[] emptyArray() {\n        return (Pair\u003cL, R\u003e[]) EMPTY_ARRAY;\n    }",
+    "begin_line": 66,
+    "end_line": 68,
+    "comment": "/** \n * Returns the empty array singleton that can be assigned without compiler warning.\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @return the empty array singleton that can be assigned without compiler warning.\n * @since 3.10.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.of#82",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.of(L, R)",
+    "snippet": "public static \u003cL, R\u003e Pair\u003cL, R\u003e of(final L left, final R right) {\n        return ImmutablePair.of(left, right);\n    }",
+    "begin_line": 82,
+    "end_line": 84,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param left  the left element, may be null\n * @param right  the right element, may be null\n * @return a pair formed from the two parameters, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.of#98",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.of(java.util.Map.Entry\u003cL,R\u003e)",
+    "snippet": "public static \u003cL, R\u003e Pair\u003cL, R\u003e of(final Map.Entry\u003cL, R\u003e pair) {\n        return ImmutablePair.of(pair);\n    }",
+    "begin_line": 98,
+    "end_line": 100,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair from a map entry.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param pair the map entry.\n * @return a pair formed from the map entry\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.ofNonNull#116",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.ofNonNull(L, R)",
+    "snippet": "public static \u003cL, R\u003e Pair\u003cL, R\u003e ofNonNull(final L left, final R right) {\n        return ImmutablePair.ofNonNull(left, right);\n    }",
+    "begin_line": 116,
+    "end_line": 118,
+    "comment": "/** \n * \u003cp\u003eCreates an immutable pair of two non-null objects inferring the generic types.\u003c/p\u003e \u003cp\u003eThis factory allows the pair to be created using inference to obtain the generic types.\u003c/p\u003e\n * @param \u003c L \u003e the left element type\n * @param \u003c R \u003e the right element type\n * @param left  the left element, may not be null\n * @param right  the right element, may not  be null\n * @return a pair formed from the two parameters, not null\n * @throws NullPointerException if any input is null\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.compareTo#128",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.compareTo(org.apache.commons.lang3.tuple.Pair\u003cL,R\u003e)",
+    "snippet": "@Override\n    public int compareTo(final Pair\u003cL, R\u003e other) {\n      return new CompareToBuilder().append(getLeft(), other.getLeft())\n              .append(getRight(), other.getRight()).toComparison();\n    }",
+    "begin_line": 128,
+    "end_line": 131,
+    "comment": "/** \n * \u003cp\u003eCompares the pair based on the left element followed by the right element. The types must be  {@code Comparable}.\u003c/p\u003e\n * @param other  the other pair, not null\n * @return negative if this is less, zero if equal, positive if greater\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.equals#140",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.equals(java.lang.Object)",
+    "snippet": "@Override\n    public boolean equals(final Object obj) {\n        if (obj \u003d\u003d this) {\n            return true;\n        }\n        if (obj instanceof Map.Entry\u003c?, ?\u003e) {\n            final Map.Entry\u003c?, ?\u003e other \u003d (Map.Entry\u003c?, ?\u003e) obj;\n            return Objects.equals(getKey(), other.getKey())\n                    \u0026\u0026 Objects.equals(getValue(), other.getValue());\n        }\n        return false;\n    }",
+    "begin_line": 140,
+    "end_line": 150,
+    "comment": "/** \n * \u003cp\u003eCompares this pair to another based on the two elements.\u003c/p\u003e\n * @param obj  the object to compare to, null returns false\n * @return true if the elements of the pair are equal\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.getKey#161",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.getKey()",
+    "snippet": "@Override\n    public final L getKey() {\n        return getLeft();\n    }",
+    "begin_line": 161,
+    "end_line": 163,
+    "comment": "/** \n * \u003cp\u003eGets the key from this pair.\u003c/p\u003e \u003cp\u003eThis method implements the  {@code Map.Entry} interface returning theleft element as the key.\u003c/p\u003e\n * @return the left element as the key, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.getLeft#172",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.getLeft()",
+    "snippet": "public abstract L getLeft();",
+    "begin_line": 172,
+    "end_line": 172,
+    "comment": "/** \n * \u003cp\u003eGets the left element from this pair.\u003c/p\u003e \u003cp\u003eWhen treated as a key-value pair, this is the key.\u003c/p\u003e\n * @return the left element, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.getRight#181",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.getRight()",
+    "snippet": "public abstract R getRight();",
+    "begin_line": 181,
+    "end_line": 181,
+    "comment": "/** \n * \u003cp\u003eGets the right element from this pair.\u003c/p\u003e \u003cp\u003eWhen treated as a key-value pair, this is the value.\u003c/p\u003e\n * @return the right element, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.getValue#192",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.getValue()",
+    "snippet": "@Override\n    public R getValue() {\n        return getRight();\n    }",
+    "begin_line": 192,
+    "end_line": 194,
+    "comment": "/** \n * \u003cp\u003eGets the value from this pair.\u003c/p\u003e \u003cp\u003eThis method implements the  {@code Map.Entry} interface returning theright element as the value.\u003c/p\u003e\n * @return the right element as the value, may be null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.hashCode#203",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.hashCode()",
+    "snippet": "@Override\n    public int hashCode() {\n        // see Map.Entry API specification\n        return Objects.hashCode(getKey()) ^ Objects.hashCode(getValue());\n    }",
+    "begin_line": 203,
+    "end_line": 206,
+    "comment": "/** \n * \u003cp\u003eReturns a suitable hash code. The hash code follows the definition in  {@code Map.Entry}.\u003c/p\u003e\n * @return the hash code\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.toString#214",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.toString()",
+    "snippet": "@Override\n    public String toString() {\n        return \"(\" + getLeft() + \u0027,\u0027 + getRight() + \u0027)\u0027;\n    }",
+    "begin_line": 214,
+    "end_line": 216,
+    "comment": "/** \n * \u003cp\u003eReturns a String representation of this pair using the format  {@code ($left,$right)}.\u003c/p\u003e\n * @return a string describing this object, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Pair.toString#229",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/tuple/Pair.java",
+    "class_name": "org.apache.commons.lang3.tuple.Pair",
+    "signature": "org.apache.commons.lang3.tuple.Pair.toString(java.lang.String)",
+    "snippet": "public String toString(final String format) {\n        return String.format(format, getLeft(), getRight());\n    }",
+    "begin_line": 229,
+    "end_line": 231,
+    "comment": "/** \n * \u003cp\u003eFormats the receiver using the given format.\u003c/p\u003e \u003cp\u003eThis uses  {@link java.util.Formattable} to perform the formatting. Two variables maybe used to embed the left and right elements. Use  {@code %1$s} for the leftelement (key) and  {@code %2$s} for the right element (value).The default format used by  {@code toString()} is {@code (%1$s,%2$s)}.\u003c/p\u003e\n * @param format  the format string, optionally containing {@code %1$s} and {@code %2$s}, not null\n * @return the formatted string, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

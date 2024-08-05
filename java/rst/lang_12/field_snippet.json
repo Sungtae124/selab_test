@@ -1,0 +1,1316 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.PACKAGE_SEPARATOR_CHAR",
+    "snippet": "public static final char PACKAGE_SEPARATOR_CHAR \u003d \u0027.\u0027;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * The package separator character: \u003ccode\u003e\u0027\u0026#x2e;\u0027 \u003d\u003d  {@value}\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.PACKAGE_SEPARATOR",
+    "snippet": "public static final String PACKAGE_SEPARATOR \u003d String.valueOf(PACKAGE_SEPARATOR_CHAR);",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * The package separator String: \u003ccode\u003e\"\u0026#x2e;\"\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.INNER_CLASS_SEPARATOR_CHAR",
+    "snippet": "public static final char INNER_CLASS_SEPARATOR_CHAR \u003d \u0027$\u0027;",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * The inner class separator character: \u003ccode\u003e\u0027$\u0027 \u003d\u003d  {@value}\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.INNER_CLASS_SEPARATOR",
+    "snippet": "public static final String INNER_CLASS_SEPARATOR \u003d String.valueOf(INNER_CLASS_SEPARATOR_CHAR);",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * The inner class separator String:  {@code \"$\"}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.primitiveWrapperMap",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e, Class\u003c?\u003e\u003e primitiveWrapperMap \u003d new HashMap\u003cClass\u003c?\u003e, Class\u003c?\u003e\u003e();",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": "/** \n * Maps primitive  {@code Class}es to their corresponding wrapper  {@code Class}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.wrapperPrimitiveMap",
+    "snippet": "private static final Map\u003cClass\u003c?\u003e, Class\u003c?\u003e\u003e wrapperPrimitiveMap \u003d new HashMap\u003cClass\u003c?\u003e, Class\u003c?\u003e\u003e();",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": "/** \n * Maps wrapper  {@code Class}es to their corresponding primitive types.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.abbreviationMap",
+    "snippet": "private static final Map\u003cString, String\u003e abbreviationMap;",
+    "begin_line": 108,
+    "end_line": 108,
+    "comment": "/** \n * Maps a primitive class name to its corresponding abbreviation used in array class names.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.reverseAbbreviationMap",
+    "snippet": "private static final Map\u003cString, String\u003e reverseAbbreviationMap;",
+    "begin_line": 113,
+    "end_line": 113,
+    "comment": "/** \n * Maps an abbreviation used in array class names to corresponding primitive class name.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassUtils",
+    "src_path": "org/apache/commons/lang3/ClassUtils.java",
+    "signature": "org.apache.commons.lang3.ClassUtils.interfaces",
+    "snippet": " Iterator\u003cClass\u003c?\u003e\u003e interfaces \u003d Collections.\u003cClass\u003c?\u003e\u003e emptySet().iterator();",
+    "begin_line": 1280,
+    "end_line": 1280,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.JavaVersion",
+    "src_path": "org/apache/commons/lang3/JavaVersion.java",
+    "signature": "org.apache.commons.lang3.JavaVersion.value",
+    "snippet": "private final float value;",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": "/** \n * The float value.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.JavaVersion",
+    "src_path": "org/apache/commons/lang3/JavaVersion.java",
+    "signature": "org.apache.commons.lang3.JavaVersion.name",
+    "snippet": "private final String name;",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": "/** \n * The standard name.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ObjectUtils",
+    "src_path": "org/apache/commons/lang3/ObjectUtils.java",
+    "signature": "org.apache.commons.lang3.ObjectUtils.NULL",
+    "snippet": "public static final Null NULL \u003d new Null();",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": "/** \n * \u003cp\u003eSingleton used as a  {@code null} placeholder where{@code null} has another meaning.\u003c/p\u003e\u003cp\u003eFor example, in a  {@code HashMap} the{@link java.util.HashMap#get(java.lang.Object)} method returns{@code null} if the {@code Map} contains {@code null} or if thereis no matching key. The  {@code Null} placeholder can be used todistinguish between these two cases.\u003c/p\u003e \u003cp\u003eAnother example is  {@code Hashtable}, where  {@code null}cannot be stored.\u003c/p\u003e \u003cp\u003eThis instance is Serializable.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ObjectUtils",
+    "src_path": "org/apache/commons/lang3/ObjectUtils.java",
+    "signature": "org.apache.commons.lang3.ObjectUtils.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 7092611880189329093L;",
+    "begin_line": 742,
+    "end_line": 742,
+    "comment": "/** \n * Required for serialization support. Declare serialization compatibility with Commons Lang 1.0\n * @see java.io.Serializable\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.OS_NAME_WINDOWS_PREFIX",
+    "snippet": "private static final String OS_NAME_WINDOWS_PREFIX \u003d \"Windows\";",
+    "begin_line": 40,
+    "end_line": 40,
+    "comment": "/** \n * The prefix String for all Windows OS.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_HOME_KEY",
+    "snippet": "private static final String USER_HOME_KEY \u003d \"user.home\";",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * The System property key for the user home directory.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_DIR_KEY",
+    "snippet": "private static final String USER_DIR_KEY \u003d \"user.dir\";",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": "/** \n * The System property key for the user directory.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_IO_TMPDIR_KEY",
+    "snippet": "private static final String JAVA_IO_TMPDIR_KEY \u003d \"java.io.tmpdir\";",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": "/** \n * The System property key for the Java IO temporary directory.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_HOME_KEY",
+    "snippet": "private static final String JAVA_HOME_KEY \u003d \"java.home\";",
+    "begin_line": 64,
+    "end_line": 64,
+    "comment": "/** \n * The System property key for the Java home directory.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.AWT_TOOLKIT",
+    "snippet": "public static final String AWT_TOOLKIT \u003d getSystemProperty(\"awt.toolkit\");",
+    "begin_line": 88,
+    "end_line": 88,
+    "comment": "/** \n * \u003cp\u003e The  {@code awt.toolkit} System Property.\u003c/p\u003e \u003cp\u003e Holds a class name, on Windows XP this is  {@code sun.awt.windows.WToolkit}. \u003c/p\u003e \u003cp\u003e \u003cb\u003eOn platforms without a GUI, this value is  {@code null}.\u003c/b\u003e \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.FILE_ENCODING",
+    "snippet": "public static final String FILE_ENCODING \u003d getSystemProperty(\"file.encoding\");",
+    "begin_line": 110,
+    "end_line": 110,
+    "comment": "/** \n * \u003cp\u003e The  {@code file.encoding} System Property.\u003c/p\u003e \u003cp\u003e File encoding, such as  {@code Cp1252}. \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.FILE_SEPARATOR",
+    "snippet": "@Deprecated\n    public static final String FILE_SEPARATOR \u003d getSystemProperty(\"file.separator\");",
+    "begin_line": 137,
+    "end_line": 137,
+    "comment": "/** \n * \u003cp\u003e The  {@code file.separator} System Property.The file separator is: \u003c/p\u003e \u003cul\u003e \u003cli\u003e {@code \"/\"} on UNIX\u003c/li\u003e\u003cli\u003e {@code \"\\\"} on Windows.\u003c/li\u003e\u003c/ul\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @deprecated Use {@link File#separator}, since it is guaranteed to be a string containing a single character and it does not require a privilege check.\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_AWT_FONTS",
+    "snippet": "public static final String JAVA_AWT_FONTS \u003d getSystemProperty(\"java.awt.fonts\");",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.awt.fonts} System Property.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_AWT_GRAPHICSENV",
+    "snippet": "public static final String JAVA_AWT_GRAPHICSENV \u003d getSystemProperty(\"java.awt.graphicsenv\");",
+    "begin_line": 173,
+    "end_line": 173,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.awt.graphicsenv} System Property.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_AWT_HEADLESS",
+    "snippet": "public static final String JAVA_AWT_HEADLESS \u003d getSystemProperty(\"java.awt.headless\");",
+    "begin_line": 194,
+    "end_line": 194,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.awt.headless} System Property. The value of this property is the String {@code \"true\"} or{@code \"false\"}. \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @see #isJavaAwtHeadless()\n * @since 2.1\n * @since Java 1.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_AWT_PRINTERJOB",
+    "snippet": "public static final String JAVA_AWT_PRINTERJOB \u003d getSystemProperty(\"java.awt.printerjob\");",
+    "begin_line": 212,
+    "end_line": 212,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.awt.printerjob} System Property.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_CLASS_PATH",
+    "snippet": "public static final String JAVA_CLASS_PATH \u003d getSystemProperty(\"java.class.path\");",
+    "begin_line": 230,
+    "end_line": 230,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.class.path} System Property. Java class path.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_CLASS_VERSION",
+    "snippet": "public static final String JAVA_CLASS_VERSION \u003d getSystemProperty(\"java.class.version\");",
+    "begin_line": 248,
+    "end_line": 248,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.class.version} System Property. Java class format version number.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_COMPILER",
+    "snippet": "public static final String JAVA_COMPILER \u003d getSystemProperty(\"java.compiler\");",
+    "begin_line": 267,
+    "end_line": 267,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.compiler} System Property. Name of JIT compiler to use. First in JDK version 1.2. Not used in SunJDKs after 1.2. \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2. Not used in Sun versions after 1.2.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_ENDORSED_DIRS",
+    "snippet": "public static final String JAVA_ENDORSED_DIRS \u003d getSystemProperty(\"java.endorsed.dirs\");",
+    "begin_line": 285,
+    "end_line": 285,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.endorsed.dirs} System Property. Path of endorsed directory or directories.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_EXT_DIRS",
+    "snippet": "public static final String JAVA_EXT_DIRS \u003d getSystemProperty(\"java.ext.dirs\");",
+    "begin_line": 303,
+    "end_line": 303,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.ext.dirs} System Property. Path of extension directory or directories.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_HOME",
+    "snippet": "public static final String JAVA_HOME \u003d getSystemProperty(JAVA_HOME_KEY);",
+    "begin_line": 321,
+    "end_line": 321,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.home} System Property. Java installation directory.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_IO_TMPDIR",
+    "snippet": "public static final String JAVA_IO_TMPDIR \u003d getSystemProperty(JAVA_IO_TMPDIR_KEY);",
+    "begin_line": 339,
+    "end_line": 339,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.io.tmpdir} System Property. Default temp file path.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_LIBRARY_PATH",
+    "snippet": "public static final String JAVA_LIBRARY_PATH \u003d getSystemProperty(\"java.library.path\");",
+    "begin_line": 357,
+    "end_line": 357,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.library.path} System Property. List of paths to search when loading libraries.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_RUNTIME_NAME",
+    "snippet": "public static final String JAVA_RUNTIME_NAME \u003d getSystemProperty(\"java.runtime.name\");",
+    "begin_line": 376,
+    "end_line": 376,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.runtime.name} System Property. Java Runtime Environment name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_RUNTIME_VERSION",
+    "snippet": "public static final String JAVA_RUNTIME_VERSION \u003d getSystemProperty(\"java.runtime.version\");",
+    "begin_line": 395,
+    "end_line": 395,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.runtime.version} System Property. Java Runtime Environment version.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_NAME",
+    "snippet": "public static final String JAVA_SPECIFICATION_NAME \u003d getSystemProperty(\"java.specification.name\");",
+    "begin_line": 413,
+    "end_line": 413,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.specification.name} System Property. Java Runtime Environment specification name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_VENDOR",
+    "snippet": "public static final String JAVA_SPECIFICATION_VENDOR \u003d getSystemProperty(\"java.specification.vendor\");",
+    "begin_line": 431,
+    "end_line": 431,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.specification.vendor} System Property. Java Runtime Environment specification vendor.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_VERSION",
+    "snippet": "public static final String JAVA_SPECIFICATION_VERSION \u003d getSystemProperty(\"java.specification.version\");",
+    "begin_line": 449,
+    "end_line": 449,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.specification.version} System Property. Java Runtime Environment specification version.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_VERSION_AS_ENUM",
+    "snippet": "private static final JavaVersion JAVA_SPECIFICATION_VERSION_AS_ENUM \u003d JavaVersion.get(JAVA_SPECIFICATION_VERSION);",
+    "begin_line": 450,
+    "end_line": 450,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_UTIL_PREFS_PREFERENCES_FACTORY",
+    "snippet": "public static final String JAVA_UTIL_PREFS_PREFERENCES_FACTORY \u003d\n        getSystemProperty(\"java.util.prefs.PreferencesFactory\");",
+    "begin_line": 469,
+    "end_line": 470,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.util.prefs.PreferencesFactory} System Property. A class name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n * @since Java 1.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VENDOR",
+    "snippet": "public static final String JAVA_VENDOR \u003d getSystemProperty(\"java.vendor\");",
+    "begin_line": 488,
+    "end_line": 488,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vendor} System Property. Java vendor-specific string.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VENDOR_URL",
+    "snippet": "public static final String JAVA_VENDOR_URL \u003d getSystemProperty(\"java.vendor.url\");",
+    "begin_line": 506,
+    "end_line": 506,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vendor.url} System Property. Java vendor URL.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VERSION",
+    "snippet": "public static final String JAVA_VERSION \u003d getSystemProperty(\"java.version\");",
+    "begin_line": 524,
+    "end_line": 524,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.version} System Property. Java version number.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_INFO",
+    "snippet": "public static final String JAVA_VM_INFO \u003d getSystemProperty(\"java.vm.info\");",
+    "begin_line": 543,
+    "end_line": 543,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.info} System Property. Java Virtual Machine implementation info.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_NAME",
+    "snippet": "public static final String JAVA_VM_NAME \u003d getSystemProperty(\"java.vm.name\");",
+    "begin_line": 561,
+    "end_line": 561,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.name} System Property. Java Virtual Machine implementation name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_SPECIFICATION_NAME",
+    "snippet": "public static final String JAVA_VM_SPECIFICATION_NAME \u003d getSystemProperty(\"java.vm.specification.name\");",
+    "begin_line": 579,
+    "end_line": 579,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.specification.name} System Property. Java Virtual Machine specification name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_SPECIFICATION_VENDOR",
+    "snippet": "public static final String JAVA_VM_SPECIFICATION_VENDOR \u003d getSystemProperty(\"java.vm.specification.vendor\");",
+    "begin_line": 597,
+    "end_line": 597,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.specification.vendor} System Property. Java Virtual Machine specification vendor.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_SPECIFICATION_VERSION",
+    "snippet": "public static final String JAVA_VM_SPECIFICATION_VERSION \u003d getSystemProperty(\"java.vm.specification.version\");",
+    "begin_line": 615,
+    "end_line": 615,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.specification.version} System Property. Java Virtual Machine specification version.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_VENDOR",
+    "snippet": "public static final String JAVA_VM_VENDOR \u003d getSystemProperty(\"java.vm.vendor\");",
+    "begin_line": 633,
+    "end_line": 633,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.vendor} System Property. Java Virtual Machine implementation vendor.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.JAVA_VM_VERSION",
+    "snippet": "public static final String JAVA_VM_VERSION \u003d getSystemProperty(\"java.vm.version\");",
+    "begin_line": 651,
+    "end_line": 651,
+    "comment": "/** \n * \u003cp\u003e The  {@code java.vm.version} System Property. Java Virtual Machine implementation version.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.LINE_SEPARATOR",
+    "snippet": "public static final String LINE_SEPARATOR \u003d getSystemProperty(\"line.separator\");",
+    "begin_line": 669,
+    "end_line": 669,
+    "comment": "/** \n * \u003cp\u003e The  {@code line.separator} System Property. Line separator (\u003ccode\u003e\u0026quot;\\n\u0026quot;\u003c/code\u003e on UNIX).\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.OS_ARCH",
+    "snippet": "public static final String OS_ARCH \u003d getSystemProperty(\"os.arch\");",
+    "begin_line": 687,
+    "end_line": 687,
+    "comment": "/** \n * \u003cp\u003e The  {@code os.arch} System Property. Operating system architecture.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.OS_NAME",
+    "snippet": "public static final String OS_NAME \u003d getSystemProperty(\"os.name\");",
+    "begin_line": 705,
+    "end_line": 705,
+    "comment": "/** \n * \u003cp\u003e The  {@code os.name} System Property. Operating system name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.OS_VERSION",
+    "snippet": "public static final String OS_VERSION \u003d getSystemProperty(\"os.version\");",
+    "begin_line": 723,
+    "end_line": 723,
+    "comment": "/** \n * \u003cp\u003e The  {@code os.version} System Property. Operating system version.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.PATH_SEPARATOR",
+    "snippet": "@Deprecated\n    public static final String PATH_SEPARATOR \u003d getSystemProperty(\"path.separator\");",
+    "begin_line": 744,
+    "end_line": 744,
+    "comment": "/** \n * \u003cp\u003e The  {@code path.separator} System Property. Path separator (\u003ccode\u003e\u0026quot;:\u0026quot;\u003c/code\u003e on UNIX).\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @deprecated Use {@link File#pathSeparator}, since it is guaranteed to be a string containing a single character and it does not require a privilege check.\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_COUNTRY",
+    "snippet": "public static final String USER_COUNTRY \u003d getSystemProperty(\"user.country\") \u003d\u003d null ?\n            getSystemProperty(\"user.region\") : getSystemProperty(\"user.country\");",
+    "begin_line": 764,
+    "end_line": 765,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.country} or {@code user.region} System Property. User\u0027s country code, such as {@code GB}. First in Java version 1.2 as  {@code user.region}. Renamed to  {@code user.country} in 1.4\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_DIR",
+    "snippet": "public static final String USER_DIR \u003d getSystemProperty(USER_DIR_KEY);",
+    "begin_line": 783,
+    "end_line": 783,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.dir} System Property. User\u0027s current working directory.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_HOME",
+    "snippet": "public static final String USER_HOME \u003d getSystemProperty(USER_HOME_KEY);",
+    "begin_line": 801,
+    "end_line": 801,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.home} System Property. User\u0027s home directory.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_LANGUAGE",
+    "snippet": "public static final String USER_LANGUAGE \u003d getSystemProperty(\"user.language\");",
+    "begin_line": 820,
+    "end_line": 820,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.language} System Property. User\u0027s language code, such as {@code \"en\"}. \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.0\n * @since Java 1.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_NAME",
+    "snippet": "public static final String USER_NAME \u003d getSystemProperty(\"user.name\");",
+    "begin_line": 838,
+    "end_line": 838,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.name} System Property. User\u0027s account name.\u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since Java 1.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.USER_TIMEZONE",
+    "snippet": "public static final String USER_TIMEZONE \u003d getSystemProperty(\"user.timezone\");",
+    "begin_line": 856,
+    "end_line": 856,
+    "comment": "/** \n * \u003cp\u003e The  {@code user.timezone} System Property. For example: {@code \"America/Los_Angeles\"}. \u003c/p\u003e \u003cp\u003e Defaults to  {@code null} if the runtime does not have security access to read this property or the property doesnot exist. \u003c/p\u003e \u003cp\u003e This value is initialized when the class is loaded. If  {@link System#setProperty(String,String)} or{@link System#setProperties(java.util.Properties)} is called after this class is loaded, the value will be out ofsync with that System property. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_1",
+    "snippet": "public static final boolean IS_JAVA_1_1 \u003d getJavaVersionMatches(\"1.1\");",
+    "begin_line": 871,
+    "end_line": 871,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.1 (also 1.1.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_2",
+    "snippet": "public static final boolean IS_JAVA_1_2 \u003d getJavaVersionMatches(\"1.2\");",
+    "begin_line": 881,
+    "end_line": 881,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.2 (also 1.2.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_3",
+    "snippet": "public static final boolean IS_JAVA_1_3 \u003d getJavaVersionMatches(\"1.3\");",
+    "begin_line": 891,
+    "end_line": 891,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.3 (also 1.3.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_4",
+    "snippet": "public static final boolean IS_JAVA_1_4 \u003d getJavaVersionMatches(\"1.4\");",
+    "begin_line": 901,
+    "end_line": 901,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.4 (also 1.4.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_5",
+    "snippet": "public static final boolean IS_JAVA_1_5 \u003d getJavaVersionMatches(\"1.5\");",
+    "begin_line": 911,
+    "end_line": 911,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.5 (also 1.5.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_6",
+    "snippet": "public static final boolean IS_JAVA_1_6 \u003d getJavaVersionMatches(\"1.6\");",
+    "begin_line": 921,
+    "end_line": 921,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.6 (also 1.6.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_7",
+    "snippet": "public static final boolean IS_JAVA_1_7 \u003d getJavaVersionMatches(\"1.7\");",
+    "begin_line": 933,
+    "end_line": 933,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.7 (also 1.7.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n * @since 3.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_8",
+    "snippet": "public static final boolean IS_JAVA_1_8 \u003d getJavaVersionMatches(\"1.8\");",
+    "begin_line": 945,
+    "end_line": 945,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.8 (also 1.8.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n * @since 3.3.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_JAVA_1_9",
+    "snippet": "public static final boolean IS_JAVA_1_9 \u003d getJavaVersionMatches(\"1.9\");",
+    "begin_line": 957,
+    "end_line": 957,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Java version 1.9 (also 1.9.x versions).\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@link #JAVA_VERSION} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_AIX",
+    "snippet": "public static final boolean IS_OS_AIX \u003d getOSMatchesName(\"AIX\");",
+    "begin_line": 977,
+    "end_line": 977,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is AIX.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_HP_UX",
+    "snippet": "public static final boolean IS_OS_HP_UX \u003d getOSMatchesName(\"HP-UX\");",
+    "begin_line": 989,
+    "end_line": 989,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is HP-UX.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_400",
+    "snippet": "public static final boolean IS_OS_400 \u003d getOSMatchesName(\"OS/400\");",
+    "begin_line": 1001,
+    "end_line": 1001,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is IBM OS/400.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_IRIX",
+    "snippet": "public static final boolean IS_OS_IRIX \u003d getOSMatchesName(\"Irix\");",
+    "begin_line": 1013,
+    "end_line": 1013,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Irix.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_LINUX",
+    "snippet": "public static final boolean IS_OS_LINUX \u003d getOSMatchesName(\"Linux\") || getOSMatchesName(\"LINUX\");",
+    "begin_line": 1025,
+    "end_line": 1025,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Linux.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC",
+    "snippet": "public static final boolean IS_OS_MAC \u003d getOSMatchesName(\"Mac\");",
+    "begin_line": 1037,
+    "end_line": 1037,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX",
+    "snippet": "public static final boolean IS_OS_MAC_OSX \u003d getOSMatchesName(\"Mac OS X\");",
+    "begin_line": 1049,
+    "end_line": 1049,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_CHEETAH",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_CHEETAH \u003d getOSMatches(\"Mac OS X\", \"10.0\");",
+    "begin_line": 1061,
+    "end_line": 1061,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Cheetah.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_PUMA",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_PUMA \u003d getOSMatches(\"Mac OS X\", \"10.1\");",
+    "begin_line": 1073,
+    "end_line": 1073,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Puma.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_JAGUAR",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_JAGUAR \u003d getOSMatches(\"Mac OS X\", \"10.2\");",
+    "begin_line": 1085,
+    "end_line": 1085,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Jaguar.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_PANTHER",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_PANTHER \u003d getOSMatches(\"Mac OS X\", \"10.3\");",
+    "begin_line": 1097,
+    "end_line": 1097,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Panther.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_TIGER",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_TIGER \u003d getOSMatches(\"Mac OS X\", \"10.4\");",
+    "begin_line": 1109,
+    "end_line": 1109,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Tiger.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_LEOPARD",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_LEOPARD \u003d getOSMatches(\"Mac OS X\", \"10.5\");",
+    "begin_line": 1121,
+    "end_line": 1121,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Leopard.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_SNOW_LEOPARD",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_SNOW_LEOPARD \u003d getOSMatches(\"Mac OS X\", \"10.6\");",
+    "begin_line": 1133,
+    "end_line": 1133,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Snow Leopard.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_LION",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_LION \u003d getOSMatches(\"Mac OS X\", \"10.7\");",
+    "begin_line": 1145,
+    "end_line": 1145,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Lion.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_MOUNTAIN_LION",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_MOUNTAIN_LION \u003d getOSMatches(\"Mac OS X\", \"10.8\");",
+    "begin_line": 1157,
+    "end_line": 1157,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Mountain Lion.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_MAVERICKS",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_MAVERICKS \u003d getOSMatches(\"Mac OS X\", \"10.9\");",
+    "begin_line": 1169,
+    "end_line": 1169,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Mavericks.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_YOSEMITE",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_YOSEMITE \u003d getOSMatches(\"Mac OS X\", \"10.10\");",
+    "begin_line": 1181,
+    "end_line": 1181,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X Yosemite.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_MAC_OSX_EL_CAPITAN",
+    "snippet": "public static final boolean IS_OS_MAC_OSX_EL_CAPITAN \u003d getOSMatches(\"Mac OS X\", \"10.11\");",
+    "begin_line": 1193,
+    "end_line": 1193,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac OS X El Capitan.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.5\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_FREE_BSD",
+    "snippet": "public static final boolean IS_OS_FREE_BSD \u003d getOSMatchesName(\"FreeBSD\");",
+    "begin_line": 1205,
+    "end_line": 1205,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is FreeBSD.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_OPEN_BSD",
+    "snippet": "public static final boolean IS_OS_OPEN_BSD \u003d getOSMatchesName(\"OpenBSD\");",
+    "begin_line": 1217,
+    "end_line": 1217,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is OpenBSD.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_NET_BSD",
+    "snippet": "public static final boolean IS_OS_NET_BSD \u003d getOSMatchesName(\"NetBSD\");",
+    "begin_line": 1229,
+    "end_line": 1229,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is NetBSD.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_OS2",
+    "snippet": "public static final boolean IS_OS_OS2 \u003d getOSMatchesName(\"OS/2\");",
+    "begin_line": 1241,
+    "end_line": 1241,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is OS/2.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_SOLARIS",
+    "snippet": "public static final boolean IS_OS_SOLARIS \u003d getOSMatchesName(\"Solaris\");",
+    "begin_line": 1253,
+    "end_line": 1253,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Solaris.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_SUN_OS",
+    "snippet": "public static final boolean IS_OS_SUN_OS \u003d getOSMatchesName(\"SunOS\");",
+    "begin_line": 1265,
+    "end_line": 1265,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is SunOS.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_UNIX",
+    "snippet": "public static final boolean IS_OS_UNIX \u003d IS_OS_AIX || IS_OS_HP_UX || IS_OS_IRIX || IS_OS_LINUX || IS_OS_MAC_OSX\n            || IS_OS_SOLARIS || IS_OS_SUN_OS || IS_OS_FREE_BSD || IS_OS_OPEN_BSD || IS_OS_NET_BSD;",
+    "begin_line": 1277,
+    "end_line": 1278,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is a UNIX like system, as in any of AIX, HP-UX, Irix, Linux, MacOSX, Solaris or SUN OS.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS",
+    "snippet": "public static final boolean IS_OS_WINDOWS \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX);",
+    "begin_line": 1290,
+    "end_line": 1290,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_2000",
+    "snippet": "public static final boolean IS_OS_WINDOWS_2000 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 2000\");",
+    "begin_line": 1302,
+    "end_line": 1302,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 2000.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_2003",
+    "snippet": "public static final boolean IS_OS_WINDOWS_2003 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 2003\");",
+    "begin_line": 1314,
+    "end_line": 1314,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 2003.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_2008",
+    "snippet": "public static final boolean IS_OS_WINDOWS_2008 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" Server 2008\");",
+    "begin_line": 1326,
+    "end_line": 1326,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows Server 2008.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_2012",
+    "snippet": "public static final boolean IS_OS_WINDOWS_2012 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" Server 2012\");",
+    "begin_line": 1338,
+    "end_line": 1338,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows Server 2012.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_95",
+    "snippet": "public static final boolean IS_OS_WINDOWS_95 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 95\");",
+    "begin_line": 1350,
+    "end_line": 1350,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 95.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_98",
+    "snippet": "public static final boolean IS_OS_WINDOWS_98 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 98\");",
+    "begin_line": 1362,
+    "end_line": 1362,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 98.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_ME",
+    "snippet": "public static final boolean IS_OS_WINDOWS_ME \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" Me\");",
+    "begin_line": 1374,
+    "end_line": 1374,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows ME.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_NT",
+    "snippet": "public static final boolean IS_OS_WINDOWS_NT \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" NT\");",
+    "begin_line": 1386,
+    "end_line": 1386,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows NT.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_XP",
+    "snippet": "public static final boolean IS_OS_WINDOWS_XP \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" XP\");",
+    "begin_line": 1398,
+    "end_line": 1398,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows XP.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_VISTA",
+    "snippet": "public static final boolean IS_OS_WINDOWS_VISTA \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" Vista\");",
+    "begin_line": 1411,
+    "end_line": 1411,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows Vista.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_7",
+    "snippet": "public static final boolean IS_OS_WINDOWS_7 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 7\");",
+    "begin_line": 1423,
+    "end_line": 1423,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 7.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_8",
+    "snippet": "public static final boolean IS_OS_WINDOWS_8 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 8\");",
+    "begin_line": 1435,
+    "end_line": 1435,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 8.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.2\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS_10",
+    "snippet": "public static final boolean IS_OS_WINDOWS_10 \u003d getOSMatchesName(OS_NAME_WINDOWS_PREFIX + \" 10\");",
+    "begin_line": 1447,
+    "end_line": 1447,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows 10.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.5\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.SystemUtils",
+    "src_path": "org/apache/commons/lang3/SystemUtils.java",
+    "signature": "org.apache.commons.lang3.SystemUtils.IS_OS_ZOS",
+    "snippet": " boolean IS_OS_ZOS \u003d getOSMatchesName(\"z/OS\");",
+    "begin_line": 1464,
+    "end_line": 1464,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is z/OS.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n * @since 3.5\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_NAN_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_NAN_EX_MESSAGE \u003d\n        \"The validated value is not a number\";",
+    "begin_line": 48,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_FINITE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_FINITE_EX_MESSAGE \u003d\n        \"The value is invalid: %f\";",
+    "begin_line": 50,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_GREATER_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_GREATER_EX_MESSAGE \u003d\n        \"The value %s is not greater than %s\";",
+    "begin_line": 52,
+    "end_line": 53,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_GREATER_OR_EQUAL_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_GREATER_OR_EQUAL_EX_MESSAGE \u003d\n        \"The value %s is not greater than or equal to %s\";",
+    "begin_line": 54,
+    "end_line": 55,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_SMALLER_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_SMALLER_EX_MESSAGE \u003d\n        \"The value %s is not smaller than %s\";",
+    "begin_line": 56,
+    "end_line": 57,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_SMALLER_OR_EQUAL_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_SMALLER_OR_EQUAL_EX_MESSAGE \u003d\n        \"The value %s is not smaller than or equal to %s\";",
+    "begin_line": 58,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_DIFFERENT_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_DIFFERENT_EX_MESSAGE \u003d\n        \"The value %s is invalid\";",
+    "begin_line": 60,
+    "end_line": 61,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_EXCLUSIVE_BETWEEN_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_EXCLUSIVE_BETWEEN_EX_MESSAGE \u003d\n        \"The value %s is not in the specified exclusive range of %s to %s\";",
+    "begin_line": 62,
+    "end_line": 63,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_INCLUSIVE_BETWEEN_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_INCLUSIVE_BETWEEN_EX_MESSAGE \u003d\n        \"The value %s is not in the specified inclusive range of %s to %s\";",
+    "begin_line": 64,
+    "end_line": 65,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_MATCHES_PATTERN_EX",
+    "snippet": "private static final String DEFAULT_MATCHES_PATTERN_EX \u003d \"The string %s does not match the pattern %s\";",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_IS_NULL_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_IS_NULL_EX_MESSAGE \u003d \"The validated object is null\";",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_IS_TRUE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_IS_TRUE_EX_MESSAGE \u003d \"The validated expression is false\";",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NO_NULL_ELEMENTS_ARRAY_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NO_NULL_ELEMENTS_ARRAY_EX_MESSAGE \u003d\n        \"The validated array contains null element at index: %d\";",
+    "begin_line": 69,
+    "end_line": 70,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NO_NULL_ELEMENTS_COLLECTION_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NO_NULL_ELEMENTS_COLLECTION_EX_MESSAGE \u003d\n        \"The validated collection contains null element at index: %d\";",
+    "begin_line": 71,
+    "end_line": 72,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_BLANK_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_BLANK_EX_MESSAGE \u003d \"The validated character sequence is blank\";",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_EMPTY_ARRAY_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_EMPTY_ARRAY_EX_MESSAGE \u003d \"The validated array is empty\";",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_EMPTY_CHAR_SEQUENCE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_EMPTY_CHAR_SEQUENCE_EX_MESSAGE \u003d\n        \"The validated character sequence is empty\";",
+    "begin_line": 75,
+    "end_line": 76,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_EMPTY_COLLECTION_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_EMPTY_COLLECTION_EX_MESSAGE \u003d \"The validated collection is empty\";",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_NOT_EMPTY_MAP_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_NOT_EMPTY_MAP_EX_MESSAGE \u003d \"The validated map is empty\";",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_VALID_INDEX_ARRAY_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_VALID_INDEX_ARRAY_EX_MESSAGE \u003d \"The validated array index is invalid: %d\";",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_VALID_INDEX_CHAR_SEQUENCE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_VALID_INDEX_CHAR_SEQUENCE_EX_MESSAGE \u003d\n        \"The validated character sequence index is invalid: %d\";",
+    "begin_line": 80,
+    "end_line": 81,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_VALID_INDEX_COLLECTION_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_VALID_INDEX_COLLECTION_EX_MESSAGE \u003d\n        \"The validated collection index is invalid: %d\";",
+    "begin_line": 82,
+    "end_line": 83,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_VALID_STATE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_VALID_STATE_EX_MESSAGE \u003d \"The validated state is false\";",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_IS_ASSIGNABLE_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_IS_ASSIGNABLE_EX_MESSAGE \u003d \"Cannot assign a %s to a %s\";",
+    "begin_line": 85,
+    "end_line": 85,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Validate",
+    "src_path": "org/apache/commons/lang3/Validate.java",
+    "signature": "org.apache.commons.lang3.Validate.DEFAULT_IS_INSTANCE_OF_EX_MESSAGE",
+    "snippet": "private static final String DEFAULT_IS_INSTANCE_OF_EX_MESSAGE \u003d \"Expected type: %s, actual: %s\";",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.upperBounds",
+    "snippet": "private Type[] upperBounds;",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.lowerBounds",
+    "snippet": "private Type[] lowerBounds;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.componentType",
+    "snippet": "private final Type componentType;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.raw",
+    "snippet": "private final Class\u003c?\u003e raw;",
+    "begin_line": 146,
+    "end_line": 146,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.useOwner",
+    "snippet": "private final Type useOwner;",
+    "begin_line": 147,
+    "end_line": 147,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.typeArguments",
+    "snippet": "private final Type[] typeArguments;",
+    "begin_line": 148,
+    "end_line": 148,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.EMPTY_BOUNDS",
+    "snippet": "private static final Type[] EMPTY_BOUNDS \u003d new Type[0];",
+    "begin_line": 223,
+    "end_line": 223,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.upperBounds",
+    "snippet": "private final Type[] upperBounds;",
+    "begin_line": 225,
+    "end_line": 225,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.lowerBounds",
+    "snippet": "private final Type[] lowerBounds;",
+    "begin_line": 226,
+    "end_line": 226,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.TypeUtils",
+    "src_path": "org/apache/commons/lang3/reflect/TypeUtils.java",
+    "signature": "org.apache.commons.lang3.reflect.TypeUtils.WILDCARD_ALL",
+    "snippet": "public static final WildcardType WILDCARD_ALL \u003d wildcardType().withUpperBounds(Object.class).build();",
+    "begin_line": 287,
+    "end_line": 287,
+    "comment": "/** \n * A wildcard instance matching  {@code ?}.\n * @since 3.2\n */\n"
+  }
+]

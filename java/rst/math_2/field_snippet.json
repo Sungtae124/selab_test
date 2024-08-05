@@ -1,0 +1,1064 @@
+[
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6024911025449780478L;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.context",
+    "snippet": "private final ExceptionContext context \u003d new ExceptionContext();",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * Context. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -7447085893598031110L;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.argument",
+    "snippet": "private final Number argument;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Requested. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.OutOfRangeException",
+    "src_path": "org/apache/commons/math/exception/OutOfRangeException.java",
+    "signature": "org.apache.commons.math.exception.OutOfRangeException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 111601815794403609L;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.OutOfRangeException",
+    "src_path": "org/apache/commons/math/exception/OutOfRangeException.java",
+    "signature": "org.apache.commons.math.exception.OutOfRangeException.lo",
+    "snippet": "private final Number lo;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Lower bound. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.OutOfRangeException",
+    "src_path": "org/apache/commons/math/exception/OutOfRangeException.java",
+    "signature": "org.apache.commons.math.exception.OutOfRangeException.hi",
+    "snippet": "private final Number hi;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Higher bound. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6024911025449780478L;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.msgPatterns",
+    "snippet": "private List\u003cLocalizable\u003e msgPatterns \u003d new ArrayList\u003cLocalizable\u003e();",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": "/** \n * Various informations that enrich the informative message.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.msgArguments",
+    "snippet": "private List\u003cObject[]\u003e msgArguments \u003d new ArrayList\u003cObject[]\u003e();",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * Various informations that enrich the informative message. The arguments will replace the corresponding place-holders in {@link #msgPatterns}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.context",
+    "snippet": "private Map\u003cString, Object\u003e context \u003d new HashMap\u003cString, Object\u003e();",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Arbitrary context information.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.LocalizedFormats",
+    "src_path": "org/apache/commons/math/exception/util/LocalizedFormats.java",
+    "signature": "org.apache.commons.math.exception.util.LocalizedFormats.sourceFormat",
+    "snippet": "private final String sourceFormat;",
+    "begin_line": 338,
+    "end_line": 338,
+    "comment": "/** \n * Source English format. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.TWO",
+    "snippet": "public static final Fraction TWO \u003d new Fraction(2, 1);",
+    "begin_line": 42,
+    "end_line": 42,
+    "comment": "/** \n * A fraction representing \"2 / 1\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ONE",
+    "snippet": "public static final Fraction ONE \u003d new Fraction(1, 1);",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": "/** \n * A fraction representing \"1\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ZERO",
+    "snippet": "public static final Fraction ZERO \u003d new Fraction(0, 1);",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": "/** \n * A fraction representing \"0\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.FOUR_FIFTHS",
+    "snippet": "public static final Fraction FOUR_FIFTHS \u003d new Fraction(4, 5);",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * A fraction representing \"4/5\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ONE_FIFTH",
+    "snippet": "public static final Fraction ONE_FIFTH \u003d new Fraction(1, 5);",
+    "begin_line": 54,
+    "end_line": 54,
+    "comment": "/** \n * A fraction representing \"1/5\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ONE_HALF",
+    "snippet": "public static final Fraction ONE_HALF \u003d new Fraction(1, 2);",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * A fraction representing \"1/2\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ONE_QUARTER",
+    "snippet": "public static final Fraction ONE_QUARTER \u003d new Fraction(1, 4);",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": "/** \n * A fraction representing \"1/4\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.ONE_THIRD",
+    "snippet": "public static final Fraction ONE_THIRD \u003d new Fraction(1, 3);",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * A fraction representing \"1/3\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.THREE_FIFTHS",
+    "snippet": "public static final Fraction THREE_FIFTHS \u003d new Fraction(3, 5);",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": "/** \n * A fraction representing \"3/5\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.THREE_QUARTERS",
+    "snippet": "public static final Fraction THREE_QUARTERS \u003d new Fraction(3, 4);",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * A fraction representing \"3/4\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.TWO_FIFTHS",
+    "snippet": "public static final Fraction TWO_FIFTHS \u003d new Fraction(2, 5);",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": "/** \n * A fraction representing \"2/5\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.TWO_QUARTERS",
+    "snippet": "public static final Fraction TWO_QUARTERS \u003d new Fraction(2, 4);",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * A fraction representing \"2/4\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.TWO_THIRDS",
+    "snippet": "public static final Fraction TWO_THIRDS \u003d new Fraction(2, 3);",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": "/** \n * A fraction representing \"2/3\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.MINUS_ONE",
+    "snippet": "public static final Fraction MINUS_ONE \u003d new Fraction(-1, 1);",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * A fraction representing \"-1 / 1\". \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 3698073679419233275L;",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": "/** \n * Serializable version identifier \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.denominator",
+    "snippet": "private final int denominator;",
+    "begin_line": 87,
+    "end_line": 87,
+    "comment": "/** \n * The denominator. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.Fraction",
+    "src_path": "org/apache/commons/math/fraction/Fraction.java",
+    "signature": "org.apache.commons.math.fraction.Fraction.numerator",
+    "snippet": "private final int numerator;",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": "/** \n * The numerator. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.FractionField",
+    "src_path": "org/apache/commons/math/fraction/FractionField.java",
+    "signature": "org.apache.commons.math.fraction.FractionField.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -1257768487499119313L;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": "/** \n * Serializable version identifier \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.fraction.FractionField",
+    "src_path": "org/apache/commons/math/fraction/FractionField.java",
+    "signature": "org.apache.commons.math.fraction.FractionField.INSTANCE",
+    "snippet": "private static final FractionField INSTANCE \u003d new FractionField();",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": "/** \n * Cached field instance. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractFieldMatrix.field",
+    "snippet": "private final Field\u003cT\u003e field;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Field to which the elements belong. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractFieldMatrix.startRow",
+    "snippet": "private int startRow;",
+    "begin_line": 401,
+    "end_line": 401,
+    "comment": "/** \n * Initial row index. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractFieldMatrix.startColumn",
+    "snippet": "private int startColumn;",
+    "begin_line": 404,
+    "end_line": 404,
+    "comment": "/** \n * Initial column index. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.endRow",
+    "snippet": "private double endRow;",
+    "begin_line": 232,
+    "end_line": 232,
+    "comment": "/** \n * Last row index. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.columnSum",
+    "snippet": "private double columnSum;",
+    "begin_line": 235,
+    "end_line": 235,
+    "comment": "/** \n * Sum of absolute values on one column. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.maxColSum",
+    "snippet": "private double maxColSum;",
+    "begin_line": 238,
+    "end_line": 238,
+    "comment": "/** \n * Maximal sum across all columns. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.sum",
+    "snippet": "private double sum;",
+    "begin_line": 270,
+    "end_line": 270,
+    "comment": "/** \n * Sum of squared entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.startRow",
+    "snippet": "private int startRow;",
+    "begin_line": 345,
+    "end_line": 345,
+    "comment": "/** \n * Initial row index. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.AbstractRealMatrix",
+    "src_path": "org/apache/commons/math/linear/AbstractRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.AbstractRealMatrix.startColumn",
+    "snippet": "private int startColumn;",
+    "begin_line": 348,
+    "end_line": 348,
+    "comment": "/** \n * Initial column index. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.Array2DRowRealMatrix",
+    "src_path": "org/apache/commons/math/linear/Array2DRowRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.Array2DRowRealMatrix.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -1067294169172445528L;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * Serializable version identifier. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.Array2DRowRealMatrix",
+    "src_path": "org/apache/commons/math/linear/Array2DRowRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.Array2DRowRealMatrix.data",
+    "snippet": "protected double data[][];",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": "/** \n * Entries of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.BLOCK_SIZE",
+    "snippet": "public static final int BLOCK_SIZE \u003d 36;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Block size. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -4602336630143123183L;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * Serializable version identifier. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.blocks",
+    "snippet": "private final T blocks[][];",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * Blocks of matrix entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.rows",
+    "snippet": "private final int rows;",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * Number of rows of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.columns",
+    "snippet": "private final int columns;",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": "/** \n * Number of columns of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.blockRows",
+    "snippet": "private final int blockRows;",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * Number of block rows of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockFieldMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockFieldMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockFieldMatrix.blockColumns",
+    "snippet": "private final int blockColumns;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * Number of block columns of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.BLOCK_SIZE",
+    "snippet": "public static final int BLOCK_SIZE \u003d 52;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Block size. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 4991895511313664478L;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Serializable version identifier \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.blocks",
+    "snippet": "private final double blocks[][];",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * Blocks of matrix entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.rows",
+    "snippet": "private final int rows;",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * Number of rows of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.columns",
+    "snippet": "private final int columns;",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * Number of columns of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.blockRows",
+    "snippet": "private final int blockRows;",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": "/** \n * Number of block rows of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.BlockRealMatrix",
+    "src_path": "org/apache/commons/math/linear/BlockRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.BlockRealMatrix.blockColumns",
+    "snippet": "private final int blockColumns;",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * Number of block columns of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.MatrixUtils",
+    "src_path": "org/apache/commons/math/linear/MatrixUtils.java",
+    "signature": "org.apache.commons.math.linear.MatrixUtils.data",
+    "snippet": "private double[][] data;",
+    "begin_line": 524,
+    "end_line": 524,
+    "comment": "/** \n * Converted array. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.MatrixUtils",
+    "src_path": "org/apache/commons/math/linear/MatrixUtils.java",
+    "signature": "org.apache.commons.math.linear.MatrixUtils.data",
+    "snippet": "private double[][] data;",
+    "begin_line": 569,
+    "end_line": 569,
+    "comment": "/** \n * Converted array. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.OpenMapRealMatrix",
+    "src_path": "org/apache/commons/math/linear/OpenMapRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.OpenMapRealMatrix.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -5962461716457143437L;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * Serializable version identifier. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.OpenMapRealMatrix",
+    "src_path": "org/apache/commons/math/linear/OpenMapRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.OpenMapRealMatrix.rows",
+    "snippet": "private final int rows;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Number of rows of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.OpenMapRealMatrix",
+    "src_path": "org/apache/commons/math/linear/OpenMapRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.OpenMapRealMatrix.columns",
+    "snippet": "private final int columns;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * Number of columns of the matrix. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.linear.OpenMapRealMatrix",
+    "src_path": "org/apache/commons/math/linear/OpenMapRealMatrix.java",
+    "signature": "org.apache.commons.math.linear.OpenMapRealMatrix.entries",
+    "snippet": "private final OpenIntToDoubleHashMap entries;",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": "/** \n * Storage for (sparse) matrix elements. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.PI",
+    "snippet": "public static final double PI \u003d 105414357.0 / 33554432.0 + 1.984187159361080883e-9;",
+    "begin_line": 72,
+    "end_line": 72,
+    "comment": "/** \n * Archimede\u0027s constant PI, ratio of circle circumference to diameter. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.E",
+    "snippet": "public static final double E \u003d 2850325.0 / 1048576.0 + 8.254840070411028747e-8;",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * Napier\u0027s constant e, base of the natural logarithm. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.EXP_INT_TABLE_A",
+    "snippet": "private static final double EXP_INT_TABLE_A[] \u003d new double[1500];",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * Exponential evaluated at integer values, exp(x) \u003d  expIntTableA[x + 750] + expIntTableB[x+750].\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.EXP_INT_TABLE_B",
+    "snippet": "private static final double EXP_INT_TABLE_B[] \u003d new double[1500];",
+    "begin_line": 85,
+    "end_line": 85,
+    "comment": "/** \n * Exponential evaluated at integer values, exp(x) \u003d  expIntTableA[x + 750] + expIntTableB[x+750]\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.EXP_FRAC_TABLE_A",
+    "snippet": "private static final double EXP_FRAC_TABLE_A[] \u003d new double[1025];",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": "/** \n * Exponential over the range of 0 - 1 in increments of 2^-10 exp(x/1024) \u003d  expFracTableA[x] + expFracTableB[x].\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.EXP_FRAC_TABLE_B",
+    "snippet": "private static final double EXP_FRAC_TABLE_B[] \u003d new double[1025];",
+    "begin_line": 95,
+    "end_line": 95,
+    "comment": "/** \n * Exponential over the range of 0 - 1 in increments of 2^-10 exp(x/1024) \u003d  expFracTableA[x] + expFracTableB[x].\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.FACT",
+    "snippet": "private static final double FACT[] \u003d new double[20];",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": "/** \n * Factorial table, for Taylor series expansions. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_MANT",
+    "snippet": "private static final double LN_MANT[][] \u003d new double[1024][];",
+    "begin_line": 101,
+    "end_line": 101,
+    "comment": "/** \n * Extended precision logarithm table over the range 1 - 2 in increments of 2^-10. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_2_A",
+    "snippet": "private static final double LN_2_A \u003d 0.693147063255310059;",
+    "begin_line": 104,
+    "end_line": 104,
+    "comment": "/** \n * log(2) (high bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_2_B",
+    "snippet": "private static final double LN_2_B \u003d 1.17304635250823482e-7;",
+    "begin_line": 107,
+    "end_line": 107,
+    "comment": "/** \n * log(2) (low bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_SPLIT_COEF",
+    "snippet": "private static final double LN_SPLIT_COEF[][] \u003d {\n        {2.0, 0.0},\n        {0.6666666269302368, 3.9736429850260626E-8},\n        {0.3999999761581421, 2.3841857910019882E-8},\n        {0.2857142686843872, 1.7029898543501842E-8},\n        {0.2222222089767456, 1.3245471311735498E-8},\n        {0.1818181574344635, 2.4384203044354907E-8},\n        {0.1538461446762085, 9.140260083262505E-9},\n        {0.13333332538604736, 9.220590270857665E-9},\n        {0.11764700710773468, 1.2393345855018391E-8},\n        {0.10526403784751892, 8.251545029714408E-9},\n        {0.0952233225107193, 1.2675934823758863E-8},\n        {0.08713622391223907, 1.1430250008909141E-8},\n        {0.07842259109020233, 2.404307984052299E-9},\n        {0.08371849358081818, 1.176342548272881E-8},\n        {0.030589580535888672, 1.2958646899018938E-9},\n        {0.14982303977012634, 1.225743062930824E-8},\n    };",
+    "begin_line": 110,
+    "end_line": 127,
+    "comment": "/** \n * Coefficients for slowLog. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_QUICK_COEF",
+    "snippet": "private static final double LN_QUICK_COEF[][] \u003d {\n        {1.0, 5.669184079525E-24},\n        {-0.25, -0.25},\n        {0.3333333134651184, 1.986821492305628E-8},\n        {-0.25, -6.663542893624021E-14},\n        {0.19999998807907104, 1.1921056801463227E-8},\n        {-0.1666666567325592, -7.800414592973399E-9},\n        {0.1428571343421936, 5.650007086920087E-9},\n        {-0.12502530217170715, -7.44321345601866E-11},\n        {0.11113807559013367, 9.219544613762692E-9},\n    };",
+    "begin_line": 130,
+    "end_line": 140,
+    "comment": "/** \n * Coefficients for log, when input 0.99 \u003c x \u003c 1.01. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.LN_HI_PREC_COEF",
+    "snippet": "private static final double LN_HI_PREC_COEF[][] \u003d {\n        {1.0, -6.032174644509064E-23},\n        {-0.25, -0.25},\n        {0.3333333134651184, 1.9868161777724352E-8},\n        {-0.2499999701976776, -2.957007209750105E-8},\n        {0.19999954104423523, 1.5830993332061267E-10},\n        {-0.16624879837036133, -2.6033824355191673E-8}\n    };",
+    "begin_line": 143,
+    "end_line": 150,
+    "comment": "/** \n * Coefficients for log in the range of 1.0 \u003c x \u003c 1.0 + 2^-10. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.SINE_TABLE_A",
+    "snippet": "private static final double SINE_TABLE_A[] \u003d new double[14];",
+    "begin_line": 153,
+    "end_line": 153,
+    "comment": "/** \n * Sine table (high bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.SINE_TABLE_B",
+    "snippet": "private static final double SINE_TABLE_B[] \u003d new double[14];",
+    "begin_line": 156,
+    "end_line": 156,
+    "comment": "/** \n * Sine table (low bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.COSINE_TABLE_A",
+    "snippet": "private static final double COSINE_TABLE_A[] \u003d new double[14];",
+    "begin_line": 159,
+    "end_line": 159,
+    "comment": "/** \n * Cosine table (high bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.COSINE_TABLE_B",
+    "snippet": "private static final double COSINE_TABLE_B[] \u003d new double[14];",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * Cosine table (low bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.TANGENT_TABLE_A",
+    "snippet": "private static final double TANGENT_TABLE_A[] \u003d new double[14];",
+    "begin_line": 165,
+    "end_line": 165,
+    "comment": "/** \n * Tangent table, used by atan() (high bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.TANGENT_TABLE_B",
+    "snippet": "private static final double TANGENT_TABLE_B[] \u003d new double[14];",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": "/** \n * Tangent table, used by atan() (low bits). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.RECIP_2PI",
+    "snippet": "private static final long RECIP_2PI[] \u003d new long[] {\n        (0x28be60dbL \u003c\u003c 32) | 0x9391054aL,\n        (0x7f09d5f4L \u003c\u003c 32) | 0x7d4d3770L,\n        (0x36d8a566L \u003c\u003c 32) | 0x4f10e410L,\n        (0x7f9458eaL \u003c\u003c 32) | 0xf7aef158L,\n        (0x6dc91b8eL \u003c\u003c 32) | 0x909374b8L,\n        (0x01924bbaL \u003c\u003c 32) | 0x82746487L,\n        (0x3f877ac7L \u003c\u003c 32) | 0x2c4a69cfL,\n        (0xba208d7dL \u003c\u003c 32) | 0x4baed121L,\n        (0x3a671c09L \u003c\u003c 32) | 0xad17df90L,\n        (0x4e64758eL \u003c\u003c 32) | 0x60d4ce7dL,\n        (0x272117e2L \u003c\u003c 32) | 0xef7e4a0eL,\n        (0xc7fe25ffL \u003c\u003c 32) | 0xf7816603L,\n        (0xfbcbc462L \u003c\u003c 32) | 0xd6829b47L,\n        (0xdb4d9fb3L \u003c\u003c 32) | 0xc9f2c26dL,\n        (0xd3d18fd9L \u003c\u003c 32) | 0xa797fa8bL,\n        (0x5d49eeb1L \u003c\u003c 32) | 0xfaf97c5eL,\n        (0xcf41ce7dL \u003c\u003c 32) | 0xe294a4baL,\n         0x9afed7ecL \u003c\u003c 32  };",
+    "begin_line": 171,
+    "end_line": 189,
+    "comment": "/** \n * Bits of 1/(2*pi), need for reducePayneHanek(). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.PI_O_4_BITS",
+    "snippet": "private static final long PI_O_4_BITS[] \u003d new long[] {\n        (0xc90fdaa2L \u003c\u003c 32) | 0x2168c234L,\n        (0xc4c6628bL \u003c\u003c 32) | 0x80dc1cd1L };",
+    "begin_line": 192,
+    "end_line": 194,
+    "comment": "/** \n * Bits of pi/4, need for reducePayneHanek(). \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.EIGHTHS",
+    "snippet": "private static final double EIGHTHS[] \u003d {0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0, 1.125, 1.25, 1.375, 1.5, 1.625};",
+    "begin_line": 200,
+    "end_line": 200,
+    "comment": "/** \n * Eighths. This is used by sinQ, because its faster to do a table lookup than a multiply in this time-critical routine\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.CBRTTWO",
+    "snippet": "private static final double CBRTTWO[] \u003d { 0.6299605249474366,\n                                            0.7937005259840998,\n                                            1.0,\n                                            1.2599210498948732,\n                                            1.5874010519681994 };",
+    "begin_line": 203,
+    "end_line": 207,
+    "comment": "/** \n * Table of 2^((n+2)/3) \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.HEX_40000000",
+    "snippet": "private static final long HEX_40000000 \u003d 0x40000000L;",
+    "begin_line": 220,
+    "end_line": 220,
+    "comment": "/** \n * 0x40000000 - used to split a double into two parts, both with the low order bits cleared. Equivalent to 2^30.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.MASK_30BITS",
+    "snippet": "private static final long MASK_30BITS \u003d -1L - (HEX_40000000 -1);",
+    "begin_line": 223,
+    "end_line": 223,
+    "comment": "/** \n * Mask used to clear low order 30 bits \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.FastMath",
+    "src_path": "org/apache/commons/math/util/FastMath.java",
+    "signature": "org.apache.commons.math.util.FastMath.TWO_POWER_52",
+    "snippet": "private static final double TWO_POWER_52 \u003d 4503599627370496.0;",
+    "begin_line": 226,
+    "end_line": 226,
+    "comment": "/** \n * 2^52 - double numbers this large must be integral (no fraction) or NaN or Infinite \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.EPSILON",
+    "snippet": "public static final double EPSILON \u003d 0x1.0p-53;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Smallest positive number such that 1 - EPSILON is not numerically equal to 1. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SAFE_MIN",
+    "snippet": "public static final double SAFE_MIN \u003d 0x1.0p-1022;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Safe minimum, such that 1 / SAFE_MIN does not overflow. \u003cp\u003eIn IEEE 754 arithmetic, this is also the smallest normalized number 2\u003csup\u003e-1022\u003c/sup\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.TWO_PI",
+    "snippet": "public static final double TWO_PI \u003d 2 * FastMath.PI;",
+    "begin_line": 58,
+    "end_line": 58,
+    "comment": "/** \n * 2 \u0026pi;.\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.NB",
+    "snippet": "private static final byte  NB \u003d (byte)-1;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * -1.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.NS",
+    "snippet": "private static final short NS \u003d (short)-1;",
+    "begin_line": 64,
+    "end_line": 64,
+    "comment": "/** \n * -1.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.PB",
+    "snippet": "private static final byte  PB \u003d (byte)1;",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * 1.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.PS",
+    "snippet": "private static final short PS \u003d (short)1;",
+    "begin_line": 70,
+    "end_line": 70,
+    "comment": "/** \n * 1.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.ZB",
+    "snippet": "private static final byte  ZB \u003d (byte)0;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * 0.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.ZS",
+    "snippet": "private static final short ZS \u003d (short)0;",
+    "begin_line": 76,
+    "end_line": 76,
+    "comment": "/** \n * 0.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SGN_MASK",
+    "snippet": "private static final long SGN_MASK \u003d 0x8000000000000000L;",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": "/** \n * Offset to order signed double numbers lexicographically. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SGN_MASK_FLOAT",
+    "snippet": "private static final int SGN_MASK_FLOAT \u003d 0x80000000;",
+    "begin_line": 82,
+    "end_line": 82,
+    "comment": "/** \n * Offset to order signed double numbers lexicographically. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.FACTORIALS",
+    "snippet": "private static final long[] FACTORIALS \u003d new long[] {\n                       1l,                  1l,                   2l,\n                       6l,                 24l,                 120l,\n                     720l,               5040l,               40320l,\n                  362880l,            3628800l,            39916800l,\n               479001600l,         6227020800l,         87178291200l,\n           1307674368000l,     20922789888000l,     355687428096000l,\n        6402373705728000l, 121645100408832000l, 2432902008176640000l };",
+    "begin_line": 85,
+    "end_line": 92,
+    "comment": "/** \n * All long-representable factorials \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.FREE",
+    "snippet": "protected static final byte FREE    \u003d 0;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * Status indicator for free table entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.FULL",
+    "snippet": "protected static final byte FULL    \u003d 1;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * Status indicator for full table entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.REMOVED",
+    "snippet": "protected static final byte REMOVED \u003d 2;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * Status indicator for removed table entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -3646337053166149105L;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Serializable version identifier \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.LOAD_FACTOR",
+    "snippet": "private static final float LOAD_FACTOR \u003d 0.5f;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Load factor for the map. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.DEFAULT_EXPECTED_SIZE",
+    "snippet": "private static final int DEFAULT_EXPECTED_SIZE \u003d 16;",
+    "begin_line": 60,
+    "end_line": 60,
+    "comment": "/** \n * Default starting size. \u003cp\u003eThis must be a power of two for bit mask to work properly. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.RESIZE_MULTIPLIER",
+    "snippet": "private static final int RESIZE_MULTIPLIER \u003d 2;",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * Multiplier for size growth when map fills up. \u003cp\u003eThis must be a power of two for bit mask to work properly. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.PERTURB_SHIFT",
+    "snippet": "private static final int PERTURB_SHIFT \u003d 5;",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * Number of bits to perturb the index when probing for collision resolution. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.keys",
+    "snippet": "private int[] keys;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Keys table. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.values",
+    "snippet": "private double[] values;",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * Values table. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.states",
+    "snippet": "private byte[] states;",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * States table. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.missingEntries",
+    "snippet": "private final double missingEntries;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * Return value for missing entries. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.size",
+    "snippet": "private int size;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * Current size of the map. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.mask",
+    "snippet": "private int mask;",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": "/** \n * Bit mask for hash values. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.count",
+    "snippet": "private transient int count;",
+    "begin_line": 89,
+    "end_line": 89,
+    "comment": "/** \n * Modifications count. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.referenceCount",
+    "snippet": "private final int referenceCount;",
+    "begin_line": 487,
+    "end_line": 487,
+    "comment": "/** \n * Reference modification count. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.current",
+    "snippet": "private int current;",
+    "begin_line": 490,
+    "end_line": 490,
+    "comment": "/** \n * Index of current element. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+    "src_path": "org/apache/commons/math/util/OpenIntToDoubleHashMap.java",
+    "signature": "org.apache.commons.math.util.OpenIntToDoubleHashMap.next",
+    "snippet": "private int next;",
+    "begin_line": 493,
+    "end_line": 493,
+    "comment": "/** \n * Index of next element. \n */\n"
+  }
+]

@@ -1,0 +1,14 @@
+--- org.apache.commons.lang3.reflect.TypeUtilsTest::testGetRawType_LANG_1697
+java.lang.NullPointerException
+       java.base/java.lang.reflect.Array.newArray(Native Method)
+       java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+       org.apache.commons.lang3.reflect.TypeUtils.getRawType(TypeUtils.java:805)
+       org.apache.commons.lang3.reflect.TypeUtilsTest.testGetRawType_LANG_1697(TypeUtilsTest.java:371)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       [...]
+

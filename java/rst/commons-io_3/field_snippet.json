@@ -1,0 +1,866 @@
+[
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.IS_OS_LINUX",
+    "snippet": "private static final boolean IS_OS_LINUX \u003d getOsMatchesName(\"Linux\");",
+    "begin_line": 102,
+    "end_line": 102,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Linux.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.IS_OS_MAC",
+    "snippet": "private static final boolean IS_OS_MAC \u003d getOsMatchesName(\"Mac\");",
+    "begin_line": 112,
+    "end_line": 112,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Mac.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.OS_NAME_WINDOWS_PREFIX",
+    "snippet": "private static final String OS_NAME_WINDOWS_PREFIX \u003d \"Windows\";",
+    "begin_line": 117,
+    "end_line": 117,
+    "comment": "/** \n * The prefix String for all Windows OS.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.IS_OS_WINDOWS",
+    "snippet": "private static final boolean IS_OS_WINDOWS \u003d getOsMatchesName(OS_NAME_WINDOWS_PREFIX);",
+    "begin_line": 127,
+    "end_line": 127,
+    "comment": "/** \n * \u003cp\u003e Is  {@code true} if this is Windows.\u003c/p\u003e \u003cp\u003e The field will return  {@code false} if {@code OS_NAME} is {@code null}. \u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.CURRENT",
+    "snippet": "private static final FileSystem CURRENT \u003d current();",
+    "begin_line": 132,
+    "end_line": 132,
+    "comment": "/** \n * The current FileSystem.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.blockSize",
+    "snippet": "private final int blockSize;",
+    "begin_line": 300,
+    "end_line": 300,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.casePreserving",
+    "snippet": "private final boolean casePreserving;",
+    "begin_line": 301,
+    "end_line": 301,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.caseSensitive",
+    "snippet": "private final boolean caseSensitive;",
+    "begin_line": 302,
+    "end_line": 302,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.illegalFileNameChars",
+    "snippet": "private final int[] illegalFileNameChars;",
+    "begin_line": 303,
+    "end_line": 303,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.maxFileNameLength",
+    "snippet": "private final int maxFileNameLength;",
+    "begin_line": 304,
+    "end_line": 304,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.maxPathLength",
+    "snippet": "private final int maxPathLength;",
+    "begin_line": 305,
+    "end_line": 305,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.reservedFileNames",
+    "snippet": "private final String[] reservedFileNames;",
+    "begin_line": 306,
+    "end_line": 306,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.reservedFileNamesExtensions",
+    "snippet": "private final boolean reservedFileNamesExtensions;",
+    "begin_line": 307,
+    "end_line": 307,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.supportsDriveLetter",
+    "snippet": "private final boolean supportsDriveLetter;",
+    "begin_line": 308,
+    "end_line": 308,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.nameSeparator",
+    "snippet": "private final char nameSeparator;",
+    "begin_line": 309,
+    "end_line": 309,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FileSystem",
+    "src_path": "org/apache/commons/io/FileSystem.java",
+    "signature": "org.apache.commons.io.FileSystem.nameSeparatorOther",
+    "snippet": "private final char nameSeparatorOther;",
+    "begin_line": 310,
+    "end_line": 310,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.EMPTY_STRING_ARRAY",
+    "snippet": "private static final String[] EMPTY_STRING_ARRAY \u003d {};",
+    "begin_line": 100,
+    "end_line": 100,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.EMPTY_STRING",
+    "snippet": "private static final String EMPTY_STRING \u003d \"\";",
+    "begin_line": 102,
+    "end_line": 102,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.NOT_FOUND",
+    "snippet": "private static final int NOT_FOUND \u003d -1;",
+    "begin_line": 104,
+    "end_line": 104,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.EXTENSION_SEPARATOR",
+    "snippet": "public static final char EXTENSION_SEPARATOR \u003d \u0027.\u0027;",
+    "begin_line": 110,
+    "end_line": 110,
+    "comment": "/** \n * The extension separator character.\n * @since 1.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.EXTENSION_SEPARATOR_STR",
+    "snippet": "public static final String EXTENSION_SEPARATOR_STR \u003d Character.toString(EXTENSION_SEPARATOR);",
+    "begin_line": 116,
+    "end_line": 116,
+    "comment": "/** \n * The extension separator String.\n * @since 1.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.UNIX_NAME_SEPARATOR",
+    "snippet": "private static final char UNIX_NAME_SEPARATOR \u003d \u0027/\u0027;",
+    "begin_line": 121,
+    "end_line": 121,
+    "comment": "/** \n * The Unix separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.WINDOWS_NAME_SEPARATOR",
+    "snippet": "private static final char WINDOWS_NAME_SEPARATOR \u003d \u0027\\\\\u0027;",
+    "begin_line": 126,
+    "end_line": 126,
+    "comment": "/** \n * The Windows separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.SYSTEM_NAME_SEPARATOR",
+    "snippet": "private static final char SYSTEM_NAME_SEPARATOR \u003d File.separatorChar;",
+    "begin_line": 131,
+    "end_line": 131,
+    "comment": "/** \n * The system separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.OTHER_SEPARATOR",
+    "snippet": "private static final char OTHER_SEPARATOR \u003d flipSeparator(SYSTEM_NAME_SEPARATOR);",
+    "begin_line": 136,
+    "end_line": 136,
+    "comment": "/** \n * The separator character that is the opposite of the system separator.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.IPV4_PATTERN",
+    "snippet": "private static final Pattern IPV4_PATTERN \u003d Pattern.compile(\"^(\\\\d{1,3})\\\\.(\\\\d{1,3})\\\\.(\\\\d{1,3})\\\\.(\\\\d{1,3})$\");",
+    "begin_line": 138,
+    "end_line": 138,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.IPV4_MAX_OCTET_VALUE",
+    "snippet": "private static final int IPV4_MAX_OCTET_VALUE \u003d 255;",
+    "begin_line": 140,
+    "end_line": 140,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.IPV6_MAX_HEX_GROUPS",
+    "snippet": "private static final int IPV6_MAX_HEX_GROUPS \u003d 8;",
+    "begin_line": 142,
+    "end_line": 142,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.IPV6_MAX_HEX_DIGITS_PER_GROUP",
+    "snippet": "private static final int IPV6_MAX_HEX_DIGITS_PER_GROUP \u003d 4;",
+    "begin_line": 144,
+    "end_line": 144,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.MAX_UNSIGNED_SHORT",
+    "snippet": "private static final int MAX_UNSIGNED_SHORT \u003d 0xffff;",
+    "begin_line": 146,
+    "end_line": 146,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.BASE_16",
+    "snippet": "private static final int BASE_16 \u003d 16;",
+    "begin_line": 148,
+    "end_line": 148,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "signature": "org.apache.commons.io.FilenameUtils.REG_NAME_PART_PATTERN",
+    "snippet": "private static final Pattern REG_NAME_PART_PATTERN \u003d Pattern.compile(\"^[a-zA-Z0-9][a-zA-Z0-9-]*$\");",
+    "begin_line": 150,
+    "end_line": 150,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCase",
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "signature": "org.apache.commons.io.IOCase.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6343169151696340687L;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Serialization version. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCase",
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "signature": "org.apache.commons.io.IOCase.name",
+    "snippet": "private final String name;",
+    "begin_line": 107,
+    "end_line": 107,
+    "comment": "/** \n * The enumeration name. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOCase",
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "signature": "org.apache.commons.io.IOCase.sensitive",
+    "snippet": "private final transient boolean sensitive;",
+    "begin_line": 110,
+    "end_line": 110,
+    "comment": "/** \n * The sensitivity flag. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.CR",
+    "snippet": "public static final int CR \u003d \u0027\\r\u0027;",
+    "begin_line": 135,
+    "end_line": 135,
+    "comment": "/** \n * CR char.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DEFAULT_BUFFER_SIZE",
+    "snippet": "public static final int DEFAULT_BUFFER_SIZE \u003d 8192;",
+    "begin_line": 140,
+    "end_line": 140,
+    "comment": "/** \n * The default buffer size ( {@value}) to use in copy methods.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR",
+    "snippet": "public static final char DIR_SEPARATOR \u003d File.separatorChar;",
+    "begin_line": 145,
+    "end_line": 145,
+    "comment": "/** \n * The system directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR_UNIX",
+    "snippet": "public static final char DIR_SEPARATOR_UNIX \u003d \u0027/\u0027;",
+    "begin_line": 150,
+    "end_line": 150,
+    "comment": "/** \n * The Unix directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR_WINDOWS",
+    "snippet": "public static final char DIR_SEPARATOR_WINDOWS \u003d \u0027\\\\\u0027;",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": "/** \n * The Windows directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.EMPTY_BYTE_ARRAY",
+    "snippet": "public static final byte[] EMPTY_BYTE_ARRAY \u003d {};",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * A singleton empty byte array.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.EOF",
+    "snippet": "public static final int EOF \u003d -1;",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": "/** \n * Represents the end-of-file (or stream).\n * @since 2.5 (made public)\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LF",
+    "snippet": "public static final int LF \u003d \u0027\\n\u0027;",
+    "begin_line": 175,
+    "end_line": 175,
+    "comment": "/** \n * LF char.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR",
+    "snippet": "@Deprecated\n    public static final String LINE_SEPARATOR \u003d System.lineSeparator();",
+    "begin_line": 183,
+    "end_line": 183,
+    "comment": "/** \n * The system line separator string.\n * @deprecated Use {@link System#lineSeparator()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR_UNIX",
+    "snippet": "public static final String LINE_SEPARATOR_UNIX \u003d StandardLineSeparator.LF.getString();",
+    "begin_line": 190,
+    "end_line": 190,
+    "comment": "/** \n * The Unix line separator string.\n * @see StandardLineSeparator#LF\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR_WINDOWS",
+    "snippet": "public static final String LINE_SEPARATOR_WINDOWS \u003d StandardLineSeparator.CRLF.getString();",
+    "begin_line": 197,
+    "end_line": 197,
+    "comment": "/** \n * The Windows line separator string.\n * @see StandardLineSeparator#CRLF\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SCRATCH_BYTE_BUFFER_RW",
+    "snippet": "private static final ThreadLocal\u003cbyte[]\u003e SCRATCH_BYTE_BUFFER_RW \u003d ThreadLocal.withInitial(IOUtils::byteArray);",
+    "begin_line": 202,
+    "end_line": 202,
+    "comment": "/** \n * Internal byte array buffer, intended for both reading and writing.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SCRATCH_BYTE_BUFFER_WO",
+    "snippet": "private static final byte[] SCRATCH_BYTE_BUFFER_WO \u003d byteArray();",
+    "begin_line": 207,
+    "end_line": 207,
+    "comment": "/** \n * Internal byte array buffer, intended for write only operations.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SCRATCH_CHAR_BUFFER_RW",
+    "snippet": "private static final ThreadLocal\u003cchar[]\u003e SCRATCH_CHAR_BUFFER_RW \u003d ThreadLocal.withInitial(IOUtils::charArray);",
+    "begin_line": 212,
+    "end_line": 212,
+    "comment": "/** \n * Internal char array buffer, intended for both reading and writing.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SCRATCH_CHAR_BUFFER_WO",
+    "snippet": "private static final char[] SCRATCH_CHAR_BUFFER_WO \u003d charArray();",
+    "begin_line": 217,
+    "end_line": 217,
+    "comment": "/** \n * Internal char array buffer, intended for write only operations.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.StandardLineSeparator",
+    "src_path": "org/apache/commons/io/StandardLineSeparator.java",
+    "signature": "org.apache.commons.io.StandardLineSeparator.lineSeparator",
+    "snippet": "private final String lineSeparator;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.equals",
+    "snippet": "final boolean equals;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList1",
+    "snippet": "final List\u003cPath\u003e relativeFileList1;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList2",
+    "snippet": "final List\u003cPath\u003e relativeFileList2;",
+    "begin_line": 100,
+    "end_line": 100,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_TRUNCATE",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_TRUNCATE \u003d { StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING };",
+    "begin_line": 152,
+    "end_line": 152,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_APPEND",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_APPEND \u003d { StandardOpenOption.CREATE, StandardOpenOption.APPEND };",
+    "begin_line": 154,
+    "end_line": 154,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_COPY_OPTIONS",
+    "snippet": "public static final CopyOption[] EMPTY_COPY_OPTIONS \u003d {};",
+    "begin_line": 161,
+    "end_line": 161,
+    "comment": "/** \n * Empty  {@link CopyOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_DELETE_OPTION_ARRAY",
+    "snippet": "public static final DeleteOption[] EMPTY_DELETE_OPTION_ARRAY \u003d {};",
+    "begin_line": 168,
+    "end_line": 168,
+    "comment": "/** \n * Empty  {@link DeleteOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_FILE_ATTRIBUTE_ARRAY",
+    "snippet": "public static final FileAttribute\u003c?\u003e[] EMPTY_FILE_ATTRIBUTE_ARRAY \u003d {};",
+    "begin_line": 175,
+    "end_line": 175,
+    "comment": "/** \n * Empty  {@link FileAttribute} array.\n * @since 2.13.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_FILE_VISIT_OPTION_ARRAY",
+    "snippet": "public static final FileVisitOption[] EMPTY_FILE_VISIT_OPTION_ARRAY \u003d {};",
+    "begin_line": 180,
+    "end_line": 180,
+    "comment": "/** \n * Empty  {@link FileVisitOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_LINK_OPTION_ARRAY",
+    "snippet": "public static final LinkOption[] EMPTY_LINK_OPTION_ARRAY \u003d {};",
+    "begin_line": 185,
+    "end_line": 185,
+    "comment": "/** \n * Empty  {@link LinkOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NOFOLLOW_LINK_OPTION_ARRAY",
+    "snippet": "@Deprecated\n    public static final LinkOption[] NOFOLLOW_LINK_OPTION_ARRAY \u003d { LinkOption.NOFOLLOW_LINKS };",
+    "begin_line": 194,
+    "end_line": 194,
+    "comment": "/** \n * {@link LinkOption} array for {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.9.0\n * @deprecated Use {@link #noFollowLinkOptionArray()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NULL_LINK_OPTION",
+    "snippet": "static final LinkOption NULL_LINK_OPTION \u003d null;",
+    "begin_line": 201,
+    "end_line": 201,
+    "comment": "/** \n * A LinkOption used to follow link in this class, the inverse of  {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.12.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_OPEN_OPTION_ARRAY",
+    "snippet": "public static final OpenOption[] EMPTY_OPEN_OPTION_ARRAY \u003d {};",
+    "begin_line": 206,
+    "end_line": 206,
+    "comment": "/** \n * Empty  {@link OpenOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_PATH_ARRAY",
+    "snippet": "public static final Path[] EMPTY_PATH_ARRAY \u003d {};",
+    "begin_line": 213,
+    "end_line": 213,
+    "comment": "/** \n * Empty  {@link Path} array.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.AbstractFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/AbstractFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.AbstractFileFilter.onAccept",
+    "snippet": "private final FileVisitResult onAccept;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * What to do when this filter accepts.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.AbstractFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/AbstractFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.AbstractFileFilter.onReject",
+    "snippet": "private final FileVisitResult onReject;",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * What to do when this filter rejects.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.AndFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/AndFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.AndFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 7215974688563965257L;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.AndFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/AndFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.AndFileFilter.fileFilters",
+    "snippet": "private final List\u003cIOFileFilter\u003e fileFilters;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * The list of file filters. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanReadFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanReadFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanReadFileFilter.CAN_READ",
+    "snippet": "public static final IOFileFilter CAN_READ \u003d new CanReadFileFilter();",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Singleton instance of \u003ci\u003ereadable\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanReadFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanReadFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanReadFileFilter.CANNOT_READ",
+    "snippet": "public static final IOFileFilter CANNOT_READ \u003d CAN_READ.negate();",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * Singleton instance of not \u003ci\u003ereadable\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanReadFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanReadFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanReadFileFilter.READ_ONLY",
+    "snippet": "public static final IOFileFilter READ_ONLY \u003d CAN_READ.and(CanWriteFileFilter.CANNOT_WRITE);",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * Singleton instance of \u003ci\u003eread-only\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanReadFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanReadFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanReadFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 3179904805251622989L;",
+    "begin_line": 79,
+    "end_line": 79,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanWriteFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanWriteFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanWriteFileFilter.CAN_WRITE",
+    "snippet": "public static final IOFileFilter CAN_WRITE \u003d new CanWriteFileFilter();",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": "/** \n * Singleton instance of \u003ci\u003ewritable\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanWriteFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanWriteFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanWriteFileFilter.CANNOT_WRITE",
+    "snippet": "public static final IOFileFilter CANNOT_WRITE \u003d CAN_WRITE.negate();",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * Singleton instance of not \u003ci\u003ewritable\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.CanWriteFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/CanWriteFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.CanWriteFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 5132005214688990379L;",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.DirectoryFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/DirectoryFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.DirectoryFileFilter.DIRECTORY",
+    "snippet": "public static final IOFileFilter DIRECTORY \u003d new DirectoryFileFilter();",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * Singleton instance of directory filter.\n * @since 1.3\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.DirectoryFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/DirectoryFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.DirectoryFileFilter.INSTANCE",
+    "snippet": "public static final IOFileFilter INSTANCE \u003d DIRECTORY;",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * Singleton instance of directory filter. Please use the identical DirectoryFileFilter.DIRECTORY constant. The new name is more JDK 1.5 friendly as it doesn\u0027t clash with other values when using static imports.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.DirectoryFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/DirectoryFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.DirectoryFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -5148237843784525732L;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.EmptyFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/EmptyFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.EmptyFileFilter.EMPTY",
+    "snippet": "public static final IOFileFilter EMPTY \u003d new EmptyFileFilter();",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": "/** \n * Singleton instance of \u003ci\u003eempty\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.EmptyFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/EmptyFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.EmptyFileFilter.NOT_EMPTY",
+    "snippet": "public static final IOFileFilter NOT_EMPTY \u003d EMPTY.negate();",
+    "begin_line": 89,
+    "end_line": 89,
+    "comment": "/** \n * Singleton instance of \u003ci\u003enot-empty\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.EmptyFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/EmptyFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.EmptyFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 3631422087512832211L;",
+    "begin_line": 91,
+    "end_line": 91,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.FileFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/FileFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.FileFileFilter.INSTANCE",
+    "snippet": "public static final IOFileFilter INSTANCE \u003d new FileFileFilter();",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * Singleton instance of file filter.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.FileFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/FileFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.FileFileFilter.FILE",
+    "snippet": "@Deprecated\n    public static final IOFileFilter FILE \u003d INSTANCE;",
+    "begin_line": 82,
+    "end_line": 82,
+    "comment": "/** \n * Singleton instance of file filter.\n * @deprecated Use {@link #INSTANCE}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.FileFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/FileFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.FileFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 5345244090827540862L;",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.FileFilterUtils",
+    "src_path": "org/apache/commons/io/filefilter/FileFilterUtils.java",
+    "signature": "org.apache.commons.io.filefilter.FileFilterUtils.CVS_FILTER",
+    "snippet": "private static final IOFileFilter CVS_FILTER \u003d notFileFilter(\n            and(directoryFileFilter(), nameFileFilter(\"CVS\")));",
+    "begin_line": 47,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.FileFilterUtils",
+    "src_path": "org/apache/commons/io/filefilter/FileFilterUtils.java",
+    "signature": "org.apache.commons.io.filefilter.FileFilterUtils.SVN_FILTER",
+    "snippet": "private static final IOFileFilter SVN_FILTER \u003d notFileFilter(\n            and(directoryFileFilter(), nameFileFilter(\".svn\")));",
+    "begin_line": 51,
+    "end_line": 52,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.HiddenFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/HiddenFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.HiddenFileFilter.HIDDEN",
+    "snippet": "public static final IOFileFilter HIDDEN  \u003d new HiddenFileFilter();",
+    "begin_line": 82,
+    "end_line": 82,
+    "comment": "/** \n * Singleton instance of \u003ci\u003ehidden\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.HiddenFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/HiddenFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.HiddenFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 8930842316112759062L;",
+    "begin_line": 84,
+    "end_line": 84,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.HiddenFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/HiddenFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.HiddenFileFilter.VISIBLE",
+    "snippet": "public static final IOFileFilter VISIBLE \u003d HIDDEN.negate();",
+    "begin_line": 87,
+    "end_line": 87,
+    "comment": "/** \n * Singleton instance of \u003ci\u003evisible\u003c/i\u003e filter \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.IOFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/IOFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.IOFileFilter.EMPTY_STRING_ARRAY",
+    "snippet": " String[] EMPTY_STRING_ARRAY \u003d {};",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": "/** \n * An empty String array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.NameFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/NameFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.NameFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 176844364689077340L;",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.NameFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/NameFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.NameFileFilter.names",
+    "snippet": "private final String[] names;",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": "/** \n * The file names to search for \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.NameFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/NameFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.NameFileFilter.ioCase",
+    "snippet": "private final IOCase ioCase;",
+    "begin_line": 81,
+    "end_line": 81,
+    "comment": "/** \n * Whether the comparison is case-sensitive. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.NotFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/NotFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.NotFileFilter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 6131563330944994230L;",
+    "begin_line": 38,
+    "end_line": 38,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.NotFileFilter",
+    "src_path": "org/apache/commons/io/filefilter/NotFileFilter.java",
+    "signature": "org.apache.commons.io.filefilter.NotFileFilter.filter",
+    "snippet": "private final IOFileFilter filter;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "/** \n * The filter \n */\n"
+  }
+]

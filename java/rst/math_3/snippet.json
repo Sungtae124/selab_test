@@ -1,0 +1,114 @@
+[
+  {
+    "name": "DummyLocalizable.DummyLocalizable#38",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.DummyLocalizable(java.lang.String)",
+    "snippet": "public DummyLocalizable(final String source) {\n        this.source \u003d source;\n    }",
+    "begin_line": 38,
+    "end_line": 40,
+    "comment": "/** \n * Simple constructor.\n * @param source source text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DummyLocalizable.getSourceString#43",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.getSourceString()",
+    "snippet": "public String getSourceString() {\n        return source;\n    }",
+    "begin_line": 43,
+    "end_line": 45,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DummyLocalizable.getLocalizedString#48",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.getLocalizedString(java.util.Locale)",
+    "snippet": "public String getLocalizedString(Locale locale) {\n        return source;\n    }",
+    "begin_line": 48,
+    "end_line": 50,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DummyLocalizable.toString#54",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.toString()",
+    "snippet": "@Override\n    public String toString() {\n        return source;\n    }",
+    "begin_line": 54,
+    "end_line": 56,
+    "comment": "/** \n * {@inheritDoc} \n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MessageFactory.MessageFactory#32",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/MessageFactory.java",
+    "class_name": "org.apache.commons.math.exception.util.MessageFactory",
+    "signature": "org.apache.commons.math.exception.util.MessageFactory.MessageFactory()",
+    "snippet": "private MessageFactory() {}",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Class contains only static methods.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MessageFactory.buildMessage#42",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/MessageFactory.java",
+    "class_name": "org.apache.commons.math.exception.util.MessageFactory",
+    "signature": "org.apache.commons.math.exception.util.MessageFactory.buildMessage(java.util.Locale, org.apache.commons.math.exception.util.Localizable, java.lang.Object)",
+    "snippet": "public static String buildMessage(Locale locale,\n                                      Localizable pattern,\n                                      Object ... arguments) {\n        return buildMessage(locale, null, pattern, arguments);\n    }",
+    "begin_line": 42,
+    "end_line": 46,
+    "comment": "/** \n * Builds a message string by from a pattern and its arguments.\n * @param locale Locale in which the message should be translated.\n * @param pattern Format specifier.\n * @param arguments Format arguments.\n * @return a localized message string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MessageFactory.buildMessage#60",
+    "is_bug": true,
+    "src_path": "org/apache/commons/math/exception/util/MessageFactory.java",
+    "class_name": "org.apache.commons.math.exception.util.MessageFactory",
+    "signature": "org.apache.commons.math.exception.util.MessageFactory.buildMessage(java.util.Locale, org.apache.commons.math.exception.util.Localizable, org.apache.commons.math.exception.util.Localizable, java.lang.Object)",
+    "snippet": "public static String buildMessage(Locale locale,\n                                      Localizable specific,\n                                      Localizable general,\n                                      Object ... arguments) {\n\n        final StringBuilder sb \u003d new StringBuilder();\n        final MessageFormat generalFmt  \u003d new MessageFormat(general.getLocalizedString(locale), locale);\n        Object[] generalArgs \u003d arguments;\n\n        if (specific !\u003d null) {\n\n            final MessageFormat specificFmt \u003d new MessageFormat(specific.getLocalizedString(locale), locale);\n\n            // split the arguments: first specific ones then general ones\n            final int nbSpecific \u003d Math.min(arguments.length, specificFmt.getFormatsByArgumentIndex().length);\n            final int nbGeneral  \u003d arguments.length - nbSpecific;\n            Object[] specificArgs \u003d new Object[nbSpecific];\n            System.arraycopy(arguments, 0, specificArgs, 0, nbSpecific);\n            generalArgs \u003d new Object[nbGeneral];\n            System.arraycopy(arguments, nbSpecific, generalArgs, 0, nbGeneral);\n\n            // build the message\n            sb.append(specificFmt.format(specificArgs));\n            sb.append(\": \");\n\n        }\n\n        sb.append(generalFmt.format(generalArgs));\n\n        return sb.toString();\n    }",
+    "begin_line": 60,
+    "end_line": 90,
+    "comment": "/** \n * Builds a message string by from two patterns (specific and general) and an argument list.\n * @param locale Locale in which the message should be translated.\n * @param specific Format specifier.\n * @param general Format specifier.\n * @param arguments Format arguments. They will be substituted first inthe  {@code specific} format specifier, then the remaining argumentswill be substituted in the  {@code general} format specifier.\n * @return a localized message string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

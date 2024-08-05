@@ -1,0 +1,266 @@
+[
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.CompositeSetTest(java.lang.String)",
+    "snippet": "public CompositeSetTest(final String name) {\n        super(name);\n    }",
+    "begin_line": 33,
+    "end_line": 35,
+    "comment": "",
+    "child_ranges": [
+      "(line 34,col 9)-(line 34,col 20)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.makeObject()",
+    "snippet": "@Override\n    public CompositeSet\u003cE\u003e makeObject() {\n        final HashSet\u003cE\u003e contained \u003d new HashSet\u003c\u003e();\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(contained);\n        set.setMutator( new EmptySetMutator\u003c\u003e(contained) );\n        return set;\n    }",
+    "begin_line": 38,
+    "end_line": 43,
+    "comment": "",
+    "child_ranges": [
+      "(line 39,col 9)-(line 39,col 53)",
+      "(line 40,col 9)-(line 40,col 66)",
+      "(line 41,col 9)-(line 41,col 59)",
+      "(line 42,col 9)-(line 42,col 19)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.buildOne()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public Set\u003cE\u003e buildOne() {\n        final HashSet\u003cE\u003e set \u003d new HashSet\u003c\u003e();\n        set.add((E) \"1\");\n        set.add((E) \"2\");\n        return set;\n    }",
+    "begin_line": 46,
+    "end_line": 51,
+    "comment": "",
+    "child_ranges": [
+      "(line 47,col 9)-(line 47,col 47)",
+      "(line 48,col 9)-(line 48,col 25)",
+      "(line 49,col 9)-(line 49,col 25)",
+      "(line 50,col 9)-(line 50,col 19)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.buildTwo()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public Set\u003cE\u003e buildTwo() {\n        final HashSet\u003cE\u003e set \u003d new HashSet\u003c\u003e();\n        set.add((E) \"3\");\n        set.add((E) \"4\");\n        return set;\n    }",
+    "begin_line": 54,
+    "end_line": 59,
+    "comment": "",
+    "child_ranges": [
+      "(line 55,col 9)-(line 55,col 47)",
+      "(line 56,col 9)-(line 56,col 25)",
+      "(line 57,col 9)-(line 57,col 25)",
+      "(line 58,col 9)-(line 58,col 19)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testContains()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testContains() {\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[]{ buildOne(), buildTwo() });\n        assertTrue(set.contains(\"1\"));\n    }",
+    "begin_line": 62,
+    "end_line": 65,
+    "comment": "",
+    "child_ranges": [
+      "(line 63,col 9)-(line 63,col 92)",
+      "(line 64,col 9)-(line 64,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testContainsAll()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testContainsAll() {\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[]{ buildOne(), buildTwo() });\n        assertFalse(set.containsAll(null));\n    }",
+    "begin_line": 68,
+    "end_line": 71,
+    "comment": "",
+    "child_ranges": [
+      "(line 69,col 9)-(line 69,col 92)",
+      "(line 70,col 9)-(line 70,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testRemoveAll()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemoveAll() {\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[]{ buildOne(), buildTwo() });\n        assertFalse(set.removeAll(null));\n    }",
+    "begin_line": 74,
+    "end_line": 77,
+    "comment": "",
+    "child_ranges": [
+      "(line 75,col 9)-(line 75,col 92)",
+      "(line 76,col 9)-(line 76,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testRemoveUnderlying()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemoveUnderlying() {\n        final Set\u003cE\u003e one \u003d buildOne();\n        final Set\u003cE\u003e two \u003d buildTwo();\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[] { one, two });\n        one.remove(\"1\");\n        assertFalse(set.contains(\"1\"));\n\n        two.remove(\"3\");\n        assertFalse(set.contains(\"3\"));\n    }",
+    "begin_line": 80,
+    "end_line": 89,
+    "comment": "",
+    "child_ranges": [
+      "(line 81,col 9)-(line 81,col 38)",
+      "(line 82,col 9)-(line 82,col 38)",
+      "(line 83,col 9)-(line 83,col 79)",
+      "(line 84,col 9)-(line 84,col 24)",
+      "(line 85,col 9)-(line 85,col 39)",
+      "(line 87,col 9)-(line 87,col 24)",
+      "(line 88,col 9)-(line 88,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testRemoveComposited()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testRemoveComposited() {\n        final Set\u003cE\u003e one \u003d buildOne();\n        final Set\u003cE\u003e two \u003d buildTwo();\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[] { one, two });\n        set.remove(\"1\");\n        assertFalse(one.contains(\"1\"));\n\n        set.remove(\"3\");\n        assertFalse(one.contains(\"3\"));\n    }",
+    "begin_line": 92,
+    "end_line": 101,
+    "comment": "",
+    "child_ranges": [
+      "(line 93,col 9)-(line 93,col 38)",
+      "(line 94,col 9)-(line 94,col 38)",
+      "(line 95,col 9)-(line 95,col 79)",
+      "(line 96,col 9)-(line 96,col 24)",
+      "(line 97,col 9)-(line 97,col 39)",
+      "(line 99,col 9)-(line 99,col 24)",
+      "(line 100,col 9)-(line 100,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testFailedCollisionResolution()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testFailedCollisionResolution() {\n        final Set\u003cE\u003e one \u003d buildOne();\n        final Set\u003cE\u003e two \u003d buildTwo();\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e(new Set[] { one, two });\n        set.setMutator(new SetMutator\u003cE\u003e() {\n            private static final long serialVersionUID \u003d 1L;\n\n            @Override\n            public void resolveCollision(final CompositeSet\u003cE\u003e comp, final Set\u003cE\u003e existing,\n                final Set\u003cE\u003e added, final Collection\u003cE\u003e intersects) {\n                //noop\n            }\n\n            @Override\n            public boolean add(final CompositeSet\u003cE\u003e composite,\n                    final List\u003cSet\u003cE\u003e\u003e collections, final E obj) {\n                throw new UnsupportedOperationException();\n            }\n\n            @Override\n            public boolean addAll(final CompositeSet\u003cE\u003e composite,\n                    final List\u003cSet\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                throw new UnsupportedOperationException();\n            }\n        });\n\n        final HashSet\u003cE\u003e three \u003d new HashSet\u003c\u003e();\n        three.add((E) \"1\");\n        try {\n            set.addComposited(three);\n            fail(\"IllegalArgumentException should have been thrown\");\n        }\n        catch (final IllegalArgumentException e) {\n            // expected\n        }\n    }",
+    "begin_line": 104,
+    "end_line": 139,
+    "comment": "",
+    "child_ranges": [
+      "(line 105,col 9)-(line 105,col 38)",
+      "(line 106,col 9)-(line 106,col 38)",
+      "(line 107,col 9)-(line 107,col 79)",
+      "(line 108,col 9)-(line 128,col 11)",
+      "(line 130,col 9)-(line 130,col 49)",
+      "(line 131,col 9)-(line 131,col 27)",
+      "(line 132,col 9)-(line 138,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.resolveCollision(CompositeSet\u003cE\u003e, java.util.Set\u003cE\u003e, java.util.Set\u003cE\u003e, java.util.Collection\u003cE\u003e)",
+    "snippet": "@Override\n            public void resolveCollision(final CompositeSet\u003cE\u003e comp, final Set\u003cE\u003e existing,\n                final Set\u003cE\u003e added, final Collection\u003cE\u003e intersects) {\n                //noop\n            }",
+    "begin_line": 112,
+    "end_line": 115,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.add(CompositeSet\u003cE\u003e, java.util.List\u003cjava.util.Set\u003cE\u003e\u003e, E)",
+    "snippet": "@Override\n            public boolean add(final CompositeSet\u003cE\u003e composite,\n                    final List\u003cSet\u003cE\u003e\u003e collections, final E obj) {\n                throw new UnsupportedOperationException();\n            }",
+    "begin_line": 118,
+    "end_line": 121,
+    "comment": "",
+    "child_ranges": [
+      "(line 120,col 17)-(line 120,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.addAll(CompositeSet\u003cE\u003e, java.util.List\u003cjava.util.Set\u003cE\u003e\u003e, java.util.Collection\u003c? extends E\u003e)",
+    "snippet": "@Override\n            public boolean addAll(final CompositeSet\u003cE\u003e composite,\n                    final List\u003cSet\u003cE\u003e\u003e collections, final Collection\u003c? extends E\u003e coll) {\n                throw new UnsupportedOperationException();\n            }",
+    "begin_line": 124,
+    "end_line": 127,
+    "comment": "",
+    "child_ranges": [
+      "(line 126,col 17)-(line 126,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testAddComposited()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testAddComposited() {\n        final Set\u003cE\u003e one \u003d buildOne();\n        final Set\u003cE\u003e two \u003d buildTwo();\n        final CompositeSet\u003cE\u003e set \u003d new CompositeSet\u003c\u003e();\n        set.addComposited(one, two);\n        set.addComposited((Set\u003cE\u003e) null);\n        set.addComposited((Set\u003cE\u003e[]) null);\n        set.addComposited(null, null);\n        set.addComposited(null, null, null);\n        final CompositeSet\u003cE\u003e set2 \u003d new CompositeSet\u003c\u003e(buildOne());\n        set2.addComposited(buildTwo());\n        assertTrue(set.equals(set2));\n        final HashSet\u003cE\u003e set3 \u003d new HashSet\u003c\u003e();\n        set3.add((E) \"1\");\n        set3.add((E) \"2\");\n        set3.add((E) \"3\");\n        final HashSet\u003cE\u003e set4 \u003d new HashSet\u003c\u003e();\n        set4.add((E) \"4\");\n        final CompositeSet\u003cE\u003e set5 \u003d new CompositeSet\u003c\u003e(set3);\n        set5.addComposited(set4);\n        assertTrue(set.equals(set5));\n        try {\n            set.addComposited(set3);\n            fail(\"Expecting UnsupportedOperationException.\");\n        } catch (final UnsupportedOperationException ex) {\n            // expected\n        }\n    }",
+    "begin_line": 142,
+    "end_line": 169,
+    "comment": "",
+    "child_ranges": [
+      "(line 143,col 9)-(line 143,col 38)",
+      "(line 144,col 9)-(line 144,col 38)",
+      "(line 145,col 9)-(line 145,col 57)",
+      "(line 146,col 9)-(line 146,col 36)",
+      "(line 147,col 9)-(line 147,col 41)",
+      "(line 148,col 9)-(line 148,col 43)",
+      "(line 149,col 9)-(line 149,col 38)",
+      "(line 150,col 9)-(line 150,col 44)",
+      "(line 151,col 9)-(line 151,col 68)",
+      "(line 152,col 9)-(line 152,col 39)",
+      "(line 153,col 9)-(line 153,col 37)",
+      "(line 154,col 9)-(line 154,col 48)",
+      "(line 155,col 9)-(line 155,col 26)",
+      "(line 156,col 9)-(line 156,col 26)",
+      "(line 157,col 9)-(line 157,col 26)",
+      "(line 158,col 9)-(line 158,col 48)",
+      "(line 159,col 9)-(line 159,col 26)",
+      "(line 160,col 9)-(line 160,col 62)",
+      "(line 161,col 9)-(line 161,col 33)",
+      "(line 162,col 9)-(line 162,col 37)",
+      "(line 163,col 9)-(line 168,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.testAddCompositedCollision()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    public void testAddCompositedCollision() {\n        final HashSet\u003cE\u003e set1 \u003d new HashSet\u003c\u003e();\n        set1.add((E) \"1\");\n        set1.add((E) \"2\");\n        set1.add((E) \"3\");\n        final HashSet\u003cE\u003e set2 \u003d new HashSet\u003c\u003e();\n        set2.add((E) \"4\");\n        final CompositeSet\u003cE\u003e set3 \u003d new CompositeSet\u003c\u003e(set1);\n        try {\n            set3.addComposited(set1, buildOne());\n            fail(\"Expecting UnsupportedOperationException.\");\n        } catch (final UnsupportedOperationException ex) {\n            // expected\n        }\n        try {\n            set3.addComposited(set1, buildOne(), buildTwo());\n            fail(\"Expecting UnsupportedOperationException.\");\n        } catch (final UnsupportedOperationException ex) {\n            // expected\n        }\n    }",
+    "begin_line": 172,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 173,col 9)-(line 173,col 48)",
+      "(line 174,col 9)-(line 174,col 26)",
+      "(line 175,col 9)-(line 175,col 26)",
+      "(line 176,col 9)-(line 176,col 26)",
+      "(line 177,col 9)-(line 177,col 48)",
+      "(line 178,col 9)-(line 178,col 26)",
+      "(line 179,col 9)-(line 179,col 62)",
+      "(line 180,col 9)-(line 185,col 9)",
+      "(line 186,col 9)-(line 191,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.collections4.set.CompositeSetTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/collections4/set/CompositeSetTest.java",
+    "signature": "org.apache.commons.collections4.set.CompositeSetTest.getCompatibilityVersion()",
+    "snippet": "@Override\n    public String getCompatibilityVersion() {\n        return \"4\";\n    }",
+    "begin_line": 195,
+    "end_line": 197,
+    "comment": "",
+    "child_ranges": [
+      "(line 196,col 9)-(line 196,col 19)"
+    ]
+  }
+]

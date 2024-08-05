@@ -1,0 +1,10 @@
+--- org.apache.commons.io.IOUtilsCopyTestCase::testCopy_inputStreamToOutputStream_nullIn
+java.lang.NullPointerException
+       org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1160)
+       org.apache.commons.io.IOUtils.copy(IOUtils.java:882)
+       org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1137)
+       org.apache.commons.io.IOUtils.copy(IOUtils.java:858)
+       org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStream_nullIn(IOUtilsCopyTestCase.java:101)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

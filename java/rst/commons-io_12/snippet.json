@@ -1,0 +1,322 @@
+[
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#67",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.lang.String)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final String charsetName) throws IOException {\n        this(new File(fileName), charsetName, false);\n    }",
+    "begin_line": 67,
+    "end_line": 69,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param charsetName  the name of the requested charset, not null\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#80",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.lang.String, boolean)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final String charsetName, final boolean append)\n            throws IOException {\n        this(new File(fileName), charsetName, append);\n    }",
+    "begin_line": 80,
+    "end_line": 83,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param charsetName  the name of the requested charset, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#93",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.nio.charset.Charset)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final Charset charset) throws IOException {\n        this(new File(fileName), charset, false);\n    }",
+    "begin_line": 93,
+    "end_line": 95,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param charset  the charset to use, not null\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#106",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.nio.charset.Charset, boolean)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final Charset charset, final boolean append)\n            throws IOException {\n        this(new File(fileName), charset, append);\n    }",
+    "begin_line": 106,
+    "end_line": 109,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param charset  the encoding to use, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#119",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.nio.charset.CharsetEncoder)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final CharsetEncoder encoding) throws IOException {\n        this(new File(fileName), encoding, false);\n    }",
+    "begin_line": 119,
+    "end_line": 121,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param encoding  the encoding to use, not null\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#132",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.lang.String, java.nio.charset.CharsetEncoder, boolean)",
+    "snippet": "public FileWriterWithEncoding(final String fileName, final CharsetEncoder charsetEncoder, final boolean append)\n            throws IOException {\n        this(new File(fileName), charsetEncoder, append);\n    }",
+    "begin_line": 132,
+    "end_line": 135,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param fileName  the name of the file to write to, not null\n * @param charsetEncoder  the encoding to use, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file name or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#145",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.lang.String)",
+    "snippet": "public FileWriterWithEncoding(final File file, final String charsetName) throws IOException {\n        this(file, charsetName, false);\n    }",
+    "begin_line": 145,
+    "end_line": 147,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param charsetName  the name of the requested charset, not null\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#158",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.lang.String, boolean)",
+    "snippet": "public FileWriterWithEncoding(final File file, final String charsetName, final boolean append) throws IOException {\n        this.out \u003d initWriter(file, charsetName, append);\n    }",
+    "begin_line": 158,
+    "end_line": 160,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param charsetName  the name of the requested charset, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#170",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.nio.charset.Charset)",
+    "snippet": "public FileWriterWithEncoding(final File file, final Charset charset) throws IOException {\n        this(file, charset, false);\n    }",
+    "begin_line": 170,
+    "end_line": 172,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param charset  the encoding to use, not null\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#183",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.nio.charset.Charset, boolean)",
+    "snippet": "public FileWriterWithEncoding(final File file, final Charset encoding, final boolean append) throws IOException {\n        this.out \u003d initWriter(file, encoding, append);\n    }",
+    "begin_line": 183,
+    "end_line": 185,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param encoding  the name of the requested charset, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#195",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.nio.charset.CharsetEncoder)",
+    "snippet": "public FileWriterWithEncoding(final File file, final CharsetEncoder charsetEncoder) throws IOException {\n        this(file, charsetEncoder, false);\n    }",
+    "begin_line": 195,
+    "end_line": 197,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param charsetEncoder  the encoding to use, not null\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.FileWriterWithEncoding#208",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.FileWriterWithEncoding(java.io.File, java.nio.charset.CharsetEncoder, boolean)",
+    "snippet": "public FileWriterWithEncoding(final File file, final CharsetEncoder charsetEncoder, final boolean append)\n            throws IOException {\n        this.out \u003d initWriter(file, charsetEncoder, append);\n    }",
+    "begin_line": 208,
+    "end_line": 211,
+    "comment": "/** \n * Constructs a FileWriterWithEncoding with a file encoding.\n * @param file  the file to write to, not null\n * @param charsetEncoder  the encoding to use, not null\n * @param append  true if content should be appended, false to overwrite\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException in case of an I/O error\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.initWriter#224",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.initWriter(java.io.File, java.lang.Object, boolean)",
+    "snippet": "private static Writer initWriter(final File file, final Object encoding, final boolean append) throws IOException {\n        Objects.requireNonNull(file, \"file\");\n        Objects.requireNonNull(encoding, \"encoding\");\n        OutputStream stream \u003d null;\n        final boolean fileExistedAlready \u003d file.exists();\n        try {\n            stream \u003d Files.newOutputStream(file.toPath(), append ? StandardOpenOption.APPEND : StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);\n            if (encoding instanceof Charset) {\n                return new OutputStreamWriter(stream, (Charset) encoding);\n            }\n            if (encoding instanceof CharsetEncoder) {\n                return new OutputStreamWriter(stream, (CharsetEncoder) encoding);\n            }\n            return new OutputStreamWriter(stream, (String) encoding);\n        } catch (final IOException | RuntimeException ex) {\n            try {\n                IOUtils.close(stream);\n            } catch (final IOException e) {\n                ex.addSuppressed(e);\n            }\n            if (!fileExistedAlready) {\n                FileUtils.deleteQuietly(file);\n            }\n            throw ex;\n        }\n    }",
+    "begin_line": 224,
+    "end_line": 249,
+    "comment": "/** \n * Initialize the wrapped file writer. Ensure that a cleanup occurs if the writer creation fails.\n * @param file  the file to be accessed\n * @param encoding  the encoding to use - may be Charset, CharsetEncoder or String\n * @param append  true to append\n * @return the initialized writer\n * @throws NullPointerException if the file or encoding is null\n * @throws IOException if an error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.write#257",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.write(int)",
+    "snippet": "@Override\n    public void write(final int idx) throws IOException {\n        out.write(idx);\n    }",
+    "begin_line": 257,
+    "end_line": 259,
+    "comment": "/** \n * Write a character.\n * @param idx the character to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.write#267",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.write(char[])",
+    "snippet": "@Override\n    public void write(final char[] chr) throws IOException {\n        out.write(chr);\n    }",
+    "begin_line": 267,
+    "end_line": 269,
+    "comment": "/** \n * Write the characters from an array.\n * @param chr the characters to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.write#279",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.write(char[], int, int)",
+    "snippet": "@Override\n    public void write(final char[] chr, final int st, final int end) throws IOException {\n        out.write(chr, st, end);\n    }",
+    "begin_line": 279,
+    "end_line": 281,
+    "comment": "/** \n * Write the specified characters from an array.\n * @param chr the characters to write\n * @param st The start offset\n * @param end The number of characters to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.write#289",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.write(java.lang.String)",
+    "snippet": "@Override\n    public void write(final String str) throws IOException {\n        out.write(str);\n    }",
+    "begin_line": 289,
+    "end_line": 291,
+    "comment": "/** \n * Write the characters from a string.\n * @param str the string to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.write#301",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.write(java.lang.String, int, int)",
+    "snippet": "@Override\n    public void write(final String str, final int st, final int end) throws IOException {\n        out.write(str, st, end);\n    }",
+    "begin_line": 301,
+    "end_line": 303,
+    "comment": "/** \n * Write the specified characters from a string.\n * @param str the string to write\n * @param st The start offset\n * @param end The number of characters to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.flush#310",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.flush()",
+    "snippet": "@Override\n    public void flush() throws IOException {\n        out.flush();\n    }",
+    "begin_line": 310,
+    "end_line": 312,
+    "comment": "/** \n * Flush the stream.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FileWriterWithEncoding.close#319",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncoding.java",
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncoding",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncoding.close()",
+    "snippet": "@Override\n    public void close() throws IOException {\n        out.close();\n    }",
+    "begin_line": 319,
+    "end_line": 321,
+    "comment": "/** \n * Close the stream.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

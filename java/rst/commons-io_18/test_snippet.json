@@ -1,0 +1,1981 @@
+[
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.assertEqualContent(byte[], byte[])",
+    "snippet": "private void assertEqualContent(final byte[] b0, final byte[] b1) {\n        assertTrue(Arrays.equals(b0, b1), \"Content not equal according to java.util.Arrays#equals()\");\n    }",
+    "begin_line": 103,
+    "end_line": 105,
+    "comment": "/** \n * Assert that the contents of two byte arrays are the same. \n */\n",
+    "child_ranges": [
+      "(line 104,col 9)-(line 104,col 102)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.setUp()",
+    "snippet": "@BeforeEach\n    public void setUp() {\n        try {\n            m_testFile \u003d new File(temporaryFolder, \"file2-test.txt\");\n\n            if (!m_testFile.getParentFile().exists()) {\n                throw new IOException(\"Cannot create file \" + m_testFile\n                        + \" as the parent directory does not exist\");\n            }\n            final BufferedOutputStream output \u003d\n                    new BufferedOutputStream(new FileOutputStream(m_testFile));\n            try {\n                TestUtils.generateTestData(output, FILE_SIZE);\n            } finally {\n                IOUtils.closeQuietly(output);\n            }\n        } catch (final IOException ioe) {\n            throw new RuntimeException(\"Can\u0027t run this test because the environment could not be built: \"\n                    + ioe.getMessage());\n        }\n        // Create and init a byte array as input data\n        iarr \u003d new byte[200];\n        Arrays.fill( iarr, (byte)-1);\n        for( int i\u003d0; i\u003c 80; i++){\n            iarr[i] \u003d (byte) i;\n        }\n        carr \u003d new char[200];\n        Arrays.fill( carr, (char)-1);\n        for( int i\u003d0; i\u003c 80; i++){\n            carr[i] \u003d (char) i;\n        }\n    }",
+    "begin_line": 108,
+    "end_line": 138,
+    "comment": "",
+    "child_ranges": [
+      "(line 109,col 9)-(line 126,col 9)",
+      "(line 128,col 9)-(line 128,col 29)",
+      "(line 129,col 9)-(line 129,col 37)",
+      "(line 130,col 9)-(line 132,col 9)",
+      "(line 133,col 9)-(line 133,col 29)",
+      "(line 134,col 9)-(line 134,col 37)",
+      "(line 135,col 9)-(line 137,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_AllCloseableIOException()",
+    "snippet": "@Test public void testCloseQuietly_AllCloseableIOException() {\n        final Closeable closeable \u003d () -\u003e {\n            throw new IOException();\n        };\n        IOUtils.closeQuietly(closeable, null, closeable);\n    }",
+    "begin_line": 140,
+    "end_line": 145,
+    "comment": "",
+    "child_ranges": [
+      "(line 141,col 9)-(line 143,col 10)",
+      "(line 144,col 9)-(line 144,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_CloseableIOException()",
+    "snippet": "@Test public void testCloseQuietly_CloseableIOException() {\n        IOUtils.closeQuietly((Closeable) () -\u003e {\n            throw new IOException();\n        });\n    }",
+    "begin_line": 147,
+    "end_line": 151,
+    "comment": "",
+    "child_ranges": [
+      "(line 148,col 9)-(line 150,col 11)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_Selector()",
+    "snippet": "@Test public void testCloseQuietly_Selector() {\n        Selector selector \u003d null;\n        try {\n            selector \u003d Selector.open();\n        } catch (final IOException ignore) {\n        } finally {\n            IOUtils.closeQuietly(selector);\n        }\n    }",
+    "begin_line": 153,
+    "end_line": 161,
+    "comment": "",
+    "child_ranges": [
+      "(line 154,col 9)-(line 154,col 33)",
+      "(line 155,col 9)-(line 160,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_SelectorIOException()",
+    "snippet": "@Test public void testCloseQuietly_SelectorIOException() {\n        final Selector selector \u003d new SelectorAdapter() {\n            @Override\n            public void close() throws IOException {\n                throw new IOException();\n            }\n        };\n        IOUtils.closeQuietly(selector);\n    }",
+    "begin_line": 163,
+    "end_line": 171,
+    "comment": "",
+    "child_ranges": [
+      "(line 164,col 9)-(line 169,col 10)",
+      "(line 170,col 9)-(line 170,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException {\n                throw new IOException();\n            }",
+    "begin_line": 166,
+    "end_line": 168,
+    "comment": "",
+    "child_ranges": [
+      "(line 167,col 17)-(line 167,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_SelectorNull()",
+    "snippet": "@Test public void testCloseQuietly_SelectorNull() {\n        final Selector selector \u003d null;\n        IOUtils.closeQuietly(selector);\n    }",
+    "begin_line": 173,
+    "end_line": 176,
+    "comment": "",
+    "child_ranges": [
+      "(line 174,col 9)-(line 174,col 39)",
+      "(line 175,col 9)-(line 175,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_SelectorTwice()",
+    "snippet": "@Test public void testCloseQuietly_SelectorTwice() {\n        Selector selector \u003d null;\n        try {\n            selector \u003d Selector.open();\n        } catch (final IOException ignore) {\n        } finally {\n            IOUtils.closeQuietly(selector);\n            IOUtils.closeQuietly(selector);\n        }\n    }",
+    "begin_line": 178,
+    "end_line": 187,
+    "comment": "",
+    "child_ranges": [
+      "(line 179,col 9)-(line 179,col 33)",
+      "(line 180,col 9)-(line 186,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_ServerSocket()",
+    "snippet": "@Test public void testCloseQuietly_ServerSocket() throws IOException {\n        IOUtils.closeQuietly((ServerSocket) null);\n        IOUtils.closeQuietly(new ServerSocket());\n    }",
+    "begin_line": 189,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 190,col 9)-(line 190,col 50)",
+      "(line 191,col 9)-(line 191,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_ServerSocketIOException()",
+    "snippet": "@Test public void testCloseQuietly_ServerSocketIOException() throws IOException {\n        IOUtils.closeQuietly(new ServerSocket() {\n            @Override\n            public void close() throws IOException {\n                throw new IOException();\n            }\n        });\n    }",
+    "begin_line": 194,
+    "end_line": 201,
+    "comment": "",
+    "child_ranges": [
+      "(line 195,col 9)-(line 200,col 11)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException {\n                throw new IOException();\n            }",
+    "begin_line": 197,
+    "end_line": 199,
+    "comment": "",
+    "child_ranges": [
+      "(line 198,col 17)-(line 198,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_Socket()",
+    "snippet": "@Test public void testCloseQuietly_Socket() {\n        IOUtils.closeQuietly((Socket) null);\n        IOUtils.closeQuietly(new Socket());\n    }",
+    "begin_line": 203,
+    "end_line": 206,
+    "comment": "",
+    "child_ranges": [
+      "(line 204,col 9)-(line 204,col 44)",
+      "(line 205,col 9)-(line 205,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCloseQuietly_SocketIOException()",
+    "snippet": "@Test public void testCloseQuietly_SocketIOException() {\n        IOUtils.closeQuietly(new Socket() {\n            @Override\n            public synchronized void close() throws IOException {\n                throw new IOException();\n            }\n        });\n    }",
+    "begin_line": 208,
+    "end_line": 215,
+    "comment": "",
+    "child_ranges": [
+      "(line 209,col 9)-(line 214,col 11)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public synchronized void close() throws IOException {\n                throw new IOException();\n            }",
+    "begin_line": 211,
+    "end_line": 213,
+    "comment": "",
+    "child_ranges": [
+      "(line 212,col 17)-(line 212,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testConstants()",
+    "snippet": "@Test public void testConstants() throws Exception {\n        assertEquals(\u0027/\u0027, IOUtils.DIR_SEPARATOR_UNIX);\n        assertEquals(\u0027\\\\\u0027, IOUtils.DIR_SEPARATOR_WINDOWS);\n        assertEquals(\"\\n\", IOUtils.LINE_SEPARATOR_UNIX);\n        assertEquals(\"\\r\\n\", IOUtils.LINE_SEPARATOR_WINDOWS);\n        if (WINDOWS) {\n            assertEquals(\u0027\\\\\u0027, IOUtils.DIR_SEPARATOR);\n            assertEquals(\"\\r\\n\", IOUtils.LINE_SEPARATOR);\n        } else {\n            assertEquals(\u0027/\u0027, IOUtils.DIR_SEPARATOR);\n            assertEquals(\"\\n\", IOUtils.LINE_SEPARATOR);\n        }\n    }",
+    "begin_line": 217,
+    "end_line": 229,
+    "comment": "",
+    "child_ranges": [
+      "(line 218,col 9)-(line 218,col 54)",
+      "(line 219,col 9)-(line 219,col 58)",
+      "(line 220,col 9)-(line 220,col 56)",
+      "(line 221,col 9)-(line 221,col 61)",
+      "(line 222,col 9)-(line 228,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testContentEquals_InputStream_InputStream()",
+    "snippet": "@Test public void testContentEquals_InputStream_InputStream() throws Exception {\n        {\n            final ByteArrayInputStream input1 \u003d new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8));\n            assertTrue(IOUtils.contentEquals((InputStream) null, null));\n        }\n        {\n            final ByteArrayInputStream input1 \u003d new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8));\n            assertFalse(IOUtils.contentEquals(input1, null));\n        }\n        {\n            final ByteArrayInputStream input1 \u003d new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8));\n            assertFalse(IOUtils.contentEquals(null, input1));\n        }\n        {\n            final ByteArrayInputStream input1 \u003d new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8));\n            assertTrue(IOUtils.contentEquals(input1, input1));\n        }\n        {\n            final ByteArrayInputStream input1 \u003d new ByteArrayInputStream(\"ABC\".getBytes(StandardCharsets.UTF_8));\n            assertTrue(IOUtils.contentEquals(input1, input1));\n        }\n        assertTrue(IOUtils\n                .contentEquals(new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8)), new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8))));\n        assertTrue(IOUtils.contentEquals(new BufferedInputStream(new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8))), new BufferedInputStream(\n                new ByteArrayInputStream(\"\".getBytes(StandardCharsets.UTF_8)))));\n        assertTrue(IOUtils.contentEquals(new ByteArrayInputStream(\"ABC\".getBytes(StandardCharsets.UTF_8)),\n                new ByteArrayInputStream(\"ABC\".getBytes(StandardCharsets.UTF_8))));\n        assertFalse(IOUtils.contentEquals(new ByteArrayInputStream(\"ABCD\".getBytes(StandardCharsets.UTF_8)),\n                new ByteArrayInputStream(\"ABC\".getBytes(StandardCharsets.UTF_8))));\n        assertFalse(IOUtils.contentEquals(new ByteArrayInputStream(\"ABC\".getBytes(StandardCharsets.UTF_8)),\n                new ByteArrayInputStream(\"ABCD\".getBytes(StandardCharsets.UTF_8))));\n    }",
+    "begin_line": 231,
+    "end_line": 262,
+    "comment": "",
+    "child_ranges": [
+      "(line 232,col 9)-(line 235,col 9)",
+      "(line 236,col 9)-(line 239,col 9)",
+      "(line 240,col 9)-(line 243,col 9)",
+      "(line 244,col 9)-(line 247,col 9)",
+      "(line 248,col 9)-(line 251,col 9)",
+      "(line 252,col 9)-(line 253,col 158)",
+      "(line 254,col 9)-(line 255,col 81)",
+      "(line 256,col 9)-(line 257,col 83)",
+      "(line 258,col 9)-(line 259,col 83)",
+      "(line 260,col 9)-(line 261,col 84)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testContentEquals_Reader_Reader()",
+    "snippet": "@Test public void testContentEquals_Reader_Reader() throws Exception {\n        {\n            final StringReader input1 \u003d new StringReader(\"\");\n            assertTrue(IOUtils.contentEquals((Reader) null, null));\n        }\n        {\n            final StringReader input1 \u003d new StringReader(\"\");\n            assertFalse(IOUtils.contentEquals(null, input1));\n        }\n        {\n            final StringReader input1 \u003d new StringReader(\"\");\n            assertFalse(IOUtils.contentEquals(input1, null));\n        }\n        {\n            final StringReader input1 \u003d new StringReader(\"\");\n            assertTrue(IOUtils.contentEquals(input1, input1));\n        }\n        {\n            final StringReader input1 \u003d new StringReader(\"ABC\");\n            assertTrue(IOUtils.contentEquals(input1, input1));\n        }\n        assertTrue(IOUtils.contentEquals(new StringReader(\"\"), new StringReader(\"\")));\n        assertTrue(IOUtils.contentEquals(new BufferedReader(new StringReader(\"\")), new BufferedReader(new StringReader(\"\"))));\n        assertTrue(IOUtils.contentEquals(new StringReader(\"ABC\"), new StringReader(\"ABC\")));\n        assertFalse(IOUtils.contentEquals(new StringReader(\"ABCD\"), new StringReader(\"ABC\")));\n        assertFalse(IOUtils.contentEquals(new StringReader(\"ABC\"), new StringReader(\"ABCD\")));\n    }",
+    "begin_line": 264,
+    "end_line": 290,
+    "comment": "",
+    "child_ranges": [
+      "(line 265,col 9)-(line 268,col 9)",
+      "(line 269,col 9)-(line 272,col 9)",
+      "(line 273,col 9)-(line 276,col 9)",
+      "(line 277,col 9)-(line 280,col 9)",
+      "(line 281,col 9)-(line 284,col 9)",
+      "(line 285,col 9)-(line 285,col 86)",
+      "(line 286,col 9)-(line 286,col 126)",
+      "(line 287,col 9)-(line 287,col 92)",
+      "(line 288,col 9)-(line 288,col 94)",
+      "(line 289,col 9)-(line 289,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testContentEqualsIgnoreEOL()",
+    "snippet": "@Test public void testContentEqualsIgnoreEOL() throws Exception {\n        {\n            final Reader input1 \u003d new CharArrayReader(\"\".toCharArray());\n            assertTrue(IOUtils.contentEqualsIgnoreEOL((Reader) null, null));\n        }\n        {\n            final Reader input1 \u003d new CharArrayReader(\"\".toCharArray());\n            assertFalse(IOUtils.contentEqualsIgnoreEOL(null, input1));\n        }\n        {\n            final Reader input1 \u003d new CharArrayReader(\"\".toCharArray());\n            assertFalse(IOUtils.contentEqualsIgnoreEOL(input1, null));\n        }\n        {\n            final Reader input1 \u003d new CharArrayReader(\"\".toCharArray());\n            assertTrue(IOUtils.contentEqualsIgnoreEOL(input1, input1));\n        }\n        {\n            final Reader input1 \u003d  new CharArrayReader(\"321\\r\\n\".toCharArray());\n            assertTrue(IOUtils.contentEqualsIgnoreEOL(input1, input1));\n        }\n\n        Reader r1;\n        Reader r2;\n\n        r1 \u003d new CharArrayReader(\"\".toCharArray());\n        r2 \u003d new CharArrayReader(\"\".toCharArray());\n        assertTrue(IOUtils.contentEqualsIgnoreEOL(r1, r2));\n\n        r1 \u003d new CharArrayReader(\"1\".toCharArray());\n        r2 \u003d new CharArrayReader(\"1\".toCharArray());\n        assertTrue(IOUtils.contentEqualsIgnoreEOL(r1, r2));\n\n        r1 \u003d new CharArrayReader(\"1\".toCharArray());\n        r2 \u003d new CharArrayReader(\"2\".toCharArray());\n        assertFalse(IOUtils.contentEqualsIgnoreEOL(r1, r2));\n\n        r1 \u003d new CharArrayReader(\"123\\rabc\".toCharArray());\n        r2 \u003d new CharArrayReader(\"123\\nabc\".toCharArray());\n        assertTrue(IOUtils.contentEqualsIgnoreEOL(r1, r2));\n\n        r1 \u003d new CharArrayReader(\"321\".toCharArray());\n        r2 \u003d new CharArrayReader(\"321\\r\\n\".toCharArray());\n        assertTrue(IOUtils.contentEqualsIgnoreEOL(r1, r2));\n    }",
+    "begin_line": 292,
+    "end_line": 336,
+    "comment": "",
+    "child_ranges": [
+      "(line 293,col 9)-(line 296,col 9)",
+      "(line 297,col 9)-(line 300,col 9)",
+      "(line 301,col 9)-(line 304,col 9)",
+      "(line 305,col 9)-(line 308,col 9)",
+      "(line 309,col 9)-(line 312,col 9)",
+      "(line 314,col 9)-(line 314,col 18)",
+      "(line 315,col 9)-(line 315,col 18)",
+      "(line 317,col 9)-(line 317,col 51)",
+      "(line 318,col 9)-(line 318,col 51)",
+      "(line 319,col 9)-(line 319,col 59)",
+      "(line 321,col 9)-(line 321,col 52)",
+      "(line 322,col 9)-(line 322,col 52)",
+      "(line 323,col 9)-(line 323,col 59)",
+      "(line 325,col 9)-(line 325,col 52)",
+      "(line 326,col 9)-(line 326,col 52)",
+      "(line 327,col 9)-(line 327,col 60)",
+      "(line 329,col 9)-(line 329,col 59)",
+      "(line 330,col 9)-(line 330,col 59)",
+      "(line 331,col 9)-(line 331,col 59)",
+      "(line 333,col 9)-(line 333,col 54)",
+      "(line 334,col 9)-(line 334,col 58)",
+      "(line 335,col 9)-(line 335,col 59)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopy_ByteArray_OutputStream()",
+    "snippet": "@Test public void testCopy_ByteArray_OutputStream() throws Exception {\n        final File destination \u003d TestUtils.newFile(temporaryFolder, \"copy8.txt\");\n        byte[] in;\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            // Create our byte[]. Rely on testInputStreamToByteArray() to make sure this is valid.\n            in \u003d IOUtils.toByteArray(fin);\n        }\n\n        try (FileOutputStream fout \u003d new FileOutputStream(destination)) {\n            CopyUtils.copy(in, fout);\n\n            fout.flush();\n\n            TestUtils.checkFile(destination, m_testFile);\n            TestUtils.checkWrite(fout);\n        }\n        TestUtils.deleteFile(destination);\n    }",
+    "begin_line": 338,
+    "end_line": 355,
+    "comment": "",
+    "child_ranges": [
+      "(line 339,col 9)-(line 339,col 81)",
+      "(line 340,col 9)-(line 340,col 18)",
+      "(line 341,col 9)-(line 344,col 9)",
+      "(line 346,col 9)-(line 353,col 9)",
+      "(line 354,col 9)-(line 354,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopy_ByteArray_Writer()",
+    "snippet": "@Test public void testCopy_ByteArray_Writer() throws Exception {\n        final File destination \u003d TestUtils.newFile(temporaryFolder, \"copy7.txt\");\n        byte[] in;\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            // Create our byte[]. Rely on testInputStreamToByteArray() to make sure this is valid.\n            in \u003d IOUtils.toByteArray(fin);\n        }\n\n        try (FileWriter fout \u003d new FileWriter(destination)) {\n            CopyUtils.copy(in, fout);\n            fout.flush();\n            TestUtils.checkFile(destination, m_testFile);\n            TestUtils.checkWrite(fout);\n        }\n        TestUtils.deleteFile(destination);\n    }",
+    "begin_line": 357,
+    "end_line": 372,
+    "comment": "",
+    "child_ranges": [
+      "(line 358,col 9)-(line 358,col 81)",
+      "(line 359,col 9)-(line 359,col 18)",
+      "(line 360,col 9)-(line 363,col 9)",
+      "(line 365,col 9)-(line 370,col 9)",
+      "(line 371,col 9)-(line 371,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopy_String_Writer()",
+    "snippet": "@Test public void testCopy_String_Writer() throws Exception {\n        final File destination \u003d TestUtils.newFile(temporaryFolder, \"copy6.txt\");\n        String str;\n        try (FileReader fin \u003d new FileReader(m_testFile)) {\n            // Create our String. Rely on testReaderToString() to make sure this is valid.\n            str \u003d IOUtils.toString(fin);\n        }\n\n        try (FileWriter fout \u003d new FileWriter(destination)) {\n            CopyUtils.copy(str, fout);\n            fout.flush();\n\n            TestUtils.checkFile(destination, m_testFile);\n            TestUtils.checkWrite(fout);\n        }\n        TestUtils.deleteFile(destination);\n    }",
+    "begin_line": 374,
+    "end_line": 390,
+    "comment": "",
+    "child_ranges": [
+      "(line 375,col 9)-(line 375,col 81)",
+      "(line 376,col 9)-(line 376,col 19)",
+      "(line 377,col 9)-(line 380,col 9)",
+      "(line 382,col 9)-(line 388,col 9)",
+      "(line 389,col 9)-(line 389,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_CharExtraLength()",
+    "snippet": "@Test public void testCopyLarge_CharExtraLength() throws IOException {\n        CharArrayReader is \u003d null;\n        CharArrayWriter os \u003d null;\n        try {\n            // Create streams\n            is \u003d new CharArrayReader(carr);\n            os \u003d new CharArrayWriter();\n\n            // Test our copy method\n            // for extra length, it reads till EOF\n            assertEquals(200, IOUtils.copyLarge(is, os, 0, 2000));\n            final char[] oarr \u003d os.toCharArray();\n\n            // check that output length is correct\n            assertEquals(200, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals((char) -1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 392,
+    "end_line": 416,
+    "comment": "",
+    "child_ranges": [
+      "(line 393,col 9)-(line 393,col 34)",
+      "(line 394,col 9)-(line 394,col 34)",
+      "(line 395,col 9)-(line 415,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_CharFullLength()",
+    "snippet": "@Test public void testCopyLarge_CharFullLength() throws IOException {\n        CharArrayReader is \u003d null;\n        CharArrayWriter os \u003d null;\n        try {\n            // Create streams\n            is \u003d new CharArrayReader(carr);\n            os \u003d new CharArrayWriter();\n\n            // Test our copy method\n            assertEquals(200, IOUtils.copyLarge(is, os, 0, -1));\n            final char[] oarr \u003d os.toCharArray();\n\n            // check that output length is correct\n            assertEquals(200, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals((char) -1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 418,
+    "end_line": 441,
+    "comment": "",
+    "child_ranges": [
+      "(line 419,col 9)-(line 419,col 34)",
+      "(line 420,col 9)-(line 420,col 34)",
+      "(line 421,col 9)-(line 440,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_CharNoSkip()",
+    "snippet": "@Test public void testCopyLarge_CharNoSkip() throws IOException {\n        CharArrayReader is \u003d null;\n        CharArrayWriter os \u003d null;\n        try {\n            // Create streams\n            is \u003d new CharArrayReader(carr);\n            os \u003d new CharArrayWriter();\n\n            // Test our copy method\n            assertEquals(100, IOUtils.copyLarge(is, os, 0, 100));\n            final char[] oarr \u003d os.toCharArray();\n\n            // check that output length is correct\n            assertEquals(100, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals((char) -1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 443,
+    "end_line": 466,
+    "comment": "",
+    "child_ranges": [
+      "(line 444,col 9)-(line 444,col 34)",
+      "(line 445,col 9)-(line 445,col 34)",
+      "(line 446,col 9)-(line 465,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_CharSkip()",
+    "snippet": "@Test public void testCopyLarge_CharSkip() throws IOException {\n        CharArrayReader is \u003d null;\n        CharArrayWriter os \u003d null;\n        try {\n            // Create streams\n            is \u003d new CharArrayReader(carr);\n            os \u003d new CharArrayWriter();\n\n            // Test our copy method\n            assertEquals(100, IOUtils.copyLarge(is, os, 10, 100));\n            final char[] oarr \u003d os.toCharArray();\n\n            // check that output length is correct\n            assertEquals(100, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(11, oarr[1]);\n            assertEquals(79, oarr[69]);\n            assertEquals((char) -1, oarr[70]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 468,
+    "end_line": 491,
+    "comment": "",
+    "child_ranges": [
+      "(line 469,col 9)-(line 469,col 34)",
+      "(line 470,col 9)-(line 470,col 34)",
+      "(line 471,col 9)-(line 490,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_CharSkipInvalid()",
+    "snippet": "@Test public void testCopyLarge_CharSkipInvalid() throws IOException {\n        CharArrayReader is \u003d null;\n        CharArrayWriter os \u003d null;\n        try {\n            // Create streams\n            is \u003d new CharArrayReader(carr);\n            os \u003d new CharArrayWriter();\n\n            // Test our copy method\n            IOUtils.copyLarge(is, os, 1000, 100);\n            fail(\"Should have thrown EOFException\");\n        } catch (final EOFException ignore) {\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 493,
+    "end_line": 509,
+    "comment": "",
+    "child_ranges": [
+      "(line 494,col 9)-(line 494,col 34)",
+      "(line 495,col 9)-(line 495,col 34)",
+      "(line 496,col 9)-(line 508,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_ExtraLength()",
+    "snippet": "@Test public void testCopyLarge_ExtraLength() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            // for extra length, it reads till EOF\n            assertEquals(200, IOUtils.copyLarge(is, os, 0, 2000));\n            final byte[] oarr \u003d os.toByteArray();\n\n            // check that output length is correct\n            assertEquals(200, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals(-1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 511,
+    "end_line": 535,
+    "comment": "",
+    "child_ranges": [
+      "(line 512,col 9)-(line 512,col 39)",
+      "(line 513,col 9)-(line 513,col 40)",
+      "(line 514,col 9)-(line 534,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_FullLength()",
+    "snippet": "@Test public void testCopyLarge_FullLength() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            assertEquals(200, IOUtils.copyLarge(is, os, 0, -1));\n            final byte[] oarr \u003d os.toByteArray();\n\n            // check that output length is correct\n            assertEquals(200, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals(-1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 537,
+    "end_line": 560,
+    "comment": "",
+    "child_ranges": [
+      "(line 538,col 9)-(line 538,col 39)",
+      "(line 539,col 9)-(line 539,col 40)",
+      "(line 540,col 9)-(line 559,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_NoSkip()",
+    "snippet": "@Test public void testCopyLarge_NoSkip() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            assertEquals(100, IOUtils.copyLarge(is, os, 0, 100));\n            final byte[] oarr \u003d os.toByteArray();\n\n            // check that output length is correct\n            assertEquals(100, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals(-1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 562,
+    "end_line": 585,
+    "comment": "",
+    "child_ranges": [
+      "(line 563,col 9)-(line 563,col 39)",
+      "(line 564,col 9)-(line 564,col 40)",
+      "(line 565,col 9)-(line 584,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_Skip()",
+    "snippet": "@Test public void testCopyLarge_Skip() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            assertEquals(100, IOUtils.copyLarge(is, os, 10, 100));\n            final byte[] oarr \u003d os.toByteArray();\n\n            // check that output length is correct\n            assertEquals(100, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(11, oarr[1]);\n            assertEquals(79, oarr[69]);\n            assertEquals(-1, oarr[70]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 587,
+    "end_line": 610,
+    "comment": "",
+    "child_ranges": [
+      "(line 588,col 9)-(line 588,col 39)",
+      "(line 589,col 9)-(line 589,col 40)",
+      "(line 590,col 9)-(line 609,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_SkipInvalid()",
+    "snippet": "@Test public void testCopyLarge_SkipInvalid() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            IOUtils.copyLarge(is, os, 1000, 100);\n            fail(\"Should have thrown EOFException\");\n        } catch (final EOFException ignore) {\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 612,
+    "end_line": 628,
+    "comment": "",
+    "child_ranges": [
+      "(line 613,col 9)-(line 613,col 39)",
+      "(line 614,col 9)-(line 614,col 40)",
+      "(line 615,col 9)-(line 627,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testRead_ReadableByteChannel()",
+    "snippet": "@Test public void testRead_ReadableByteChannel() throws Exception {\n        final ByteBuffer buffer \u003d ByteBuffer.allocate(FILE_SIZE);\n        final FileInputStream fileInputStream \u003d new FileInputStream(m_testFile);\n        final FileChannel input \u003d fileInputStream.getChannel();\n        try {\n            assertEquals(FILE_SIZE, IOUtils.read(input, buffer));\n            assertEquals(0, IOUtils.read(input, buffer));\n            assertEquals(0, buffer.remaining());\n            assertEquals(0, input.read(buffer));\n            buffer.clear();\n            try {\n                IOUtils.readFully(input, buffer);\n                fail(\"Should have failed with EOFxception\");\n            } catch (final EOFException expected) {\n                // expected\n            }\n        } finally {\n            IOUtils.closeQuietly(input, fileInputStream);\n        }}",
+    "begin_line": 630,
+    "end_line": 648,
+    "comment": "",
+    "child_ranges": [
+      "(line 631,col 9)-(line 631,col 65)",
+      "(line 632,col 9)-(line 632,col 80)",
+      "(line 633,col 9)-(line 633,col 63)",
+      "(line 634,col 9)-(line 648,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_InputStream_ByteArray()",
+    "snippet": "@Test public void testReadFully_InputStream_ByteArray() throws Exception {\n        final int size \u003d 1027;\n\n        final byte[] buffer \u003d new byte[size];\n\n        final InputStream input \u003d new ByteArrayInputStream(new byte[size]);\n        try {\n            IOUtils.readFully(input, buffer, 0, -1);\n            fail(\"Should have failed with IllegalArgumentException\");\n        } catch (final IllegalArgumentException expected) {\n            // expected\n        }\n        IOUtils.readFully(input, buffer, 0, 0);\n        IOUtils.readFully(input, buffer, 0, size - 1);\n        try {\n            IOUtils.readFully(input, buffer, 0, 2);\n            fail(\"Should have failed with EOFxception\");\n        } catch (final EOFException expected) {\n            // expected\n        }\n        IOUtils.closeQuietly(input);\n\n    }",
+    "begin_line": 650,
+    "end_line": 672,
+    "comment": "",
+    "child_ranges": [
+      "(line 651,col 9)-(line 651,col 30)",
+      "(line 653,col 9)-(line 653,col 45)",
+      "(line 655,col 9)-(line 655,col 75)",
+      "(line 656,col 9)-(line 661,col 9)",
+      "(line 662,col 9)-(line 662,col 47)",
+      "(line 663,col 9)-(line 663,col 54)",
+      "(line 664,col 9)-(line 669,col 9)",
+      "(line 670,col 9)-(line 670,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_InputStream__ReturnByteArray()",
+    "snippet": "@Test public void testReadFully_InputStream__ReturnByteArray() throws Exception {\n        final byte[] bytes \u003d \"abcd1234\".getBytes(\"UTF-8\");\n        final ByteArrayInputStream stream \u003d new ByteArrayInputStream(bytes);\n\n        final byte[] result \u003d IOUtils.readFully(stream, bytes.length);\n\n        IOUtils.closeQuietly(stream);\n\n        assertEqualContent(result, bytes);\n    }",
+    "begin_line": 674,
+    "end_line": 683,
+    "comment": "",
+    "child_ranges": [
+      "(line 675,col 9)-(line 675,col 58)",
+      "(line 676,col 9)-(line 676,col 76)",
+      "(line 678,col 9)-(line 678,col 70)",
+      "(line 680,col 9)-(line 680,col 37)",
+      "(line 682,col 9)-(line 682,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_InputStream_Offset()",
+    "snippet": "@Test public void testReadFully_InputStream_Offset() throws Exception {\n        final byte[] bytes \u003d \"abcd1234\".getBytes(\"UTF-8\");\n        final ByteArrayInputStream stream \u003d new ByteArrayInputStream(bytes);\n        final byte[] buffer \u003d \"wx00000000\".getBytes(\"UTF-8\");\n        IOUtils.readFully(stream, buffer, 2, 8);\n        assertEquals(\"wxabcd1234\", new String(buffer, 0, buffer.length, \"UTF-8\"));\n        IOUtils.closeQuietly(stream);\n    }",
+    "begin_line": 685,
+    "end_line": 692,
+    "comment": "",
+    "child_ranges": [
+      "(line 686,col 9)-(line 686,col 58)",
+      "(line 687,col 9)-(line 687,col 76)",
+      "(line 688,col 9)-(line 688,col 61)",
+      "(line 689,col 9)-(line 689,col 48)",
+      "(line 690,col 9)-(line 690,col 82)",
+      "(line 691,col 9)-(line 691,col 37)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_ReadableByteChannel()",
+    "snippet": "@Test public void testReadFully_ReadableByteChannel() throws Exception {\n        final ByteBuffer buffer \u003d ByteBuffer.allocate(FILE_SIZE);\n        final FileInputStream fileInputStream \u003d new FileInputStream(m_testFile);\n        final FileChannel input \u003d fileInputStream.getChannel();\n        try {\n            IOUtils.readFully(input, buffer);\n            assertEquals(FILE_SIZE, buffer.position());\n            assertEquals(0, buffer.remaining());\n            assertEquals(0, input.read(buffer));\n            IOUtils.readFully(input, buffer);\n            assertEquals(FILE_SIZE, buffer.position());\n            assertEquals(0, buffer.remaining());\n            assertEquals(0, input.read(buffer));\n            IOUtils.readFully(input, buffer);\n            buffer.clear();\n            try {\n                IOUtils.readFully(input, buffer);\n                fail(\"Should have failed with EOFxception\");\n            } catch (final EOFException expected) {\n                // expected\n            }\n        } finally {\n            IOUtils.closeQuietly(input, fileInputStream);\n        }\n    }",
+    "begin_line": 694,
+    "end_line": 718,
+    "comment": "",
+    "child_ranges": [
+      "(line 695,col 9)-(line 695,col 65)",
+      "(line 696,col 9)-(line 696,col 80)",
+      "(line 697,col 9)-(line 697,col 63)",
+      "(line 698,col 9)-(line 717,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_Reader()",
+    "snippet": "@Test public void testReadFully_Reader() throws Exception {\n        final int size \u003d 1027;\n\n        final char[] buffer \u003d new char[size];\n\n        final Reader input \u003d new CharArrayReader(new char[size]);\n        IOUtils.readFully(input, buffer, 0, 0);\n        IOUtils.readFully(input, buffer, 0, size - 3);\n        try {\n            IOUtils.readFully(input, buffer, 0, -1);\n            fail(\"Should have failed with IllegalArgumentException\");\n        } catch (final IllegalArgumentException expected) {\n            // expected\n        }\n        try {\n            IOUtils.readFully(input, buffer, 0, 5);\n            fail(\"Should have failed with EOFException\");\n        } catch (final EOFException expected) {\n            // expected\n        }\n        IOUtils.closeQuietly(input);\n    }",
+    "begin_line": 720,
+    "end_line": 741,
+    "comment": "",
+    "child_ranges": [
+      "(line 721,col 9)-(line 721,col 30)",
+      "(line 723,col 9)-(line 723,col 45)",
+      "(line 725,col 9)-(line 725,col 65)",
+      "(line 726,col 9)-(line 726,col 47)",
+      "(line 727,col 9)-(line 727,col 54)",
+      "(line 728,col 9)-(line 733,col 9)",
+      "(line 734,col 9)-(line 739,col 9)",
+      "(line 740,col 9)-(line 740,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadFully_Reader_Offset()",
+    "snippet": "@Test public void testReadFully_Reader_Offset() throws Exception {\n        final Reader reader \u003d new StringReader(\"abcd1234\");\n        final char[] buffer \u003d \"wx00000000\".toCharArray();\n        IOUtils.readFully(reader, buffer, 2, 8);\n        assertEquals(\"wxabcd1234\", new String(buffer));\n        IOUtils.closeQuietly(reader);\n    }",
+    "begin_line": 743,
+    "end_line": 749,
+    "comment": "",
+    "child_ranges": [
+      "(line 744,col 9)-(line 744,col 59)",
+      "(line 745,col 9)-(line 745,col 57)",
+      "(line 746,col 9)-(line 746,col 48)",
+      "(line 747,col 9)-(line 747,col 55)",
+      "(line 748,col 9)-(line 748,col 37)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadLines_InputStream()",
+    "snippet": "@Test public void testReadLines_InputStream() throws Exception {\n        final File file \u003d TestUtils.newFile(temporaryFolder, \"lines.txt\");\n        InputStream in \u003d null;\n        try {\n            final String[] data \u003d new String[] { \"hello\", \"world\", \"\", \"this is\", \"some text\" };\n            TestUtils.createLineBasedFile(file, data);\n\n            in \u003d new FileInputStream(file);\n            final List\u003cString\u003e lines \u003d IOUtils.readLines(in);\n            assertEquals(Arrays.asList(data), lines);\n            assertEquals(-1, in.read());\n        } finally {\n            IOUtils.closeQuietly(in);\n            TestUtils.deleteFile(file);\n        }\n    }",
+    "begin_line": 751,
+    "end_line": 766,
+    "comment": "",
+    "child_ranges": [
+      "(line 752,col 9)-(line 752,col 74)",
+      "(line 753,col 9)-(line 753,col 30)",
+      "(line 754,col 9)-(line 765,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadLines_InputStream_String()",
+    "snippet": "@Test public void testReadLines_InputStream_String() throws Exception {\n        final File file \u003d TestUtils.newFile(temporaryFolder, \"lines.txt\");\n        InputStream in \u003d null;\n        try {\n            final String[] data \u003d new String[] { \"hello\", \"/u1234\", \"\", \"this is\", \"some text\" };\n            TestUtils.createLineBasedFile(file, data);\n\n            in \u003d new FileInputStream(file);\n            final List\u003cString\u003e lines \u003d IOUtils.readLines(in, \"UTF-8\");\n            assertEquals(Arrays.asList(data), lines);\n            assertEquals(-1, in.read());\n        } finally {\n            IOUtils.closeQuietly(in);\n            TestUtils.deleteFile(file);\n        }\n    }",
+    "begin_line": 768,
+    "end_line": 783,
+    "comment": "",
+    "child_ranges": [
+      "(line 769,col 9)-(line 769,col 74)",
+      "(line 770,col 9)-(line 770,col 30)",
+      "(line 771,col 9)-(line 782,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testReadLines_Reader()",
+    "snippet": "@Test public void testReadLines_Reader() throws Exception {\n        final File file \u003d TestUtils.newFile(temporaryFolder, \"lines.txt\");\n        Reader in \u003d null;\n        try {\n            final String[] data \u003d new String[] { \"hello\", \"/u1234\", \"\", \"this is\", \"some text\" };\n            TestUtils.createLineBasedFile(file, data);\n\n            in \u003d new InputStreamReader(new FileInputStream(file));\n            final List\u003cString\u003e lines \u003d IOUtils.readLines(in);\n            assertEquals(Arrays.asList(data), lines);\n            assertEquals(-1, in.read());\n        } finally {\n            IOUtils.closeQuietly(in);\n            TestUtils.deleteFile(file);\n        }\n    }",
+    "begin_line": 785,
+    "end_line": 800,
+    "comment": "",
+    "child_ranges": [
+      "(line 786,col 9)-(line 786,col 74)",
+      "(line 787,col 9)-(line 787,col 25)",
+      "(line 788,col 9)-(line 799,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkip_FileReader()",
+    "snippet": "@Test public void testSkip_FileReader() throws Exception {\n        try (FileReader in \u003d new FileReader(m_testFile)) {\n            assertEquals(FILE_SIZE - 10, IOUtils.skip(in, FILE_SIZE - 10));\n            assertEquals(10, IOUtils.skip(in, 20));\n            assertEquals(0, IOUtils.skip(in, 10));\n        }\n    }",
+    "begin_line": 802,
+    "end_line": 808,
+    "comment": "",
+    "child_ranges": [
+      "(line 803,col 9)-(line 807,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkip_InputStream()",
+    "snippet": "@Test public void testSkip_InputStream() throws Exception {\n        try (InputStream in \u003d new FileInputStream(m_testFile)) {\n            assertEquals(FILE_SIZE - 10, IOUtils.skip(in, FILE_SIZE - 10));\n            assertEquals(10, IOUtils.skip(in, 20));\n            assertEquals(0, IOUtils.skip(in, 10));\n        }\n    }",
+    "begin_line": 810,
+    "end_line": 816,
+    "comment": "",
+    "child_ranges": [
+      "(line 811,col 9)-(line 815,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkip_ReadableByteChannel()",
+    "snippet": "@Test public void testSkip_ReadableByteChannel() throws Exception {\n        final FileInputStream fileInputStream \u003d new FileInputStream(m_testFile);\n        final FileChannel fileChannel \u003d fileInputStream.getChannel();\n        try {\n            assertEquals(FILE_SIZE - 10, IOUtils.skip(fileChannel, FILE_SIZE - 10));\n            assertEquals(10, IOUtils.skip(fileChannel, 20));\n            assertEquals(0, IOUtils.skip(fileChannel, 10));\n        } finally {\n            IOUtils.closeQuietly(fileChannel, fileInputStream);\n        }\n    }",
+    "begin_line": 818,
+    "end_line": 828,
+    "comment": "",
+    "child_ranges": [
+      "(line 819,col 9)-(line 819,col 80)",
+      "(line 820,col 9)-(line 820,col 69)",
+      "(line 821,col 9)-(line 827,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkipFully_InputStream()",
+    "snippet": "@Test public void testSkipFully_InputStream() throws Exception {\n        final int size \u003d 1027;\n\n        final InputStream input \u003d new ByteArrayInputStream(new byte[size]);\n        try {\n            IOUtils.skipFully(input, -1);\n            fail(\"Should have failed with IllegalArgumentException\");\n        } catch (final IllegalArgumentException expected) {\n            // expected\n        }\n        IOUtils.skipFully(input, 0);\n        IOUtils.skipFully(input, size - 1);\n        try {\n            IOUtils.skipFully(input, 2);\n            fail(\"Should have failed with IOException\");\n        } catch (final IOException expected) {\n            // expected\n        }\n        IOUtils.closeQuietly(input);\n\n    }",
+    "begin_line": 830,
+    "end_line": 850,
+    "comment": "",
+    "child_ranges": [
+      "(line 831,col 9)-(line 831,col 30)",
+      "(line 833,col 9)-(line 833,col 75)",
+      "(line 834,col 9)-(line 839,col 9)",
+      "(line 840,col 9)-(line 840,col 36)",
+      "(line 841,col 9)-(line 841,col 43)",
+      "(line 842,col 9)-(line 847,col 9)",
+      "(line 848,col 9)-(line 848,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkipFully_ReadableByteChannel()",
+    "snippet": "@Test public void testSkipFully_ReadableByteChannel() throws Exception {\n        final FileInputStream fileInputStream \u003d new FileInputStream(m_testFile);\n        final FileChannel fileChannel \u003d fileInputStream.getChannel();\n        try {\n            try {\n                IOUtils.skipFully(fileChannel, -1);\n                fail(\"Should have failed with IllegalArgumentException\");\n            } catch (final IllegalArgumentException expected) {\n                // expected\n            }\n            IOUtils.skipFully(fileChannel, 0);\n            IOUtils.skipFully(fileChannel, FILE_SIZE - 1);\n            try {\n                IOUtils.skipFully(fileChannel, 2);\n                fail(\"Should have failed with IOException\");\n            } catch (final IOException expected) {\n                // expected\n            }\n        } finally {\n            IOUtils.closeQuietly(fileChannel, fileInputStream);\n        }\n    }",
+    "begin_line": 852,
+    "end_line": 873,
+    "comment": "",
+    "child_ranges": [
+      "(line 853,col 9)-(line 853,col 80)",
+      "(line 854,col 9)-(line 854,col 69)",
+      "(line 855,col 9)-(line 872,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testSkipFully_Reader()",
+    "snippet": "@Test public void testSkipFully_Reader() throws Exception {\n        final int size \u003d 1027;\n\n        final Reader input \u003d new CharArrayReader(new char[size]);\n        IOUtils.skipFully(input, 0);\n        IOUtils.skipFully(input, size - 3);\n        try {\n            IOUtils.skipFully(input, -1);\n            fail(\"Should have failed with IllegalArgumentException\");\n        } catch (final IllegalArgumentException expected) {\n            // expected\n        }\n        try {\n            IOUtils.skipFully(input, 5);\n            fail(\"Should have failed with IOException\");\n        } catch (final IOException expected) {\n            // expected\n        }\n        IOUtils.closeQuietly(input);\n    }",
+    "begin_line": 875,
+    "end_line": 894,
+    "comment": "",
+    "child_ranges": [
+      "(line 876,col 9)-(line 876,col 30)",
+      "(line 878,col 9)-(line 878,col 65)",
+      "(line 879,col 9)-(line 879,col 36)",
+      "(line 880,col 9)-(line 880,col 43)",
+      "(line 881,col 9)-(line 886,col 9)",
+      "(line 887,col 9)-(line 892,col 9)",
+      "(line 893,col 9)-(line 893,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testStringToOutputStream()",
+    "snippet": "@Test public void testStringToOutputStream() throws Exception {\n        final File destination \u003d TestUtils.newFile(temporaryFolder, \"copy5.txt\");\n        String str;\n        try (FileReader fin \u003d new FileReader(m_testFile)) {\n            // Create our String. Rely on testReaderToString() to make sure this is valid.\n            str \u003d IOUtils.toString(fin);\n        }\n\n        try (FileOutputStream fout \u003d new FileOutputStream(destination)) {\n            CopyUtils.copy(str, fout);\n            // Note: this method *does* flush. It is equivalent to:\n            // OutputStreamWriter _out \u003d new OutputStreamWriter(fout);\n            // CopyUtils.copy( str, _out, 4096 ); // copy( Reader, Writer, int );\n            // _out.flush();\n            // out \u003d fout;\n            // note: we don\u0027t flush here; this IOUtils method does it for us\n\n            TestUtils.checkFile(destination, m_testFile);\n            TestUtils.checkWrite(fout);\n        }\n        TestUtils.deleteFile(destination);\n    }",
+    "begin_line": 896,
+    "end_line": 917,
+    "comment": "",
+    "child_ranges": [
+      "(line 897,col 9)-(line 897,col 81)",
+      "(line 898,col 9)-(line 898,col 19)",
+      "(line 899,col 9)-(line 902,col 9)",
+      "(line 904,col 9)-(line 915,col 9)",
+      "(line 916,col 9)-(line 916,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToBufferedInputStream_InputStream()",
+    "snippet": "@Test public void testToBufferedInputStream_InputStream() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final InputStream in \u003d IOUtils.toBufferedInputStream(fin);\n            final byte[] out \u003d IOUtils.toByteArray(in);\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all bytes were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 919,
+    "end_line": 928,
+    "comment": "",
+    "child_ranges": [
+      "(line 920,col 9)-(line 927,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToBufferedInputStreamWithBufferSize_InputStream()",
+    "snippet": "@Test public void testToBufferedInputStreamWithBufferSize_InputStream() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final InputStream in \u003d IOUtils.toBufferedInputStream(fin, 2048);\n            final byte[] out \u003d IOUtils.toByteArray(in);\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all bytes were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 930,
+    "end_line": 939,
+    "comment": "",
+    "child_ranges": [
+      "(line 931,col 9)-(line 938,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream()",
+    "snippet": "@Test public void testToByteArray_InputStream() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final byte[] out \u003d IOUtils.toByteArray(fin);\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all bytes were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 941,
+    "end_line": 949,
+    "comment": "",
+    "child_ranges": [
+      "(line 942,col 9)-(line 948,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream_NegativeSize()",
+    "snippet": "@Test public void testToByteArray_InputStream_NegativeSize() throws Exception {\n\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            IOUtils.toByteArray(fin, -1);\n            fail(\"IllegalArgumentException expected\");\n        } catch (final IllegalArgumentException exc) {\n            assertTrue(exc.getMessage().startsWith(\"Size must be equal or greater than zero\"),\n                    \"Exception message does not start with \\\"Size must be equal or greater than zero\\\"\");\n        }\n\n    }",
+    "begin_line": 951,
+    "end_line": 961,
+    "comment": "",
+    "child_ranges": [
+      "(line 953,col 9)-(line 959,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream_Size()",
+    "snippet": "@Test public void testToByteArray_InputStream_Size() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final byte[] out \u003d IOUtils.toByteArray(fin, m_testFile.length());\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all bytes were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size: out.length\u003d\" + out.length + \"!\u003d\" + FILE_SIZE);\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 963,
+    "end_line": 971,
+    "comment": "",
+    "child_ranges": [
+      "(line 964,col 9)-(line 970,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream_SizeIllegal()",
+    "snippet": "@Test public void testToByteArray_InputStream_SizeIllegal() throws Exception {\n\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            IOUtils.toByteArray(fin, m_testFile.length() + 1);\n            fail(\"IOException expected\");\n        } catch (final IOException exc) {\n            assertTrue(exc.getMessage().startsWith(\"Unexpected read size\"),\n                    \"Exception message does not start with \\\"Unexpected read size\\\"\");\n        }\n\n    }",
+    "begin_line": 973,
+    "end_line": 983,
+    "comment": "",
+    "child_ranges": [
+      "(line 975,col 9)-(line 981,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream_SizeLong()",
+    "snippet": "@Test public void testToByteArray_InputStream_SizeLong() throws Exception {\n\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            IOUtils.toByteArray(fin, (long) Integer.MAX_VALUE + 1);\n            fail(\"IOException expected\");\n        } catch (final IllegalArgumentException exc) {\n            assertTrue(exc.getMessage().startsWith(\"Size cannot be greater than Integer max value\"),\n                    \"Exception message does not start with \\\"Size cannot be greater than Integer max value\\\"\");\n        }\n\n    }",
+    "begin_line": 985,
+    "end_line": 995,
+    "comment": "",
+    "child_ranges": [
+      "(line 987,col 9)-(line 993,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_InputStream_SizeZero()",
+    "snippet": "@Test public void testToByteArray_InputStream_SizeZero() throws Exception {\n\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final byte[] out \u003d IOUtils.toByteArray(fin, 0);\n            assertNotNull(out, \"Out cannot be null\");\n            assertEquals(0, out.length, \"Out length must be 0\");\n        }\n    }",
+    "begin_line": 997,
+    "end_line": 1004,
+    "comment": "",
+    "child_ranges": [
+      "(line 999,col 9)-(line 1003,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_Reader()",
+    "snippet": "@Test public void testToByteArray_Reader() throws IOException {\n        final String charsetName \u003d \"UTF-8\";\n        final byte[] expecteds \u003d charsetName.getBytes(charsetName);\n        byte[] actuals \u003d IOUtils.toByteArray(new InputStreamReader(new ByteArrayInputStream(expecteds)));\n        assertArrayEquals(expecteds, actuals);\n        actuals \u003d IOUtils.toByteArray(new InputStreamReader(new ByteArrayInputStream(expecteds)), charsetName);\n        assertArrayEquals(expecteds, actuals);\n    }",
+    "begin_line": 1006,
+    "end_line": 1013,
+    "comment": "",
+    "child_ranges": [
+      "(line 1007,col 9)-(line 1007,col 43)",
+      "(line 1008,col 9)-(line 1008,col 67)",
+      "(line 1009,col 9)-(line 1009,col 105)",
+      "(line 1010,col 9)-(line 1010,col 46)",
+      "(line 1011,col 9)-(line 1011,col 111)",
+      "(line 1012,col 9)-(line 1012,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_String()",
+    "snippet": "@Test public void testToByteArray_String() throws Exception {\n        try (FileReader fin \u003d new FileReader(m_testFile)) {\n            // Create our String. Rely on testReaderToString() to make sure this is valid.\n            final String str \u003d IOUtils.toString(fin);\n\n            final byte[] out \u003d IOUtils.toByteArray(str);\n            assertEqualContent(str.getBytes(), out);\n        }\n    }",
+    "begin_line": 1015,
+    "end_line": 1023,
+    "comment": "",
+    "child_ranges": [
+      "(line 1016,col 9)-(line 1022,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_URI()",
+    "snippet": "@Test public void testToByteArray_URI() throws Exception {\n        final URI url \u003d m_testFile.toURI();\n        final byte[] actual \u003d IOUtils.toByteArray(url);\n        assertEquals(FILE_SIZE, actual.length);\n    }",
+    "begin_line": 1025,
+    "end_line": 1029,
+    "comment": "",
+    "child_ranges": [
+      "(line 1026,col 9)-(line 1026,col 43)",
+      "(line 1027,col 9)-(line 1027,col 55)",
+      "(line 1028,col 9)-(line 1028,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_URL()",
+    "snippet": "@Test public void testToByteArray_URL() throws Exception {\n        final URL url \u003d m_testFile.toURI().toURL();\n        final byte[] actual \u003d IOUtils.toByteArray(url);\n        assertEquals(FILE_SIZE, actual.length);\n    }",
+    "begin_line": 1031,
+    "end_line": 1035,
+    "comment": "",
+    "child_ranges": [
+      "(line 1032,col 9)-(line 1032,col 51)",
+      "(line 1033,col 9)-(line 1033,col 55)",
+      "(line 1034,col 9)-(line 1034,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToByteArray_URLConnection()",
+    "snippet": "@Test public void testToByteArray_URLConnection() throws Exception {\n        final URLConnection urlConn \u003d m_testFile.toURI().toURL().openConnection();\n        byte[] actual;\n        try {\n            actual \u003d IOUtils.toByteArray(urlConn);\n        } finally {\n            IOUtils.close(urlConn);\n        }\n        assertEquals(FILE_SIZE, actual.length);\n    }",
+    "begin_line": 1037,
+    "end_line": 1046,
+    "comment": "",
+    "child_ranges": [
+      "(line 1038,col 9)-(line 1038,col 82)",
+      "(line 1039,col 9)-(line 1039,col 22)",
+      "(line 1040,col 9)-(line 1044,col 9)",
+      "(line 1045,col 9)-(line 1045,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToCharArray_InputStream()",
+    "snippet": "@Test public void testToCharArray_InputStream() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final char[] out \u003d IOUtils.toCharArray(fin);\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all chars were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 1048,
+    "end_line": 1056,
+    "comment": "",
+    "child_ranges": [
+      "(line 1049,col 9)-(line 1055,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToCharArray_InputStream_CharsetName()",
+    "snippet": "@Test public void testToCharArray_InputStream_CharsetName() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final char[] out \u003d IOUtils.toCharArray(fin, \"UTF-8\");\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all chars were read\");\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 1058,
+    "end_line": 1066,
+    "comment": "",
+    "child_ranges": [
+      "(line 1059,col 9)-(line 1065,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToCharArray_Reader()",
+    "snippet": "@Test public void testToCharArray_Reader() throws Exception {\n        try (FileReader fr \u003d new FileReader(m_testFile)) {\n            final char[] out \u003d IOUtils.toCharArray(fr);\n            assertNotNull(out);\n            assertEquals(FILE_SIZE, out.length, \"Wrong output size\");\n            TestUtils.assertEqualContent(out, m_testFile);\n        }\n    }",
+    "begin_line": 1068,
+    "end_line": 1075,
+    "comment": "",
+    "child_ranges": [
+      "(line 1069,col 9)-(line 1074,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToInputStream_CharSequence()",
+    "snippet": "@Test public void testToInputStream_CharSequence() throws Exception {\n        final CharSequence csq \u003d new StringBuilder(\"Abc123Xyz!\");\n        InputStream inStream \u003d IOUtils.toInputStream(csq); // deliberately testing deprecated method\n        byte[] bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(csq.toString().getBytes(), bytes);\n        inStream \u003d IOUtils.toInputStream(csq, (String) null);\n        bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(csq.toString().getBytes(), bytes);\n        inStream \u003d IOUtils.toInputStream(csq, \"UTF-8\");\n        bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(csq.toString().getBytes(\"UTF-8\"), bytes);\n    }",
+    "begin_line": 1085,
+    "end_line": 1096,
+    "comment": "/** \n * Test for  {@link IOUtils#toInputStream(CharSequence)} and {@link IOUtils#toInputStream(CharSequence,String)}. Note, this test utilizes on  {@link IOUtils#toByteArray(java.io.InputStream)} and so relies on{@link #testToByteArray_InputStream()} to ensure this method functions correctly.\n * @throws Exception on error\n */\n",
+    "child_ranges": [
+      "(line 1086,col 9)-(line 1086,col 65)",
+      "(line 1087,col 9)-(line 1087,col 58)",
+      "(line 1088,col 9)-(line 1088,col 53)",
+      "(line 1089,col 9)-(line 1089,col 61)",
+      "(line 1090,col 9)-(line 1090,col 61)",
+      "(line 1091,col 9)-(line 1091,col 46)",
+      "(line 1092,col 9)-(line 1092,col 61)",
+      "(line 1093,col 9)-(line 1093,col 55)",
+      "(line 1094,col 9)-(line 1094,col 46)",
+      "(line 1095,col 9)-(line 1095,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToInputStream_String()",
+    "snippet": "@Test public void testToInputStream_String() throws Exception {\n        final String str \u003d \"Abc123Xyz!\";\n        InputStream inStream \u003d IOUtils.toInputStream(str);\n        byte[] bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(str.getBytes(), bytes);\n        inStream \u003d IOUtils.toInputStream(str, (String) null);\n        bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(str.getBytes(), bytes);\n        inStream \u003d IOUtils.toInputStream(str, \"UTF-8\");\n        bytes \u003d IOUtils.toByteArray(inStream);\n        assertEqualContent(str.getBytes(\"UTF-8\"), bytes);\n    }",
+    "begin_line": 1108,
+    "end_line": 1119,
+    "comment": "/** \n * Test for  {@link IOUtils#toInputStream(String)} and {@link IOUtils#toInputStream(String,String)}. Note, this test utilizes on  {@link IOUtils#toByteArray(java.io.InputStream)} and so relies on{@link #testToByteArray_InputStream()} to ensure this method functions correctly.\n * @throws Exception on error\n */\n",
+    "child_ranges": [
+      "(line 1109,col 9)-(line 1109,col 40)",
+      "(line 1110,col 9)-(line 1110,col 58)",
+      "(line 1111,col 9)-(line 1111,col 53)",
+      "(line 1112,col 9)-(line 1112,col 50)",
+      "(line 1113,col 9)-(line 1113,col 61)",
+      "(line 1114,col 9)-(line 1114,col 46)",
+      "(line 1115,col 9)-(line 1115,col 50)",
+      "(line 1116,col 9)-(line 1116,col 55)",
+      "(line 1117,col 9)-(line 1117,col 46)",
+      "(line 1118,col 9)-(line 1118,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_ByteArray()",
+    "snippet": "@Test public void testToString_ByteArray() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final byte[] in \u003d IOUtils.toByteArray(fin);\n            // Create our byte[]. Rely on testInputStreamToByteArray() to make sure this is valid.\n            final String str \u003d IOUtils.toString(in);\n            assertEqualContent(in, str.getBytes());\n        }\n    }",
+    "begin_line": 1121,
+    "end_line": 1128,
+    "comment": "",
+    "child_ranges": [
+      "(line 1122,col 9)-(line 1127,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_InputStream()",
+    "snippet": "@Test public void testToString_InputStream() throws Exception {\n        try (FileInputStream fin \u003d new FileInputStream(m_testFile)) {\n            final String out \u003d IOUtils.toString(fin);\n            assertNotNull(out);\n            assertEquals(0, fin.available(), \"Not all bytes were read\");\n            assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n        }\n    }",
+    "begin_line": 1130,
+    "end_line": 1137,
+    "comment": "",
+    "child_ranges": [
+      "(line 1131,col 9)-(line 1136,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_Reader()",
+    "snippet": "@Test public void testToString_Reader() throws Exception {\n        try (FileReader fin \u003d new FileReader(m_testFile)) {\n            final String out \u003d IOUtils.toString(fin);\n            assertNotNull(out);\n            assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n        }\n    }",
+    "begin_line": 1139,
+    "end_line": 1145,
+    "comment": "",
+    "child_ranges": [
+      "(line 1140,col 9)-(line 1144,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URI()",
+    "snippet": "@Test public void testToString_URI() throws Exception {\n        final URI url \u003d m_testFile.toURI();\n        final String out \u003d IOUtils.toString(url);\n        assertNotNull(out);\n        assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n    }",
+    "begin_line": 1147,
+    "end_line": 1152,
+    "comment": "",
+    "child_ranges": [
+      "(line 1148,col 9)-(line 1148,col 43)",
+      "(line 1149,col 9)-(line 1149,col 49)",
+      "(line 1150,col 9)-(line 1150,col 27)",
+      "(line 1151,col 9)-(line 1151,col 67)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URI(java.lang.String)",
+    "snippet": "private void testToString_URI(final String encoding) throws Exception {\n        final URI uri \u003d m_testFile.toURI();\n        final String out \u003d IOUtils.toString(uri, encoding);\n        assertNotNull(out);\n        assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n    }",
+    "begin_line": 1154,
+    "end_line": 1159,
+    "comment": "",
+    "child_ranges": [
+      "(line 1155,col 9)-(line 1155,col 43)",
+      "(line 1156,col 9)-(line 1156,col 59)",
+      "(line 1157,col 9)-(line 1157,col 27)",
+      "(line 1158,col 9)-(line 1158,col 67)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URI_CharsetName()",
+    "snippet": "@Test public void testToString_URI_CharsetName() throws Exception {\n        testToString_URI(\"US-ASCII\");\n    }",
+    "begin_line": 1161,
+    "end_line": 1163,
+    "comment": "",
+    "child_ranges": [
+      "(line 1162,col 9)-(line 1162,col 37)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URI_CharsetNameNull()",
+    "snippet": "@Test public void testToString_URI_CharsetNameNull() throws Exception {\n        testToString_URI(null);\n    }",
+    "begin_line": 1165,
+    "end_line": 1167,
+    "comment": "",
+    "child_ranges": [
+      "(line 1166,col 9)-(line 1166,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URL()",
+    "snippet": "@Test public void testToString_URL() throws Exception {\n        final URL url \u003d m_testFile.toURI().toURL();\n        final String out \u003d IOUtils.toString(url);\n        assertNotNull(out);\n        assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n    }",
+    "begin_line": 1169,
+    "end_line": 1174,
+    "comment": "",
+    "child_ranges": [
+      "(line 1170,col 9)-(line 1170,col 51)",
+      "(line 1171,col 9)-(line 1171,col 49)",
+      "(line 1172,col 9)-(line 1172,col 27)",
+      "(line 1173,col 9)-(line 1173,col 67)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URL(java.lang.String)",
+    "snippet": "private void testToString_URL(final String encoding) throws Exception {\n        final URL url \u003d m_testFile.toURI().toURL();\n        final String out \u003d IOUtils.toString(url, encoding);\n        assertNotNull(out);\n        assertEquals(FILE_SIZE, out.length(), \"Wrong output size\");\n    }",
+    "begin_line": 1176,
+    "end_line": 1181,
+    "comment": "",
+    "child_ranges": [
+      "(line 1177,col 9)-(line 1177,col 51)",
+      "(line 1178,col 9)-(line 1178,col 59)",
+      "(line 1179,col 9)-(line 1179,col 27)",
+      "(line 1180,col 9)-(line 1180,col 67)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URL_CharsetName()",
+    "snippet": "@Test public void testToString_URL_CharsetName() throws Exception {\n        testToString_URL(\"US-ASCII\");\n    }",
+    "begin_line": 1183,
+    "end_line": 1185,
+    "comment": "",
+    "child_ranges": [
+      "(line 1184,col 9)-(line 1184,col 37)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testToString_URL_CharsetNameNull()",
+    "snippet": "@Test public void testToString_URL_CharsetNameNull() throws Exception {\n        testToString_URL(null);\n    }",
+    "begin_line": 1187,
+    "end_line": 1189,
+    "comment": "",
+    "child_ranges": [
+      "(line 1188,col 9)-(line 1188,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_ExistingResourceAtRootPackage()",
+    "snippet": "@Test public void testResourceToString_ExistingResourceAtRootPackage() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/test-file-simple-utf8.bin\").toURI()).length();\n        final String content \u003d IOUtils.resourceToString(\"/test-file-simple-utf8.bin\", StandardCharsets.UTF_8);\n\n        assertNotNull(content);\n        assertEquals(fileSize, content.getBytes().length);\n    }",
+    "begin_line": 1191,
+    "end_line": 1197,
+    "comment": "",
+    "child_ranges": [
+      "(line 1192,col 9)-(line 1192,col 110)",
+      "(line 1193,col 9)-(line 1193,col 110)",
+      "(line 1195,col 9)-(line 1195,col 31)",
+      "(line 1196,col 9)-(line 1196,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_ExistingResourceAtRootPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToString_ExistingResourceAtRootPackage_WithClassLoader() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/test-file-simple-utf8.bin\").toURI()).length();\n        final String content \u003d IOUtils.resourceToString(\n                \"test-file-simple-utf8.bin\",\n                StandardCharsets.UTF_8,\n                ClassLoader.getSystemClassLoader()\n        );\n\n        assertNotNull(content);\n        assertEquals(fileSize, content.getBytes().length);\n    }",
+    "begin_line": 1199,
+    "end_line": 1209,
+    "comment": "",
+    "child_ranges": [
+      "(line 1200,col 9)-(line 1200,col 110)",
+      "(line 1201,col 9)-(line 1205,col 10)",
+      "(line 1207,col 9)-(line 1207,col 31)",
+      "(line 1208,col 9)-(line 1208,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_ExistingResourceAtSubPackage()",
+    "snippet": "@Test public void testResourceToString_ExistingResourceAtSubPackage() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\").toURI()).length();\n        final String content \u003d IOUtils.resourceToString(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\", StandardCharsets.UTF_8);\n\n        assertNotNull(content);\n        assertEquals(fileSize, content.getBytes().length);\n    }",
+    "begin_line": 1211,
+    "end_line": 1217,
+    "comment": "",
+    "child_ranges": [
+      "(line 1212,col 9)-(line 1212,col 130)",
+      "(line 1213,col 9)-(line 1213,col 130)",
+      "(line 1215,col 9)-(line 1215,col 31)",
+      "(line 1216,col 9)-(line 1216,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_ExistingResourceAtSubPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToString_ExistingResourceAtSubPackage_WithClassLoader() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\").toURI()).length();\n        final String content \u003d IOUtils.resourceToString(\n                \"org/apache/commons/io/FileUtilsTestDataCR.dat\",\n                StandardCharsets.UTF_8,\n                ClassLoader.getSystemClassLoader()\n        );\n\n        assertNotNull(content);\n        assertEquals(fileSize, content.getBytes().length);\n    }",
+    "begin_line": 1219,
+    "end_line": 1229,
+    "comment": "",
+    "child_ranges": [
+      "(line 1220,col 9)-(line 1220,col 130)",
+      "(line 1221,col 9)-(line 1225,col 10)",
+      "(line 1227,col 9)-(line 1227,col 31)",
+      "(line 1228,col 9)-(line 1228,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NonExistingResource()",
+    "snippet": "@Test public void testResourceToString_NonExistingResource() {\n        assertThrows(IOException.class,\n                () -\u003e IOUtils.resourceToString(\"/non-existing-file.bin\", StandardCharsets.UTF_8));\n    }",
+    "begin_line": 1231,
+    "end_line": 1234,
+    "comment": "",
+    "child_ranges": [
+      "(line 1232,col 9)-(line 1233,col 98)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NonExistingResource_WithClassLoader()",
+    "snippet": "@Test public void testResourceToString_NonExistingResource_WithClassLoader() {\n        assertThrows(IOException.class,\n                () -\u003e IOUtils.resourceToString(\"non-existing-file.bin\", StandardCharsets.UTF_8, ClassLoader.getSystemClassLoader()));\n    }",
+    "begin_line": 1236,
+    "end_line": 1239,
+    "comment": "",
+    "child_ranges": [
+      "(line 1237,col 9)-(line 1238,col 133)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NullResource()",
+    "snippet": "@Test public void testResourceToString_NullResource() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToString(null, StandardCharsets.UTF_8);\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1241,
+    "end_line": 1253,
+    "comment": "",
+    "child_ranges": [
+      "(line 1242,col 9)-(line 1242,col 42)",
+      "(line 1244,col 9)-(line 1250,col 9)",
+      "(line 1252,col 9)-(line 1252,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NullResource_WithClassLoader()",
+    "snippet": "@Test public void testResourceToString_NullResource_WithClassLoader() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToString(null, StandardCharsets.UTF_8, ClassLoader.getSystemClassLoader());\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1255,
+    "end_line": 1267,
+    "comment": "",
+    "child_ranges": [
+      "(line 1256,col 9)-(line 1256,col 42)",
+      "(line 1258,col 9)-(line 1264,col 9)",
+      "(line 1266,col 9)-(line 1266,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NullCharset()",
+    "snippet": "@Test public void testResourceToString_NullCharset() throws Exception {\n        IOUtils.resourceToString(\"/test-file-utf8.bin\", null);\n    }",
+    "begin_line": 1269,
+    "end_line": 1271,
+    "comment": "",
+    "child_ranges": [
+      "(line 1270,col 9)-(line 1270,col 62)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToString_NullCharset_WithClassLoader()",
+    "snippet": "@Test public void testResourceToString_NullCharset_WithClassLoader() throws Exception {\n        IOUtils.resourceToString(\"test-file-utf8.bin\", null, ClassLoader.getSystemClassLoader());\n    }",
+    "begin_line": 1273,
+    "end_line": 1275,
+    "comment": "",
+    "child_ranges": [
+      "(line 1274,col 9)-(line 1274,col 97)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_ExistingResourceAtRootPackage()",
+    "snippet": "@Test public void testResourceToByteArray_ExistingResourceAtRootPackage() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/test-file-utf8.bin\").toURI()).length();\n        final byte[] bytes \u003d IOUtils.resourceToByteArray(\"/test-file-utf8.bin\");\n        assertNotNull(bytes);\n        assertEquals(fileSize, bytes.length);\n    }",
+    "begin_line": 1277,
+    "end_line": 1282,
+    "comment": "",
+    "child_ranges": [
+      "(line 1278,col 9)-(line 1278,col 103)",
+      "(line 1279,col 9)-(line 1279,col 80)",
+      "(line 1280,col 9)-(line 1280,col 29)",
+      "(line 1281,col 9)-(line 1281,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_ExistingResourceAtRootPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToByteArray_ExistingResourceAtRootPackage_WithClassLoader() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/test-file-utf8.bin\").toURI()).length();\n        final byte[] bytes \u003d IOUtils.resourceToByteArray(\"test-file-utf8.bin\", ClassLoader.getSystemClassLoader());\n        assertNotNull(bytes);\n        assertEquals(fileSize, bytes.length);\n    }",
+    "begin_line": 1284,
+    "end_line": 1289,
+    "comment": "",
+    "child_ranges": [
+      "(line 1285,col 9)-(line 1285,col 103)",
+      "(line 1286,col 9)-(line 1286,col 115)",
+      "(line 1287,col 9)-(line 1287,col 29)",
+      "(line 1288,col 9)-(line 1288,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_ExistingResourceAtSubPackage()",
+    "snippet": "@Test public void testResourceToByteArray_ExistingResourceAtSubPackage() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\").toURI()).length();\n        final byte[] bytes \u003d IOUtils.resourceToByteArray(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\");\n        assertNotNull(bytes);\n        assertEquals(fileSize, bytes.length);\n    }",
+    "begin_line": 1291,
+    "end_line": 1296,
+    "comment": "",
+    "child_ranges": [
+      "(line 1292,col 9)-(line 1292,col 130)",
+      "(line 1293,col 9)-(line 1293,col 107)",
+      "(line 1294,col 9)-(line 1294,col 29)",
+      "(line 1295,col 9)-(line 1295,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_ExistingResourceAtSubPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToByteArray_ExistingResourceAtSubPackage_WithClassLoader() throws Exception {\n        final long fileSize \u003d new File(getClass().getResource(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\").toURI()).length();\n        final byte[] bytes \u003d IOUtils.resourceToByteArray(\"org/apache/commons/io/FileUtilsTestDataCR.dat\", ClassLoader.getSystemClassLoader());\n        assertNotNull(bytes);\n        assertEquals(fileSize, bytes.length);\n    }",
+    "begin_line": 1298,
+    "end_line": 1303,
+    "comment": "",
+    "child_ranges": [
+      "(line 1299,col 9)-(line 1299,col 130)",
+      "(line 1300,col 9)-(line 1300,col 142)",
+      "(line 1301,col 9)-(line 1301,col 29)",
+      "(line 1302,col 9)-(line 1302,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_NonExistingResource()",
+    "snippet": "@Test public void testResourceToByteArray_NonExistingResource() {\n        assertThrows(IOException.class, () -\u003e IOUtils.resourceToByteArray(\"/non-existing-file.bin\"));\n    }",
+    "begin_line": 1305,
+    "end_line": 1307,
+    "comment": "",
+    "child_ranges": [
+      "(line 1306,col 9)-(line 1306,col 101)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_NonExistingResource_WithClassLoader()",
+    "snippet": "@Test public void testResourceToByteArray_NonExistingResource_WithClassLoader() {\n        assertThrows(IOException.class,\n                () -\u003e IOUtils.resourceToByteArray(\"non-existing-file.bin\", ClassLoader.getSystemClassLoader()));\n    }",
+    "begin_line": 1309,
+    "end_line": 1312,
+    "comment": "",
+    "child_ranges": [
+      "(line 1310,col 9)-(line 1311,col 112)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_Null()",
+    "snippet": "@Test public void testResourceToByteArray_Null() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToByteArray(null);\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1314,
+    "end_line": 1326,
+    "comment": "",
+    "child_ranges": [
+      "(line 1315,col 9)-(line 1315,col 42)",
+      "(line 1317,col 9)-(line 1323,col 9)",
+      "(line 1325,col 9)-(line 1325,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToByteArray_Null_WithClassLoader()",
+    "snippet": "@Test public void testResourceToByteArray_Null_WithClassLoader() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToByteArray(null, ClassLoader.getSystemClassLoader());\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1328,
+    "end_line": 1340,
+    "comment": "",
+    "child_ranges": [
+      "(line 1329,col 9)-(line 1329,col 42)",
+      "(line 1331,col 9)-(line 1337,col 9)",
+      "(line 1339,col 9)-(line 1339,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_ExistingResourceAtRootPackage()",
+    "snippet": "@Test public void testResourceToURL_ExistingResourceAtRootPackage() throws Exception {\n        final URL url \u003d IOUtils.resourceToURL(\"/test-file-utf8.bin\");\n        assertNotNull(url);\n        assertTrue(url.getFile().endsWith(\"/test-file-utf8.bin\"));\n    }",
+    "begin_line": 1342,
+    "end_line": 1346,
+    "comment": "",
+    "child_ranges": [
+      "(line 1343,col 9)-(line 1343,col 69)",
+      "(line 1344,col 9)-(line 1344,col 27)",
+      "(line 1345,col 9)-(line 1345,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_ExistingResourceAtRootPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToURL_ExistingResourceAtRootPackage_WithClassLoader() throws Exception {\n        final URL url \u003d IOUtils.resourceToURL(\"test-file-utf8.bin\", ClassLoader.getSystemClassLoader());\n        assertNotNull(url);\n        assertTrue(url.getFile().endsWith(\"/test-file-utf8.bin\"));\n    }",
+    "begin_line": 1348,
+    "end_line": 1352,
+    "comment": "",
+    "child_ranges": [
+      "(line 1349,col 9)-(line 1349,col 104)",
+      "(line 1350,col 9)-(line 1350,col 27)",
+      "(line 1351,col 9)-(line 1351,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_ExistingResourceAtSubPackage()",
+    "snippet": "@Test public void testResourceToURL_ExistingResourceAtSubPackage() throws Exception {\n        final URL url \u003d IOUtils.resourceToURL(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\");\n        assertNotNull(url);\n        assertTrue(url.getFile().endsWith(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\"));\n    }",
+    "begin_line": 1354,
+    "end_line": 1358,
+    "comment": "",
+    "child_ranges": [
+      "(line 1355,col 9)-(line 1355,col 96)",
+      "(line 1356,col 9)-(line 1356,col 27)",
+      "(line 1357,col 9)-(line 1357,col 93)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_ExistingResourceAtSubPackage_WithClassLoader()",
+    "snippet": "@Test public void testResourceToURL_ExistingResourceAtSubPackage_WithClassLoader() throws Exception {\n        final URL url \u003d IOUtils.resourceToURL(\n                \"org/apache/commons/io/FileUtilsTestDataCR.dat\",\n                ClassLoader.getSystemClassLoader()\n        );\n\n        assertNotNull(url);\n        assertTrue(url.getFile().endsWith(\"/org/apache/commons/io/FileUtilsTestDataCR.dat\"));\n    }",
+    "begin_line": 1360,
+    "end_line": 1368,
+    "comment": "",
+    "child_ranges": [
+      "(line 1361,col 9)-(line 1364,col 10)",
+      "(line 1366,col 9)-(line 1366,col 27)",
+      "(line 1367,col 9)-(line 1367,col 93)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_NonExistingResource()",
+    "snippet": "@Test public void testResourceToURL_NonExistingResource() {\n        assertThrows(IOException.class, () -\u003e IOUtils.resourceToURL(\"/non-existing-file.bin\"));\n    }",
+    "begin_line": 1370,
+    "end_line": 1372,
+    "comment": "",
+    "child_ranges": [
+      "(line 1371,col 9)-(line 1371,col 95)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_NonExistingResource_WithClassLoader()",
+    "snippet": "@Test public void testResourceToURL_NonExistingResource_WithClassLoader() {\n        assertThrows(IOException.class,\n                () -\u003e IOUtils.resourceToURL(\"non-existing-file.bin\", ClassLoader.getSystemClassLoader()));\n    }",
+    "begin_line": 1374,
+    "end_line": 1377,
+    "comment": "",
+    "child_ranges": [
+      "(line 1375,col 9)-(line 1376,col 106)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_Null()",
+    "snippet": "@Test public void testResourceToURL_Null() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToURL(null);\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1379,
+    "end_line": 1391,
+    "comment": "",
+    "child_ranges": [
+      "(line 1380,col 9)-(line 1380,col 42)",
+      "(line 1382,col 9)-(line 1388,col 9)",
+      "(line 1390,col 9)-(line 1390,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testResourceToURL_Null_WithClassLoader()",
+    "snippet": "@Test public void testResourceToURL_Null_WithClassLoader() throws Exception {\n        boolean exceptionOccurred \u003d false;\n\n        try {\n            IOUtils.resourceToURL(null, ClassLoader.getSystemClassLoader());\n            fail();\n        } catch (final NullPointerException npe) {\n            exceptionOccurred \u003d true;\n            assertNotNull(npe);\n        }\n\n        assertTrue(exceptionOccurred);\n    }",
+    "begin_line": 1393,
+    "end_line": 1405,
+    "comment": "",
+    "child_ranges": [
+      "(line 1394,col 9)-(line 1394,col 42)",
+      "(line 1396,col 9)-(line 1402,col 9)",
+      "(line 1404,col 9)-(line 1404,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedNull()",
+    "snippet": "@Test public void testAsBufferedNull() {\n        try {\n            IOUtils.buffer((InputStream) null);\n            fail(\"Expected NullPointerException\");\n        } catch (final NullPointerException npe) {\n            // expected\n        }\n        try {\n            IOUtils.buffer((OutputStream) null);\n            fail(\"Expected NullPointerException\");\n        } catch (final NullPointerException npe) {\n            // expected\n        }\n        try {\n            IOUtils.buffer((Reader) null);\n            fail(\"Expected NullPointerException\");\n        } catch (final NullPointerException npe) {\n            // expected\n        }\n        try {\n            IOUtils.buffer((Writer) null);\n            fail(\"Expected NullPointerException\");\n        } catch (final NullPointerException npe) {\n            // expected\n        }\n    }",
+    "begin_line": 1407,
+    "end_line": 1432,
+    "comment": "",
+    "child_ranges": [
+      "(line 1408,col 9)-(line 1413,col 9)",
+      "(line 1414,col 9)-(line 1419,col 9)",
+      "(line 1420,col 9)-(line 1425,col 9)",
+      "(line 1426,col 9)-(line 1431,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedInputStream()",
+    "snippet": "@Test public void testAsBufferedInputStream() {\n        final InputStream is \u003d new InputStream() {\n            @Override\n            public int read() throws IOException {\n                return 0;\n            }\n        };\n        final BufferedInputStream bis \u003d IOUtils.buffer(is);\n        assertNotSame(is, bis);\n        assertSame(bis, IOUtils.buffer(bis));\n    }",
+    "begin_line": 1434,
+    "end_line": 1444,
+    "comment": "",
+    "child_ranges": [
+      "(line 1435,col 9)-(line 1440,col 10)",
+      "(line 1441,col 9)-(line 1441,col 59)",
+      "(line 1442,col 9)-(line 1442,col 31)",
+      "(line 1443,col 9)-(line 1443,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.read()",
+    "snippet": "@Override\n            public int read() throws IOException {\n                return 0;\n            }",
+    "begin_line": 1437,
+    "end_line": 1439,
+    "comment": "",
+    "child_ranges": [
+      "(line 1438,col 17)-(line 1438,col 25)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedInputStreamWithBufferSize()",
+    "snippet": "@Test public void testAsBufferedInputStreamWithBufferSize() {\n        final InputStream is \u003d new InputStream() {\n            @Override\n            public int read() throws IOException {\n                return 0;\n            }\n        };\n        final BufferedInputStream bis \u003d IOUtils.buffer(is, 2048);\n        assertNotSame(is, bis);\n        assertSame(bis, IOUtils.buffer(bis));\n        assertSame(bis, IOUtils.buffer(bis, 1024));\n    }",
+    "begin_line": 1446,
+    "end_line": 1457,
+    "comment": "",
+    "child_ranges": [
+      "(line 1447,col 9)-(line 1452,col 10)",
+      "(line 1453,col 9)-(line 1453,col 65)",
+      "(line 1454,col 9)-(line 1454,col 31)",
+      "(line 1455,col 9)-(line 1455,col 45)",
+      "(line 1456,col 9)-(line 1456,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.read()",
+    "snippet": "@Override\n            public int read() throws IOException {\n                return 0;\n            }",
+    "begin_line": 1449,
+    "end_line": 1451,
+    "comment": "",
+    "child_ranges": [
+      "(line 1450,col 17)-(line 1450,col 25)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedOutputStream()",
+    "snippet": "@Test public void testAsBufferedOutputStream() {\n        final OutputStream is \u003d new OutputStream() {\n            @Override\n            public void write(final int b) throws IOException { }\n        };\n        final BufferedOutputStream bis \u003d IOUtils.buffer(is);\n        assertNotSame(is, bis);\n        assertSame(bis, IOUtils.buffer(bis));\n    }",
+    "begin_line": 1459,
+    "end_line": 1467,
+    "comment": "",
+    "child_ranges": [
+      "(line 1460,col 9)-(line 1463,col 10)",
+      "(line 1464,col 9)-(line 1464,col 60)",
+      "(line 1465,col 9)-(line 1465,col 31)",
+      "(line 1466,col 9)-(line 1466,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(int)",
+    "snippet": "@Override\n            public void write(final int b) throws IOException { }",
+    "begin_line": 1462,
+    "end_line": 1462,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedOutputStreamWithBufferSize()",
+    "snippet": "@Test public void testAsBufferedOutputStreamWithBufferSize() {\n        final OutputStream os \u003d new OutputStream() {\n            @Override\n            public void write(final int b) throws IOException { }\n        };\n        final BufferedOutputStream bos \u003d IOUtils.buffer(os, 2048);\n        assertNotSame(os, bos);\n        assertSame(bos, IOUtils.buffer(bos));\n        assertSame(bos, IOUtils.buffer(bos, 1024));\n    }",
+    "begin_line": 1469,
+    "end_line": 1478,
+    "comment": "",
+    "child_ranges": [
+      "(line 1470,col 9)-(line 1473,col 10)",
+      "(line 1474,col 9)-(line 1474,col 66)",
+      "(line 1475,col 9)-(line 1475,col 31)",
+      "(line 1476,col 9)-(line 1476,col 45)",
+      "(line 1477,col 9)-(line 1477,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(int)",
+    "snippet": "@Override\n            public void write(final int b) throws IOException { }",
+    "begin_line": 1472,
+    "end_line": 1472,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedReader()",
+    "snippet": "@Test public void testAsBufferedReader() {\n        final Reader is \u003d new Reader() {\n            @Override\n            public int read(final char[] cbuf, final int off, final int len) throws IOException {\n                return 0;\n            }\n            @Override\n            public void close() throws IOException { }\n        };\n        final BufferedReader bis \u003d IOUtils.buffer(is);\n        assertNotSame(is, bis);\n        assertSame(bis, IOUtils.buffer(bis));\n    }",
+    "begin_line": 1480,
+    "end_line": 1492,
+    "comment": "",
+    "child_ranges": [
+      "(line 1481,col 9)-(line 1488,col 10)",
+      "(line 1489,col 9)-(line 1489,col 54)",
+      "(line 1490,col 9)-(line 1490,col 31)",
+      "(line 1491,col 9)-(line 1491,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.read(char[], int, int)",
+    "snippet": "@Override\n            public int read(final char[] cbuf, final int off, final int len) throws IOException {\n                return 0;\n            }",
+    "begin_line": 1483,
+    "end_line": 1485,
+    "comment": "",
+    "child_ranges": [
+      "(line 1484,col 17)-(line 1484,col 25)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException { }",
+    "begin_line": 1487,
+    "end_line": 1487,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedReaderWithBufferSize()",
+    "snippet": "@Test public void testAsBufferedReaderWithBufferSize() {\n        final Reader r \u003d new Reader() {\n            @Override\n            public int read(final char[] cbuf, final int off, final int len) throws IOException {\n                return 0;\n            }\n            @Override\n            public void close() throws IOException { }\n        };\n        final BufferedReader br \u003d IOUtils.buffer(r, 2048);\n        assertNotSame(r, br);\n        assertSame(br, IOUtils.buffer(br));\n        assertSame(br, IOUtils.buffer(br, 1024));\n    }",
+    "begin_line": 1494,
+    "end_line": 1507,
+    "comment": "",
+    "child_ranges": [
+      "(line 1495,col 9)-(line 1502,col 10)",
+      "(line 1503,col 9)-(line 1503,col 58)",
+      "(line 1504,col 9)-(line 1504,col 29)",
+      "(line 1505,col 9)-(line 1505,col 43)",
+      "(line 1506,col 9)-(line 1506,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.read(char[], int, int)",
+    "snippet": "@Override\n            public int read(final char[] cbuf, final int off, final int len) throws IOException {\n                return 0;\n            }",
+    "begin_line": 1497,
+    "end_line": 1499,
+    "comment": "",
+    "child_ranges": [
+      "(line 1498,col 17)-(line 1498,col 25)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException { }",
+    "begin_line": 1501,
+    "end_line": 1501,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedWriter()",
+    "snippet": "@Test public void testAsBufferedWriter() {\n        final Writer is \u003d new Writer() {\n            @Override\n            public void write(final int b) throws IOException { }\n\n            @Override\n            public void write(final char[] cbuf, final int off, final int len) throws IOException { }\n\n            @Override\n            public void flush() throws IOException { }\n\n            @Override\n            public void close() throws IOException { }\n        };\n        final BufferedWriter bis \u003d IOUtils.buffer(is);\n        assertNotSame(is, bis);\n        assertSame(bis, IOUtils.buffer(bis));\n    }",
+    "begin_line": 1509,
+    "end_line": 1526,
+    "comment": "",
+    "child_ranges": [
+      "(line 1510,col 9)-(line 1522,col 10)",
+      "(line 1523,col 9)-(line 1523,col 54)",
+      "(line 1524,col 9)-(line 1524,col 31)",
+      "(line 1525,col 9)-(line 1525,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(int)",
+    "snippet": "@Override\n            public void write(final int b) throws IOException { }",
+    "begin_line": 1512,
+    "end_line": 1512,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(char[], int, int)",
+    "snippet": "@Override\n            public void write(final char[] cbuf, final int off, final int len) throws IOException { }",
+    "begin_line": 1515,
+    "end_line": 1515,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.flush()",
+    "snippet": "@Override\n            public void flush() throws IOException { }",
+    "begin_line": 1518,
+    "end_line": 1518,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException { }",
+    "begin_line": 1521,
+    "end_line": 1521,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsBufferedWriterWithBufferSize()",
+    "snippet": "@Test\n    public void testAsBufferedWriterWithBufferSize() {\n        final Writer w \u003d new Writer() {\n            @Override\n            public void write(final int b) throws IOException { }\n\n            @Override\n            public void write(final char[] cbuf, final int off, final int len) throws IOException { }\n\n            @Override\n            public void flush() throws IOException { }\n\n            @Override\n            public void close() throws IOException { }\n        };\n        final BufferedWriter bw \u003d IOUtils.buffer(w, 2024);\n        assertNotSame(w, bw);\n        assertSame(bw, IOUtils.buffer(bw));\n        assertSame(bw, IOUtils.buffer(bw, 1024));\n    }",
+    "begin_line": 1529,
+    "end_line": 1547,
+    "comment": "",
+    "child_ranges": [
+      "(line 1530,col 9)-(line 1542,col 10)",
+      "(line 1543,col 9)-(line 1543,col 58)",
+      "(line 1544,col 9)-(line 1544,col 29)",
+      "(line 1545,col 9)-(line 1545,col 43)",
+      "(line 1546,col 9)-(line 1546,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(int)",
+    "snippet": "@Override\n            public void write(final int b) throws IOException { }",
+    "begin_line": 1532,
+    "end_line": 1532,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.write(char[], int, int)",
+    "snippet": "@Override\n            public void write(final char[] cbuf, final int off, final int len) throws IOException { }",
+    "begin_line": 1535,
+    "end_line": 1535,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.flush()",
+    "snippet": "@Override\n            public void flush() throws IOException { }",
+    "begin_line": 1538,
+    "end_line": 1538,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.close()",
+    "snippet": "@Override\n            public void close() throws IOException { }",
+    "begin_line": 1541,
+    "end_line": 1541,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsWriterNull()",
+    "snippet": "@Test\n    public void testAsWriterNull() {\n        try {\n            IOUtils.writer(null);\n            fail(\"Expected NullPointerException\");\n        } catch (final NullPointerException npe) {\n            // expected\n        }\n    }",
+    "begin_line": 1550,
+    "end_line": 1557,
+    "comment": "",
+    "child_ranges": [
+      "(line 1551,col 9)-(line 1556,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsWriterStringBuilder()",
+    "snippet": "@Test\n    public void testAsWriterStringBuilder() {\n        final Appendable a \u003d new StringBuilder();\n        final Writer w \u003d IOUtils.writer(a);\n        assertNotSame(w, a);\n        assertEquals(StringBuilderWriter.class, w.getClass());\n        assertSame(w, IOUtils.writer(w));\n    }",
+    "begin_line": 1560,
+    "end_line": 1566,
+    "comment": "",
+    "child_ranges": [
+      "(line 1561,col 9)-(line 1561,col 49)",
+      "(line 1562,col 9)-(line 1562,col 43)",
+      "(line 1563,col 9)-(line 1563,col 28)",
+      "(line 1564,col 9)-(line 1564,col 62)",
+      "(line 1565,col 9)-(line 1565,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testAsWriterAppendable()",
+    "snippet": "@Test\n    public void testAsWriterAppendable() {\n        final Appendable a \u003d new StringBuffer();\n        final Writer w \u003d IOUtils.writer(a);\n        assertNotSame(w, a);\n        assertEquals(AppendableWriter.class, w.getClass());\n        assertSame(w, IOUtils.writer(w));\n    }",
+    "begin_line": 1569,
+    "end_line": 1575,
+    "comment": "",
+    "child_ranges": [
+      "(line 1570,col 9)-(line 1570,col 48)",
+      "(line 1571,col 9)-(line 1571,col 43)",
+      "(line 1572,col 9)-(line 1572,col 28)",
+      "(line 1573,col 9)-(line 1573,col 59)",
+      "(line 1574,col 9)-(line 1574,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsTestCase.testCopyLarge_SkipWithInvalidOffset()",
+    "snippet": "@Test\n    public void testCopyLarge_SkipWithInvalidOffset() throws IOException {\n        ByteArrayInputStream is \u003d null;\n        ByteArrayOutputStream os \u003d null;\n        try {\n            // Create streams\n            is \u003d new ByteArrayInputStream(iarr);\n            os \u003d new ByteArrayOutputStream();\n\n            // Test our copy method\n            assertEquals(100, IOUtils.copyLarge(is, os, -10, 100));\n            final byte[] oarr \u003d os.toByteArray();\n\n            // check that output length is correct\n            assertEquals(100, oarr.length);\n            // check that output data corresponds to input data\n            assertEquals(1, oarr[1]);\n            assertEquals(79, oarr[79]);\n            assertEquals(-1, oarr[80]);\n\n        } finally {\n            IOUtils.closeQuietly(is);\n            IOUtils.closeQuietly(os);\n        }\n    }",
+    "begin_line": 1578,
+    "end_line": 1601,
+    "comment": "",
+    "child_ranges": [
+      "(line 1579,col 9)-(line 1579,col 39)",
+      "(line 1580,col 9)-(line 1580,col 40)",
+      "(line 1581,col 9)-(line 1600,col 9)"
+    ]
+  }
+]

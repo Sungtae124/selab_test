@@ -1,0 +1,11 @@
+--- org.apache.commons.io.IOUtilsTestCase::testContentEquals_Reader_Reader
+java.lang.NullPointerException
+       java.base/java.io.Reader.<init>(Reader.java:168)
+       java.base/java.io.BufferedReader.<init>(BufferedReader.java:102)
+       java.base/java.io.BufferedReader.<init>(BufferedReader.java:117)
+       org.apache.commons.io.IOUtils.toBufferedReader(IOUtils.java:2174)
+       org.apache.commons.io.IOUtils.contentEquals(IOUtils.java:753)
+       org.apache.commons.io.IOUtilsTestCase.testContentEquals_Reader_Reader(IOUtilsTestCase.java:271)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

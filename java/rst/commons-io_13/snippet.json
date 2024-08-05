@@ -1,0 +1,914 @@
+[
+  {
+    "name": "FilenameUtils.FilenameUtils#137",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.FilenameUtils()",
+    "snippet": "public FilenameUtils() {\n        super();\n    }",
+    "begin_line": 137,
+    "end_line": 139,
+    "comment": "/** \n * Instances should NOT be constructed in standard programming.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isSystemWindows#147",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isSystemWindows()",
+    "snippet": "static boolean isSystemWindows() {\n        return SYSTEM_SEPARATOR \u003d\u003d WINDOWS_SEPARATOR;\n    }",
+    "begin_line": 147,
+    "end_line": 149,
+    "comment": "/** \n * Determines if Windows file system is in use.\n * @return true if the system is Windows\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isSeparator#158",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isSeparator(char)",
+    "snippet": "private static boolean isSeparator(final char ch) {\n        return ch \u003d\u003d UNIX_SEPARATOR || ch \u003d\u003d WINDOWS_SEPARATOR;\n    }",
+    "begin_line": 158,
+    "end_line": 160,
+    "comment": "/** \n * Checks if the character is a separator.\n * @param ch  the character to check\n * @return true if it is a separator character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.normalize#203",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.normalize(java.lang.String)",
+    "snippet": "public static String normalize(final String fileName) {\n        return doNormalize(fileName, SYSTEM_SEPARATOR, true);\n    }",
+    "begin_line": 203,
+    "end_line": 205,
+    "comment": "/** \n * Normalizes a path, removing double and single dot path steps. \u003cp\u003e This method normalizes a path to a standard format. The input may contain separators in either Unix or Windows format. The output will contain separators in the format of the system. \u003cp\u003e A trailing slash will be retained. A double slash will be merged to a single slash (but UNC names are handled). A single dot path segment will be removed. A double dot will cause that path segment and the one before to be removed. If the double dot has no parent path segment to work with,  {@code null}is returned. \u003cp\u003e The output will be the same on both Unix and Windows except for the separator character. \u003cpre\u003e /foo//               --\u0026gt;   /foo/ /foo/./              --\u0026gt;   /foo/ /foo/../bar          --\u0026gt;   /bar /foo/../bar/         --\u0026gt;   /bar/ /foo/../bar/../baz   --\u0026gt;   /baz //foo//./bar         --\u0026gt;   /foo/bar /../                 --\u0026gt;   null ../foo               --\u0026gt;   null foo/bar/..           --\u0026gt;   foo/ foo/../../bar        --\u0026gt;   null foo/../bar           --\u0026gt;   bar //server/foo/../bar  --\u0026gt;   //server/bar //server/../bar      --\u0026gt;   null C:\\foo\\..\\bar        --\u0026gt;   C:\\bar C:\\..\\bar            --\u0026gt;   null ~/foo/../bar/        --\u0026gt;   ~/bar/ ~/../bar             --\u0026gt;   null \u003c/pre\u003e (Note the file separator returned will be correct for Windows/Unix)\n * @param fileName  the fileName to normalize, null returns null\n * @return the normalized fileName, or null if invalid. Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.normalize#250",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.normalize(java.lang.String, boolean)",
+    "snippet": "public static String normalize(final String fileName, final boolean unixSeparator) {\n        final char separator \u003d unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;\n        return doNormalize(fileName, separator, true);\n    }",
+    "begin_line": 250,
+    "end_line": 253,
+    "comment": "/** \n * Normalizes a path, removing double and single dot path steps. \u003cp\u003e This method normalizes a path to a standard format. The input may contain separators in either Unix or Windows format. The output will contain separators in the format specified. \u003cp\u003e A trailing slash will be retained. A double slash will be merged to a single slash (but UNC names are handled). A single dot path segment will be removed. A double dot will cause that path segment and the one before to be removed. If the double dot has no parent path segment to work with,  {@code null}is returned. \u003cp\u003e The output will be the same on both Unix and Windows except for the separator character. \u003cpre\u003e /foo//               --\u0026gt;   /foo/ /foo/./              --\u0026gt;   /foo/ /foo/../bar          --\u0026gt;   /bar /foo/../bar/         --\u0026gt;   /bar/ /foo/../bar/../baz   --\u0026gt;   /baz //foo//./bar         --\u0026gt;   /foo/bar /../                 --\u0026gt;   null ../foo               --\u0026gt;   null foo/bar/..           --\u0026gt;   foo/ foo/../../bar        --\u0026gt;   null foo/../bar           --\u0026gt;   bar //server/foo/../bar  --\u0026gt;   //server/bar //server/../bar      --\u0026gt;   null C:\\foo\\..\\bar        --\u0026gt;   C:\\bar C:\\..\\bar            --\u0026gt;   null ~/foo/../bar/        --\u0026gt;   ~/bar/ ~/../bar             --\u0026gt;   null \u003c/pre\u003e The output will be the same on both Unix and Windows including the separator character.\n * @param fileName  the fileName to normalize, null returns null\n * @param unixSeparator {@code true} if a unix separator shouldbe used or  {@code false} if a windows separator should be used.\n * @return the normalized fileName, or null if invalid. Null bytes inside string will be removed\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.normalizeNoEndSeparator#297",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator(java.lang.String)",
+    "snippet": "public static String normalizeNoEndSeparator(final String fileName) {\n        return doNormalize(fileName, SYSTEM_SEPARATOR, false);\n    }",
+    "begin_line": 297,
+    "end_line": 299,
+    "comment": "/** \n * Normalizes a path, removing double and single dot path steps, and removing any final directory separator. \u003cp\u003e This method normalizes a path to a standard format. The input may contain separators in either Unix or Windows format. The output will contain separators in the format of the system. \u003cp\u003e A trailing slash will be removed. A double slash will be merged to a single slash (but UNC names are handled). A single dot path segment will be removed. A double dot will cause that path segment and the one before to be removed. If the double dot has no parent path segment to work with,  {@code null}is returned. \u003cp\u003e The output will be the same on both Unix and Windows except for the separator character. \u003cpre\u003e /foo//               --\u0026gt;   /foo /foo/./              --\u0026gt;   /foo /foo/../bar          --\u0026gt;   /bar /foo/../bar/         --\u0026gt;   /bar /foo/../bar/../baz   --\u0026gt;   /baz //foo//./bar         --\u0026gt;   /foo/bar /../                 --\u0026gt;   null ../foo               --\u0026gt;   null foo/bar/..           --\u0026gt;   foo foo/../../bar        --\u0026gt;   null foo/../bar           --\u0026gt;   bar //server/foo/../bar  --\u0026gt;   //server/bar //server/../bar      --\u0026gt;   null C:\\foo\\..\\bar        --\u0026gt;   C:\\bar C:\\..\\bar            --\u0026gt;   null ~/foo/../bar/        --\u0026gt;   ~/bar ~/../bar             --\u0026gt;   null \u003c/pre\u003e (Note the file separator returned will be correct for Windows/Unix)\n * @param fileName  the fileName to normalize, null returns null\n * @return the normalized fileName, or null if invalid. Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.normalizeNoEndSeparator#344",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.normalizeNoEndSeparator(java.lang.String, boolean)",
+    "snippet": "public static String normalizeNoEndSeparator(final String fileName, final boolean unixSeparator) {\n         final char separator \u003d unixSeparator ? UNIX_SEPARATOR : WINDOWS_SEPARATOR;\n        return doNormalize(fileName, separator, false);\n    }",
+    "begin_line": 344,
+    "end_line": 347,
+    "comment": "/** \n * Normalizes a path, removing double and single dot path steps, and removing any final directory separator. \u003cp\u003e This method normalizes a path to a standard format. The input may contain separators in either Unix or Windows format. The output will contain separators in the format specified. \u003cp\u003e A trailing slash will be removed. A double slash will be merged to a single slash (but UNC names are handled). A single dot path segment will be removed. A double dot will cause that path segment and the one before to be removed. If the double dot has no parent path segment to work with,  {@code null}is returned. \u003cp\u003e The output will be the same on both Unix and Windows including the separator character. \u003cpre\u003e /foo//               --\u0026gt;   /foo /foo/./              --\u0026gt;   /foo /foo/../bar          --\u0026gt;   /bar /foo/../bar/         --\u0026gt;   /bar /foo/../bar/../baz   --\u0026gt;   /baz //foo//./bar         --\u0026gt;   /foo/bar /../                 --\u0026gt;   null ../foo               --\u0026gt;   null foo/bar/..           --\u0026gt;   foo foo/../../bar        --\u0026gt;   null foo/../bar           --\u0026gt;   bar //server/foo/../bar  --\u0026gt;   //server/bar //server/../bar      --\u0026gt;   null C:\\foo\\..\\bar        --\u0026gt;   C:\\bar C:\\..\\bar            --\u0026gt;   null ~/foo/../bar/        --\u0026gt;   ~/bar ~/../bar             --\u0026gt;   null \u003c/pre\u003e\n * @param fileName  the fileName to normalize, null returns null\n * @param unixSeparator {@code true} if a unix separator shouldbe used or  {@code false} if a windows separator should be used.\n * @return the normalized fileName, or null if invalid. Null bytes inside string will be removed\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.doNormalize#357",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.doNormalize(java.lang.String, char, boolean)",
+    "snippet": "private static String doNormalize(final String fileName, final char separator, final boolean keepSeparator) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n\n        failIfNullBytePresent(fileName);\n\n        int size \u003d fileName.length();\n        if (size \u003d\u003d 0) {\n            return fileName;\n        }\n        final int prefix \u003d getPrefixLength(fileName);\n        if (prefix \u003c 0) {\n            return null;\n        }\n\n        final char[] array \u003d new char[size + 2];  // +1 for possible extra slash, +2 for arraycopy\n        fileName.getChars(0, fileName.length(), array, 0);\n\n        // fix separators throughout\n        final char otherSeparator \u003d separator \u003d\u003d SYSTEM_SEPARATOR ? OTHER_SEPARATOR : SYSTEM_SEPARATOR;\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (array[i] \u003d\u003d otherSeparator) {\n                array[i] \u003d separator;\n            }\n        }\n\n        // add extra separator on the end to simplify code below\n        boolean lastIsDirectory \u003d true;\n        if (array[size - 1] !\u003d separator) {\n            array[size++] \u003d separator;\n            lastIsDirectory \u003d false;\n        }\n\n        // adjoining slashes\n        for (int i \u003d prefix + 1; i \u003c size; i++) {\n            if (array[i] \u003d\u003d separator \u0026\u0026 array[i - 1] \u003d\u003d separator) {\n                System.arraycopy(array, i, array, i - 1, size - i);\n                size--;\n                i--;\n            }\n        }\n\n        // dot slash\n        for (int i \u003d prefix + 1; i \u003c size; i++) {\n            if (array[i] \u003d\u003d separator \u0026\u0026 array[i - 1] \u003d\u003d \u0027.\u0027 \u0026\u0026\n                    (i \u003d\u003d prefix + 1 || array[i - 2] \u003d\u003d separator)) {\n                if (i \u003d\u003d size - 1) {\n                    lastIsDirectory \u003d true;\n                }\n                System.arraycopy(array, i + 1, array, i - 1, size - i);\n                size -\u003d2;\n                i--;\n            }\n        }\n\n        // double dot slash\n        outer:\n        for (int i \u003d prefix + 2; i \u003c size; i++) {\n            if (array[i] \u003d\u003d separator \u0026\u0026 array[i - 1] \u003d\u003d \u0027.\u0027 \u0026\u0026 array[i - 2] \u003d\u003d \u0027.\u0027 \u0026\u0026\n                    (i \u003d\u003d prefix + 2 || array[i - 3] \u003d\u003d separator)) {\n                if (i \u003d\u003d prefix + 2) {\n                    return null;\n                }\n                if (i \u003d\u003d size - 1) {\n                    lastIsDirectory \u003d true;\n                }\n                int j;\n                for (j \u003d i - 4 ; j \u003e\u003d prefix; j--) {\n                    if (array[j] \u003d\u003d separator) {\n                        // remove b/../ from a/b/../c\n                        System.arraycopy(array, i + 1, array, j + 1, size - i);\n                        size -\u003d i - j;\n                        i \u003d j + 1;\n                        continue outer;\n                    }\n                }\n                // remove a/../ from a/../c\n                System.arraycopy(array, i + 1, array, prefix, size - i);\n                size -\u003d i + 1 - prefix;\n                i \u003d prefix + 1;\n            }\n        }\n\n        if (size \u003c\u003d 0) {  // should never be less than 0\n            return EMPTY_STRING;\n        }\n        if (size \u003c\u003d prefix) {  // should never be less than prefix\n            return new String(array, 0, size);\n        }\n        if (lastIsDirectory \u0026\u0026 keepSeparator) {\n            return new String(array, 0, size);  // keep trailing separator\n        }\n        return new String(array, 0, size - 1);  // lose trailing separator\n    }",
+    "begin_line": 357,
+    "end_line": 451,
+    "comment": "/** \n * Internal method to perform the normalization.\n * @param fileName  the fileName\n * @param separator The separator character to use\n * @param keepSeparator  true to keep the final separator\n * @return the normalized fileName. Null bytes inside string will be removed.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.concat#494",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.concat(java.lang.String, java.lang.String)",
+    "snippet": "public static String concat(final String basePath, final String fullFileNameToAdd) {\n        final int prefix \u003d getPrefixLength(fullFileNameToAdd);\n        if (prefix \u003c 0) {\n            return null;\n        }\n        if (prefix \u003e 0) {\n            return normalize(fullFileNameToAdd);\n        }\n        if (basePath \u003d\u003d null) {\n            return null;\n        }\n        final int len \u003d basePath.length();\n        if (len \u003d\u003d 0) {\n            return normalize(fullFileNameToAdd);\n        }\n        final char ch \u003d basePath.charAt(len - 1);\n        if (isSeparator(ch)) {\n            return normalize(basePath + fullFileNameToAdd);\n        }\n        return normalize(basePath + \u0027/\u0027 + fullFileNameToAdd);\n    }",
+    "begin_line": 494,
+    "end_line": 514,
+    "comment": "/** \n * Concatenates a fileName to a base path using normal command line style rules. \u003cp\u003e The effect is equivalent to resultant directory after changing directory to the first argument, followed by changing directory to the second argument. \u003cp\u003e The first argument is the base path, the second is the path to concatenate. The returned path is always normalized via  {@link #normalize(String)}, thus \u003ccode\u003e..\u003c/code\u003e is handled. \u003cp\u003e If \u003ccode\u003epathToAdd\u003c/code\u003e is absolute (has an absolute prefix), then it will be normalized and returned. Otherwise, the paths will be joined, normalized and returned. \u003cp\u003e The output will be the same on both Unix and Windows except for the separator character. \u003cpre\u003e /foo/      + bar        --\u0026gt;  /foo/bar /foo       + bar        --\u0026gt;  /foo/bar /foo       + /bar       --\u0026gt;  /bar /foo       + C:/bar     --\u0026gt;  C:/bar /foo       + C:bar      --\u0026gt;  C:bar (*) /foo/a/    + ../bar     --\u0026gt;  /foo/bar /foo/      + ../../bar  --\u0026gt;  null /foo/      + /bar       --\u0026gt;  /bar /foo/..    + /bar       --\u0026gt;  /bar /foo       + bar/c.txt  --\u0026gt;  /foo/bar/c.txt /foo/c.txt + bar        --\u0026gt;  /foo/c.txt/bar (!) \u003c/pre\u003e (*) Note that the Windows relative drive prefix is unreliable when used with this method. (!) Note that the first parameter must be a path. If it ends with a name, then the name will be built into the concatenated path. If this might be a problem, use  {@link #getFullPath(String)} on the base path argument.\n * @param basePath  the base path to attach to, always treated as a path\n * @param fullFileNameToAdd  the fileName (or path) to attach to the base\n * @return the concatenated path, or null if invalid.  Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.directoryContains#539",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.directoryContains(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean directoryContains(final String canonicalParent, final String canonicalChild)\n            throws IOException {\n\n        // Fail fast against NullPointerException\n        if (canonicalParent \u003d\u003d null) {\n            throw new IllegalArgumentException(\"Directory must not be null\");\n        }\n\n        if (canonicalChild \u003d\u003d null) {\n            return false;\n        }\n\n        if (IOCase.SYSTEM.checkEquals(canonicalParent, canonicalChild)) {\n            return false;\n        }\n\n        return IOCase.SYSTEM.checkStartsWith(canonicalChild, canonicalParent);\n    }",
+    "begin_line": 539,
+    "end_line": 556,
+    "comment": "/** \n * Determines whether the  {@code parent} directory contains the {@code child} element (a file or directory).\u003cp\u003e The files names are expected to be normalized. \u003c/p\u003e Edge cases: \u003cul\u003e \u003cli\u003eA  {@code directory} must not be null: if null, throw IllegalArgumentException\u003c/li\u003e\u003cli\u003eA directory does not contain itself: return false\u003c/li\u003e \u003cli\u003eA null child file is not contained in any parent: return false\u003c/li\u003e \u003c/ul\u003e\n * @param canonicalParent the file to consider as the parent.\n * @param canonicalChild the file to consider as the child.\n * @return true is the candidate leaf is under by the specified composite. False otherwise.\n * @throws IOException if an IO error occurs while checking the files.\n * @since 2.2\n * @see FileUtils#directoryContains(File,File)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.separatorsToUnix#565",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.separatorsToUnix(java.lang.String)",
+    "snippet": "public static String separatorsToUnix(final String path) {\n        if (path \u003d\u003d null || path.indexOf(WINDOWS_SEPARATOR) \u003d\u003d NOT_FOUND) {\n            return path;\n        }\n        return path.replace(WINDOWS_SEPARATOR, UNIX_SEPARATOR);\n    }",
+    "begin_line": 565,
+    "end_line": 570,
+    "comment": "/** \n * Converts all separators to the Unix separator of forward slash.\n * @param path  the path to be changed, null ignored\n * @return the updated path\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.separatorsToWindows#578",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.separatorsToWindows(java.lang.String)",
+    "snippet": "public static String separatorsToWindows(final String path) {\n        if (path \u003d\u003d null || path.indexOf(UNIX_SEPARATOR) \u003d\u003d NOT_FOUND) {\n            return path;\n        }\n        return path.replace(UNIX_SEPARATOR, WINDOWS_SEPARATOR);\n    }",
+    "begin_line": 578,
+    "end_line": 583,
+    "comment": "/** \n * Converts all separators to the Windows separator of backslash.\n * @param path  the path to be changed, null ignored\n * @return the updated path\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.separatorsToSystem#591",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.separatorsToSystem(java.lang.String)",
+    "snippet": "public static String separatorsToSystem(final String path) {\n        if (path \u003d\u003d null) {\n            return null;\n        }\n        return isSystemWindows() ? separatorsToWindows(path) : separatorsToUnix(path);\n    }",
+    "begin_line": 591,
+    "end_line": 596,
+    "comment": "/** \n * Converts all separators to the system separator.\n * @param path  the path to be changed, null ignored\n * @return the updated path\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getPrefixLength#637",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getPrefixLength(java.lang.String)",
+    "snippet": "public static int getPrefixLength(final String fileName) {\n        if (fileName \u003d\u003d null) {\n            return NOT_FOUND;\n        }\n        final int len \u003d fileName.length();\n        if (len \u003d\u003d 0) {\n            return 0;\n        }\n        char ch0 \u003d fileName.charAt(0);\n        if (ch0 \u003d\u003d \u0027:\u0027) {\n            return NOT_FOUND;\n        }\n        if (len \u003d\u003d 1) {\n            if (ch0 \u003d\u003d \u0027~\u0027) {\n                return 2;  // return a length greater than the input\n            }\n            return isSeparator(ch0) ? 1 : 0;\n        }\n        if (ch0 \u003d\u003d \u0027~\u0027) {\n            int posUnix \u003d fileName.indexOf(UNIX_SEPARATOR, 1);\n            int posWin \u003d fileName.indexOf(WINDOWS_SEPARATOR, 1);\n            if (posUnix \u003d\u003d NOT_FOUND \u0026\u0026 posWin \u003d\u003d NOT_FOUND) {\n                return len + 1;  // return a length greater than the input\n            }\n            posUnix \u003d posUnix \u003d\u003d NOT_FOUND ? posWin : posUnix;\n            posWin \u003d posWin \u003d\u003d NOT_FOUND ? posUnix : posWin;\n            return Math.min(posUnix, posWin) + 1;\n        }\n        final char ch1 \u003d fileName.charAt(1);\n        if (ch1 \u003d\u003d \u0027:\u0027) {\n            ch0 \u003d Character.toUpperCase(ch0);\n            if (ch0 \u003e\u003d \u0027A\u0027 \u0026\u0026 ch0 \u003c\u003d \u0027Z\u0027) {\n                if (len \u003d\u003d 2 || isSeparator(fileName.charAt(2)) \u003d\u003d false) {\n                    return 2;\n                }\n                return 3;\n            } else if (ch0 \u003d\u003d UNIX_SEPARATOR) {\n                return 1;\n            }\n            return NOT_FOUND;\n\n        } else if (isSeparator(ch0) \u0026\u0026 isSeparator(ch1)) {\n            int posUnix \u003d fileName.indexOf(UNIX_SEPARATOR, 2);\n            int posWin \u003d fileName.indexOf(WINDOWS_SEPARATOR, 2);\n            if (posUnix \u003d\u003d NOT_FOUND \u0026\u0026 posWin \u003d\u003d NOT_FOUND || posUnix \u003d\u003d 2 || posWin \u003d\u003d 2) {\n                return NOT_FOUND;\n            }\n            posUnix \u003d posUnix \u003d\u003d NOT_FOUND ? posWin : posUnix;\n            posWin \u003d posWin \u003d\u003d NOT_FOUND ? posUnix : posWin;\n            final int pos \u003d Math.min(posUnix, posWin) + 1;\n            final String hostnamePart \u003d fileName.substring(2, pos - 1);\n            return isValidHostName(hostnamePart) ? pos : NOT_FOUND;\n        } else {\n            return isSeparator(ch0) ? 1 : 0;\n        }\n    }",
+    "begin_line": 637,
+    "end_line": 692,
+    "comment": "/** \n * Returns the length of the fileName prefix, such as \u003ccode\u003eC:/\u003c/code\u003e or \u003ccode\u003e~/\u003c/code\u003e. \u003cp\u003e This method will handle a file in either Unix or Windows format. \u003cp\u003e The prefix length includes the first slash in the full fileName if applicable. Thus, it is possible that the length returned is greater than the length of the input string. \u003cpre\u003e Windows: a\\b\\c.txt           --\u0026gt; \"\"          --\u0026gt; relative \\a\\b\\c.txt          --\u0026gt; \"\\\"         --\u0026gt; current drive absolute C:a\\b\\c.txt         --\u0026gt; \"C:\"        --\u0026gt; drive relative C:\\a\\b\\c.txt        --\u0026gt; \"C:\\\"       --\u0026gt; absolute \\\\server\\a\\b\\c.txt  --\u0026gt; \"\\\\server\\\" --\u0026gt; UNC \\\\\\a\\b\\c.txt        --\u0026gt;  error, length \u003d -1 Unix: a/b/c.txt           --\u0026gt; \"\"          --\u0026gt; relative /a/b/c.txt          --\u0026gt; \"/\"         --\u0026gt; absolute ~/a/b/c.txt         --\u0026gt; \"~/\"        --\u0026gt; current user ~                   --\u0026gt; \"~/\"        --\u0026gt; current user (slash added) ~user/a/b/c.txt     --\u0026gt; \"~user/\"    --\u0026gt; named user ~user               --\u0026gt; \"~user/\"    --\u0026gt; named user (slash added) //server/a/b/c.txt  --\u0026gt; \"//server/\" ///a/b/c.txt        --\u0026gt; error, length \u003d -1 \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on. ie. both Unix and Windows prefixes are matched regardless. Note that a leading // (or \\\\) is used to indicate a UNC name on Windows. These must be followed by a server name, so double-slashes are not collapsed to a single slash at the start of the fileName.\n * @param fileName  the fileName to find the prefix in, null returns -1\n * @return the length of the prefix, -1 if invalid or null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.indexOfLastSeparator#706",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.indexOfLastSeparator(java.lang.String)",
+    "snippet": "public static int indexOfLastSeparator(final String fileName) {\n        if (fileName \u003d\u003d null) {\n            return NOT_FOUND;\n        }\n        final int lastUnixPos \u003d fileName.lastIndexOf(UNIX_SEPARATOR);\n        final int lastWindowsPos \u003d fileName.lastIndexOf(WINDOWS_SEPARATOR);\n        return Math.max(lastUnixPos, lastWindowsPos);\n    }",
+    "begin_line": 706,
+    "end_line": 713,
+    "comment": "/** \n * Returns the index of the last directory separator character. \u003cp\u003e This method will handle a file in either Unix or Windows format. The position of the last forward or backslash is returned. \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to find the last path separator in, null returns -1\n * @return the index of the last separator character, or -1 if thereis no such character\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.indexOfExtension#737",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.indexOfExtension(java.lang.String)",
+    "snippet": "public static int indexOfExtension(final String fileName) throws IllegalArgumentException {\n        if (fileName \u003d\u003d null) {\n            return NOT_FOUND;\n        }\n        if (isSystemWindows()) {\n            // Special handling for NTFS ADS: Don\u0027t accept colon in the fileName.\n            final int offset \u003d fileName.indexOf(\u0027:\u0027, getAdsCriticalOffset(fileName));\n            if (offset !\u003d -1) {\n                throw new IllegalArgumentException(\"NTFS ADS separator (\u0027:\u0027) in file name is forbidden.\");\n            }\n        }\n        final int extensionPos \u003d fileName.lastIndexOf(EXTENSION_SEPARATOR);\n        final int lastSeparator \u003d indexOfLastSeparator(fileName);\n        return lastSeparator \u003e extensionPos ? NOT_FOUND : extensionPos;\n    }",
+    "begin_line": 737,
+    "end_line": 751,
+    "comment": "/** \n * Returns the index of the last extension separator character, which is a dot. \u003cp\u003e This method also checks that there is no directory separator after the last dot. To do this it uses {@link #indexOfLastSeparator(String)} which will handle a file in either Unix or Windows format.\u003c/p\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on, with the exception of a possible  {@link IllegalArgumentException} on Windows (see below).\u003c/p\u003e \u003cb\u003eNote:\u003c/b\u003e This method used to have a hidden problem for names like \"foo.exe:bar.txt\". In this case, the name wouldn\u0027t be the name of a file, but the identifier of an alternate data stream (bar.txt) on the file foo.exe. The method used to return \".txt\" here, which would be misleading. Commons IO 2.7, and later versions, are throwing an  {@link IllegalArgumentException} for names like this.\n * @param fileName the fileName to find the last extension separator in, null returns -1\n * @return the index of the last extension separator character, or -1 if there is no such character\n * @throws IllegalArgumentException \u003cb\u003eWindows only:\u003c/b\u003e The fileName parameter is, in fact,the identifier of an Alternate Data Stream, for example \"foo.exe:bar.txt\".\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getPrefix#783",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getPrefix(java.lang.String)",
+    "snippet": "public static String getPrefix(final String fileName) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        final int len \u003d getPrefixLength(fileName);\n        if (len \u003c 0) {\n            return null;\n        }\n        if (len \u003e fileName.length()) {\n            failIfNullBytePresent(fileName + UNIX_SEPARATOR);\n            return fileName + UNIX_SEPARATOR;\n        }\n        final String path \u003d fileName.substring(0, len);\n        failIfNullBytePresent(path);\n        return path;\n    }",
+    "begin_line": 783,
+    "end_line": 798,
+    "comment": "/** \n * Gets the prefix from a full fileName, such as \u003ccode\u003eC:/\u003c/code\u003e or \u003ccode\u003e~/\u003c/code\u003e. \u003cp\u003e This method will handle a file in either Unix or Windows format. The prefix includes the first slash in the full fileName where applicable. \u003cpre\u003e Windows: a\\b\\c.txt           --\u0026gt; \"\"          --\u0026gt; relative \\a\\b\\c.txt          --\u0026gt; \"\\\"         --\u0026gt; current drive absolute C:a\\b\\c.txt         --\u0026gt; \"C:\"        --\u0026gt; drive relative C:\\a\\b\\c.txt        --\u0026gt; \"C:\\\"       --\u0026gt; absolute \\\\server\\a\\b\\c.txt  --\u0026gt; \"\\\\server\\\" --\u0026gt; UNC Unix: a/b/c.txt           --\u0026gt; \"\"          --\u0026gt; relative /a/b/c.txt          --\u0026gt; \"/\"         --\u0026gt; absolute ~/a/b/c.txt         --\u0026gt; \"~/\"        --\u0026gt; current user ~                   --\u0026gt; \"~/\"        --\u0026gt; current user (slash added) ~user/a/b/c.txt     --\u0026gt; \"~user/\"    --\u0026gt; named user ~user               --\u0026gt; \"~user/\"    --\u0026gt; named user (slash added) \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on. ie. both Unix and Windows prefixes are matched regardless.\n * @param fileName  the fileName to query, null returns null\n * @return the prefix of the file, null if invalid. Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getPath#823",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getPath(java.lang.String)",
+    "snippet": "public static String getPath(final String fileName) {\n        return doGetPath(fileName, 1);\n    }",
+    "begin_line": 823,
+    "end_line": 825,
+    "comment": "/** \n * Gets the path from a full fileName, which excludes the prefix. \u003cp\u003e This method will handle a file in either Unix or Windows format. The method is entirely text based, and returns the text before and including the last forward or backslash. \u003cpre\u003e C:\\a\\b\\c.txt --\u0026gt; a\\b\\ ~/a/b/c.txt  --\u0026gt; a/b/ a.txt        --\u0026gt; \"\" a/b/c        --\u0026gt; a/b/ a/b/c/       --\u0026gt; a/b/c/ \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on. \u003cp\u003e This method drops the prefix from the result. See  {@link #getFullPath(String)} for the method that retains the prefix.\n * @param fileName  the fileName to query, null returns null\n * @return the path of the file, an empty string if none exists, null if invalid.Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getPathNoEndSeparator#851",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getPathNoEndSeparator(java.lang.String)",
+    "snippet": "public static String getPathNoEndSeparator(final String fileName) {\n        return doGetPath(fileName, 0);\n    }",
+    "begin_line": 851,
+    "end_line": 853,
+    "comment": "/** \n * Gets the path from a full fileName, which excludes the prefix, and also excluding the final directory separator. \u003cp\u003e This method will handle a file in either Unix or Windows format. The method is entirely text based, and returns the text before the last forward or backslash. \u003cpre\u003e C:\\a\\b\\c.txt --\u0026gt; a\\b ~/a/b/c.txt  --\u0026gt; a/b a.txt        --\u0026gt; \"\" a/b/c        --\u0026gt; a/b a/b/c/       --\u0026gt; a/b/c \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on. \u003cp\u003e This method drops the prefix from the result. See  {@link #getFullPathNoEndSeparator(String)} for the method that retains the prefix.\n * @param fileName  the fileName to query, null returns null\n * @return the path of the file, an empty string if none exists, null if invalid.Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.doGetPath#862",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.doGetPath(java.lang.String, int)",
+    "snippet": "private static String doGetPath(final String fileName, final int separatorAdd) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        final int prefix \u003d getPrefixLength(fileName);\n        if (prefix \u003c 0) {\n            return null;\n        }\n        final int index \u003d indexOfLastSeparator(fileName);\n        final int endIndex \u003d index+separatorAdd;\n        if (prefix \u003e\u003d fileName.length() || index \u003c 0 || prefix \u003e\u003d endIndex) {\n            return EMPTY_STRING;\n        }\n        final String path \u003d fileName.substring(prefix, endIndex);\n        failIfNullBytePresent(path);\n        return path;\n    }",
+    "begin_line": 862,
+    "end_line": 878,
+    "comment": "/** \n * Does the work of getting the path.\n * @param fileName  the fileName\n * @param separatorAdd  0 to omit the end separator, 1 to return it\n * @return the path. Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getFullPath#905",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getFullPath(java.lang.String)",
+    "snippet": "public static String getFullPath(final String fileName) {\n        return doGetFullPath(fileName, true);\n    }",
+    "begin_line": 905,
+    "end_line": 907,
+    "comment": "/** \n * Gets the full path from a full fileName, which is the prefix + path. \u003cp\u003e This method will handle a file in either Unix or Windows format. The method is entirely text based, and returns the text before and including the last forward or backslash. \u003cpre\u003e C:\\a\\b\\c.txt --\u0026gt; C:\\a\\b\\ ~/a/b/c.txt  --\u0026gt; ~/a/b/ a.txt        --\u0026gt; \"\" a/b/c        --\u0026gt; a/b/ a/b/c/       --\u0026gt; a/b/c/ C:           --\u0026gt; C: C:\\          --\u0026gt; C:\\ ~            --\u0026gt; ~/ ~/           --\u0026gt; ~/ ~user        --\u0026gt; ~user/ ~user/       --\u0026gt; ~user/ \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to query, null returns null\n * @return the path of the file, an empty string if none exists, null if invalid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getFullPathNoEndSeparator#935",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getFullPathNoEndSeparator(java.lang.String)",
+    "snippet": "public static String getFullPathNoEndSeparator(final String fileName) {\n        return doGetFullPath(fileName, false);\n    }",
+    "begin_line": 935,
+    "end_line": 937,
+    "comment": "/** \n * Gets the full path from a full fileName, which is the prefix + path, and also excluding the final directory separator. \u003cp\u003e This method will handle a file in either Unix or Windows format. The method is entirely text based, and returns the text before the last forward or backslash. \u003cpre\u003e C:\\a\\b\\c.txt --\u0026gt; C:\\a\\b ~/a/b/c.txt  --\u0026gt; ~/a/b a.txt        --\u0026gt; \"\" a/b/c        --\u0026gt; a/b a/b/c/       --\u0026gt; a/b/c C:           --\u0026gt; C: C:\\          --\u0026gt; C:\\ ~            --\u0026gt; ~ ~/           --\u0026gt; ~ ~user        --\u0026gt; ~user ~user/       --\u0026gt; ~user \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to query, null returns null\n * @return the path of the file, an empty string if none exists, null if invalid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.doGetFullPath#946",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.doGetFullPath(java.lang.String, boolean)",
+    "snippet": "private static String doGetFullPath(final String fileName, final boolean includeSeparator) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        final int prefix \u003d getPrefixLength(fileName);\n        if (prefix \u003c 0) {\n            return null;\n        }\n        if (prefix \u003e\u003d fileName.length()) {\n            if (includeSeparator) {\n                return getPrefix(fileName);  // add end slash if necessary\n            }\n            return fileName;\n        }\n        final int index \u003d indexOfLastSeparator(fileName);\n        if (index \u003c 0) {\n            return fileName.substring(0, prefix);\n        }\n        int end \u003d index + (includeSeparator ?  1 : 0);\n        if (end \u003d\u003d 0) {\n            end++;\n        }\n        return fileName.substring(0, end);\n    }",
+    "begin_line": 946,
+    "end_line": 969,
+    "comment": "/** \n * Does the work of getting the path.\n * @param fileName  the fileName\n * @param includeSeparator  true to include the end separator\n * @return the path\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getName#989",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getName(java.lang.String)",
+    "snippet": "public static String getName(final String fileName) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        failIfNullBytePresent(fileName);\n        final int index \u003d indexOfLastSeparator(fileName);\n        return fileName.substring(index + 1);\n    }",
+    "begin_line": 989,
+    "end_line": 996,
+    "comment": "/** \n * Gets the name minus the path from a full fileName. \u003cp\u003e This method will handle a file in either Unix or Windows format. The text after the last forward or backslash is returned. \u003cpre\u003e a/b/c.txt --\u0026gt; c.txt a.txt     --\u0026gt; a.txt a/b/c     --\u0026gt; c a/b/c/    --\u0026gt; \"\" \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to query, null returns null\n * @return the name of the file without the path, or an empty string if none exists.Null bytes inside string will be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.failIfNullBytePresent#1004",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.failIfNullBytePresent(java.lang.String)",
+    "snippet": "private static void failIfNullBytePresent(final String path) {\n        final int len \u003d path.length();\n        for (int i \u003d 0; i \u003c len; i++) {\n            if (path.charAt(i) \u003d\u003d 0) {\n                throw new IllegalArgumentException(\"Null byte present in file/path name. There are no \" +\n                        \"known legitimate use cases for such data, but several injection attacks may use it\");\n            }\n        }\n    }",
+    "begin_line": 1004,
+    "end_line": 1012,
+    "comment": "/** \n * Check the input for null bytes, a sign of unsanitized data being passed to to file level functions. This may be used for poison byte attacks.\n * @param path the path to check\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getBaseName#1032",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getBaseName(java.lang.String)",
+    "snippet": "public static String getBaseName(final String fileName) {\n        return removeExtension(getName(fileName));\n    }",
+    "begin_line": 1032,
+    "end_line": 1034,
+    "comment": "/** \n * Gets the base name, minus the full path and extension, from a full fileName. \u003cp\u003e This method will handle a file in either Unix or Windows format. The text after the last forward or backslash and before the last dot is returned. \u003cpre\u003e a/b/c.txt --\u0026gt; c a.txt     --\u0026gt; a a/b/c     --\u0026gt; c a/b/c/    --\u0026gt; \"\" \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to query, null returns null\n * @return the name of the file without the path, or an empty string if none exists. Null bytes inside stringwill be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getExtension#1064",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getExtension(java.lang.String)",
+    "snippet": "public static String getExtension(final String fileName) throws IllegalArgumentException {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        final int index \u003d indexOfExtension(fileName);\n        if (index \u003d\u003d NOT_FOUND) {\n            return EMPTY_STRING;\n        }\n        return fileName.substring(index + 1);\n    }",
+    "begin_line": 1064,
+    "end_line": 1073,
+    "comment": "/** \n * Gets the extension of a fileName. \u003cp\u003e This method returns the textual part of the fileName after the last dot. There must be no directory separator after the dot. \u003cpre\u003e foo.txt      --\u0026gt; \"txt\" a/b/c.jpg    --\u0026gt; \"jpg\" a/b.txt/c    --\u0026gt; \"\" a/b/c        --\u0026gt; \"\" \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on, with the exception of a possible  {@link IllegalArgumentException} on Windows (see below).\u003c/p\u003e \u003cp\u003e \u003cb\u003eNote:\u003c/b\u003e This method used to have a hidden problem for names like \"foo.exe:bar.txt\". In this case, the name wouldn\u0027t be the name of a file, but the identifier of an alternate data stream (bar.txt) on the file foo.exe. The method used to return \".txt\" here, which would be misleading. Commons IO 2.7, and later versions, are throwing an  {@link IllegalArgumentException} for names like this.\n * @param fileName the fileName to retrieve the extension of.\n * @return the extension of the file or an empty string if none exists or {@code null}if the fileName is  {@code null}.\n * @throws IllegalArgumentException \u003cb\u003eWindows only:\u003c/b\u003e The fileName parameter is, in fact,the identifier of an Alternate Data Stream, for example \"foo.exe:bar.txt\".\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.getAdsCriticalOffset#1081",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.getAdsCriticalOffset(java.lang.String)",
+    "snippet": "private static int getAdsCriticalOffset(final String fileName) {\n        // Step 1: Remove leading path segments.\n        final int offset1 \u003d fileName.lastIndexOf(SYSTEM_SEPARATOR);\n        final int offset2 \u003d fileName.lastIndexOf(OTHER_SEPARATOR);\n        if (offset1 \u003d\u003d -1) {\n            if (offset2 \u003d\u003d -1) {\n                return 0;\n            }\n            return offset2 + 1;\n        }\n        if (offset2 \u003d\u003d -1) {\n            return offset1 + 1;\n        }\n        return Math.max(offset1, offset2) + 1;\n    }",
+    "begin_line": 1081,
+    "end_line": 1095,
+    "comment": "/** \n * Special handling for NTFS ADS: Don\u0027t accept colon in the fileName.\n * @param fileName a file name\n * @return ADS offsets.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.removeExtension#1115",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.removeExtension(java.lang.String)",
+    "snippet": "public static String removeExtension(final String fileName) {\n        if (fileName \u003d\u003d null) {\n            return null;\n        }\n        failIfNullBytePresent(fileName);\n\n        final int index \u003d indexOfExtension(fileName);\n        if (index \u003d\u003d NOT_FOUND) {\n            return fileName;\n        }\n        return fileName.substring(0, index);\n    }",
+    "begin_line": 1115,
+    "end_line": 1126,
+    "comment": "/** \n * Removes the extension from a fileName. \u003cp\u003e This method returns the textual part of the fileName before the last dot. There must be no directory separator after the dot. \u003cpre\u003e foo.txt    --\u0026gt; foo a\\b\\c.jpg  --\u0026gt; a\\b\\c a\\b\\c      --\u0026gt; a\\b\\c a.b\\c      --\u0026gt; a.b\\c \u003c/pre\u003e \u003cp\u003e The output will be the same irrespective of the machine that the code is running on.\n * @param fileName  the fileName to query, null returns null\n * @return the fileName minus the extension\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.equals#1140",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.equals(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean equals(final String fileName1, final String fileName2) {\n        return equals(fileName1, fileName2, false, IOCase.SENSITIVE);\n    }",
+    "begin_line": 1140,
+    "end_line": 1142,
+    "comment": "/** \n * Checks whether two fileNames are equal exactly. \u003cp\u003e No processing is performed on the fileNames other than comparison, thus this is merely a null-safe case-sensitive equals.\n * @param fileName1  the first fileName to query, may be null\n * @param fileName2  the second fileName to query, may be null\n * @return true if the fileNames are equal, null equals null\n * @see IOCase#SENSITIVE\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.equalsOnSystem#1155",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.equalsOnSystem(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean equalsOnSystem(final String fileName1, final String fileName2) {\n        return equals(fileName1, fileName2, false, IOCase.SYSTEM);\n    }",
+    "begin_line": 1155,
+    "end_line": 1157,
+    "comment": "/** \n * Checks whether two fileNames are equal using the case rules of the system. \u003cp\u003e No processing is performed on the fileNames other than comparison. The check is case-sensitive on Unix and case-insensitive on Windows.\n * @param fileName1  the first fileName to query, may be null\n * @param fileName2  the second fileName to query, may be null\n * @return true if the fileNames are equal, null equals null\n * @see IOCase#SYSTEM\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.equalsNormalized#1171",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.equalsNormalized(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean equalsNormalized(final String fileName1, final String fileName2) {\n        return equals(fileName1, fileName2, true, IOCase.SENSITIVE);\n    }",
+    "begin_line": 1171,
+    "end_line": 1173,
+    "comment": "/** \n * Checks whether two fileNames are equal after both have been normalized. \u003cp\u003e Both fileNames are first passed to  {@link #normalize(String)}. The check is then performed in a case-sensitive manner.\n * @param fileName1  the first fileName to query, may be null\n * @param fileName2  the second fileName to query, may be null\n * @return true if the fileNames are equal, null equals null\n * @see IOCase#SENSITIVE\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.equalsNormalizedOnSystem#1188",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.equalsNormalizedOnSystem(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean equalsNormalizedOnSystem(final String fileName1, final String fileName2) {\n        return equals(fileName1, fileName2, true, IOCase.SYSTEM);\n    }",
+    "begin_line": 1188,
+    "end_line": 1190,
+    "comment": "/** \n * Checks whether two fileNames are equal after both have been normalized and using the case rules of the system. \u003cp\u003e Both fileNames are first passed to  {@link #normalize(String)}. The check is then performed case-sensitive on Unix and case-insensitive on Windows.\n * @param fileName1  the first fileName to query, may be null\n * @param fileName2  the second fileName to query, may be null\n * @return true if the fileNames are equal, null equals null\n * @see IOCase#SYSTEM\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.equals#1203",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.equals(java.lang.String, java.lang.String, boolean, org.apache.commons.io.IOCase)",
+    "snippet": "public static boolean equals(\n            String fileName1, String fileName2,\n            final boolean normalized, IOCase caseSensitivity) {\n\n        if (fileName1 \u003d\u003d null || fileName2 \u003d\u003d null) {\n            return fileName1 \u003d\u003d null \u0026\u0026 fileName2 \u003d\u003d null;\n        }\n        if (normalized) {\n            fileName1 \u003d normalize(fileName1);\n            if (fileName1 \u003d\u003d null) {\n                return false;\n            }\n            fileName2 \u003d normalize(fileName2);\n            if (fileName2 \u003d\u003d null) {\n                return false;\n            }\n        }\n        if (caseSensitivity \u003d\u003d null) {\n            caseSensitivity \u003d IOCase.SENSITIVE;\n        }\n        return caseSensitivity.checkEquals(fileName1, fileName2);\n    }",
+    "begin_line": 1203,
+    "end_line": 1224,
+    "comment": "/** \n * Checks whether two fileNames are equal, optionally normalizing and providing control over the case-sensitivity.\n * @param fileName1  the first fileName to query, may be null\n * @param fileName2  the second fileName to query, may be null\n * @param normalized  whether to normalize the fileNames\n * @param caseSensitivity  what case sensitivity rule to use, null means case-sensitive\n * @return true if the fileNames are equal, null equals null\n * @since 1.3\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isExtension#1239",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isExtension(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean isExtension(final String fileName, final String extension) {\n        if (fileName \u003d\u003d null) {\n            return false;\n        }\n        failIfNullBytePresent(fileName);\n\n        if (extension \u003d\u003d null || extension.isEmpty()) {\n            return indexOfExtension(fileName) \u003d\u003d NOT_FOUND;\n        }\n        final String fileExt \u003d getExtension(fileName);\n        return fileExt.equals(extension);\n    }",
+    "begin_line": 1239,
+    "end_line": 1250,
+    "comment": "/** \n * Checks whether the extension of the fileName is that specified. \u003cp\u003e This method obtains the extension as the textual part of the fileName after the last dot. There must be no directory separator after the dot. The extension check is case-sensitive on all platforms.\n * @param fileName  the fileName to query, null returns false\n * @param extension  the extension to check for, null or empty checks for no extension\n * @return true if the fileName has the specified extension\n * @throws java.lang.IllegalArgumentException if the supplied fileName contains null bytes\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isExtension#1264",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isExtension(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean isExtension(final String fileName, final String... extensions) {\n        if (fileName \u003d\u003d null) {\n            return false;\n        }\n        failIfNullBytePresent(fileName);\n\n        if (extensions \u003d\u003d null || extensions.length \u003d\u003d 0) {\n            return indexOfExtension(fileName) \u003d\u003d NOT_FOUND;\n        }\n        final String fileExt \u003d getExtension(fileName);\n        for (final String extension : extensions) {\n            if (fileExt.equals(extension)) {\n                return true;\n            }\n        }\n        return false;\n    }",
+    "begin_line": 1264,
+    "end_line": 1280,
+    "comment": "/** \n * Checks whether the extension of the fileName is one of those specified. \u003cp\u003e This method obtains the extension as the textual part of the fileName after the last dot. There must be no directory separator after the dot. The extension check is case-sensitive on all platforms.\n * @param fileName  the fileName to query, null returns false\n * @param extensions  the extensions to check for, null checks for no extension\n * @return true if the fileName is one of the extensions\n * @throws java.lang.IllegalArgumentException if the supplied fileName contains null bytes\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isExtension#1294",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isExtension(java.lang.String, java.util.Collection\u003cjava.lang.String\u003e)",
+    "snippet": "public static boolean isExtension(final String fileName, final Collection\u003cString\u003e extensions) {\n        if (fileName \u003d\u003d null) {\n            return false;\n        }\n        failIfNullBytePresent(fileName);\n\n        if (extensions \u003d\u003d null || extensions.isEmpty()) {\n            return indexOfExtension(fileName) \u003d\u003d NOT_FOUND;\n        }\n        final String fileExt \u003d getExtension(fileName);\n        for (final String extension : extensions) {\n            if (fileExt.equals(extension)) {\n                return true;\n            }\n        }\n        return false;\n    }",
+    "begin_line": 1294,
+    "end_line": 1310,
+    "comment": "/** \n * Checks whether the extension of the fileName is one of those specified. \u003cp\u003e This method obtains the extension as the textual part of the fileName after the last dot. There must be no directory separator after the dot. The extension check is case-sensitive on all platforms.\n * @param fileName  the fileName to query, null returns false\n * @param extensions  the extensions to check for, null checks for no extension\n * @return true if the fileName is one of the extensions\n * @throws java.lang.IllegalArgumentException if the supplied fileName contains null bytes\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.wildcardMatch#1335",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.wildcardMatch(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean wildcardMatch(final String fileName, final String wildcardMatcher) {\n        return wildcardMatch(fileName, wildcardMatcher, IOCase.SENSITIVE);\n    }",
+    "begin_line": 1335,
+    "end_line": 1337,
+    "comment": "/** \n * Checks a fileName to see if it matches the specified wildcard matcher, always testing case-sensitive. \u003cp\u003e The wildcard matcher uses the characters \u0027?\u0027 and \u0027*\u0027 to represent a single or multiple (zero or more) wildcard characters. This is the same as often found on Dos/Unix command lines. The check is case-sensitive always. \u003cpre\u003e wildcardMatch(\"c.txt\", \"*.txt\")      --\u0026gt; true wildcardMatch(\"c.txt\", \"*.jpg\")      --\u0026gt; false wildcardMatch(\"a/b/c.txt\", \"a/b/*\")  --\u0026gt; true wildcardMatch(\"c.txt\", \"*.???\")      --\u0026gt; true wildcardMatch(\"c.txt\", \"*.????\")     --\u0026gt; false \u003c/pre\u003e N.B. the sequence \"*?\" does not work properly at present in match strings.\n * @param fileName  the fileName to match on\n * @param wildcardMatcher  the wildcard string to match against\n * @return true if the fileName matches the wildcard string\n * @see IOCase#SENSITIVE\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.wildcardMatchOnSystem#1361",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.wildcardMatchOnSystem(java.lang.String, java.lang.String)",
+    "snippet": "public static boolean wildcardMatchOnSystem(final String fileName, final String wildcardMatcher) {\n        return wildcardMatch(fileName, wildcardMatcher, IOCase.SYSTEM);\n    }",
+    "begin_line": 1361,
+    "end_line": 1363,
+    "comment": "/** \n * Checks a fileName to see if it matches the specified wildcard matcher using the case rules of the system. \u003cp\u003e The wildcard matcher uses the characters \u0027?\u0027 and \u0027*\u0027 to represent a single or multiple (zero or more) wildcard characters. This is the same as often found on Dos/Unix command lines. The check is case-sensitive on Unix and case-insensitive on Windows. \u003cpre\u003e wildcardMatch(\"c.txt\", \"*.txt\")      --\u0026gt; true wildcardMatch(\"c.txt\", \"*.jpg\")      --\u0026gt; false wildcardMatch(\"a/b/c.txt\", \"a/b/*\")  --\u0026gt; true wildcardMatch(\"c.txt\", \"*.???\")      --\u0026gt; true wildcardMatch(\"c.txt\", \"*.????\")     --\u0026gt; false \u003c/pre\u003e N.B. the sequence \"*?\" does not work properly at present in match strings.\n * @param fileName  the fileName to match on\n * @param wildcardMatcher  the wildcard string to match against\n * @return true if the fileName matches the wildcard string\n * @see IOCase#SYSTEM\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.wildcardMatch#1379",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.wildcardMatch(java.lang.String, java.lang.String, org.apache.commons.io.IOCase)",
+    "snippet": "public static boolean wildcardMatch(final String fileName, final String wildcardMatcher, IOCase caseSensitivity) {\n        if (fileName \u003d\u003d null \u0026\u0026 wildcardMatcher \u003d\u003d null) {\n            return true;\n        }\n        if (fileName \u003d\u003d null || wildcardMatcher \u003d\u003d null) {\n            return false;\n        }\n        if (caseSensitivity \u003d\u003d null) {\n            caseSensitivity \u003d IOCase.SENSITIVE;\n        }\n        final String[] wcs \u003d splitOnTokens(wildcardMatcher);\n        boolean anyChars \u003d false;\n        int textIdx \u003d 0;\n        int wcsIdx \u003d 0;\n        final Deque\u003cint[]\u003e backtrack \u003d new ArrayDeque\u003c\u003e(wcs.length);\n\n        // loop around a backtrack stack, to handle complex * matching\n        do {\n            if (!backtrack.isEmpty()) {\n                final int[] array \u003d backtrack.pop();\n                wcsIdx \u003d array[0];\n                textIdx \u003d array[1];\n                anyChars \u003d true;\n            }\n\n            // loop whilst tokens and text left to process\n            while (wcsIdx \u003c wcs.length) {\n\n                if (wcs[wcsIdx].equals(\"?\")) {\n                    // ? so move to next text char\n                    textIdx++;\n                    if (textIdx \u003e fileName.length()) {\n                        break;\n                    }\n                    anyChars \u003d false;\n\n                } else if (wcs[wcsIdx].equals(\"*\")) {\n                    // set any chars status\n                    anyChars \u003d true;\n                    if (wcsIdx \u003d\u003d wcs.length - 1) {\n                        textIdx \u003d fileName.length();\n                    }\n\n                } else {\n                    // matching text token\n                    if (anyChars) {\n                        // any chars then try to locate text token\n                        textIdx \u003d caseSensitivity.checkIndexOf(fileName, textIdx, wcs[wcsIdx]);\n                        if (textIdx \u003d\u003d NOT_FOUND) {\n                            // token not found\n                            break;\n                        }\n                        final int repeat \u003d caseSensitivity.checkIndexOf(fileName, textIdx + 1, wcs[wcsIdx]);\n                        if (repeat \u003e\u003d 0) {\n                            backtrack.push(new int[] {wcsIdx, repeat});\n                        }\n                    } else {\n                        // matching from current position\n                        if (!caseSensitivity.checkRegionMatches(fileName, textIdx, wcs[wcsIdx])) {\n                            // couldnt match token\n                            break;\n                        }\n                    }\n\n                    // matched text token, move text index to end of matched token\n                    textIdx +\u003d wcs[wcsIdx].length();\n                    anyChars \u003d false;\n                }\n\n                wcsIdx++;\n            }\n\n            // full match\n            if (wcsIdx \u003d\u003d wcs.length \u0026\u0026 textIdx \u003d\u003d fileName.length()) {\n                return true;\n            }\n\n        } while (!backtrack.isEmpty());\n\n        return false;\n    }",
+    "begin_line": 1379,
+    "end_line": 1459,
+    "comment": "/** \n * Checks a fileName to see if it matches the specified wildcard matcher allowing control over case-sensitivity. \u003cp\u003e The wildcard matcher uses the characters \u0027?\u0027 and \u0027*\u0027 to represent a single or multiple (zero or more) wildcard characters. N.B. the sequence \"*?\" does not work properly at present in match strings.\n * @param fileName  the fileName to match on\n * @param wildcardMatcher  the wildcard string to match against\n * @param caseSensitivity  what case sensitivity rule to use, null means case-sensitive\n * @return true if the fileName matches the wildcard string\n * @since 1.3\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.splitOnTokens#1469",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.splitOnTokens(java.lang.String)",
+    "snippet": "static String[] splitOnTokens(final String text) {\n        // used by wildcardMatch\n        // package level so a unit test may run on this\n\n        if (text.indexOf(\u0027?\u0027) \u003d\u003d NOT_FOUND \u0026\u0026 text.indexOf(\u0027*\u0027) \u003d\u003d NOT_FOUND) {\n            return new String[] { text };\n        }\n\n        final char[] array \u003d text.toCharArray();\n        final ArrayList\u003cString\u003e list \u003d new ArrayList\u003c\u003e();\n        final StringBuilder buffer \u003d new StringBuilder();\n        char prevChar \u003d 0;\n        for (final char ch : array) {\n            if (ch \u003d\u003d \u0027?\u0027 || ch \u003d\u003d \u0027*\u0027) {\n                if (buffer.length() !\u003d 0) {\n                    list.add(buffer.toString());\n                    buffer.setLength(0);\n                }\n                if (ch \u003d\u003d \u0027?\u0027) {\n                    list.add(\"?\");\n                } else if (prevChar !\u003d \u0027*\u0027) {// ch \u003d\u003d \u0027*\u0027 here; check if previous char was \u0027*\u0027\n                    list.add(\"*\");\n                }\n            } else {\n                buffer.append(ch);\n            }\n            prevChar \u003d ch;\n        }\n        if (buffer.length() !\u003d 0) {\n            list.add(buffer.toString());\n        }\n\n        return list.toArray(EMPTY_STRING_ARRAY);\n    }",
+    "begin_line": 1469,
+    "end_line": 1502,
+    "comment": "/** \n * Splits a string into a number of tokens. The text is split by \u0027?\u0027 and \u0027*\u0027. Where multiple \u0027*\u0027 occur consecutively they are collapsed into a single \u0027*\u0027.\n * @param text  the text to split\n * @return the array of tokens, never null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isValidHostName#1516",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isValidHostName(java.lang.String)",
+    "snippet": "private static boolean isValidHostName(final String name) {\n        return isIPv6Address(name) || isRFC3986HostName(name);\n    }",
+    "begin_line": 1516,
+    "end_line": 1518,
+    "comment": "/** \n * Checks whether a given string is a valid host name according to RFC 3986. \u003cp\u003eAccepted are IP addresses (v4 and v6) as well as what the RFC calls a \"reg-name\". Percent encoded names don\u0027t seem to be valid names in UNC paths.\u003c/p\u003e\n * @see \"https://tools.ietf.org/html/rfc3986#section-3.2.2\"\n * @param name the hostname to validate\n * @return true if the given name is a valid host name\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isIPv4Address#1531",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isIPv4Address(java.lang.String)",
+    "snippet": " isIPv4Address(final String name) {\n        final Matcher m \u003d IPV4_PATTERN.matcher(name);\n        if (!m.matches() || m.groupCount() !\u003d 4) {\n            return false;\n        }\n\n        // verify that address subgroups are legal\n        for (int i \u003d 1; i \u003c\u003d 4; i++) {\n            final String ipSegment \u003d m.group(i);\n            final int iIpSegment \u003d Integer.parseInt(ipSegment);\n            if (iIpSegment \u003e IPV4_MAX_OCTET_VALUE) {\n                return false;\n            }\n\n            if (ipSegment.length() \u003e 1 \u0026\u0026 ipSegment.startsWith(\"0\")) {\n                return false;\n            }\n\n        }\n\n        return true;\n    }",
+    "begin_line": 1531,
+    "end_line": 1552,
+    "comment": "/** \n * Checks whether a given string represents a valid IPv4 address.\n * @param name the name to validate\n * @return true if the given name is a valid IPv4 address\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isIPv6Address#1566",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isIPv6Address(java.lang.String)",
+    "snippet": "private static boolean isIPv6Address(final String inet6Address) {\n        final boolean containsCompressedZeroes \u003d inet6Address.contains(\"::\");\n        if (containsCompressedZeroes \u0026\u0026 (inet6Address.indexOf(\"::\") !\u003d inet6Address.lastIndexOf(\"::\"))) {\n            return false;\n        }\n        if ((inet6Address.startsWith(\":\") \u0026\u0026 !inet6Address.startsWith(\"::\"))\n                || (inet6Address.endsWith(\":\") \u0026\u0026 !inet6Address.endsWith(\"::\"))) {\n            return false;\n        }\n        String[] octets \u003d inet6Address.split(\":\");\n        if (containsCompressedZeroes) {\n            final List\u003cString\u003e octetList \u003d new ArrayList\u003c\u003e(Arrays.asList(octets));\n            if (inet6Address.endsWith(\"::\")) {\n                // String.split() drops ending empty segments\n                octetList.add(\"\");\n            } else if (inet6Address.startsWith(\"::\") \u0026\u0026 !octetList.isEmpty()) {\n                octetList.remove(0);\n            }\n            octets \u003d octetList.toArray(EMPTY_STRING_ARRAY);\n        }\n        if (octets.length \u003e IPV6_MAX_HEX_GROUPS) {\n            return false;\n        }\n        int validOctets \u003d 0;\n        int emptyOctets \u003d 0; // consecutive empty chunks\n        for (int index \u003d 0; index \u003c octets.length; index++) {\n            final String octet \u003d octets[index];\n            if (octet.length() \u003d\u003d 0) {\n                emptyOctets++;\n                if (emptyOctets \u003e 1) {\n                    return false;\n                }\n            } else {\n                emptyOctets \u003d 0;\n                // Is last chunk an IPv4 address?\n                if (index \u003d\u003d octets.length - 1 \u0026\u0026 octet.contains(\".\")) {\n                    if (!isIPv4Address(octet)) {\n                        return false;\n                    }\n                    validOctets +\u003d 2;\n                    continue;\n                }\n                if (octet.length() \u003e IPV6_MAX_HEX_DIGITS_PER_GROUP) {\n                    return false;\n                }\n                int octetInt \u003d 0;\n                try {\n                    octetInt \u003d Integer.parseInt(octet, BASE_16);\n                } catch (final NumberFormatException e) {\n                    return false;\n                }\n                if (octetInt \u003c 0 || octetInt \u003e MAX_UNSIGNED_SHORT) {\n                    return false;\n                }\n            }\n            validOctets++;\n        }\n        return validOctets \u003c\u003d IPV6_MAX_HEX_GROUPS \u0026\u0026 (validOctets \u003e\u003d IPV6_MAX_HEX_GROUPS || containsCompressedZeroes);\n    }",
+    "begin_line": 1566,
+    "end_line": 1624,
+    "comment": "/** \n * Checks whether a given string represents a valid IPv6 address.\n * @param inet6Address the name to validate\n * @return true if the given name is a valid IPv6 address\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FilenameUtils.isRFC3986HostName#1636",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/FilenameUtils.java",
+    "class_name": "org.apache.commons.io.FilenameUtils",
+    "signature": "org.apache.commons.io.FilenameUtils.isRFC3986HostName(java.lang.String)",
+    "snippet": "private static boolean isRFC3986HostName(final String name) {\n        final String[] parts \u003d name.split(\"\\\\.\", -1);\n        for (int i \u003d 0; i \u003c parts.length; i++) {\n            if (parts[i].length() \u003d\u003d 0) {\n                // trailing dot is legal, otherwise we\u0027ve hit a .. sequence\n                return i \u003d\u003d parts.length - 1;\n            }\n            if (!REG_NAME_PART_PATTERN.matcher(parts[i]).matches()) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 1636,
+    "end_line": 1648,
+    "comment": "/** \n * Checks whether a given string is a valid host name according to RFC 3986 - not accepting IP addresses.\n * @see \"https://tools.ietf.org/html/rfc3986#section-3.2.2\"\n * @param name the hostname to validate\n * @return true if the given name is a valid host name\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.forName#83",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.forName(java.lang.String)",
+    "snippet": "public static IOCase forName(final String name) {\n        for (final IOCase ioCase : IOCase.values()) {\n            if (ioCase.getName().equals(name)) {\n                return ioCase;\n            }\n        }\n        throw new IllegalArgumentException(\"Invalid IOCase name: \" + name);\n    }",
+    "begin_line": 83,
+    "end_line": 90,
+    "comment": "/** \n * Factory method to create an IOCase from a name.\n * @param name  the name to find\n * @return the IOCase object\n * @throws IllegalArgumentException if the name is invalid\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.IOCase#98",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.IOCase(java.lang.String, boolean)",
+    "snippet": " IOCase(final String name, final boolean sensitive) {\n        this.name \u003d name;\n        this.sensitive \u003d sensitive;\n    }",
+    "begin_line": 98,
+    "end_line": 101,
+    "comment": "/** \n * Constructs a new instance.\n * @param name  the name\n * @param sensitive  the sensitivity\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.readResolve#109",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.readResolve()",
+    "snippet": "private Object readResolve() {\n        return forName(name);\n    }",
+    "begin_line": 109,
+    "end_line": 111,
+    "comment": "/** \n * Replaces the enumeration from the stream with a real one. This ensures that the correct flag is set for SYSTEM.\n * @return the resolved object\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.getName#118",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.getName()",
+    "snippet": "public String getName() {\n        return name;\n    }",
+    "begin_line": 118,
+    "end_line": 120,
+    "comment": "/** \n * Gets the name of the constant.\n * @return the name of the constant\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.isCaseSensitive#127",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.isCaseSensitive()",
+    "snippet": "public boolean isCaseSensitive() {\n        return sensitive;\n    }",
+    "begin_line": 127,
+    "end_line": 129,
+    "comment": "/** \n * Does the object represent case sensitive comparison.\n * @return true if case sensitive\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkCompareTo#143",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkCompareTo(java.lang.String, java.lang.String)",
+    "snippet": "public int checkCompareTo(final String str1, final String str2) {\n        Objects.requireNonNull(str1, \"str1\");\n        Objects.requireNonNull(str2, \"str2\");\n        return sensitive ? str1.compareTo(str2) : str1.compareToIgnoreCase(str2);\n    }",
+    "begin_line": 143,
+    "end_line": 147,
+    "comment": "/** \n * Compares two strings using the case-sensitivity rule. \u003cp\u003e This method mimics  {@link String#compareTo} but takes case-sensitivityinto account. \u003c/p\u003e\n * @param str1  the first string to compare, not null\n * @param str2  the second string to compare, not null\n * @return true if equal using the case rules\n * @throws NullPointerException if either string is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkEquals#161",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkEquals(java.lang.String, java.lang.String)",
+    "snippet": "public boolean checkEquals(final String str1, final String str2) {\n        Objects.requireNonNull(str1, \"str1\");\n        Objects.requireNonNull(str2, \"str2\");\n        return sensitive ? str1.equals(str2) : str1.equalsIgnoreCase(str2);\n    }",
+    "begin_line": 161,
+    "end_line": 165,
+    "comment": "/** \n * Compares two strings using the case-sensitivity rule. \u003cp\u003e This method mimics  {@link String#equals} but takes case-sensitivityinto account. \u003c/p\u003e\n * @param str1  the first string to compare, not null\n * @param str2  the second string to compare, not null\n * @return true if equal using the case rules\n * @throws NullPointerException if either string is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkStartsWith#179",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkStartsWith(java.lang.String, java.lang.String)",
+    "snippet": "public boolean checkStartsWith(final String str, final String start) {\n        return str.regionMatches(!sensitive, 0, start, 0, start.length());\n    }",
+    "begin_line": 179,
+    "end_line": 181,
+    "comment": "/** \n * Checks if one string starts with another using the case-sensitivity rule. \u003cp\u003e This method mimics  {@link String#startsWith(String)} but takes case-sensitivityinto account. \u003c/p\u003e\n * @param str  the string to check, not null\n * @param start  the start to compare against, not null\n * @return true if equal using the case rules\n * @throws NullPointerException if either string is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkEndsWith#195",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkEndsWith(java.lang.String, java.lang.String)",
+    "snippet": "public boolean checkEndsWith(final String str, final String end) {\n        final int endLen \u003d end.length();\n        return str.regionMatches(!sensitive, str.length() - endLen, end, 0, endLen);\n    }",
+    "begin_line": 195,
+    "end_line": 198,
+    "comment": "/** \n * Checks if one string ends with another using the case-sensitivity rule. \u003cp\u003e This method mimics  {@link String#endsWith} but takes case-sensitivityinto account. \u003c/p\u003e\n * @param str  the string to check, not null\n * @param end  the end to compare against, not null\n * @return true if equal using the case rules\n * @throws NullPointerException if either string is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkIndexOf#216",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkIndexOf(java.lang.String, int, java.lang.String)",
+    "snippet": "public int checkIndexOf(final String str, final int strStartIndex, final String search) {\n        final int endIndex \u003d str.length() - search.length();\n        if (endIndex \u003e\u003d strStartIndex) {\n            for (int i \u003d strStartIndex; i \u003c\u003d endIndex; i++) {\n                if (checkRegionMatches(str, i, search)) {\n                    return i;\n                }\n            }\n        }\n        return -1;\n    }",
+    "begin_line": 216,
+    "end_line": 226,
+    "comment": "/** \n * Checks if one string contains another starting at a specific index using the case-sensitivity rule. \u003cp\u003e This method mimics parts of  {@link String#indexOf(String,int)}but takes case-sensitivity into account. \u003c/p\u003e\n * @param str  the string to check, not null\n * @param strStartIndex  the index to start at in str\n * @param search  the start to search for, not null\n * @return the first index of the search String,-1 if no match or  {@code null} string input\n * @throws NullPointerException if either string is null\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.checkRegionMatches#241",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.checkRegionMatches(java.lang.String, int, java.lang.String)",
+    "snippet": "public boolean checkRegionMatches(final String str, final int strStartIndex, final String search) {\n        return str.regionMatches(!sensitive, strStartIndex, search, 0, search.length());\n    }",
+    "begin_line": 241,
+    "end_line": 243,
+    "comment": "/** \n * Checks if one string contains another at a specific index using the case-sensitivity rule. \u003cp\u003e This method mimics parts of  {@link String#regionMatches(boolean,int,String,int,int)}but takes case-sensitivity into account. \u003c/p\u003e\n * @param str  the string to check, not null\n * @param strStartIndex  the index to start at in str\n * @param search  the start to search for, not null\n * @return true if equal using the case rules\n * @throws NullPointerException if either string is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "null.toString#251",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/IOCase.java",
+    "class_name": "org.apache.commons.io.IOCase",
+    "signature": "org.apache.commons.io.IOCase.toString()",
+    "snippet": "@Override\n    public String toString() {\n        return name;\n    }",
+    "begin_line": 251,
+    "end_line": 253,
+    "comment": "/** \n * Gets a string describing the sensitivity.\n * @return a string describing the sensitivity\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.EMPTY_BYTE_ARRAY",
+    "snippet": "private static final byte[] EMPTY_BYTE_ARRAY \u003d new byte[0];",
+    "begin_line": 109,
+    "end_line": 109,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DEFAULT_BUFFER_SIZE",
+    "snippet": "public static final int DEFAULT_BUFFER_SIZE \u003d 8192;",
+    "begin_line": 114,
+    "end_line": 114,
+    "comment": "/** \n * The default buffer size ( {@value}) to use in copy methods.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR",
+    "snippet": "public static final char DIR_SEPARATOR \u003d File.separatorChar;",
+    "begin_line": 119,
+    "end_line": 119,
+    "comment": "/** \n * The system directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR_UNIX",
+    "snippet": "public static final char DIR_SEPARATOR_UNIX \u003d \u0027/\u0027;",
+    "begin_line": 124,
+    "end_line": 124,
+    "comment": "/** \n * The Unix directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.DIR_SEPARATOR_WINDOWS",
+    "snippet": "public static final char DIR_SEPARATOR_WINDOWS \u003d \u0027\\\\\u0027;",
+    "begin_line": 129,
+    "end_line": 129,
+    "comment": "/** \n * The Windows directory separator character.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.EOF",
+    "snippet": "public static final int EOF \u003d -1;",
+    "begin_line": 135,
+    "end_line": 135,
+    "comment": "/** \n * Represents the end-of-file (or stream).\n * @since 2.5 (made public)\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR",
+    "snippet": "public static final String LINE_SEPARATOR;",
+    "begin_line": 140,
+    "end_line": 140,
+    "comment": "/** \n * The system line separator string.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR_UNIX",
+    "snippet": "public static final String LINE_SEPARATOR_UNIX \u003d \"\\n\";",
+    "begin_line": 145,
+    "end_line": 145,
+    "comment": "/** \n * The Unix line separator string.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.LINE_SEPARATOR_WINDOWS",
+    "snippet": "public static final String LINE_SEPARATOR_WINDOWS \u003d \"\\r\\n\";",
+    "begin_line": 150,
+    "end_line": 150,
+    "comment": "/** \n * The Windows line separator string.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SKIP_BUFFER_SIZE",
+    "snippet": "private static final int SKIP_BUFFER_SIZE \u003d 2048;",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": "/** \n * The default buffer size to use for the skip() methods.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SKIP_BYTE_BUFFER",
+    "snippet": "private static byte[] SKIP_BYTE_BUFFER;",
+    "begin_line": 157,
+    "end_line": 157,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtils",
+    "src_path": "org/apache/commons/io/IOUtils.java",
+    "signature": "org.apache.commons.io.IOUtils.SKIP_CHAR_BUFFER",
+    "snippet": "private static char[] SKIP_CHAR_BUFFER;",
+    "begin_line": 170,
+    "end_line": 170,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.DEFAULT_SIZE",
+    "snippet": "static final int DEFAULT_SIZE \u003d 1024;",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.EMPTY_BYTE_ARRAY",
+    "snippet": "private static final byte[] EMPTY_BYTE_ARRAY \u003d new byte[0];",
+    "begin_line": 64,
+    "end_line": 64,
+    "comment": "/** \n * A singleton empty byte array. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.buffers",
+    "snippet": "private final List\u003cbyte[]\u003e buffers \u003d new ArrayList\u003c\u003e();",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * The list of buffers, which grows and never reduces. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.currentBufferIndex",
+    "snippet": "private int currentBufferIndex;",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * The index of the current buffer. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.filledBufferSum",
+    "snippet": "private int filledBufferSum;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * The total count of bytes in all the filled buffers. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.currentBuffer",
+    "snippet": "private byte[] currentBuffer;",
+    "begin_line": 73,
+    "end_line": 73,
+    "comment": "/** \n * The current buffer. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.count",
+    "snippet": "protected int count;",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": "/** \n * The total count of bytes written. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.AbstractByteArrayOutputStream",
+    "src_path": "org/apache/commons/io/output/AbstractByteArrayOutputStream.java",
+    "signature": "org.apache.commons.io.output.AbstractByteArrayOutputStream.reuseBuffers",
+    "snippet": "private boolean reuseBuffers \u003d true;",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * Flag to indicate if the buffers can be reused after reset \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.StringBuilderWriter",
+    "src_path": "org/apache/commons/io/output/StringBuilderWriter.java",
+    "signature": "org.apache.commons.io.output.StringBuilderWriter.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -146927496096066153L;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.StringBuilderWriter",
+    "src_path": "org/apache/commons/io/output/StringBuilderWriter.java",
+    "signature": "org.apache.commons.io.output.StringBuilderWriter.builder",
+    "snippet": "private final StringBuilder builder;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  }
+]

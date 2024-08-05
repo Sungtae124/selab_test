@@ -1,0 +1,134 @@
+[
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.assertFiltering(IOFileFilter, java.io.File, boolean)",
+    "snippet": "public void assertFiltering(final IOFileFilter filter, final File file, final boolean expected) {\n        // Note. This only tests the (File, String) version if the parent of\n        //       the File passed in is not null\n        assertEquals(expected, filter.accept(file),\n                \"Filter(File) \" + filter.getClass().getName() + \" not \" + expected + \" for \" + file);\n\n        if (file !\u003d null \u0026\u0026 file.getParentFile() !\u003d null) {\n            assertEquals(expected, filter.accept(file.getParentFile(), file.getName()),\n                    \"Filter(File, String) \" + filter.getClass().getName() + \" not \" + expected + \" for \" + file);\n            assertEquals(expected, filter.matches(file.toPath()),\n                    \"Filter(File, String) \" + filter.getClass().getName() + \" not \" + expected + \" for \" + file);\n        } else if (file \u003d\u003d null) {\n            assertEquals(expected, filter.accept(file),\n                    \"Filter(File, String) \" + filter.getClass().getName() + \" not \" + expected + \" for null\");\n            assertEquals(expected, filter.matches(null),\n                    \"Filter(File, String) \" + filter.getClass().getName() + \" not \" + expected + \" for null\");\n        }\n        // Just don\u0027t blow up\n        assertNotNull(filter.toString());\n    }",
+    "begin_line": 43,
+    "end_line": 62,
+    "comment": "",
+    "child_ranges": [
+      "(line 46,col 9)-(line 47,col 101)",
+      "(line 49,col 9)-(line 59,col 9)",
+      "(line 61,col 9)-(line 61,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.assertFiltering(IOFileFilter, java.nio.file.Path, boolean)",
+    "snippet": "public void assertFiltering(final IOFileFilter filter, final Path path, final boolean expected) {\n        // Note. This only tests the (Path, Path) version if the parent of\n        // the Path passed in is not null\n        final FileVisitResult expectedFileVisitResult \u003d AbstractFileFilter.toDefaultFileVisitResult(expected);\n        assertEquals(expectedFileVisitResult, filter.accept(path, null),\n                \"Filter(Path) \" + filter.getClass().getName() + \" not \" + expectedFileVisitResult + \" for \" + path);\n        assertEquals(expectedFileVisitResult !\u003d FileVisitResult.TERMINATE, filter.matches(path),\n                \"Filter(Path) \" + filter.getClass().getName() + \" not \" + expectedFileVisitResult + \" for \" + path);\n\n        if (path !\u003d null \u0026\u0026 path.getParent() !\u003d null) {\n            assertEquals(expectedFileVisitResult, filter.accept(path, null),\n                \"Filter(Path, Path) \" + filter.getClass().getName() + \" not \" + expectedFileVisitResult + \" for \"\n                    + path);\n        } else if (path \u003d\u003d null) {\n            assertEquals(expectedFileVisitResult, filter.accept(path, null),\n                \"Filter(Path, Path) \" + filter.getClass().getName() + \" not \" + expectedFileVisitResult + \" for null\");\n        }\n        // Just don\u0027t blow up\n        assertNotNull(filter.toString());\n    }",
+    "begin_line": 64,
+    "end_line": 83,
+    "comment": "",
+    "child_ranges": [
+      "(line 67,col 9)-(line 67,col 110)",
+      "(line 68,col 9)-(line 69,col 116)",
+      "(line 70,col 9)-(line 71,col 116)",
+      "(line 73,col 9)-(line 80,col 9)",
+      "(line 82,col 9)-(line 82,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.assertSerializable(RegexFileFilter)",
+    "snippet": "private RegexFileFilter assertSerializable(final RegexFileFilter serializable) throws IOException {\n        try (ByteArrayOutputStream baos \u003d new ByteArrayOutputStream()) {\n            try (ObjectOutputStream oos \u003d new ObjectOutputStream(baos)) {\n                oos.writeObject(serializable);\n            }\n            baos.flush();\n            assertTrue(baos.toByteArray().length \u003e 0);\n        }\n        return serializable;\n    }",
+    "begin_line": 85,
+    "end_line": 94,
+    "comment": "",
+    "child_ranges": [
+      "(line 86,col 9)-(line 92,col 9)",
+      "(line 93,col 9)-(line 93,col 28)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.testRegex()",
+    "snippet": "@Test\n    public void testRegex() throws IOException {\n        RegexFileFilter filter \u003d new RegexFileFilter(\"^.*[tT]est(-\\\\d+)?\\\\.java$\");\n        assertSerializable(filter);\n        assertFiltering(filter, new File(\"Test.java\"), true);\n        assertFiltering(filter, new File(\"test-10.java\"), true);\n        assertFiltering(filter, new File(\"test-.java\"), false);\n        //\n        assertFiltering(filter, new File(\"Test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test-10.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test-.java\").toPath(), false);\n\n        filter \u003d new RegexFileFilter(\"^[Tt]est.java$\");\n        assertSerializable(filter);\n        assertFiltering(filter, new File(\"Test.java\"), true);\n        assertFiltering(filter, new File(\"test.java\"), true);\n        assertFiltering(filter, new File(\"tEST.java\"), false);\n        //\n        assertFiltering(filter, new File(\"Test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"tEST.java\").toPath(), false);\n\n        filter \u003d new RegexFileFilter(Pattern.compile(\"^test.java$\", Pattern.CASE_INSENSITIVE));\n        assertSerializable(filter);\n        assertFiltering(filter, new File(\"Test.java\"), true);\n        assertFiltering(filter, new File(\"test.java\"), true);\n        assertFiltering(filter, new File(\"tEST.java\"), true);\n        //\n        assertFiltering(filter, new File(\"Test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"tEST.java\").toPath(), true);\n\n        filter \u003d new RegexFileFilter(\"^test.java$\", Pattern.CASE_INSENSITIVE);\n        assertSerializable(filter);\n        assertFiltering(filter, new File(\"Test.java\"), true);\n        assertFiltering(filter, new File(\"test.java\"), true);\n        assertFiltering(filter, new File(\"tEST.java\"), true);\n        //\n        assertFiltering(filter, new File(\"Test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"tEST.java\").toPath(), true);\n\n        filter \u003d new RegexFileFilter(\"^test.java$\", IOCase.INSENSITIVE);\n        assertSerializable(filter);\n        assertFiltering(filter, new File(\"Test.java\"), true);\n        assertFiltering(filter, new File(\"test.java\"), true);\n        assertFiltering(filter, new File(\"tEST.java\"), true);\n        //\n        assertFiltering(filter, new File(\"Test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"test.java\").toPath(), true);\n        assertFiltering(filter, new File(\"tEST.java\").toPath(), true);\n    }",
+    "begin_line": 97,
+    "end_line": 147,
+    "comment": "",
+    "child_ranges": [
+      "(line 98,col 9)-(line 98,col 83)",
+      "(line 99,col 9)-(line 99,col 35)",
+      "(line 100,col 9)-(line 100,col 61)",
+      "(line 101,col 9)-(line 101,col 64)",
+      "(line 102,col 9)-(line 102,col 63)",
+      "(line 104,col 9)-(line 104,col 70)",
+      "(line 105,col 9)-(line 105,col 73)",
+      "(line 106,col 9)-(line 106,col 72)",
+      "(line 108,col 9)-(line 108,col 55)",
+      "(line 109,col 9)-(line 109,col 35)",
+      "(line 110,col 9)-(line 110,col 61)",
+      "(line 111,col 9)-(line 111,col 61)",
+      "(line 112,col 9)-(line 112,col 62)",
+      "(line 114,col 9)-(line 114,col 70)",
+      "(line 115,col 9)-(line 115,col 70)",
+      "(line 116,col 9)-(line 116,col 71)",
+      "(line 118,col 9)-(line 118,col 95)",
+      "(line 119,col 9)-(line 119,col 35)",
+      "(line 120,col 9)-(line 120,col 61)",
+      "(line 121,col 9)-(line 121,col 61)",
+      "(line 122,col 9)-(line 122,col 61)",
+      "(line 124,col 9)-(line 124,col 70)",
+      "(line 125,col 9)-(line 125,col 70)",
+      "(line 126,col 9)-(line 126,col 70)",
+      "(line 128,col 9)-(line 128,col 78)",
+      "(line 129,col 9)-(line 129,col 35)",
+      "(line 130,col 9)-(line 130,col 61)",
+      "(line 131,col 9)-(line 131,col 61)",
+      "(line 132,col 9)-(line 132,col 61)",
+      "(line 134,col 9)-(line 134,col 70)",
+      "(line 135,col 9)-(line 135,col 70)",
+      "(line 136,col 9)-(line 136,col 70)",
+      "(line 138,col 9)-(line 138,col 72)",
+      "(line 139,col 9)-(line 139,col 35)",
+      "(line 140,col 9)-(line 140,col 61)",
+      "(line 141,col 9)-(line 141,col 61)",
+      "(line 142,col 9)-(line 142,col 61)",
+      "(line 144,col 9)-(line 144,col 70)",
+      "(line 145,col 9)-(line 145,col 70)",
+      "(line 146,col 9)-(line 146,col 70)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.testRegexEdgeCases()",
+    "snippet": "@Test\n    public void testRegexEdgeCases() {\n        assertThrows(NullPointerException.class, () -\u003e assertSerializable(new RegexFileFilter((String) null)));\n        assertThrows(NullPointerException.class, () -\u003e assertSerializable(new RegexFileFilter(null, Pattern.CASE_INSENSITIVE)));\n        assertThrows(NullPointerException.class, () -\u003e assertSerializable(new RegexFileFilter(null, IOCase.INSENSITIVE)));\n        assertThrows(NullPointerException.class, () -\u003e assertSerializable(new RegexFileFilter((java.util.regex.Pattern) null)));\n    }",
+    "begin_line": 150,
+    "end_line": 155,
+    "comment": "",
+    "child_ranges": [
+      "(line 151,col 9)-(line 151,col 111)",
+      "(line 152,col 9)-(line 152,col 128)",
+      "(line 153,col 9)-(line 153,col 122)",
+      "(line 154,col 9)-(line 154,col 128)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.filefilter.RegexFileFilterTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/filefilter/RegexFileFilterTest.java",
+    "signature": "org.apache.commons.io.filefilter.RegexFileFilterTest.testRegexFileNameOnly()",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    @Test\n    public void testRegexFileNameOnly() throws IOException {\n        final Path path \u003d Paths.get(\"folder\", \"Foo.java\");\n        final String patternStr \u003d \"Foo.*\";\n        assertFiltering(assertSerializable(new RegexFileFilter(patternStr)), path, true);\n        assertFiltering(assertSerializable(new RegexFileFilter(Pattern.compile(patternStr), (Function\u003cPath, String\u003e \u0026 Serializable) Path::toString)), path,\n                false);\n        assertFiltering(new RegexFileFilter(Pattern.compile(patternStr), (Function\u003cPath, String\u003e \u0026 Serializable) null), path, false);\n        assertFiltering(new RegexFileFilter(Pattern.compile(patternStr), (Function\u003cPath, String\u003e \u0026 Serializable) p -\u003e null), path, false);\n    }",
+    "begin_line": 164,
+    "end_line": 172,
+    "comment": "/** \n * Tests https://issues.apache.org/jira/browse/IO-733.\n * @throws IOException\n */\n",
+    "child_ranges": [
+      "(line 165,col 9)-(line 165,col 58)",
+      "(line 166,col 9)-(line 166,col 42)",
+      "(line 167,col 9)-(line 167,col 89)",
+      "(line 168,col 9)-(line 169,col 23)",
+      "(line 170,col 9)-(line 170,col 133)",
+      "(line 171,col 9)-(line 171,col 138)"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.cardinalityA",
+    "snippet": "final Map\u003cO, Integer\u003e cardinalityA;",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * Contains the cardinality for each object in collection A. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.cardinalityB",
+    "snippet": "final Map\u003cO, Integer\u003e cardinalityB;",
+    "begin_line": 66,
+    "end_line": 66,
+    "comment": "/** \n * Contains the cardinality for each object in collection B. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.elements",
+    "snippet": "private final Set\u003cO\u003e elements;",
+    "begin_line": 130,
+    "end_line": 130,
+    "comment": "/** \n * Contains the unique elements of the two collections. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.newList",
+    "snippet": "private final List\u003cO\u003e newList;",
+    "begin_line": 133,
+    "end_line": 133,
+    "comment": "/** \n * Output collection. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.EMPTY_COLLECTION",
+    "snippet": "@SuppressWarnings(\"rawtypes\") Collection EMPTY_COLLECTION \u003d Collections.emptyList();",
+    "begin_line": 182,
+    "end_line": 182,
+    "comment": "/** \n * An empty unmodifiable collection. The JDK provides empty Set and List implementations which could be used for this purpose. However they could be cast to Set or List which might be undesirable. This implementation only implements Collection.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.equator",
+    "snippet": "private final Equator\u003c? super O\u003e equator;",
+    "begin_line": 608,
+    "end_line": 608,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.collections4.CollectionUtils",
+    "src_path": "org/apache/commons/collections4/CollectionUtils.java",
+    "signature": "org.apache.commons.collections4.CollectionUtils.object",
+    "snippet": "private final O object;",
+    "begin_line": 609,
+    "end_line": 609,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.collections4.map.CompositeMap",
+    "src_path": "org/apache/commons/collections4/map/CompositeMap.java",
+    "signature": "org.apache.commons.collections4.map.CompositeMap.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6096931280583808322L;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * Serialization version \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.map.CompositeMap",
+    "src_path": "org/apache/commons/collections4/map/CompositeMap.java",
+    "signature": "org.apache.commons.collections4.map.CompositeMap.composite",
+    "snippet": "private Map\u003cK, V\u003e[] composite;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": "/** \n * Array of all maps in the composite \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.map.CompositeMap",
+    "src_path": "org/apache/commons/collections4/map/CompositeMap.java",
+    "signature": "org.apache.commons.collections4.map.CompositeMap.mutator",
+    "snippet": "private MapMutator\u003cK, V\u003e mutator;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Handle mutation operations \n */\n"
+  }
+]

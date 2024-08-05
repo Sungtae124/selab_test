@@ -1,0 +1,14 @@
+--- org.apache.commons.lang3.mutable.MutableObjectTest::testEquals
+java.lang.NullPointerException
+       org.apache.commons.lang3.mutable.MutableObject.equals(MutableObject.java:96)
+       org.junit.jupiter.api.AssertionUtils.objectsAreEqual(AssertionUtils.java:110)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:181)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1142)
+       org.apache.commons.lang3.mutable.MutableObjectTest.testEquals(MutableObjectTest.java:62)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       [...]
+

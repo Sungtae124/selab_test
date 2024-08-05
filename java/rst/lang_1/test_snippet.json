@@ -1,0 +1,58 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtilsTest.java",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtilsTest.testGetSystemURLs()",
+    "snippet": "@Test\n    public void testGetSystemURLs() {\n        // TODO How to better test considering this test may be called from an IDE and Maven?\n        assertNotNull(ClassLoaderUtils.getSystemURLs());\n    }",
+    "begin_line": 36,
+    "end_line": 39,
+    "comment": "",
+    "child_ranges": [
+      "(line 38,col 9)-(line 38,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtilsTest.java",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtilsTest.testGetThreadURLs()",
+    "snippet": "@Test\n    public void testGetThreadURLs() {\n        // TODO How to better test considering this test may be called from an IDE and Maven?\n        assertNotNull(ClassLoaderUtils.getThreadURLs());\n    }",
+    "begin_line": 42,
+    "end_line": 45,
+    "comment": "",
+    "child_ranges": [
+      "(line 44,col 9)-(line 44,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtilsTest.java",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtilsTest.testToString_ClassLoader()",
+    "snippet": "@Test\n    public void testToString_ClassLoader() throws IOException {\n        final URL url \u003d new URL(\"http://localhost\");\n        try (URLClassLoader urlClassLoader \u003d new URLClassLoader(new URL[] { url })) {\n            @SuppressWarnings(\"resource\")\n            final ClassLoader classLoader \u003d urlClassLoader;\n            Assertions.assertEquals(String.format(\"%s[%s]\", classLoader, url), ClassLoaderUtils.toString(classLoader));\n        }\n        assertEquals(\"null\", ClassLoaderUtils.toString((ClassLoader) null));\n    }",
+    "begin_line": 48,
+    "end_line": 56,
+    "comment": "",
+    "child_ranges": [
+      "(line 49,col 9)-(line 49,col 52)",
+      "(line 50,col 9)-(line 54,col 9)",
+      "(line 55,col 9)-(line 55,col 76)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtilsTest.java",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtilsTest.testToString_URLClassLoader()",
+    "snippet": "@Test\n    public void testToString_URLClassLoader() throws IOException {\n        final URL url \u003d new URL(\"http://localhost\");\n        try (URLClassLoader urlClassLoader \u003d new URLClassLoader(new URL[] { url })) {\n            Assertions.assertEquals(String.format(\"%s[%s]\", urlClassLoader, url), ClassLoaderUtils.toString(urlClassLoader));\n        }\n        assertEquals(\"null\", ClassLoaderUtils.toString((URLClassLoader) null));\n    }",
+    "begin_line": 59,
+    "end_line": 65,
+    "comment": "",
+    "child_ranges": [
+      "(line 60,col 9)-(line 60,col 52)",
+      "(line 61,col 9)-(line 63,col 9)",
+      "(line 64,col 9)-(line 64,col 79)"
+    ]
+  }
+]
