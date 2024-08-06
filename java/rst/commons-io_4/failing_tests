@@ -1,0 +1,7 @@
+--- org.apache.commons.io.file.PathUtilsTest::testGetFileName
+java.lang.NullPointerException
+       org.apache.commons.io.file.PathUtils.getFileName(PathUtils.java:881)
+       org.apache.commons.io.file.PathUtilsTest.testGetFileName(PathUtilsTest.java:251)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

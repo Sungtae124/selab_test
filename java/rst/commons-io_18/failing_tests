@@ -1,0 +1,11 @@
+--- org.apache.commons.io.IOUtilsTestCase::testContentEqualsIgnoreEOL
+java.lang.NullPointerException
+       java.base/java.io.Reader.<init>(Reader.java:168)
+       java.base/java.io.BufferedReader.<init>(BufferedReader.java:102)
+       java.base/java.io.BufferedReader.<init>(BufferedReader.java:117)
+       org.apache.commons.io.IOUtils.toBufferedReader(IOUtils.java:2177)
+       org.apache.commons.io.IOUtils.contentEqualsIgnoreEOL(IOUtils.java:792)
+       org.apache.commons.io.IOUtilsTestCase.testContentEqualsIgnoreEOL(IOUtilsTestCase.java:299)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

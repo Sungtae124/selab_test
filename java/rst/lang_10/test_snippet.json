@@ -1,0 +1,1858 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testConstructorEx1()",
+    "snippet": "@Test\n    public void testConstructorEx1() {\n        assertEquals(\"\u003cnull\u003e\", new ToStringBuilder(null).toString());\n    }",
+    "begin_line": 42,
+    "end_line": 44,
+    "comment": "",
+    "child_ranges": [
+      "(line 43,col 9)-(line 43,col 69)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testConstructorEx2()",
+    "snippet": "@Test\n    public void testConstructorEx2() {\n        assertEquals(\"\u003cnull\u003e\", new ToStringBuilder(null, null).toString());\n        new ToStringBuilder(this.base, null).toString();\n    }",
+    "begin_line": 47,
+    "end_line": 50,
+    "comment": "",
+    "child_ranges": [
+      "(line 48,col 9)-(line 48,col 75)",
+      "(line 49,col 9)-(line 49,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testConstructorEx3()",
+    "snippet": "@Test\n    public void testConstructorEx3() {\n        assertEquals(\"\u003cnull\u003e\", new ToStringBuilder(null, null, null).toString());\n        new ToStringBuilder(this.base, null, null).toString();\n        new ToStringBuilder(this.base, ToStringStyle.DEFAULT_STYLE, null).toString();\n    }",
+    "begin_line": 53,
+    "end_line": 57,
+    "comment": "",
+    "child_ranges": [
+      "(line 54,col 9)-(line 54,col 81)",
+      "(line 55,col 9)-(line 55,col 62)",
+      "(line 56,col 9)-(line 56,col 85)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testGetSetDefault()",
+    "snippet": "@Test\n    public void testGetSetDefault() {\n        try {\n            ToStringBuilder.setDefaultStyle(ToStringStyle.NO_FIELD_NAMES_STYLE);\n            assertSame(ToStringStyle.NO_FIELD_NAMES_STYLE, ToStringBuilder.getDefaultStyle());\n        } finally {\n            // reset for other tests\n            ToStringBuilder.setDefaultStyle(ToStringStyle.DEFAULT_STYLE);\n        }\n    }",
+    "begin_line": 60,
+    "end_line": 68,
+    "comment": "",
+    "child_ranges": [
+      "(line 61,col 9)-(line 67,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testSetDefaultEx()",
+    "snippet": "@Test\n    public void testSetDefaultEx() {\n        assertThrows(NullPointerException.class, () -\u003e ToStringBuilder.setDefaultStyle(null));\n    }",
+    "begin_line": 71,
+    "end_line": 73,
+    "comment": "",
+    "child_ranges": [
+      "(line 72,col 9)-(line 72,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testBlank()",
+    "snippet": "@Test\n    public void testBlank() {\n        assertEquals(baseStr + \"[]\", new ToStringBuilder(base).toString());\n    }",
+    "begin_line": 76,
+    "end_line": 78,
+    "comment": "",
+    "child_ranges": [
+      "(line 77,col 9)-(line 77,col 75)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionInteger()",
+    "snippet": "@Test\n    public void testReflectionInteger() {\n        assertEquals(baseStr + \"[value\u003d5]\", ToStringBuilder.reflectionToString(base));\n    }",
+    "begin_line": 84,
+    "end_line": 86,
+    "comment": "/** \n * Test wrapper for int primitive.\n */\n",
+    "child_ranges": [
+      "(line 85,col 9)-(line 85,col 86)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionCharacter()",
+    "snippet": "@Test\n    public void testReflectionCharacter() {\n        final Character c \u003d \u0027A\u0027;\n        assertEquals(this.toBaseString(c) + \"[value\u003dA]\", ToStringBuilder.reflectionToString(c));\n    }",
+    "begin_line": 92,
+    "end_line": 95,
+    "comment": "/** \n * Test wrapper for char primitive.\n */\n",
+    "child_ranges": [
+      "(line 93,col 9)-(line 93,col 32)",
+      "(line 94,col 9)-(line 94,col 96)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionBoolean()",
+    "snippet": "@Test\n    public void testReflectionBoolean() {\n        Boolean b;\n        b \u003d Boolean.TRUE;\n        assertEquals(this.toBaseString(b) + \"[value\u003dtrue]\", ToStringBuilder.reflectionToString(b));\n        b \u003d Boolean.FALSE;\n        assertEquals(this.toBaseString(b) + \"[value\u003dfalse]\", ToStringBuilder.reflectionToString(b));\n    }",
+    "begin_line": 101,
+    "end_line": 107,
+    "comment": "/** \n * Test wrapper for char boolean.\n */\n",
+    "child_ranges": [
+      "(line 102,col 9)-(line 102,col 18)",
+      "(line 103,col 9)-(line 103,col 25)",
+      "(line 104,col 9)-(line 104,col 99)",
+      "(line 105,col 9)-(line 105,col 26)",
+      "(line 106,col 9)-(line 106,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toBaseString(java.lang.Object)",
+    "snippet": "private String toBaseString(final Object o) {\n        return o.getClass().getName() + \"@\" + Integer.toHexString(System.identityHashCode(o));\n    }",
+    "begin_line": 114,
+    "end_line": 116,
+    "comment": "/** \n * Create the same toString() as Object.toString().\n * @param o the object to create the string for.\n * @return a String in the Object.toString format.\n */\n",
+    "child_ranges": [
+      "(line 115,col 9)-(line 115,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.assertReflectionArray(java.lang.String, java.lang.Object)",
+    "snippet": "public void assertReflectionArray(final String expected, final Object actual) {\n        if (actual \u003d\u003d null) {\n            // Until ToStringBuilder supports null objects.\n            return;\n        }\n        assertEquals(expected, ToStringBuilder.reflectionToString(actual));\n        assertEquals(expected, ToStringBuilder.reflectionToString(actual, null));\n        assertEquals(expected, ToStringBuilder.reflectionToString(actual, null, true));\n        assertEquals(expected, ToStringBuilder.reflectionToString(actual, null, false));\n    }",
+    "begin_line": 133,
+    "end_line": 142,
+    "comment": "",
+    "child_ranges": [
+      "(line 134,col 9)-(line 137,col 9)",
+      "(line 138,col 9)-(line 138,col 75)",
+      "(line 139,col 9)-(line 139,col 81)",
+      "(line 140,col 9)-(line 140,col 87)",
+      "(line 141,col 9)-(line 141,col 88)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionObjectArray()",
+    "snippet": "@Test\n    public void testReflectionObjectArray() {\n        Object[] array \u003d { null, base, new int[] { 3, 6 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{\u003cnull\u003e,5,{3,6}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 145,
+    "end_line": 151,
+    "comment": "",
+    "child_ranges": [
+      "(line 146,col 9)-(line 146,col 60)",
+      "(line 147,col 9)-(line 147,col 59)",
+      "(line 148,col 9)-(line 148,col 99)",
+      "(line 149,col 9)-(line 149,col 21)",
+      "(line 150,col 9)-(line 150,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionLongArray()",
+    "snippet": "@Test\n    public void testReflectionLongArray() {\n        long[] array \u003d { 1, 2, -3, 4 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1,2,-3,4}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 154,
+    "end_line": 160,
+    "comment": "",
+    "child_ranges": [
+      "(line 155,col 9)-(line 155,col 39)",
+      "(line 156,col 9)-(line 156,col 59)",
+      "(line 157,col 9)-(line 157,col 93)",
+      "(line 158,col 9)-(line 158,col 21)",
+      "(line 159,col 9)-(line 159,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionIntArray()",
+    "snippet": "@Test\n    public void testReflectionIntArray() {\n        int[] array \u003d { 1, 2, -3, 4 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1,2,-3,4}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 163,
+    "end_line": 169,
+    "comment": "",
+    "child_ranges": [
+      "(line 164,col 9)-(line 164,col 38)",
+      "(line 165,col 9)-(line 165,col 59)",
+      "(line 166,col 9)-(line 166,col 93)",
+      "(line 167,col 9)-(line 167,col 21)",
+      "(line 168,col 9)-(line 168,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionShortArray()",
+    "snippet": "@Test\n    public void testReflectionShortArray() {\n        short[] array \u003d { 1, 2, -3, 4 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1,2,-3,4}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 172,
+    "end_line": 178,
+    "comment": "",
+    "child_ranges": [
+      "(line 173,col 9)-(line 173,col 40)",
+      "(line 174,col 9)-(line 174,col 59)",
+      "(line 175,col 9)-(line 175,col 93)",
+      "(line 176,col 9)-(line 176,col 21)",
+      "(line 177,col 9)-(line 177,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionyteArray()",
+    "snippet": "@Test\n    public void testReflectionyteArray() {\n        byte[] array \u003d { 1, 2, -3, 4 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1,2,-3,4}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 181,
+    "end_line": 187,
+    "comment": "",
+    "child_ranges": [
+      "(line 182,col 9)-(line 182,col 39)",
+      "(line 183,col 9)-(line 183,col 59)",
+      "(line 184,col 9)-(line 184,col 93)",
+      "(line 185,col 9)-(line 185,col 21)",
+      "(line 186,col 9)-(line 186,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionCharArray()",
+    "snippet": "@Test\n    public void testReflectionCharArray() {\n        char[] array \u003d { \u0027A\u0027, \u00272\u0027, \u0027_\u0027, \u0027D\u0027 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{A,2,_,D}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 190,
+    "end_line": 196,
+    "comment": "",
+    "child_ranges": [
+      "(line 191,col 9)-(line 191,col 46)",
+      "(line 192,col 9)-(line 192,col 59)",
+      "(line 193,col 9)-(line 193,col 92)",
+      "(line 194,col 9)-(line 194,col 21)",
+      "(line 195,col 9)-(line 195,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionDoubleArray()",
+    "snippet": "@Test\n    public void testReflectionDoubleArray() {\n        double[] array \u003d { 1.0, 2.9876, -3.00001, 4.3 };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1.0,2.9876,-3.00001,4.3}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 199,
+    "end_line": 205,
+    "comment": "",
+    "child_ranges": [
+      "(line 200,col 9)-(line 200,col 56)",
+      "(line 201,col 9)-(line 201,col 59)",
+      "(line 202,col 9)-(line 202,col 108)",
+      "(line 203,col 9)-(line 203,col 21)",
+      "(line 204,col 9)-(line 204,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionFloatArray()",
+    "snippet": "@Test\n    public void testReflectionFloatArray() {\n        float[] array \u003d { 1.0f, 2.9876f, -3.00001f, 4.3f };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{1.0,2.9876,-3.00001,4.3}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 208,
+    "end_line": 214,
+    "comment": "",
+    "child_ranges": [
+      "(line 209,col 9)-(line 209,col 59)",
+      "(line 210,col 9)-(line 210,col 59)",
+      "(line 211,col 9)-(line 211,col 108)",
+      "(line 212,col 9)-(line 212,col 21)",
+      "(line 213,col 9)-(line 213,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionBooleanArray()",
+    "snippet": "@Test\n    public void testReflectionBooleanArray() {\n        boolean[] array \u003d { true, false, false };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{true,false,false}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 217,
+    "end_line": 223,
+    "comment": "",
+    "child_ranges": [
+      "(line 218,col 9)-(line 218,col 49)",
+      "(line 219,col 9)-(line 219,col 59)",
+      "(line 220,col 9)-(line 220,col 101)",
+      "(line 221,col 9)-(line 221,col 21)",
+      "(line 222,col 9)-(line 222,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionFloatArrayArray()",
+    "snippet": "@Test\n    public void testReflectionFloatArrayArray() {\n        float[][] array \u003d { { 1.0f, 2.29686f }, null, { Float.NaN } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 228,
+    "end_line": 234,
+    "comment": "",
+    "child_ranges": [
+      "(line 229,col 9)-(line 229,col 70)",
+      "(line 230,col 9)-(line 230,col 59)",
+      "(line 231,col 9)-(line 231,col 111)",
+      "(line 232,col 9)-(line 232,col 21)",
+      "(line 233,col 9)-(line 233,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionLongArrayArray()",
+    "snippet": "@Test\n    public void testReflectionLongArrayArray() {\n        long[][] array \u003d { { 1, 2 }, null, { 5 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1,2},\u003cnull\u003e,{5}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 238,
+    "end_line": 244,
+    "comment": "",
+    "child_ranges": [
+      "(line 239,col 9)-(line 239,col 51)",
+      "(line 240,col 9)-(line 240,col 59)",
+      "(line 241,col 9)-(line 241,col 101)",
+      "(line 242,col 9)-(line 242,col 21)",
+      "(line 243,col 9)-(line 243,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionIntArrayArray()",
+    "snippet": "@Test\n    public void testReflectionIntArrayArray() {\n        int[][] array \u003d { { 1, 2 }, null, { 5 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1,2},\u003cnull\u003e,{5}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 247,
+    "end_line": 253,
+    "comment": "",
+    "child_ranges": [
+      "(line 248,col 9)-(line 248,col 50)",
+      "(line 249,col 9)-(line 249,col 59)",
+      "(line 250,col 9)-(line 250,col 101)",
+      "(line 251,col 9)-(line 251,col 21)",
+      "(line 252,col 9)-(line 252,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionhortArrayArray()",
+    "snippet": "@Test\n    public void testReflectionhortArrayArray() {\n        short[][] array \u003d { { 1, 2 }, null, { 5 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1,2},\u003cnull\u003e,{5}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 256,
+    "end_line": 262,
+    "comment": "",
+    "child_ranges": [
+      "(line 257,col 9)-(line 257,col 52)",
+      "(line 258,col 9)-(line 258,col 59)",
+      "(line 259,col 9)-(line 259,col 101)",
+      "(line 260,col 9)-(line 260,col 21)",
+      "(line 261,col 9)-(line 261,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionByteArrayArray()",
+    "snippet": "@Test\n    public void testReflectionByteArrayArray() {\n        byte[][] array \u003d { { 1, 2 }, null, { 5 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1,2},\u003cnull\u003e,{5}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 265,
+    "end_line": 271,
+    "comment": "",
+    "child_ranges": [
+      "(line 266,col 9)-(line 266,col 51)",
+      "(line 267,col 9)-(line 267,col 59)",
+      "(line 268,col 9)-(line 268,col 101)",
+      "(line 269,col 9)-(line 269,col 21)",
+      "(line 270,col 9)-(line 270,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionCharArrayArray()",
+    "snippet": "@Test\n    public void testReflectionCharArrayArray() {\n        char[][] array \u003d { { \u0027A\u0027, \u0027B\u0027 }, null, { \u0027p\u0027 } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{A,B},\u003cnull\u003e,{p}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 274,
+    "end_line": 280,
+    "comment": "",
+    "child_ranges": [
+      "(line 275,col 9)-(line 275,col 57)",
+      "(line 276,col 9)-(line 276,col 59)",
+      "(line 277,col 9)-(line 277,col 101)",
+      "(line 278,col 9)-(line 278,col 21)",
+      "(line 279,col 9)-(line 279,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionDoubleArrayArray()",
+    "snippet": "@Test\n    public void testReflectionDoubleArrayArray() {\n        double[][] array \u003d { { 1.0, 2.29686 }, null, { Double.NaN } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 283,
+    "end_line": 289,
+    "comment": "",
+    "child_ranges": [
+      "(line 284,col 9)-(line 284,col 70)",
+      "(line 285,col 9)-(line 285,col 59)",
+      "(line 286,col 9)-(line 286,col 111)",
+      "(line 287,col 9)-(line 287,col 21)",
+      "(line 288,col 9)-(line 288,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionBooleanArrayArray()",
+    "snippet": "@Test\n    public void testReflectionBooleanArrayArray() {\n        boolean[][] array \u003d { { true, false }, null, { false } };\n        final String baseString \u003d this.toBaseString(array);\n        assertEquals(baseString + \"[{{true,false},\u003cnull\u003e,{false}}]\", ToStringBuilder.reflectionToString(array));\n        assertEquals(baseString + \"[{{true,false},\u003cnull\u003e,{false}}]\", ToStringBuilder.reflectionToString(array));\n        array \u003d null;\n        assertReflectionArray(\"\u003cnull\u003e\", array);\n    }",
+    "begin_line": 292,
+    "end_line": 299,
+    "comment": "",
+    "child_ranges": [
+      "(line 293,col 9)-(line 293,col 65)",
+      "(line 294,col 9)-(line 294,col 59)",
+      "(line 295,col 9)-(line 295,col 112)",
+      "(line 296,col 9)-(line 296,col 112)",
+      "(line 297,col 9)-(line 297,col 21)",
+      "(line 298,col 9)-(line 298,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionHierarchyArrayList()",
+    "snippet": "@Test\n    public void testReflectionHierarchyArrayList() {\n        // LANG-1337 without this, the generated string can differ depending on the JVM version/vendor\n        final List\u003cObject\u003e list \u003d new ArrayList\u003c\u003e(ARRAYLIST_INITIAL_CAPACITY);\n        final String baseString \u003d this.toBaseString(list);\n        final String expectedWithTransients \u003d baseString + \"[elementData\u003d{\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e,\u003cnull\u003e},size\u003d0,modCount\u003d0]\";\n        final String toStringWithTransients \u003d ToStringBuilder.reflectionToString(list, null, true);\n        if (!expectedWithTransients.equals(toStringWithTransients)) {\n            assertEquals(expectedWithTransients, toStringWithTransients);\n        }\n        final String expectedWithoutTransients \u003d baseString + \"[size\u003d0]\";\n        final String toStringWithoutTransients \u003d ToStringBuilder.reflectionToString(list, null, false);\n        if (!expectedWithoutTransients.equals(toStringWithoutTransients)) {\n            assertEquals(expectedWithoutTransients, toStringWithoutTransients);\n        }\n    }",
+    "begin_line": 303,
+    "end_line": 317,
+    "comment": "",
+    "child_ranges": [
+      "(line 305,col 9)-(line 305,col 78)",
+      "(line 306,col 9)-(line 306,col 58)",
+      "(line 307,col 9)-(line 307,col 165)",
+      "(line 308,col 9)-(line 308,col 99)",
+      "(line 309,col 9)-(line 311,col 9)",
+      "(line 312,col 9)-(line 312,col 73)",
+      "(line 313,col 9)-(line 313,col 103)",
+      "(line 314,col 9)-(line 316,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionHierarchy()",
+    "snippet": "@Test\n    public void testReflectionHierarchy() {\n        final ReflectionTestFixtureA baseA \u003d new ReflectionTestFixtureA();\n        String baseString \u003d this.toBaseString(baseA);\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA));\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA, null));\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA, null, false));\n        assertEquals(baseString + \"[a\u003da,transientA\u003dt]\", ToStringBuilder.reflectionToString(baseA, null, true));\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA, null, false, null));\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA, null, false, Object.class));\n        assertEquals(baseString + \"[a\u003da]\", ToStringBuilder.reflectionToString(baseA, null, false, ReflectionTestFixtureA.class));\n\n        final ReflectionTestFixtureB baseB \u003d new ReflectionTestFixtureB();\n        baseString \u003d this.toBaseString(baseB);\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB, null));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB, null, false));\n        assertEquals(baseString + \"[b\u003db,transientB\u003dt,a\u003da,transientA\u003dt]\", ToStringBuilder.reflectionToString(baseB, null, true));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB, null, false, null));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB, null, false, Object.class));\n        assertEquals(baseString + \"[b\u003db,a\u003da]\", ToStringBuilder.reflectionToString(baseB, null, false, ReflectionTestFixtureA.class));\n        assertEquals(baseString + \"[b\u003db]\", ToStringBuilder.reflectionToString(baseB, null, false, ReflectionTestFixtureB.class));\n    }",
+    "begin_line": 320,
+    "end_line": 342,
+    "comment": "",
+    "child_ranges": [
+      "(line 321,col 9)-(line 321,col 74)",
+      "(line 322,col 9)-(line 322,col 53)",
+      "(line 323,col 9)-(line 323,col 86)",
+      "(line 324,col 9)-(line 324,col 92)",
+      "(line 325,col 9)-(line 325,col 99)",
+      "(line 326,col 9)-(line 326,col 111)",
+      "(line 327,col 9)-(line 327,col 105)",
+      "(line 328,col 9)-(line 328,col 113)",
+      "(line 329,col 9)-(line 329,col 129)",
+      "(line 331,col 9)-(line 331,col 74)",
+      "(line 332,col 9)-(line 332,col 46)",
+      "(line 333,col 9)-(line 333,col 90)",
+      "(line 334,col 9)-(line 334,col 90)",
+      "(line 335,col 9)-(line 335,col 96)",
+      "(line 336,col 9)-(line 336,col 103)",
+      "(line 337,col 9)-(line 337,col 128)",
+      "(line 338,col 9)-(line 338,col 109)",
+      "(line 339,col 9)-(line 339,col 117)",
+      "(line 340,col 9)-(line 340,col 133)",
+      "(line 341,col 9)-(line 341,col 129)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testInnerClassReflection()",
+    "snippet": "@Test\n    public void testInnerClassReflection() {\n        final Outer outer \u003d new Outer();\n        assertEquals(toBaseString(outer) + \"[inner\u003d\" + toBaseString(outer.inner) + \"[]]\", outer.toString());\n    }",
+    "begin_line": 359,
+    "end_line": 362,
+    "comment": "",
+    "child_ranges": [
+      "(line 360,col 9)-(line 360,col 40)",
+      "(line 361,col 9)-(line 361,col 108)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n            public String toString() {\n                return ToStringBuilder.reflectionToString(this);\n            }",
+    "begin_line": 368,
+    "end_line": 370,
+    "comment": "",
+    "child_ranges": [
+      "(line 369,col 17)-(line 369,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 373,
+    "end_line": 375,
+    "comment": "",
+    "child_ranges": [
+      "(line 374,col 13)-(line 374,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionArrayCycle()",
+    "snippet": "@Test\n    public void testReflectionArrayCycle() {\n        final Object[] objects \u003d new Object[1];\n        objects[0] \u003d objects;\n        assertEquals(\n            this.toBaseString(objects) + \"[{\" + this.toBaseString(objects) + \"}]\",\n            ToStringBuilder.reflectionToString(objects));\n    }",
+    "begin_line": 384,
+    "end_line": 390,
+    "comment": "/** \n * Test an array element pointing to its container.\n */\n",
+    "child_ranges": [
+      "(line 385,col 9)-(line 385,col 47)",
+      "(line 386,col 9)-(line 386,col 29)",
+      "(line 387,col 9)-(line 389,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionArrayCycleLevel2()",
+    "snippet": "@Test\n    public void testReflectionArrayCycleLevel2() {\n        final Object[] objects \u003d new Object[1];\n        final Object[] objectsLevel2 \u003d new Object[1];\n        objects[0] \u003d objectsLevel2;\n        objectsLevel2[0] \u003d objects;\n        assertEquals(\n            this.toBaseString(objects) + \"[{{\" + this.toBaseString(objects) + \"}}]\",\n            ToStringBuilder.reflectionToString(objects));\n        assertEquals(\n            this.toBaseString(objectsLevel2) + \"[{{\" + this.toBaseString(objectsLevel2) + \"}}]\",\n            ToStringBuilder.reflectionToString(objectsLevel2));\n    }",
+    "begin_line": 396,
+    "end_line": 407,
+    "comment": "/** \n * Test an array element pointing to its container.\n */\n",
+    "child_ranges": [
+      "(line 397,col 9)-(line 397,col 47)",
+      "(line 398,col 9)-(line 398,col 53)",
+      "(line 399,col 9)-(line 399,col 35)",
+      "(line 400,col 9)-(line 400,col 35)",
+      "(line 401,col 9)-(line 403,col 57)",
+      "(line 404,col 9)-(line 406,col 63)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionArrayArrayCycle()",
+    "snippet": "@Test\n    public void testReflectionArrayArrayCycle() {\n        final Object[][] objects \u003d new Object[2][2];\n        objects[0][0] \u003d objects;\n        objects[0][1] \u003d objects;\n        objects[1][0] \u003d objects;\n        objects[1][1] \u003d objects;\n        final String basicToString \u003d this.toBaseString(objects);\n        assertEquals(\n            basicToString\n                + \"[{{\"\n                + basicToString\n                + \",\"\n                + basicToString\n                + \"},{\"\n                + basicToString\n                + \",\"\n                + basicToString\n                + \"}}]\",\n            ToStringBuilder.reflectionToString(objects));\n    }",
+    "begin_line": 410,
+    "end_line": 429,
+    "comment": "",
+    "child_ranges": [
+      "(line 411,col 9)-(line 411,col 52)",
+      "(line 412,col 9)-(line 412,col 32)",
+      "(line 413,col 9)-(line 413,col 32)",
+      "(line 414,col 9)-(line 414,col 32)",
+      "(line 415,col 9)-(line 415,col 32)",
+      "(line 416,col 9)-(line 416,col 64)",
+      "(line 417,col 9)-(line 428,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 438,
+    "end_line": 440,
+    "comment": "",
+    "child_ranges": [
+      "(line 439,col 13)-(line 439,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 450,
+    "end_line": 452,
+    "comment": "",
+    "child_ranges": [
+      "(line 451,col 13)-(line 451,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.SimpleReflectionTestFixture()",
+    "snippet": " SimpleReflectionTestFixture() {\n        }",
+    "begin_line": 461,
+    "end_line": 462,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.SimpleReflectionTestFixture(java.lang.Object)",
+    "snippet": " SimpleReflectionTestFixture(final Object o) {\n            this.o \u003d o;\n        }",
+    "begin_line": 464,
+    "end_line": 466,
+    "comment": "",
+    "child_ranges": [
+      "(line 465,col 13)-(line 465,col 23)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 469,
+    "end_line": 471,
+    "comment": "",
+    "child_ranges": [
+      "(line 470,col 13)-(line 470,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.SelfInstanceVarReflectionTestFixture()",
+    "snippet": " SelfInstanceVarReflectionTestFixture() {\n            this.typeIsSelf \u003d this;\n        }",
+    "begin_line": 478,
+    "end_line": 480,
+    "comment": "",
+    "child_ranges": [
+      "(line 479,col 13)-(line 479,col 35)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 483,
+    "end_line": 485,
+    "comment": "",
+    "child_ranges": [
+      "(line 484,col 13)-(line 484,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.SelfInstanceTwoVarsReflectionTestFixture()",
+    "snippet": " SelfInstanceTwoVarsReflectionTestFixture() {\n            this.typeIsSelf \u003d this;\n        }",
+    "begin_line": 493,
+    "end_line": 495,
+    "comment": "",
+    "child_ranges": [
+      "(line 494,col 13)-(line 494,col 35)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.getOtherType()",
+    "snippet": "public String getOtherType() {\n            return this.otherType;\n        }",
+    "begin_line": 497,
+    "end_line": 499,
+    "comment": "",
+    "child_ranges": [
+      "(line 498,col 13)-(line 498,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return ToStringBuilder.reflectionToString(this);\n        }",
+    "begin_line": 502,
+    "end_line": 504,
+    "comment": "",
+    "child_ranges": [
+      "(line 503,col 13)-(line 503,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testSimpleReflectionObjectCycle()",
+    "snippet": "@Test\n    public void testSimpleReflectionObjectCycle() {\n        final SimpleReflectionTestFixture simple \u003d new SimpleReflectionTestFixture();\n        simple.o \u003d simple;\n        assertEquals(this.toBaseString(simple) + \"[o\u003d\" + this.toBaseString(simple) + \"]\", simple.toString());\n    }",
+    "begin_line": 512,
+    "end_line": 516,
+    "comment": "/** \n * Test an Object pointing to itself, the simplest test.\n */\n",
+    "child_ranges": [
+      "(line 513,col 9)-(line 513,col 85)",
+      "(line 514,col 9)-(line 514,col 26)",
+      "(line 515,col 9)-(line 515,col 109)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testSelfInstanceVarReflectionObjectCycle()",
+    "snippet": "@Test\n    public void testSelfInstanceVarReflectionObjectCycle() {\n        final SelfInstanceVarReflectionTestFixture test \u003d new SelfInstanceVarReflectionTestFixture();\n        assertEquals(this.toBaseString(test) + \"[typeIsSelf\u003d\" + this.toBaseString(test) + \"]\", test.toString());\n    }",
+    "begin_line": 522,
+    "end_line": 525,
+    "comment": "/** \n * Test a class that defines an ivar pointing to itself.\n */\n",
+    "child_ranges": [
+      "(line 523,col 9)-(line 523,col 101)",
+      "(line 524,col 9)-(line 524,col 112)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testSelfInstanceTwoVarsReflectionObjectCycle()",
+    "snippet": "@Test\n    public void testSelfInstanceTwoVarsReflectionObjectCycle() {\n        final SelfInstanceTwoVarsReflectionTestFixture test \u003d new SelfInstanceTwoVarsReflectionTestFixture();\n        assertEquals(this.toBaseString(test) + \"[otherType\u003d\" + test.getOtherType().toString() + \",typeIsSelf\u003d\" + this.toBaseString(test)  + \"]\", test.toString());\n    }",
+    "begin_line": 532,
+    "end_line": 535,
+    "comment": "/** \n * Test a class that defines an ivar pointing to itself.  This test was created to show that handling cyclical object resulted in a missing endFieldSeparator call.\n */\n",
+    "child_ranges": [
+      "(line 533,col 9)-(line 533,col 109)",
+      "(line 534,col 9)-(line 534,col 162)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionObjectCycle()",
+    "snippet": "@Test\n    public void testReflectionObjectCycle() {\n        final ReflectionTestCycleA a \u003d new ReflectionTestCycleA();\n        final ReflectionTestCycleB b \u003d new ReflectionTestCycleB();\n        a.b \u003d b;\n        b.a \u003d a;\n        assertEquals(\n            this.toBaseString(a) + \"[b\u003d\" + this.toBaseString(b) + \"[a\u003d\" + this.toBaseString(a) + \"]]\",\n            a.toString());\n    }",
+    "begin_line": 542,
+    "end_line": 550,
+    "comment": "/** \n * Test Objects pointing to each other.\n */\n",
+    "child_ranges": [
+      "(line 543,col 9)-(line 543,col 66)",
+      "(line 544,col 9)-(line 544,col 66)",
+      "(line 545,col 9)-(line 545,col 16)",
+      "(line 546,col 9)-(line 546,col 16)",
+      "(line 547,col 9)-(line 549,col 26)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionArrayAndObjectCycle()",
+    "snippet": "@Test\n    public void testReflectionArrayAndObjectCycle() {\n        final Object[] objects \u003d new Object[1];\n        final SimpleReflectionTestFixture simple \u003d new SimpleReflectionTestFixture(objects);\n        objects[0] \u003d simple;\n        assertEquals(\n            this.toBaseString(objects)\n                + \"[{\"\n                + this.toBaseString(simple)\n                + \"[o\u003d\"\n                + this.toBaseString(objects)\n                + \"]\"\n                + \"}]\",\n            ToStringBuilder.reflectionToString(objects));\n        assertEquals(\n            this.toBaseString(simple)\n                + \"[o\u003d{\"\n                + this.toBaseString(simple)\n                + \"}]\",\n            ToStringBuilder.reflectionToString(simple));\n    }",
+    "begin_line": 557,
+    "end_line": 576,
+    "comment": "/** \n * Test a nasty combination of arrays and Objects pointing to each other. objects[0] -\u0026gt; SimpleReflectionTestFixture[ o -\u0026gt; objects ]\n */\n",
+    "child_ranges": [
+      "(line 558,col 9)-(line 558,col 47)",
+      "(line 559,col 9)-(line 559,col 92)",
+      "(line 560,col 9)-(line 560,col 28)",
+      "(line 561,col 9)-(line 569,col 57)",
+      "(line 570,col 9)-(line 575,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendSuper()",
+    "snippet": "@Test\n    public void testAppendSuper() {\n        assertEquals(baseStr + \"[]\", new ToStringBuilder(base).appendSuper(\"Integer@8888[]\").toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).appendSuper(\"Integer@8888[\u003cnull\u003e]\").toString());\n\n        assertEquals(baseStr + \"[a\u003dhello]\", new ToStringBuilder(base).appendSuper(\"Integer@8888[]\").append(\"a\", \"hello\").toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e,a\u003dhello]\", new ToStringBuilder(base).appendSuper(\"Integer@8888[\u003cnull\u003e]\").append(\"a\", \"hello\").toString());\n        assertEquals(baseStr + \"[a\u003dhello]\", new ToStringBuilder(base).appendSuper(null).append(\"a\", \"hello\").toString());\n    }",
+    "begin_line": 579,
+    "end_line": 586,
+    "comment": "",
+    "child_ranges": [
+      "(line 580,col 9)-(line 580,col 105)",
+      "(line 581,col 9)-(line 581,col 117)",
+      "(line 583,col 9)-(line 583,col 133)",
+      "(line 584,col 9)-(line 584,col 146)",
+      "(line 585,col 9)-(line 585,col 121)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendToString()",
+    "snippet": "@Test\n    public void testAppendToString() {\n        assertEquals(baseStr + \"[]\", new ToStringBuilder(base).appendToString(\"Integer@8888[]\").toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).appendToString(\"Integer@8888[\u003cnull\u003e]\").toString());\n\n        assertEquals(baseStr + \"[a\u003dhello]\", new ToStringBuilder(base).appendToString(\"Integer@8888[]\").append(\"a\", \"hello\").toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e,a\u003dhello]\", new ToStringBuilder(base).appendToString(\"Integer@8888[\u003cnull\u003e]\").append(\"a\", \"hello\").toString());\n        assertEquals(baseStr + \"[a\u003dhello]\", new ToStringBuilder(base).appendToString(null).append(\"a\", \"hello\").toString());\n    }",
+    "begin_line": 589,
+    "end_line": 596,
+    "comment": "",
+    "child_ranges": [
+      "(line 590,col 9)-(line 590,col 108)",
+      "(line 591,col 9)-(line 591,col 120)",
+      "(line 593,col 9)-(line 593,col 136)",
+      "(line 594,col 9)-(line 594,col 149)",
+      "(line 595,col 9)-(line 595,col 124)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendAsObjectToString()",
+    "snippet": "@Test\n    public void testAppendAsObjectToString() {\n        final String objectToAppend1 \u003d \"\";\n        final Boolean objectToAppend2 \u003d Boolean.TRUE;\n        final Object objectToAppend3 \u003d new Object();\n\n        assertEquals(baseStr + \"[\" + toBaseString(objectToAppend1) + \"]\",\n                new ToStringBuilder(base).appendAsObjectToString(objectToAppend1).toString());\n        assertEquals(baseStr + \"[\" + toBaseString(objectToAppend2) + \"]\",\n                new ToStringBuilder(base).appendAsObjectToString(objectToAppend2).toString());\n        assertEquals(baseStr + \"[\" + toBaseString(objectToAppend3) + \"]\",\n                new ToStringBuilder(base).appendAsObjectToString(objectToAppend3).toString());\n    }",
+    "begin_line": 599,
+    "end_line": 610,
+    "comment": "",
+    "child_ranges": [
+      "(line 600,col 9)-(line 600,col 42)",
+      "(line 601,col 9)-(line 601,col 53)",
+      "(line 602,col 9)-(line 602,col 52)",
+      "(line 604,col 9)-(line 605,col 94)",
+      "(line 606,col 9)-(line 607,col 94)",
+      "(line 608,col 9)-(line 609,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendAsObjectToStringNullPointerException()",
+    "snippet": "@Test\n    public void testAppendAsObjectToStringNullPointerException() {\n        ToStringBuilder builder \u003d new ToStringBuilder(1);\n        assertThrows(NullPointerException.class, () -\u003e builder.appendAsObjectToString(null));\n        builder.toString();\n    }",
+    "begin_line": 613,
+    "end_line": 617,
+    "comment": "",
+    "child_ranges": [
+      "(line 614,col 9)-(line 614,col 57)",
+      "(line 615,col 9)-(line 615,col 93)",
+      "(line 616,col 9)-(line 616,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendBooleanArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendBooleanArrayWithFieldName() {\n        final boolean[] array \u003d { true, false, false };\n        assertEquals(baseStr + \"[flags\u003d{true,false,false}]\",\n                new ToStringBuilder(base).append(\"flags\", array).toString());\n        assertEquals(baseStr + \"[flags\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"flags\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{true,false,false}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 620,
+    "end_line": 628,
+    "comment": "",
+    "child_ranges": [
+      "(line 621,col 9)-(line 621,col 55)",
+      "(line 622,col 9)-(line 623,col 77)",
+      "(line 624,col 9)-(line 625,col 88)",
+      "(line 626,col 9)-(line 626,col 112)",
+      "(line 627,col 9)-(line 627,col 113)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendBooleanArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendBooleanArrayWithFieldNameAndFullDetatil() {\n        final boolean[] array \u003d { true, false, false };\n        assertEquals(baseStr + \"[flags\u003d{true,false,false}]\",\n                new ToStringBuilder(base).append(\"flags\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d3\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[flags\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"flags\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d3\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n     }",
+    "begin_line": 631,
+    "end_line": 641,
+    "comment": "",
+    "child_ranges": [
+      "(line 632,col 9)-(line 632,col 55)",
+      "(line 633,col 9)-(line 634,col 83)",
+      "(line 635,col 9)-(line 636,col 85)",
+      "(line 637,col 9)-(line 638,col 94)",
+      "(line 639,col 9)-(line 639,col 119)",
+      "(line 640,col 9)-(line 640,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendCharArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendCharArrayWithFieldName() {\n        final char[] array \u003d { \u0027A\u0027, \u00272\u0027, \u0027_\u0027, \u0027D\u0027 };\n        assertEquals(baseStr + \"[chars\u003d{A,2,_,D}]\", new ToStringBuilder(base).append(\"chars\", array).toString());\n        assertEquals(baseStr + \"[letters\u003d{A,2,_,D}]\", new ToStringBuilder(base).append(\"letters\", array).toString());\n        assertEquals(baseStr + \"[flags\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"flags\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{A,2,_,D}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 644,
+    "end_line": 652,
+    "comment": "",
+    "child_ranges": [
+      "(line 645,col 9)-(line 645,col 52)",
+      "(line 646,col 9)-(line 646,col 113)",
+      "(line 647,col 9)-(line 647,col 117)",
+      "(line 648,col 9)-(line 649,col 88)",
+      "(line 650,col 9)-(line 650,col 112)",
+      "(line 651,col 9)-(line 651,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendCharArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendCharArrayWithFieldNameAndFullDetatil() {\n        final char[] array \u003d { \u0027A\u0027, \u00272\u0027, \u0027_\u0027, \u0027D\u0027 };\n        assertEquals(baseStr + \"[chars\u003d{A,2,_,D}]\", new ToStringBuilder(base).append(\"chars\", array, true).toString());\n        assertEquals(baseStr + \"[letters\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"letters\", array, false).toString());\n        assertEquals(baseStr + \"[flags\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"flags\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 655,
+    "end_line": 664,
+    "comment": "",
+    "child_ranges": [
+      "(line 656,col 9)-(line 656,col 52)",
+      "(line 657,col 9)-(line 657,col 119)",
+      "(line 658,col 9)-(line 659,col 86)",
+      "(line 660,col 9)-(line 661,col 94)",
+      "(line 662,col 9)-(line 662,col 119)",
+      "(line 663,col 9)-(line 663,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendDoubleArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendDoubleArrayWithFieldName() {\n        final double[] array \u003d { 1.0, 2.9876, -3.00001, 4.3 };\n        assertEquals(baseStr + \"[values\u003d{1.0,2.9876,-3.00001,4.3}]\",\n                new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 667,
+    "end_line": 675,
+    "comment": "",
+    "child_ranges": [
+      "(line 668,col 9)-(line 668,col 62)",
+      "(line 669,col 9)-(line 670,col 78)",
+      "(line 671,col 9)-(line 672,col 89)",
+      "(line 673,col 9)-(line 673,col 112)",
+      "(line 674,col 9)-(line 674,col 120)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendDoubleArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendDoubleArrayWithFieldNameAndFullDetatil() {\n        final double[] array \u003d { 1.0, 2.9876, -3.00001, 4.3 };\n        assertEquals(baseStr + \"[values\u003d{1.0,2.9876,-3.00001,4.3}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 678,
+    "end_line": 688,
+    "comment": "",
+    "child_ranges": [
+      "(line 679,col 9)-(line 679,col 62)",
+      "(line 680,col 9)-(line 681,col 84)",
+      "(line 682,col 9)-(line 683,col 85)",
+      "(line 684,col 9)-(line 685,col 95)",
+      "(line 686,col 9)-(line 686,col 119)",
+      "(line 687,col 9)-(line 687,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendObjectArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendObjectArrayWithFieldName() {\n        final Object[] array \u003d { null, base, new int[] { 3, 6 } };\n        assertEquals(baseStr + \"[values\u003d{\u003cnull\u003e,5,{3,6}}]\",\n                new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{\u003cnull\u003e,5,{3,6}}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 691,
+    "end_line": 699,
+    "comment": "",
+    "child_ranges": [
+      "(line 692,col 9)-(line 692,col 66)",
+      "(line 693,col 9)-(line 694,col 78)",
+      "(line 695,col 9)-(line 696,col 89)",
+      "(line 697,col 9)-(line 697,col 112)",
+      "(line 698,col 9)-(line 698,col 111)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendObjectArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendObjectArrayWithFieldNameAndFullDetatil() {\n       final Object[] array \u003d { null, base, new int[] { 3, 6 } };\n       assertEquals(baseStr + \"[values\u003d{\u003cnull\u003e,5,{3,6}}]\",\n               new ToStringBuilder(base).append(\"values\", array, true).toString());\n       assertEquals(baseStr + \"[length\u003d\u003csize\u003d3\u003e]\",\n               new ToStringBuilder(base).append(\"length\", array, false).toString());\n       assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n               new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n       assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n       assertEquals(baseStr + \"[\u003csize\u003d3\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 702,
+    "end_line": 712,
+    "comment": "",
+    "child_ranges": [
+      "(line 703,col 8)-(line 703,col 65)",
+      "(line 704,col 8)-(line 705,col 83)",
+      "(line 706,col 8)-(line 707,col 84)",
+      "(line 708,col 8)-(line 709,col 94)",
+      "(line 710,col 8)-(line 710,col 118)",
+      "(line 711,col 8)-(line 711,col 109)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendLongArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendLongArrayWithFieldName() {\n       final long[] array \u003d { 1, 2, -3, 4 };\n       assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\", new ToStringBuilder(base).append(\"values\", array).toString());\n       assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n               new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n       assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n       assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 715,
+    "end_line": 722,
+    "comment": "",
+    "child_ranges": [
+      "(line 716,col 8)-(line 716,col 44)",
+      "(line 717,col 8)-(line 717,col 115)",
+      "(line 718,col 8)-(line 719,col 88)",
+      "(line 720,col 8)-(line 720,col 111)",
+      "(line 721,col 8)-(line 721,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendLongArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendLongArrayWithFieldNameAndFullDetatil() {\n        final long[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 725,
+    "end_line": 735,
+    "comment": "",
+    "child_ranges": [
+      "(line 726,col 9)-(line 726,col 45)",
+      "(line 727,col 9)-(line 728,col 84)",
+      "(line 729,col 9)-(line 730,col 85)",
+      "(line 731,col 9)-(line 732,col 95)",
+      "(line 733,col 9)-(line 733,col 119)",
+      "(line 734,col 9)-(line 734,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendIntArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendIntArrayWithFieldName() {\n        final int[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\", new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 738,
+    "end_line": 745,
+    "comment": "",
+    "child_ranges": [
+      "(line 739,col 9)-(line 739,col 44)",
+      "(line 740,col 9)-(line 740,col 116)",
+      "(line 741,col 9)-(line 742,col 89)",
+      "(line 743,col 9)-(line 743,col 112)",
+      "(line 744,col 9)-(line 744,col 105)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendIntArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendIntArrayWithFieldNameAndFullDetatil() {\n        final int[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 748,
+    "end_line": 758,
+    "comment": "",
+    "child_ranges": [
+      "(line 749,col 9)-(line 749,col 44)",
+      "(line 750,col 9)-(line 751,col 84)",
+      "(line 752,col 9)-(line 753,col 85)",
+      "(line 754,col 9)-(line 755,col 95)",
+      "(line 756,col 9)-(line 756,col 119)",
+      "(line 757,col 9)-(line 757,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendShortArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendShortArrayWithFieldName() {\n        final short[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\", new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 761,
+    "end_line": 768,
+    "comment": "",
+    "child_ranges": [
+      "(line 762,col 9)-(line 762,col 46)",
+      "(line 763,col 9)-(line 763,col 116)",
+      "(line 764,col 9)-(line 765,col 89)",
+      "(line 766,col 9)-(line 766,col 112)",
+      "(line 767,col 9)-(line 767,col 105)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendShortArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendShortArrayWithFieldNameAndFullDetatil() {\n        final short[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 771,
+    "end_line": 781,
+    "comment": "",
+    "child_ranges": [
+      "(line 772,col 9)-(line 772,col 46)",
+      "(line 773,col 9)-(line 774,col 84)",
+      "(line 775,col 9)-(line 776,col 85)",
+      "(line 777,col 9)-(line 778,col 95)",
+      "(line 779,col 9)-(line 779,col 119)",
+      "(line 780,col 9)-(line 780,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendByteArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendByteArrayWithFieldName() {\n        final byte[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\", new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 784,
+    "end_line": 791,
+    "comment": "",
+    "child_ranges": [
+      "(line 785,col 9)-(line 785,col 45)",
+      "(line 786,col 9)-(line 786,col 116)",
+      "(line 787,col 9)-(line 788,col 89)",
+      "(line 789,col 9)-(line 789,col 112)",
+      "(line 790,col 9)-(line 790,col 105)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendByteArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendByteArrayWithFieldNameAndFullDetatil() {\n        final byte[] array \u003d { 1, 2, -3, 4 };\n        assertEquals(baseStr + \"[values\u003d{1,2,-3,4}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 794,
+    "end_line": 804,
+    "comment": "",
+    "child_ranges": [
+      "(line 795,col 9)-(line 795,col 45)",
+      "(line 796,col 9)-(line 797,col 84)",
+      "(line 798,col 9)-(line 799,col 85)",
+      "(line 800,col 9)-(line 801,col 95)",
+      "(line 802,col 9)-(line 802,col 119)",
+      "(line 803,col 9)-(line 803,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendFloatArrayWithFieldName()",
+    "snippet": "@Test\n    public void testAppendFloatArrayWithFieldName() {\n        final float[] array \u003d { 1.0f, 2.9876f, -3.00001f, 4.3f };\n        assertEquals(baseStr + \"[values\u003d{1.0,2.9876,-3.00001,4.3}]\",\n                new ToStringBuilder(base).append(\"values\", array).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null).toString());\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append(null, array).toString());\n    }",
+    "begin_line": 807,
+    "end_line": 815,
+    "comment": "",
+    "child_ranges": [
+      "(line 808,col 9)-(line 808,col 65)",
+      "(line 809,col 9)-(line 810,col 78)",
+      "(line 811,col 9)-(line 812,col 89)",
+      "(line 813,col 9)-(line 813,col 112)",
+      "(line 814,col 9)-(line 814,col 120)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendFloatArrayWithFieldNameAndFullDetatil()",
+    "snippet": "@Test\n    public void testAppendFloatArrayWithFieldNameAndFullDetatil() {\n        final float[] array \u003d { 1.0f, 2.9876f, -3.00001f, 4.3f };\n        assertEquals(baseStr + \"[values\u003d{1.0,2.9876,-3.00001,4.3}]\",\n                new ToStringBuilder(base).append(\"values\", array, true).toString());\n        assertEquals(baseStr + \"[length\u003d\u003csize\u003d4\u003e]\",\n                new ToStringBuilder(base).append(\"length\", array, false).toString());\n        assertEquals(baseStr + \"[values\u003d\u003cnull\u003e]\",\n                new ToStringBuilder(base).append(\"values\", (boolean[]) null, true).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(null, (boolean[]) null, false).toString());\n        assertEquals(baseStr + \"[\u003csize\u003d4\u003e]\", new ToStringBuilder(base).append(null, array, false).toString());\n    }",
+    "begin_line": 818,
+    "end_line": 828,
+    "comment": "",
+    "child_ranges": [
+      "(line 819,col 9)-(line 819,col 65)",
+      "(line 820,col 9)-(line 821,col 84)",
+      "(line 822,col 9)-(line 823,col 85)",
+      "(line 824,col 9)-(line 825,col 95)",
+      "(line 826,col 9)-(line 826,col 119)",
+      "(line 827,col 9)-(line 827,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testConstructToStringBuilder()",
+    "snippet": "@Test\n    public void testConstructToStringBuilder() {\n        final ToStringBuilder stringBuilder1 \u003d new ToStringBuilder(base, null, null);\n        final ToStringBuilder stringBuilder2 \u003d new ToStringBuilder(base, ToStringStyle.DEFAULT_STYLE, new StringBuffer(1024));\n        assertEquals(ToStringStyle.DEFAULT_STYLE, stringBuilder1.getStyle());\n        assertNotNull(stringBuilder1.getStringBuffer());\n        assertNotNull(stringBuilder1.toString());\n        assertEquals(ToStringStyle.DEFAULT_STYLE, stringBuilder2.getStyle());\n        assertNotNull(stringBuilder2.getStringBuffer());\n        assertNotNull(stringBuilder2.toString());\n    }",
+    "begin_line": 831,
+    "end_line": 840,
+    "comment": "",
+    "child_ranges": [
+      "(line 832,col 9)-(line 832,col 85)",
+      "(line 833,col 9)-(line 833,col 126)",
+      "(line 834,col 9)-(line 834,col 77)",
+      "(line 835,col 9)-(line 835,col 56)",
+      "(line 836,col 9)-(line 836,col 49)",
+      "(line 837,col 9)-(line 837,col 77)",
+      "(line 838,col 9)-(line 838,col 56)",
+      "(line 839,col 9)-(line 839,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testObject()",
+    "snippet": "@Test\n    public void testObject() {\n        final Integer i3 \u003d Integer.valueOf(3);\n        final Integer i4 \u003d Integer.valueOf(4);\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) null).toString());\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append(i3).toString());\n        assertEquals(baseStr + \"[a\u003d\u003cnull\u003e]\", new ToStringBuilder(base).append(\"a\", (Object) null).toString());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", i3).toString());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", i3).append(\"b\", i4).toString());\n        assertEquals(baseStr + \"[a\u003d\u003cInteger\u003e]\", new ToStringBuilder(base).append(\"a\", i3, false).toString());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", new ArrayList\u003c\u003e(), false).toString());\n        assertEquals(baseStr + \"[a\u003d[]]\", new ToStringBuilder(base).append(\"a\", new ArrayList\u003c\u003e(), true).toString());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", new HashMap\u003c\u003e(), false).toString());\n        assertEquals(baseStr + \"[a\u003d{}]\", new ToStringBuilder(base).append(\"a\", new HashMap\u003c\u003e(), true).toString());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", (Object) new String[0], false).toString());\n        assertEquals(baseStr + \"[a\u003d{}]\", new ToStringBuilder(base).append(\"a\", (Object) new String[0], true).toString());\n    }",
+    "begin_line": 844,
+    "end_line": 859,
+    "comment": "",
+    "child_ranges": [
+      "(line 845,col 9)-(line 845,col 46)",
+      "(line 846,col 9)-(line 846,col 46)",
+      "(line 847,col 9)-(line 847,col 103)",
+      "(line 848,col 9)-(line 848,col 87)",
+      "(line 849,col 9)-(line 849,col 110)",
+      "(line 850,col 9)-(line 850,col 94)",
+      "(line 851,col 9)-(line 851,col 114)",
+      "(line 852,col 9)-(line 852,col 109)",
+      "(line 853,col 9)-(line 853,col 123)",
+      "(line 854,col 9)-(line 854,col 116)",
+      "(line 855,col 9)-(line 855,col 121)",
+      "(line 856,col 9)-(line 856,col 114)",
+      "(line 857,col 9)-(line 857,col 128)",
+      "(line 858,col 9)-(line 858,col 121)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testObjectBuild()",
+    "snippet": "@Test\n    public void testObjectBuild() {\n        final Integer i3 \u003d Integer.valueOf(3);\n        final Integer i4 \u003d Integer.valueOf(4);\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) null).build());\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append(i3).build());\n        assertEquals(baseStr + \"[a\u003d\u003cnull\u003e]\", new ToStringBuilder(base).append(\"a\", (Object) null).build());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", i3).build());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", i3).append(\"b\", i4).build());\n        assertEquals(baseStr + \"[a\u003d\u003cInteger\u003e]\", new ToStringBuilder(base).append(\"a\", i3, false).build());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", new ArrayList\u003c\u003e(), false).build());\n        assertEquals(baseStr + \"[a\u003d[]]\", new ToStringBuilder(base).append(\"a\", new ArrayList\u003c\u003e(), true).build());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", new HashMap\u003c\u003e(), false).build());\n        assertEquals(baseStr + \"[a\u003d{}]\", new ToStringBuilder(base).append(\"a\", new HashMap\u003c\u003e(), true).build());\n        assertEquals(baseStr + \"[a\u003d\u003csize\u003d0\u003e]\", new ToStringBuilder(base).append(\"a\", (Object) new String[0], false).build());\n        assertEquals(baseStr + \"[a\u003d{}]\", new ToStringBuilder(base).append(\"a\", (Object) new String[0], true).build());\n    }",
+    "begin_line": 862,
+    "end_line": 877,
+    "comment": "",
+    "child_ranges": [
+      "(line 863,col 9)-(line 863,col 46)",
+      "(line 864,col 9)-(line 864,col 46)",
+      "(line 865,col 9)-(line 865,col 100)",
+      "(line 866,col 9)-(line 866,col 84)",
+      "(line 867,col 9)-(line 867,col 107)",
+      "(line 868,col 9)-(line 868,col 91)",
+      "(line 869,col 9)-(line 869,col 111)",
+      "(line 870,col 9)-(line 870,col 106)",
+      "(line 871,col 9)-(line 871,col 120)",
+      "(line 872,col 9)-(line 872,col 113)",
+      "(line 873,col 9)-(line 873,col 118)",
+      "(line 874,col 9)-(line 874,col 111)",
+      "(line 875,col 9)-(line 875,col 125)",
+      "(line 876,col 9)-(line 876,col 118)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testLong()",
+    "snippet": "@Test\n    public void testLong() {\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append(3L).toString());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", 3L).toString());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", 3L).append(\"b\", 4L).toString());\n    }",
+    "begin_line": 880,
+    "end_line": 884,
+    "comment": "",
+    "child_ranges": [
+      "(line 881,col 9)-(line 881,col 87)",
+      "(line 882,col 9)-(line 882,col 94)",
+      "(line 883,col 9)-(line 883,col 114)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testInt()",
+    "snippet": "@Test\n    public void testInt() {\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append(3).toString());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", 3).toString());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", 3).append(\"b\", 4).toString());\n    }",
+    "begin_line": 887,
+    "end_line": 891,
+    "comment": "",
+    "child_ranges": [
+      "(line 888,col 9)-(line 888,col 86)",
+      "(line 889,col 9)-(line 889,col 93)",
+      "(line 890,col 9)-(line 890,col 112)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testShort()",
+    "snippet": "@Test\n    public void testShort() {\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append((short) 3).toString());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", (short) 3).toString());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", (short) 3).append(\"b\", (short) 4).toString());\n    }",
+    "begin_line": 894,
+    "end_line": 898,
+    "comment": "",
+    "child_ranges": [
+      "(line 895,col 9)-(line 895,col 94)",
+      "(line 896,col 9)-(line 896,col 101)",
+      "(line 897,col 9)-(line 897,col 128)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testChar()",
+    "snippet": "@Test\n    public void testChar() {\n        assertEquals(baseStr + \"[A]\", new ToStringBuilder(base).append((char) 65).toString());\n        assertEquals(baseStr + \"[a\u003dA]\", new ToStringBuilder(base).append(\"a\", (char) 65).toString());\n        assertEquals(baseStr + \"[a\u003dA,b\u003dB]\", new ToStringBuilder(base).append(\"a\", (char) 65).append(\"b\", (char) 66).toString());\n    }",
+    "begin_line": 901,
+    "end_line": 905,
+    "comment": "",
+    "child_ranges": [
+      "(line 902,col 9)-(line 902,col 94)",
+      "(line 903,col 9)-(line 903,col 101)",
+      "(line 904,col 9)-(line 904,col 128)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testByte()",
+    "snippet": "@Test\n    public void testByte() {\n        assertEquals(baseStr + \"[3]\", new ToStringBuilder(base).append((byte) 3).toString());\n        assertEquals(baseStr + \"[a\u003d3]\", new ToStringBuilder(base).append(\"a\", (byte) 3).toString());\n        assertEquals(baseStr + \"[a\u003d3,b\u003d4]\", new ToStringBuilder(base).append(\"a\", (byte) 3).append(\"b\", (byte) 4).toString());\n    }",
+    "begin_line": 908,
+    "end_line": 912,
+    "comment": "",
+    "child_ranges": [
+      "(line 909,col 9)-(line 909,col 93)",
+      "(line 910,col 9)-(line 910,col 100)",
+      "(line 911,col 9)-(line 911,col 126)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testDouble()",
+    "snippet": "@Test\n    public void testDouble() {\n        assertEquals(baseStr + \"[3.2]\", new ToStringBuilder(base).append(3.2).toString());\n        assertEquals(baseStr + \"[a\u003d3.2]\", new ToStringBuilder(base).append(\"a\", 3.2).toString());\n        assertEquals(baseStr + \"[a\u003d3.2,b\u003d4.3]\", new ToStringBuilder(base).append(\"a\", 3.2).append(\"b\", 4.3).toString());\n    }",
+    "begin_line": 915,
+    "end_line": 919,
+    "comment": "",
+    "child_ranges": [
+      "(line 916,col 9)-(line 916,col 90)",
+      "(line 917,col 9)-(line 917,col 97)",
+      "(line 918,col 9)-(line 918,col 120)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testFloat()",
+    "snippet": "@Test\n    public void testFloat() {\n        assertEquals(baseStr + \"[3.2]\", new ToStringBuilder(base).append((float) 3.2).toString());\n        assertEquals(baseStr + \"[a\u003d3.2]\", new ToStringBuilder(base).append(\"a\", (float) 3.2).toString());\n        assertEquals(baseStr + \"[a\u003d3.2,b\u003d4.3]\", new ToStringBuilder(base).append(\"a\", (float) 3.2).append(\"b\", (float) 4.3).toString());\n    }",
+    "begin_line": 922,
+    "end_line": 926,
+    "comment": "",
+    "child_ranges": [
+      "(line 923,col 9)-(line 923,col 98)",
+      "(line 924,col 9)-(line 924,col 105)",
+      "(line 925,col 9)-(line 925,col 136)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testBoolean()",
+    "snippet": "@Test\n    public void testBoolean() {\n        assertEquals(baseStr + \"[true]\", new ToStringBuilder(base).append(true).toString());\n        assertEquals(baseStr + \"[a\u003dtrue]\", new ToStringBuilder(base).append(\"a\", true).toString());\n        assertEquals(baseStr + \"[a\u003dtrue,b\u003dfalse]\", new ToStringBuilder(base).append(\"a\", true).append(\"b\", false).toString());\n    }",
+    "begin_line": 929,
+    "end_line": 933,
+    "comment": "",
+    "child_ranges": [
+      "(line 930,col 9)-(line 930,col 92)",
+      "(line 931,col 9)-(line 931,col 99)",
+      "(line 932,col 9)-(line 932,col 126)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testObjectArray()",
+    "snippet": "@Test\n    public void testObjectArray() {\n        Object[] array \u003d {null, base, new int[] {3, 6}};\n        assertEquals(baseStr + \"[{\u003cnull\u003e,5,{3,6}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{\u003cnull\u003e,5,{3,6}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 937,
+    "end_line": 944,
+    "comment": "",
+    "child_ranges": [
+      "(line 938,col 9)-(line 938,col 56)",
+      "(line 939,col 9)-(line 939,col 105)",
+      "(line 940,col 9)-(line 940,col 114)",
+      "(line 941,col 9)-(line 941,col 21)",
+      "(line 942,col 9)-(line 942,col 95)",
+      "(line 943,col 9)-(line 943,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testLongArray()",
+    "snippet": "@Test\n    public void testLongArray() {\n        long[] array \u003d {1, 2, -3, 4};\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 947,
+    "end_line": 954,
+    "comment": "",
+    "child_ranges": [
+      "(line 948,col 9)-(line 948,col 37)",
+      "(line 949,col 9)-(line 949,col 99)",
+      "(line 950,col 9)-(line 950,col 108)",
+      "(line 951,col 9)-(line 951,col 21)",
+      "(line 952,col 9)-(line 952,col 95)",
+      "(line 953,col 9)-(line 953,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testIntArray()",
+    "snippet": "@Test\n    public void testIntArray() {\n        int[] array \u003d {1, 2, -3, 4};\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 957,
+    "end_line": 964,
+    "comment": "",
+    "child_ranges": [
+      "(line 958,col 9)-(line 958,col 36)",
+      "(line 959,col 9)-(line 959,col 99)",
+      "(line 960,col 9)-(line 960,col 108)",
+      "(line 961,col 9)-(line 961,col 21)",
+      "(line 962,col 9)-(line 962,col 95)",
+      "(line 963,col 9)-(line 963,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testShortArray()",
+    "snippet": "@Test\n    public void testShortArray() {\n        short[] array \u003d {1, 2, -3, 4};\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 967,
+    "end_line": 974,
+    "comment": "",
+    "child_ranges": [
+      "(line 968,col 9)-(line 968,col 38)",
+      "(line 969,col 9)-(line 969,col 99)",
+      "(line 970,col 9)-(line 970,col 108)",
+      "(line 971,col 9)-(line 971,col 21)",
+      "(line 972,col 9)-(line 972,col 95)",
+      "(line 973,col 9)-(line 973,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testByteArray()",
+    "snippet": "@Test\n    public void testByteArray() {\n        byte[] array \u003d {1, 2, -3, 4};\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1,2,-3,4}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 977,
+    "end_line": 984,
+    "comment": "",
+    "child_ranges": [
+      "(line 978,col 9)-(line 978,col 37)",
+      "(line 979,col 9)-(line 979,col 99)",
+      "(line 980,col 9)-(line 980,col 108)",
+      "(line 981,col 9)-(line 981,col 21)",
+      "(line 982,col 9)-(line 982,col 95)",
+      "(line 983,col 9)-(line 983,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testCharArray()",
+    "snippet": "@Test\n    public void testCharArray() {\n        char[] array \u003d {\u0027A\u0027, \u00272\u0027, \u0027_\u0027, \u0027D\u0027};\n        assertEquals(baseStr + \"[{A,2,_,D}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{A,2,_,D}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 987,
+    "end_line": 994,
+    "comment": "",
+    "child_ranges": [
+      "(line 988,col 9)-(line 988,col 44)",
+      "(line 989,col 9)-(line 989,col 98)",
+      "(line 990,col 9)-(line 990,col 107)",
+      "(line 991,col 9)-(line 991,col 21)",
+      "(line 992,col 9)-(line 992,col 95)",
+      "(line 993,col 9)-(line 993,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testDoubleArray()",
+    "snippet": "@Test\n    public void testDoubleArray() {\n        double[] array \u003d {1.0, 2.9876, -3.00001, 4.3};\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 997,
+    "end_line": 1004,
+    "comment": "",
+    "child_ranges": [
+      "(line 998,col 9)-(line 998,col 54)",
+      "(line 999,col 9)-(line 999,col 114)",
+      "(line 1000,col 9)-(line 1000,col 123)",
+      "(line 1001,col 9)-(line 1001,col 21)",
+      "(line 1002,col 9)-(line 1002,col 95)",
+      "(line 1003,col 9)-(line 1003,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testFloatArray()",
+    "snippet": "@Test\n    public void testFloatArray() {\n        float[] array \u003d {1.0f, 2.9876f, -3.00001f, 4.3f};\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{1.0,2.9876,-3.00001,4.3}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1007,
+    "end_line": 1014,
+    "comment": "",
+    "child_ranges": [
+      "(line 1008,col 9)-(line 1008,col 57)",
+      "(line 1009,col 9)-(line 1009,col 114)",
+      "(line 1010,col 9)-(line 1010,col 123)",
+      "(line 1011,col 9)-(line 1011,col 21)",
+      "(line 1012,col 9)-(line 1012,col 95)",
+      "(line 1013,col 9)-(line 1013,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testBooleanArray()",
+    "snippet": "@Test\n    public void testBooleanArray() {\n        boolean[] array \u003d {true, false, false};\n        assertEquals(baseStr + \"[{true,false,false}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{true,false,false}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1017,
+    "end_line": 1024,
+    "comment": "",
+    "child_ranges": [
+      "(line 1018,col 9)-(line 1018,col 47)",
+      "(line 1019,col 9)-(line 1019,col 107)",
+      "(line 1020,col 9)-(line 1020,col 116)",
+      "(line 1021,col 9)-(line 1021,col 21)",
+      "(line 1022,col 9)-(line 1022,col 95)",
+      "(line 1023,col 9)-(line 1023,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testLongArrayArray()",
+    "snippet": "@Test\n    public void testLongArrayArray() {\n        long[][] array \u003d {{1, 2}, null, {5}};\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1027,
+    "end_line": 1034,
+    "comment": "",
+    "child_ranges": [
+      "(line 1028,col 9)-(line 1028,col 45)",
+      "(line 1029,col 9)-(line 1029,col 107)",
+      "(line 1030,col 9)-(line 1030,col 116)",
+      "(line 1031,col 9)-(line 1031,col 21)",
+      "(line 1032,col 9)-(line 1032,col 95)",
+      "(line 1033,col 9)-(line 1033,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testIntArrayArray()",
+    "snippet": "@Test\n    public void testIntArrayArray() {\n        int[][] array \u003d {{1, 2}, null, {5}};\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1037,
+    "end_line": 1044,
+    "comment": "",
+    "child_ranges": [
+      "(line 1038,col 9)-(line 1038,col 44)",
+      "(line 1039,col 9)-(line 1039,col 107)",
+      "(line 1040,col 9)-(line 1040,col 116)",
+      "(line 1041,col 9)-(line 1041,col 21)",
+      "(line 1042,col 9)-(line 1042,col 95)",
+      "(line 1043,col 9)-(line 1043,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testShortArrayArray()",
+    "snippet": "@Test\n    public void testShortArrayArray() {\n        short[][] array \u003d {{1, 2}, null, {5}};\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1047,
+    "end_line": 1054,
+    "comment": "",
+    "child_ranges": [
+      "(line 1048,col 9)-(line 1048,col 46)",
+      "(line 1049,col 9)-(line 1049,col 107)",
+      "(line 1050,col 9)-(line 1050,col 116)",
+      "(line 1051,col 9)-(line 1051,col 21)",
+      "(line 1052,col 9)-(line 1052,col 95)",
+      "(line 1053,col 9)-(line 1053,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testByteArrayArray()",
+    "snippet": "@Test\n    public void testByteArrayArray() {\n        byte[][] array \u003d {{1, 2}, null, {5}};\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1,2},\u003cnull\u003e,{5}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1057,
+    "end_line": 1064,
+    "comment": "",
+    "child_ranges": [
+      "(line 1058,col 9)-(line 1058,col 45)",
+      "(line 1059,col 9)-(line 1059,col 107)",
+      "(line 1060,col 9)-(line 1060,col 116)",
+      "(line 1061,col 9)-(line 1061,col 21)",
+      "(line 1062,col 9)-(line 1062,col 95)",
+      "(line 1063,col 9)-(line 1063,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testCharArrayArray()",
+    "snippet": "@Test\n    public void testCharArrayArray() {\n        char[][] array \u003d {{\u0027A\u0027, \u0027B\u0027}, null, {\u0027p\u0027}};\n        assertEquals(baseStr + \"[{{A,B},\u003cnull\u003e,{p}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{A,B},\u003cnull\u003e,{p}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1067,
+    "end_line": 1074,
+    "comment": "",
+    "child_ranges": [
+      "(line 1068,col 9)-(line 1068,col 51)",
+      "(line 1069,col 9)-(line 1069,col 107)",
+      "(line 1070,col 9)-(line 1070,col 116)",
+      "(line 1071,col 9)-(line 1071,col 21)",
+      "(line 1072,col 9)-(line 1072,col 95)",
+      "(line 1073,col 9)-(line 1073,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testDoubleArrayArray()",
+    "snippet": "@Test\n    public void testDoubleArrayArray() {\n        double[][] array \u003d {{1.0, 2.29686}, null, {Double.NaN}};\n        assertEquals(baseStr + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1077,
+    "end_line": 1084,
+    "comment": "",
+    "child_ranges": [
+      "(line 1078,col 9)-(line 1078,col 64)",
+      "(line 1079,col 9)-(line 1079,col 117)",
+      "(line 1080,col 9)-(line 1080,col 126)",
+      "(line 1081,col 9)-(line 1081,col 21)",
+      "(line 1082,col 9)-(line 1082,col 95)",
+      "(line 1083,col 9)-(line 1083,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testFloatArrayArray()",
+    "snippet": "@Test\n    public void testFloatArrayArray() {\n        float[][] array \u003d {{1.0f, 2.29686f}, null, {Float.NaN}};\n        assertEquals(baseStr + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{1.0,2.29686},\u003cnull\u003e,{NaN}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1087,
+    "end_line": 1094,
+    "comment": "",
+    "child_ranges": [
+      "(line 1088,col 9)-(line 1088,col 64)",
+      "(line 1089,col 9)-(line 1089,col 117)",
+      "(line 1090,col 9)-(line 1090,col 126)",
+      "(line 1091,col 9)-(line 1091,col 21)",
+      "(line 1092,col 9)-(line 1092,col 95)",
+      "(line 1093,col 9)-(line 1093,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testBooleanArrayArray()",
+    "snippet": "@Test\n    public void testBooleanArrayArray() {\n        boolean[][] array \u003d {{true, false}, null, {false}};\n        assertEquals(baseStr + \"[{{true,false},\u003cnull\u003e,{false}}]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[{{true,false},\u003cnull\u003e,{false}}]\", new ToStringBuilder(base).append((Object) array).toString());\n        array \u003d null;\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append(array).toString());\n        assertEquals(baseStr + \"[\u003cnull\u003e]\", new ToStringBuilder(base).append((Object) array).toString());\n    }",
+    "begin_line": 1097,
+    "end_line": 1104,
+    "comment": "",
+    "child_ranges": [
+      "(line 1098,col 9)-(line 1098,col 59)",
+      "(line 1099,col 9)-(line 1099,col 118)",
+      "(line 1100,col 9)-(line 1100,col 127)",
+      "(line 1101,col 9)-(line 1101,col 21)",
+      "(line 1102,col 9)-(line 1102,col 95)",
+      "(line 1103,col 9)-(line 1103,col 104)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testObjectCycle()",
+    "snippet": "@Test\n    public void testObjectCycle() {\n        final ObjectCycle a \u003d new ObjectCycle();\n        final ObjectCycle b \u003d new ObjectCycle();\n        a.obj \u003d b;\n        b.obj \u003d a;\n\n        final String expected \u003d toBaseString(a) + \"[\" + toBaseString(b) + \"[\" + toBaseString(a) + \"]]\";\n        assertEquals(expected, a.toString());\n    }",
+    "begin_line": 1107,
+    "end_line": 1115,
+    "comment": "",
+    "child_ranges": [
+      "(line 1108,col 9)-(line 1108,col 48)",
+      "(line 1109,col 9)-(line 1109,col 48)",
+      "(line 1110,col 9)-(line 1110,col 18)",
+      "(line 1111,col 9)-(line 1111,col 18)",
+      "(line 1113,col 9)-(line 1113,col 103)",
+      "(line 1114,col 9)-(line 1114,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return new ToStringBuilder(this).append(obj).toString();\n        }",
+    "begin_line": 1121,
+    "end_line": 1123,
+    "comment": "",
+    "child_ranges": [
+      "(line 1122,col 13)-(line 1122,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testSimpleReflectionStatics()",
+    "snippet": "@Test\n    public void testSimpleReflectionStatics() {\n        final SimpleReflectionStaticFieldsFixture instance1 \u003d new SimpleReflectionStaticFieldsFixture();\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt\u003d12345,staticString\u003dstaticString]\",\n            ReflectionToStringBuilder.toString(instance1, null, false, true, SimpleReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt\u003d12345,staticString\u003dstaticString]\",\n            ReflectionToStringBuilder.toString(instance1, null, true, true, SimpleReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, SimpleReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, SimpleReflectionStaticFieldsFixture.class));\n    }",
+    "begin_line": 1127,
+    "end_line": 1141,
+    "comment": "",
+    "child_ranges": [
+      "(line 1128,col 9)-(line 1128,col 104)",
+      "(line 1129,col 9)-(line 1131,col 121)",
+      "(line 1132,col 9)-(line 1134,col 120)",
+      "(line 1135,col 9)-(line 1137,col 98)",
+      "(line 1138,col 9)-(line 1140,col 98)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionStatics()",
+    "snippet": "@Test\n    public void testReflectionStatics() {\n        final ReflectionStaticFieldsFixture instance1 \u003d new ReflectionStaticFieldsFixture();\n        assertEquals(\n            this.toBaseString(instance1) + \"[instanceInt\u003d67890,instanceString\u003dinstanceString,staticInt\u003d12345,staticString\u003dstaticString]\",\n            ReflectionToStringBuilder.toString(instance1, null, false, true, ReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[instanceInt\u003d67890,instanceString\u003dinstanceString,staticInt\u003d12345,staticString\u003dstaticString,staticTransientInt\u003d54321,staticTransientString\u003dstaticTransientString,transientInt\u003d98765,transientString\u003dtransientString]\",\n            ReflectionToStringBuilder.toString(instance1, null, true, true, ReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[instanceInt\u003d67890,instanceString\u003dinstanceString,staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, ReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[instanceInt\u003d67890,instanceString\u003dinstanceString,staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, ReflectionStaticFieldsFixture.class));\n    }",
+    "begin_line": 1147,
+    "end_line": 1161,
+    "comment": "/** \n * Tests ReflectionToStringBuilder.toString() for statics.\n */\n",
+    "child_ranges": [
+      "(line 1148,col 9)-(line 1148,col 92)",
+      "(line 1149,col 9)-(line 1151,col 115)",
+      "(line 1152,col 9)-(line 1154,col 114)",
+      "(line 1155,col 9)-(line 1157,col 92)",
+      "(line 1158,col 9)-(line 1160,col 92)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testInheritedReflectionStatics()",
+    "snippet": "@Test\n    public void testInheritedReflectionStatics() {\n        final InheritedReflectionStaticFieldsFixture instance1 \u003d new InheritedReflectionStaticFieldsFixture();\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt2\u003d67890,staticString2\u003dstaticString2]\",\n            ReflectionToStringBuilder.toString(instance1, null, false, true, InheritedReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt2\u003d67890,staticString2\u003dstaticString2,staticInt\u003d12345,staticString\u003dstaticString]\",\n            ReflectionToStringBuilder.toString(instance1, null, false, true, SimpleReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt2\u003d67890,staticString2\u003dstaticString2,staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, SimpleReflectionStaticFieldsFixture.class));\n        assertEquals(\n            this.toBaseString(instance1) + \"[staticInt2\u003d67890,staticString2\u003dstaticString2,staticInt\u003d12345,staticString\u003dstaticString]\",\n            this.toStringWithStatics(instance1, null, SimpleReflectionStaticFieldsFixture.class));\n    }",
+    "begin_line": 1167,
+    "end_line": 1181,
+    "comment": "/** \n * Tests ReflectionToStringBuilder.toString() for statics.\n */\n",
+    "child_ranges": [
+      "(line 1168,col 9)-(line 1168,col 110)",
+      "(line 1169,col 9)-(line 1171,col 124)",
+      "(line 1172,col 9)-(line 1174,col 121)",
+      "(line 1175,col 9)-(line 1177,col 98)",
+      "(line 1178,col 9)-(line 1180,col 98)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toStringWithStatics(T, ToStringStyle, java.lang.Class\u003c? super T\u003e)",
+    "snippet": "public \u003cT\u003e String toStringWithStatics(final T object, final ToStringStyle style, final Class\u003c? super T\u003e reflectUpToClass) {\n        return ReflectionToStringBuilder.toString(object, style, false, true, reflectUpToClass);\n    }",
+    "begin_line": 1209,
+    "end_line": 1211,
+    "comment": "/** \n * \u003cp\u003eThis method uses reflection to build a suitable {@code toString} value which includes static fields.\u003c/p\u003e\u003cp\u003eIt uses  {@code AccessibleObject.setAccessible} to gain access to privatefields. This means that it will throw a security exception if run under a security manager, if the permissions are not set up correctly. It is also not as efficient as testing explicitly.\u003c/p\u003e \u003cp\u003eTransient fields are not output.\u003c/p\u003e \u003cp\u003eSuperclass fields will be appended up to and including the specified superclass. A null superclass is treated as  {@code java.lang.Object}.\u003c/p\u003e \u003cp\u003eIf the style is  {@code null}, the default {@code ToStringStyle} is used.\u003c/p\u003e\n * @param \u003c T \u003e the type of the output object\n * @param object  the Object to be output\n * @param style  the style of the {@code toString} to create,may be  {@code null}\n * @param reflectUpToClass  the superclass to reflect up to (inclusive),may be  {@code null}\n * @return the String result\n * @throws IllegalArgumentException if the Object is {@code null}\n */\n",
+    "child_ranges": [
+      "(line 1210,col 9)-(line 1210,col 96)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_valid()",
+    "snippet": "@Test\n    public void test_setUpToClass_valid() {\n        final Integer val \u003d Integer.valueOf(5);\n        final ReflectionToStringBuilder test \u003d new ReflectionToStringBuilder(val);\n        test.setUpToClass(Number.class);\n        test.toString();\n    }",
+    "begin_line": 1217,
+    "end_line": 1222,
+    "comment": "/** \n * Tests ReflectionToStringBuilder setUpToClass().\n */\n",
+    "child_ranges": [
+      "(line 1218,col 9)-(line 1218,col 47)",
+      "(line 1219,col 9)-(line 1219,col 82)",
+      "(line 1220,col 9)-(line 1220,col 40)",
+      "(line 1221,col 9)-(line 1221,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_invalid()",
+    "snippet": "@Test\n    public void test_setUpToClass_invalid() {\n        final Integer val \u003d Integer.valueOf(5);\n        final ReflectionToStringBuilder test \u003d new ReflectionToStringBuilder(val);\n        assertThrows(IllegalArgumentException.class, () -\u003e test.setUpToClass(String.class));\n        test.toString();\n    }",
+    "begin_line": 1228,
+    "end_line": 1233,
+    "comment": "/** \n * Tests ReflectionToStringBuilder setUpToClass().\n */\n",
+    "child_ranges": [
+      "(line 1229,col 9)-(line 1229,col 47)",
+      "(line 1230,col 9)-(line 1230,col 82)",
+      "(line 1231,col 9)-(line 1231,col 92)",
+      "(line 1232,col 9)-(line 1232,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionNull()",
+    "snippet": "@Test\n    public void testReflectionNull() {\n        assertEquals(\"\u003cnull\u003e\", ReflectionToStringBuilder.toString(null));\n    }",
+    "begin_line": 1267,
+    "end_line": 1269,
+    "comment": "",
+    "child_ranges": [
+      "(line 1268,col 9)-(line 1268,col 73)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return new ToStringBuilder(this).append(\"testInt\", i).toString();\n        }",
+    "begin_line": 1278,
+    "end_line": 1280,
+    "comment": "",
+    "child_ranges": [
+      "(line 1279,col 13)-(line 1279,col 77)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ToStringBuilderTest.testAppendToStringUsingMultiLineStyle()",
+    "snippet": "@Test\n    public void testAppendToStringUsingMultiLineStyle() {\n        final MultiLineTestObject obj \u003d new MultiLineTestObject();\n        final ToStringBuilder testBuilder \u003d new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)\n                                          .appendToString(obj.toString());\n        assertEquals(-1, testBuilder.toString().indexOf(\"testInt\u003d31337\"));\n    }",
+    "begin_line": 1284,
+    "end_line": 1289,
+    "comment": "",
+    "child_ranges": [
+      "(line 1285,col 9)-(line 1285,col 66)",
+      "(line 1286,col 9)-(line 1287,col 74)",
+      "(line 1288,col 9)-(line 1288,col 74)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.builder.ReflectionToStringBuilderTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/builder/ReflectionToStringBuilderTest.java",
+    "signature": "org.apache.commons.lang3.builder.ReflectionToStringBuilderTest.testConstructorWithNullObject()",
+    "snippet": "@Test\n    public void testConstructorWithNullObject() {\n        assertEquals(\"\u003cnull\u003e\", new ReflectionToStringBuilder(null, ToStringStyle.DEFAULT_STYLE, new StringBuffer()).toString());\n    }",
+    "begin_line": 30,
+    "end_line": 32,
+    "comment": "",
+    "child_ranges": [
+      "(line 31,col 9)-(line 31,col 128)"
+    ]
+  }
+]

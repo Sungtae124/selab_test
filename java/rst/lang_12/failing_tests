@@ -1,0 +1,14 @@
+--- org.apache.commons.lang3.reflect.TypeUtilsTest::testLANG1190
+java.lang.NullPointerException
+       org.apache.commons.lang3.reflect.TypeUtils.isAssignable(TypeUtils.java:471)
+       org.apache.commons.lang3.reflect.TypeUtils.isAssignable(TypeUtils.java:330)
+       org.apache.commons.lang3.reflect.TypeUtils.isAssignable(TypeUtils.java:656)
+       org.apache.commons.lang3.reflect.TypeUtils.isAssignable(TypeUtils.java:338)
+       org.apache.commons.lang3.reflect.TypeUtils.isAssignable(TypeUtils.java:311)
+       org.apache.commons.lang3.reflect.TypeUtilsTest.testLANG1190(TypeUtilsTest.java:772)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       [...]
+

@@ -1,0 +1,29 @@
+[
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 8417515734108306801L;",
+    "begin_line": 44,
+    "end_line": 44,
+    "comment": "/** \n * Serialization version \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.mutator",
+    "snippet": "private CollectionMutator\u003cE\u003e mutator;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * CollectionMutator to handle changes to the collection \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.all",
+    "snippet": "private final List\u003cCollection\u003cE\u003e\u003e all \u003d new ArrayList\u003c\u003e();",
+    "begin_line": 50,
+    "end_line": 50,
+    "comment": "/** \n * Collections in the composite \n */\n"
+  }
+]

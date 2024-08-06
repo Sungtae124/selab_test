@@ -1,0 +1,263 @@
+[
+  {
+    "class_name": "org.apache.commons.io.build.AbstractOrigin",
+    "src_path": "org/apache/commons/io/build/AbstractOrigin.java",
+    "signature": "org.apache.commons.io.build.AbstractOrigin.origin",
+    "snippet": "final T origin;",
+    "begin_line": 380,
+    "end_line": 380,
+    "comment": "/** \n * The non-null origin.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractOriginSupplier",
+    "src_path": "org/apache/commons/io/build/AbstractOriginSupplier.java",
+    "signature": "org.apache.commons.io.build.AbstractOriginSupplier.origin",
+    "snippet": "private AbstractOrigin\u003c?, ?\u003e origin;",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * The underlying origin.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.DEFAULT_OPEN_OPTIONS",
+    "snippet": "private static final OpenOption[] DEFAULT_OPEN_OPTIONS \u003d PathUtils.EMPTY_OPEN_OPTION_ARRAY;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.bufferSize",
+    "snippet": "private int bufferSize \u003d IOUtils.DEFAULT_BUFFER_SIZE;",
+    "begin_line": 46,
+    "end_line": 46,
+    "comment": "/** \n * The buffer size, defaults to  {@link IOUtils#DEFAULT_BUFFER_SIZE} ({@value IOUtils#DEFAULT_BUFFER_SIZE}).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.bufferSizeDefault",
+    "snippet": "private int bufferSizeDefault \u003d IOUtils.DEFAULT_BUFFER_SIZE;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * The buffer size, defaults to  {@link IOUtils#DEFAULT_BUFFER_SIZE} ({@value IOUtils#DEFAULT_BUFFER_SIZE}).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.charset",
+    "snippet": "private Charset charset \u003d Charset.defaultCharset();",
+    "begin_line": 56,
+    "end_line": 56,
+    "comment": "/** \n * The Charset, defaults to  {@link Charset#defaultCharset()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.charsetDefault",
+    "snippet": "private Charset charsetDefault \u003d Charset.defaultCharset();",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * The Charset, defaults to  {@link Charset#defaultCharset()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.build.AbstractStreamBuilder",
+    "src_path": "org/apache/commons/io/build/AbstractStreamBuilder.java",
+    "signature": "org.apache.commons.io.build.AbstractStreamBuilder.openOptions",
+    "snippet": "private OpenOption[] openOptions \u003d DEFAULT_OPEN_OPTIONS;",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.equals",
+    "snippet": "final boolean equals;",
+    "begin_line": 95,
+    "end_line": 95,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList1",
+    "snippet": "final List\u003cPath\u003e relativeFileList1;",
+    "begin_line": 98,
+    "end_line": 98,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList2",
+    "snippet": "final List\u003cPath\u003e relativeFileList2;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_TRUNCATE",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_TRUNCATE \u003d {StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING};",
+    "begin_line": 151,
+    "end_line": 151,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_APPEND",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_APPEND \u003d {StandardOpenOption.CREATE, StandardOpenOption.APPEND};",
+    "begin_line": 153,
+    "end_line": 153,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_COPY_OPTIONS",
+    "snippet": "public static final CopyOption[] EMPTY_COPY_OPTIONS \u003d {};",
+    "begin_line": 160,
+    "end_line": 160,
+    "comment": "/** \n * Empty  {@link CopyOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_DELETE_OPTION_ARRAY",
+    "snippet": "public static final DeleteOption[] EMPTY_DELETE_OPTION_ARRAY \u003d {};",
+    "begin_line": 167,
+    "end_line": 167,
+    "comment": "/** \n * Empty  {@link DeleteOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_FILE_ATTRIBUTE_ARRAY",
+    "snippet": "public static final FileAttribute\u003c?\u003e[] EMPTY_FILE_ATTRIBUTE_ARRAY \u003d {};",
+    "begin_line": 174,
+    "end_line": 174,
+    "comment": "/** \n * Empty  {@link FileAttribute} array.\n * @since 2.13.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_FILE_VISIT_OPTION_ARRAY",
+    "snippet": "public static final FileVisitOption[] EMPTY_FILE_VISIT_OPTION_ARRAY \u003d {};",
+    "begin_line": 179,
+    "end_line": 179,
+    "comment": "/** \n * Empty  {@link FileVisitOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_LINK_OPTION_ARRAY",
+    "snippet": "public static final LinkOption[] EMPTY_LINK_OPTION_ARRAY \u003d {};",
+    "begin_line": 184,
+    "end_line": 184,
+    "comment": "/** \n * Empty  {@link LinkOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NOFOLLOW_LINK_OPTION_ARRAY",
+    "snippet": "@Deprecated\n    public static final LinkOption[] NOFOLLOW_LINK_OPTION_ARRAY \u003d {LinkOption.NOFOLLOW_LINKS};",
+    "begin_line": 193,
+    "end_line": 193,
+    "comment": "/** \n * {@link LinkOption} array for {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.9.0\n * @deprecated Use {@link #noFollowLinkOptionArray()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NULL_LINK_OPTION",
+    "snippet": "static final LinkOption NULL_LINK_OPTION \u003d null;",
+    "begin_line": 200,
+    "end_line": 200,
+    "comment": "/** \n * A LinkOption used to follow link in this class, the inverse of  {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.12.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_OPEN_OPTION_ARRAY",
+    "snippet": "public static final OpenOption[] EMPTY_OPEN_OPTION_ARRAY \u003d {};",
+    "begin_line": 205,
+    "end_line": 205,
+    "comment": "/** \n * Empty  {@link OpenOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_PATH_ARRAY",
+    "snippet": "public static final Path[] EMPTY_PATH_ARRAY \u003d {};",
+    "begin_line": 212,
+    "end_line": 212,
+    "comment": "/** \n * Empty  {@link Path} array.\n * @since 2.9.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.charsetEncoder",
+    "snippet": "private CharsetEncoder charsetEncoder \u003d super.getCharset().newEncoder();",
+    "begin_line": 103,
+    "end_line": 103,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.reader",
+    "snippet": "private final Reader reader;",
+    "begin_line": 169,
+    "end_line": 169,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.charsetEncoder",
+    "snippet": "private final CharsetEncoder charsetEncoder;",
+    "begin_line": 171,
+    "end_line": 171,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.encoderIn",
+    "snippet": "private final CharBuffer encoderIn;",
+    "begin_line": 176,
+    "end_line": 176,
+    "comment": "/** \n * CharBuffer used as input for the decoder. It should be reasonably large as we read data from the underlying Reader into this buffer.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.encoderOut",
+    "snippet": "private final ByteBuffer encoderOut;",
+    "begin_line": 181,
+    "end_line": 181,
+    "comment": "/** \n * ByteBuffer used as output for the decoder. This buffer can be small as it is only used to transfer data from the decoder to the buffer provided by the caller.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.lastCoderResult",
+    "snippet": "private CoderResult lastCoderResult;",
+    "begin_line": 183,
+    "end_line": 183,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.endOfInput",
+    "snippet": "private boolean endOfInput;",
+    "begin_line": 185,
+    "end_line": 185,
+    "comment": ""
+  }
+]

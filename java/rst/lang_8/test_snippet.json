@@ -1,0 +1,383 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testConstructor()",
+    "snippet": "@Test\n    public void testConstructor() {\n        assertNotNull(new CharSequenceUtils());\n        final Constructor\u003c?\u003e[] cons \u003d CharSequenceUtils.class.getDeclaredConstructors();\n        assertEquals(1, cons.length);\n        assertTrue(Modifier.isPublic(cons[0].getModifiers()));\n        assertTrue(Modifier.isPublic(CharSequenceUtils.class.getModifiers()));\n        assertFalse(Modifier.isFinal(CharSequenceUtils.class.getModifiers()));\n    }",
+    "begin_line": 41,
+    "end_line": 48,
+    "comment": "",
+    "child_ranges": [
+      "(line 42,col 9)-(line 42,col 47)",
+      "(line 43,col 9)-(line 43,col 88)",
+      "(line 44,col 9)-(line 44,col 37)",
+      "(line 45,col 9)-(line 45,col 62)",
+      "(line 46,col 9)-(line 46,col 78)",
+      "(line 47,col 9)-(line 47,col 78)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testSubSequence()",
+    "snippet": "@Test\n    public void testSubSequence() {\n        //\n        // null input\n        //\n        assertNull(CharSequenceUtils.subSequence(null, -1));\n        assertNull(CharSequenceUtils.subSequence(null, 0));\n        assertNull(CharSequenceUtils.subSequence(null, 1));\n        //\n        // non-null input\n        //\n        assertEquals(StringUtils.EMPTY, CharSequenceUtils.subSequence(StringUtils.EMPTY, 0));\n        assertEquals(\"012\", CharSequenceUtils.subSequence(\"012\", 0));\n        assertEquals(\"12\", CharSequenceUtils.subSequence(\"012\", 1));\n        assertEquals(\"2\", CharSequenceUtils.subSequence(\"012\", 2));\n        assertEquals(StringUtils.EMPTY, CharSequenceUtils.subSequence(\"012\", 3));\n    }",
+    "begin_line": 52,
+    "end_line": 67,
+    "comment": "",
+    "child_ranges": [
+      "(line 56,col 9)-(line 56,col 60)",
+      "(line 57,col 9)-(line 57,col 59)",
+      "(line 58,col 9)-(line 58,col 59)",
+      "(line 62,col 9)-(line 62,col 93)",
+      "(line 63,col 9)-(line 63,col 69)",
+      "(line 64,col 9)-(line 64,col 68)",
+      "(line 65,col 9)-(line 65,col 67)",
+      "(line 66,col 9)-(line 66,col 81)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testSubSequenceNegativeStart()",
+    "snippet": "@Test\n    public void testSubSequenceNegativeStart() {\n        assertThrows(IndexOutOfBoundsException.class, () -\u003e CharSequenceUtils.subSequence(StringUtils.EMPTY, -1));\n    }",
+    "begin_line": 70,
+    "end_line": 72,
+    "comment": "",
+    "child_ranges": [
+      "(line 71,col 9)-(line 71,col 114)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testSubSequenceTooLong()",
+    "snippet": "@Test\n    public void testSubSequenceTooLong() {\n        assertThrows(IndexOutOfBoundsException.class, () -\u003e CharSequenceUtils.subSequence(StringUtils.EMPTY, 1));\n    }",
+    "begin_line": 75,
+    "end_line": 77,
+    "comment": "",
+    "child_ranges": [
+      "(line 76,col 9)-(line 76,col 113)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.TestData(java.lang.String, boolean, int, java.lang.String, int, int, boolean)",
+    "snippet": " TestData(final String source, final boolean ignoreCase, final int toffset,\n                final String other, final int ooffset, final int len, final boolean expected) {\n            this.source \u003d source;\n            this.ignoreCase \u003d ignoreCase;\n            this.toffset \u003d toffset;\n            this.other \u003d other;\n            this.ooffset \u003d ooffset;\n            this.len \u003d len;\n            this.expected \u003d expected;\n            this.throwable \u003d null;\n        }",
+    "begin_line": 88,
+    "end_line": 98,
+    "comment": "",
+    "child_ranges": [
+      "(line 90,col 13)-(line 90,col 33)",
+      "(line 91,col 13)-(line 91,col 41)",
+      "(line 92,col 13)-(line 92,col 35)",
+      "(line 93,col 13)-(line 93,col 31)",
+      "(line 94,col 13)-(line 94,col 35)",
+      "(line 95,col 13)-(line 95,col 27)",
+      "(line 96,col 13)-(line 96,col 37)",
+      "(line 97,col 13)-(line 97,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.TestData(java.lang.String, boolean, int, java.lang.String, int, int, java.lang.Class\u003c? extends java.lang.Throwable\u003e)",
+    "snippet": " TestData(final String source, final boolean ignoreCase, final int toffset,\n                final String other, final int ooffset, final int len, final Class\u003c? extends Throwable\u003e throwable) {\n            this.source \u003d source;\n            this.ignoreCase \u003d ignoreCase;\n            this.toffset \u003d toffset;\n            this.other \u003d other;\n            this.ooffset \u003d ooffset;\n            this.len \u003d len;\n            this.expected \u003d false;\n            this.throwable \u003d throwable;\n        }",
+    "begin_line": 99,
+    "end_line": 109,
+    "comment": "",
+    "child_ranges": [
+      "(line 101,col 13)-(line 101,col 33)",
+      "(line 102,col 13)-(line 102,col 41)",
+      "(line 103,col 13)-(line 103,col 35)",
+      "(line 104,col 13)-(line 104,col 31)",
+      "(line 105,col 13)-(line 105,col 35)",
+      "(line 106,col 13)-(line 106,col 27)",
+      "(line 107,col 13)-(line 107,col 34)",
+      "(line 108,col 13)-(line 108,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            final StringBuilder sb \u003d new StringBuilder();\n            sb.append(source).append(\"[\").append(toffset).append(\"]\");\n            sb.append(ignoreCase? \" caseblind \":\" samecase \");\n            sb.append(other).append(\"[\").append(ooffset).append(\"]\");\n            sb.append(\" \").append(len).append(\" \u003d\u003e \");\n            if (throwable !\u003d null) {\n                sb.append(throwable);\n            } else {\n                sb.append(expected);\n            }\n            return sb.toString();\n        }",
+    "begin_line": 111,
+    "end_line": 123,
+    "comment": "",
+    "child_ranges": [
+      "(line 112,col 13)-(line 112,col 57)",
+      "(line 113,col 13)-(line 113,col 70)",
+      "(line 114,col 13)-(line 114,col 62)",
+      "(line 115,col 13)-(line 115,col 69)",
+      "(line 116,col 13)-(line 116,col 54)",
+      "(line 117,col 13)-(line 121,col 13)",
+      "(line 122,col 13)-(line 122,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.invoke()",
+    "snippet": "abstract boolean invoke();",
+    "begin_line": 145,
+    "end_line": 145,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.run(org.apache.commons.lang3.CharSequenceUtilsTest.TestData, java.lang.String)",
+    "snippet": "void run(final TestData data, final String id) {\n            if (data.throwable !\u003d null) {\n                assertThrows(data.throwable, this::invoke, id + \" Expected \" + data.throwable);\n            } else {\n                final boolean stringCheck \u003d invoke();\n                assertEquals(data.expected, stringCheck, id + \" Failed test \" + data);\n            }\n        }",
+    "begin_line": 147,
+    "end_line": 154,
+    "comment": "",
+    "child_ranges": [
+      "(line 148,col 13)-(line 153,col 13)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testRegionMatches()",
+    "snippet": "@Test\n    public void testRegionMatches() {\n        for (final TestData data : TEST_DATA) {\n            new RunTest() {\n                @Override\n                boolean invoke() {\n                    return data.source.regionMatches(data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }\n            }.run(data, \"String\");\n            new RunTest() {\n                @Override\n                boolean invoke() {\n                    return CharSequenceUtils.regionMatches(data.source, data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }\n            }.run(data, \"CSString\");\n            new RunTest() {\n                @Override\n                boolean invoke() {\n                    return CharSequenceUtils.regionMatches(new StringBuilder(data.source), data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }\n            }.run(data, \"CSNonString\");\n        }\n    }",
+    "begin_line": 159,
+    "end_line": 180,
+    "comment": "",
+    "child_ranges": [
+      "(line 160,col 9)-(line 179,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.invoke()",
+    "snippet": "@Override\n                boolean invoke() {\n                    return data.source.regionMatches(data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }",
+    "begin_line": 163,
+    "end_line": 165,
+    "comment": "",
+    "child_ranges": [
+      "(line 164,col 21)-(line 164,col 120)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.invoke()",
+    "snippet": "@Override\n                boolean invoke() {\n                    return CharSequenceUtils.regionMatches(data.source, data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }",
+    "begin_line": 169,
+    "end_line": 171,
+    "comment": "",
+    "child_ranges": [
+      "(line 170,col 21)-(line 170,col 139)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.invoke()",
+    "snippet": "@Override\n                boolean invoke() {\n                    return CharSequenceUtils.regionMatches(new StringBuilder(data.source), data.ignoreCase, data.toffset, data.other, data.ooffset, data.len);\n                }",
+    "begin_line": 175,
+    "end_line": 177,
+    "comment": "",
+    "child_ranges": [
+      "(line 176,col 21)-(line 176,col 158)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testToCharArray()",
+    "snippet": "@Test\n    public void testToCharArray() {\n        final StringBuilder builder \u003d new StringBuilder(\"abcdefg\");\n        final char[] expected \u003d builder.toString().toCharArray();\n        assertArrayEquals(expected, CharSequenceUtils.toCharArray(builder));\n        assertArrayEquals(expected, CharSequenceUtils.toCharArray(builder.toString()));\n        assertArrayEquals(ArrayUtils.EMPTY_CHAR_ARRAY, CharSequenceUtils.toCharArray(null));\n    }",
+    "begin_line": 184,
+    "end_line": 190,
+    "comment": "",
+    "child_ranges": [
+      "(line 185,col 9)-(line 185,col 67)",
+      "(line 186,col 9)-(line 186,col 65)",
+      "(line 187,col 9)-(line 187,col 76)",
+      "(line 188,col 9)-(line 188,col 87)",
+      "(line 189,col 9)-(line 189,col 92)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.WrapperString(java.lang.CharSequence)",
+    "snippet": " WrapperString(final CharSequence inner) {\n            this.inner \u003d inner;\n        }",
+    "begin_line": 195,
+    "end_line": 197,
+    "comment": "",
+    "child_ranges": [
+      "(line 196,col 13)-(line 196,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.length()",
+    "snippet": "@Override\n        public int length() {\n            return inner.length();\n        }",
+    "begin_line": 200,
+    "end_line": 202,
+    "comment": "",
+    "child_ranges": [
+      "(line 201,col 13)-(line 201,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.charAt(int)",
+    "snippet": "@Override\n        public char charAt(final int index) {\n            return inner.charAt(index);\n        }",
+    "begin_line": 205,
+    "end_line": 207,
+    "comment": "",
+    "child_ranges": [
+      "(line 206,col 13)-(line 206,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.subSequence(int, int)",
+    "snippet": "@Override\n        public CharSequence subSequence(final int start, final int end) {\n            return inner.subSequence(start, end);\n        }",
+    "begin_line": 210,
+    "end_line": 212,
+    "comment": "",
+    "child_ranges": [
+      "(line 211,col 13)-(line 211,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.toString()",
+    "snippet": "@Override\n        public String toString() {\n            return inner.toString();\n        }",
+    "begin_line": 215,
+    "end_line": 217,
+    "comment": "",
+    "child_ranges": [
+      "(line 216,col 13)-(line 216,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.chars()",
+    "snippet": "@Override\n        public IntStream chars() {\n            return inner.chars();\n        }",
+    "begin_line": 220,
+    "end_line": 222,
+    "comment": "",
+    "child_ranges": [
+      "(line 221,col 13)-(line 221,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.codePoints()",
+    "snippet": "@Override\n        public IntStream codePoints() {\n            return inner.codePoints();\n        }",
+    "begin_line": 225,
+    "end_line": 227,
+    "comment": "",
+    "child_ranges": [
+      "(line 226,col 13)-(line 226,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testNewLastIndexOf()",
+    "snippet": "@Test\n    public void testNewLastIndexOf() {\n        testNewLastIndexOfSingle(\"808087847-1321060740-635567660180086727-925755305\", \"-1321060740-635567660\", 21);\n        testNewLastIndexOfSingle(\"\", \"\");\n        testNewLastIndexOfSingle(\"1\", \"\");\n        testNewLastIndexOfSingle(\"\", \"1\");\n        testNewLastIndexOfSingle(\"1\", \"1\");\n        testNewLastIndexOfSingle(\"11\", \"1\");\n        testNewLastIndexOfSingle(\"1\", \"11\");\n\n        testNewLastIndexOfSingle(\"apache\", \"a\");\n        testNewLastIndexOfSingle(\"apache\", \"p\");\n        testNewLastIndexOfSingle(\"apache\", \"e\");\n        testNewLastIndexOfSingle(\"apache\", \"x\");\n        testNewLastIndexOfSingle(\"oraoraoraora\", \"r\");\n        testNewLastIndexOfSingle(\"mudamudamudamuda\", \"d\");\n\n        final Random random \u003d new Random();\n        final StringBuilder seg \u003d new StringBuilder();\n        while (seg.length() \u003c\u003d CharSequenceUtils.TO_STRING_LIMIT) {\n            seg.append(random.nextInt());\n        }\n        StringBuilder original \u003d new StringBuilder(seg);\n        testNewLastIndexOfSingle(original, seg);\n        for (int i \u003d 0; i \u003c 100; i++) {\n            if (random.nextDouble() \u003c 0.5) {\n                original.append(random.nextInt() % 10);\n            } else {\n                original \u003d new StringBuilder().append(String.valueOf(random.nextInt() % 100)).append(original);\n            }\n            testNewLastIndexOfSingle(original, seg);\n        }\n    }",
+    "begin_line": 231,
+    "end_line": 262,
+    "comment": "",
+    "child_ranges": [
+      "(line 232,col 9)-(line 232,col 115)",
+      "(line 233,col 9)-(line 233,col 41)",
+      "(line 234,col 9)-(line 234,col 42)",
+      "(line 235,col 9)-(line 235,col 42)",
+      "(line 236,col 9)-(line 236,col 43)",
+      "(line 237,col 9)-(line 237,col 44)",
+      "(line 238,col 9)-(line 238,col 44)",
+      "(line 240,col 9)-(line 240,col 48)",
+      "(line 241,col 9)-(line 241,col 48)",
+      "(line 242,col 9)-(line 242,col 48)",
+      "(line 243,col 9)-(line 243,col 48)",
+      "(line 244,col 9)-(line 244,col 54)",
+      "(line 245,col 9)-(line 245,col 58)",
+      "(line 247,col 9)-(line 247,col 43)",
+      "(line 248,col 9)-(line 248,col 54)",
+      "(line 249,col 9)-(line 251,col 9)",
+      "(line 252,col 9)-(line 252,col 56)",
+      "(line 253,col 9)-(line 253,col 48)",
+      "(line 254,col 9)-(line 261,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testNewLastIndexOfSingle(java.lang.CharSequence, java.lang.CharSequence)",
+    "snippet": "private void testNewLastIndexOfSingle(final CharSequence a, final CharSequence b) {\n        final int maxa \u003d Math.max(a.length(), b.length());\n        for (int i \u003d -maxa - 10; i \u003c\u003d maxa + 10; i++) {\n            testNewLastIndexOfSingle(a, b, i);\n        }\n        testNewLastIndexOfSingle(a, b, Integer.MIN_VALUE);\n        testNewLastIndexOfSingle(a, b, Integer.MAX_VALUE);\n    }",
+    "begin_line": 264,
+    "end_line": 271,
+    "comment": "",
+    "child_ranges": [
+      "(line 265,col 9)-(line 265,col 58)",
+      "(line 266,col 9)-(line 268,col 9)",
+      "(line 269,col 9)-(line 269,col 58)",
+      "(line 270,col 9)-(line 270,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testNewLastIndexOfSingle(java.lang.CharSequence, java.lang.CharSequence, int)",
+    "snippet": "private void testNewLastIndexOfSingle(final CharSequence a, final CharSequence b, final int start) {\n        testNewLastIndexOfSingleSingle(a, b, start);\n        testNewLastIndexOfSingleSingle(b, a, start);\n    }",
+    "begin_line": 273,
+    "end_line": 276,
+    "comment": "",
+    "child_ranges": [
+      "(line 274,col 9)-(line 274,col 52)",
+      "(line 275,col 9)-(line 275,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.CharSequenceUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/CharSequenceUtilsTest.java",
+    "signature": "org.apache.commons.lang3.CharSequenceUtilsTest.testNewLastIndexOfSingleSingle(java.lang.CharSequence, java.lang.CharSequence, int)",
+    "snippet": "private void testNewLastIndexOfSingleSingle(final CharSequence a, final CharSequence b, final int start) {\n        assertEquals(\n                a.toString().lastIndexOf(b.toString(), start),\n                CharSequenceUtils.lastIndexOf(new WrapperString(a.toString()), new WrapperString(b.toString()), start),\n                \"testNewLastIndexOf fails! original : \" + a + \" seg : \" + b + \" start : \" + start\n        );\n    }",
+    "begin_line": 278,
+    "end_line": 284,
+    "comment": "",
+    "child_ranges": [
+      "(line 279,col 9)-(line 283,col 10)"
+    ]
+  }
+]

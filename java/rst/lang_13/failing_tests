@@ -1,0 +1,28 @@
+--- org.apache.commons.lang3.StringUtilsTest::testRemovePattern
+java.lang.NullPointerException
+       java.base/java.util.regex.Matcher.getTextLength(Matcher.java:1769)
+       java.base/java.util.regex.Matcher.reset(Matcher.java:415)
+       java.base/java.util.regex.Matcher.<init>(Matcher.java:252)
+       java.base/java.util.regex.Pattern.matcher(Pattern.java:1134)
+       org.apache.commons.lang3.StringUtils.replacePattern(StringUtils.java:4694)
+       org.apache.commons.lang3.StringUtils.removePattern(StringUtils.java:4710)
+       org.apache.commons.lang3.StringUtilsTest.testRemovePattern(StringUtilsTest.java:1213)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       [...]
+  
+--- org.apache.commons.lang3.StringUtilsTest::testReplacePattern
+java.lang.NullPointerException
+       java.base/java.util.regex.Matcher.getTextLength(Matcher.java:1769)
+       java.base/java.util.regex.Matcher.reset(Matcher.java:415)
+       java.base/java.util.regex.Matcher.<init>(Matcher.java:252)
+       java.base/java.util.regex.Pattern.matcher(Pattern.java:1134)
+       org.apache.commons.lang3.StringUtils.replacePattern(StringUtils.java:4694)
+       org.apache.commons.lang3.StringUtilsTest.testReplacePattern(StringUtilsTest.java:1192)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       [...]
+

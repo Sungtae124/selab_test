@@ -1,0 +1,65 @@
+[
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.BUFFER_SIZE",
+    "snippet": "private static final int BUFFER_SIZE \u003d 2048;",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.NO_MARK",
+    "snippet": "private static final int NO_MARK \u003d -1;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.charsetEncoder",
+    "snippet": "private final CharsetEncoder charsetEncoder;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.cBuf",
+    "snippet": "private final CharBuffer cBuf;",
+    "begin_line": 48,
+    "end_line": 48,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.bBuf",
+    "snippet": "private final ByteBuffer bBuf;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.cBufMark",
+    "snippet": "private int cBufMark;",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.bBufMark",
+    "snippet": "private int bBufMark;",
+    "begin_line": 52,
+    "end_line": 52,
+    "comment": ""
+  }
+]

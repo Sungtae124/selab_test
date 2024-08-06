@@ -1,0 +1,7 @@
+--- org.apache.commons.io.IOCaseTest::test_checkRegionMatches_functionality
+java.lang.NullPointerException
+       org.apache.commons.io.IOCase.checkRegionMatches(IOCase.java:218)
+       org.apache.commons.io.IOCaseTest.test_checkRegionMatches_functionality(IOCaseTest.java:244)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

@@ -1,0 +1,119 @@
+[
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.STANDARD_CHARSET_MAP",
+    "snippet": "private static final SortedMap\u003cString, Charset\u003e STANDARD_CHARSET_MAP;",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.ISO_8859_1",
+    "snippet": "@Deprecated\n    public static final Charset ISO_8859_1 \u003d StandardCharsets.ISO_8859_1;",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": "/** \n * CharEncodingISO Latin Alphabet No. 1, a.k.a. ISO-LATIN-1. \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.US_ASCII",
+    "snippet": "@Deprecated\n    public static final Charset US_ASCII \u003d StandardCharsets.US_ASCII;",
+    "begin_line": 100,
+    "end_line": 100,
+    "comment": "/** \n * \u003cp\u003e Seven-bit ASCII, also known as ISO646-US, also known as the Basic Latin block of the Unicode character set. \u003c/p\u003e \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.UTF_16",
+    "snippet": "@Deprecated\n    public static final Charset UTF_16 \u003d StandardCharsets.UTF_16;",
+    "begin_line": 115,
+    "end_line": 115,
+    "comment": "/** \n * \u003cp\u003e Sixteen-bit Unicode Transformation Format, The byte order specified by a mandatory initial byte-order mark (either order accepted on input, big-endian used on output) \u003c/p\u003e \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.UTF_16BE",
+    "snippet": "@Deprecated\n    public static final Charset UTF_16BE \u003d StandardCharsets.UTF_16BE;",
+    "begin_line": 129,
+    "end_line": 129,
+    "comment": "/** \n * \u003cp\u003e Sixteen-bit Unicode Transformation Format, big-endian byte order. \u003c/p\u003e \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.UTF_16LE",
+    "snippet": "@Deprecated\n    public static final Charset UTF_16LE \u003d StandardCharsets.UTF_16LE;",
+    "begin_line": 143,
+    "end_line": 143,
+    "comment": "/** \n * \u003cp\u003e Sixteen-bit Unicode Transformation Format, little-endian byte order. \u003c/p\u003e \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.Charsets",
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "signature": "org.apache.commons.io.Charsets.UTF_8",
+    "snippet": "@Deprecated\n    public static final Charset UTF_8 \u003d StandardCharsets.UTF_8;",
+    "begin_line": 157,
+    "end_line": 157,
+    "comment": "/** \n * \u003cp\u003e Eight-bit Unicode Transformation Format. \u003c/p\u003e \u003cp\u003e Every implementation of the Java platform is required to support this character encoding. \u003c/p\u003e\n * @see \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003eStandard charsets\u003c/a\u003e\n * @deprecated Use Java 7\u0027s {@link java.nio.charset.StandardCharsets}\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.BUFFER_SIZE",
+    "snippet": "private static final int BUFFER_SIZE \u003d 1024;",
+    "begin_line": 75,
+    "end_line": 75,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.writer",
+    "snippet": "private final Writer writer;",
+    "begin_line": 111,
+    "end_line": 111,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.decoder",
+    "snippet": "private final CharsetDecoder decoder;",
+    "begin_line": 112,
+    "end_line": 112,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.writeImmediately",
+    "snippet": "private final boolean writeImmediately;",
+    "begin_line": 114,
+    "end_line": 114,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.decoderIn",
+    "snippet": "private final ByteBuffer decoderIn \u003d ByteBuffer.allocate(128);",
+    "begin_line": 121,
+    "end_line": 121,
+    "comment": "/** \n * ByteBuffer used as input for the decoder. This buffer can be small as it is used only to transfer the received data to the decoder.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.decoderOut",
+    "snippet": "private final CharBuffer decoderOut;",
+    "begin_line": 128,
+    "end_line": 128,
+    "comment": "/** \n * CharBuffer used as output for the decoder. It should be somewhat larger as we write from this buffer to the underlying Writer.\n */\n"
+  }
+]

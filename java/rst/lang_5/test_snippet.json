@@ -1,0 +1,120 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testGetNanosOfMilli()",
+    "snippet": "@Test\n    public void testGetNanosOfMilli() {\n        assertEquals(0, DurationUtils.getNanosOfMiili(null));\n        assertEquals(0, DurationUtils.getNanosOfMiili(Duration.ZERO));\n        assertEquals(1, DurationUtils.getNanosOfMiili(Duration.ofNanos(1)));\n        assertEquals(10, DurationUtils.getNanosOfMiili(Duration.ofNanos(10)));\n        assertEquals(100, DurationUtils.getNanosOfMiili(Duration.ofNanos(100)));\n        assertEquals(1_000, DurationUtils.getNanosOfMiili(Duration.ofNanos(1_000)));\n        assertEquals(10_000, DurationUtils.getNanosOfMiili(Duration.ofNanos(10_000)));\n        assertEquals(100_000, DurationUtils.getNanosOfMiili(Duration.ofNanos(100_000)));\n        assertEquals(0, DurationUtils.getNanosOfMiili(Duration.ofNanos(1_000_000)));\n        assertEquals(1, DurationUtils.getNanosOfMiili(Duration.ofNanos(1_000_001)));\n    }",
+    "begin_line": 36,
+    "end_line": 47,
+    "comment": "",
+    "child_ranges": [
+      "(line 37,col 9)-(line 37,col 61)",
+      "(line 38,col 9)-(line 38,col 70)",
+      "(line 39,col 9)-(line 39,col 76)",
+      "(line 40,col 9)-(line 40,col 78)",
+      "(line 41,col 9)-(line 41,col 80)",
+      "(line 42,col 9)-(line 42,col 84)",
+      "(line 43,col 9)-(line 43,col 86)",
+      "(line 44,col 9)-(line 44,col 88)",
+      "(line 45,col 9)-(line 45,col 84)",
+      "(line 46,col 9)-(line 46,col 84)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testIsPositive()",
+    "snippet": "@Test\n    public void testIsPositive() {\n        assertFalse(DurationUtils.isPositive(Duration.ZERO));\n        assertFalse(DurationUtils.isPositive(Duration.ofMillis(-1)));\n        assertTrue(DurationUtils.isPositive(Duration.ofMillis(1)));\n    }",
+    "begin_line": 50,
+    "end_line": 54,
+    "comment": "",
+    "child_ranges": [
+      "(line 51,col 9)-(line 51,col 61)",
+      "(line 52,col 9)-(line 52,col 69)",
+      "(line 53,col 9)-(line 53,col 67)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testLongToIntRangeFit()",
+    "snippet": "@Test\n    public void testLongToIntRangeFit() {\n        assertEquals(0, DurationUtils.LONG_TO_INT_RANGE.fit(0L));\n        //\n        assertEquals(Integer.MIN_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MIN_VALUE));\n        assertEquals(Integer.MIN_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MIN_VALUE - 1));\n        assertEquals(Integer.MIN_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MIN_VALUE - 2));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MAX_VALUE));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MAX_VALUE + 1));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(NumberUtils.LONG_INT_MAX_VALUE + 2));\n        //\n        assertEquals(Integer.MIN_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(Long.MIN_VALUE));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit(Long.MAX_VALUE));\n        //\n        assertEquals(Short.MIN_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit((long) Short.MIN_VALUE));\n        assertEquals(Short.MAX_VALUE, DurationUtils.LONG_TO_INT_RANGE.fit((long) Short.MAX_VALUE));\n    }",
+    "begin_line": 57,
+    "end_line": 72,
+    "comment": "",
+    "child_ranges": [
+      "(line 58,col 9)-(line 58,col 65)",
+      "(line 60,col 9)-(line 60,col 109)",
+      "(line 61,col 9)-(line 61,col 113)",
+      "(line 62,col 9)-(line 62,col 113)",
+      "(line 63,col 9)-(line 63,col 109)",
+      "(line 64,col 9)-(line 64,col 113)",
+      "(line 65,col 9)-(line 65,col 113)",
+      "(line 67,col 9)-(line 67,col 93)",
+      "(line 68,col 9)-(line 68,col 93)",
+      "(line 70,col 9)-(line 70,col 99)",
+      "(line 71,col 9)-(line 71,col 99)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testToDuration()",
+    "snippet": "@Test\n    public void testToDuration() {\n        assertEquals(Duration.ofDays(1), DurationUtils.toDuration(1, TimeUnit.DAYS));\n        assertEquals(Duration.ofHours(1), DurationUtils.toDuration(1, TimeUnit.HOURS));\n        assertEquals(Duration.ofMillis(1), DurationUtils.toDuration(1_000, TimeUnit.MICROSECONDS));\n        assertEquals(Duration.ofMillis(1), DurationUtils.toDuration(1, TimeUnit.MILLISECONDS));\n        assertEquals(Duration.ofMinutes(1), DurationUtils.toDuration(1, TimeUnit.MINUTES));\n        assertEquals(Duration.ofNanos(1), DurationUtils.toDuration(1, TimeUnit.NANOSECONDS));\n        assertEquals(Duration.ofSeconds(1), DurationUtils.toDuration(1, TimeUnit.SECONDS));\n        assertEquals(1, DurationUtils.toDuration(1, TimeUnit.MILLISECONDS).toMillis());\n        assertEquals(-1, DurationUtils.toDuration(-1, TimeUnit.MILLISECONDS).toMillis());\n        assertEquals(0, DurationUtils.toDuration(0, TimeUnit.SECONDS).toMillis());\n    }",
+    "begin_line": 75,
+    "end_line": 86,
+    "comment": "",
+    "child_ranges": [
+      "(line 76,col 9)-(line 76,col 85)",
+      "(line 77,col 9)-(line 77,col 87)",
+      "(line 78,col 9)-(line 78,col 99)",
+      "(line 79,col 9)-(line 79,col 95)",
+      "(line 80,col 9)-(line 80,col 91)",
+      "(line 81,col 9)-(line 81,col 93)",
+      "(line 82,col 9)-(line 82,col 91)",
+      "(line 83,col 9)-(line 83,col 87)",
+      "(line 84,col 9)-(line 84,col 89)",
+      "(line 85,col 9)-(line 85,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testToMillisInt()",
+    "snippet": "@Test\n    public void testToMillisInt() {\n        assertEquals(0, DurationUtils.toMillisInt(Duration.ZERO));\n        assertEquals(1, DurationUtils.toMillisInt(Duration.ofMillis(1)));\n        //\n        assertEquals(Integer.MIN_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(Integer.MIN_VALUE)));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(Integer.MAX_VALUE)));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(NumberUtils.LONG_INT_MAX_VALUE + 1)));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(NumberUtils.LONG_INT_MAX_VALUE + 2)));\n        assertEquals(Integer.MIN_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(NumberUtils.LONG_INT_MIN_VALUE - 1)));\n        assertEquals(Integer.MIN_VALUE, DurationUtils.toMillisInt(Duration.ofMillis(NumberUtils.LONG_INT_MIN_VALUE - 2)));\n        //\n        assertEquals(Integer.MIN_VALUE, DurationUtils.toMillisInt(Duration.ofNanos(Long.MIN_VALUE)));\n        assertEquals(Integer.MAX_VALUE, DurationUtils.toMillisInt(Duration.ofNanos(Long.MAX_VALUE)));\n    }",
+    "begin_line": 89,
+    "end_line": 102,
+    "comment": "",
+    "child_ranges": [
+      "(line 90,col 9)-(line 90,col 66)",
+      "(line 91,col 9)-(line 91,col 73)",
+      "(line 93,col 9)-(line 93,col 105)",
+      "(line 94,col 9)-(line 94,col 105)",
+      "(line 95,col 9)-(line 95,col 122)",
+      "(line 96,col 9)-(line 96,col 122)",
+      "(line 97,col 9)-(line 97,col 122)",
+      "(line 98,col 9)-(line 98,col 122)",
+      "(line 100,col 9)-(line 100,col 101)",
+      "(line 101,col 9)-(line 101,col 101)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/time/DurationUtilsTest.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtilsTest.testZeroIfNull()",
+    "snippet": "@Test\n    public void testZeroIfNull() {\n        assertEquals(Duration.ZERO, DurationUtils.zeroIfNull(null));\n        assertEquals(Duration.ofDays(1), DurationUtils.zeroIfNull(Duration.ofDays(1)));\n    }",
+    "begin_line": 105,
+    "end_line": 108,
+    "comment": "",
+    "child_ranges": [
+      "(line 106,col 9)-(line 106,col 68)",
+      "(line 107,col 9)-(line 107,col 87)"
+    ]
+  }
+]

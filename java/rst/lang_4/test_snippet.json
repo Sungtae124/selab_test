@@ -1,0 +1,150 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.setUp()",
+    "snippet": "@BeforeEach\n    @Override\n    public void setUp() throws Exception {\n        exceptionContext \u003d new ContextedException(new Exception(TEST_MESSAGE));\n        super.setUp();\n    }",
+    "begin_line": 37,
+    "end_line": 40,
+    "comment": "",
+    "child_ranges": [
+      "(line 38,col 9)-(line 38,col 79)",
+      "(line 39,col 9)-(line 39,col 22)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testContextedException()",
+    "snippet": "@Test\n    public void testContextedException() {\n        exceptionContext \u003d new ContextedException();\n        final String message \u003d exceptionContext.getMessage();\n        final String trace \u003d ExceptionUtils.getStackTrace(exceptionContext);\n        assertTrue(trace.contains(\"ContextedException\"));\n        assertTrue(StringUtils.isEmpty(message));\n    }",
+    "begin_line": 43,
+    "end_line": 49,
+    "comment": "",
+    "child_ranges": [
+      "(line 44,col 9)-(line 44,col 52)",
+      "(line 45,col 9)-(line 45,col 61)",
+      "(line 46,col 9)-(line 46,col 76)",
+      "(line 47,col 9)-(line 47,col 57)",
+      "(line 48,col 9)-(line 48,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testNullException()",
+    "snippet": "@Test\n    public void testNullException() {\n        assertEquals(\"\", ExceptionUtils.getStackTrace(null), \"Empty response.\");\n    }",
+    "begin_line": 52,
+    "end_line": 54,
+    "comment": "",
+    "child_ranges": [
+      "(line 53,col 9)-(line 53,col 80)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testContextedExceptionString()",
+    "snippet": "@Test\n    public void testContextedExceptionString() {\n        exceptionContext \u003d new ContextedException(TEST_MESSAGE);\n        assertEquals(TEST_MESSAGE, exceptionContext.getMessage());\n\n        final String trace \u003d ExceptionUtils.getStackTrace(exceptionContext);\n        assertTrue(trace.contains(TEST_MESSAGE));\n    }",
+    "begin_line": 57,
+    "end_line": 63,
+    "comment": "",
+    "child_ranges": [
+      "(line 58,col 9)-(line 58,col 64)",
+      "(line 59,col 9)-(line 59,col 66)",
+      "(line 61,col 9)-(line 61,col 76)",
+      "(line 62,col 9)-(line 62,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testContextedExceptionThrowable()",
+    "snippet": "@Test\n    public void testContextedExceptionThrowable() {\n        exceptionContext \u003d new ContextedException(new Exception(TEST_MESSAGE));\n        final String message \u003d exceptionContext.getMessage();\n        final String trace \u003d ExceptionUtils.getStackTrace(exceptionContext);\n        assertTrue(trace.contains(\"ContextedException\"));\n        assertTrue(trace.contains(TEST_MESSAGE));\n        assertTrue(message.contains(TEST_MESSAGE));\n    }",
+    "begin_line": 66,
+    "end_line": 73,
+    "comment": "",
+    "child_ranges": [
+      "(line 67,col 9)-(line 67,col 79)",
+      "(line 68,col 9)-(line 68,col 61)",
+      "(line 69,col 9)-(line 69,col 76)",
+      "(line 70,col 9)-(line 70,col 57)",
+      "(line 71,col 9)-(line 71,col 49)",
+      "(line 72,col 9)-(line 72,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testContextedExceptionStringThrowable()",
+    "snippet": "@Test\n    public void testContextedExceptionStringThrowable() {\n        exceptionContext \u003d new ContextedException(TEST_MESSAGE_2, new Exception(TEST_MESSAGE));\n        final String message \u003d exceptionContext.getMessage();\n        final String trace \u003d ExceptionUtils.getStackTrace(exceptionContext);\n        assertTrue(trace.contains(\"ContextedException\"));\n        assertTrue(trace.contains(TEST_MESSAGE));\n        assertTrue(trace.contains(TEST_MESSAGE_2));\n        assertTrue(message.contains(TEST_MESSAGE_2));\n    }",
+    "begin_line": 76,
+    "end_line": 84,
+    "comment": "",
+    "child_ranges": [
+      "(line 77,col 9)-(line 77,col 95)",
+      "(line 78,col 9)-(line 78,col 61)",
+      "(line 79,col 9)-(line 79,col 76)",
+      "(line 80,col 9)-(line 80,col 57)",
+      "(line 81,col 9)-(line 81,col 49)",
+      "(line 82,col 9)-(line 82,col 51)",
+      "(line 83,col 9)-(line 83,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testContextedExceptionStringThrowableContext()",
+    "snippet": "@Test\n    public void testContextedExceptionStringThrowableContext() {\n        exceptionContext \u003d new ContextedException(TEST_MESSAGE_2, new Exception(TEST_MESSAGE), new DefaultExceptionContext());\n        final String message \u003d exceptionContext.getMessage();\n        final String trace \u003d ExceptionUtils.getStackTrace(exceptionContext);\n        assertTrue(trace.contains(\"ContextedException\"));\n        assertTrue(trace.contains(TEST_MESSAGE));\n        assertTrue(trace.contains(TEST_MESSAGE_2));\n        assertTrue(message.contains(TEST_MESSAGE_2));\n    }",
+    "begin_line": 87,
+    "end_line": 95,
+    "comment": "",
+    "child_ranges": [
+      "(line 88,col 9)-(line 88,col 126)",
+      "(line 89,col 9)-(line 89,col 61)",
+      "(line 90,col 9)-(line 90,col 76)",
+      "(line 91,col 9)-(line 91,col 57)",
+      "(line 92,col 9)-(line 92,col 49)",
+      "(line 93,col 9)-(line 93,col 51)",
+      "(line 94,col 9)-(line 94,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testNullExceptionPassing()",
+    "snippet": "@Test\n    public void testNullExceptionPassing() {\n        exceptionContext \u003d new ContextedException(TEST_MESSAGE_2, new Exception(TEST_MESSAGE), null)\n        .addContextValue(\"test1\", null)\n        .addContextValue(\"test2\", \"some value\")\n        .addContextValue(\"test Date\", new Date())\n        .addContextValue(\"test Nbr\", Integer.valueOf(5))\n        .addContextValue(\"test Poorly written obj\", new ObjectWithFaultyToString());\n\n        final String message \u003d exceptionContext.getMessage();\n        assertNotNull(message);\n    }",
+    "begin_line": 98,
+    "end_line": 108,
+    "comment": "",
+    "child_ranges": [
+      "(line 99,col 9)-(line 104,col 84)",
+      "(line 106,col 9)-(line 106,col 61)",
+      "(line 107,col 9)-(line 107,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.exception.ContextedExceptionTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/exception/ContextedExceptionTest.java",
+    "signature": "org.apache.commons.lang3.exception.ContextedExceptionTest.testRawMessage()",
+    "snippet": "@Test\n    public void testRawMessage() {\n        assertEquals(Exception.class.getName() + \": \" + TEST_MESSAGE, exceptionContext.getRawMessage());\n        exceptionContext \u003d new ContextedException(TEST_MESSAGE_2, new Exception(TEST_MESSAGE), new DefaultExceptionContext());\n        assertEquals(TEST_MESSAGE_2, exceptionContext.getRawMessage());\n        exceptionContext \u003d new ContextedException(null, new Exception(TEST_MESSAGE), new DefaultExceptionContext());\n        assertNull(exceptionContext.getRawMessage());\n    }",
+    "begin_line": 111,
+    "end_line": 117,
+    "comment": "",
+    "child_ranges": [
+      "(line 112,col 9)-(line 112,col 104)",
+      "(line 113,col 9)-(line 113,col 126)",
+      "(line 114,col 9)-(line 114,col 71)",
+      "(line 115,col 9)-(line 115,col 116)",
+      "(line 116,col 9)-(line 116,col 53)"
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+--- org.apache.commons.io.IOCaseTest::test_checkIndexOf_functionality
+java.lang.NullPointerException
+       org.apache.commons.io.IOCase.checkIndexOf(IOCase.java:192)
+       org.apache.commons.io.IOCaseTest.test_checkIndexOf_functionality(IOCaseTest.java:205)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.IOCaseTest::test_checkIndexOf_case
+java.lang.NullPointerException
+       org.apache.commons.io.IOCase.checkIndexOf(IOCase.java:192)
+       org.apache.commons.io.IOCaseTest.test_checkIndexOf_case(IOCaseTest.java:155)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

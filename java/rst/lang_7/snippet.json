@@ -1,0 +1,354 @@
+[
+  {
+    "name": "ArrayCollector.ArrayCollector#83",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.ArrayCollector(java.lang.Class\u003cO\u003e)",
+    "snippet": "public ArrayCollector(final Class\u003cO\u003e elementType) {\n            this.elementType \u003d elementType;\n        }",
+    "begin_line": 83,
+    "end_line": 85,
+    "comment": "/** \n * Constructs a new instance for the given element type.\n * @param elementType The element type.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArrayCollector.accumulator#88",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.accumulator()",
+    "snippet": "@Override\n        public BiConsumer\u003cList\u003cO\u003e, O\u003e accumulator() {\n            return List::add;\n        }",
+    "begin_line": 88,
+    "end_line": 90,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArrayCollector.characteristics#93",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.characteristics()",
+    "snippet": "@Override\n        public Set\u003cCharacteristics\u003e characteristics() {\n            return characteristics;\n        }",
+    "begin_line": 93,
+    "end_line": 95,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArrayCollector.combiner#98",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.combiner()",
+    "snippet": "@Override\n        public BinaryOperator\u003cList\u003cO\u003e\u003e combiner() {\n            return (left, right) -\u003e {\n                left.addAll(right);\n                return left;\n            };\n        }",
+    "begin_line": 98,
+    "end_line": 103,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArrayCollector.finisher#106",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.finisher()",
+    "snippet": "@Override\n        public Function\u003cList\u003cO\u003e, O[]\u003e finisher() {\n            return list -\u003e list.toArray(ArrayUtils.newInstance(elementType, list.size()));\n        }",
+    "begin_line": 106,
+    "end_line": 108,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ArrayCollector.supplier#111",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.supplier()",
+    "snippet": "@Override\n        public Supplier\u003cList\u003cO\u003e\u003e supplier() {\n            return ArrayList::new;\n        }",
+    "begin_line": 111,
+    "end_line": 113,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.FailableStream#131",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.FailableStream(java.util.stream.Stream\u003cO\u003e)",
+    "snippet": "public FailableStream(final Stream\u003cO\u003e stream) {\n            this.stream \u003d stream;\n        }",
+    "begin_line": 131,
+    "end_line": 133,
+    "comment": "/** \n * Constructs a new instance with the given  {@code stream}.\n * @param stream The stream.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.allMatch#151",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.allMatch(org.apache.commons.lang3.function.FailablePredicate\u003cO,?\u003e)",
+    "snippet": "public boolean allMatch(final FailablePredicate\u003cO, ?\u003e predicate) {\n            assertNotTerminated();\n            return stream().allMatch(Failable.asPredicate(predicate));\n        }",
+    "begin_line": 151,
+    "end_line": 154,
+    "comment": "/** \n * Returns whether all elements of this stream match the provided predicate. May not evaluate the predicate on all elements if not necessary for determining the result. If the stream is empty then  {@code true} isreturned and the predicate is not evaluated. \u003cp\u003e This is a short-circuiting terminal operation. Note This method evaluates the \u003cem\u003euniversal quantification\u003c/em\u003e of the predicate over the elements of the stream (for all x P(x)). If the stream is empty, the quantification is said to be \u003cem\u003evacuously satisfied\u003c/em\u003e and is always  {@code true} (regardless of P(x)).\n * @param predicate A non-interfering, stateless predicate to apply to elements of this stream\n * @return {@code true} If either all elements of the stream match the provided predicate or the stream isempty, otherwise  {@code false}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.anyMatch#170",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.anyMatch(org.apache.commons.lang3.function.FailablePredicate\u003cO,?\u003e)",
+    "snippet": "public boolean anyMatch(final FailablePredicate\u003cO, ?\u003e predicate) {\n            assertNotTerminated();\n            return stream().anyMatch(Failable.asPredicate(predicate));\n        }",
+    "begin_line": 170,
+    "end_line": 173,
+    "comment": "/** \n * Returns whether any elements of this stream match the provided predicate. May not evaluate the predicate on all elements if not necessary for determining the result. If the stream is empty then  {@code false} isreturned and the predicate is not evaluated. \u003cp\u003e This is a short-circuiting terminal operation. Note This method evaluates the \u003cem\u003eexistential quantification\u003c/em\u003e of the predicate over the elements of the stream (for some x P(x)).\n * @param predicate A non-interfering, stateless predicate to apply to elements of this stream\n * @return {@code true} if any elements of the stream match the provided predicate, otherwise {@code false}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.assertNotTerminated#180",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.assertNotTerminated()",
+    "snippet": "protected void assertNotTerminated() {\n            if (terminated) {\n                throw new IllegalStateException(\"This stream is already terminated.\");\n            }\n        }",
+    "begin_line": 180,
+    "end_line": 184,
+    "comment": "/** \n * Throws IllegalStateException if this stream is already terminated.\n * @throws IllegalStateException if this stream is already terminated.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.collect#241",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.collect(java.util.stream.Collector\u003c? super O,A,R\u003e)",
+    "snippet": "public \u003cA, R\u003e R collect(final Collector\u003c? super O, A, R\u003e collector) {\n            makeTerminated();\n            return stream().collect(collector);\n        }",
+    "begin_line": 241,
+    "end_line": 244,
+    "comment": "/** \n * Performs a mutable reduction operation on the elements of this stream using a  {@code Collector}. A {@code Collector} encapsulates the functions used as arguments to{@link #collect(Supplier,BiConsumer,BiConsumer)}, allowing for reuse of collection strategies and composition of collect operations such as multiple-level grouping or partitioning. \u003cp\u003e If the underlying stream is parallel, and the  {@code Collector} is concurrent, and either the stream isunordered or the collector is unordered, then a concurrent reduction will be performed (see  {@link Collector}for details on concurrent reduction.) \u003cp\u003e This is a terminal operation. \u003cp\u003e When executed in parallel, multiple intermediate results may be instantiated, populated, and merged so as to maintain isolation of mutable data structures. Therefore, even when executed in parallel with non-thread-safe data structures (such as  {@code ArrayList}), no additional synchronization is needed for a parallel reduction. Note The following will accumulate strings into an ArrayList: \u003cpre\u003e {@code List\u003cString\u003e asList \u003d stringStream.collect(Collectors.toList());}\u003c/pre\u003e \u003cp\u003e The following will classify  {@code Person} objects by city:\u003cpre\u003e {@code Map\u003cString, List\u003cPerson\u003e\u003e peopleByCity \u003d personStream.collect(Collectors.groupingBy(Person::getCity));}\u003c/pre\u003e \u003cp\u003e The following will classify  {@code Person} objects by state and city, cascading two {@code Collector}s together: \u003cpre\u003e {@code Map\u003cString, Map\u003cString, List\u003cPerson\u003e\u003e\u003e peopleByStateAndCity \u003d personStream .collect(Collectors.groupingBy(Person::getState, Collectors.groupingBy(Person::getCity)));}\u003c/pre\u003e\n * @param \u003c R \u003e the type of the result\n * @param \u003c A \u003e the intermediate accumulation type of the {@code Collector}\n * @param collector the {@code Collector} describing the reduction\n * @return the result of the reduction\n * @see #collect(Supplier,BiConsumer,BiConsumer)\n * @see Collectors\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.collect#298",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.collect(java.util.function.Supplier\u003cR\u003e, java.util.function.BiConsumer\u003cR,? super O\u003e, java.util.function.BiConsumer\u003cR,R\u003e)",
+    "snippet": "public \u003cA, R\u003e R collect(final Supplier\u003cR\u003e pupplier, final BiConsumer\u003cR, ? super O\u003e accumulator,\n            final BiConsumer\u003cR, R\u003e combiner) {\n            makeTerminated();\n            return stream().collect(pupplier, accumulator, combiner);\n        }",
+    "begin_line": 298,
+    "end_line": 302,
+    "comment": "/** \n * Performs a mutable reduction operation on the elements of this FailableStream. A mutable reduction is one in which the reduced value is a mutable result container, such as an  {@code ArrayList}, and elements are incorporated by updating the state of the result rather than by replacing the result. This produces a result equivalent to: \u003cpre\u003e {@code R result \u003d supplier.get(); for (T element : this stream) accumulator.accept(result, element); return result;}\u003c/pre\u003e \u003cp\u003e Like  {@link #reduce(Object,BinaryOperator)},  {@code collect} operations can be parallelized withoutrequiring additional synchronization. \u003cp\u003e This is a terminal operation. Note There are many existing classes in the JDK whose signatures are well-suited for use with method references as arguments to  {@code collect()}. For example, the following will accumulate strings into an {@code ArrayList}: \u003cpre\u003e {@code List\u003cString\u003e asList \u003d stringStream.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);}\u003c/pre\u003e \u003cp\u003e The following will take a stream of strings and concatenates them into a single string: \u003cpre\u003e {@code String concat \u003d stringStream.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append) .toString();}\u003c/pre\u003e\n * @param \u003c R \u003e type of the result\n * @param \u003c A \u003e Type of the accumulator.\n * @param pupplier a function that creates a new result container. For a parallel execution, this function maybe called multiple times and must return a fresh value each time.\n * @param accumulator An associative, non-interfering, stateless function for incorporating an additionalelement into a result\n * @param combiner An associative, non-interfering, stateless function for combining two values, which must becompatible with the accumulator function\n * @return The result of the reduction\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.filter#314",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.filter(org.apache.commons.lang3.function.FailablePredicate\u003cO,?\u003e)",
+    "snippet": "public FailableStream\u003cO\u003e filter(final FailablePredicate\u003cO, ?\u003e predicate) {\n            assertNotTerminated();\n            stream \u003d stream.filter(Failable.asPredicate(predicate));\n            return this;\n        }",
+    "begin_line": 314,
+    "end_line": 318,
+    "comment": "/** \n * Returns a FailableStream consisting of the elements of this stream that match the given FailablePredicate. \u003cp\u003e This is an intermediate operation.\n * @param predicate a non-interfering, stateless predicate to apply to each element to determine if it should beincluded.\n * @return the new stream\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.forEach#335",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.forEach(org.apache.commons.lang3.function.FailableConsumer\u003cO,?\u003e)",
+    "snippet": "public void forEach(final FailableConsumer\u003cO, ?\u003e action) {\n            makeTerminated();\n            stream().forEach(Failable.asConsumer(action));\n        }",
+    "begin_line": 335,
+    "end_line": 338,
+    "comment": "/** \n * Performs an action for each element of this stream. \u003cp\u003e This is a terminal operation. \u003cp\u003e The behavior of this operation is explicitly nondeterministic. For parallel stream pipelines, this operation does \u003cem\u003enot\u003c/em\u003e guarantee to respect the encounter order of the stream, as doing so would sacrifice the benefit of parallelism. For any given element, the action may be performed at whatever time and in whatever thread the library chooses. If the action accesses shared state, it is responsible for providing the required synchronization.\n * @param action a non-interfering action to perform on the elements\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.makeTerminated#345",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.makeTerminated()",
+    "snippet": "protected void makeTerminated() {\n            assertNotTerminated();\n            terminated \u003d true;\n        }",
+    "begin_line": 345,
+    "end_line": 348,
+    "comment": "/** \n * Marks this stream as terminated.\n * @throws IllegalStateException if this stream is already terminated.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.map#360",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.map(org.apache.commons.lang3.function.FailableFunction\u003cO,R,?\u003e)",
+    "snippet": "public \u003cR\u003e FailableStream\u003cR\u003e map(final FailableFunction\u003cO, R, ?\u003e mapper) {\n            assertNotTerminated();\n            return new FailableStream\u003c\u003e(stream.map(Failable.asFunction(mapper)));\n        }",
+    "begin_line": 360,
+    "end_line": 363,
+    "comment": "/** \n * Returns a stream consisting of the results of applying the given function to the elements of this stream. \u003cp\u003e This is an intermediate operation.\n * @param \u003c R \u003e The element type of the new stream\n * @param mapper A non-interfering, stateless function to apply to each element\n * @return the new stream\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.reduce#414",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.reduce(O, java.util.function.BinaryOperator\u003cO\u003e)",
+    "snippet": "public O reduce(final O identity, final BinaryOperator\u003cO\u003e accumulator) {\n            makeTerminated();\n            return stream().reduce(identity, accumulator);\n        }",
+    "begin_line": 414,
+    "end_line": 417,
+    "comment": "/** \n * Performs a reduction on the elements of this stream, using the provided identity value and an associative accumulation function, and returns the reduced value. This is equivalent to: \u003cpre\u003e {@code T result \u003d identity; for (T element : this stream) result \u003d accumulator.apply(result, element) return result;}\u003c/pre\u003e but is not constrained to execute sequentially. \u003cp\u003e The  {@code identity} value must be an identity for the accumulator function. This means that for all{@code t},  {@code accumulator.apply(identity, t)} is equal to {@code t}. The  {@code accumulator} functionmust be an associative function. \u003cp\u003e This is a terminal operation. Note Sum, min, max, average, and string concatenation are all special cases of reduction. Summing a stream of numbers can be expressed as: \u003cpre\u003e {@code Integer sum \u003d integers.reduce(0, (a, b) -\u003e a + b);}\u003c/pre\u003e or: \u003cpre\u003e {@code Integer sum \u003d integers.reduce(0, Integer::sum);}\u003c/pre\u003e \u003cp\u003e While this may seem a more roundabout way to perform an aggregation compared to simply mutating a running total in a loop, reduction operations parallelize more gracefully, without needing additional synchronization and with greatly reduced risk of data races.\n * @param identity the identity value for the accumulating function\n * @param accumulator an associative, non-interfering, stateless function for combining two values\n * @return the result of the reduction\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.stream#424",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.stream()",
+    "snippet": "public Stream\u003cO\u003e stream() {\n            return stream;\n        }",
+    "begin_line": 424,
+    "end_line": 426,
+    "comment": "/** \n * Converts the FailableStream into an equivalent stream.\n * @return A stream, which will return the same elements, which this FailableStream would return.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.of#438",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.of(T)",
+    "snippet": "@SafeVarargs of(final T... values) {\n        return values \u003d\u003d null ? Stream.empty() : Stream.of(values);\n    }",
+    "begin_line": 438,
+    "end_line": 440,
+    "comment": "/** \n * Null-safe version of  {@link Stream#of(Object[])}.\n * @param \u003c T \u003e the type of stream elements.\n * @param values the elements of the new stream, may be {@code null}.\n * @return the new stream on {@code values} or {@link Stream#empty()}.\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.stream#478",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.stream(java.util.Collection\u003cO\u003e)",
+    "snippet": "public static \u003cO\u003e FailableStream\u003cO\u003e stream(final Collection\u003cO\u003e stream) {\n        return stream(stream.stream());\n    }",
+    "begin_line": 478,
+    "end_line": 480,
+    "comment": "/** \n * Converts the given  {@link Collection} into a {@link FailableStream}. This is basically a simplified, reduced version of the  {@link Stream} class, with the same underlying element stream, except that failable objects, like{@link FailablePredicate},  {@link FailableFunction}, or  {@link FailableConsumer} may be applied, instead of{@link Predicate},  {@link Function}, or  {@link Consumer}. The idea is to rewrite a code snippet like this: \u003cpre\u003e final List\u0026lt;O\u0026gt; list; final Method m; final Function\u0026lt;O, String\u0026gt; mapper \u003d (o) -\u0026gt; { try { return (String) m.invoke(o); } catch (Throwable t) { throw Failable.rethrow(t); } }; final List\u0026lt;String\u0026gt; strList \u003d list.stream().map(mapper).collect(Collectors.toList()); \u003c/pre\u003e as follows: \u003cpre\u003e final List\u0026lt;O\u0026gt; list; final Method m; final List\u0026lt;String\u0026gt; strList \u003d Failable.stream(list.stream()).map((o) -\u0026gt; (String) m.invoke(o)) .collect(Collectors.toList()); \u003c/pre\u003e While the second version may not be \u003cem\u003equite\u003c/em\u003e as efficient (because it depends on the creation of additional, intermediate objects, of type FailableStream), it is much more concise, and readable, and meets the spirit of Lambdas better than the first version.\n * @param \u003c O \u003e The streams element type.\n * @param stream The stream, which is being converted.\n * @return The {@link FailableStream}, which has been created by converting the stream.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.stream#518",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.stream(java.util.stream.Stream\u003cO\u003e)",
+    "snippet": "public static \u003cO\u003e FailableStream\u003cO\u003e stream(final Stream\u003cO\u003e stream) {\n        return new FailableStream\u003c\u003e(stream);\n    }",
+    "begin_line": 518,
+    "end_line": 520,
+    "comment": "/** \n * Converts the given  {@link Stream stream} into a {@link FailableStream}. This is basically a simplified, reduced version of the  {@link Stream} class, with the same underlying element stream, except that failable objects, like{@link FailablePredicate},  {@link FailableFunction}, or  {@link FailableConsumer} may be applied, instead of{@link Predicate},  {@link Function}, or  {@link Consumer}. The idea is to rewrite a code snippet like this: \u003cpre\u003e final List\u0026lt;O\u0026gt; list; final Method m; final Function\u0026lt;O, String\u0026gt; mapper \u003d (o) -\u0026gt; { try { return (String) m.invoke(o); } catch (Throwable t) { throw Failable.rethrow(t); } }; final List\u0026lt;String\u0026gt; strList \u003d list.stream().map(mapper).collect(Collectors.toList()); \u003c/pre\u003e as follows: \u003cpre\u003e final List\u0026lt;O\u0026gt; list; final Method m; final List\u0026lt;String\u0026gt; strList \u003d Failable.stream(list.stream()).map((o) -\u0026gt; (String) m.invoke(o)) .collect(Collectors.toList()); \u003c/pre\u003e While the second version may not be \u003cem\u003equite\u003c/em\u003e as efficient (because it depends on the creation of additional, intermediate objects, of type FailableStream), it is much more concise, and readable, and meets the spirit of Lambdas better than the first version.\n * @param \u003c O \u003e The streams element type.\n * @param stream The stream, which is being converted.\n * @return The {@link FailableStream}, which has been created by converting the stream.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "FailableStream.toArray#529",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/stream/Streams.java",
+    "class_name": "org.apache.commons.lang3.stream.Streams",
+    "signature": "org.apache.commons.lang3.stream.Streams.toArray(java.lang.Class\u003cO\u003e)",
+    "snippet": "public static \u003cO extends Object\u003e Collector\u003cO, ?, O[]\u003e toArray(final Class\u003cO\u003e pElementType) {\n        return new ArrayCollector\u003c\u003e(pElementType);\n    }",
+    "begin_line": 529,
+    "end_line": 531,
+    "comment": "/** \n * Returns a  {@code Collector} that accumulates the input elements into a new array.\n * @param pElementType Type of an element in the array.\n * @param \u003c O \u003e the type of the input elements\n * @return a {@code Collector} which collects all the input elements into an array, in encounter order\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

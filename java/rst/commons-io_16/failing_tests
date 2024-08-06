@@ -1,0 +1,7 @@
+--- org.apache.commons.io.FileUtilsTestCase::testContentEqualsIgnoreEOL
+java.lang.NullPointerException
+       org.apache.commons.io.FileUtils.contentEqualsIgnoreEOL(FileUtils.java:448)
+       org.apache.commons.io.FileUtilsTestCase.testContentEqualsIgnoreEOL(FileUtilsTestCase.java:633)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

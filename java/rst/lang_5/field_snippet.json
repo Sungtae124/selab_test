@@ -1,0 +1,254 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1L;",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * Serialization version.\n * @see java.io.Serializable\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.comparator",
+    "snippet": "private final Comparator\u003cT\u003e comparator;",
+    "begin_line": 138,
+    "end_line": 138,
+    "comment": "/** \n * The ordering scheme used in this range.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.hashCode",
+    "snippet": "private transient int hashCode;",
+    "begin_line": 143,
+    "end_line": 143,
+    "comment": "/** \n * Cached output hashCode (class is immutable).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.maximum",
+    "snippet": "private final T maximum;",
+    "begin_line": 148,
+    "end_line": 148,
+    "comment": "/** \n * The maximum value in this range (inclusive).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.minimum",
+    "snippet": "private final T minimum;",
+    "begin_line": 153,
+    "end_line": 153,
+    "comment": "/** \n * The minimum value in this range (inclusive).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.Range",
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "signature": "org.apache.commons.lang3.Range.toString",
+    "snippet": "private transient String toString;",
+    "begin_line": 158,
+    "end_line": 158,
+    "comment": "/** \n * Cached output toString (class is immutable).\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.LONG_ZERO",
+    "snippet": "public static final Long LONG_ZERO \u003d Long.valueOf(0L);",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Reusable Long constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.LONG_ONE",
+    "snippet": "public static final Long LONG_ONE \u003d Long.valueOf(1L);",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * Reusable Long constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.LONG_MINUS_ONE",
+    "snippet": "public static final Long LONG_MINUS_ONE \u003d Long.valueOf(-1L);",
+    "begin_line": 39,
+    "end_line": 39,
+    "comment": "/** \n * Reusable Long constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO",
+    "snippet": "public static final Integer INTEGER_ZERO \u003d Integer.valueOf(0);",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "/** \n * Reusable Integer constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.INTEGER_ONE",
+    "snippet": "public static final Integer INTEGER_ONE \u003d Integer.valueOf(1);",
+    "begin_line": 43,
+    "end_line": 43,
+    "comment": "/** \n * Reusable Integer constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.INTEGER_TWO",
+    "snippet": "public static final Integer INTEGER_TWO \u003d Integer.valueOf(2);",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": "/** \n * Reusable Integer constant for two \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.INTEGER_MINUS_ONE",
+    "snippet": "public static final Integer INTEGER_MINUS_ONE \u003d Integer.valueOf(-1);",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Reusable Integer constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.SHORT_ZERO",
+    "snippet": "public static final Short SHORT_ZERO \u003d Short.valueOf((short) 0);",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * Reusable Short constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.SHORT_ONE",
+    "snippet": "public static final Short SHORT_ONE \u003d Short.valueOf((short) 1);",
+    "begin_line": 51,
+    "end_line": 51,
+    "comment": "/** \n * Reusable Short constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.SHORT_MINUS_ONE",
+    "snippet": "public static final Short SHORT_MINUS_ONE \u003d Short.valueOf((short) -1);",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * Reusable Short constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.BYTE_ZERO",
+    "snippet": "public static final Byte BYTE_ZERO \u003d Byte.valueOf((byte) 0);",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Reusable Byte constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.BYTE_ONE",
+    "snippet": "public static final Byte BYTE_ONE \u003d Byte.valueOf((byte) 1);",
+    "begin_line": 57,
+    "end_line": 57,
+    "comment": "/** \n * Reusable Byte constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.BYTE_MINUS_ONE",
+    "snippet": "public static final Byte BYTE_MINUS_ONE \u003d Byte.valueOf((byte) -1);",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": "/** \n * Reusable Byte constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.DOUBLE_ZERO",
+    "snippet": "public static final Double DOUBLE_ZERO \u003d Double.valueOf(0.0d);",
+    "begin_line": 61,
+    "end_line": 61,
+    "comment": "/** \n * Reusable Double constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.DOUBLE_ONE",
+    "snippet": "public static final Double DOUBLE_ONE \u003d Double.valueOf(1.0d);",
+    "begin_line": 63,
+    "end_line": 63,
+    "comment": "/** \n * Reusable Double constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.DOUBLE_MINUS_ONE",
+    "snippet": "public static final Double DOUBLE_MINUS_ONE \u003d Double.valueOf(-1.0d);",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * Reusable Double constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.FLOAT_ZERO",
+    "snippet": "public static final Float FLOAT_ZERO \u003d Float.valueOf(0.0f);",
+    "begin_line": 67,
+    "end_line": 67,
+    "comment": "/** \n * Reusable Float constant for zero. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.FLOAT_ONE",
+    "snippet": "public static final Float FLOAT_ONE \u003d Float.valueOf(1.0f);",
+    "begin_line": 69,
+    "end_line": 69,
+    "comment": "/** \n * Reusable Float constant for one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.FLOAT_MINUS_ONE",
+    "snippet": "public static final Float FLOAT_MINUS_ONE \u003d Float.valueOf(-1.0f);",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * Reusable Float constant for minus one. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.LONG_INT_MAX_VALUE",
+    "snippet": "public static final Long LONG_INT_MAX_VALUE \u003d Long.valueOf(Integer.MAX_VALUE);",
+    "begin_line": 78,
+    "end_line": 78,
+    "comment": "/** \n * {@link Integer#MAX_VALUE} as a {@link Long}.\n * @since 3.12.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.LONG_INT_MIN_VALUE",
+    "snippet": "public static final Long LONG_INT_MIN_VALUE \u003d Long.valueOf(Integer.MIN_VALUE);",
+    "begin_line": 85,
+    "end_line": 85,
+    "comment": "/** \n * {@link Integer#MIN_VALUE} as a {@link Long}.\n * @since 3.12.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.LONG_TO_INT_RANGE",
+    "snippet": "static final Range\u003cLong\u003e LONG_TO_INT_RANGE \u003d Range.between(NumberUtils.LONG_INT_MIN_VALUE,\n            NumberUtils.LONG_INT_MAX_VALUE);",
+    "begin_line": 40,
+    "end_line": 41,
+    "comment": "/** \n * An Integer Range that accepts Longs.\n */\n"
+  }
+]

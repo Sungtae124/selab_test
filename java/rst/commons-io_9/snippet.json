@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Charsets.requiredCharsets#171",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "class_name": "org.apache.commons.io.Charsets",
+    "signature": "org.apache.commons.io.Charsets.requiredCharsets()",
+    "snippet": "public static SortedMap\u003cString, Charset\u003e requiredCharsets() {\n        return STANDARD_CHARSET_MAP;\n    }",
+    "begin_line": 171,
+    "end_line": 173,
+    "comment": "/** \n * Constructs a sorted map from canonical charset names to charset objects required of every implementation of the Java platform. \u003cp\u003e From the Java documentation \u003ca href\u003d\"https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html\"\u003e Standard charsets\u003c/a\u003e: \u003c/p\u003e\n * @return An immutable, case-insensitive map from canonical charset names to charset objects.\n * @see Charset#availableCharsets()\n * @since 2.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Charsets.toCharset#182",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "class_name": "org.apache.commons.io.Charsets",
+    "signature": "org.apache.commons.io.Charsets.toCharset(java.nio.charset.Charset)",
+    "snippet": "public static Charset toCharset(final Charset charset) {\n        return charset \u003d\u003d null ? Charset.defaultCharset() : charset;\n    }",
+    "begin_line": 182,
+    "end_line": 184,
+    "comment": "/** \n * Returns the given Charset or the default Charset if the given Charset is null.\n * @param charset A charset or null.\n * @return the given Charset or the default Charset if the given Charset is null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Charsets.toCharset#193",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/Charsets.java",
+    "class_name": "org.apache.commons.io.Charsets",
+    "signature": "org.apache.commons.io.Charsets.toCharset(java.lang.String)",
+    "snippet": "public static Charset toCharset(final String charsetName) throws UnsupportedCharsetException {\n        return charsetName \u003d\u003d null ? Charset.defaultCharset() : Charset.forName(charsetName);\n    }",
+    "begin_line": 193,
+    "end_line": 195,
+    "comment": "/** \n * Returns a Charset for the named charset. If the name is null, return the default Charset.\n * @param charsetName The name of the requested charset, may be null.\n * @return a Charset for the named charset.\n * @throws UnsupportedCharsetException If the named charset is unavailable (unchecked exception).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharsetDecoders.toCharsetDecoder#36",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/charset/CharsetDecoders.java",
+    "class_name": "org.apache.commons.io.charset.CharsetDecoders",
+    "signature": "org.apache.commons.io.charset.CharsetDecoders.toCharsetDecoder(java.nio.charset.CharsetDecoder)",
+    "snippet": "public static CharsetDecoder toCharsetDecoder(CharsetDecoder charsetDecoder) {\n        return charsetDecoder !\u003d null ? charsetDecoder : Charset.defaultCharset().newDecoder();\n    }",
+    "begin_line": 36,
+    "end_line": 38,
+    "comment": "/** \n * Returns the given non-null CharsetDecoder or a new default CharsetDecoder.\n * @param charsetDecoder The CharsetDecoder to test.\n * @return the given non-null CharsetDecoder or a new default CharsetDecoder.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.checkIbmJdkWithBrokenUTF16#82",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.checkIbmJdkWithBrokenUTF16(java.nio.charset.Charset)",
+    "snippet": "private static void checkIbmJdkWithBrokenUTF16(final Charset charset){\n        if (!\"UTF-16\".equals(charset.name())) {\n            return;\n        }\n        final String TEST_STRING_2 \u003d \"v\\u00e9s\";\n        final byte[] bytes \u003d TEST_STRING_2.getBytes(charset);\n\n        final CharsetDecoder charsetDecoder2 \u003d charset.newDecoder();\n        final ByteBuffer bb2 \u003d ByteBuffer.allocate(16);\n        final CharBuffer cb2 \u003d CharBuffer.allocate(TEST_STRING_2.length());\n        final int len \u003d bytes.length;\n        for (int i \u003d 0; i \u003c len; i++) {\n            bb2.put(bytes[i]);\n            bb2.flip();\n            try {\n                charsetDecoder2.decode(bb2, cb2, i \u003d\u003d (len - 1));\n            } catch ( final IllegalArgumentException e){\n                throw new UnsupportedOperationException(\"UTF-16 requested when running on an IBM JDK with broken UTF-16 support. \" +\n                        \"Please find a JDK that supports UTF-16 if you intend to use UF-16 with WriterOutputStream\");\n            }\n            bb2.compact();\n        }\n        cb2.rewind();\n        if (!TEST_STRING_2.equals(cb2.toString())){\n            throw new UnsupportedOperationException(\"UTF-16 requested when running on an IBM JDK with broken UTF-16 support. \" +\n                    \"Please find a JDK that supports UTF-16 if you intend to use UF-16 with WriterOutputStream\");\n        }\n\n    }",
+    "begin_line": 82,
+    "end_line": 110,
+    "comment": "/** \n * Check if the JDK in use properly supports the given charset.\n * @param charset the charset to check the support for\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#139",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer)",
+    "snippet": "@Deprecated\n    public WriterOutputStream(final Writer writer) {\n        this(writer, Charset.defaultCharset(), BUFFER_SIZE, false);\n    }",
+    "begin_line": 139,
+    "end_line": 141,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream} that uses the default character encoding and with a default outputbuffer size of  {@value #BUFFER_SIZE} characters. The output buffer will only be flushed when it overflows or when{@link #flush()} or {@link #close()} is called.\n * @param writer the target {@link Writer}\n * @deprecated 2.5 use {@link #WriterOutputStream(Writer,Charset)} instead\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#151",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.nio.charset.Charset)",
+    "snippet": "public WriterOutputStream(final Writer writer, final Charset charset) {\n        this(writer, charset, BUFFER_SIZE, false);\n    }",
+    "begin_line": 151,
+    "end_line": 153,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream} with a default output buffer size of {@value #BUFFER_SIZE}characters. The output buffer will only be flushed when it overflows or when  {@link #flush()} or {@link #close()}is called.\n * @param writer the target {@link Writer}\n * @param charset the charset encoding\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#167",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.nio.charset.Charset, int, boolean)",
+    "snippet": "public WriterOutputStream(final Writer writer, final Charset charset, final int bufferSize,\n                              final boolean writeImmediately) {\n        this(writer,\n             charset.newDecoder()\n                    .onMalformedInput(CodingErrorAction.REPLACE)\n                    .onUnmappableCharacter(CodingErrorAction.REPLACE)\n                    .replaceWith(\"?\"),\n             bufferSize,\n             writeImmediately);\n    }",
+    "begin_line": 167,
+    "end_line": 176,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream}.\n * @param writer the target {@link Writer}\n * @param charset the charset encoding\n * @param bufferSize the size of the output buffer in number of characters\n * @param writeImmediately If {@code true} the output buffer will be flushed after eachwrite operation, i.e. all available data will be written to the underlying  {@link Writer} immediately. If {@code false}, the output buffer will only be flushed when it overflows or when {@link #flush()} or {@link #close()} is called.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#187",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.nio.charset.CharsetDecoder)",
+    "snippet": "public WriterOutputStream(final Writer writer, final CharsetDecoder decoder) {\n        this(writer, decoder, BUFFER_SIZE, false);\n    }",
+    "begin_line": 187,
+    "end_line": 189,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream} with a default output buffer size of {@value #BUFFER_SIZE}characters. The output buffer will only be flushed when it overflows or when  {@link #flush()} or {@link #close()}is called.\n * @param writer the target {@link Writer}\n * @param decoder the charset decoder\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#204",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.nio.charset.CharsetDecoder, int, boolean)",
+    "snippet": "public WriterOutputStream(final Writer writer, final CharsetDecoder decoder, final int bufferSize,\n                              final boolean writeImmediately) {\n        checkIbmJdkWithBrokenUTF16( decoder.charset());\n        this.writer \u003d writer;\n        this.decoder \u003d decoder;\n        this.writeImmediately \u003d writeImmediately;\n        decoderOut \u003d CharBuffer.allocate(bufferSize);\n    }",
+    "begin_line": 204,
+    "end_line": 211,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream}.\n * @param writer the target {@link Writer}\n * @param decoder the charset decoder\n * @param bufferSize the size of the output buffer in number of characters\n * @param writeImmediately If {@code true} the output buffer will be flushed after eachwrite operation, i.e. all available data will be written to the underlying  {@link Writer} immediately. If {@code false}, the output buffer will only be flushed when it overflows or when {@link #flush()} or {@link #close()} is called.\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#221",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.lang.String)",
+    "snippet": "public WriterOutputStream(final Writer writer, final String charsetName) {\n        this(writer, charsetName, BUFFER_SIZE, false);\n    }",
+    "begin_line": 221,
+    "end_line": 223,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream} with a default output buffer size of {@value #BUFFER_SIZE}characters. The output buffer will only be flushed when it overflows or when  {@link #flush()} or {@link #close()}is called.\n * @param writer the target {@link Writer}\n * @param charsetName the name of the charset encoding\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.WriterOutputStream#237",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.WriterOutputStream(java.io.Writer, java.lang.String, int, boolean)",
+    "snippet": "public WriterOutputStream(final Writer writer, final String charsetName, final int bufferSize,\n                              final boolean writeImmediately) {\n        this(writer, Charset.forName(charsetName), bufferSize, writeImmediately);\n    }",
+    "begin_line": 237,
+    "end_line": 240,
+    "comment": "/** \n * Constructs a new  {@link WriterOutputStream}.\n * @param writer the target {@link Writer}\n * @param charsetName the name of the charset encoding\n * @param bufferSize the size of the output buffer in number of characters\n * @param writeImmediately If {@code true} the output buffer will be flushed after eachwrite operation, i.e. all available data will be written to the underlying  {@link Writer} immediately. If {@code false}, the output buffer will only be flushed when it overflows or when {@link #flush()} or {@link #close()} is called.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.close#249",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.close()",
+    "snippet": "@Override\n    public void close() throws IOException {\n        processInput(true);\n        flushOutput();\n        writer.close();\n    }",
+    "begin_line": 249,
+    "end_line": 253,
+    "comment": "/** \n * Close the stream. Any remaining content accumulated in the output buffer will be written to the underlying  {@link Writer}. After that {@link Writer#close()} will be called.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.flush#262",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.flush()",
+    "snippet": "@Override\n    public void flush() throws IOException {\n        flushOutput();\n        writer.flush();\n    }",
+    "begin_line": 262,
+    "end_line": 265,
+    "comment": "/** \n * Flush the stream. Any remaining content accumulated in the output buffer will be written to the underlying  {@link Writer}. After that {@link Writer#flush()} will be called.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.flushOutput#272",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.flushOutput()",
+    "snippet": "private void flushOutput() throws IOException {\n        if (decoderOut.position() \u003e 0) {\n            writer.write(decoderOut.array(), 0, decoderOut.position());\n            decoderOut.rewind();\n        }\n    }",
+    "begin_line": 272,
+    "end_line": 277,
+    "comment": "/** \n * Flush the output.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.processInput#285",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.processInput(boolean)",
+    "snippet": "private void processInput(final boolean endOfInput) throws IOException {\n        // Prepare decoderIn for reading\n        decoderIn.flip();\n        CoderResult coderResult;\n        while (true) {\n            coderResult \u003d decoder.decode(decoderIn, decoderOut, endOfInput);\n            if (coderResult.isOverflow()) {\n                flushOutput();\n            } else if (coderResult.isUnderflow()) {\n                break;\n            } else {\n                // The decoder is configured to replace malformed input and unmappable characters,\n                // so we should not get here.\n                throw new IOException(\"Unexpected coder result\");\n            }\n        }\n        // Discard the bytes that have been read\n        decoderIn.compact();\n    }",
+    "begin_line": 285,
+    "end_line": 303,
+    "comment": "/** \n * Decode the contents of the input ByteBuffer into a CharBuffer.\n * @param endOfInput indicates end of input\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.write#312",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.write(byte[])",
+    "snippet": "@Override\n    public void write(final byte[] b) throws IOException {\n        write(b, 0, b.length);\n    }",
+    "begin_line": 312,
+    "end_line": 314,
+    "comment": "/** \n * Write bytes from the specified byte array to the stream.\n * @param b the byte array containing the bytes to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.write#325",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.write(byte[], int, int)",
+    "snippet": "@Override\n    public void write(final byte[] b, int off, int len) throws IOException {\n        while (len \u003e 0) {\n            final int c \u003d Math.min(len, decoderIn.remaining());\n            decoderIn.put(b, off, c);\n            processInput(false);\n            len -\u003d c;\n            off +\u003d c;\n        }\n        if (writeImmediately) {\n            flushOutput();\n        }\n    }",
+    "begin_line": 325,
+    "end_line": 336,
+    "comment": "/** \n * Write bytes from the specified byte array to the stream.\n * @param b the byte array containing the bytes to write\n * @param off the start offset in the byte array\n * @param len the number of bytes to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "WriterOutputStream.write#345",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/output/WriterOutputStream.java",
+    "class_name": "org.apache.commons.io.output.WriterOutputStream",
+    "signature": "org.apache.commons.io.output.WriterOutputStream.write(int)",
+    "snippet": "@Override\n    public void write(final int b) throws IOException {\n        write(new byte[] {(byte) b}, 0, 1);\n    }",
+    "begin_line": 345,
+    "end_line": 347,
+    "comment": "/** \n * Write a single byte to the stream.\n * @param b the byte to write\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

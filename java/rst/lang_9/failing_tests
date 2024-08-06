@@ -1,0 +1,28 @@
+--- org.apache.commons.lang3.reflect.MethodUtilsTest::testInvokeMethod_VarArgsNotUniqueResolvable
+java.lang.NullPointerException
+       org.apache.commons.lang3.reflect.MemberUtils.getTotalTransformationCost(MemberUtils.java:165)
+       org.apache.commons.lang3.reflect.MemberUtils.compareParameterTypes(MemberUtils.java:136)
+       org.apache.commons.lang3.reflect.MemberUtils.compareMethodFit(MemberUtils.java:120)
+       org.apache.commons.lang3.reflect.MethodUtils.getMatchingAccessibleMethod(MethodUtils.java:690)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:219)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:256)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:148)
+       org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethod_VarArgsNotUniqueResolvable(MethodUtilsTest.java:459)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       [...]
+  
+--- org.apache.commons.lang3.reflect.MethodUtilsTest::testInvokeMethod_VarArgsWithNullValues
+java.lang.NullPointerException
+       org.apache.commons.lang3.reflect.MethodUtils.getMatchingAccessibleMethod(MethodUtils.java:706)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:219)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:256)
+       org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(MethodUtils.java:148)
+       org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethod_VarArgsWithNullValues(MethodUtilsTest.java:453)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       [...]
+

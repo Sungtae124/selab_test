@@ -1,0 +1,289 @@
+[
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testFlush()",
+    "snippet": "@Test\n    public void testFlush() throws IOException {\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, \"us-ascii\", 1024, false)) {\n            out.write(\"abc\".getBytes(StandardCharsets.US_ASCII));\n            assertEquals(0, writer.getBuffer().length());\n            out.flush();\n            assertEquals(\"abc\", writer.toString());\n        }\n    }",
+    "begin_line": 48,
+    "end_line": 56,
+    "comment": "",
+    "child_ranges": [
+      "(line 49,col 9)-(line 49,col 55)",
+      "(line 50,col 9)-(line 55,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testLargeUTF8CharsetWithBufferedWrite()",
+    "snippet": "@Test\n    public void testLargeUTF8CharsetWithBufferedWrite() throws IOException {\n        testWithBufferedWrite(LARGE_TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 59,
+    "end_line": 61,
+    "comment": "",
+    "child_ranges": [
+      "(line 60,col 9)-(line 60,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testLargeUTF8CharsetWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testLargeUTF8CharsetWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(LARGE_TEST_STRING, StandardCharsets.UTF_8);\n    }",
+    "begin_line": 64,
+    "end_line": 66,
+    "comment": "",
+    "child_ranges": [
+      "(line 65,col 9)-(line 65,col 75)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testLargeUTF8WithBufferedWrite()",
+    "snippet": "@Test\n    public void testLargeUTF8WithBufferedWrite() throws IOException {\n        testWithBufferedWrite(LARGE_TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 69,
+    "end_line": 71,
+    "comment": "",
+    "child_ranges": [
+      "(line 70,col 9)-(line 70,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testLargeUTF8WithSingleByteWrite()",
+    "snippet": "@Test\n    public void testLargeUTF8WithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(LARGE_TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 74,
+    "end_line": 76,
+    "comment": "",
+    "child_ranges": [
+      "(line 75,col 9)-(line 75,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testNullCharsetNameWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testNullCharsetNameWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, (String) null);\n    }",
+    "begin_line": 79,
+    "end_line": 81,
+    "comment": "",
+    "child_ranges": [
+      "(line 80,col 9)-(line 80,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testNullCharsetWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testNullCharsetWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, (Charset) null);\n    }",
+    "begin_line": 84,
+    "end_line": 86,
+    "comment": "",
+    "child_ranges": [
+      "(line 85,col 9)-(line 85,col 61)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testNullCharsetDecoderWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testNullCharsetDecoderWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, (CharsetDecoder) null);\n    }",
+    "begin_line": 89,
+    "end_line": 91,
+    "comment": "",
+    "child_ranges": [
+      "(line 90,col 9)-(line 90,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16BEWithBufferedWrite()",
+    "snippet": "@Test\n    public void testUTF16BEWithBufferedWrite() throws IOException {\n        testWithBufferedWrite(TEST_STRING, \"UTF-16BE\");\n    }",
+    "begin_line": 94,
+    "end_line": 96,
+    "comment": "",
+    "child_ranges": [
+      "(line 95,col 9)-(line 95,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16BEWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testUTF16BEWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, \"UTF-16BE\");\n    }",
+    "begin_line": 99,
+    "end_line": 101,
+    "comment": "",
+    "child_ranges": [
+      "(line 100,col 9)-(line 100,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16LEWithBufferedWrite()",
+    "snippet": "@Test\n    public void testUTF16LEWithBufferedWrite() throws IOException {\n        testWithBufferedWrite(TEST_STRING, \"UTF-16LE\");\n    }",
+    "begin_line": 104,
+    "end_line": 106,
+    "comment": "",
+    "child_ranges": [
+      "(line 105,col 9)-(line 105,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16LEWithSingleByteWrite()",
+    "snippet": "@Test\n    public void testUTF16LEWithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, \"UTF-16LE\");\n    }",
+    "begin_line": 109,
+    "end_line": 111,
+    "comment": "",
+    "child_ranges": [
+      "(line 110,col 9)-(line 110,col 57)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16WithBufferedWrite()",
+    "snippet": "@Test\n    public void testUTF16WithBufferedWrite() throws IOException {\n        try {\n            testWithBufferedWrite(TEST_STRING, \"UTF-16\");\n        } catch (final UnsupportedOperationException e) {\n            if (!System.getProperty(\"java.vendor\").contains(\"IBM\")) {\n                fail(\"This test should only throw UOE on IBM JDKs with broken UTF-16\");\n            }\n        }\n    }",
+    "begin_line": 114,
+    "end_line": 122,
+    "comment": "",
+    "child_ranges": [
+      "(line 115,col 9)-(line 121,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF16WithSingleByteWrite()",
+    "snippet": "@Test\n    public void testUTF16WithSingleByteWrite() throws IOException {\n        try {\n            testWithSingleByteWrite(TEST_STRING, \"UTF-16\");\n        } catch (final UnsupportedOperationException e){\n            if (!System.getProperty(\"java.vendor\").contains(\"IBM\")){\n                fail(\"This test should only throw UOE on IBM JDKs with broken UTF-16\");\n            }\n        }\n    }",
+    "begin_line": 125,
+    "end_line": 133,
+    "comment": "",
+    "child_ranges": [
+      "(line 126,col 9)-(line 132,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF8WithBufferedWrite()",
+    "snippet": "@Test\n    public void testUTF8WithBufferedWrite() throws IOException {\n        testWithBufferedWrite(TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 136,
+    "end_line": 138,
+    "comment": "",
+    "child_ranges": [
+      "(line 137,col 9)-(line 137,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testUTF8WithSingleByteWrite()",
+    "snippet": "@Test\n    public void testUTF8WithSingleByteWrite() throws IOException {\n        testWithSingleByteWrite(TEST_STRING, \"UTF-8\");\n    }",
+    "begin_line": 141,
+    "end_line": 143,
+    "comment": "",
+    "child_ranges": [
+      "(line 142,col 9)-(line 142,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testWithBufferedWrite(java.lang.String, java.lang.String)",
+    "snippet": "private void testWithBufferedWrite(final String testString, final String charsetName) throws IOException {\n        final byte[] expected \u003d testString.getBytes(charsetName);\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, charsetName)) {\n            int offset \u003d 0;\n            while (offset \u003c expected.length) {\n                final int length \u003d Math.min(random.nextInt(128), expected.length - offset);\n                out.write(expected, offset, length);\n                offset +\u003d length;\n            }\n        }\n        assertEquals(testString, writer.toString());\n    }",
+    "begin_line": 145,
+    "end_line": 157,
+    "comment": "",
+    "child_ranges": [
+      "(line 146,col 9)-(line 146,col 65)",
+      "(line 147,col 9)-(line 147,col 55)",
+      "(line 148,col 9)-(line 155,col 9)",
+      "(line 156,col 9)-(line 156,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testWithSingleByteWrite(java.lang.String, java.nio.charset.Charset)",
+    "snippet": "private void testWithSingleByteWrite(final String testString, final Charset charset) throws IOException {\n        final byte[] bytes \u003d testString.getBytes(Charsets.toCharset(charset));\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, charset)) {\n            for (final byte b : bytes) {\n                out.write(b);\n            }\n        }\n        assertEquals(testString, writer.toString());\n    }",
+    "begin_line": 160,
+    "end_line": 169,
+    "comment": "",
+    "child_ranges": [
+      "(line 161,col 9)-(line 161,col 78)",
+      "(line 162,col 9)-(line 162,col 55)",
+      "(line 163,col 9)-(line 167,col 9)",
+      "(line 168,col 9)-(line 168,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testWithSingleByteWrite(java.lang.String, java.nio.charset.CharsetDecoder)",
+    "snippet": "private void testWithSingleByteWrite(final String testString, final CharsetDecoder charsetDecoder) throws IOException {\n        final byte[] bytes \u003d testString.getBytes(CharsetDecoders.toCharsetDecoder(charsetDecoder).charset());\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, charsetDecoder)) {\n            for (final byte b : bytes) {\n                out.write(b);\n            }\n        }\n        assertEquals(testString, writer.toString());\n    }",
+    "begin_line": 171,
+    "end_line": 180,
+    "comment": "",
+    "child_ranges": [
+      "(line 172,col 9)-(line 172,col 109)",
+      "(line 173,col 9)-(line 173,col 55)",
+      "(line 174,col 9)-(line 178,col 9)",
+      "(line 179,col 9)-(line 179,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testWithSingleByteWrite(java.lang.String, java.lang.String)",
+    "snippet": "private void testWithSingleByteWrite(final String testString, final String charsetName) throws IOException {\n        final byte[] bytes \u003d testString.getBytes(Charsets.toCharset(charsetName));\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, charsetName)) {\n            for (final byte b : bytes) {\n                out.write(b);\n            }\n        }\n        assertEquals(testString, writer.toString());\n    }",
+    "begin_line": 182,
+    "end_line": 191,
+    "comment": "",
+    "child_ranges": [
+      "(line 183,col 9)-(line 183,col 82)",
+      "(line 184,col 9)-(line 184,col 55)",
+      "(line 185,col 9)-(line 189,col 9)",
+      "(line 190,col 9)-(line 190,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.WriterOutputStreamTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/WriterOutputStreamTest.java",
+    "signature": "org.apache.commons.io.output.WriterOutputStreamTest.testWriteImmediately()",
+    "snippet": "@Test\n    public void testWriteImmediately() throws IOException {\n        final StringWriter writer \u003d new StringWriter();\n        try (final WriterOutputStream out \u003d new WriterOutputStream(writer, \"us-ascii\", 1024, true)) {\n            out.write(\"abc\".getBytes(StandardCharsets.US_ASCII));\n            assertEquals(\"abc\", writer.toString());\n        }\n    }",
+    "begin_line": 194,
+    "end_line": 200,
+    "comment": "",
+    "child_ranges": [
+      "(line 195,col 9)-(line 195,col 55)",
+      "(line 196,col 9)-(line 199,col 9)"
+    ]
+  }
+]

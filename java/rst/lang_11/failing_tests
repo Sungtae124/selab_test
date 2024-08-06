@@ -1,0 +1,14 @@
+--- org.apache.commons.lang3.text.StrBuilderTest::test_LANG_1131_EqualsWithNullStrBuilder
+java.lang.NullPointerException
+       org.apache.commons.lang3.text.StrBuilder.equals(StrBuilder.java:2822)
+       org.apache.commons.lang3.text.StrBuilderTest.test_LANG_1131_EqualsWithNullStrBuilder(StrBuilderTest.java:1857)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+

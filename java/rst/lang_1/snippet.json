@@ -1,0 +1,2402 @@
+[
+  {
+    "name": "ClassLoaderUtils.getSystemURLs#39",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtils.java",
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtils",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtils.getSystemURLs()",
+    "snippet": "public static URL[] getSystemURLs() {\n        return getURLs(ClassLoader.getSystemClassLoader());\n    }",
+    "begin_line": 39,
+    "end_line": 41,
+    "comment": "/** \n * Gets the system class loader\u0027s URLs, if any.\n * @return the system class loader\u0027s URLs, if any.\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ClassLoaderUtils.getThreadURLs#49",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtils.java",
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtils",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtils.getThreadURLs()",
+    "snippet": "public static URL[] getThreadURLs() {\n        return getURLs(Thread.currentThread().getContextClassLoader());\n    }",
+    "begin_line": 49,
+    "end_line": 51,
+    "comment": "/** \n * Gets the current thread\u0027s context class loader\u0027s URLs, if any.\n * @return the current thread\u0027s context class loader\u0027s URLs, if any.\n * @since 3.13.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ClassLoaderUtils.getURLs#53",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtils.java",
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtils",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtils.getURLs(java.lang.ClassLoader)",
+    "snippet": "private static URL[] getURLs(final ClassLoader cl) {\n        return cl instanceof URLClassLoader ? ((URLClassLoader) cl).getURLs() : EMPTY_URL_ARRAY;\n    }",
+    "begin_line": 53,
+    "end_line": 55,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ClassLoaderUtils.toString#63",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtils.java",
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtils",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtils.toString(java.lang.ClassLoader)",
+    "snippet": "public static String toString(final ClassLoader classLoader) {\n        if (classLoader instanceof URLClassLoader) {\n            return toString((URLClassLoader) classLoader);\n        }\n        return classLoader.toString();\n    }",
+    "begin_line": 63,
+    "end_line": 68,
+    "comment": "/** \n * Converts the given class loader to a String calling  {@link #toString(URLClassLoader)}.\n * @param classLoader to URLClassLoader to convert.\n * @return the formatted string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ClassLoaderUtils.toString#76",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/ClassLoaderUtils.java",
+    "class_name": "org.apache.commons.lang3.ClassLoaderUtils",
+    "signature": "org.apache.commons.lang3.ClassLoaderUtils.toString(java.net.URLClassLoader)",
+    "snippet": "public static String toString(final URLClassLoader classLoader) {\n        return classLoader + Arrays.toString(classLoader.getURLs());\n    }",
+    "begin_line": 76,
+    "end_line": 78,
+    "comment": "/** \n * Converts the given URLClassLoader to a String in the format  {@code \"URLClassLoader.toString() + [URL1, URL2, ...]\"}.\n * @param classLoader to URLClassLoader to convert.\n * @return the formatted string.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getRegistry#186",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getRegistry()",
+    "snippet": "public static Map\u003cObject, Object\u003e getRegistry() {\n        return REGISTRY.get();\n    }",
+    "begin_line": 186,
+    "end_line": 188,
+    "comment": "/** \n * Returns the registry of objects being traversed by the  {@code reflectionToString}methods in the current thread.\n * @return Set the registry of objects being traversed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isRegistered#199",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isRegistered(java.lang.Object)",
+    "snippet": "static boolean isRegistered(final Object value) {\n        final Map\u003cObject, Object\u003e m \u003d getRegistry();\n        return m !\u003d null \u0026\u0026 m.containsKey(value);\n    }",
+    "begin_line": 199,
+    "end_line": 202,
+    "comment": "/** \n * Returns  {@code true} if the registry contains the given object.Used by the reflection methods to avoid infinite loops.\n * @param value The object to lookup in the registry.\n * @return boolean {@code true} if the registry contains the givenobject.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.register#211",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.register(java.lang.Object)",
+    "snippet": "static void register(final Object value) {\n        if (value !\u003d null) {\n            final Map\u003cObject, Object\u003e m \u003d getRegistry();\n            if (m \u003d\u003d null) {\n                REGISTRY.set(new WeakHashMap\u003c\u003e());\n            }\n            getRegistry().put(value, null);\n        }\n    }",
+    "begin_line": 211,
+    "end_line": 219,
+    "comment": "/** \n * Registers the given object. Used by the reflection methods to avoid infinite loops.\n * @param value The object to register.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.unregister#231",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.unregister(java.lang.Object)",
+    "snippet": "static void unregister(final Object value) {\n        if (value !\u003d null) {\n            final Map\u003cObject, Object\u003e m \u003d getRegistry();\n            if (m !\u003d null) {\n                m.remove(value);\n                if (m.isEmpty()) {\n                    REGISTRY.remove();\n                }\n            }\n        }\n    }",
+    "begin_line": 231,
+    "end_line": 241,
+    "comment": "/** \n * Unregisters the given object. \u003cp\u003e Used by the reflection methods to avoid infinite loops. \u003c/p\u003e\n * @param value The object to unregister.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.ToStringStyle#347",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.ToStringStyle()",
+    "snippet": "protected ToStringStyle() {\n    }",
+    "begin_line": 347,
+    "end_line": 348,
+    "comment": "/** \n * Constructor.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSuper#360",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSuper(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "public void appendSuper(final StringBuffer buffer, final String superToString) {\n        appendToString(buffer, superToString);\n    }",
+    "begin_line": 360,
+    "end_line": 362,
+    "comment": "/** \n * Appends to the  {@code toString} the superclass toString.\u003cp\u003eNOTE: It assumes that the toString has been created from the same ToStringStyle.\u003c/p\u003e \u003cp\u003eA  {@code null} {@code superToString} is ignored.\u003c/p\u003e\n * @param buffer  the {@link StringBuffer} to populate\n * @param superToString  the {@code super.toString()}\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendToString#374",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendToString(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "public void appendToString(final StringBuffer buffer, final String toString) {\n        if (toString !\u003d null) {\n            final int pos1 \u003d toString.indexOf(contentStart) + contentStart.length();\n            final int pos2 \u003d toString.lastIndexOf(contentEnd);\n            if (pos1 !\u003d pos2 \u0026\u0026 pos1 \u003e\u003d 0 \u0026\u0026 pos2 \u003e\u003d 0) {\n                if (fieldSeparatorAtStart) {\n                    removeLastFieldSeparator(buffer);\n                }\n                buffer.append(toString, pos1, pos2);\n                appendFieldSeparator(buffer);\n            }\n        }\n    }",
+    "begin_line": 374,
+    "end_line": 386,
+    "comment": "/** \n * Appends to the  {@code toString} another toString.\u003cp\u003eNOTE: It assumes that the toString has been created from the same ToStringStyle.\u003c/p\u003e \u003cp\u003eA  {@code null} {@code toString} is ignored.\u003c/p\u003e\n * @param buffer  the {@link StringBuffer} to populate\n * @param toString  the additional {@code toString}\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendStart#394",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendStart(java.lang.StringBuffer, java.lang.Object)",
+    "snippet": "public void appendStart(final StringBuffer buffer, final Object object) {\n        if (object !\u003d null) {\n            appendClassName(buffer, object);\n            appendIdentityHashCode(buffer, object);\n            appendContentStart(buffer);\n            if (fieldSeparatorAtStart) {\n                appendFieldSeparator(buffer);\n            }\n        }\n    }",
+    "begin_line": 394,
+    "end_line": 403,
+    "comment": "/** \n * Appends to the  {@code toString} the start of data indicator.\n * @param buffer  the {@link StringBuffer} to populate\n * @param object  the {@link Object} to build a {@code toString} for\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendEnd#412",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendEnd(java.lang.StringBuffer, java.lang.Object)",
+    "snippet": "public void appendEnd(final StringBuffer buffer, final Object object) {\n        if (!this.fieldSeparatorAtEnd) {\n            removeLastFieldSeparator(buffer);\n        }\n        appendContentEnd(buffer);\n        unregister(object);\n    }",
+    "begin_line": 412,
+    "end_line": 418,
+    "comment": "/** \n * Appends to the  {@code toString} the end of data indicator.\n * @param buffer  the {@link StringBuffer} to populate\n * @param object  the {@link Object} to build a{@code toString} for.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.removeLastFieldSeparator#426",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.removeLastFieldSeparator(java.lang.StringBuffer)",
+    "snippet": "protected void removeLastFieldSeparator(final StringBuffer buffer) {\n        if (StringUtils.endsWith(buffer, fieldSeparator)) {\n            buffer.setLength(buffer.length() - fieldSeparator.length());\n        }\n    }",
+    "begin_line": 426,
+    "end_line": 430,
+    "comment": "/** \n * Remove the last field separator from the buffer.\n * @param buffer  the {@link StringBuffer} to populate\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#443",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, java.lang.Object, java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final Object value, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (value \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else {\n            appendInternal(buffer, fieldName, value, isFullDetail(fullDetail));\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 443,
+    "end_line": 454,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}value, printing the full  {@code toString} of the{@link Object} passed in.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendInternal#475",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendInternal(java.lang.StringBuffer, java.lang.String, java.lang.Object, boolean)",
+    "snippet": "protected void appendInternal(final StringBuffer buffer, final String fieldName, final Object value, final boolean detail) {\n        if (isRegistered(value)\n            \u0026\u0026 !(value instanceof Number || value instanceof Boolean || value instanceof Character)) {\n           appendCyclicObject(buffer, fieldName, value);\n           return;\n        }\n\n        register(value);\n\n        try {\n            if (value instanceof Collection\u003c?\u003e) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (Collection\u003c?\u003e) value);\n                } else {\n                    appendSummarySize(buffer, fieldName, ((Collection\u003c?\u003e) value).size());\n                }\n\n            } else if (value instanceof Map\u003c?, ?\u003e) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (Map\u003c?, ?\u003e) value);\n                } else {\n                    appendSummarySize(buffer, fieldName, ((Map\u003c?, ?\u003e) value).size());\n                }\n\n            } else if (value instanceof long[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (long[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (long[]) value);\n                }\n\n            } else if (value instanceof int[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (int[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (int[]) value);\n                }\n\n            } else if (value instanceof short[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (short[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (short[]) value);\n                }\n\n            } else if (value instanceof byte[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (byte[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (byte[]) value);\n                }\n\n            } else if (value instanceof char[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (char[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (char[]) value);\n                }\n\n            } else if (value instanceof double[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (double[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (double[]) value);\n                }\n\n            } else if (value instanceof float[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (float[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (float[]) value);\n                }\n\n            } else if (value instanceof boolean[]) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (boolean[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (boolean[]) value);\n                }\n\n            } else if (ObjectUtils.isArray(value)) {\n                if (detail) {\n                    appendDetail(buffer, fieldName, (Object[]) value);\n                } else {\n                    appendSummary(buffer, fieldName, (Object[]) value);\n                }\n\n            } else if (detail) {\n                appendDetail(buffer, fieldName, value);\n            } else {\n                appendSummary(buffer, fieldName, value);\n            }\n        } finally {\n            unregister(value);\n        }\n    }",
+    "begin_line": 475,
+    "end_line": 570,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}, correctly interpreting its type. \u003cp\u003eThis method performs the main lookup by Class type to correctly route arrays,  {@link Collection}s,  {@link Map}s and {@link Objects} to the appropriate method.\u003c/p\u003e\u003cp\u003eEither detail or summary views can be specified.\u003c/p\u003e \u003cp\u003eIf a cycle is detected, an object will be appended with the {@code Object.toString()} format.\u003c/p\u003e\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}, not  {@code null}\n * @param detail  output detail or not\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendCyclicObject#584",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendCyclicObject(java.lang.StringBuffer, java.lang.String, java.lang.Object)",
+    "snippet": "protected void appendCyclicObject(final StringBuffer buffer, final String fieldName, final Object value) {\n       ObjectUtils.identityToString(buffer, value);\n    }",
+    "begin_line": 584,
+    "end_line": 586,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}value that has been detected to participate in a cycle. This implementation will print the standard string value of the value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}, not  {@code null}\n * @since 2.2\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#597",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.lang.Object)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final Object value) {\n        buffer.append(value);\n    }",
+    "begin_line": 597,
+    "end_line": 599,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}value, printing the full detail of the  {@link Object}.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#609",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.util.Collection\u003c?\u003e)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final Collection\u003c?\u003e coll) {\n        buffer.append(coll);\n    }",
+    "begin_line": 609,
+    "end_line": 611,
+    "comment": "/** \n * Appends to the  {@code toString} a {@link Collection}.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param coll  the {@link Collection} to add to the{@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#621",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.util.Map\u003c?,?\u003e)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final Map\u003c?, ?\u003e map) {\n        buffer.append(map);\n    }",
+    "begin_line": 621,
+    "end_line": 623,
+    "comment": "/** \n * Appends to the  {@code toString} a {@link Map}.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param map  the {@link Map} to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#634",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, java.lang.Object)",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final Object value) {\n        buffer.append(summaryObjectStartText);\n        buffer.append(getShortClassName(value.getClass()));\n        buffer.append(summaryObjectEndText);\n    }",
+    "begin_line": 634,
+    "end_line": 638,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}value, printing a summary of the  {@link Object}.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#648",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, long)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final long value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 648,
+    "end_line": 652,
+    "comment": "/** \n * \u003cp\u003eAppends to the  {@code toString} a {@code long}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#662",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, long)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final long value) {\n        buffer.append(value);\n    }",
+    "begin_line": 662,
+    "end_line": 664,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code long}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#674",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, int)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final int value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 674,
+    "end_line": 678,
+    "comment": "/** \n * Appends to the  {@code toString} an {@code int}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#688",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, int)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final int value) {\n        buffer.append(value);\n    }",
+    "begin_line": 688,
+    "end_line": 690,
+    "comment": "/** \n * Appends to the  {@code toString} an {@code int}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#700",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, short)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final short value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 700,
+    "end_line": 704,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code short}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#714",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, short)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final short value) {\n        buffer.append(value);\n    }",
+    "begin_line": 714,
+    "end_line": 716,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code short}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#726",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, byte)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final byte value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 726,
+    "end_line": 730,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code byte}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#740",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, byte)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final byte value) {\n        buffer.append(value);\n    }",
+    "begin_line": 740,
+    "end_line": 742,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code byte}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#752",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, char)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final char value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 752,
+    "end_line": 756,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code char}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#766",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, char)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final char value) {\n        buffer.append(value);\n    }",
+    "begin_line": 766,
+    "end_line": 768,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code char}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#778",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, double)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final double value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 778,
+    "end_line": 782,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code double}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#792",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, double)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final double value) {\n        buffer.append(value);\n    }",
+    "begin_line": 792,
+    "end_line": 794,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code double}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#804",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, float)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final float value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 804,
+    "end_line": 808,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code float}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#818",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, float)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final float value) {\n        buffer.append(value);\n    }",
+    "begin_line": 818,
+    "end_line": 820,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code float}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#830",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final boolean value) {\n        appendFieldStart(buffer, fieldName);\n        appendDetail(buffer, fieldName, value);\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 830,
+    "end_line": 834,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code boolean}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#844",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, boolean)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final boolean value) {\n        buffer.append(value);\n    }",
+    "begin_line": 844,
+    "end_line": 846,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code boolean}value.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param value  the value to add to the {@code toString}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#858",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, java.lang.Object[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final Object[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 858,
+    "end_line": 872,
+    "comment": "/** \n * Appends to the  {@code toString} an {@link Object}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the toString\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#883",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.lang.Object[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final Object[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            appendDetail(buffer, fieldName, i, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 883,
+    "end_line": 889,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of an{@link Object} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#901",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, int, java.lang.Object)",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final int i, final Object item) {\n        if (i \u003e 0) {\n            buffer.append(arraySeparator);\n        }\n        if (item \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n        } else {\n            appendInternal(buffer, fieldName, item, arrayContentDetail);\n        }\n    }",
+    "begin_line": 901,
+    "end_line": 910,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of an{@link Object} array item.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param i the array item index to add\n * @param item the array item to add\n * @since 3.11\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.reflectionAppendArrayDetail#921",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.reflectionAppendArrayDetail(java.lang.StringBuffer, java.lang.String, java.lang.Object)",
+    "snippet": "protected void reflectionAppendArrayDetail(final StringBuffer buffer, final String fieldName, final Object array) {\n        buffer.append(arrayStart);\n        final int length \u003d Array.getLength(array);\n        for (int i \u003d 0; i \u003c length; i++) {\n            appendDetail(buffer, fieldName, i, Array.get(array, i));\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 921,
+    "end_line": 928,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of an array type.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#939",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, java.lang.Object[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final Object[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 939,
+    "end_line": 941,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of an{@link Object} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#953",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, long[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final long[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 953,
+    "end_line": 967,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code long}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#978",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, long[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final long[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 978,
+    "end_line": 987,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code long} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#998",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, long[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final long[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 998,
+    "end_line": 1000,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code long} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1012",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, int[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final int[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1012,
+    "end_line": 1026,
+    "comment": "/** \n * Appends to the  {@code toString} an {@code int}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1037",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, int[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final int[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1037,
+    "end_line": 1046,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of an{@code int} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1057",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, int[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final int[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1057,
+    "end_line": 1059,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of an{@code int} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1071",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, short[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final short[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1071,
+    "end_line": 1085,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code short}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1096",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, short[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final short[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1096,
+    "end_line": 1105,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code short} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1116",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, short[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final short[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1116,
+    "end_line": 1118,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code short} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1130",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, byte[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final byte[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1130,
+    "end_line": 1144,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code byte}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1155",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, byte[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final byte[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1155,
+    "end_line": 1164,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code byte} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1175",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, byte[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final byte[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1175,
+    "end_line": 1177,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code byte} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1189",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, char[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final char[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1189,
+    "end_line": 1203,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code char}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the {@code toString}\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1214",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, char[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final char[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1214,
+    "end_line": 1223,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code char} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1234",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, char[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final char[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1234,
+    "end_line": 1236,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code char} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1248",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, double[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final double[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1248,
+    "end_line": 1262,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code double}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the toString\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1273",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, double[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final double[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1273,
+    "end_line": 1282,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code double} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1293",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, double[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final double[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1293,
+    "end_line": 1295,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code double} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1307",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, float[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final float[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1307,
+    "end_line": 1321,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code float}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the toString\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1332",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, float[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final float[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1332,
+    "end_line": 1341,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code float} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1352",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, float[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final float[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1352,
+    "end_line": 1354,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code float} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.append#1366",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, boolean[], java.lang.Boolean)",
+    "snippet": "public void append(final StringBuffer buffer, final String fieldName, final boolean[] array, final Boolean fullDetail) {\n        appendFieldStart(buffer, fieldName);\n\n        if (array \u003d\u003d null) {\n            appendNullText(buffer, fieldName);\n\n        } else if (isFullDetail(fullDetail)) {\n            appendDetail(buffer, fieldName, array);\n\n        } else {\n            appendSummary(buffer, fieldName, array);\n        }\n\n        appendFieldEnd(buffer, fieldName);\n    }",
+    "begin_line": 1366,
+    "end_line": 1380,
+    "comment": "/** \n * Appends to the  {@code toString} a {@code boolean}array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n * @param array  the array to add to the toString\n * @param fullDetail  {@code true} for detail, {@code false}for summary info,  {@code null} for style decides\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendDetail#1391",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, boolean[])",
+    "snippet": "protected void appendDetail(final StringBuffer buffer, final String fieldName, final boolean[] array) {\n        buffer.append(arrayStart);\n        for (int i \u003d 0; i \u003c array.length; i++) {\n            if (i \u003e 0) {\n                buffer.append(arraySeparator);\n            }\n            appendDetail(buffer, fieldName, array[i]);\n        }\n        buffer.append(arrayEnd);\n    }",
+    "begin_line": 1391,
+    "end_line": 1400,
+    "comment": "/** \n * Appends to the  {@code toString} the detail of a{@code boolean} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummary#1411",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummary(java.lang.StringBuffer, java.lang.String, boolean[])",
+    "snippet": "protected void appendSummary(final StringBuffer buffer, final String fieldName, final boolean[] array) {\n        appendSummarySize(buffer, fieldName, array.length);\n    }",
+    "begin_line": 1411,
+    "end_line": 1413,
+    "comment": "/** \n * Appends to the  {@code toString} a summary of a{@code boolean} array.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param array  the array to add to the {@code toString}, not  {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendClassName#1421",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendClassName(java.lang.StringBuffer, java.lang.Object)",
+    "snippet": "protected void appendClassName(final StringBuffer buffer, final Object object) {\n        if (useClassName \u0026\u0026 object !\u003d null) {\n            register(object);\n            if (useShortClassName) {\n                buffer.append(getShortClassName(object.getClass()));\n            } else {\n                buffer.append(object.getClass().getName());\n            }\n        }\n    }",
+    "begin_line": 1421,
+    "end_line": 1430,
+    "comment": "/** \n * Appends to the  {@code toString} the class name.\n * @param buffer  the {@link StringBuffer} to populate\n * @param object  the {@link Object} whose name to output\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendIdentityHashCode#1438",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendIdentityHashCode(java.lang.StringBuffer, java.lang.Object)",
+    "snippet": "protected void appendIdentityHashCode(final StringBuffer buffer, final Object object) {\n        if (this.isUseIdentityHashCode() \u0026\u0026 object !\u003d null) {\n            register(object);\n            buffer.append(\u0027@\u0027);\n            buffer.append(ObjectUtils.identityHashCodeHex(object));\n        }\n    }",
+    "begin_line": 1438,
+    "end_line": 1444,
+    "comment": "/** \n * Appends the  {@link System#identityHashCode(java.lang.Object)}.\n * @param buffer  the {@link StringBuffer} to populate\n * @param object  the {@link Object} whose id to output\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendContentStart#1451",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendContentStart(java.lang.StringBuffer)",
+    "snippet": "protected void appendContentStart(final StringBuffer buffer) {\n        buffer.append(contentStart);\n    }",
+    "begin_line": 1451,
+    "end_line": 1453,
+    "comment": "/** \n * Appends to the  {@code toString} the content start.\n * @param buffer  the {@link StringBuffer} to populate\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendContentEnd#1460",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendContentEnd(java.lang.StringBuffer)",
+    "snippet": "protected void appendContentEnd(final StringBuffer buffer) {\n        buffer.append(contentEnd);\n    }",
+    "begin_line": 1460,
+    "end_line": 1462,
+    "comment": "/** \n * Appends to the  {@code toString} the content end.\n * @param buffer  the {@link StringBuffer} to populate\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendNullText#1472",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendNullText(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "protected void appendNullText(final StringBuffer buffer, final String fieldName) {\n        buffer.append(nullText);\n    }",
+    "begin_line": 1472,
+    "end_line": 1474,
+    "comment": "/** \n * Appends to the  {@code toString} an indicator for {@code null}. \u003cp\u003eThe default indicator is  {@code \u0027\u0026lt;null\u0026gt;\u0027}.\u003c/p\u003e\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendFieldSeparator#1481",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendFieldSeparator(java.lang.StringBuffer)",
+    "snippet": "protected void appendFieldSeparator(final StringBuffer buffer) {\n        buffer.append(fieldSeparator);\n    }",
+    "begin_line": 1481,
+    "end_line": 1483,
+    "comment": "/** \n * Appends to the  {@code toString} the field separator.\n * @param buffer  the {@link StringBuffer} to populate\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendFieldStart#1491",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendFieldStart(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "protected void appendFieldStart(final StringBuffer buffer, final String fieldName) {\n        if (useFieldNames \u0026\u0026 fieldName !\u003d null) {\n            buffer.append(fieldName);\n            buffer.append(fieldNameValueSeparator);\n        }\n    }",
+    "begin_line": 1491,
+    "end_line": 1496,
+    "comment": "/** \n * Appends to the  {@code toString} the field start.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendFieldEnd#1504",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendFieldEnd(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "protected void appendFieldEnd(final StringBuffer buffer, final String fieldName) {\n        appendFieldSeparator(buffer);\n    }",
+    "begin_line": 1504,
+    "end_line": 1506,
+    "comment": "/** \n * Appends to the  {@code toString} the field end.\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.appendSummarySize#1523",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendSummarySize(java.lang.StringBuffer, java.lang.String, int)",
+    "snippet": "protected void appendSummarySize(final StringBuffer buffer, final String fieldName, final int size) {\n        buffer.append(sizeStartText);\n        buffer.append(size);\n        buffer.append(sizeEndText);\n    }",
+    "begin_line": 1523,
+    "end_line": 1527,
+    "comment": "/** \n * Appends to the  {@code toString} a size summary.\u003cp\u003eThe size summary is used to summarize the contents of {@link Collection}s,  {@link Map}s and arrays.\u003c/p\u003e \u003cp\u003eThe output consists of a prefix, the passed in size and a suffix.\u003c/p\u003e \u003cp\u003eThe default format is  {@code \u0027\u0026lt;size\u003dn\u0026gt;\u0027}.\u003c/p\u003e\n * @param buffer  the {@link StringBuffer} to populate\n * @param fieldName  the field name, typically not used as already appended\n * @param size  the size to append\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isFullDetail#1543",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isFullDetail(java.lang.Boolean)",
+    "snippet": "protected boolean isFullDetail(final Boolean fullDetailRequest) {\n        if (fullDetailRequest \u003d\u003d null) {\n            return defaultFullDetail;\n        }\n        return fullDetailRequest.booleanValue();\n    }",
+    "begin_line": 1543,
+    "end_line": 1548,
+    "comment": "/** \n * Is this field to be output in full detail. \u003cp\u003eThis method converts a detail request into a detail level. The calling code may request full detail ( {@code true}), but a subclass might ignore that and always return {@code false}. The calling code may pass in {@code null} indicating that it doesn\u0027t care aboutthe detail level. In this case the default detail level is used.\u003c/p\u003e\n * @param fullDetailRequest  the detail level requested\n * @return whether full detail is to be shown\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getShortClassName#1559",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getShortClassName(java.lang.Class\u003c?\u003e)",
+    "snippet": "protected String getShortClassName(final Class\u003c?\u003e cls) {\n        return ClassUtils.getShortClassName(cls);\n    }",
+    "begin_line": 1559,
+    "end_line": 1561,
+    "comment": "/** \n * Gets the short class name for a class. \u003cp\u003eThe short class name is the classname excluding the package name.\u003c/p\u003e\n * @param cls  the {@link Class} to get the short name of\n * @return the short name\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isUseClassName#1571",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isUseClassName()",
+    "snippet": "protected boolean isUseClassName() {\n        return useClassName;\n    }",
+    "begin_line": 1571,
+    "end_line": 1573,
+    "comment": "/** \n * Gets whether to use the class name.\n * @return the current useClassName flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setUseClassName#1580",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setUseClassName(boolean)",
+    "snippet": "protected void setUseClassName(final boolean useClassName) {\n        this.useClassName \u003d useClassName;\n    }",
+    "begin_line": 1580,
+    "end_line": 1582,
+    "comment": "/** \n * Sets whether to use the class name.\n * @param useClassName  the new useClassName flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isUseShortClassName#1590",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isUseShortClassName()",
+    "snippet": "protected boolean isUseShortClassName() {\n        return useShortClassName;\n    }",
+    "begin_line": 1590,
+    "end_line": 1592,
+    "comment": "/** \n * Gets whether to output short or long class names.\n * @return the current useShortClassName flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setUseShortClassName#1600",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setUseShortClassName(boolean)",
+    "snippet": "protected void setUseShortClassName(final boolean useShortClassName) {\n        this.useShortClassName \u003d useShortClassName;\n    }",
+    "begin_line": 1600,
+    "end_line": 1602,
+    "comment": "/** \n * Sets whether to output short or long class names.\n * @param useShortClassName  the new useShortClassName flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isUseIdentityHashCode#1609",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isUseIdentityHashCode()",
+    "snippet": "protected boolean isUseIdentityHashCode() {\n        return useIdentityHashCode;\n    }",
+    "begin_line": 1609,
+    "end_line": 1611,
+    "comment": "/** \n * Gets whether to use the identity hash code.\n * @return the current useIdentityHashCode flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setUseIdentityHashCode#1618",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setUseIdentityHashCode(boolean)",
+    "snippet": "protected void setUseIdentityHashCode(final boolean useIdentityHashCode) {\n        this.useIdentityHashCode \u003d useIdentityHashCode;\n    }",
+    "begin_line": 1618,
+    "end_line": 1620,
+    "comment": "/** \n * Sets whether to use the identity hash code.\n * @param useIdentityHashCode  the new useIdentityHashCode flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isUseFieldNames#1627",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isUseFieldNames()",
+    "snippet": "protected boolean isUseFieldNames() {\n        return useFieldNames;\n    }",
+    "begin_line": 1627,
+    "end_line": 1629,
+    "comment": "/** \n * Gets whether to use the field names passed in.\n * @return the current useFieldNames flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setUseFieldNames#1636",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setUseFieldNames(boolean)",
+    "snippet": "protected void setUseFieldNames(final boolean useFieldNames) {\n        this.useFieldNames \u003d useFieldNames;\n    }",
+    "begin_line": 1636,
+    "end_line": 1638,
+    "comment": "/** \n * Sets whether to use the field names passed in.\n * @param useFieldNames  the new useFieldNames flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isDefaultFullDetail#1646",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isDefaultFullDetail()",
+    "snippet": "protected boolean isDefaultFullDetail() {\n        return defaultFullDetail;\n    }",
+    "begin_line": 1646,
+    "end_line": 1648,
+    "comment": "/** \n * Gets whether to use full detail when the caller doesn\u0027t specify.\n * @return the current defaultFullDetail flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setDefaultFullDetail#1656",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setDefaultFullDetail(boolean)",
+    "snippet": "protected void setDefaultFullDetail(final boolean defaultFullDetail) {\n        this.defaultFullDetail \u003d defaultFullDetail;\n    }",
+    "begin_line": 1656,
+    "end_line": 1658,
+    "comment": "/** \n * Sets whether to use full detail when the caller doesn\u0027t specify.\n * @param defaultFullDetail  the new defaultFullDetail flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isArrayContentDetail#1665",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isArrayContentDetail()",
+    "snippet": "protected boolean isArrayContentDetail() {\n        return arrayContentDetail;\n    }",
+    "begin_line": 1665,
+    "end_line": 1667,
+    "comment": "/** \n * Gets whether to output array content detail.\n * @return the current array content detail setting\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setArrayContentDetail#1674",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setArrayContentDetail(boolean)",
+    "snippet": "protected void setArrayContentDetail(final boolean arrayContentDetail) {\n        this.arrayContentDetail \u003d arrayContentDetail;\n    }",
+    "begin_line": 1674,
+    "end_line": 1676,
+    "comment": "/** \n * Sets whether to output array content detail.\n * @param arrayContentDetail  the new arrayContentDetail flag\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getArrayStart#1683",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getArrayStart()",
+    "snippet": "protected String getArrayStart() {\n        return arrayStart;\n    }",
+    "begin_line": 1683,
+    "end_line": 1685,
+    "comment": "/** \n * Gets the array start text.\n * @return the current array start text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setArrayStart#1695",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setArrayStart(java.lang.String)",
+    "snippet": "protected void setArrayStart(String arrayStart) {\n        if (arrayStart \u003d\u003d null) {\n            arrayStart \u003d StringUtils.EMPTY;\n        }\n        this.arrayStart \u003d arrayStart;\n    }",
+    "begin_line": 1695,
+    "end_line": 1700,
+    "comment": "/** \n * Sets the array start text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param arrayStart  the new array start text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getArrayEnd#1707",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getArrayEnd()",
+    "snippet": "protected String getArrayEnd() {\n        return arrayEnd;\n    }",
+    "begin_line": 1707,
+    "end_line": 1709,
+    "comment": "/** \n * Gets the array end text.\n * @return the current array end text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setArrayEnd#1719",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setArrayEnd(java.lang.String)",
+    "snippet": "protected void setArrayEnd(String arrayEnd) {\n        if (arrayEnd \u003d\u003d null) {\n            arrayEnd \u003d StringUtils.EMPTY;\n        }\n        this.arrayEnd \u003d arrayEnd;\n    }",
+    "begin_line": 1719,
+    "end_line": 1724,
+    "comment": "/** \n * Sets the array end text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param arrayEnd  the new array end text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getArraySeparator#1731",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getArraySeparator()",
+    "snippet": "protected String getArraySeparator() {\n        return arraySeparator;\n    }",
+    "begin_line": 1731,
+    "end_line": 1733,
+    "comment": "/** \n * Gets the array separator text.\n * @return the current array separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setArraySeparator#1743",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setArraySeparator(java.lang.String)",
+    "snippet": "protected void setArraySeparator(String arraySeparator) {\n        if (arraySeparator \u003d\u003d null) {\n            arraySeparator \u003d StringUtils.EMPTY;\n        }\n        this.arraySeparator \u003d arraySeparator;\n    }",
+    "begin_line": 1743,
+    "end_line": 1748,
+    "comment": "/** \n * Sets the array separator text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param arraySeparator  the new array separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getContentStart#1755",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getContentStart()",
+    "snippet": "protected String getContentStart() {\n        return contentStart;\n    }",
+    "begin_line": 1755,
+    "end_line": 1757,
+    "comment": "/** \n * Gets the content start text.\n * @return the current content start text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setContentStart#1767",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setContentStart(java.lang.String)",
+    "snippet": "protected void setContentStart(String contentStart) {\n        if (contentStart \u003d\u003d null) {\n            contentStart \u003d StringUtils.EMPTY;\n        }\n        this.contentStart \u003d contentStart;\n    }",
+    "begin_line": 1767,
+    "end_line": 1772,
+    "comment": "/** \n * Sets the content start text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param contentStart  the new content start text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getContentEnd#1779",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getContentEnd()",
+    "snippet": "protected String getContentEnd() {\n        return contentEnd;\n    }",
+    "begin_line": 1779,
+    "end_line": 1781,
+    "comment": "/** \n * Gets the content end text.\n * @return the current content end text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setContentEnd#1791",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setContentEnd(java.lang.String)",
+    "snippet": "protected void setContentEnd(String contentEnd) {\n        if (contentEnd \u003d\u003d null) {\n            contentEnd \u003d StringUtils.EMPTY;\n        }\n        this.contentEnd \u003d contentEnd;\n    }",
+    "begin_line": 1791,
+    "end_line": 1796,
+    "comment": "/** \n * Sets the content end text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param contentEnd  the new content end text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getFieldNameValueSeparator#1803",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getFieldNameValueSeparator()",
+    "snippet": "protected String getFieldNameValueSeparator() {\n        return fieldNameValueSeparator;\n    }",
+    "begin_line": 1803,
+    "end_line": 1805,
+    "comment": "/** \n * Gets the field name value separator text.\n * @return the current field name value separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setFieldNameValueSeparator#1815",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setFieldNameValueSeparator(java.lang.String)",
+    "snippet": "protected void setFieldNameValueSeparator(String fieldNameValueSeparator) {\n        if (fieldNameValueSeparator \u003d\u003d null) {\n            fieldNameValueSeparator \u003d StringUtils.EMPTY;\n        }\n        this.fieldNameValueSeparator \u003d fieldNameValueSeparator;\n    }",
+    "begin_line": 1815,
+    "end_line": 1820,
+    "comment": "/** \n * Sets the field name value separator text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param fieldNameValueSeparator  the new field name value separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getFieldSeparator#1827",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getFieldSeparator()",
+    "snippet": "protected String getFieldSeparator() {\n        return fieldSeparator;\n    }",
+    "begin_line": 1827,
+    "end_line": 1829,
+    "comment": "/** \n * Gets the field separator text.\n * @return the current field separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setFieldSeparator#1839",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setFieldSeparator(java.lang.String)",
+    "snippet": "protected void setFieldSeparator(String fieldSeparator) {\n        if (fieldSeparator \u003d\u003d null) {\n            fieldSeparator \u003d StringUtils.EMPTY;\n        }\n        this.fieldSeparator \u003d fieldSeparator;\n    }",
+    "begin_line": 1839,
+    "end_line": 1844,
+    "comment": "/** \n * Sets the field separator text. \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param fieldSeparator  the new field separator text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isFieldSeparatorAtStart#1853",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isFieldSeparatorAtStart()",
+    "snippet": "protected boolean isFieldSeparatorAtStart() {\n        return fieldSeparatorAtStart;\n    }",
+    "begin_line": 1853,
+    "end_line": 1855,
+    "comment": "/** \n * Gets whether the field separator should be added at the start of each buffer.\n * @return the fieldSeparatorAtStart flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setFieldSeparatorAtStart#1864",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setFieldSeparatorAtStart(boolean)",
+    "snippet": "protected void setFieldSeparatorAtStart(final boolean fieldSeparatorAtStart) {\n        this.fieldSeparatorAtStart \u003d fieldSeparatorAtStart;\n    }",
+    "begin_line": 1864,
+    "end_line": 1866,
+    "comment": "/** \n * Sets whether the field separator should be added at the start of each buffer.\n * @param fieldSeparatorAtStart  the fieldSeparatorAtStart flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.isFieldSeparatorAtEnd#1875",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isFieldSeparatorAtEnd()",
+    "snippet": "protected boolean isFieldSeparatorAtEnd() {\n        return fieldSeparatorAtEnd;\n    }",
+    "begin_line": 1875,
+    "end_line": 1877,
+    "comment": "/** \n * Gets whether the field separator should be added at the end of each buffer.\n * @return fieldSeparatorAtEnd flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setFieldSeparatorAtEnd#1886",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setFieldSeparatorAtEnd(boolean)",
+    "snippet": "protected void setFieldSeparatorAtEnd(final boolean fieldSeparatorAtEnd) {\n        this.fieldSeparatorAtEnd \u003d fieldSeparatorAtEnd;\n    }",
+    "begin_line": 1886,
+    "end_line": 1888,
+    "comment": "/** \n * Sets whether the field separator should be added at the end of each buffer.\n * @param fieldSeparatorAtEnd  the fieldSeparatorAtEnd flag\n * @since 2.0\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getNullText#1895",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getNullText()",
+    "snippet": "protected String getNullText() {\n        return nullText;\n    }",
+    "begin_line": 1895,
+    "end_line": 1897,
+    "comment": "/** \n * Gets the text to output when  {@code null} found.\n * @return the current text to output when null found\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setNullText#1907",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setNullText(java.lang.String)",
+    "snippet": "protected void setNullText(String nullText) {\n        if (nullText \u003d\u003d null) {\n            nullText \u003d StringUtils.EMPTY;\n        }\n        this.nullText \u003d nullText;\n    }",
+    "begin_line": 1907,
+    "end_line": 1912,
+    "comment": "/** \n * Sets the text to output when  {@code null} found.\u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param nullText  the new text to output when null found\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getSizeStartText#1922",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getSizeStartText()",
+    "snippet": "protected String getSizeStartText() {\n        return sizeStartText;\n    }",
+    "begin_line": 1922,
+    "end_line": 1924,
+    "comment": "/** \n * Gets the start text to output when a  {@link Collection}, {@link Map} or array size is output.\u003cp\u003eThis is output before the size value.\u003c/p\u003e\n * @return the current start of size text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setSizeStartText#1937",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setSizeStartText(java.lang.String)",
+    "snippet": "protected void setSizeStartText(String sizeStartText) {\n        if (sizeStartText \u003d\u003d null) {\n            sizeStartText \u003d StringUtils.EMPTY;\n        }\n        this.sizeStartText \u003d sizeStartText;\n    }",
+    "begin_line": 1937,
+    "end_line": 1942,
+    "comment": "/** \n * Sets the start text to output when a  {@link Collection}, {@link Map} or array size is output.\u003cp\u003eThis is output before the size value.\u003c/p\u003e \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param sizeStartText  the new start of size text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getSizeEndText#1952",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getSizeEndText()",
+    "snippet": "protected String getSizeEndText() {\n        return sizeEndText;\n    }",
+    "begin_line": 1952,
+    "end_line": 1954,
+    "comment": "/** \n * Gets the end text to output when a  {@link Collection}, {@link Map} or array size is output.\u003cp\u003eThis is output after the size value.\u003c/p\u003e\n * @return the current end of size text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setSizeEndText#1967",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setSizeEndText(java.lang.String)",
+    "snippet": "protected void setSizeEndText(String sizeEndText) {\n        if (sizeEndText \u003d\u003d null) {\n            sizeEndText \u003d StringUtils.EMPTY;\n        }\n        this.sizeEndText \u003d sizeEndText;\n    }",
+    "begin_line": 1967,
+    "end_line": 1972,
+    "comment": "/** \n * Sets the end text to output when a  {@link Collection}, {@link Map} or array size is output.\u003cp\u003eThis is output after the size value.\u003c/p\u003e \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param sizeEndText  the new end of size text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getSummaryObjectStartText#1982",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getSummaryObjectStartText()",
+    "snippet": "protected String getSummaryObjectStartText() {\n        return summaryObjectStartText;\n    }",
+    "begin_line": 1982,
+    "end_line": 1984,
+    "comment": "/** \n * Gets the start text to output when an  {@link Object} isoutput in summary mode. \u003cp\u003eThis is output before the size value.\u003c/p\u003e\n * @return the current start of summary text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setSummaryObjectStartText#1997",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setSummaryObjectStartText(java.lang.String)",
+    "snippet": "protected void setSummaryObjectStartText(String summaryObjectStartText) {\n        if (summaryObjectStartText \u003d\u003d null) {\n            summaryObjectStartText \u003d StringUtils.EMPTY;\n        }\n        this.summaryObjectStartText \u003d summaryObjectStartText;\n    }",
+    "begin_line": 1997,
+    "end_line": 2002,
+    "comment": "/** \n * Sets the start text to output when an  {@link Object} isoutput in summary mode. \u003cp\u003eThis is output before the size value.\u003c/p\u003e \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param summaryObjectStartText  the new start of summary text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.getSummaryObjectEndText#2012",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.getSummaryObjectEndText()",
+    "snippet": "protected String getSummaryObjectEndText() {\n        return summaryObjectEndText;\n    }",
+    "begin_line": 2012,
+    "end_line": 2014,
+    "comment": "/** \n * Gets the end text to output when an  {@link Object} isoutput in summary mode. \u003cp\u003eThis is output after the size value.\u003c/p\u003e\n * @return the current end of summary text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ToStringStyle.setSummaryObjectEndText#2027",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.setSummaryObjectEndText(java.lang.String)",
+    "snippet": "protected void setSummaryObjectEndText(String summaryObjectEndText) {\n        if (summaryObjectEndText \u003d\u003d null) {\n            summaryObjectEndText \u003d StringUtils.EMPTY;\n        }\n        this.summaryObjectEndText \u003d summaryObjectEndText;\n    }",
+    "begin_line": 2027,
+    "end_line": 2032,
+    "comment": "/** \n * Sets the end text to output when an  {@link Object} isoutput in summary mode. \u003cp\u003eThis is output after the size value.\u003c/p\u003e \u003cp\u003e {@code null} is accepted, but will be converted toan empty String.\u003c/p\u003e\n * @param summaryObjectEndText  the new end of summary text\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultToStringStyle.DefaultToStringStyle#2054",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.DefaultToStringStyle()",
+    "snippet": " DefaultToStringStyle() {\n        }",
+    "begin_line": 2054,
+    "end_line": 2055,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DefaultToStringStyle.readResolve#2062",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return DEFAULT_STYLE;\n        }",
+    "begin_line": 2062,
+    "end_line": 2064,
+    "comment": "/** \n * Ensure Singleton after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NoFieldNameToStringStyle.NoFieldNameToStringStyle#2084",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.NoFieldNameToStringStyle()",
+    "snippet": " NoFieldNameToStringStyle() {\n            this.setUseFieldNames(false);\n        }",
+    "begin_line": 2084,
+    "end_line": 2086,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NoFieldNameToStringStyle.readResolve#2093",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return NO_FIELD_NAMES_STYLE;\n        }",
+    "begin_line": 2093,
+    "end_line": 2095,
+    "comment": "/** \n * Ensure Singleton after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ShortPrefixToStringStyle.ShortPrefixToStringStyle#2115",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.ShortPrefixToStringStyle()",
+    "snippet": " ShortPrefixToStringStyle() {\n            this.setUseShortClassName(true);\n            this.setUseIdentityHashCode(false);\n        }",
+    "begin_line": 2115,
+    "end_line": 2118,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ShortPrefixToStringStyle.readResolve#2124",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return SHORT_PREFIX_STYLE;\n        }",
+    "begin_line": 2124,
+    "end_line": 2126,
+    "comment": "/** \n * Ensure \u003ccode\u003eSingleton\u003c/ode\u003e after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "SimpleToStringStyle.SimpleToStringStyle#2146",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.SimpleToStringStyle()",
+    "snippet": " SimpleToStringStyle() {\n            this.setUseClassName(false);\n            this.setUseIdentityHashCode(false);\n            this.setUseFieldNames(false);\n            this.setContentStart(StringUtils.EMPTY);\n            this.setContentEnd(StringUtils.EMPTY);\n        }",
+    "begin_line": 2146,
+    "end_line": 2152,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "SimpleToStringStyle.readResolve#2158",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return SIMPLE_STYLE;\n        }",
+    "begin_line": 2158,
+    "end_line": 2160,
+    "comment": "/** \n * Ensure \u003ccode\u003eSingleton\u003c/ode\u003e after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MultiLineToStringStyle.MultiLineToStringStyle#2179",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.MultiLineToStringStyle()",
+    "snippet": " MultiLineToStringStyle() {\n            this.setContentStart(\"[\");\n            this.setFieldSeparator(System.lineSeparator() + \"  \");\n            this.setFieldSeparatorAtStart(true);\n            this.setContentEnd(System.lineSeparator() + \"]\");\n        }",
+    "begin_line": 2179,
+    "end_line": 2184,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "MultiLineToStringStyle.readResolve#2191",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return MULTI_LINE_STYLE;\n        }",
+    "begin_line": 2191,
+    "end_line": 2193,
+    "comment": "/** \n * Ensure Singleton after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NoClassNameToStringStyle.NoClassNameToStringStyle#2213",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.NoClassNameToStringStyle()",
+    "snippet": " NoClassNameToStringStyle() {\n            this.setUseClassName(false);\n            this.setUseIdentityHashCode(false);\n        }",
+    "begin_line": 2213,
+    "end_line": 2216,
+    "comment": "/** \n * Constructor. \u003cp\u003eUse the static constant rather than instantiating.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NoClassNameToStringStyle.readResolve#2223",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return NO_CLASS_NAME_STYLE;\n        }",
+    "begin_line": 2223,
+    "end_line": 2225,
+    "comment": "/** \n * Ensure Singleton after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.JsonToStringStyle#2253",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.JsonToStringStyle()",
+    "snippet": " JsonToStringStyle() {\n            this.setUseClassName(false);\n            this.setUseIdentityHashCode(false);\n\n            this.setContentStart(\"{\");\n            this.setContentEnd(\"}\");\n\n            this.setArrayStart(\"[\");\n            this.setArrayEnd(\"]\");\n\n            this.setFieldSeparator(\",\");\n            this.setFieldNameValueSeparator(\":\");\n\n            this.setNullText(\"null\");\n\n            this.setSummaryObjectStartText(\"\\\"\u003c\");\n            this.setSummaryObjectEndText(\"\u003e\\\"\");\n\n            this.setSizeStartText(\"\\\"\u003csize\u003d\");\n            this.setSizeEndText(\"\u003e\\\"\");\n        }",
+    "begin_line": 2253,
+    "end_line": 2273,
+    "comment": "/** \n * Constructor. \u003cp\u003e Use the static constant rather than instantiating. \u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2276",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, java.lang.Object[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName,\n                           final Object[] array, final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2276,
+    "end_line": 2289,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2292",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, long[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName, final long[] array,\n                           final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2292,
+    "end_line": 2305,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2308",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, int[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName, final int[] array,\n                           final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2308,
+    "end_line": 2321,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2324",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, short[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName,\n                           final short[] array, final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2324,
+    "end_line": 2337,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2340",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, byte[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName, final byte[] array,\n                           final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2340,
+    "end_line": 2353,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2356",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, char[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName, final char[] array,\n                           final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2356,
+    "end_line": 2369,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2372",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, double[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName,\n                           final double[] array, final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2372,
+    "end_line": 2385,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2388",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, float[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName,\n                           final float[] array, final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2388,
+    "end_line": 2401,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2404",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, boolean[], java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName,\n                           final boolean[] array, final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, array, fullDetail);\n        }",
+    "begin_line": 2404,
+    "end_line": 2417,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.append#2420",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.append(java.lang.StringBuffer, java.lang.String, java.lang.Object, java.lang.Boolean)",
+    "snippet": "@Override\n        public void append(final StringBuffer buffer, final String fieldName, final Object value,\n                           final Boolean fullDetail) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n            if (!isFullDetail(fullDetail)) {\n                throw new UnsupportedOperationException(\n                        \"FullDetail must be true when using JsonToStringStyle\");\n            }\n\n            super.append(buffer, fieldName, value, fullDetail);\n        }",
+    "begin_line": 2420,
+    "end_line": 2433,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendDetail#2436",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, char)",
+    "snippet": "@Override\n        protected void appendDetail(final StringBuffer buffer, final String fieldName, final char value) {\n            appendValueAsString(buffer, String.valueOf(value));\n        }",
+    "begin_line": 2436,
+    "end_line": 2438,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendDetail#2441",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.lang.Object)",
+    "snippet": "@Override\n        protected void appendDetail(final StringBuffer buffer, final String fieldName, final Object value) {\n\n            if (value \u003d\u003d null) {\n                appendNullText(buffer, fieldName);\n                return;\n            }\n\n            if (value instanceof String || value instanceof Character) {\n                appendValueAsString(buffer, value.toString());\n                return;\n            }\n\n            if (value instanceof Number || value instanceof Boolean) {\n                buffer.append(value);\n                return;\n            }\n\n            final String valueAsString \u003d value.toString();\n            if (isJsonObject(valueAsString) || isJsonArray(valueAsString)) {\n                buffer.append(value);\n                return;\n            }\n\n            appendDetail(buffer, fieldName, valueAsString);\n        }",
+    "begin_line": 2441,
+    "end_line": 2465,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendDetail#2468",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.util.Collection\u003c?\u003e)",
+    "snippet": "@Override\n        protected void appendDetail(final StringBuffer buffer, final String fieldName, final Collection\u003c?\u003e coll) {\n            if (coll !\u003d null \u0026\u0026 !coll.isEmpty()) {\n                buffer.append(getArrayStart());\n                int i \u003d 0;\n                for (final Object item : coll) {\n                    appendDetail(buffer, fieldName, i++, item);\n                }\n                buffer.append(getArrayEnd());\n                return;\n            }\n\n            buffer.append(coll);\n        }",
+    "begin_line": 2468,
+    "end_line": 2480,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendDetail#2483",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendDetail(java.lang.StringBuffer, java.lang.String, java.util.Map\u003c?,?\u003e)",
+    "snippet": "@Override\n        protected void appendDetail(final StringBuffer buffer, final String fieldName, final Map\u003c?, ?\u003e map) {\n            if (map !\u003d null \u0026\u0026 !map.isEmpty()) {\n                buffer.append(getContentStart());\n\n                boolean firstItem \u003d true;\n                for (final Entry\u003c?, ?\u003e entry : map.entrySet()) {\n                    final String keyStr \u003d Objects.toString(entry.getKey(), null);\n                    if (keyStr !\u003d null) {\n                        if (firstItem) {\n                            firstItem \u003d false;\n                        } else {\n                            appendFieldEnd(buffer, keyStr);\n                        }\n                        appendFieldStart(buffer, keyStr);\n                        final Object value \u003d entry.getValue();\n                        if (value \u003d\u003d null) {\n                            appendNullText(buffer, keyStr);\n                        } else {\n                            appendInternal(buffer, keyStr, value, true);\n                        }\n                    }\n                }\n\n                buffer.append(getContentEnd());\n                return;\n            }\n\n            buffer.append(map);\n        }",
+    "begin_line": 2483,
+    "end_line": 2511,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.isJsonArray#2513",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isJsonArray(java.lang.String)",
+    "snippet": "private boolean isJsonArray(final String valueAsString) {\n            return valueAsString.startsWith(getArrayStart())\n                    \u0026\u0026 valueAsString.endsWith(getArrayEnd());\n        }",
+    "begin_line": 2513,
+    "end_line": 2516,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.isJsonObject#2518",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.isJsonObject(java.lang.String)",
+    "snippet": "private boolean isJsonObject(final String valueAsString) {\n            return valueAsString.startsWith(getContentStart())\n                    \u0026\u0026 valueAsString.endsWith(getContentEnd());\n        }",
+    "begin_line": 2518,
+    "end_line": 2521,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendValueAsString#2529",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendValueAsString(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "private void appendValueAsString(final StringBuffer buffer, final String value) {\n            buffer.append(\u0027\"\u0027).append(StringEscapeUtils.escapeJson(value)).append(\u0027\"\u0027);\n        }",
+    "begin_line": 2529,
+    "end_line": 2531,
+    "comment": "/** \n * Appends the given String enclosed in double-quotes to the given StringBuffer.\n * @param buffer the StringBuffer to append the value to.\n * @param value the value to append.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.appendFieldStart#2534",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.appendFieldStart(java.lang.StringBuffer, java.lang.String)",
+    "snippet": "@Override\n        protected void appendFieldStart(final StringBuffer buffer, final String fieldName) {\n\n            if (fieldName \u003d\u003d null) {\n                throw new UnsupportedOperationException(\n                        \"Field names are mandatory when using JsonToStringStyle\");\n            }\n\n            super.appendFieldStart(buffer, FIELD_NAME_QUOTE + StringEscapeUtils.escapeJson(fieldName)\n                    + FIELD_NAME_QUOTE);\n        }",
+    "begin_line": 2534,
+    "end_line": 2543,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "JsonToStringStyle.readResolve#2550",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/builder/ToStringStyle.java",
+    "class_name": "org.apache.commons.lang3.builder.ToStringStyle",
+    "signature": "org.apache.commons.lang3.builder.ToStringStyle.readResolve()",
+    "snippet": "private Object readResolve() {\n            return JSON_STYLE;\n        }",
+    "begin_line": 2550,
+    "end_line": 2552,
+    "comment": "/** \n * Ensure Singleton after serialization.\n * @return the singleton\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

@@ -1,0 +1,84 @@
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testRetainAll
+java.lang.NullPointerException
+       java.base/java.util.Objects.requireNonNull(Objects.java:209)
+       java.base/java.util.AbstractCollection.retainAll(AbstractCollection.java:399)
+       org.apache.commons.collections4.collection.CompositeCollection.retainAll(CompositeCollection.java:327)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testRetainAll(CompositeCollectionTest.java:372)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testAddNullLists2Args
+java.lang.NullPointerException
+       org.apache.commons.collections4.collection.CompositeCollection.size(CompositeCollection.java:103)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullLists2Args(CompositeCollectionTest.java:265)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testContainsAll
+java.lang.NullPointerException
+       org.apache.commons.collections4.collection.CompositeCollection.containsAll(CompositeCollection.java:263)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testContainsAll(CompositeCollectionTest.java:251)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testAddNullListsVarArgs
+java.lang.NullPointerException
+       org.apache.commons.collections4.collection.CompositeCollection.size(CompositeCollection.java:103)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullListsVarArgs(CompositeCollectionTest.java:272)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testAddNullList
+java.lang.NullPointerException
+       org.apache.commons.collections4.collection.CompositeCollection.size(CompositeCollection.java:103)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testAddNullList(CompositeCollectionTest.java:258)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.collection.CompositeCollectionTest::testRemoveAll
+java.lang.NullPointerException
+       org.apache.commons.collections4.collection.CompositeCollection.removeAll(CompositeCollection.java:303)
+       org.apache.commons.collections4.collection.CompositeCollectionTest.testRemoveAll(CompositeCollectionTest.java:342)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+

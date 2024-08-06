@@ -1,0 +1,1602 @@
+[
+  {
+    "name": "Range.compare#47",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.compare(java.lang.Object, java.lang.Object)",
+    "snippet": "@Override\n        public int compare(final Object obj1, final Object obj2) {\n            return ((Comparable) obj1).compareTo(obj2);\n        }",
+    "begin_line": 47,
+    "end_line": 49,
+    "comment": "/** \n * Comparable based compare implementation.\n * @param obj1 left hand side of comparison\n * @param obj2 right hand side of comparison\n * @return negative, 0, positive comparison value\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.between#75",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.between(T, T)",
+    "snippet": "public static \u003cT extends Comparable\u003c? super T\u003e\u003e Range\u003cT\u003e between(final T fromInclusive, final T toInclusive) {\n        return between(fromInclusive, toInclusive, null);\n    }",
+    "begin_line": 75,
+    "end_line": 77,
+    "comment": "/** \n * \u003cp\u003eObtains a range with the specified minimum and maximum values (both inclusive).\u003c/p\u003e \u003cp\u003eThe range uses the natural ordering of the elements to determine where values lie in the range.\u003c/p\u003e \u003cp\u003eThe arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.\u003c/p\u003e\n * @param \u003c T \u003e the type of the elements in this range\n * @param fromInclusive  the first value that defines the edge of the range, inclusive\n * @param toInclusive  the second value that defines the edge of the range, inclusive\n * @return the range object, not null\n * @throws IllegalArgumentException if either element is null\n * @throws ClassCastException if the elements are not {@code Comparable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.between#96",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.between(T, T, java.util.Comparator\u003cT\u003e)",
+    "snippet": "public static \u003cT\u003e Range\u003cT\u003e between(final T fromInclusive, final T toInclusive, final Comparator\u003cT\u003e comparator) {\n        return new Range\u003c\u003e(fromInclusive, toInclusive, comparator);\n    }",
+    "begin_line": 96,
+    "end_line": 98,
+    "comment": "/** \n * \u003cp\u003eObtains a range with the specified minimum and maximum values (both inclusive).\u003c/p\u003e \u003cp\u003eThe range uses the specified  {@code Comparator} to determine wherevalues lie in the range.\u003c/p\u003e \u003cp\u003eThe arguments may be passed in the order (min,max) or (max,min). The getMinimum and getMaximum methods will return the correct values.\u003c/p\u003e\n * @param \u003c T \u003e the type of the elements in this range\n * @param fromInclusive  the first value that defines the edge of the range, inclusive\n * @param toInclusive  the second value that defines the edge of the range, inclusive\n * @param comparator  the comparator to be used, null for natural ordering\n * @return the range object, not null\n * @throws IllegalArgumentException if either element is null\n * @throws ClassCastException if using natural ordering and the elements are not {@code Comparable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.is#113",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.is(T)",
+    "snippet": "public static \u003cT extends Comparable\u003c? super T\u003e\u003e Range\u003cT\u003e is(final T element) {\n        return between(element, element, null);\n    }",
+    "begin_line": 113,
+    "end_line": 115,
+    "comment": "/** \n * \u003cp\u003eObtains a range using the specified element as both the minimum and maximum in this range.\u003c/p\u003e \u003cp\u003eThe range uses the natural ordering of the elements to determine where values lie in the range.\u003c/p\u003e\n * @param \u003c T \u003e the type of the elements in this range\n * @param element  the value to use for this range, not null\n * @return the range object, not null\n * @throws IllegalArgumentException if the element is null\n * @throws ClassCastException if the element is not {@code Comparable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.is#131",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.is(T, java.util.Comparator\u003cT\u003e)",
+    "snippet": "public static \u003cT\u003e Range\u003cT\u003e is(final T element, final Comparator\u003cT\u003e comparator) {\n        return between(element, element, comparator);\n    }",
+    "begin_line": 131,
+    "end_line": 133,
+    "comment": "/** \n * \u003cp\u003eObtains a range using the specified element as both the minimum and maximum in this range.\u003c/p\u003e \u003cp\u003eThe range uses the specified  {@code Comparator} to determine wherevalues lie in the range.\u003c/p\u003e\n * @param \u003c T \u003e the type of the elements in this range\n * @param element  the value to use for this range, must not be {@code null}\n * @param comparator  the comparator to be used, null for natural ordering\n * @return the range object, not null\n * @throws IllegalArgumentException if the element is null\n * @throws ClassCastException if using natural ordering and the elements are not {@code Comparable}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.Range#168",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.Range(T, T, java.util.Comparator\u003cT\u003e)",
+    "snippet": "@SuppressWarnings(\"unchecked\")\n    private Range(final T element1, final T element2, final Comparator\u003cT\u003e comp) {\n        if (element1 \u003d\u003d null || element2 \u003d\u003d null) {\n            throw new IllegalArgumentException(\"Elements in a range must not be null: element1\u003d\" +\n                                               element1 + \", element2\u003d\" + element2);\n        }\n        if (comp \u003d\u003d null) {\n            this.comparator \u003d ComparableComparator.INSTANCE;\n        } else {\n            this.comparator \u003d comp;\n        }\n        if (this.comparator.compare(element1, element2) \u003c 1) {\n            this.minimum \u003d element1;\n            this.maximum \u003d element2;\n        } else {\n            this.minimum \u003d element2;\n            this.maximum \u003d element1;\n        }\n    }",
+    "begin_line": 168,
+    "end_line": 185,
+    "comment": "/** \n * Creates an instance.\n * @param element1  the first element, not null\n * @param element2  the second element, not null\n * @param comp  the comparator to be used, null for natural ordering\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.contains#193",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.contains(T)",
+    "snippet": "public boolean contains(final T element) {\n        if (element \u003d\u003d null) {\n            return false;\n        }\n        return comparator.compare(element, minimum) \u003e -1 \u0026\u0026 comparator.compare(element, maximum) \u003c 1;\n    }",
+    "begin_line": 193,
+    "end_line": 198,
+    "comment": "/** \n * \u003cp\u003eChecks whether the specified element occurs within this range.\u003c/p\u003e\n * @param element  the element to check for, null returns false\n * @return true if the specified element occurs within this range\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.containsRange#209",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.containsRange(org.apache.commons.lang3.Range\u003cT\u003e)",
+    "snippet": "public boolean containsRange(final Range\u003cT\u003e otherRange) {\n        if (otherRange \u003d\u003d null) {\n            return false;\n        }\n        return contains(otherRange.minimum)\n            \u0026\u0026 contains(otherRange.maximum);\n    }",
+    "begin_line": 209,
+    "end_line": 215,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range contains all the elements of the specified range.\u003c/p\u003e \u003cp\u003eThis method may fail if the ranges have two different comparators or element types.\u003c/p\u003e\n * @param otherRange  the range to check, null returns false\n * @return true if this range contains the specified range\n * @throws RuntimeException if ranges cannot be compared\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.elementCompareTo#227",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.elementCompareTo(T)",
+    "snippet": "public int elementCompareTo(final T element) {\n        // Comparable API says throw NPE on null\n        Validate.notNull(element, \"element\");\n        if (isAfter(element)) {\n            return -1;\n        }\n        if (isBefore(element)) {\n            return 1;\n        }\n        return 0;\n    }",
+    "begin_line": 227,
+    "end_line": 237,
+    "comment": "/** \n * \u003cp\u003eChecks where the specified element occurs relative to this range.\u003c/p\u003e \u003cp\u003eThe API is reminiscent of the Comparable interface returning  {@code -1} ifthe element is before the range,  {@code 0} if contained within the range and{@code 1} if the element is after the range. \u003c/p\u003e\n * @param element  the element to check for, not null\n * @return -1, 0 or +1 depending on the element\u0027s location relative to the range\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.equals#249",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.equals(java.lang.Object)",
+    "snippet": "@Override\n    public boolean equals(final Object obj) {\n        if (obj \u003d\u003d this) {\n            return true;\n        }\n        if (obj \u003d\u003d null || obj.getClass() !\u003d getClass()) {\n            return false;\n        }\n        @SuppressWarnings(\"unchecked\") // OK because we checked the class above\n        final\n        Range\u003cT\u003e range \u003d (Range\u003cT\u003e) obj;\n        return minimum.equals(range.minimum) \u0026\u0026\n               maximum.equals(range.maximum);\n    }",
+    "begin_line": 249,
+    "end_line": 261,
+    "comment": "/** \n * \u003cp\u003eCompares this range to another object to test if they are equal.\u003c/p\u003e. \u003cp\u003eTo be equal, the minimum and maximum values must be equal, which ignores any differences in the comparator.\u003c/p\u003e\n * @param obj the reference object with which to compare\n * @return true if this object is equal\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.fit#284",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.fit(T)",
+    "snippet": "public T fit(final T element) {\n        // Comparable API says throw NPE on null\n        Validate.notNull(element, \"element\");\n        if (isAfter(element)) {\n            return minimum;\n        }\n        if (isBefore(element)) {\n            return maximum;\n        }\n        return element;\n    }",
+    "begin_line": 284,
+    "end_line": 294,
+    "comment": "/** \n * \u003cp\u003e Fits the given element into this range by returning the given element or, if out of bounds, the range minimum if below, or the range maximum if above. \u003c/p\u003e \u003cpre\u003e Range\u0026lt;Integer\u0026gt; range \u003d Range.between(16, 64); range.fit(-9) --\u0026gt;  16 range.fit(0)  --\u0026gt;  16 range.fit(15) --\u0026gt;  16 range.fit(16) --\u0026gt;  16 range.fit(17) --\u0026gt;  17 ... range.fit(63) --\u0026gt;  63 range.fit(64) --\u0026gt;  64 range.fit(99) --\u0026gt;  64 \u003c/pre\u003e\n * @param element the element to check for, not null\n * @return the minimum, the element, or the maximum depending on the element\u0027s location relative to the range\n * @since 3.10\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.getComparator#304",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.getComparator()",
+    "snippet": "public Comparator\u003cT\u003e getComparator() {\n        return comparator;\n    }",
+    "begin_line": 304,
+    "end_line": 306,
+    "comment": "/** \n * \u003cp\u003eGets the comparator being used to determine if objects are within the range.\u003c/p\u003e \u003cp\u003eNatural ordering uses an internal comparator implementation, thus this method never returns null. See  {@link #isNaturalOrdering()}.\u003c/p\u003e\n * @return the comparator being used, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.getMaximum#313",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.getMaximum()",
+    "snippet": "public T getMaximum() {\n        return maximum;\n    }",
+    "begin_line": 313,
+    "end_line": 315,
+    "comment": "/** \n * \u003cp\u003eGets the maximum value in this range.\u003c/p\u003e\n * @return the maximum value in this range, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.getMinimum#322",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.getMinimum()",
+    "snippet": "public T getMinimum() {\n        return minimum;\n    }",
+    "begin_line": 322,
+    "end_line": 324,
+    "comment": "/** \n * \u003cp\u003eGets the minimum value in this range.\u003c/p\u003e\n * @return the minimum value in this range, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.hashCode#332",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.hashCode()",
+    "snippet": "@Override\n    public int hashCode() {\n        int result \u003d hashCode;\n        if (hashCode \u003d\u003d 0) {\n            result \u003d 17;\n            result \u003d 37 * result + getClass().hashCode();\n            result \u003d 37 * result + minimum.hashCode();\n            result \u003d 37 * result + maximum.hashCode();\n            hashCode \u003d result;\n        }\n        return result;\n    }",
+    "begin_line": 332,
+    "end_line": 342,
+    "comment": "/** \n * \u003cp\u003eGets a suitable hash code for the range.\u003c/p\u003e\n * @return a hash code value for this object\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.intersectionWith#351",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.intersectionWith(org.apache.commons.lang3.Range\u003cT\u003e)",
+    "snippet": "public Range\u003cT\u003e intersectionWith(final Range\u003cT\u003e other) {\n        if (!this.isOverlappedBy(other)) {\n            throw new IllegalArgumentException(String.format(\n                \"Cannot calculate intersection with non-overlapping range %s\", other));\n        }\n        if (this.equals(other)) {\n            return this;\n        }\n        final T min \u003d getComparator().compare(minimum, other.minimum) \u003c 0 ? other.minimum : minimum;\n        final T max \u003d getComparator().compare(maximum, other.maximum) \u003c 0 ? maximum : other.maximum;\n        return between(min, max, getComparator());\n    }",
+    "begin_line": 351,
+    "end_line": 362,
+    "comment": "/** \n * Calculate the intersection of  {@code this} and an overlapping Range.\n * @param other overlapping Range\n * @return range representing the intersection of {@code this} and {@code other} ({@code this} if equal)\n * @throws IllegalArgumentException if {@code other} does not overlap {@code this}\n * @since 3.0.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isAfter#370",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isAfter(T)",
+    "snippet": "public boolean isAfter(final T element) {\n        if (element \u003d\u003d null) {\n            return false;\n        }\n        return comparator.compare(element, minimum) \u003c 0;\n    }",
+    "begin_line": 370,
+    "end_line": 375,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range is after the specified element.\u003c/p\u003e\n * @param element  the element to check for, null returns false\n * @return true if this range is entirely after the specified element\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isAfterRange#386",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isAfterRange(org.apache.commons.lang3.Range\u003cT\u003e)",
+    "snippet": "public boolean isAfterRange(final Range\u003cT\u003e otherRange) {\n        if (otherRange \u003d\u003d null) {\n            return false;\n        }\n        return isAfter(otherRange.maximum);\n    }",
+    "begin_line": 386,
+    "end_line": 391,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range is completely after the specified range.\u003c/p\u003e \u003cp\u003eThis method may fail if the ranges have two different comparators or element types.\u003c/p\u003e\n * @param otherRange  the range to check, null returns false\n * @return true if this range is completely after the specified range\n * @throws RuntimeException if ranges cannot be compared\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isBefore#399",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isBefore(T)",
+    "snippet": "public boolean isBefore(final T element) {\n        if (element \u003d\u003d null) {\n            return false;\n        }\n        return comparator.compare(element, maximum) \u003e 0;\n    }",
+    "begin_line": 399,
+    "end_line": 404,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range is before the specified element.\u003c/p\u003e\n * @param element  the element to check for, null returns false\n * @return true if this range is entirely before the specified element\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isBeforeRange#415",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isBeforeRange(org.apache.commons.lang3.Range\u003cT\u003e)",
+    "snippet": "public boolean isBeforeRange(final Range\u003cT\u003e otherRange) {\n        if (otherRange \u003d\u003d null) {\n            return false;\n        }\n        return isBefore(otherRange.minimum);\n    }",
+    "begin_line": 415,
+    "end_line": 420,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range is completely before the specified range.\u003c/p\u003e \u003cp\u003eThis method may fail if the ranges have two different comparators or element types.\u003c/p\u003e\n * @param otherRange  the range to check, null returns false\n * @return true if this range is completely before the specified range\n * @throws RuntimeException if ranges cannot be compared\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isEndedBy#428",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isEndedBy(T)",
+    "snippet": "public boolean isEndedBy(final T element) {\n        if (element \u003d\u003d null) {\n            return false;\n        }\n        return comparator.compare(element, maximum) \u003d\u003d 0;\n    }",
+    "begin_line": 428,
+    "end_line": 433,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range ends with the specified element.\u003c/p\u003e\n * @param element  the element to check for, null returns false\n * @return true if the specified element occurs within this range\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isNaturalOrdering#443",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isNaturalOrdering()",
+    "snippet": "public boolean isNaturalOrdering() {\n        return comparator \u003d\u003d ComparableComparator.INSTANCE;\n    }",
+    "begin_line": 443,
+    "end_line": 445,
+    "comment": "/** \n * \u003cp\u003eWhether or not the Range is using the natural ordering of the elements.\u003c/p\u003e \u003cp\u003eNatural ordering uses an internal comparator implementation, thus this method is the only way to check if a null comparator was specified.\u003c/p\u003e\n * @return true if using natural ordering\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isOverlappedBy#459",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isOverlappedBy(org.apache.commons.lang3.Range\u003cT\u003e)",
+    "snippet": "public boolean isOverlappedBy(final Range\u003cT\u003e otherRange) {\n        if (otherRange \u003d\u003d null) {\n            return false;\n        }\n        return otherRange.contains(minimum)\n            || otherRange.contains(maximum)\n            || contains(otherRange.minimum);\n    }",
+    "begin_line": 459,
+    "end_line": 466,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range is overlapped by the specified range.\u003c/p\u003e \u003cp\u003eTwo ranges overlap if there is at least one element in common.\u003c/p\u003e \u003cp\u003eThis method may fail if the ranges have two different comparators or element types.\u003c/p\u003e\n * @param otherRange  the range to test, null returns false\n * @return true if the specified range overlaps with thisrange; otherwise,  {@code false}\n * @throws RuntimeException if ranges cannot be compared\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.isStartedBy#474",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.isStartedBy(T)",
+    "snippet": "public boolean isStartedBy(final T element) {\n        if (element \u003d\u003d null) {\n            return false;\n        }\n        return comparator.compare(element, minimum) \u003d\u003d 0;\n    }",
+    "begin_line": 474,
+    "end_line": 479,
+    "comment": "/** \n * \u003cp\u003eChecks whether this range starts with the specified element.\u003c/p\u003e\n * @param element  the element to check for, null returns false\n * @return true if the specified element occurs within this range\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.toString#489",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.toString()",
+    "snippet": "@Override\n    public String toString() {\n        if (toString \u003d\u003d null) {\n            toString \u003d \"[\" + minimum + \"..\" + maximum + \"]\";\n        }\n        return toString;\n    }",
+    "begin_line": 489,
+    "end_line": 494,
+    "comment": "/** \n * \u003cp\u003eGets the range as a  {@code String}.\u003c/p\u003e \u003cp\u003eThe format of the String is \u0027[\u003ci\u003emin\u003c/i\u003e..\u003ci\u003emax\u003c/i\u003e]\u0027.\u003c/p\u003e\n * @return the {@code String} representation of this range\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "Range.toString#508",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/Range.java",
+    "class_name": "org.apache.commons.lang3.Range",
+    "signature": "org.apache.commons.lang3.Range.toString(java.lang.String)",
+    "snippet": "public String toString(final String format) {\n        return String.format(format, minimum, maximum, comparator);\n    }",
+    "begin_line": 508,
+    "end_line": 510,
+    "comment": "/** \n * \u003cp\u003eFormats the receiver using the given format.\u003c/p\u003e \u003cp\u003eThis uses  {@link java.util.Formattable} to perform the formatting. Three variables maybe used to embed the minimum, maximum and comparator. Use  {@code %1$s} for the minimum element, {@code %2$s} for the maximum elementand  {@code %3$s} for the comparator.The default format used by  {@code toString()} is {@code [%1$s..%2$s]}.\u003c/p\u003e\n * @param format  the format string, optionally containing {@code %1$s},  {@code %2$s} and  {@code %3$s}, not null\n * @return the formatted string, not null\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.NumberUtils#95",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.NumberUtils()",
+    "snippet": "public NumberUtils() {\n    }",
+    "begin_line": 95,
+    "end_line": 96,
+    "comment": "/** \n * \u003cp\u003e {@code NumberUtils} instances should NOT be constructed in standard programming.Instead, the class should be used as  {@code NumberUtils.toInt(\"6\");}.\u003c/p\u003e \u003cp\u003eThis constructor is public to permit tools that require a JavaBean instance to operate.\u003c/p\u003e\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toInt#115",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toInt(java.lang.String)",
+    "snippet": "public static int toInt(final String str) {\n        return toInt(str, 0);\n    }",
+    "begin_line": 115,
+    "end_line": 117,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to an {@code int}, returning {@code zero} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string is  {@code null},  {@code zero} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toInt(null) \u003d 0 NumberUtils.toInt(\"\")   \u003d 0 NumberUtils.toInt(\"1\")  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @return the int represented by the string, or {@code zero} ifconversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toInt#136",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toInt(java.lang.String, int)",
+    "snippet": "public static int toInt(final String str, final int defaultValue) {\n        if (str \u003d\u003d null) {\n            return defaultValue;\n        }\n        try {\n            return Integer.parseInt(str);\n        } catch (final NumberFormatException nfe) {\n            return defaultValue;\n        }\n    }",
+    "begin_line": 136,
+    "end_line": 145,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to an {@code int}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string is  {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toInt(null, 1) \u003d 1 NumberUtils.toInt(\"\", 1)   \u003d 1 NumberUtils.toInt(\"1\", 0)  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @param defaultValue  the default value\n * @return the int represented by the string, or the default if conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toLong#164",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toLong(java.lang.String)",
+    "snippet": "public static long toLong(final String str) {\n        return toLong(str, 0L);\n    }",
+    "begin_line": 164,
+    "end_line": 166,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code long}, returning {@code zero} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string is  {@code null},  {@code zero} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toLong(null) \u003d 0L NumberUtils.toLong(\"\")   \u003d 0L NumberUtils.toLong(\"1\")  \u003d 1L \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @return the long represented by the string, or {@code 0} ifconversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toLong#185",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toLong(java.lang.String, long)",
+    "snippet": "public static long toLong(final String str, final long defaultValue) {\n        if (str \u003d\u003d null) {\n            return defaultValue;\n        }\n        try {\n            return Long.parseLong(str);\n        } catch (final NumberFormatException nfe) {\n            return defaultValue;\n        }\n    }",
+    "begin_line": 185,
+    "end_line": 194,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code long}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string is  {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toLong(null, 1L) \u003d 1L NumberUtils.toLong(\"\", 1L)   \u003d 1L NumberUtils.toLong(\"1\", 0L)  \u003d 1L \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @param defaultValue  the default value\n * @return the long represented by the string, or the default if conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toFloat#214",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toFloat(java.lang.String)",
+    "snippet": "public static float toFloat(final String str) {\n        return toFloat(str, 0.0f);\n    }",
+    "begin_line": 214,
+    "end_line": 216,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code float}, returning {@code 0.0f} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string  {@code str} is {@code null}, {@code 0.0f} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toFloat(null)   \u003d 0.0f NumberUtils.toFloat(\"\")     \u003d 0.0f NumberUtils.toFloat(\"1.5\")  \u003d 1.5f \u003c/pre\u003e\n * @param str the string to convert, may be {@code null}\n * @return the float represented by the string, or {@code 0.0f}if conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toFloat#237",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toFloat(java.lang.String, float)",
+    "snippet": "public static float toFloat(final String str, final float defaultValue) {\n      if (str \u003d\u003d null) {\n          return defaultValue;\n      }\n      try {\n          return Float.parseFloat(str);\n      } catch (final NumberFormatException nfe) {\n          return defaultValue;\n      }\n    }",
+    "begin_line": 237,
+    "end_line": 246,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code float}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string  {@code str} is {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toFloat(null, 1.1f)   \u003d 1.0f NumberUtils.toFloat(\"\", 1.1f)     \u003d 1.1f NumberUtils.toFloat(\"1.5\", 0.0f)  \u003d 1.5f \u003c/pre\u003e\n * @param str the string to convert, may be {@code null}\n * @param defaultValue the default value\n * @return the float represented by the string, or defaultValueif conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toDouble#266",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toDouble(java.lang.String)",
+    "snippet": "public static double toDouble(final String str) {\n        return toDouble(str, 0.0d);\n    }",
+    "begin_line": 266,
+    "end_line": 268,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code double}, returning {@code 0.0d} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string  {@code str} is {@code null}, {@code 0.0d} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toDouble(null)   \u003d 0.0d NumberUtils.toDouble(\"\")     \u003d 0.0d NumberUtils.toDouble(\"1.5\")  \u003d 1.5d \u003c/pre\u003e\n * @param str the string to convert, may be {@code null}\n * @return the double represented by the string, or {@code 0.0d}if conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toDouble#289",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toDouble(java.lang.String, double)",
+    "snippet": "public static double toDouble(final String str, final double defaultValue) {\n      if (str \u003d\u003d null) {\n          return defaultValue;\n      }\n      try {\n          return Double.parseDouble(str);\n      } catch (final NumberFormatException nfe) {\n          return defaultValue;\n      }\n    }",
+    "begin_line": 289,
+    "end_line": 298,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code double}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string  {@code str} is {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toDouble(null, 1.1d)   \u003d 1.1d NumberUtils.toDouble(\"\", 1.1d)     \u003d 1.1d NumberUtils.toDouble(\"1.5\", 0.0d)  \u003d 1.5d \u003c/pre\u003e\n * @param str the string to convert, may be {@code null}\n * @param defaultValue the default value\n * @return the double represented by the string, or defaultValueif conversion fails\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toDouble#316",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toDouble(java.math.BigDecimal)",
+    "snippet": "public static double toDouble(final BigDecimal value) {\n        return toDouble(value, 0.0d);\n    }",
+    "begin_line": 316,
+    "end_line": 318,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code BigDecimal} to a {@code double}.\u003c/p\u003e \u003cp\u003eIf the  {@code BigDecimal} {@code value} is{@code null}, then the specified default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toDouble(null)                     \u003d 0.0d NumberUtils.toDouble(BigDecimal.valudOf(8.5d)) \u003d 8.5d \u003c/pre\u003e\n * @param value the {@code BigDecimal} to convert, may be {@code null}.\n * @return the double represented by the {@code BigDecimal} or{@code 0.0d} if the {@code BigDecimal} is {@code null}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toDouble#337",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toDouble(java.math.BigDecimal, double)",
+    "snippet": "public static double toDouble(final BigDecimal value, final double defaultValue) {\n        return value \u003d\u003d null ? defaultValue : value.doubleValue();\n    }",
+    "begin_line": 337,
+    "end_line": 339,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code BigDecimal} to a {@code double}.\u003c/p\u003e \u003cp\u003eIf the  {@code BigDecimal} {@code value} is{@code null}, then the specified default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toDouble(null, 1.1d)                     \u003d 1.1d NumberUtils.toDouble(BigDecimal.valudOf(8.5d), 1.1d) \u003d 8.5d \u003c/pre\u003e\n * @param value the {@code BigDecimal} to convert, may be {@code null}.\n * @param defaultValue the default value\n * @return the double represented by the {@code BigDecimal} or thedefaultValue if the  {@code BigDecimal} is {@code null}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toByte#358",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toByte(java.lang.String)",
+    "snippet": "public static byte toByte(final String str) {\n        return toByte(str, (byte) 0);\n    }",
+    "begin_line": 358,
+    "end_line": 360,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code byte}, returning {@code zero} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string is  {@code null},  {@code zero} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toByte(null) \u003d 0 NumberUtils.toByte(\"\")   \u003d 0 NumberUtils.toByte(\"1\")  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @return the byte represented by the string, or {@code zero} ifconversion fails\n * @since 2.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toByte#379",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toByte(java.lang.String, byte)",
+    "snippet": "public static byte toByte(final String str, final byte defaultValue) {\n        if (str \u003d\u003d null) {\n            return defaultValue;\n        }\n        try {\n            return Byte.parseByte(str);\n        } catch (final NumberFormatException nfe) {\n            return defaultValue;\n        }\n    }",
+    "begin_line": 379,
+    "end_line": 388,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code byte}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string is  {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toByte(null, 1) \u003d 1 NumberUtils.toByte(\"\", 1)   \u003d 1 NumberUtils.toByte(\"1\", 0)  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @param defaultValue  the default value\n * @return the byte represented by the string, or the default if conversion fails\n * @since 2.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toShort#407",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toShort(java.lang.String)",
+    "snippet": "public static short toShort(final String str) {\n        return toShort(str, (short) 0);\n    }",
+    "begin_line": 407,
+    "end_line": 409,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code short}, returning {@code zero} if the conversion fails.\u003c/p\u003e\u003cp\u003eIf the string is  {@code null},  {@code zero} is returned.\u003c/p\u003e\u003cpre\u003e NumberUtils.toShort(null) \u003d 0 NumberUtils.toShort(\"\")   \u003d 0 NumberUtils.toShort(\"1\")  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @return the short represented by the string, or {@code zero} ifconversion fails\n * @since 2.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toShort#428",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toShort(java.lang.String, short)",
+    "snippet": "public static short toShort(final String str, final short defaultValue) {\n        if (str \u003d\u003d null) {\n            return defaultValue;\n        }\n        try {\n            return Short.parseShort(str);\n        } catch (final NumberFormatException nfe) {\n            return defaultValue;\n        }\n    }",
+    "begin_line": 428,
+    "end_line": 437,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to an {@code short}, returning a default value if the conversion fails.\u003c/p\u003e \u003cp\u003eIf the string is  {@code null}, the default value is returned.\u003c/p\u003e \u003cpre\u003e NumberUtils.toShort(null, 1) \u003d 1 NumberUtils.toShort(\"\", 1)   \u003d 1 NumberUtils.toShort(\"1\", 0)  \u003d 1 \u003c/pre\u003e\n * @param str  the string to convert, may be null\n * @param defaultValue  the default value\n * @return the short represented by the string, or the default if conversion fails\n * @since 2.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#451",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.math.BigDecimal)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final BigDecimal value) {\n        return toScaledBigDecimal(value, INTEGER_TWO, RoundingMode.HALF_EVEN);\n    }",
+    "begin_line": 451,
+    "end_line": 453,
+    "comment": "/** \n * Convert a  {@code BigDecimal} to a {@code BigDecimal} with a scale oftwo that has been rounded using  {@code RoundingMode.HALF_EVEN}. If the supplied {@code value} is null, then {@code BigDecimal.ZERO} is returned.\u003cp\u003eNote, the scale of a  {@code BigDecimal} is the number of digits to the right of thedecimal point.\u003c/p\u003e\n * @param value the {@code BigDecimal} to convert, may be null.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#467",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.math.BigDecimal, int, java.math.RoundingMode)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final BigDecimal value, final int scale, final RoundingMode roundingMode) {\n        if (value \u003d\u003d null) {\n            return BigDecimal.ZERO;\n        }\n        return value.setScale(\n            scale,\n            (roundingMode \u003d\u003d null) ? RoundingMode.HALF_EVEN : roundingMode\n        );\n    }",
+    "begin_line": 467,
+    "end_line": 475,
+    "comment": "/** \n * Convert a  {@code BigDecimal} to a {@code BigDecimal} whose scale is thespecified value with a  {@code RoundingMode} applied. If the input {@code value}is  {@code null}, we simply return  {@code BigDecimal.ZERO}.\n * @param value the {@code BigDecimal} to convert, may be null.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMode a rounding behavior for numerical operations capable ofdiscarding precision.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#489",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.Float)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final Float value) {\n        return toScaledBigDecimal(value, INTEGER_TWO, RoundingMode.HALF_EVEN);\n    }",
+    "begin_line": 489,
+    "end_line": 491,
+    "comment": "/** \n * Convert a  {@code Float} to a {@code BigDecimal} with a scale oftwo that has been rounded using  {@code RoundingMode.HALF_EVEN}. If the supplied {@code value} is null, then {@code BigDecimal.ZERO} is returned.\u003cp\u003eNote, the scale of a  {@code BigDecimal} is the number of digits to the right of thedecimal point.\u003c/p\u003e\n * @param value the {@code Float} to convert, may be null.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#505",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.Float, int, java.math.RoundingMode)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final Float value, final int scale, final RoundingMode roundingMode) {\n        if (value \u003d\u003d null) {\n            return BigDecimal.ZERO;\n        }\n        return toScaledBigDecimal(\n            BigDecimal.valueOf(value),\n            scale,\n            roundingMode\n        );\n    }",
+    "begin_line": 505,
+    "end_line": 514,
+    "comment": "/** \n * Convert a  {@code Float} to a {@code BigDecimal} whose scale is thespecified value with a  {@code RoundingMode} applied. If the input {@code value}is  {@code null}, we simply return  {@code BigDecimal.ZERO}.\n * @param value the {@code Float} to convert, may be null.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMode a rounding behavior for numerical operations capable ofdiscarding precision.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#528",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.Double)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final Double value) {\n        return toScaledBigDecimal(value, INTEGER_TWO, RoundingMode.HALF_EVEN);\n    }",
+    "begin_line": 528,
+    "end_line": 530,
+    "comment": "/** \n * Convert a  {@code Double} to a {@code BigDecimal} with a scale oftwo that has been rounded using  {@code RoundingMode.HALF_EVEN}. If the supplied {@code value} is null, then {@code BigDecimal.ZERO} is returned.\u003cp\u003eNote, the scale of a  {@code BigDecimal} is the number of digits to the right of thedecimal point.\u003c/p\u003e\n * @param value the {@code Double} to convert, may be null.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#544",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.Double, int, java.math.RoundingMode)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final Double value, final int scale, final RoundingMode roundingMode) {\n        if (value \u003d\u003d null) {\n            return BigDecimal.ZERO;\n        }\n        return toScaledBigDecimal(\n            BigDecimal.valueOf(value),\n            scale,\n            roundingMode\n        );\n    }",
+    "begin_line": 544,
+    "end_line": 553,
+    "comment": "/** \n * Convert a  {@code Double} to a {@code BigDecimal} whose scale is thespecified value with a  {@code RoundingMode} applied. If the input {@code value}is  {@code null}, we simply return  {@code BigDecimal.ZERO}.\n * @param value the {@code Double} to convert, may be null.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMode a rounding behavior for numerical operations capable ofdiscarding precision.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#567",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.String)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final String value) {\n        return toScaledBigDecimal(value, INTEGER_TWO, RoundingMode.HALF_EVEN);\n    }",
+    "begin_line": 567,
+    "end_line": 569,
+    "comment": "/** \n * Convert a  {@code String} to a {@code BigDecimal} with a scale oftwo that has been rounded using  {@code RoundingMode.HALF_EVEN}. If the supplied {@code value} is null, then {@code BigDecimal.ZERO} is returned.\u003cp\u003eNote, the scale of a  {@code BigDecimal} is the number of digits to the right of thedecimal point.\u003c/p\u003e\n * @param value the {@code String} to convert, may be null.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.toScaledBigDecimal#583",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.toScaledBigDecimal(java.lang.String, int, java.math.RoundingMode)",
+    "snippet": "public static BigDecimal toScaledBigDecimal(final String value, final int scale, final RoundingMode roundingMode) {\n        if (value \u003d\u003d null) {\n            return BigDecimal.ZERO;\n        }\n        return toScaledBigDecimal(\n            createBigDecimal(value),\n            scale,\n            roundingMode\n        );\n    }",
+    "begin_line": 583,
+    "end_line": 592,
+    "comment": "/** \n * Convert a  {@code String} to a {@code BigDecimal} whose scale is thespecified value with a  {@code RoundingMode} applied. If the input {@code value}is  {@code null}, we simply return  {@code BigDecimal.ZERO}.\n * @param value the {@code String} to convert, may be null.\n * @param scale the number of digits to the right of the decimal point.\n * @param roundingMode a rounding behavior for numerical operations capable ofdiscarding precision.\n * @return the scaled, with appropriate rounding, {@code BigDecimal}.\n * @since 3.8\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createNumber#660",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createNumber(java.lang.String)",
+    "snippet": "public static Number createNumber(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        if (StringUtils.isBlank(str)) {\n            throw new NumberFormatException(\"A blank string is not a valid number\");\n        }\n        // Need to deal with all possible hex prefixes here\n        final String[] hex_prefixes \u003d {\"0x\", \"0X\", \"#\"};\n        final int length \u003d str.length();\n        final int offset \u003d str.charAt(0) \u003d\u003d \u0027+\u0027 || str.charAt(0) \u003d\u003d \u0027-\u0027 ? 1 : 0;\n        int pfxLen \u003d 0;\n        for (final String pfx : hex_prefixes) {\n            if (str.startsWith(pfx, offset)) {\n                pfxLen +\u003d pfx.length() + offset;\n                break;\n            }\n        }\n        if (pfxLen \u003e 0) { // we have a hex number\n            char firstSigDigit \u003d 0; // strip leading zeroes\n            for (int i \u003d pfxLen; i \u003c length; i++) {\n                firstSigDigit \u003d str.charAt(i);\n                if (firstSigDigit !\u003d \u00270\u0027) {\n                    break;\n                }\n                pfxLen++;\n            }\n            final int hexDigits \u003d length - pfxLen;\n            if (hexDigits \u003e 16 || hexDigits \u003d\u003d 16 \u0026\u0026 firstSigDigit \u003e \u00277\u0027) { // too many for Long\n                return createBigInteger(str);\n            }\n            if (hexDigits \u003e 8 || hexDigits \u003d\u003d 8 \u0026\u0026 firstSigDigit \u003e \u00277\u0027) { // too many for an int\n                return createLong(str);\n            }\n            return createInteger(str);\n        }\n        final char lastChar \u003d str.charAt(length - 1);\n        final String mant;\n        final String dec;\n        final String exp;\n        final int decPos \u003d str.indexOf(\u0027.\u0027);\n        final int expPos \u003d str.indexOf(\u0027e\u0027) + str.indexOf(\u0027E\u0027) + 1; // assumes both not present\n        // if both e and E are present, this is caught by the checks on expPos (which prevent IOOBE)\n        // and the parsing which will detect if e or E appear in a number due to using the wrong offset\n\n        // Detect if the return type has been requested\n        final boolean requestType \u003d !Character.isDigit(lastChar) \u0026\u0026 lastChar !\u003d \u0027.\u0027;\n        if (decPos \u003e -1) { // there is a decimal point\n            if (expPos \u003e -1) { // there is an exponent\n                if (expPos \u003c decPos || expPos \u003e length) { // prevents double exponent causing IOOBE\n                    throw new NumberFormatException(str + \" is not a valid number.\");\n                }\n                dec \u003d str.substring(decPos + 1, expPos);\n            } else {\n                // No exponent, but there may be a type character to remove\n                dec \u003d str.substring(decPos + 1, requestType ? length - 1 : length);\n            }\n            mant \u003d getMantissa(str, decPos);\n        } else {\n            if (expPos \u003e -1) {\n                if (expPos \u003e length) { // prevents double exponent causing IOOBE\n                    throw new NumberFormatException(str + \" is not a valid number.\");\n                }\n                mant \u003d getMantissa(str, expPos);\n            } else {\n                // No decimal, no exponent, but there may be a type character to remove\n                mant \u003d getMantissa(str, requestType ? length - 1 : length);\n            }\n            dec \u003d null;\n        }\n        if (requestType) {\n            if (expPos \u003e -1 \u0026\u0026 expPos \u003c length - 1) {\n                exp \u003d str.substring(expPos + 1, length - 1);\n            } else {\n                exp \u003d null;\n            }\n            //Requesting a specific type..\n            final String numeric \u003d str.substring(0, length - 1);\n            switch (lastChar) {\n                case \u0027l\u0027 :\n                case \u0027L\u0027 :\n                    if (dec \u003d\u003d null\n                        \u0026\u0026 exp \u003d\u003d null\n                        \u0026\u0026 (!numeric.isEmpty() \u0026\u0026 numeric.charAt(0) \u003d\u003d \u0027-\u0027 \u0026\u0026 isDigits(numeric.substring(1)) || isDigits(numeric))) {\n                        try {\n                            return createLong(numeric);\n                        } catch (final NumberFormatException nfe) { // NOPMD\n                            // Too big for a long\n                        }\n                        return createBigInteger(numeric);\n\n                    }\n                    throw new NumberFormatException(str + \" is not a valid number.\");\n                case \u0027f\u0027 :\n                case \u0027F\u0027 :\n                    try {\n                        final Float f \u003d createFloat(str);\n                        if (!(f.isInfinite() || f.floatValue() \u003d\u003d 0.0F \u0026\u0026 !isZero(mant, dec))) {\n                            //If it\u0027s too big for a float or the float value \u003d 0 and the string\n                            //has non-zeros in it, then float does not have the precision we want\n                            return f;\n                        }\n\n                    } catch (final NumberFormatException nfe) { // NOPMD\n                        // ignore the bad number\n                    }\n                    //$FALL-THROUGH$\n                case \u0027d\u0027 :\n                case \u0027D\u0027 :\n                    try {\n                        final Double d \u003d createDouble(str);\n                        if (!(d.isInfinite() || d.doubleValue() \u003d\u003d 0.0D \u0026\u0026 !isZero(mant, dec))) {\n                            return d;\n                        }\n                    } catch (final NumberFormatException nfe) { // NOPMD\n                        // ignore the bad number\n                    }\n                    try {\n                        return createBigDecimal(numeric);\n                    } catch (final NumberFormatException e) { // NOPMD\n                        // ignore the bad number\n                    }\n                    //$FALL-THROUGH$\n                default :\n                    throw new NumberFormatException(str + \" is not a valid number.\");\n\n            }\n        }\n        //User doesn\u0027t have a preference on the return type, so let\u0027s start\n        //small and go from there...\n        if (expPos \u003e -1 \u0026\u0026 expPos \u003c length - 1) {\n            exp \u003d str.substring(expPos + 1);\n        } else {\n            exp \u003d null;\n        }\n        if (dec \u003d\u003d null \u0026\u0026 exp \u003d\u003d null) { // no decimal point and no exponent\n            //Must be an Integer, Long, Biginteger\n            try {\n                return createInteger(str);\n            } catch (final NumberFormatException nfe) { // NOPMD\n                // ignore the bad number\n            }\n            try {\n                return createLong(str);\n            } catch (final NumberFormatException nfe) { // NOPMD\n                // ignore the bad number\n            }\n            return createBigInteger(str);\n        }\n\n        //Must be a Float, Double, BigDecimal\n        try {\n            final Float f \u003d createFloat(str);\n            final Double d \u003d createDouble(str);\n            if (!f.isInfinite()\n                    \u0026\u0026 !(f.floatValue() \u003d\u003d 0.0F \u0026\u0026 !isZero(mant, dec))\n                    \u0026\u0026 f.toString().equals(d.toString())) {\n                return f;\n            }\n            if (!d.isInfinite() \u0026\u0026 !(d.doubleValue() \u003d\u003d 0.0D \u0026\u0026 !isZero(mant, dec))) {\n                final BigDecimal b \u003d createBigDecimal(str);\n                if (b.compareTo(BigDecimal.valueOf(d.doubleValue())) \u003d\u003d 0) {\n                    return d;\n                }\n                return b;\n            }\n        } catch (final NumberFormatException nfe) { // NOPMD\n            // ignore the bad number\n        }\n        return createBigDecimal(str);\n    }",
+    "begin_line": 660,
+    "end_line": 830,
+    "comment": "/** \n * \u003cp\u003eTurns a string value into a java.lang.Number.\u003c/p\u003e \u003cp\u003eIf the string starts with  {@code 0x} or {@code -0x} (lower or upper case) or {@code #} or {@code -#}, it will be interpreted as a hexadecimal Integer - or Long, if the number of digits after the prefix is more than 8 - or BigInteger if there are more than 16 digits. \u003c/p\u003e \u003cp\u003eThen, the value is examined for a type qualifier on the end, i.e. one of {@code \u0027f\u0027, \u0027F\u0027, \u0027d\u0027, \u0027D\u0027, \u0027l\u0027, \u0027L\u0027}.  If it is found, it starts trying to create successively larger types from the type specified until one is found that can represent the value.\u003c/p\u003e \u003cp\u003eIf a type specifier is not found, it will check for a decimal point and then try successively larger types from  {@code Integer} to{@code BigInteger} and from {@code Float} to{@code BigDecimal}.\u003c/p\u003e \u003cp\u003e Integral values with a leading  {@code 0} will be interpreted as octal; the returned number willbe Integer, Long or BigDecimal as appropriate. \u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e \u003cp\u003eThis method does not trim the input string, i.e., strings with leading or trailing spaces will generate NumberFormatExceptions.\u003c/p\u003e\n * @param str  String containing a number, may be null\n * @return Number created from the string (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.getMantissa#841",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.getMantissa(java.lang.String, int)",
+    "snippet": "private static String getMantissa(final String str, final int stopPos) {\n        final char firstChar \u003d str.charAt(0);\n        final boolean hasSign \u003d firstChar \u003d\u003d \u0027-\u0027 || firstChar \u003d\u003d \u0027+\u0027;\n\n        return hasSign ? str.substring(1, stopPos) : str.substring(0, stopPos);\n    }",
+    "begin_line": 841,
+    "end_line": 846,
+    "comment": "/** \n * \u003cp\u003eUtility method for  {@link #createNumber(java.lang.String)}.\u003c/p\u003e \u003cp\u003eReturns mantissa of the given number.\u003c/p\u003e\n * @param str the string representation of the number\n * @param stopPos the position of the exponent or decimal point\n * @return mantissa of the given number\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isZero#874",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isZero(java.lang.String, java.lang.String)",
+    "snippet": "private static boolean isZero(final String mant, final String dec) {\n        return isAllZeros(mant) \u0026\u0026 isAllZeros(dec);\n    }",
+    "begin_line": 874,
+    "end_line": 876,
+    "comment": "/** \n * Utility method for  {@link #createNumber(java.lang.String)}. \u003cp\u003eThis will check if the magnitude of the number is zero by checking if there are only zeros before and after the decimal place.\u003c/p\u003e \u003cp\u003eNote: It is \u003cstrong\u003eassumed\u003c/strong\u003e that the input string has been converted to either a Float or Double with a value of zero when this method is called. This eliminates invalid input for example  {@code \".\", \".D\", \".e0\"}.\u003c/p\u003e \u003cp\u003eThus the method only requires checking if both arguments are null, empty or contain only zeros.\u003c/p\u003e \u003cp\u003eGiven  {@code s \u003d mant + \".\" + dec}:\u003c/p\u003e \u003cul\u003e \u003cli\u003e {@code true} if s is {@code \"0.0\"}\u003cli\u003e {@code true} if s is {@code \"0.\"}\u003cli\u003e {@code true} if s is {@code \".0\"}\u003cli\u003e {@code false} otherwise (this assumes {@code \".\"} is not possible)\u003c/ul\u003e\n * @param mant the mantissa decimal digits before the decimal point (sign must be removed; never null)\n * @param dec the decimal digits after the decimal point (exponent and type specifier removed;can be null)\n * @return true if the magnitude is zero\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isAllZeros#886",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isAllZeros(java.lang.String)",
+    "snippet": "private static boolean isAllZeros(final String str) {\n        if (str \u003d\u003d null) {\n            return true;\n        }\n        for (int i \u003d str.length() - 1; i \u003e\u003d 0; i--) {\n            if (str.charAt(i) !\u003d \u00270\u0027) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 886,
+    "end_line": 896,
+    "comment": "/** \n * Utility method for  {@link #createNumber(java.lang.String)}. \u003cp\u003eReturns  {@code true} if s is {@code null} or empty.\u003c/p\u003e\n * @param str the String to check\n * @return if it is all zeros or {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createFloat#907",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createFloat(java.lang.String)",
+    "snippet": "public static Float createFloat(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        return Float.valueOf(str);\n    }",
+    "begin_line": 907,
+    "end_line": 912,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code Float}.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code Float} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createDouble#923",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createDouble(java.lang.String)",
+    "snippet": "public static Double createDouble(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        return Double.valueOf(str);\n    }",
+    "begin_line": 923,
+    "end_line": 928,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code Double}.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code Double} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createInteger#941",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createInteger(java.lang.String)",
+    "snippet": "public static Integer createInteger(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        // decode() handles 0xAABD and 0777 (hex and octal) as well.\n        return Integer.decode(str);\n    }",
+    "begin_line": 941,
+    "end_line": 947,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code Integer}, handling hex (0xhhhh) and octal (0dddd) notations. N.B. a leading zero means octal; spaces are not trimmed.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code Integer} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createLong#960",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createLong(java.lang.String)",
+    "snippet": "public static Long createLong(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        return Long.decode(str);\n    }",
+    "begin_line": 960,
+    "end_line": 965,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code Long}; since 3.1 it handles hex (0Xhhhh) and octal (0ddd) notations. N.B. a leading zero means octal; spaces are not trimmed.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code Long} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createBigInteger#977",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createBigInteger(java.lang.String)",
+    "snippet": "public static BigInteger createBigInteger(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        if (str.isEmpty()) {\n            throw new NumberFormatException(\"An empty string is not a valid number\");\n        }\n        int pos \u003d 0; // offset within string\n        int radix \u003d 10;\n        boolean negate \u003d false; // need to negate later?\n        final char char0 \u003d str.charAt(0);\n        if (char0 \u003d\u003d \u0027-\u0027) {\n            negate \u003d true;\n            pos \u003d 1;\n        } else if (char0 \u003d\u003d \u0027+\u0027) {\n            pos \u003d 1;\n        }\n        if (str.startsWith(\"0x\", pos) || str.startsWith(\"0X\", pos)) { // hex\n            radix \u003d 16;\n            pos +\u003d 2;\n        } else if (str.startsWith(\"#\", pos)) { // alternative hex (allowed by Long/Integer)\n            radix \u003d 16;\n            pos++;\n        } else if (str.startsWith(\"0\", pos) \u0026\u0026 str.length() \u003e pos + 1) { // octal; so long as there are additional digits\n            radix \u003d 8;\n            pos++;\n        } // default is to treat as decimal\n\n        final BigInteger value \u003d new BigInteger(str.substring(pos), radix);\n        return negate ? value.negate() : value;\n    }",
+    "begin_line": 977,
+    "end_line": 1007,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code BigInteger}; since 3.2 it handles hex (0x or #) and octal (0) notations.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code BigInteger} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.createBigDecimal#1018",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.createBigDecimal(java.lang.String)",
+    "snippet": "public static BigDecimal createBigDecimal(final String str) {\n        if (str \u003d\u003d null) {\n            return null;\n        }\n        // handle JDK1.3.1 bug where \"\" throws IndexOutOfBoundsException\n        if (StringUtils.isBlank(str)) {\n            throw new NumberFormatException(\"A blank string is not a valid number\");\n        }\n        return new BigDecimal(str);\n    }",
+    "begin_line": 1018,
+    "end_line": 1027,
+    "comment": "/** \n * \u003cp\u003eConvert a  {@code String} to a {@code BigDecimal}.\u003c/p\u003e \u003cp\u003eReturns  {@code null} if the string is {@code null}.\u003c/p\u003e\n * @param str  a {@code String} to convert, may be null\n * @return converted {@code BigDecimal} (or null if the input is null)\n * @throws NumberFormatException if the value cannot be converted\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1040",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(long)",
+    "snippet": "public static long min(final long... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        long min \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (array[i] \u003c min) {\n                min \u003d array[i];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1040,
+    "end_line": 1053,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from min(long[]) to min(long...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1064",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(int)",
+    "snippet": "public static int min(final int... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        int min \u003d array[0];\n        for (int j \u003d 1; j \u003c array.length; j++) {\n            if (array[j] \u003c min) {\n                min \u003d array[j];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1064,
+    "end_line": 1077,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from min(int[]) to min(int...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1088",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(short)",
+    "snippet": "public static short min(final short... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        short min \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (array[i] \u003c min) {\n                min \u003d array[i];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1088,
+    "end_line": 1101,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from min(short[]) to min(short...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1112",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(byte)",
+    "snippet": "public static byte min(final byte... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        byte min \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (array[i] \u003c min) {\n                min \u003d array[i];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1112,
+    "end_line": 1125,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from min(byte[]) to min(byte...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1137",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(double)",
+    "snippet": "public static double min(final double... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        double min \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (Double.isNaN(array[i])) {\n                return Double.NaN;\n            }\n            if (array[i] \u003c min) {\n                min \u003d array[i];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1137,
+    "end_line": 1153,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @see IEEE754rUtils#min(double[]) IEEE754rUtils for a version of this method that handles NaN differently\n * @since 3.4 Changed signature from min(double[]) to min(double...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1165",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(float)",
+    "snippet": "public static float min(final float... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns min\n        float min \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (Float.isNaN(array[i])) {\n                return Float.NaN;\n            }\n            if (array[i] \u003c min) {\n                min \u003d array[i];\n            }\n        }\n\n        return min;\n    }",
+    "begin_line": 1165,
+    "end_line": 1181,
+    "comment": "/** \n * \u003cp\u003eReturns the minimum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the minimum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @see IEEE754rUtils#min(float[]) IEEE754rUtils for a version of this method that handles NaN differently\n * @since 3.4 Changed signature from min(float[]) to min(float...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1194",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(long)",
+    "snippet": "public static long max(final long... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        long max \u003d array[0];\n        for (int j \u003d 1; j \u003c array.length; j++) {\n            if (array[j] \u003e max) {\n                max \u003d array[j];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1194,
+    "end_line": 1207,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from max(long[]) to max(long...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1218",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(int)",
+    "snippet": "public static int max(final int... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        int max \u003d array[0];\n        for (int j \u003d 1; j \u003c array.length; j++) {\n            if (array[j] \u003e max) {\n                max \u003d array[j];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1218,
+    "end_line": 1231,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from max(int[]) to max(int...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1242",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(short)",
+    "snippet": "public static short max(final short... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        short max \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (array[i] \u003e max) {\n                max \u003d array[i];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1242,
+    "end_line": 1255,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from max(short[]) to max(short...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1266",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(byte)",
+    "snippet": "public static byte max(final byte... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        byte max \u003d array[0];\n        for (int i \u003d 1; i \u003c array.length; i++) {\n            if (array[i] \u003e max) {\n                max \u003d array[i];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1266,
+    "end_line": 1279,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @since 3.4 Changed signature from max(byte[]) to max(byte...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1291",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(double)",
+    "snippet": "public static double max(final double... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        double max \u003d array[0];\n        for (int j \u003d 1; j \u003c array.length; j++) {\n            if (Double.isNaN(array[j])) {\n                return Double.NaN;\n            }\n            if (array[j] \u003e max) {\n                max \u003d array[j];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1291,
+    "end_line": 1307,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @see IEEE754rUtils#max(double[]) IEEE754rUtils for a version of this method that handles NaN differently\n * @since 3.4 Changed signature from max(double[]) to max(double...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1319",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(float)",
+    "snippet": "public static float max(final float... array) {\n        // Validates input\n        validateArray(array);\n\n        // Finds and returns max\n        float max \u003d array[0];\n        for (int j \u003d 1; j \u003c array.length; j++) {\n            if (Float.isNaN(array[j])) {\n                return Float.NaN;\n            }\n            if (array[j] \u003e max) {\n                max \u003d array[j];\n            }\n        }\n\n        return max;\n    }",
+    "begin_line": 1319,
+    "end_line": 1335,
+    "comment": "/** \n * \u003cp\u003eReturns the maximum value in an array.\u003c/p\u003e\n * @param array  an array, must not be null or empty\n * @return the maximum value in the array\n * @throws NullPointerException if {@code array} is {@code null}\n * @throws IllegalArgumentException if {@code array} is empty\n * @see IEEE754rUtils#max(float[]) IEEE754rUtils for a version of this method that handles NaN differently\n * @since 3.4 Changed signature from max(float[]) to max(float...)\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.validateArray#1344",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.validateArray(java.lang.Object)",
+    "snippet": "private static void validateArray(final Object array) {\n        Validate.notNull(array, \"array\");\n        Validate.isTrue(Array.getLength(array) !\u003d 0, \"Array cannot be empty.\");\n    }",
+    "begin_line": 1344,
+    "end_line": 1347,
+    "comment": "/** \n * Checks if the specified array is neither null nor empty.\n * @param array  the array to check\n * @throws IllegalArgumentException if {@code array} is empty\n * @throws NullPointerException if {@code array} is {@code null}\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1358",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(long, long, long)",
+    "snippet": "public static long min(long a, final long b, final long c) {\n        if (b \u003c a) {\n            a \u003d b;\n        }\n        if (c \u003c a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1358,
+    "end_line": 1366,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code long} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1376",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(int, int, int)",
+    "snippet": "public static int min(int a, final int b, final int c) {\n        if (b \u003c a) {\n            a \u003d b;\n        }\n        if (c \u003c a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1376,
+    "end_line": 1384,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code int} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1394",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(short, short, short)",
+    "snippet": "public static short min(short a, final short b, final short c) {\n        if (b \u003c a) {\n            a \u003d b;\n        }\n        if (c \u003c a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1394,
+    "end_line": 1402,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code short} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1412",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(byte, byte, byte)",
+    "snippet": "public static byte min(byte a, final byte b, final byte c) {\n        if (b \u003c a) {\n            a \u003d b;\n        }\n        if (c \u003c a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1412,
+    "end_line": 1420,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code byte} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1434",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(double, double, double)",
+    "snippet": "public static double min(final double a, final double b, final double c) {\n        return Math.min(Math.min(a, b), c);\n    }",
+    "begin_line": 1434,
+    "end_line": 1436,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code double} values.\u003c/p\u003e\u003cp\u003eIf any value is  {@code NaN},  {@code NaN} isreturned. Infinity is handled.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n * @see IEEE754rUtils#min(double,double,double) for a version of this method that handles NaN differently\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.min#1450",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.min(float, float, float)",
+    "snippet": "public static float min(final float a, final float b, final float c) {\n        return Math.min(Math.min(a, b), c);\n    }",
+    "begin_line": 1450,
+    "end_line": 1452,
+    "comment": "/** \n * \u003cp\u003eGets the minimum of three  {@code float} values.\u003c/p\u003e\u003cp\u003eIf any value is  {@code NaN},  {@code NaN} isreturned. Infinity is handled.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the smallest of the values\n * @see IEEE754rUtils#min(float,float,float) for a version of this method that handles NaN differently\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1463",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(long, long, long)",
+    "snippet": "public static long max(long a, final long b, final long c) {\n        if (b \u003e a) {\n            a \u003d b;\n        }\n        if (c \u003e a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1463,
+    "end_line": 1471,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code long} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1481",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(int, int, int)",
+    "snippet": "public static int max(int a, final int b, final int c) {\n        if (b \u003e a) {\n            a \u003d b;\n        }\n        if (c \u003e a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1481,
+    "end_line": 1489,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code int} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1499",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(short, short, short)",
+    "snippet": "public static short max(short a, final short b, final short c) {\n        if (b \u003e a) {\n            a \u003d b;\n        }\n        if (c \u003e a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1499,
+    "end_line": 1507,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code short} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1517",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(byte, byte, byte)",
+    "snippet": "public static byte max(byte a, final byte b, final byte c) {\n        if (b \u003e a) {\n            a \u003d b;\n        }\n        if (c \u003e a) {\n            a \u003d c;\n        }\n        return a;\n    }",
+    "begin_line": 1517,
+    "end_line": 1525,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code byte} values.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1539",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(double, double, double)",
+    "snippet": "public static double max(final double a, final double b, final double c) {\n        return Math.max(Math.max(a, b), c);\n    }",
+    "begin_line": 1539,
+    "end_line": 1541,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code double} values.\u003c/p\u003e\u003cp\u003eIf any value is  {@code NaN},  {@code NaN} isreturned. Infinity is handled.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n * @see IEEE754rUtils#max(double,double,double) for a version of this method that handles NaN differently\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.max#1555",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.max(float, float, float)",
+    "snippet": "public static float max(final float a, final float b, final float c) {\n        return Math.max(Math.max(a, b), c);\n    }",
+    "begin_line": 1555,
+    "end_line": 1557,
+    "comment": "/** \n * \u003cp\u003eGets the maximum of three  {@code float} values.\u003c/p\u003e\u003cp\u003eIf any value is  {@code NaN},  {@code NaN} isreturned. Infinity is handled.\u003c/p\u003e\n * @param a  value 1\n * @param b  value 2\n * @param c  value 3\n * @return  the largest of the values\n * @see IEEE754rUtils#max(float,float,float) for a version of this method that handles NaN differently\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isDigits#1569",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isDigits(java.lang.String)",
+    "snippet": "public static boolean isDigits(final String str) {\n        return StringUtils.isNumeric(str);\n    }",
+    "begin_line": 1569,
+    "end_line": 1571,
+    "comment": "/** \n * \u003cp\u003eChecks whether the  {@code String} contains onlydigit characters.\u003c/p\u003e \u003cp\u003e {@code Null} and empty String will return{@code false}.\u003c/p\u003e\n * @param str  the {@code String} to check\n * @return {@code true} if str contains only Unicode numeric\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isNumber#1599",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isNumber(java.lang.String)",
+    "snippet": "@Deprecated\n    public static boolean isNumber(final String str) {\n        return isCreatable(str);\n    }",
+    "begin_line": 1599,
+    "end_line": 1601,
+    "comment": "/** \n * \u003cp\u003eChecks whether the String a valid Java number.\u003c/p\u003e \u003cp\u003eValid numbers include hexadecimal marked with the  {@code 0x} or{@code 0X} qualifier, octal numbers, scientific notation andnumbers marked with a type qualifier (e.g. 123L).\u003c/p\u003e \u003cp\u003eNon-hexadecimal strings beginning with a leading zero are treated as octal values. Thus the string  {@code 09} will return{@code false}, since  {@code 9} is not a valid octal value.However, numbers beginning with  {@code 0.} are treated as decimal.\u003c/p\u003e\u003cp\u003e {@code null} and empty/blank {@code String} will return{@code false}.\u003c/p\u003e \u003cp\u003eNote,  {@link #createNumber(String)} should return a number for everyinput resulting in  {@code true}.\u003c/p\u003e\n * @param str  the {@code String} to check\n * @return {@code true} if the string is a correctly formatted number\n * @since 3.3 the code supports hex {@code 0Xhhh} anoctal  {@code 0ddd} validation\n * @deprecated This feature will be removed in Lang 4.0,use  {@link NumberUtils#isCreatable(String)} instead\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isCreatable#1625",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isCreatable(java.lang.String)",
+    "snippet": "public static boolean isCreatable(final String str) {\n        if (StringUtils.isEmpty(str)) {\n            return false;\n        }\n        final char[] chars \u003d str.toCharArray();\n        int sz \u003d chars.length;\n        boolean hasExp \u003d false;\n        boolean hasDecPoint \u003d false;\n        boolean allowSigns \u003d false;\n        boolean foundDigit \u003d false;\n        // deal with any possible sign up front\n        final int start \u003d chars[0] \u003d\u003d \u0027-\u0027 || chars[0] \u003d\u003d \u0027+\u0027 ? 1 : 0;\n        if (sz \u003e start + 1 \u0026\u0026 chars[start] \u003d\u003d \u00270\u0027 \u0026\u0026 !StringUtils.contains(str, \u0027.\u0027)) { // leading 0, skip if is a decimal number\n            if (chars[start + 1] \u003d\u003d \u0027x\u0027 || chars[start + 1] \u003d\u003d \u0027X\u0027) { // leading 0x/0X\n                int i \u003d start + 2;\n                if (i \u003d\u003d sz) {\n                    return false; // str \u003d\u003d \"0x\"\n                }\n                // checking hex (it can\u0027t be anything else)\n                for (; i \u003c chars.length; i++) {\n                    if ((chars[i] \u003c \u00270\u0027 || chars[i] \u003e \u00279\u0027)\n                        \u0026\u0026 (chars[i] \u003c \u0027a\u0027 || chars[i] \u003e \u0027f\u0027)\n                        \u0026\u0026 (chars[i] \u003c \u0027A\u0027 || chars[i] \u003e \u0027F\u0027)) {\n                        return false;\n                    }\n                }\n                return true;\n           }\n            if (Character.isDigit(chars[start + 1])) {\n                   // leading 0, but not hex, must be octal\n                   int i \u003d start + 1;\n                   for (; i \u003c chars.length; i++) {\n                       if (chars[i] \u003c \u00270\u0027 || chars[i] \u003e \u00277\u0027) {\n                           return false;\n                       }\n                   }\n                   return true;\n               }\n        }\n        sz--; // don\u0027t want to loop to the last char, check it afterwords\n              // for type qualifiers\n        int i \u003d start;\n        // loop to the next to last char or to the last char if we need another digit to\n        // make a valid number (e.g. chars[0..5] \u003d \"1234E\")\n        while (i \u003c sz || i \u003c sz + 1 \u0026\u0026 allowSigns \u0026\u0026 !foundDigit) {\n            if (chars[i] \u003e\u003d \u00270\u0027 \u0026\u0026 chars[i] \u003c\u003d \u00279\u0027) {\n                foundDigit \u003d true;\n                allowSigns \u003d false;\n\n            } else if (chars[i] \u003d\u003d \u0027.\u0027) {\n                if (hasDecPoint || hasExp) {\n                    // two decimal points or dec in exponent\n                    return false;\n                }\n                hasDecPoint \u003d true;\n            } else if (chars[i] \u003d\u003d \u0027e\u0027 || chars[i] \u003d\u003d \u0027E\u0027) {\n                // we\u0027ve already taken care of hex.\n                if (hasExp) {\n                    // two E\u0027s\n                    return false;\n                }\n                if (!foundDigit) {\n                    return false;\n                }\n                hasExp \u003d true;\n                allowSigns \u003d true;\n            } else if (chars[i] \u003d\u003d \u0027+\u0027 || chars[i] \u003d\u003d \u0027-\u0027) {\n                if (!allowSigns) {\n                    return false;\n                }\n                allowSigns \u003d false;\n                foundDigit \u003d false; // we need a digit after the E\n            } else {\n                return false;\n            }\n            i++;\n        }\n        if (i \u003c chars.length) {\n            if (chars[i] \u003e\u003d \u00270\u0027 \u0026\u0026 chars[i] \u003c\u003d \u00279\u0027) {\n                // no type qualifier, OK\n                return true;\n            }\n            if (chars[i] \u003d\u003d \u0027e\u0027 || chars[i] \u003d\u003d \u0027E\u0027) {\n                // can\u0027t have an E at the last byte\n                return false;\n            }\n            if (chars[i] \u003d\u003d \u0027.\u0027) {\n                if (hasDecPoint || hasExp) {\n                    // two decimal points or dec in exponent\n                    return false;\n                }\n                // single trailing decimal point after non-exponent is ok\n                return foundDigit;\n            }\n            if (!allowSigns\n                \u0026\u0026 (chars[i] \u003d\u003d \u0027d\u0027\n                    || chars[i] \u003d\u003d \u0027D\u0027\n                    || chars[i] \u003d\u003d \u0027f\u0027\n                    || chars[i] \u003d\u003d \u0027F\u0027)) {\n                return foundDigit;\n            }\n            if (chars[i] \u003d\u003d \u0027l\u0027\n                || chars[i] \u003d\u003d \u0027L\u0027) {\n                // not allowing L with an exponent or decimal point\n                return foundDigit \u0026\u0026 !hasExp \u0026\u0026 !hasDecPoint;\n            }\n            // last character is illegal\n            return false;\n        }\n        // allowSigns is true iff the val ends in \u0027E\u0027\n        // found digit it to make sure weird stuff like \u0027.\u0027 and \u00271E-\u0027 doesn\u0027t pass\n        return !allowSigns \u0026\u0026 foundDigit;\n    }",
+    "begin_line": 1625,
+    "end_line": 1737,
+    "comment": "/** \n * \u003cp\u003eChecks whether the String a valid Java number.\u003c/p\u003e \u003cp\u003eValid numbers include hexadecimal marked with the  {@code 0x} or{@code 0X} qualifier, octal numbers, scientific notation andnumbers marked with a type qualifier (e.g. 123L).\u003c/p\u003e \u003cp\u003eNon-hexadecimal strings beginning with a leading zero are treated as octal values. Thus the string  {@code 09} will return{@code false}, since  {@code 9} is not a valid octal value.However, numbers beginning with  {@code 0.} are treated as decimal.\u003c/p\u003e\u003cp\u003e {@code null} and empty/blank {@code String} will return{@code false}.\u003c/p\u003e \u003cp\u003eNote,  {@link #createNumber(String)} should return a number for everyinput resulting in  {@code true}.\u003c/p\u003e\n * @param str  the {@code String} to check\n * @return {@code true} if the string is a correctly formatted number\n * @since 3.5\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.isParsable#1756",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.isParsable(java.lang.String)",
+    "snippet": "public static boolean isParsable(final String str) {\n        if (StringUtils.isEmpty(str)) {\n            return false;\n        }\n        if (str.charAt(str.length() - 1) \u003d\u003d \u0027.\u0027) {\n            return false;\n        }\n        if (str.charAt(0) \u003d\u003d \u0027-\u0027) {\n            if (str.length() \u003d\u003d 1) {\n                return false;\n            }\n            return withDecimalsParsing(str, 1);\n        }\n        return withDecimalsParsing(str, 0);\n    }",
+    "begin_line": 1756,
+    "end_line": 1770,
+    "comment": "/** \n * \u003cp\u003eChecks whether the given String is a parsable number.\u003c/p\u003e \u003cp\u003eParsable numbers include those Strings understood by  {@link Integer#parseInt(String)}, {@link Long#parseLong(String)},  {@link Float#parseFloat(String)} or{@link Double#parseDouble(String)}. This method can be used instead of catching  {@link java.text.ParseException}when calling one of those methods.\u003c/p\u003e \u003cp\u003eHexadecimal and scientific notations are \u003cstrong\u003enot\u003c/strong\u003e considered parsable. See  {@link #isCreatable(String)} on those cases.\u003c/p\u003e\u003cp\u003e {@code Null} and empty String will return {@code false}.\u003c/p\u003e\n * @param str the String to check.\n * @return {@code true} if the string is a parsable number.\n * @since 3.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.withDecimalsParsing#1772",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.withDecimalsParsing(java.lang.String, int)",
+    "snippet": "private static boolean withDecimalsParsing(final String str, final int beginIdx) {\n        int decimalPoints \u003d 0;\n        for (int i \u003d beginIdx; i \u003c str.length(); i++) {\n            final boolean isDecimalPoint \u003d str.charAt(i) \u003d\u003d \u0027.\u0027;\n            if (isDecimalPoint) {\n                decimalPoints++;\n            }\n            if (decimalPoints \u003e 1) {\n                return false;\n            }\n            if (!isDecimalPoint \u0026\u0026 !Character.isDigit(str.charAt(i))) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 1772,
+    "end_line": 1787,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.compare#1799",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.compare(int, int)",
+    "snippet": "public static int compare(final int x, final int y) {\n        if (x \u003d\u003d y) {\n            return 0;\n        }\n        return x \u003c y ? -1 : 1;\n    }",
+    "begin_line": 1799,
+    "end_line": 1804,
+    "comment": "/** \n * \u003cp\u003eCompares two  {@code int} values numerically. This is the same functionality as provided in Java 7.\u003c/p\u003e\n * @param x the first {@code int} to compare\n * @param y the second {@code int} to compare\n * @return the value {@code 0} if {@code x \u003d\u003d y}; a value less than  {@code 0} if {@code x \u003c y}; and a value greater than  {@code 0} if {@code x \u003e y}\n * @since 3.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.compare#1816",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.compare(long, long)",
+    "snippet": "public static int compare(final long x, final long y) {\n        if (x \u003d\u003d y) {\n            return 0;\n        }\n        return x \u003c y ? -1 : 1;\n    }",
+    "begin_line": 1816,
+    "end_line": 1821,
+    "comment": "/** \n * \u003cp\u003eCompares to  {@code long} values numerically. This is the same functionality as provided in Java 7.\u003c/p\u003e\n * @param x the first {@code long} to compare\n * @param y the second {@code long} to compare\n * @return the value {@code 0} if {@code x \u003d\u003d y}; a value less than  {@code 0} if {@code x \u003c y}; and a value greater than  {@code 0} if {@code x \u003e y}\n * @since 3.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.compare#1833",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.compare(short, short)",
+    "snippet": "public static int compare(final short x, final short y) {\n        if (x \u003d\u003d y) {\n            return 0;\n        }\n        return x \u003c y ? -1 : 1;\n    }",
+    "begin_line": 1833,
+    "end_line": 1838,
+    "comment": "/** \n * \u003cp\u003eCompares to  {@code short} values numerically. This is the same functionality as provided in Java 7.\u003c/p\u003e\n * @param x the first {@code short} to compare\n * @param y the second {@code short} to compare\n * @return the value {@code 0} if {@code x \u003d\u003d y}; a value less than  {@code 0} if {@code x \u003c y}; and a value greater than  {@code 0} if {@code x \u003e y}\n * @since 3.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "NumberUtils.compare#1850",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/math/NumberUtils.java",
+    "class_name": "org.apache.commons.lang3.math.NumberUtils",
+    "signature": "org.apache.commons.lang3.math.NumberUtils.compare(byte, byte)",
+    "snippet": "public static int compare(final byte x, final byte y) {\n        return x - y;\n    }",
+    "begin_line": 1850,
+    "end_line": 1852,
+    "comment": "/** \n * \u003cp\u003eCompares two  {@code byte} values numerically. This is the same functionality as provided in Java 7.\u003c/p\u003e\n * @param x the first {@code byte} to compare\n * @param y the second {@code byte} to compare\n * @return the value {@code 0} if {@code x \u003d\u003d y}; a value less than  {@code 0} if {@code x \u003c y}; and a value greater than  {@code 0} if {@code x \u003e y}\n * @since 3.4\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.accept#52",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.accept(org.apache.commons.lang3.function.FailableBiConsumer\u003cjava.lang.Long,java.lang.Integer,T\u003e, java.time.Duration)",
+    "snippet": "@SuppressWarnings(\"boxing\") accept(final FailableBiConsumer\u003cLong, Integer, T\u003e consumer, final Duration duration)\n            throws T {\n        if (consumer !\u003d null \u0026\u0026 duration !\u003d null) {\n            consumer.accept(duration.toMillis(), getNanosOfMiili(duration));\n        }\n    }",
+    "begin_line": 52,
+    "end_line": 57,
+    "comment": "/** \n * Accepts the function with the duration as a long milliseconds and int nanoseconds.\n * @param \u003c T \u003e The function exception.\n * @param consumer Accepting function.\n * @param duration The duration to pick apart.\n * @throws T See the function signature.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.getNanosOfMiili#72",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.getNanosOfMiili(java.time.Duration)",
+    "snippet": "public static int getNanosOfMiili(final Duration duration) {\n        return duration.getNano() % 1_000_000;\n    }",
+    "begin_line": 72,
+    "end_line": 74,
+    "comment": "/** \n * Gets the nanosecond part of a Duration converted to milliseconds. \u003cp\u003e Handy when calling an API that takes a long of milliseconds and an int of nanoseconds. For example, {@link Object#wait(long,int)} and {@link Thread#sleep(long,int)}. \u003c/p\u003e \u003cp\u003e Note that is this different from  {@link Duration#getNano()} because a duration are seconds and nanoseconds.\u003c/p\u003e\n * @param duration The duration to query.\n * @return nanoseconds between 0 and 999,999.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.isPositive#82",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.isPositive(java.time.Duration)",
+    "snippet": "public static boolean isPositive(final Duration duration) {\n        return !duration.isNegative() \u0026\u0026 !duration.isZero();\n    }",
+    "begin_line": 82,
+    "end_line": 84,
+    "comment": "/** \n * Tests whether the given Duration is positive (\u0026gt;0).\n * @param duration the value to test\n * @return whether the given Duration is positive (\u0026gt;0).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.toChronoUnit#92",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.toChronoUnit(java.util.concurrent.TimeUnit)",
+    "snippet": "static ChronoUnit toChronoUnit(final TimeUnit timeUnit) {\n        // TODO when using Java \u003e\u003d 9: Use TimeUnit.toChronoUnit().\n        switch (Objects.requireNonNull(timeUnit)) {\n        case NANOSECONDS:\n            return ChronoUnit.NANOS;\n        case MICROSECONDS:\n            return ChronoUnit.MICROS;\n        case MILLISECONDS:\n            return ChronoUnit.MILLIS;\n        case SECONDS:\n            return ChronoUnit.SECONDS;\n        case MINUTES:\n            return ChronoUnit.MINUTES;\n        case HOURS:\n            return ChronoUnit.HOURS;\n        case DAYS:\n            return ChronoUnit.DAYS;\n        default:\n            throw new IllegalArgumentException(timeUnit.toString());\n        }\n    }",
+    "begin_line": 92,
+    "end_line": 112,
+    "comment": "/** \n * Converts a  {@link TimeUnit} to a {@link ChronoUnit}.\n * @param timeUnit A non-null TimeUnit.\n * @return The corresponding ChronoUnit.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.toDuration#121",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.toDuration(long, java.util.concurrent.TimeUnit)",
+    "snippet": "public static Duration toDuration(final long amount, final TimeUnit timeUnit) {\n        return Duration.of(amount, toChronoUnit(timeUnit));\n    }",
+    "begin_line": 121,
+    "end_line": 123,
+    "comment": "/** \n * Converts an amount and TimeUnit into a Duration.\n * @param amount   the amount of the duration, measured in terms of the unit, positive or negative\n * @param timeUnit the unit that the duration is measured in, must have an exact duration, not null\n * @return a Duration.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.toMillisInt#140",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.toMillisInt(java.time.Duration)",
+    "snippet": "public static int toMillisInt(final Duration duration) {\n        Objects.requireNonNull(duration, \"duration\");\n        // intValue() does not do a narrowing conversion here\n        return LONG_TO_INT_RANGE.fit(Long.valueOf(duration.toMillis())).intValue();\n    }",
+    "begin_line": 140,
+    "end_line": 144,
+    "comment": "/** \n * Converts a Duration to milliseconds bound to an int (instead of a long). \u003cp\u003e Handy for low-level APIs that take millisecond timeouts in ints rather than longs. \u003c/p\u003e \u003cul\u003e \u003cli\u003eIf the duration milliseconds are greater than  {@link Integer#MAX_VALUE}, then return {@link Integer#MAX_VALUE}.\u003c/li\u003e \u003cli\u003eIf the duration milliseconds are lesser than  {@link Integer#MIN_VALUE}, then return {@link Integer#MIN_VALUE}.\u003c/li\u003e \u003c/ul\u003e\n * @param duration The duration to convert, not null.\n * @return int milliseconds.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "DurationUtils.zeroIfNull#152",
+    "is_bug": true,
+    "src_path": "org/apache/commons/lang3/time/DurationUtils.java",
+    "class_name": "org.apache.commons.lang3.time.DurationUtils",
+    "signature": "org.apache.commons.lang3.time.DurationUtils.zeroIfNull(java.time.Duration)",
+    "snippet": "public static Duration zeroIfNull(final Duration duration) {\n        return ObjectUtils.defaultIfNull(duration, Duration.ZERO);\n    }",
+    "begin_line": 152,
+    "end_line": 154,
+    "comment": "/** \n * Returns the given non-null value or  {@link Duration#ZERO} if null.\n * @param duration The duration to test.\n * @return The given duration or {@link Duration#ZERO}.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

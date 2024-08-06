@@ -1,0 +1,30 @@
+--- org.apache.commons.lang3.builder.ReflectionToStringBuilderTest::testConstructorWithNullObject
+java.lang.NullPointerException
+       java.base/java.util.Objects.requireNonNull(Objects.java:235)
+       org.apache.commons.lang3.builder.ReflectionToStringBuilder.<init>(ReflectionToStringBuilder.java:535)
+       org.apache.commons.lang3.builder.ReflectionToStringBuilderTest.testConstructorWithNullObject(ReflectionToStringBuilderTest.java:31)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+       [...]
+  
+--- org.apache.commons.lang3.builder.ToStringBuilderTest::testReflectionNull
+java.lang.NullPointerException
+       java.base/java.util.Objects.requireNonNull(Objects.java:235)
+       org.apache.commons.lang3.builder.ReflectionToStringBuilder.<init>(ReflectionToStringBuilder.java:560)
+       org.apache.commons.lang3.builder.ReflectionToStringBuilder.toString(ReflectionToStringBuilder.java:386)
+       org.apache.commons.lang3.builder.ReflectionToStringBuilder.toString(ReflectionToStringBuilder.java:156)
+       org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionNull(ToStringBuilderTest.java:1268)
+       [...]
+       Suppressed: org.opentest4j.AssertionFailedError: Expected null, actual: {[]=null} ==> expected: <null> but was: <{[]=null}>
+         org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+         org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+         org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:50)
+         org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:35)
+         org.junit.jupiter.api.Assertions.assertNull(Assertions.java:284)
+         [...]
+

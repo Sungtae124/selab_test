@@ -1,0 +1,518 @@
+[
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStream()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_inputStreamToOutputStream() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, false, true);\n\n        final int count \u003d IOUtils.copy(in, out);\n\n        assertEquals(0, in.available(), \"Not all bytes were read\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n        assertEquals(inData.length,count);\n    }",
+    "begin_line": 64,
+    "end_line": 77,
+    "comment": "",
+    "child_ranges": [
+      "(line 65,col 9)-(line 65,col 58)",
+      "(line 66,col 9)-(line 66,col 45)",
+      "(line 68,col 9)-(line 68,col 72)",
+      "(line 69,col 9)-(line 69,col 90)",
+      "(line 71,col 9)-(line 71,col 48)",
+      "(line 73,col 9)-(line 73,col 67)",
+      "(line 74,col 9)-(line 74,col 66)",
+      "(line 75,col 9)-(line 75,col 82)",
+      "(line 76,col 9)-(line 76,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStream_IO84()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToOutputStream_IO84() throws Exception {\n        final long size \u003d (long)Integer.MAX_VALUE + (long)1;\n        final InputStream  in  \u003d new NullInputStream(size);\n        final OutputStream out \u003d NullOutputStream.NULL_OUTPUT_STREAM;\n\n        // Test copy() method\n        assertEquals(-1, IOUtils.copy(in, out));\n\n        // reset the input\n        in.close();\n\n        // Test copyLarge() method\n        assertEquals(size, IOUtils.copyLarge(in, out), \"copyLarge()\");\n    }",
+    "begin_line": 83,
+    "end_line": 96,
+    "comment": "",
+    "child_ranges": [
+      "(line 84,col 9)-(line 84,col 60)",
+      "(line 85,col 9)-(line 85,col 59)",
+      "(line 86,col 9)-(line 86,col 69)",
+      "(line 89,col 9)-(line 89,col 48)",
+      "(line 92,col 9)-(line 92,col 19)",
+      "(line 95,col 9)-(line 95,col 70)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStream_nullIn()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToOutputStream_nullIn() throws Exception {\n        final OutputStream out \u003d new ByteArrayOutputStream();\n        assertEquals(0, IOUtils.copy((InputStream) null, out));\n    }",
+    "begin_line": 99,
+    "end_line": 102,
+    "comment": "",
+    "child_ranges": [
+      "(line 100,col 9)-(line 100,col 61)",
+      "(line 101,col 9)-(line 101,col 63)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStream_nullOut()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToOutputStream_nullOut() throws Exception {\n        final InputStream in \u003d new ByteArrayInputStream(inData);\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(in, (OutputStream) null));\n    }",
+    "begin_line": 105,
+    "end_line": 108,
+    "comment": "",
+    "child_ranges": [
+      "(line 106,col 9)-(line 106,col 64)",
+      "(line 107,col 9)-(line 107,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStreamWithBufferSize()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToOutputStreamWithBufferSize() throws Exception {\n        testCopy_inputStreamToOutputStreamWithBufferSize(1);\n        testCopy_inputStreamToOutputStreamWithBufferSize(2);\n        testCopy_inputStreamToOutputStreamWithBufferSize(4);\n        testCopy_inputStreamToOutputStreamWithBufferSize(8);\n        testCopy_inputStreamToOutputStreamWithBufferSize(16);\n        testCopy_inputStreamToOutputStreamWithBufferSize(32);\n        testCopy_inputStreamToOutputStreamWithBufferSize(64);\n        testCopy_inputStreamToOutputStreamWithBufferSize(128);\n        testCopy_inputStreamToOutputStreamWithBufferSize(256);\n        testCopy_inputStreamToOutputStreamWithBufferSize(512);\n        testCopy_inputStreamToOutputStreamWithBufferSize(1024);\n        testCopy_inputStreamToOutputStreamWithBufferSize(2048);\n        testCopy_inputStreamToOutputStreamWithBufferSize(4096);\n        testCopy_inputStreamToOutputStreamWithBufferSize(8192);\n        testCopy_inputStreamToOutputStreamWithBufferSize(16384);\n    }",
+    "begin_line": 111,
+    "end_line": 127,
+    "comment": "",
+    "child_ranges": [
+      "(line 112,col 9)-(line 112,col 60)",
+      "(line 113,col 9)-(line 113,col 60)",
+      "(line 114,col 9)-(line 114,col 60)",
+      "(line 115,col 9)-(line 115,col 60)",
+      "(line 116,col 9)-(line 116,col 61)",
+      "(line 117,col 9)-(line 117,col 61)",
+      "(line 118,col 9)-(line 118,col 61)",
+      "(line 119,col 9)-(line 119,col 62)",
+      "(line 120,col 9)-(line 120,col 62)",
+      "(line 121,col 9)-(line 121,col 62)",
+      "(line 122,col 9)-(line 122,col 63)",
+      "(line 123,col 9)-(line 123,col 63)",
+      "(line 124,col 9)-(line 124,col 63)",
+      "(line 125,col 9)-(line 125,col 63)",
+      "(line 126,col 9)-(line 126,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToOutputStreamWithBufferSize(int)",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_inputStreamToOutputStreamWithBufferSize(final int bufferSize) throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, false, true);\n\n        final long count \u003d IOUtils.copy(in, out, bufferSize);\n\n        assertEquals(0, in.available(), \"Not all bytes were read\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n        assertEquals(inData.length,count);\n    }",
+    "begin_line": 130,
+    "end_line": 143,
+    "comment": "",
+    "child_ranges": [
+      "(line 131,col 9)-(line 131,col 58)",
+      "(line 132,col 9)-(line 132,col 45)",
+      "(line 134,col 9)-(line 134,col 72)",
+      "(line 135,col 9)-(line 135,col 90)",
+      "(line 137,col 9)-(line 137,col 61)",
+      "(line 139,col 9)-(line 139,col 67)",
+      "(line 140,col 9)-(line 140,col 66)",
+      "(line 141,col 9)-(line 141,col 82)",
+      "(line 142,col 9)-(line 142,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter()",
+    "snippet": "@SuppressWarnings({ \"resource\", \"deprecation\" }) testCopy_inputStreamToWriter() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final ThrowOnFlushAndCloseOutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(baout, \"US-ASCII\");\n\n        IOUtils.copy(in, writer); // deliberately testing deprecated method\n        out.off();\n        writer.flush();\n\n        assertEquals(0, in.available(), \"Not all bytes were read\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 148,
+    "end_line": 163,
+    "comment": "",
+    "child_ranges": [
+      "(line 149,col 9)-(line 149,col 58)",
+      "(line 150,col 9)-(line 150,col 45)",
+      "(line 152,col 9)-(line 152,col 72)",
+      "(line 153,col 9)-(line 153,col 109)",
+      "(line 154,col 9)-(line 154,col 72)",
+      "(line 156,col 9)-(line 156,col 33)",
+      "(line 157,col 9)-(line 157,col 18)",
+      "(line 158,col 9)-(line 158,col 23)",
+      "(line 160,col 9)-(line 160,col 67)",
+      "(line 161,col 9)-(line 161,col 66)",
+      "(line 162,col 9)-(line 162,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_Encoding()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_inputStreamToWriter_Encoding() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final ThrowOnFlushAndCloseOutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(baout, \"US-ASCII\");\n\n        IOUtils.copy(in, writer, \"UTF8\");\n        out.off();\n        writer.flush();\n\n        assertEquals(0, in.available(), \"Not all bytes were read\");\n        byte[] bytes \u003d baout.toByteArray();\n        bytes \u003d new String(bytes, \"UTF8\").getBytes(\"US-ASCII\");\n        assertTrue(Arrays.equals(inData, bytes), \"Content differs\");\n    }",
+    "begin_line": 168,
+    "end_line": 184,
+    "comment": "",
+    "child_ranges": [
+      "(line 169,col 9)-(line 169,col 58)",
+      "(line 170,col 9)-(line 170,col 45)",
+      "(line 172,col 9)-(line 172,col 72)",
+      "(line 173,col 9)-(line 173,col 109)",
+      "(line 174,col 9)-(line 174,col 72)",
+      "(line 176,col 9)-(line 176,col 41)",
+      "(line 177,col 9)-(line 177,col 18)",
+      "(line 178,col 9)-(line 178,col 23)",
+      "(line 180,col 9)-(line 180,col 67)",
+      "(line 181,col 9)-(line 181,col 43)",
+      "(line 182,col 9)-(line 182,col 63)",
+      "(line 183,col 9)-(line 183,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_Encoding_nullEncoding()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_inputStreamToWriter_Encoding_nullEncoding() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final ThrowOnFlushAndCloseOutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(baout, \"US-ASCII\");\n\n        IOUtils.copy(in, writer, (String) null);\n        out.off();\n        writer.flush();\n\n        assertEquals(0, in.available(), \"Not all bytes were read\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 188,
+    "end_line": 203,
+    "comment": "",
+    "child_ranges": [
+      "(line 189,col 9)-(line 189,col 58)",
+      "(line 190,col 9)-(line 190,col 45)",
+      "(line 192,col 9)-(line 192,col 72)",
+      "(line 193,col 9)-(line 193,col 109)",
+      "(line 194,col 9)-(line 194,col 72)",
+      "(line 196,col 9)-(line 196,col 48)",
+      "(line 197,col 9)-(line 197,col 18)",
+      "(line 198,col 9)-(line 198,col 23)",
+      "(line 200,col 9)-(line 200,col 67)",
+      "(line 201,col 9)-(line 201,col 66)",
+      "(line 202,col 9)-(line 202,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_Encoding_nullIn()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToWriter_Encoding_nullIn() throws Exception {\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(out, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(null, writer, \"UTF8\"));\n    }",
+    "begin_line": 206,
+    "end_line": 211,
+    "comment": "",
+    "child_ranges": [
+      "(line 207,col 9)-(line 207,col 72)",
+      "(line 208,col 9)-(line 208,col 89)",
+      "(line 209,col 9)-(line 209,col 70)",
+      "(line 210,col 9)-(line 210,col 91)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_Encoding_nullOut()",
+    "snippet": "@Test\n    public void testCopy_inputStreamToWriter_Encoding_nullOut() throws Exception {\n        final InputStream in \u003d new ByteArrayInputStream(inData);\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(in, null, \"UTF8\"));\n    }",
+    "begin_line": 214,
+    "end_line": 217,
+    "comment": "",
+    "child_ranges": [
+      "(line 215,col 9)-(line 215,col 64)",
+      "(line 216,col 9)-(line 216,col 87)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_nullIn()",
+    "snippet": "@SuppressWarnings(\"deprecation\") testCopy_inputStreamToWriter_nullIn() throws Exception {\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(out, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy((InputStream) null, writer));\n    }",
+    "begin_line": 221,
+    "end_line": 226,
+    "comment": "",
+    "child_ranges": [
+      "(line 222,col 9)-(line 222,col 72)",
+      "(line 223,col 9)-(line 223,col 89)",
+      "(line 224,col 9)-(line 224,col 70)",
+      "(line 225,col 9)-(line 225,col 97)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_inputStreamToWriter_nullOut()",
+    "snippet": "@SuppressWarnings(\"deprecation\") testCopy_inputStreamToWriter_nullOut() throws Exception {\n        final InputStream in \u003d new ByteArrayInputStream(inData);\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(in, (Writer) null)); // deliberately testing deprecated method\n    }",
+    "begin_line": 230,
+    "end_line": 233,
+    "comment": "",
+    "child_ranges": [
+      "(line 231,col 9)-(line 231,col 64)",
+      "(line 232,col 9)-(line 232,col 88)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToAppendable()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToAppendable() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final ThrowOnFlushAndCloseOutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(baout, \"US-ASCII\");\n\n        final long count \u003d IOUtils.copy(reader, (Appendable) writer);\n        out.off();\n        writer.flush();\n        assertEquals(inData.length, count, \"The number of characters returned by copy is wrong\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 237,
+    "end_line": 252,
+    "comment": "",
+    "child_ranges": [
+      "(line 238,col 9)-(line 238,col 58)",
+      "(line 239,col 9)-(line 239,col 45)",
+      "(line 240,col 9)-(line 240,col 68)",
+      "(line 242,col 9)-(line 242,col 72)",
+      "(line 243,col 9)-(line 243,col 109)",
+      "(line 244,col 9)-(line 244,col 72)",
+      "(line 246,col 9)-(line 246,col 69)",
+      "(line 247,col 9)-(line 247,col 18)",
+      "(line 248,col 9)-(line 248,col 23)",
+      "(line 249,col 9)-(line 249,col 97)",
+      "(line 250,col 9)-(line 250,col 66)",
+      "(line 251,col 9)-(line 251,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToAppendable_IO84()",
+    "snippet": "@Test\n    public void testCopy_readerToAppendable_IO84() throws Exception {\n        final long size \u003d (long) Integer.MAX_VALUE + (long) 1;\n        final Reader reader \u003d new NullReader(size);\n        final NullWriter writer \u003d new NullWriter();\n\n        // Test copy() method\n        assertEquals(size, IOUtils.copy(reader, (Appendable) writer));\n\n        // reset the input\n        reader.close();\n\n        // Test copyLarge() method\n        assertEquals(size, IOUtils.copyLarge(reader, writer), \"copy()\");\n\n    }",
+    "begin_line": 255,
+    "end_line": 269,
+    "comment": "",
+    "child_ranges": [
+      "(line 256,col 9)-(line 256,col 62)",
+      "(line 257,col 9)-(line 257,col 51)",
+      "(line 258,col 9)-(line 258,col 51)",
+      "(line 261,col 9)-(line 261,col 70)",
+      "(line 264,col 9)-(line 264,col 23)",
+      "(line 267,col 9)-(line 267,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToAppendable_nullIn()",
+    "snippet": "@Test\n    public void testCopy_readerToAppendable_nullIn() throws Exception {\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Appendable writer \u003d new OutputStreamWriter(out, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy((Reader) null, writer));\n    }",
+    "begin_line": 272,
+    "end_line": 277,
+    "comment": "",
+    "child_ranges": [
+      "(line 273,col 9)-(line 273,col 72)",
+      "(line 274,col 9)-(line 274,col 89)",
+      "(line 275,col 9)-(line 275,col 74)",
+      "(line 276,col 9)-(line 276,col 92)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToAppendable_nullOut()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToAppendable_nullOut() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(reader, (Appendable) null));\n    }",
+    "begin_line": 281,
+    "end_line": 286,
+    "comment": "",
+    "child_ranges": [
+      "(line 282,col 9)-(line 282,col 58)",
+      "(line 283,col 9)-(line 283,col 45)",
+      "(line 284,col 9)-(line 284,col 68)",
+      "(line 285,col 9)-(line 285,col 96)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream()",
+    "snippet": "@SuppressWarnings({ \"resource\", \"deprecation\" }) testCopy_readerToOutputStream() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, false, true);\n\n        IOUtils.copy(reader, out); // deliberately testing deprecated method\n        //Note: this method *does* flush. It is equivalent to:\n        //  OutputStreamWriter _out \u003d new OutputStreamWriter(fout);\n        //  IOUtils.copy( fin, _out, 4096 ); // copy( Reader, Writer, int );\n        //  _out.flush();\n        //  out \u003d fout;\n\n        // Note: rely on the method to flush\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 291,
+    "end_line": 309,
+    "comment": "",
+    "child_ranges": [
+      "(line 292,col 9)-(line 292,col 58)",
+      "(line 293,col 9)-(line 293,col 45)",
+      "(line 294,col 9)-(line 294,col 68)",
+      "(line 296,col 9)-(line 296,col 72)",
+      "(line 297,col 9)-(line 297,col 90)",
+      "(line 299,col 9)-(line 299,col 34)",
+      "(line 307,col 9)-(line 307,col 66)",
+      "(line 308,col 9)-(line 308,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_Encoding()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToOutputStream_Encoding() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, false, true);\n\n        IOUtils.copy(reader, out, \"UTF16\");\n        // note: this method *does* flush.\n        // note: we don\u0027t flush here; this IOUtils method does it for us\n\n        byte[] bytes \u003d baout.toByteArray();\n        bytes \u003d new String(bytes, \"UTF16\").getBytes(\"US-ASCII\");\n        assertTrue(Arrays.equals(inData, bytes), \"Content differs\");\n    }",
+    "begin_line": 314,
+    "end_line": 329,
+    "comment": "",
+    "child_ranges": [
+      "(line 315,col 9)-(line 315,col 58)",
+      "(line 316,col 9)-(line 316,col 45)",
+      "(line 317,col 9)-(line 317,col 68)",
+      "(line 319,col 9)-(line 319,col 72)",
+      "(line 320,col 9)-(line 320,col 90)",
+      "(line 322,col 9)-(line 322,col 43)",
+      "(line 326,col 9)-(line 326,col 43)",
+      "(line 327,col 9)-(line 327,col 64)",
+      "(line 328,col 9)-(line 328,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_Encoding_nullEncoding()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToOutputStream_Encoding_nullEncoding() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, false, true);\n\n        IOUtils.copy(reader, out, (String) null);\n        // note: this method *does* flush.\n        // note: we don\u0027t flush here; this IOUtils method does it for us\n\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 333,
+    "end_line": 347,
+    "comment": "",
+    "child_ranges": [
+      "(line 334,col 9)-(line 334,col 58)",
+      "(line 335,col 9)-(line 335,col 45)",
+      "(line 336,col 9)-(line 336,col 68)",
+      "(line 338,col 9)-(line 338,col 72)",
+      "(line 339,col 9)-(line 339,col 90)",
+      "(line 341,col 9)-(line 341,col 49)",
+      "(line 345,col 9)-(line 345,col 66)",
+      "(line 346,col 9)-(line 346,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_Encoding_nullIn()",
+    "snippet": "@Test\n    public void testCopy_readerToOutputStream_Encoding_nullIn() throws Exception {\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(null, out, \"UTF16\"));\n    }",
+    "begin_line": 350,
+    "end_line": 354,
+    "comment": "",
+    "child_ranges": [
+      "(line 351,col 9)-(line 351,col 72)",
+      "(line 352,col 9)-(line 352,col 89)",
+      "(line 353,col 9)-(line 353,col 89)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_Encoding_nullOut()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToOutputStream_Encoding_nullOut() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(reader, null, \"UTF16\"));\n    }",
+    "begin_line": 358,
+    "end_line": 363,
+    "comment": "",
+    "child_ranges": [
+      "(line 359,col 9)-(line 359,col 58)",
+      "(line 360,col 9)-(line 360,col 45)",
+      "(line 361,col 9)-(line 361,col 68)",
+      "(line 362,col 9)-(line 362,col 92)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_nullIn()",
+    "snippet": "@SuppressWarnings(\"deprecation\")\n    @Test\n    public void testCopy_readerToOutputStream_nullIn() throws Exception { // deliberately testing deprecated method\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy((Reader) null, out));\n    }",
+    "begin_line": 367,
+    "end_line": 371,
+    "comment": "",
+    "child_ranges": [
+      "(line 368,col 9)-(line 368,col 72)",
+      "(line 369,col 9)-(line 369,col 89)",
+      "(line 370,col 9)-(line 370,col 89)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToOutputStream_nullOut()",
+    "snippet": "@SuppressWarnings({ \"resource\", \"deprecation\" }) testCopy_readerToOutputStream_nullOut() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(reader, (OutputStream) null)); // deliberately testing deprecated method\n    }",
+    "begin_line": 375,
+    "end_line": 380,
+    "comment": "",
+    "child_ranges": [
+      "(line 376,col 9)-(line 376,col 58)",
+      "(line 377,col 9)-(line 377,col 45)",
+      "(line 378,col 9)-(line 378,col 68)",
+      "(line 379,col 9)-(line 379,col 98)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToWriter()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToWriter() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final ThrowOnFlushAndCloseOutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(baout, \"US-ASCII\");\n\n        final int count \u003d IOUtils.copy(reader, writer);\n        out.off();\n        writer.flush();\n        assertEquals(inData.length, count, \"The number of characters returned by copy is wrong\");\n        assertEquals(inData.length, baout.size(), \"Sizes differ\");\n        assertTrue(Arrays.equals(inData, baout.toByteArray()), \"Content differs\");\n    }",
+    "begin_line": 385,
+    "end_line": 400,
+    "comment": "",
+    "child_ranges": [
+      "(line 386,col 9)-(line 386,col 58)",
+      "(line 387,col 9)-(line 387,col 45)",
+      "(line 388,col 9)-(line 388,col 68)",
+      "(line 390,col 9)-(line 390,col 72)",
+      "(line 391,col 9)-(line 391,col 109)",
+      "(line 392,col 9)-(line 392,col 72)",
+      "(line 394,col 9)-(line 394,col 55)",
+      "(line 395,col 9)-(line 395,col 18)",
+      "(line 396,col 9)-(line 396,col 23)",
+      "(line 397,col 9)-(line 397,col 97)",
+      "(line 398,col 9)-(line 398,col 66)",
+      "(line 399,col 9)-(line 399,col 82)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToWriter_IO84()",
+    "snippet": "@Test\n    public void testCopy_readerToWriter_IO84() throws Exception {\n        final long size \u003d (long)Integer.MAX_VALUE + (long)1;\n        final Reader reader \u003d new NullReader(size);\n        final Writer writer \u003d new NullWriter();\n\n        // Test copy() method\n        assertEquals(-1, IOUtils.copy(reader, writer));\n\n        // reset the input\n        reader.close();\n\n        // Test copyLarge() method\n        assertEquals(size, IOUtils.copyLarge(reader, writer), \"copyLarge()\");\n\n    }",
+    "begin_line": 406,
+    "end_line": 420,
+    "comment": "",
+    "child_ranges": [
+      "(line 407,col 9)-(line 407,col 60)",
+      "(line 408,col 9)-(line 408,col 51)",
+      "(line 409,col 9)-(line 409,col 47)",
+      "(line 412,col 9)-(line 412,col 55)",
+      "(line 415,col 9)-(line 415,col 23)",
+      "(line 418,col 9)-(line 418,col 77)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToWriter_nullIn()",
+    "snippet": "@Test\n    public void testCopy_readerToWriter_nullIn() throws Exception {\n        final ByteArrayOutputStream baout \u003d new ByteArrayOutputStream();\n        final OutputStream out \u003d new ThrowOnFlushAndCloseOutputStream(baout, true, true);\n        final Writer writer \u003d new OutputStreamWriter(out, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy((Reader) null, writer));\n    }",
+    "begin_line": 423,
+    "end_line": 428,
+    "comment": "",
+    "child_ranges": [
+      "(line 424,col 9)-(line 424,col 72)",
+      "(line 425,col 9)-(line 425,col 89)",
+      "(line 426,col 9)-(line 426,col 70)",
+      "(line 427,col 9)-(line 427,col 92)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.IOUtilsCopyTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/IOUtilsCopyTestCase.java",
+    "signature": "org.apache.commons.io.IOUtilsCopyTestCase.testCopy_readerToWriter_nullOut()",
+    "snippet": "@SuppressWarnings(\"resource\") testCopy_readerToWriter_nullOut() throws Exception {\n        InputStream in \u003d new ByteArrayInputStream(inData);\n        in \u003d new ThrowOnCloseInputStream(in);\n        final Reader reader \u003d new InputStreamReader(in, \"US-ASCII\");\n        assertThrows(NullPointerException.class, () -\u003e IOUtils.copy(reader, (Writer) null));\n    }",
+    "begin_line": 432,
+    "end_line": 437,
+    "comment": "",
+    "child_ranges": [
+      "(line 433,col 9)-(line 433,col 58)",
+      "(line 434,col 9)-(line 434,col 45)",
+      "(line 435,col 9)-(line 435,col 68)",
+      "(line 436,col 9)-(line 436,col 92)"
+    ]
+  }
+]

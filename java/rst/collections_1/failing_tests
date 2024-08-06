@@ -1,0 +1,56 @@
+--- org.apache.commons.collections4.map.CompositeMapTest::testRemoveFromUnderlying
+java.lang.NullPointerException
+       org.apache.commons.collections4.map.CompositeMap.addComposited(CompositeMap.java:136)
+       org.apache.commons.collections4.map.CompositeMapTest.testRemoveFromUnderlying(CompositeMapTest.java:111)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.map.CompositeMapTest::testRemoveComposited
+java.lang.NullPointerException
+       org.apache.commons.collections4.map.CompositeMap.addComposited(CompositeMap.java:136)
+       org.apache.commons.collections4.map.CompositeMapTest.testRemoveComposited(CompositeMapTest.java:94)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.map.CompositeMapTest::testRemoveFromComposited
+java.lang.NullPointerException
+       org.apache.commons.collections4.map.CompositeMap.addComposited(CompositeMap.java:136)
+       org.apache.commons.collections4.map.CompositeMapTest.testRemoveFromComposited(CompositeMapTest.java:125)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+  
+--- org.apache.commons.collections4.map.CompositeMapTest::testAddComposited
+java.lang.NullPointerException
+       org.apache.commons.collections4.map.CompositeMap.addComposited(CompositeMap.java:136)
+       org.apache.commons.collections4.map.CompositeMapTest.testAddComposited(CompositeMapTest.java:78)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       junit.framework.TestCase.runTest(TestCase.java:177)
+       junit.framework.TestCase.runBare(TestCase.java:142)
+       junit.framework.TestResult$1.protect(TestResult.java:122)
+       junit.framework.TestResult.runProtected(TestResult.java:142)
+       [...]
+

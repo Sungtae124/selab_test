@@ -1,0 +1,11 @@
+--- org.apache.commons.io.file.PathUtilsTest::testCreateDirectoriesForRootsLinkOptionNull
+java.lang.NullPointerException
+       java.base/java.nio.file.Files.provider(Files.java:105)
+       java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+       java.base/java.nio.file.Files.isSymbolicLink(Files.java:2277)
+       org.apache.commons.io.file.PathUtils.readIfSymbolicLink(PathUtils.java:1215)
+       org.apache.commons.io.file.PathUtils.createParentDirectories(PathUtils.java:371)
+       org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesForRootsLinkOptionNull(PathUtilsTest.java:191)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

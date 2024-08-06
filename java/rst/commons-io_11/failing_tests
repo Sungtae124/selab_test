@@ -1,0 +1,17 @@
+--- org.apache.commons.io.input.ReaderInputStreamTest::testConstructNullCharsetEncoder
+java.lang.NullPointerException
+       org.apache.commons.io.input.ReaderInputStream.minBufferSize(ReaderInputStream.java:94)
+       org.apache.commons.io.input.ReaderInputStream.checkMinBufferSize(ReaderInputStream.java:85)
+       org.apache.commons.io.input.ReaderInputStream.<init>(ReaderInputStream.java:178)
+       org.apache.commons.io.input.ReaderInputStreamTest.testConstructNullCharsetEncoder(ReaderInputStreamTest.java:128)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.input.ReaderInputStreamTest::testConstructNullCharset
+java.lang.NullPointerException
+       org.apache.commons.io.input.ReaderInputStream.<init>(ReaderInputStream.java:149)
+       org.apache.commons.io.input.ReaderInputStreamTest.testConstructNullCharset(ReaderInputStreamTest.java:139)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

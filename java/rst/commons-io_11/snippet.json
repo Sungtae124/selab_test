@@ -1,0 +1,226 @@
+[
+  {
+    "name": "ReaderInputStream.checkMinBufferSize#84",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.checkMinBufferSize(java.nio.charset.CharsetEncoder, int)",
+    "snippet": "static int checkMinBufferSize(final CharsetEncoder charsetEncoder, final int bufferSize) {\n        final float minRequired \u003d minBufferSize(charsetEncoder);\n        if (bufferSize \u003c minRequired) {\n            throw new IllegalArgumentException(\n                String.format(\"Buffer size %,d must be at least %s for a CharsetEncoder %s.\", bufferSize, minRequired, charsetEncoder.charset().displayName()));\n        }\n        return bufferSize;\n    }",
+    "begin_line": 84,
+    "end_line": 91,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.minBufferSize#93",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.minBufferSize(java.nio.charset.CharsetEncoder)",
+    "snippet": "static float minBufferSize(final CharsetEncoder charsetEncoder) {\n        return charsetEncoder.maxBytesPerChar() * 2;\n    }",
+    "begin_line": 93,
+    "end_line": 95,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#124",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader)",
+    "snippet": "@Deprecated\n    public ReaderInputStream(final Reader reader) {\n        this(reader, Charset.defaultCharset());\n    }",
+    "begin_line": 124,
+    "end_line": 126,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream} that uses the default character encoding with a default input buffer sizeof  {@value #DEFAULT_BUFFER_SIZE} characters.\n * @param reader the target {@link Reader}\n * @deprecated 2.5 use {@link #ReaderInputStream(Reader,Charset)} instead\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#135",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.nio.charset.Charset)",
+    "snippet": "public ReaderInputStream(final Reader reader, final Charset charset) {\n        this(reader, charset, DEFAULT_BUFFER_SIZE);\n    }",
+    "begin_line": 135,
+    "end_line": 137,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream} with a default input buffer size of {@value #DEFAULT_BUFFER_SIZE}characters.\n * @param reader the target {@link Reader}\n * @param charset the charset encoding\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#146",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.nio.charset.Charset, int)",
+    "snippet": "public ReaderInputStream(final Reader reader, final Charset charset, final int bufferSize) {\n        // @formatter:off\n        this(reader,\n             charset.newEncoder()\n                    .onMalformedInput(CodingErrorAction.REPLACE)\n                    .onUnmappableCharacter(CodingErrorAction.REPLACE),\n             bufferSize);\n        // @formatter:on\n    }",
+    "begin_line": 146,
+    "end_line": 154,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream}.\n * @param reader the target {@link Reader}.\n * @param charset the charset encoding.\n * @param bufferSize the size of the input buffer in number of characters.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#163",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.nio.charset.CharsetEncoder)",
+    "snippet": "public ReaderInputStream(final Reader reader, final CharsetEncoder charsetEncoder) {\n        this(reader, charsetEncoder, DEFAULT_BUFFER_SIZE);\n    }",
+    "begin_line": 163,
+    "end_line": 165,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream}.\n * @param reader the target {@link Reader}\n * @param charsetEncoder the charset encoder\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#175",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.nio.charset.CharsetEncoder, int)",
+    "snippet": "public ReaderInputStream(final Reader reader, final CharsetEncoder charsetEncoder, final int bufferSize) {\n        this.reader \u003d reader;\n        this.charsetEncoder \u003d charsetEncoder;\n        this.encoderIn \u003d CharBuffer.allocate(checkMinBufferSize(charsetEncoder, bufferSize));\n        this.encoderIn.flip();\n        this.encoderOut \u003d ByteBuffer.allocate(128);\n        this.encoderOut.flip();\n    }",
+    "begin_line": 175,
+    "end_line": 182,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream}.\n * @param reader the target {@link Reader}\n * @param charsetEncoder the charset encoder\n * @param bufferSize the size of the input buffer in number of characters\n * @since 2.1\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#191",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.lang.String)",
+    "snippet": "public ReaderInputStream(final Reader reader, final String charsetName) {\n        this(reader, charsetName, DEFAULT_BUFFER_SIZE);\n    }",
+    "begin_line": 191,
+    "end_line": 193,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream} with a default input buffer size of {@value #DEFAULT_BUFFER_SIZE}characters.\n * @param reader the target {@link Reader}\n * @param charsetName the name of the charset encoding\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.ReaderInputStream#202",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.ReaderInputStream(java.io.Reader, java.lang.String, int)",
+    "snippet": "public ReaderInputStream(final Reader reader, final String charsetName, final int bufferSize) {\n        this(reader, Charset.forName(charsetName), bufferSize);\n    }",
+    "begin_line": 202,
+    "end_line": 204,
+    "comment": "/** \n * Constructs a new  {@link ReaderInputStream}.\n * @param reader the target {@link Reader}\n * @param charsetName the name of the charset encoding\n * @param bufferSize the size of the input buffer in number of characters\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.close#212",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.close()",
+    "snippet": "@Override\n    public void close() throws IOException {\n        reader.close();\n    }",
+    "begin_line": 212,
+    "end_line": 214,
+    "comment": "/** \n * Close the stream. This method will cause the underlying  {@link Reader} to be closed.\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.fillBuffer#221",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.fillBuffer()",
+    "snippet": "private void fillBuffer() throws IOException {\n        if (!endOfInput \u0026\u0026 (lastCoderResult \u003d\u003d null || lastCoderResult.isUnderflow())) {\n            encoderIn.compact();\n            final int position \u003d encoderIn.position();\n            // We don\u0027t use Reader#read(CharBuffer) here because it is more efficient\n            // to write directly to the underlying char array (the default implementation\n            // copies data to a temporary char array).\n            final int c \u003d reader.read(encoderIn.array(), position, encoderIn.remaining());\n            if (c \u003d\u003d EOF) {\n                endOfInput \u003d true;\n            } else {\n                encoderIn.position(position + c);\n            }\n            encoderIn.flip();\n        }\n        encoderOut.compact();\n        lastCoderResult \u003d charsetEncoder.encode(encoderIn, encoderOut, endOfInput);\n        if (endOfInput) {\n            lastCoderResult \u003d charsetEncoder.flush(encoderOut);\n        }\n        if (lastCoderResult.isError()) {\n            lastCoderResult.throwException();\n        }\n        encoderOut.flip();\n    }",
+    "begin_line": 221,
+    "end_line": 245,
+    "comment": "/** \n * Fills the internal char buffer from the reader.\n * @throws IOException If an I/O error occurs\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.read#254",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.read()",
+    "snippet": "@Override\n    public int read() throws IOException {\n        for (;;) {\n            if (encoderOut.hasRemaining()) {\n                return encoderOut.get() \u0026 0xFF;\n            }\n            fillBuffer();\n            if (endOfInput \u0026\u0026 !encoderOut.hasRemaining()) {\n                return EOF;\n            }\n        }\n    }",
+    "begin_line": 254,
+    "end_line": 264,
+    "comment": "/** \n * Read a single byte.\n * @return either the byte read or {@code -1} if the end of the stream has been reached\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.read#274",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.read(byte[])",
+    "snippet": "@Override\n    public int read(final byte[] b) throws IOException {\n        return read(b, 0, b.length);\n    }",
+    "begin_line": 274,
+    "end_line": 276,
+    "comment": "/** \n * Read the specified number of bytes into an array.\n * @param b the byte array to read into\n * @return the number of bytes read or {@code -1} if the end of the stream has been reached\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "ReaderInputStream.read#288",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.read(byte[], int, int)",
+    "snippet": "@Override\n    public int read(final byte[] array, int off, int len) throws IOException {\n        Objects.requireNonNull(array, \"array\");\n        if (len \u003c 0 || off \u003c 0 || (off + len) \u003e array.length) {\n            throw new IndexOutOfBoundsException(\"Array size\u003d\" + array.length + \", offset\u003d\" + off + \", length\u003d\" + len);\n        }\n        int read \u003d 0;\n        if (len \u003d\u003d 0) {\n            return 0; // Always return 0 if len \u003d\u003d 0\n        }\n        while (len \u003e 0) {\n            if (encoderOut.hasRemaining()) { // Data from the last read not fully copied\n                final int c \u003d Math.min(encoderOut.remaining(), len);\n                encoderOut.get(array, off, c);\n                off +\u003d c;\n                len -\u003d c;\n                read +\u003d c;\n            } else if (endOfInput) { // Already reach EOF in the last read\n                break;\n            } else { // Read again\n                fillBuffer();\n            }\n        }\n        return read \u003d\u003d 0 \u0026\u0026 endOfInput ? EOF : read;\n    }",
+    "begin_line": 288,
+    "end_line": 311,
+    "comment": "/** \n * Read the specified number of bytes into an array.\n * @param array the byte array to read into\n * @param off the offset to start reading bytes into\n * @param len the number of bytes to read\n * @return the number of bytes read or {@code -1} if the end of the stream has been reached\n * @throws IOException if an I/O error occurs.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

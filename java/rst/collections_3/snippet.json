@@ -1,0 +1,450 @@
+[
+  {
+    "name": "CompositeCollection.CompositeCollection#55",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.CompositeCollection()",
+    "snippet": "public CompositeCollection() {\n        super();\n    }",
+    "begin_line": 55,
+    "end_line": 57,
+    "comment": "/** \n * Create an empty CompositeCollection.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.CompositeCollection#64",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.CompositeCollection(java.util.Collection\u003cE\u003e)",
+    "snippet": "public CompositeCollection(final Collection\u003cE\u003e compositeCollection) {\n        super();\n        addComposited(compositeCollection);\n    }",
+    "begin_line": 64,
+    "end_line": 67,
+    "comment": "/** \n * Create a Composite Collection with one collection.\n * @param compositeCollection  the Collection to be appended to the composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.CompositeCollection#75",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.CompositeCollection(java.util.Collection\u003cE\u003e, java.util.Collection\u003cE\u003e)",
+    "snippet": "public CompositeCollection(final Collection\u003cE\u003e compositeCollection1,\n                               final Collection\u003cE\u003e compositeCollection2) {\n        super();\n        addComposited(compositeCollection1, compositeCollection2);\n    }",
+    "begin_line": 75,
+    "end_line": 79,
+    "comment": "/** \n * Create a Composite Collection with two collections.\n * @param compositeCollection1  the Collection to be appended to the composite\n * @param compositeCollection2  the Collection to be appended to the composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.CompositeCollection#86",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.CompositeCollection(java.util.Collection\u003cE\u003e)",
+    "snippet": "public CompositeCollection(final Collection\u003cE\u003e... compositeCollections) {\n        super();\n        addComposited(compositeCollections);\n    }",
+    "begin_line": 86,
+    "end_line": 89,
+    "comment": "/** \n * Create a Composite Collection with an array of collections.\n * @param compositeCollections  the collections to composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.size#100",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.size()",
+    "snippet": "@Override\n    public int size() {\n        int size \u003d 0;\n        for (final Collection\u003cE\u003e item : all) {\n            size +\u003d item.size();\n        }\n        return size;\n    }",
+    "begin_line": 100,
+    "end_line": 106,
+    "comment": "/** \n * Gets the size of this composite collection. \u003cp\u003e This implementation calls \u003ccode\u003esize()\u003c/code\u003e on each collection.\n * @return total number of elements in all contained containers\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.isEmpty#116",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.isEmpty()",
+    "snippet": "@Override\n    public boolean isEmpty() {\n        for (final Collection\u003cE\u003e item : all) {\n            if (item.isEmpty() \u003d\u003d false) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 116,
+    "end_line": 123,
+    "comment": "/** \n * Checks whether this composite collection is empty. \u003cp\u003e This implementation calls \u003ccode\u003eisEmpty()\u003c/code\u003e on each collection.\n * @return true if all of the contained collections are empty\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.contains#134",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.contains(java.lang.Object)",
+    "snippet": "@Override\n    public boolean contains(final Object obj) {\n        for (final Collection\u003cE\u003e item : all) {\n            if (item.contains(obj)) {\n                return true;\n            }\n        }\n        return false;\n    }",
+    "begin_line": 134,
+    "end_line": 141,
+    "comment": "/** \n * Checks whether this composite collection contains the object. \u003cp\u003e This implementation calls \u003ccode\u003econtains()\u003c/code\u003e on each collection.\n * @param obj  the object to search for\n * @return true if obj is contained in any of the contained collections\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.iterator#154",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.iterator()",
+    "snippet": "@Override\n    public Iterator\u003cE\u003e iterator() {\n        if (all.isEmpty()) {\n            return EmptyIterator.\u003cE\u003eemptyIterator();\n        }\n        final IteratorChain\u003cE\u003e chain \u003d new IteratorChain\u003c\u003e();\n        for (final Collection\u003cE\u003e item : all) {\n            chain.addIterator(item.iterator());\n        }\n        return chain;\n    }",
+    "begin_line": 154,
+    "end_line": 163,
+    "comment": "/** \n * Gets an iterator over all the collections in this composite. \u003cp\u003e This implementation uses an \u003ccode\u003eIteratorChain\u003c/code\u003e.\n * @return an \u003ccode\u003eIteratorChain\u003c/code\u003e instance which supports\u003ccode\u003eremove()\u003c/code\u003e. Iteration occurs over contained collections in the order they were added, but this behavior should not be relied upon.\n * @see IteratorChain\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.toArray#171",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.toArray()",
+    "snippet": "@Override\n    public Object[] toArray() {\n        final Object[] result \u003d new Object[size()];\n        int i \u003d 0;\n        for (final Iterator\u003cE\u003e it \u003d iterator(); it.hasNext(); i++) {\n            result[i] \u003d it.next();\n        }\n        return result;\n    }",
+    "begin_line": 171,
+    "end_line": 178,
+    "comment": "/** \n * Returns an array containing all of the elements in this composite.\n * @return an object array of all the elements in the collection\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.toArray#190",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.toArray(T[])",
+    "snippet": "@Override\n    @SuppressWarnings(\"unchecked\")\n    public \u003cT\u003e T[] toArray(final T[] array) {\n        final int size \u003d size();\n        Object[] result \u003d null;\n        if (array.length \u003e\u003d size) {\n            result \u003d array;\n        } else {\n            result \u003d (Object[]) Array.newInstance(array.getClass().getComponentType(), size);\n        }\n\n        int offset \u003d 0;\n        for (final Collection\u003cE\u003e item : all) {\n            for (final E e : item) {\n                result[offset++] \u003d e;\n            }\n        }\n        if (result.length \u003e size) {\n            result[size] \u003d null;\n        }\n        return (T[]) result;\n    }",
+    "begin_line": 190,
+    "end_line": 209,
+    "comment": "/** \n * Returns an object array, populating the supplied array if possible. See \u003ccode\u003eCollection\u003c/code\u003e interface for full details.\n * @param \u003c T \u003e  the type of the elements in the collection\n * @param array  the array to use, populating if possible\n * @return an array of all the elements in the collection\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.add#224",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.add(E)",
+    "snippet": "@Override\n    public boolean add(final E obj) {\n        if (mutator \u003d\u003d null) {\n           throw new UnsupportedOperationException(\n               \"add() is not supported on CompositeCollection without a CollectionMutator strategy\");\n        }\n        return mutator.add(this, all, obj);\n    }",
+    "begin_line": 224,
+    "end_line": 230,
+    "comment": "/** \n * Adds an object to the collection, throwing UnsupportedOperationException unless a CollectionMutator strategy is specified.\n * @param obj  the object to add\n * @return {@code true} if the collection was modified\n * @throws UnsupportedOperationException if CollectionMutator hasn\u0027t been set\n * @throws UnsupportedOperationException if add is unsupported\n * @throws ClassCastException if the object cannot be added due to its type\n * @throws NullPointerException if the object cannot be added because its null\n * @throws IllegalArgumentException if the object cannot be added\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.remove#244",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.remove(java.lang.Object)",
+    "snippet": "@Override\n    public boolean remove(final Object obj) {\n        if (mutator \u003d\u003d null) {\n            throw new UnsupportedOperationException(\n                \"remove() is not supported on CompositeCollection without a CollectionMutator strategy\");\n        }\n        return mutator.remove(this, all, obj);\n    }",
+    "begin_line": 244,
+    "end_line": 250,
+    "comment": "/** \n * Removes an object from the collection, throwing UnsupportedOperationException unless a CollectionMutator strategy is specified.\n * @param obj  the object being removed\n * @return true if the collection is changed\n * @throws UnsupportedOperationException if removed is unsupported\n * @throws ClassCastException if the object cannot be removed due to its type\n * @throws NullPointerException if the object cannot be removed because its null\n * @throws IllegalArgumentException if the object cannot be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.containsAll#262",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.containsAll(java.util.Collection\u003c?\u003e)",
+    "snippet": "@Override\n    public boolean containsAll(final Collection\u003c?\u003e coll) {\n        for (final Object item : coll) {\n            if (contains(item) \u003d\u003d false) {\n                return false;\n            }\n        }\n        return true;\n    }",
+    "begin_line": 262,
+    "end_line": 269,
+    "comment": "/** \n * Checks whether this composite contains all the elements in the specified collection. \u003cp\u003e This implementation calls \u003ccode\u003econtains()\u003c/code\u003e for each element in the specified collection.\n * @param coll  the collection to check for\n * @return true if all elements contained\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.addAll#284",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.addAll(java.util.Collection\u003c? extends E\u003e)",
+    "snippet": "@Override\n    public boolean addAll(final Collection\u003c? extends E\u003e coll) {\n        if (mutator \u003d\u003d null) {\n            throw new UnsupportedOperationException(\n                \"addAll() is not supported on CompositeCollection without a CollectionMutator strategy\");\n        }\n        return mutator.addAll(this, all, coll);\n    }",
+    "begin_line": 284,
+    "end_line": 290,
+    "comment": "/** \n * Adds a collection of elements to this collection, throwing UnsupportedOperationException unless a CollectionMutator strategy is specified.\n * @param coll  the collection to add\n * @return true if the collection was modified\n * @throws UnsupportedOperationException if CollectionMutator hasn\u0027t been set\n * @throws UnsupportedOperationException if add is unsupported\n * @throws ClassCastException if the object cannot be added due to its type\n * @throws NullPointerException if the object cannot be added because its null\n * @throws IllegalArgumentException if the object cannot be added\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.removeAll#302",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.removeAll(java.util.Collection\u003c?\u003e)",
+    "snippet": "@Override\n    public boolean removeAll(final Collection\u003c?\u003e coll) {\n        if (coll.size() \u003d\u003d 0) {\n            return false;\n        }\n        boolean changed \u003d false;\n        for (final Collection\u003cE\u003e item : all) {\n            changed |\u003d item.removeAll(coll);\n        }\n        return changed;\n    }",
+    "begin_line": 302,
+    "end_line": 311,
+    "comment": "/** \n * Removes the elements in the specified collection from this composite collection. \u003cp\u003e This implementation calls \u003ccode\u003eremoveAll\u003c/code\u003e on each collection.\n * @param coll  the collection to remove\n * @return true if the collection was modified\n * @throws UnsupportedOperationException if removeAll is unsupported\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.retainAll#324",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.retainAll(java.util.Collection\u003c?\u003e)",
+    "snippet": "@Override\n    public boolean retainAll(final Collection\u003c?\u003e coll) {\n        boolean changed \u003d false;\n        for (final Collection\u003cE\u003e item : all) {\n            changed |\u003d item.retainAll(coll);\n        }\n        return changed;\n    }",
+    "begin_line": 324,
+    "end_line": 330,
+    "comment": "/** \n * Retains all the elements in the specified collection in this composite collection, removing all others. \u003cp\u003e This implementation calls \u003ccode\u003eretainAll()\u003c/code\u003e on each collection.\n * @param coll  the collection to remove\n * @return true if the collection was modified\n * @throws UnsupportedOperationException if retainAll is unsupported\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.clear#340",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.clear()",
+    "snippet": "@Override\n    public void clear() {\n        for (final Collection\u003cE\u003e coll : all) {\n            coll.clear();\n        }\n    }",
+    "begin_line": 340,
+    "end_line": 344,
+    "comment": "/** \n * Removes all of the elements from this collection . \u003cp\u003e This implementation calls \u003ccode\u003eclear()\u003c/code\u003e on each collection.\n * @throws UnsupportedOperationException if clear is unsupported\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.setMutator#352",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.setMutator(org.apache.commons.collections4.collection.CompositeCollection.CollectionMutator\u003cE\u003e)",
+    "snippet": "public void setMutator(final CollectionMutator\u003cE\u003e mutator) {\n        this.mutator \u003d mutator;\n    }",
+    "begin_line": 352,
+    "end_line": 354,
+    "comment": "/** \n * Specify a CollectionMutator strategy instance to handle changes.\n * @param mutator  the mutator to use\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.addComposited#361",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.addComposited(java.util.Collection\u003cE\u003e)",
+    "snippet": "public void addComposited(final Collection\u003cE\u003e compositeCollection) {\n        all.add(compositeCollection);\n    }",
+    "begin_line": 361,
+    "end_line": 363,
+    "comment": "/** \n * Add these Collections to the list of collections in this composite\n * @param compositeCollection  the Collection to be appended to the composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.addComposited#371",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.addComposited(java.util.Collection\u003cE\u003e, java.util.Collection\u003cE\u003e)",
+    "snippet": "public void addComposited(final Collection\u003cE\u003e compositeCollection1,\n                              final Collection\u003cE\u003e compositeCollection2) {\n        all.add(compositeCollection1);\n        all.add(compositeCollection2);\n    }",
+    "begin_line": 371,
+    "end_line": 375,
+    "comment": "/** \n * Add these Collections to the list of collections in this composite\n * @param compositeCollection1  the Collection to be appended to the composite\n * @param compositeCollection2  the Collection to be appended to the composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.addComposited#382",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.addComposited(java.util.Collection\u003cE\u003e)",
+    "snippet": "public void addComposited(final Collection\u003cE\u003e... compositeCollections) {\n        all.addAll(Arrays.asList(compositeCollections));\n    }",
+    "begin_line": 382,
+    "end_line": 384,
+    "comment": "/** \n * Add these Collections to the list of collections in this composite\n * @param compositeCollections  the Collections to be appended to the composite\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.removeComposited#391",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.removeComposited(java.util.Collection\u003cE\u003e)",
+    "snippet": "public void removeComposited(final Collection\u003cE\u003e coll) {\n        all.remove(coll);\n    }",
+    "begin_line": 391,
+    "end_line": 393,
+    "comment": "/** \n * Removes a collection from the those being decorated in this composite.\n * @param coll  collection to be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.toCollection#402",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.toCollection()",
+    "snippet": "public Collection\u003cE\u003e toCollection() {\n        return new ArrayList\u003c\u003e(this);\n    }",
+    "begin_line": 402,
+    "end_line": 404,
+    "comment": "/** \n * Returns a new collection containing all of the elements\n * @return A new ArrayList containing all of the elements in this composite.The new collection is \u003ci\u003enot\u003c/i\u003e backed by this composite.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.getCollections#411",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.getCollections()",
+    "snippet": "public List\u003cCollection\u003cE\u003e\u003e getCollections() {\n        return UnmodifiableList.unmodifiableList(all);\n    }",
+    "begin_line": 411,
+    "end_line": 413,
+    "comment": "/** \n * Gets the collections being decorated.\n * @return Unmodifiable list of all collections in this composite.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CompositeCollection.getMutator#419",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.getMutator()",
+    "snippet": "protected CollectionMutator\u003cE\u003e getMutator() {\n        return mutator;\n    }",
+    "begin_line": 419,
+    "end_line": 421,
+    "comment": "/** \n * Get the collection mutator to be used for this CompositeCollection.\n * @return CollectionMutator\u0026lt;E\u0026gt;\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CollectionMutator.add#443",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.add(org.apache.commons.collections4.collection.CompositeCollection\u003cE\u003e, java.util.List\u003cjava.util.Collection\u003cE\u003e\u003e, E)",
+    "snippet": "boolean add(CompositeCollection\u003cE\u003e composite, List\u003cCollection\u003cE\u003e\u003e collections, E obj);",
+    "begin_line": 443,
+    "end_line": 443,
+    "comment": "/** \n * Called when an object is to be added to the composite.\n * @param composite  the CompositeCollection being changed\n * @param collections  all of the Collection instances in this CompositeCollection\n * @param obj  the object being added\n * @return true if the collection is changed\n * @throws UnsupportedOperationException if add is unsupported\n * @throws ClassCastException if the object cannot be added due to its type\n * @throws NullPointerException if the object cannot be added because its null\n * @throws IllegalArgumentException if the object cannot be added\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CollectionMutator.addAll#457",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.addAll(org.apache.commons.collections4.collection.CompositeCollection\u003cE\u003e, java.util.List\u003cjava.util.Collection\u003cE\u003e\u003e, java.util.Collection\u003c? extends E\u003e)",
+    "snippet": "boolean addAll(CompositeCollection\u003cE\u003e composite,\n                              List\u003cCollection\u003cE\u003e\u003e collections,\n                              Collection\u003c? extends E\u003e coll);",
+    "begin_line": 457,
+    "end_line": 459,
+    "comment": "/** \n * Called when a collection is to be added to the composite.\n * @param composite  the CompositeCollection being changed\n * @param collections  all of the Collection instances in this CompositeCollection\n * @param coll  the collection being added\n * @return true if the collection is changed\n * @throws UnsupportedOperationException if add is unsupported\n * @throws ClassCastException if the object cannot be added due to its type\n * @throws NullPointerException if the object cannot be added because its null\n * @throws IllegalArgumentException if the object cannot be added\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CollectionMutator.remove#473",
+    "is_bug": true,
+    "src_path": "org/apache/commons/collections4/collection/CompositeCollection.java",
+    "class_name": "org.apache.commons.collections4.collection.CompositeCollection",
+    "signature": "org.apache.commons.collections4.collection.CompositeCollection.remove(org.apache.commons.collections4.collection.CompositeCollection\u003cE\u003e, java.util.List\u003cjava.util.Collection\u003cE\u003e\u003e, java.lang.Object)",
+    "snippet": "boolean remove(CompositeCollection\u003cE\u003e composite,\n                              List\u003cCollection\u003cE\u003e\u003e collections,\n                              Object obj);",
+    "begin_line": 473,
+    "end_line": 475,
+    "comment": "/** \n * Called when an object is to be removed to the composite.\n * @param composite  the CompositeCollection being changed\n * @param collections  all of the Collection instances in this CompositeCollection\n * @param obj  the object being removed\n * @return true if the collection is changed\n * @throws UnsupportedOperationException if removed is unsupported\n * @throws ClassCastException if the object cannot be removed due to its type\n * @throws NullPointerException if the object cannot be removed because its null\n * @throws IllegalArgumentException if the object cannot be removed\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

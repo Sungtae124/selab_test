@@ -1,0 +1,227 @@
+[
+  {
+    "class_name": "org.apache.commons.math.exception.DimensionMismatchException",
+    "src_path": "org/apache/commons/math/exception/DimensionMismatchException.java",
+    "signature": "org.apache.commons.math.exception.DimensionMismatchException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -8415396756375798143L;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.DimensionMismatchException",
+    "src_path": "org/apache/commons/math/exception/DimensionMismatchException.java",
+    "signature": "org.apache.commons.math.exception.DimensionMismatchException.dimension",
+    "snippet": "private final int dimension;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Correct dimension. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6024911025449780478L;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalArgumentException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalArgumentException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalArgumentException.context",
+    "snippet": "private final ExceptionContext context;",
+    "begin_line": 37,
+    "end_line": 37,
+    "comment": "/** \n * Context. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -7447085893598031110L;",
+    "begin_line": 32,
+    "end_line": 32,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.MathIllegalNumberException",
+    "src_path": "org/apache/commons/math/exception/MathIllegalNumberException.java",
+    "signature": "org.apache.commons.math.exception.MathIllegalNumberException.argument",
+    "snippet": "private final Number argument;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": "/** \n * Requested. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d -6024911025449780478L;",
+    "begin_line": 41,
+    "end_line": 41,
+    "comment": "/** \n * Serializable version Id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.throwable",
+    "snippet": "private Throwable throwable;",
+    "begin_line": 45,
+    "end_line": 45,
+    "comment": "/** \n * The throwable to which this context refers to.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.msgPatterns",
+    "snippet": "private List\u003cLocalizable\u003e msgPatterns;",
+    "begin_line": 49,
+    "end_line": 49,
+    "comment": "/** \n * Various informations that enrich the informative message.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.msgArguments",
+    "snippet": "private List\u003cObject[]\u003e msgArguments;",
+    "begin_line": 55,
+    "end_line": 55,
+    "comment": "/** \n * Various informations that enrich the informative message. The arguments will replace the corresponding place-holders in {@link #msgPatterns}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.ExceptionContext",
+    "src_path": "org/apache/commons/math/exception/util/ExceptionContext.java",
+    "signature": "org.apache.commons.math.exception.util.ExceptionContext.context",
+    "snippet": "private Map\u003cString, Object\u003e context;",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": "/** \n * Arbitrary context information.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.LocalizedFormats",
+    "src_path": "org/apache/commons/math/exception/util/LocalizedFormats.java",
+    "signature": "org.apache.commons.math.exception.util.LocalizedFormats.sourceFormat",
+    "snippet": "private final String sourceFormat;",
+    "begin_line": 352,
+    "end_line": 352,
+    "comment": "/** \n * Source English format. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.EPSILON",
+    "snippet": "public static final double EPSILON \u003d 0x1.0p-53;",
+    "begin_line": 47,
+    "end_line": 47,
+    "comment": "/** \n * Smallest positive number such that 1 - EPSILON is not numerically equal to 1. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SAFE_MIN",
+    "snippet": "public static final double SAFE_MIN \u003d 0x1.0p-1022;",
+    "begin_line": 53,
+    "end_line": 53,
+    "comment": "/** \n * Safe minimum, such that 1 / SAFE_MIN does not overflow. \u003cp\u003eIn IEEE 754 arithmetic, this is also the smallest normalized number 2\u003csup\u003e-1022\u003c/sup\u003e.\u003c/p\u003e\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.TWO_PI",
+    "snippet": "public static final double TWO_PI \u003d 2 * FastMath.PI;",
+    "begin_line": 59,
+    "end_line": 59,
+    "comment": "/** \n * 2 \u0026pi;.\n * @since 2.1\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.NB",
+    "snippet": "private static final byte  NB \u003d (byte)-1;",
+    "begin_line": 62,
+    "end_line": 62,
+    "comment": "/** \n * -1.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.NS",
+    "snippet": "private static final short NS \u003d (short)-1;",
+    "begin_line": 65,
+    "end_line": 65,
+    "comment": "/** \n * -1.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.PB",
+    "snippet": "private static final byte  PB \u003d (byte)1;",
+    "begin_line": 68,
+    "end_line": 68,
+    "comment": "/** \n * 1.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.PS",
+    "snippet": "private static final short PS \u003d (short)1;",
+    "begin_line": 71,
+    "end_line": 71,
+    "comment": "/** \n * 1.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.ZB",
+    "snippet": "private static final byte  ZB \u003d (byte)0;",
+    "begin_line": 74,
+    "end_line": 74,
+    "comment": "/** \n * 0.0 cast as a byte. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.ZS",
+    "snippet": "private static final short ZS \u003d (short)0;",
+    "begin_line": 77,
+    "end_line": 77,
+    "comment": "/** \n * 0.0 cast as a short. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SGN_MASK",
+    "snippet": "private static final long SGN_MASK \u003d 0x8000000000000000L;",
+    "begin_line": 80,
+    "end_line": 80,
+    "comment": "/** \n * Offset to order signed double numbers lexicographically. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SGN_MASK_FLOAT",
+    "snippet": "private static final int SGN_MASK_FLOAT \u003d 0x80000000;",
+    "begin_line": 83,
+    "end_line": 83,
+    "comment": "/** \n * Offset to order signed double numbers lexicographically. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.FACTORIALS",
+    "snippet": "private static final long[] FACTORIALS \u003d new long[] {\n                       1l,                  1l,                   2l,\n                       6l,                 24l,                 120l,\n                     720l,               5040l,               40320l,\n                  362880l,            3628800l,            39916800l,\n               479001600l,         6227020800l,         87178291200l,\n           1307674368000l,     20922789888000l,     355687428096000l,\n        6402373705728000l, 121645100408832000l, 2432902008176640000l };",
+    "begin_line": 86,
+    "end_line": 93,
+    "comment": "/** \n * All long-representable factorials \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.util.MathUtils",
+    "src_path": "org/apache/commons/math/util/MathUtils.java",
+    "signature": "org.apache.commons.math.util.MathUtils.SPLIT_FACTOR",
+    "snippet": "private static final int SPLIT_FACTOR \u003d 0x8000001;",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": "/** \n * Factor used for splitting double numbers: n \u003d 2^27 + 1. \n */\n"
+  }
+]

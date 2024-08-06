@@ -1,0 +1,226 @@
+[
+  {
+    "name": "CharSequenceInputStream.CharSequenceInputStream#61",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.CharSequenceInputStream(java.lang.CharSequence, java.nio.charset.Charset)",
+    "snippet": "public CharSequenceInputStream(final CharSequence cs, final Charset charset) {\n        this(cs, charset, BUFFER_SIZE);\n    }",
+    "begin_line": 61,
+    "end_line": 63,
+    "comment": "/** \n * Constructs a new instance with a buffer size of 2048.\n * @param cs the input character sequence.\n * @param charset the character set name to use.\n * @throws IllegalArgumentException if the buffer is not large enough to hold a complete character.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.CharSequenceInputStream#73",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.CharSequenceInputStream(java.lang.CharSequence, java.nio.charset.Charset, int)",
+    "snippet": "public CharSequenceInputStream(final CharSequence cs, final Charset charset, final int bufferSize) {\n        // @formatter:off\n        this.charsetEncoder \u003d charset.newEncoder()\n            .onMalformedInput(CodingErrorAction.REPLACE)\n            .onUnmappableCharacter(CodingErrorAction.REPLACE);\n        // @formatter:on\n        // Ensure that buffer is long enough to hold a complete character\n        this.bBuf \u003d ByteBuffer.allocate(ReaderInputStream.checkMinBufferSize(charsetEncoder, bufferSize));\n        this.bBuf.flip();\n        this.cBuf \u003d CharBuffer.wrap(cs);\n        this.cBufMark \u003d NO_MARK;\n        this.bBufMark \u003d NO_MARK;\n    }",
+    "begin_line": 73,
+    "end_line": 85,
+    "comment": "/** \n * Constructs a new instance.\n * @param cs the input character sequence.\n * @param charset the character set name to use.\n * @param bufferSize the buffer size to use.\n * @throws IllegalArgumentException if the buffer is not large enough to hold a complete character.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.CharSequenceInputStream#94",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.CharSequenceInputStream(java.lang.CharSequence, java.lang.String)",
+    "snippet": "public CharSequenceInputStream(final CharSequence cs, final String charset) {\n        this(cs, charset, BUFFER_SIZE);\n    }",
+    "begin_line": 94,
+    "end_line": 96,
+    "comment": "/** \n * Constructs a new instance with a buffer size of 2048.\n * @param cs the input character sequence.\n * @param charset the character set name to use.\n * @throws IllegalArgumentException if the buffer is not large enough to hold a complete character.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.CharSequenceInputStream#106",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.CharSequenceInputStream(java.lang.CharSequence, java.lang.String, int)",
+    "snippet": "public CharSequenceInputStream(final CharSequence cs, final String charset, final int bufferSize) {\n        this(cs, Charset.forName(charset), bufferSize);\n    }",
+    "begin_line": 106,
+    "end_line": 108,
+    "comment": "/** \n * Constructs a new instance.\n * @param cs the input character sequence.\n * @param charset the character set name to use.\n * @param bufferSize the buffer size to use.\n * @throws IllegalArgumentException if the buffer is not large enough to hold a complete character.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.available#117",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.available()",
+    "snippet": "@Override\n    public int available() throws IOException {\n        // The cached entries are in bbuf; since encoding always creates at least one byte\n        // per character, we can add the two to get a better estimate (e.g. if bbuf is empty)\n        // Note that the previous implementation (2.4) could return zero even though there were\n        // encoded bytes still available.\n        return this.bBuf.remaining() + this.cBuf.remaining();\n    }",
+    "begin_line": 117,
+    "end_line": 123,
+    "comment": "/** \n * Return an estimate of the number of bytes remaining in the byte stream.\n * @return the count of bytes that can be read without blocking (or returning EOF).\n * @throws IOException if an error occurs (probably not possible).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.close#126",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.close()",
+    "snippet": "@Override\n    public void close() throws IOException {\n        // noop\n    }",
+    "begin_line": 126,
+    "end_line": 128,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.fillBuffer#136",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.fillBuffer()",
+    "snippet": "private void fillBuffer() throws CharacterCodingException {\n        this.bBuf.compact();\n        final CoderResult result \u003d this.charsetEncoder.encode(this.cBuf, this.bBuf, true);\n        if (result.isError()) {\n            result.throwException();\n        }\n        this.bBuf.flip();\n    }",
+    "begin_line": 136,
+    "end_line": 143,
+    "comment": "/** \n * Fills the byte output buffer from the input char buffer.\n * @throws CharacterCodingException an error encoding data.\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.mark#150",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.mark(int)",
+    "snippet": "@Override\n    public synchronized void mark(final int readlimit) {\n        this.cBufMark \u003d this.cBuf.position();\n        this.bBufMark \u003d this.bBuf.position();\n        this.cBuf.mark();\n        this.bBuf.mark();\n        // It would be nice to be able to use mark \u0026 reset on the cbuf and bbuf;\n        // however the bbuf is re-used so that won\u0027t work\n    }",
+    "begin_line": 150,
+    "end_line": 157,
+    "comment": "/** \n * {@inheritDoc}\n * @param readlimit max read limit (ignored).\n */\n",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.markSupported#160",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.markSupported()",
+    "snippet": "@Override\n    public boolean markSupported() {\n        return true;\n    }",
+    "begin_line": 160,
+    "end_line": 162,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.read#165",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.read()",
+    "snippet": "@Override\n    public int read() throws IOException {\n        for (;;) {\n            if (this.bBuf.hasRemaining()) {\n                return this.bBuf.get() \u0026 0xFF;\n            }\n            fillBuffer();\n            if (!this.bBuf.hasRemaining() \u0026\u0026 !this.cBuf.hasRemaining()) {\n                return EOF;\n            }\n        }\n    }",
+    "begin_line": 165,
+    "end_line": 175,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.read#178",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.read(byte[])",
+    "snippet": "@Override\n    public int read(final byte[] b) throws IOException {\n        return read(b, 0, b.length);\n    }",
+    "begin_line": 178,
+    "end_line": 180,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.read#183",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.read(byte[], int, int)",
+    "snippet": "@Override\n    public int read(final byte[] array, int off, int len) throws IOException {\n        Objects.requireNonNull(array, \"array\");\n        if (len \u003c 0 || (off + len) \u003e array.length) {\n            throw new IndexOutOfBoundsException(\"Array Size\u003d\" + array.length + \", offset\u003d\" + off + \", length\u003d\" + len);\n        }\n        if (len \u003d\u003d 0) {\n            return 0; // must return 0 for zero length read\n        }\n        if (!this.bBuf.hasRemaining() \u0026\u0026 !this.cBuf.hasRemaining()) {\n            return EOF;\n        }\n        int bytesRead \u003d 0;\n        while (len \u003e 0) {\n            if (this.bBuf.hasRemaining()) {\n                final int chunk \u003d Math.min(this.bBuf.remaining(), len);\n                this.bBuf.get(array, off, chunk);\n                off +\u003d chunk;\n                len -\u003d chunk;\n                bytesRead +\u003d chunk;\n            } else {\n                fillBuffer();\n                if (!this.bBuf.hasRemaining() \u0026\u0026 !this.cBuf.hasRemaining()) {\n                    break;\n                }\n            }\n        }\n        return bytesRead \u003d\u003d 0 \u0026\u0026 !this.cBuf.hasRemaining() ? EOF : bytesRead;\n    }",
+    "begin_line": 183,
+    "end_line": 210,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.reset#213",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.reset()",
+    "snippet": "@Override\n    public synchronized void reset() throws IOException {\n        //\n        // This is not the most efficient implementation, as it re-encodes from the beginning.\n        //\n        // Since the bbuf is re-used, in general it\u0027s necessary to re-encode the data.\n        //\n        // It should be possible to apply some optimisations however:\n        // + use mark/reset on the cbuf and bbuf. This would only work if the buffer had not been (re)filled since\n        // the mark. The code would have to catch InvalidMarkException - does not seem possible to check if mark is\n        // valid otherwise. + Try saving the state of the cbuf before each fillBuffer; it might be possible to\n        // restart from there.\n        //\n        if (this.cBufMark !\u003d NO_MARK) {\n            // if cbuf is at 0, we have not started reading anything, so skip re-encoding\n            if (this.cBuf.position() !\u003d 0) {\n                this.charsetEncoder.reset();\n                this.cBuf.rewind();\n                this.bBuf.rewind();\n                this.bBuf.limit(0); // rewind does not clear the buffer\n                while(this.cBuf.position() \u003c this.cBufMark) {\n                    this.bBuf.rewind(); // empty the buffer (we only refill when empty during normal processing)\n                    this.bBuf.limit(0);\n                    fillBuffer();\n                }\n            }\n            if (this.cBuf.position() !\u003d this.cBufMark) {\n                throw new IllegalStateException(\"Unexpected CharBuffer position: actual\u003d\" + cBuf.position() + \" \" +\n                        \"expected\u003d\" + this.cBufMark);\n            }\n            this.bBuf.position(this.bBufMark);\n            this.cBufMark \u003d NO_MARK;\n            this.bBufMark \u003d NO_MARK;\n        }\n    }",
+    "begin_line": 213,
+    "end_line": 246,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  },
+  {
+    "name": "CharSequenceInputStream.skip#249",
+    "is_bug": true,
+    "src_path": "org/apache/commons/io/input/CharSequenceInputStream.java",
+    "class_name": "org.apache.commons.io.input.CharSequenceInputStream",
+    "signature": "org.apache.commons.io.input.CharSequenceInputStream.skip(long)",
+    "snippet": "@Override\n    public long skip(long n) throws IOException {\n        //\n        // This could be made more efficient by using position to skip within the current buffer.\n        //\n        long skipped \u003d 0;\n        while (n \u003e 0 \u0026\u0026 available() \u003e 0) {\n            this.read();\n            n--;\n            skipped++;\n        }\n        return skipped;\n    }",
+    "begin_line": 249,
+    "end_line": 260,
+    "comment": "",
+    "resolved_comments": {},
+    "susp": {
+      "ochiai_susp": 0.5
+    },
+    "num_failing_tests": 0
+  }
+]

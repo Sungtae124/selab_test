@@ -1,0 +1,56 @@
+--- org.apache.commons.math.linear.BlockRealMatrixTest::testSetSubMatrix
+java.lang.NullPointerException
+       org.apache.commons.math.linear.BlockRealMatrix.setSubMatrix(BlockRealMatrix.java:769)
+       org.apache.commons.math.linear.BlockRealMatrixTest.testSetSubMatrix(BlockRealMatrixTest.java:1116)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+  
+--- org.apache.commons.math.linear.Array2DRowRealMatrixTest::testSetSubMatrix
+java.lang.NullPointerException
+       org.apache.commons.math.linear.AbstractRealMatrix.setSubMatrix(AbstractRealMatrix.java:389)
+       org.apache.commons.math.linear.Array2DRowRealMatrix.setSubMatrix(Array2DRowRealMatrix.java:295)
+       org.apache.commons.math.linear.Array2DRowRealMatrixTest.testSetSubMatrix(Array2DRowRealMatrixTest.java:933)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       [...]
+  
+--- org.apache.commons.math.linear.BlockFieldMatrixTest::testSetSubMatrix
+java.lang.NullPointerException
+       org.apache.commons.math.linear.BlockFieldMatrix.setSubMatrix(BlockFieldMatrix.java:762)
+       org.apache.commons.math.linear.BlockFieldMatrixTest.testSetSubMatrix(BlockFieldMatrixTest.java:1216)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+  
+--- org.apache.commons.math.linear.SparseRealMatrixTest::testSetSubMatrix
+java.lang.NullPointerException
+       org.apache.commons.math.linear.AbstractRealMatrix.setSubMatrix(AbstractRealMatrix.java:389)
+       org.apache.commons.math.linear.SparseRealMatrixTest.testSetSubMatrix(SparseRealMatrixTest.java:632)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+       org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+       org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+       org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+       [...]
+

@@ -1,0 +1,20 @@
+[
+  {
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 8843275624471387299L;",
+    "begin_line": 30,
+    "end_line": 30,
+    "comment": "/** \n * Serializable version identifier. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.math.exception.util.DummyLocalizable",
+    "src_path": "org/apache/commons/math/exception/util/DummyLocalizable.java",
+    "signature": "org.apache.commons.math.exception.util.DummyLocalizable.source",
+    "snippet": "private final String source;",
+    "begin_line": 33,
+    "end_line": 33,
+    "comment": "/** \n * Source string. \n */\n"
+  }
+]

@@ -1,0 +1,15 @@
+--- org.apache.commons.io.IOCaseTestCase::test_checkStartsWith_functionality
+java.lang.NullPointerException
+       org.apache.commons.io.IOCase.checkStartsWith(IOCase.java:180)
+       org.apache.commons.io.IOCaseTestCase.test_checkStartsWith_functionality(IOCaseTestCase.java:176)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+  
+--- org.apache.commons.io.IOCaseTestCase::test_checkEndsWith_functionality
+java.lang.NullPointerException
+       org.apache.commons.io.IOCase.checkEndsWith(IOCase.java:196)
+       org.apache.commons.io.IOCaseTestCase.test_checkEndsWith_functionality(IOCaseTestCase.java:206)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

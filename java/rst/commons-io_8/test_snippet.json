@@ -1,0 +1,477 @@
+[
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.createTempSymlinkedRelativeDir()",
+    "snippet": "private Path createTempSymlinkedRelativeDir() throws IOException {\n        final Path targetDir \u003d tempDirPath.resolve(\"subdir\");\n        final Path symlinkDir \u003d tempDirPath.resolve(\"symlinked-dir\");\n        Files.createDirectory(targetDir);\n        Files.createSymbolicLink(symlinkDir, targetDir);\n        return symlinkDir;\n    }",
+    "begin_line": 78,
+    "end_line": 84,
+    "comment": "/** \n * Creates directory test fixtures. \u003col\u003e \u003cli\u003etempDirPath/subdir\u003c/li\u003e \u003cli\u003etempDirPath/symlinked-dir -\u003e tempDirPath/subdir\u003c/li\u003e \u003c/ol\u003e\n * @return Path to tempDirPath/subdir\n * @throws IOException if an I/O error occurs or the parent directory does not exist.\n */\n",
+    "child_ranges": [
+      "(line 79,col 9)-(line 79,col 61)",
+      "(line 80,col 9)-(line 80,col 69)",
+      "(line 81,col 9)-(line 81,col 41)",
+      "(line 82,col 9)-(line 82,col 56)",
+      "(line 83,col 9)-(line 83,col 26)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.openArchive(java.nio.file.Path, boolean)",
+    "snippet": "private FileSystem openArchive(final Path p, final boolean createNew) throws IOException {\n        if (createNew) {\n            final Map\u003cString, String\u003e env \u003d new HashMap\u003c\u003e();\n            env.put(\"create\", \"true\");\n            final URI fileUri \u003d p.toAbsolutePath().toUri();\n            final URI uri \u003d URI.create(\"jar:\" + fileUri.toASCIIString());\n            return FileSystems.newFileSystem(uri, env, null);\n        }\n        return FileSystems.newFileSystem(p, (ClassLoader) null);\n    }",
+    "begin_line": 86,
+    "end_line": 95,
+    "comment": "",
+    "child_ranges": [
+      "(line 87,col 9)-(line 93,col 9)",
+      "(line 94,col 9)-(line 94,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCopyDirectoryForDifferentFilesystemsWithAbsolutePath()",
+    "snippet": "@Test\n    public void testCopyDirectoryForDifferentFilesystemsWithAbsolutePath() throws IOException {\n        final Path archivePath \u003d Paths.get(TEST_JAR_PATH);\n        try (final FileSystem archive \u003d openArchive(archivePath, false)) {\n            // relative jar -\u003e absolute dir\n            Path sourceDir \u003d archive.getPath(\"dir1\");\n            PathUtils.copyDirectory(sourceDir, tempDirPath);\n            assertTrue(Files.exists(tempDirPath.resolve(\"f1\")));\n\n            // absolute jar -\u003e absolute dir\n            sourceDir \u003d archive.getPath(\"/next\");\n            PathUtils.copyDirectory(sourceDir, tempDirPath);\n            assertTrue(Files.exists(tempDirPath.resolve(\"dir\")));\n        }\n    }",
+    "begin_line": 98,
+    "end_line": 111,
+    "comment": "",
+    "child_ranges": [
+      "(line 99,col 9)-(line 99,col 58)",
+      "(line 100,col 9)-(line 110,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCopyDirectoryForDifferentFilesystemsWithAbsolutePathReverse()",
+    "snippet": "@Test\n    public void testCopyDirectoryForDifferentFilesystemsWithAbsolutePathReverse() throws IOException {\n        try (final FileSystem archive \u003d openArchive(tempDirPath.resolve(TEST_JAR_NAME), true)) {\n            // absolute dir -\u003e relative jar\n            Path targetDir \u003d archive.getPath(\"target\");\n            Files.createDirectory(targetDir);\n            final Path sourceDir \u003d Paths.get(\"src/test/resources/org/apache/commons/io/dirs-2-file-size-2\").toAbsolutePath();\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"dirs-a-file-size-1\")));\n\n            // absolute dir -\u003e absolute jar\n            targetDir \u003d archive.getPath(\"/\");\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"dirs-a-file-size-1\")));\n        }\n    }",
+    "begin_line": 114,
+    "end_line": 128,
+    "comment": "",
+    "child_ranges": [
+      "(line 115,col 9)-(line 127,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCopyDirectoryForDifferentFilesystemsWithRelativePath()",
+    "snippet": "@Test\n    public void testCopyDirectoryForDifferentFilesystemsWithRelativePath() throws IOException {\n        final Path archivePath \u003d Paths.get(TEST_JAR_PATH);\n        try (final FileSystem archive \u003d openArchive(archivePath, false);\n            final FileSystem targetArchive \u003d openArchive(tempDirPath.resolve(TEST_JAR_NAME), true)) {\n            final Path targetDir \u003d targetArchive.getPath(\"targetDir\");\n            Files.createDirectory(targetDir);\n            // relative jar -\u003e relative dir\n            Path sourceDir \u003d archive.getPath(\"next\");\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"dir\")));\n\n            // absolute jar -\u003e relative dir\n            sourceDir \u003d archive.getPath(\"/dir1\");\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"f1\")));\n        }\n    }",
+    "begin_line": 131,
+    "end_line": 147,
+    "comment": "",
+    "child_ranges": [
+      "(line 132,col 9)-(line 132,col 58)",
+      "(line 133,col 9)-(line 146,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCopyDirectoryForDifferentFilesystemsWithRelativePathReverse()",
+    "snippet": "@Test\n    public void testCopyDirectoryForDifferentFilesystemsWithRelativePathReverse() throws IOException {\n        try (final FileSystem archive \u003d openArchive(tempDirPath.resolve(TEST_JAR_NAME), true)) {\n            // relative dir -\u003e relative jar\n            Path targetDir \u003d archive.getPath(\"target\");\n            Files.createDirectory(targetDir);\n            final Path sourceDir \u003d Paths.get(\"src/test/resources/org/apache/commons/io/dirs-2-file-size-2\");\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"dirs-a-file-size-1\")));\n\n            // relative dir -\u003e absolute jar\n            targetDir \u003d archive.getPath(\"/\");\n            PathUtils.copyDirectory(sourceDir, targetDir);\n            assertTrue(Files.exists(targetDir.resolve(\"dirs-a-file-size-1\")));\n        }\n    }",
+    "begin_line": 150,
+    "end_line": 164,
+    "comment": "",
+    "child_ranges": [
+      "(line 151,col 9)-(line 163,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCopyFile()",
+    "snippet": "@Test\n    public void testCopyFile() throws IOException {\n        final Path sourceFile \u003d Paths.get(\"src/test/resources/org/apache/commons/io/dirs-1-file-size-1/file-size-1.bin\");\n        final Path targetFile \u003d PathUtils.copyFileToDirectory(sourceFile, tempDirPath);\n        assertTrue(Files.exists(targetFile));\n        assertEquals(Files.size(sourceFile), Files.size(targetFile));\n    }",
+    "begin_line": 167,
+    "end_line": 172,
+    "comment": "",
+    "child_ranges": [
+      "(line 168,col 9)-(line 168,col 121)",
+      "(line 169,col 9)-(line 169,col 87)",
+      "(line 170,col 9)-(line 170,col 45)",
+      "(line 171,col 9)-(line 171,col 69)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesAlreadyExists()",
+    "snippet": "@Test\n    public void testCreateDirectoriesAlreadyExists() throws IOException {\n        assertEquals(tempDirPath.getParent(), PathUtils.createParentDirectories(tempDirPath));\n    }",
+    "begin_line": 175,
+    "end_line": 177,
+    "comment": "",
+    "child_ranges": [
+      "(line 176,col 9)-(line 176,col 94)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesForRoots()",
+    "snippet": "@Test\n    public void testCreateDirectoriesForRoots() throws IOException {\n        for (final File f : File.listRoots()) {\n            final Path path \u003d f.toPath();\n            assertEquals(path.getParent(), PathUtils.createParentDirectories(path));\n        }\n    }",
+    "begin_line": 180,
+    "end_line": 185,
+    "comment": "",
+    "child_ranges": [
+      "(line 181,col 9)-(line 184,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesForRootsLinkOptionNull()",
+    "snippet": "@Test\n    public void testCreateDirectoriesForRootsLinkOptionNull() throws IOException {\n        for (final File f : File.listRoots()) {\n            final Path path \u003d f.toPath();\n            assertEquals(path.getParent(), PathUtils.createParentDirectories(path, (LinkOption) null));\n        }\n    }",
+    "begin_line": 188,
+    "end_line": 193,
+    "comment": "",
+    "child_ranges": [
+      "(line 189,col 9)-(line 192,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesNew()",
+    "snippet": "@Test\n    public void testCreateDirectoriesNew() throws IOException {\n        assertEquals(tempDirPath, PathUtils.createParentDirectories(tempDirPath.resolve(\"child\")));\n    }",
+    "begin_line": 196,
+    "end_line": 198,
+    "comment": "",
+    "child_ranges": [
+      "(line 197,col 9)-(line 197,col 99)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesSymlink()",
+    "snippet": "@Test\n    public void testCreateDirectoriesSymlink() throws IOException {\n        final Path symlinkedDir \u003d createTempSymlinkedRelativeDir();\n        final String leafDirName \u003d \"child\";\n        final Path newDirFollowed \u003d PathUtils.createParentDirectories(symlinkedDir.resolve(leafDirName), PathUtils.NULL_LINK_OPTION);\n        assertEquals(Files.readSymbolicLink(symlinkedDir), newDirFollowed);\n    }",
+    "begin_line": 201,
+    "end_line": 206,
+    "comment": "",
+    "child_ranges": [
+      "(line 202,col 9)-(line 202,col 67)",
+      "(line 203,col 9)-(line 203,col 43)",
+      "(line 204,col 9)-(line 204,col 133)",
+      "(line 205,col 9)-(line 205,col 75)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testCreateDirectoriesSymlinkClashing()",
+    "snippet": "@Test\n    public void testCreateDirectoriesSymlinkClashing() throws IOException {\n        final Path symlinkedDir \u003d createTempSymlinkedRelativeDir();\n        assertThrowsExactly(FileAlreadyExistsException.class, () -\u003e PathUtils.createParentDirectories(symlinkedDir.resolve(\"child\")));\n    }",
+    "begin_line": 209,
+    "end_line": 212,
+    "comment": "",
+    "child_ranges": [
+      "(line 210,col 9)-(line 210,col 67)",
+      "(line 211,col 9)-(line 211,col 134)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testGetTempDirectory()",
+    "snippet": "@Test\n    public void testGetTempDirectory() {\n        final Path tempDirectory \u003d Paths.get(System.getProperty(\"java.io.tmpdir\"));\n        assertEquals(tempDirectory, PathUtils.getTempDirectory());\n    }",
+    "begin_line": 215,
+    "end_line": 218,
+    "comment": "",
+    "child_ranges": [
+      "(line 216,col 9)-(line 216,col 83)",
+      "(line 217,col 9)-(line 217,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testIsDirectory()",
+    "snippet": "@Test\n    public void testIsDirectory() throws IOException {\n        assertFalse(PathUtils.isDirectory(null));\n\n        assertTrue(PathUtils.isDirectory(tempDirPath));\n        final Path testFile1 \u003d Files.createTempFile(tempDirPath, \"prefix\", null);\n        assertFalse(PathUtils.isDirectory(testFile1));\n\n        final Path tempDir \u003d Files.createTempDirectory(getClass().getCanonicalName());\n        Files.delete(tempDir);\n        assertFalse(PathUtils.isDirectory(tempDir));\n    }",
+    "begin_line": 221,
+    "end_line": 231,
+    "comment": "",
+    "child_ranges": [
+      "(line 222,col 9)-(line 222,col 49)",
+      "(line 224,col 9)-(line 224,col 55)",
+      "(line 225,col 9)-(line 225,col 81)",
+      "(line 226,col 9)-(line 226,col 54)",
+      "(line 228,col 9)-(line 228,col 86)",
+      "(line 229,col 9)-(line 229,col 30)",
+      "(line 230,col 9)-(line 230,col 52)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testIsPosix()",
+    "snippet": "@Test\n    public void testIsPosix() throws IOException {\n        boolean isPosix;\n        try {\n            Files.getPosixFilePermissions(PathUtils.current());\n            isPosix \u003d true;\n        } catch (final UnsupportedOperationException e) {\n            isPosix \u003d false;\n        }\n        assertEquals(isPosix, PathUtils.isPosix(PathUtils.current()));\n    }",
+    "begin_line": 234,
+    "end_line": 243,
+    "comment": "",
+    "child_ranges": [
+      "(line 235,col 9)-(line 235,col 24)",
+      "(line 236,col 9)-(line 241,col 9)",
+      "(line 242,col 9)-(line 242,col 70)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testIsRegularFile()",
+    "snippet": "@Test\n    public void testIsRegularFile() throws IOException {\n        assertFalse(PathUtils.isRegularFile(null));\n\n        assertFalse(PathUtils.isRegularFile(tempDirPath));\n        final Path testFile1 \u003d Files.createTempFile(tempDirPath, \"prefix\", null);\n        assertTrue(PathUtils.isRegularFile(testFile1));\n\n        Files.delete(testFile1);\n        assertFalse(PathUtils.isRegularFile(testFile1));\n    }",
+    "begin_line": 246,
+    "end_line": 255,
+    "comment": "",
+    "child_ranges": [
+      "(line 247,col 9)-(line 247,col 51)",
+      "(line 249,col 9)-(line 249,col 58)",
+      "(line 250,col 9)-(line 250,col 81)",
+      "(line 251,col 9)-(line 251,col 55)",
+      "(line 253,col 9)-(line 253,col 32)",
+      "(line 254,col 9)-(line 254,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewDirectoryStream()",
+    "snippet": "@Test\n    public void testNewDirectoryStream() throws Exception {\n        final PathFilter pathFilter \u003d new NameFileFilter(PATH_FIXTURE);\n        try (final DirectoryStream\u003cPath\u003e stream \u003d PathUtils.newDirectoryStream(PathUtils.current(), pathFilter)) {\n            final Iterator\u003cPath\u003e iterator \u003d stream.iterator();\n            final Path path \u003d iterator.next();\n            assertEquals(PATH_FIXTURE, path.getFileName().toString());\n            assertFalse(iterator.hasNext());\n        }\n    }",
+    "begin_line": 258,
+    "end_line": 266,
+    "comment": "",
+    "child_ranges": [
+      "(line 259,col 9)-(line 259,col 71)",
+      "(line 260,col 9)-(line 265,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamExistingFileAppendFalse()",
+    "snippet": "@Test\n    public void testNewOutputStreamExistingFileAppendFalse() throws IOException {\n        testNewOutputStreamNewFile(false);\n        testNewOutputStreamNewFile(false);\n    }",
+    "begin_line": 269,
+    "end_line": 272,
+    "comment": "",
+    "child_ranges": [
+      "(line 270,col 9)-(line 270,col 42)",
+      "(line 271,col 9)-(line 271,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamExistingFileAppendTrue()",
+    "snippet": "@Test\n    public void testNewOutputStreamExistingFileAppendTrue() throws IOException {\n        testNewOutputStreamNewFile(true);\n        final Path file \u003d writeToNewOutputStream(true);\n        assertArrayEquals(ArrayUtils.addAll(BYTE_ARRAY_FIXTURE, BYTE_ARRAY_FIXTURE), Files.readAllBytes(file));\n    }",
+    "begin_line": 275,
+    "end_line": 279,
+    "comment": "",
+    "child_ranges": [
+      "(line 276,col 9)-(line 276,col 41)",
+      "(line 277,col 9)-(line 277,col 55)",
+      "(line 278,col 9)-(line 278,col 111)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamNewFile(boolean)",
+    "snippet": "public void testNewOutputStreamNewFile(final boolean append) throws IOException {\n        final Path file \u003d writeToNewOutputStream(append);\n        assertArrayEquals(BYTE_ARRAY_FIXTURE, Files.readAllBytes(file));\n    }",
+    "begin_line": 281,
+    "end_line": 284,
+    "comment": "",
+    "child_ranges": [
+      "(line 282,col 9)-(line 282,col 57)",
+      "(line 283,col 9)-(line 283,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamNewFileAppendFalse()",
+    "snippet": "@Test\n    public void testNewOutputStreamNewFileAppendFalse() throws IOException {\n        testNewOutputStreamNewFile(false);\n    }",
+    "begin_line": 287,
+    "end_line": 289,
+    "comment": "",
+    "child_ranges": [
+      "(line 288,col 9)-(line 288,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamNewFileAppendTrue()",
+    "snippet": "@Test\n    public void testNewOutputStreamNewFileAppendTrue() throws IOException {\n        testNewOutputStreamNewFile(true);\n    }",
+    "begin_line": 292,
+    "end_line": 294,
+    "comment": "",
+    "child_ranges": [
+      "(line 293,col 9)-(line 293,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testNewOutputStreamNewFileInsideExistingSymlinkedDir()",
+    "snippet": "@Test\n    public void testNewOutputStreamNewFileInsideExistingSymlinkedDir() throws IOException {\n        final Path symlinkDir \u003d createTempSymlinkedRelativeDir();\n        final Path file \u003d symlinkDir.resolve(\"test.txt\");\n        try (OutputStream outputStream \u003d PathUtils.newOutputStream(file, new LinkOption[] {})) {\n            // empty\n        }\n        try (OutputStream outputStream \u003d PathUtils.newOutputStream(file, null)) {\n            // empty\n        }\n        try (OutputStream outputStream \u003d PathUtils.newOutputStream(file, true)) {\n            // empty\n        }\n        try (OutputStream outputStream \u003d PathUtils.newOutputStream(file, false)) {\n            // empty\n        }\n    }",
+    "begin_line": 297,
+    "end_line": 312,
+    "comment": "",
+    "child_ranges": [
+      "(line 298,col 9)-(line 298,col 65)",
+      "(line 299,col 9)-(line 299,col 57)",
+      "(line 300,col 9)-(line 302,col 9)",
+      "(line 303,col 9)-(line 305,col 9)",
+      "(line 306,col 9)-(line 308,col 9)",
+      "(line 309,col 9)-(line 311,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testReadAttributesPosix()",
+    "snippet": "@Test\n    public void testReadAttributesPosix() throws IOException {\n        boolean isPosix;\n        try {\n            Files.getPosixFilePermissions(PathUtils.current());\n            isPosix \u003d true;\n        } catch (final UnsupportedOperationException e) {\n            isPosix \u003d false;\n        }\n        assertEquals(isPosix, PathUtils.readAttributes(PathUtils.current(), PosixFileAttributes.class) !\u003d null);\n    }",
+    "begin_line": 315,
+    "end_line": 324,
+    "comment": "",
+    "child_ranges": [
+      "(line 316,col 9)-(line 316,col 24)",
+      "(line 317,col 9)-(line 322,col 9)",
+      "(line 323,col 9)-(line 323,col 112)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testReadStringEmptyFile()",
+    "snippet": "@Test\n    public void testReadStringEmptyFile() throws IOException {\n        final Path path \u003d Paths.get(\"src/test/resources/org/apache/commons/io/test-file-empty.bin\");\n        assertEquals(StringUtils.EMPTY, PathUtils.readString(path, StandardCharsets.UTF_8));\n        assertEquals(StringUtils.EMPTY, PathUtils.readString(path, null));\n    }",
+    "begin_line": 327,
+    "end_line": 331,
+    "comment": "",
+    "child_ranges": [
+      "(line 328,col 9)-(line 328,col 100)",
+      "(line 329,col 9)-(line 329,col 92)",
+      "(line 330,col 9)-(line 330,col 74)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testReadStringSimpleUtf8()",
+    "snippet": "@Test\n    public void testReadStringSimpleUtf8() throws IOException {\n        final Path path \u003d Paths.get(\"src/test/resources/org/apache/commons/io/test-file-simple-utf8.bin\");\n        final String expected \u003d \"ABC\\r\\n\";\n        assertEquals(expected, PathUtils.readString(path, StandardCharsets.UTF_8));\n        assertEquals(expected, PathUtils.readString(path, null));\n    }",
+    "begin_line": 334,
+    "end_line": 339,
+    "comment": "",
+    "child_ranges": [
+      "(line 335,col 9)-(line 335,col 106)",
+      "(line 336,col 9)-(line 336,col 42)",
+      "(line 337,col 9)-(line 337,col 83)",
+      "(line 338,col 9)-(line 338,col 65)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testSetReadOnlyFile()",
+    "snippet": "@Test\n    public void testSetReadOnlyFile() throws IOException {\n        final Path resolved \u003d tempDirPath.resolve(\"testSetReadOnlyFile.txt\");\n        // Ask now, as we are allowed before editing parent permissions.\n        final boolean isPosix \u003d PathUtils.isPosix(tempDirPath);\n\n        // TEMP HACK\n        assumeFalse(SystemUtils.IS_OS_LINUX);\n\n        PathUtils.writeString(resolved, \"test\", StandardCharsets.UTF_8);\n        final boolean readable \u003d Files.isReadable(resolved);\n        final boolean writable \u003d Files.isWritable(resolved);\n        final boolean regularFile \u003d Files.isRegularFile(resolved);\n        final boolean executable \u003d Files.isExecutable(resolved);\n        final boolean hidden \u003d Files.isHidden(resolved);\n        final boolean directory \u003d Files.isDirectory(resolved);\n        final boolean symbolicLink \u003d Files.isSymbolicLink(resolved);\n        // Sanity checks\n        assertTrue(readable);\n        assertTrue(writable);\n        // Test A\n        PathUtils.setReadOnly(resolved, false);\n        assertTrue(Files.isReadable(resolved), \"isReadable\");\n        assertTrue(Files.isWritable(resolved), \"isWritable\");\n        // Again, shouldn\u0027t blow up.\n        PathUtils.setReadOnly(resolved, false);\n        assertTrue(Files.isReadable(resolved), \"isReadable\");\n        assertTrue(Files.isWritable(resolved), \"isWritable\");\n        //\n        assertEquals(regularFile, Files.isReadable(resolved));\n        assertEquals(executable, Files.isExecutable(resolved));\n        assertEquals(hidden, Files.isHidden(resolved));\n        assertEquals(directory, Files.isDirectory(resolved));\n        assertEquals(symbolicLink, Files.isSymbolicLink(resolved));\n        // Test B\n        PathUtils.setReadOnly(resolved, true);\n        if (isPosix) {\n            // On POSIX, now that the parent is not WX, the file is not readable.\n            assertFalse(Files.isReadable(resolved), \"isReadable\");\n        } else {\n            assertTrue(Files.isReadable(resolved), \"isReadable\");\n        }\n        assertFalse(Files.isWritable(resolved), \"isWritable\");\n        final DosFileAttributeView dosFileAttributeView \u003d PathUtils.getDosFileAttributeView(resolved);\n        if (dosFileAttributeView !\u003d null) {\n            assertTrue(dosFileAttributeView.readAttributes().isReadOnly());\n        }\n        if (isPosix) {\n            assertFalse(Files.isReadable(resolved));\n        } else {\n            assertEquals(regularFile, Files.isReadable(resolved));\n        }\n        assertEquals(executable, Files.isExecutable(resolved));\n        assertEquals(hidden, Files.isHidden(resolved));\n        assertEquals(directory, Files.isDirectory(resolved));\n        assertEquals(symbolicLink, Files.isSymbolicLink(resolved));\n        //\n        PathUtils.setReadOnly(resolved, false);\n        PathUtils.deleteFile(resolved);\n    }",
+    "begin_line": 342,
+    "end_line": 400,
+    "comment": "",
+    "child_ranges": [
+      "(line 343,col 9)-(line 343,col 77)",
+      "(line 345,col 9)-(line 345,col 63)",
+      "(line 348,col 9)-(line 348,col 45)",
+      "(line 350,col 9)-(line 350,col 72)",
+      "(line 351,col 9)-(line 351,col 60)",
+      "(line 352,col 9)-(line 352,col 60)",
+      "(line 353,col 9)-(line 353,col 66)",
+      "(line 354,col 9)-(line 354,col 64)",
+      "(line 355,col 9)-(line 355,col 56)",
+      "(line 356,col 9)-(line 356,col 62)",
+      "(line 357,col 9)-(line 357,col 68)",
+      "(line 359,col 9)-(line 359,col 29)",
+      "(line 360,col 9)-(line 360,col 29)",
+      "(line 362,col 9)-(line 362,col 47)",
+      "(line 363,col 9)-(line 363,col 61)",
+      "(line 364,col 9)-(line 364,col 61)",
+      "(line 366,col 9)-(line 366,col 47)",
+      "(line 367,col 9)-(line 367,col 61)",
+      "(line 368,col 9)-(line 368,col 61)",
+      "(line 370,col 9)-(line 370,col 62)",
+      "(line 371,col 9)-(line 371,col 63)",
+      "(line 372,col 9)-(line 372,col 55)",
+      "(line 373,col 9)-(line 373,col 61)",
+      "(line 374,col 9)-(line 374,col 67)",
+      "(line 376,col 9)-(line 376,col 46)",
+      "(line 377,col 9)-(line 382,col 9)",
+      "(line 383,col 9)-(line 383,col 62)",
+      "(line 384,col 9)-(line 384,col 102)",
+      "(line 385,col 9)-(line 387,col 9)",
+      "(line 388,col 9)-(line 392,col 9)",
+      "(line 393,col 9)-(line 393,col 63)",
+      "(line 394,col 9)-(line 394,col 55)",
+      "(line 395,col 9)-(line 395,col 61)",
+      "(line 396,col 9)-(line 396,col 67)",
+      "(line 398,col 9)-(line 398,col 47)",
+      "(line 399,col 9)-(line 399,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.testWriteStringToFile1()",
+    "snippet": "@Test\n    public void testWriteStringToFile1() throws Exception {\n        final Path file \u003d tempDirPath.resolve(\"write.txt\");\n        PathUtils.writeString(file, \"Hello /u1234\", StandardCharsets.UTF_8);\n        final byte[] text \u003d \"Hello /u1234\".getBytes(StandardCharsets.UTF_8);\n        TestUtils.assertEqualContent(text, file);\n    }",
+    "begin_line": 403,
+    "end_line": 408,
+    "comment": "",
+    "child_ranges": [
+      "(line 404,col 9)-(line 404,col 59)",
+      "(line 405,col 9)-(line 405,col 76)",
+      "(line 406,col 9)-(line 406,col 76)",
+      "(line 407,col 9)-(line 407,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/file/PathUtilsTest.java",
+    "signature": "org.apache.commons.io.file.PathUtilsTest.writeToNewOutputStream(boolean)",
+    "snippet": "private Path writeToNewOutputStream(final boolean append) throws IOException {\n        final Path file \u003d tempDirPath.resolve(\"test1.txt\");\n        try (OutputStream os \u003d PathUtils.newOutputStream(file, append)) {\n            os.write(BYTE_ARRAY_FIXTURE);\n        }\n        return file;\n    }",
+    "begin_line": 413,
+    "end_line": 419,
+    "comment": "/** \n * Tests newOutputStream() here and don\u0027t use Files.write obviously.\n */\n",
+    "child_ranges": [
+      "(line 414,col 9)-(line 414,col 59)",
+      "(line 415,col 9)-(line 417,col 9)",
+      "(line 418,col 9)-(line 418,col 20)"
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.equals",
+    "snippet": "final boolean equals;",
+    "begin_line": 90,
+    "end_line": 90,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList1",
+    "snippet": "final List\u003cPath\u003e relativeFileList1;",
+    "begin_line": 93,
+    "end_line": 93,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.relativeFileList2",
+    "snippet": "final List\u003cPath\u003e relativeFileList2;",
+    "begin_line": 94,
+    "end_line": 94,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_TRUNCATE",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_TRUNCATE \u003d {StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING};",
+    "begin_line": 146,
+    "end_line": 146,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.OPEN_OPTIONS_APPEND",
+    "snippet": "private static final OpenOption[] OPEN_OPTIONS_APPEND \u003d {StandardOpenOption.CREATE, StandardOpenOption.APPEND};",
+    "begin_line": 148,
+    "end_line": 148,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_COPY_OPTIONS",
+    "snippet": "public static final CopyOption[] EMPTY_COPY_OPTIONS \u003d {};",
+    "begin_line": 155,
+    "end_line": 155,
+    "comment": "/** \n * Empty  {@link CopyOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_DELETE_OPTION_ARRAY",
+    "snippet": "public static final DeleteOption[] EMPTY_DELETE_OPTION_ARRAY \u003d {};",
+    "begin_line": 162,
+    "end_line": 162,
+    "comment": "/** \n * Empty  {@link DeleteOption} array.\n * @since 2.8.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_FILE_VISIT_OPTION_ARRAY",
+    "snippet": "public static final FileVisitOption[] EMPTY_FILE_VISIT_OPTION_ARRAY \u003d {};",
+    "begin_line": 167,
+    "end_line": 167,
+    "comment": "/** \n * Empty  {@link FileVisitOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_LINK_OPTION_ARRAY",
+    "snippet": "public static final LinkOption[] EMPTY_LINK_OPTION_ARRAY \u003d {};",
+    "begin_line": 172,
+    "end_line": 172,
+    "comment": "/** \n * Empty  {@link LinkOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NOFOLLOW_LINK_OPTION_ARRAY",
+    "snippet": "@Deprecated\n    public static final LinkOption[] NOFOLLOW_LINK_OPTION_ARRAY \u003d {LinkOption.NOFOLLOW_LINKS};",
+    "begin_line": 181,
+    "end_line": 181,
+    "comment": "/** \n * {@link LinkOption} array for {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.9.0\n * @deprecated Use {@link #noFollowLinkOptionArray()}.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.NULL_LINK_OPTION",
+    "snippet": "static final LinkOption NULL_LINK_OPTION \u003d null;",
+    "begin_line": 188,
+    "end_line": 188,
+    "comment": "/** \n * A LinkOption used to follow link in this class, the inverse of  {@link LinkOption#NOFOLLOW_LINKS}.\n * @since 2.12.0\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_OPEN_OPTION_ARRAY",
+    "snippet": "public static final OpenOption[] EMPTY_OPEN_OPTION_ARRAY \u003d {};",
+    "begin_line": 193,
+    "end_line": 193,
+    "comment": "/** \n * Empty  {@link OpenOption} array.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.PathUtils",
+    "src_path": "org/apache/commons/io/file/PathUtils.java",
+    "signature": "org.apache.commons.io.file.PathUtils.EMPTY_PATH_ARRAY",
+    "snippet": "public static final Path[] EMPTY_PATH_ARRAY \u003d {};",
+    "begin_line": 200,
+    "end_line": 200,
+    "comment": "/** \n * Empty  {@link Path} array.\n * @since 2.9.0\n */\n"
+  }
+]

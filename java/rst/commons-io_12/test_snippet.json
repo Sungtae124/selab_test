@@ -1,0 +1,240 @@
+[
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.constructor_File_directory()",
+    "snippet": "@Test\n    public void constructor_File_directory() {\n        assertThrows(IOException.class, () -\u003e {\n            try (Writer writer \u003d new FileWriterWithEncoding(temporaryFolder, defaultEncoding)) {\n                // empty\n            }\n        });\n        assertFalse(file1.exists());\n    }",
+    "begin_line": 54,
+    "end_line": 61,
+    "comment": "",
+    "child_ranges": [
+      "(line 55,col 9)-(line 59,col 11)",
+      "(line 60,col 9)-(line 60,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.constructor_File_encoding_badEncoding()",
+    "snippet": "@Test\n    public void constructor_File_encoding_badEncoding() {\n        assertThrows(IOException.class, () -\u003e {\n            try (Writer writer \u003d new FileWriterWithEncoding(file1, \"BAD-ENCODE\")) {\n                // empty\n            }\n        });\n        assertFalse(file1.exists());\n    }",
+    "begin_line": 64,
+    "end_line": 71,
+    "comment": "",
+    "child_ranges": [
+      "(line 65,col 9)-(line 69,col 11)",
+      "(line 70,col 9)-(line 70,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.constructor_File_existingFile_withContent()",
+    "snippet": "@Test\n    public void constructor_File_existingFile_withContent() throws Exception {\n        try (FileWriter fw1 \u003d new FileWriter(file1);) {\n            fw1.write(textContent);\n            fw1.write(65);\n        }\n        assertEquals(1025, file1.length());\n\n        try (FileWriterWithEncoding fw1 \u003d new FileWriterWithEncoding(file1, defaultEncoding)) {\n            fw1.write(\"ABcd\");\n        }\n\n        assertEquals(4, file1.length());\n    }",
+    "begin_line": 74,
+    "end_line": 86,
+    "comment": "",
+    "child_ranges": [
+      "(line 75,col 9)-(line 78,col 9)",
+      "(line 79,col 9)-(line 79,col 43)",
+      "(line 81,col 9)-(line 83,col 9)",
+      "(line 85,col 9)-(line 85,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.constructor_File_nullFile()",
+    "snippet": "@Test\n    public void constructor_File_nullFile() {\n        assertThrows(NullPointerException.class, () -\u003e {\n            try (Writer writer \u003d new FileWriterWithEncoding((File) null, defaultEncoding)) {\n                // empty\n            }\n        });\n        assertFalse(file1.exists());\n    }",
+    "begin_line": 89,
+    "end_line": 96,
+    "comment": "",
+    "child_ranges": [
+      "(line 90,col 9)-(line 94,col 11)",
+      "(line 95,col 9)-(line 95,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.constructor_fileName_nullFile()",
+    "snippet": "@Test\n    public void constructor_fileName_nullFile() {\n        assertThrows(NullPointerException.class, () -\u003e {\n            try (Writer writer \u003d new FileWriterWithEncoding((String) null, defaultEncoding)) {\n                // empty\n            }\n        });\n        assertFalse(file1.exists());\n    }",
+    "begin_line": 99,
+    "end_line": 106,
+    "comment": "",
+    "child_ranges": [
+      "(line 100,col 9)-(line 104,col 11)",
+      "(line 105,col 9)-(line 105,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_Charset_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_Charset_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2, Charset.defaultCharset())) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 109,
+    "end_line": 113,
+    "comment": "",
+    "child_ranges": [
+      "(line 110,col 9)-(line 112,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_CharsetEncoder_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_CharsetEncoder_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2, Charset.defaultCharset().newEncoder())) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 116,
+    "end_line": 120,
+    "comment": "",
+    "child_ranges": [
+      "(line 117,col 9)-(line 119,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_null_Charset_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_null_Charset_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2, (Charset) null)) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 123,
+    "end_line": 127,
+    "comment": "",
+    "child_ranges": [
+      "(line 124,col 9)-(line 126,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_string_Charset_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_string_Charset_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2.getPath(), Charset.defaultCharset())) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 130,
+    "end_line": 134,
+    "comment": "",
+    "child_ranges": [
+      "(line 131,col 9)-(line 133,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_string_CharsetEncoder_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_string_CharsetEncoder_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2.getPath(), Charset.defaultCharset().newEncoder())) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 137,
+    "end_line": 141,
+    "comment": "",
+    "child_ranges": [
+      "(line 138,col 9)-(line 140,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_string_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_string_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2, defaultEncoding)) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 144,
+    "end_line": 148,
+    "comment": "",
+    "child_ranges": [
+      "(line 145,col 9)-(line 147,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.sameEncoding_string_string_constructor()",
+    "snippet": "@Test\n    public void sameEncoding_string_string_constructor() throws Exception {\n        try (final FileWriterWithEncoding writer \u003d new FileWriterWithEncoding(file2.getPath(), defaultEncoding)) {\n            successfulRun(writer);\n        }\n    }",
+    "begin_line": 151,
+    "end_line": 155,
+    "comment": "",
+    "child_ranges": [
+      "(line 152,col 9)-(line 154,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.setUp()",
+    "snippet": "@BeforeEach\n    public void setUp() throws Exception {\n        final File encodingFinder \u003d new File(temporaryFolder, \"finder.txt\");\n        try (OutputStreamWriter out \u003d new OutputStreamWriter(Files.newOutputStream(encodingFinder.toPath()))) {\n            defaultEncoding \u003d out.getEncoding();\n        }\n        file1 \u003d new File(temporaryFolder, \"testfile1.txt\");\n        file2 \u003d new File(temporaryFolder, \"testfile2.txt\");\n        final char[] arr \u003d new char[1024];\n        final char[] chars \u003d \"ABCDEFGHIJKLMNOPQabcdefgihklmnopq\".toCharArray();\n        for (int i \u003d 0; i \u003c arr.length; i++) {\n            arr[i] \u003d chars[i % chars.length];\n        }\n        textContent \u003d new String(arr);\n    }",
+    "begin_line": 158,
+    "end_line": 171,
+    "comment": "",
+    "child_ranges": [
+      "(line 159,col 9)-(line 159,col 76)",
+      "(line 160,col 9)-(line 162,col 9)",
+      "(line 163,col 9)-(line 163,col 59)",
+      "(line 164,col 9)-(line 164,col 59)",
+      "(line 165,col 9)-(line 165,col 42)",
+      "(line 166,col 9)-(line 166,col 79)",
+      "(line 167,col 9)-(line 169,col 9)",
+      "(line 170,col 9)-(line 170,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.successfulRun(FileWriterWithEncoding)",
+    "snippet": "private void successfulRun(final FileWriterWithEncoding fw21) throws Exception {\n        try (FileWriter fw1 \u003d new FileWriter(file1); // default encoding\n            FileWriterWithEncoding fw2 \u003d fw21) {\n            writeTestPayload(fw1, fw2);\n            checkFile(file1, file2);\n        }\n        assertTrue(file1.exists());\n        assertTrue(file2.exists());\n    }",
+    "begin_line": 173,
+    "end_line": 181,
+    "comment": "",
+    "child_ranges": [
+      "(line 174,col 9)-(line 178,col 9)",
+      "(line 179,col 9)-(line 179,col 35)",
+      "(line 180,col 9)-(line 180,col 35)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.testDifferentEncoding()",
+    "snippet": "@Test\n    public void testDifferentEncoding() throws Exception {\n        if (Charset.isSupported(\"UTF-16BE\")) {\n            try (FileWriter fw1 \u003d new FileWriter(file1); // default encoding\n                FileWriterWithEncoding fw2 \u003d new FileWriterWithEncoding(file2, defaultEncoding)) {\n                writeTestPayload(fw1, fw2);\n                try {\n                    checkFile(file1, file2);\n                    fail();\n                } catch (final AssertionError ex) {\n                    // success\n                }\n\n            }\n            assertTrue(file1.exists());\n            assertTrue(file2.exists());\n        }\n        if (Charset.isSupported(\"UTF-16LE\")) {\n            try (FileWriter fw1 \u003d new FileWriter(file1); // default encoding\n                FileWriterWithEncoding fw2 \u003d new FileWriterWithEncoding(file2, defaultEncoding)) {\n                writeTestPayload(fw1, fw2);\n                try {\n                    checkFile(file1, file2);\n                    fail();\n                } catch (final AssertionError ex) {\n                    // success\n                }\n\n            }\n            assertTrue(file1.exists());\n            assertTrue(file2.exists());\n        }\n    }",
+    "begin_line": 184,
+    "end_line": 215,
+    "comment": "",
+    "child_ranges": [
+      "(line 185,col 9)-(line 199,col 9)",
+      "(line 200,col 9)-(line 214,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.io.output.FileWriterWithEncodingTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/io/output/FileWriterWithEncodingTest.java",
+    "signature": "org.apache.commons.io.output.FileWriterWithEncodingTest.writeTestPayload(java.io.FileWriter, FileWriterWithEncoding)",
+    "snippet": "private void writeTestPayload(final FileWriter fw1, final FileWriterWithEncoding fw2) throws IOException {\n        assertTrue(file1.exists());\n        assertTrue(file2.exists());\n\n        fw1.write(textContent);\n        fw2.write(textContent);\n        fw1.write(65);\n        fw2.write(65);\n        fw1.write(anotherTestContent);\n        fw2.write(anotherTestContent);\n        fw1.write(anotherTestContent, 1, 2);\n        fw2.write(anotherTestContent, 1, 2);\n        fw1.write(\"CAFE\", 1, 2);\n        fw2.write(\"CAFE\", 1, 2);\n\n        fw1.flush();\n        fw2.flush();\n    }",
+    "begin_line": 217,
+    "end_line": 234,
+    "comment": "",
+    "child_ranges": [
+      "(line 218,col 9)-(line 218,col 35)",
+      "(line 219,col 9)-(line 219,col 35)",
+      "(line 221,col 9)-(line 221,col 31)",
+      "(line 222,col 9)-(line 222,col 31)",
+      "(line 223,col 9)-(line 223,col 22)",
+      "(line 224,col 9)-(line 224,col 22)",
+      "(line 225,col 9)-(line 225,col 38)",
+      "(line 226,col 9)-(line 226,col 38)",
+      "(line 227,col 9)-(line 227,col 44)",
+      "(line 228,col 9)-(line 228,col 44)",
+      "(line 229,col 9)-(line 229,col 32)",
+      "(line 230,col 9)-(line 230,col 32)",
+      "(line 232,col 9)-(line 232,col 20)",
+      "(line 233,col 9)-(line 233,col 20)"
+    ]
+  }
+]

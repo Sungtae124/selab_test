@@ -1,0 +1,227 @@
+[
+  {
+    "class_name": "org.apache.commons.io.DirectoryWalker",
+    "src_path": "org/apache/commons/io/DirectoryWalker.java",
+    "signature": "org.apache.commons.io.DirectoryWalker.filter",
+    "snippet": "private final FileFilter filter;",
+    "begin_line": 273,
+    "end_line": 273,
+    "comment": "/** \n * The file filter to use to filter files and directories.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.DirectoryWalker",
+    "src_path": "org/apache/commons/io/DirectoryWalker.java",
+    "signature": "org.apache.commons.io.DirectoryWalker.depthLimit",
+    "snippet": "private final int depthLimit;",
+    "begin_line": 277,
+    "end_line": 277,
+    "comment": "/** \n * The limit on the directory depth to walk.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.DirectoryWalker",
+    "src_path": "org/apache/commons/io/DirectoryWalker.java",
+    "signature": "org.apache.commons.io.DirectoryWalker.serialVersionUID",
+    "snippet": "private static final long serialVersionUID \u003d 1347339620135041008L;",
+    "begin_line": 626,
+    "end_line": 626,
+    "comment": "/** \n * Serialization id. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.DirectoryWalker",
+    "src_path": "org/apache/commons/io/DirectoryWalker.java",
+    "signature": "org.apache.commons.io.DirectoryWalker.file",
+    "snippet": "private final File file;",
+    "begin_line": 629,
+    "end_line": 629,
+    "comment": "/** \n * The file being processed when the exception was thrown. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.DirectoryWalker",
+    "src_path": "org/apache/commons/io/DirectoryWalker.java",
+    "signature": "org.apache.commons.io.DirectoryWalker.depth",
+    "snippet": "private final int depth;",
+    "begin_line": 631,
+    "end_line": 631,
+    "comment": "/** \n * The file depth when the exception was thrown. \n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_KB",
+    "snippet": "public static final long ONE_KB \u003d 1024;",
+    "begin_line": 89,
+    "end_line": 89,
+    "comment": "/** \n * The number of bytes in a kilobyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_KB_BI",
+    "snippet": "public static final BigInteger ONE_KB_BI \u003d BigInteger.valueOf(ONE_KB);",
+    "begin_line": 96,
+    "end_line": 96,
+    "comment": "/** \n * The number of bytes in a kilobyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_MB",
+    "snippet": "public static final long ONE_MB \u003d ONE_KB * ONE_KB;",
+    "begin_line": 101,
+    "end_line": 101,
+    "comment": "/** \n * The number of bytes in a megabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_MB_BI",
+    "snippet": "public static final BigInteger ONE_MB_BI \u003d ONE_KB_BI.multiply(ONE_KB_BI);",
+    "begin_line": 108,
+    "end_line": 108,
+    "comment": "/** \n * The number of bytes in a megabyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_GB",
+    "snippet": "public static final long ONE_GB \u003d ONE_KB * ONE_MB;",
+    "begin_line": 113,
+    "end_line": 113,
+    "comment": "/** \n * The number of bytes in a gigabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_GB_BI",
+    "snippet": "public static final BigInteger ONE_GB_BI \u003d ONE_KB_BI.multiply(ONE_MB_BI);",
+    "begin_line": 120,
+    "end_line": 120,
+    "comment": "/** \n * The number of bytes in a gigabyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_TB",
+    "snippet": "public static final long ONE_TB \u003d ONE_KB * ONE_GB;",
+    "begin_line": 125,
+    "end_line": 125,
+    "comment": "/** \n * The number of bytes in a terabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_TB_BI",
+    "snippet": "public static final BigInteger ONE_TB_BI \u003d ONE_KB_BI.multiply(ONE_GB_BI);",
+    "begin_line": 132,
+    "end_line": 132,
+    "comment": "/** \n * The number of bytes in a terabyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_PB",
+    "snippet": "public static final long ONE_PB \u003d ONE_KB * ONE_TB;",
+    "begin_line": 137,
+    "end_line": 137,
+    "comment": "/** \n * The number of bytes in a petabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_PB_BI",
+    "snippet": "public static final BigInteger ONE_PB_BI \u003d ONE_KB_BI.multiply(ONE_TB_BI);",
+    "begin_line": 144,
+    "end_line": 144,
+    "comment": "/** \n * The number of bytes in a petabyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_EB",
+    "snippet": "public static final long ONE_EB \u003d ONE_KB * ONE_PB;",
+    "begin_line": 149,
+    "end_line": 149,
+    "comment": "/** \n * The number of bytes in an exabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_EB_BI",
+    "snippet": "public static final BigInteger ONE_EB_BI \u003d ONE_KB_BI.multiply(ONE_PB_BI);",
+    "begin_line": 156,
+    "end_line": 156,
+    "comment": "/** \n * The number of bytes in an exabyte.\n * @since 2.4\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_ZB",
+    "snippet": "public static final BigInteger ONE_ZB \u003d BigInteger.valueOf(ONE_KB).multiply(BigInteger.valueOf(ONE_EB));",
+    "begin_line": 161,
+    "end_line": 161,
+    "comment": "/** \n * The number of bytes in a zettabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.ONE_YB",
+    "snippet": "public static final BigInteger ONE_YB \u003d ONE_KB_BI.multiply(ONE_ZB);",
+    "begin_line": 166,
+    "end_line": 166,
+    "comment": "/** \n * The number of bytes in a yottabyte.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.FileUtils",
+    "src_path": "org/apache/commons/io/FileUtils.java",
+    "signature": "org.apache.commons.io.FileUtils.EMPTY_FILE_ARRAY",
+    "snippet": "public static final File[] EMPTY_FILE_ARRAY \u003d new File[0];",
+    "begin_line": 171,
+    "end_line": 171,
+    "comment": "/** \n * An empty array of type \u003ccode\u003eFile\u003c/code\u003e.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.file.Counters",
+    "src_path": "org/apache/commons/io/file/Counters.java",
+    "signature": "org.apache.commons.io.file.Counters.byteCounter",
+    "snippet": "private final Counter byteCounter;",
+    "begin_line": 34,
+    "end_line": 34,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.Counters",
+    "src_path": "org/apache/commons/io/file/Counters.java",
+    "signature": "org.apache.commons.io.file.Counters.directoryCounter",
+    "snippet": "private final Counter directoryCounter;",
+    "begin_line": 35,
+    "end_line": 35,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.Counters",
+    "src_path": "org/apache/commons/io/file/Counters.java",
+    "signature": "org.apache.commons.io.file.Counters.fileCounter",
+    "snippet": "private final Counter fileCounter;",
+    "begin_line": 36,
+    "end_line": 36,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.Counters",
+    "src_path": "org/apache/commons/io/file/Counters.java",
+    "signature": "org.apache.commons.io.file.Counters.value",
+    "snippet": "private BigInteger value \u003d BigInteger.ZERO;",
+    "begin_line": 86,
+    "end_line": 86,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.file.Counters",
+    "src_path": "org/apache/commons/io/file/Counters.java",
+    "signature": "org.apache.commons.io.file.Counters.value",
+    "snippet": "private long value;",
+    "begin_line": 179,
+    "end_line": 179,
+    "comment": ""
+  }
+]

@@ -1,0 +1,1608 @@
+[
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo()",
+    "snippet": "public String foo() {\n            return \"foo()\";\n        }",
+    "begin_line": 65,
+    "end_line": 67,
+    "comment": "",
+    "child_ranges": [
+      "(line 66,col 13)-(line 66,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar()",
+    "snippet": "public static String bar() {\n            return \"bar()\";\n        }",
+    "begin_line": 72,
+    "end_line": 74,
+    "comment": "",
+    "child_ranges": [
+      "(line 73,col 13)-(line 73,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(int)",
+    "snippet": "public static String bar(final int i) {\n            return \"bar(int)\";\n        }",
+    "begin_line": 76,
+    "end_line": 78,
+    "comment": "",
+    "child_ranges": [
+      "(line 77,col 13)-(line 77,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(java.lang.Integer)",
+    "snippet": "public static String bar(final Integer i) {\n            return \"bar(Integer)\";\n        }",
+    "begin_line": 80,
+    "end_line": 82,
+    "comment": "",
+    "child_ranges": [
+      "(line 81,col 13)-(line 81,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(double)",
+    "snippet": "public static String bar(final double d) {\n            return \"bar(double)\";\n        }",
+    "begin_line": 84,
+    "end_line": 86,
+    "comment": "",
+    "child_ranges": [
+      "(line 85,col 13)-(line 85,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(java.lang.String)",
+    "snippet": "public static String bar(final String s) {\n            return \"bar(String)\";\n        }",
+    "begin_line": 88,
+    "end_line": 90,
+    "comment": "",
+    "child_ranges": [
+      "(line 89,col 13)-(line 89,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(java.lang.Object)",
+    "snippet": "public static String bar(final Object o) {\n            return \"bar(Object)\";\n        }",
+    "begin_line": 92,
+    "end_line": 94,
+    "comment": "",
+    "child_ranges": [
+      "(line 93,col 13)-(line 93,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(java.lang.String)",
+    "snippet": "public static String bar(final String... s) {\n            return \"bar(String...)\";\n        }",
+    "begin_line": 96,
+    "end_line": 98,
+    "comment": "",
+    "child_ranges": [
+      "(line 97,col 13)-(line 97,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(long)",
+    "snippet": "public static String bar(final long... s) {\n            return \"bar(long...)\";\n        }",
+    "begin_line": 100,
+    "end_line": 102,
+    "comment": "",
+    "child_ranges": [
+      "(line 101,col 13)-(line 101,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.bar(java.lang.Integer, java.lang.String)",
+    "snippet": "public static String bar(final Integer i, final String... s) {\n            return \"bar(int, String...)\";\n        }",
+    "begin_line": 104,
+    "end_line": 106,
+    "comment": "",
+    "child_ranges": [
+      "(line 105,col 13)-(line 105,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.oneParameterStatic(java.lang.String)",
+    "snippet": "public static void oneParameterStatic(final String s) {\n            // empty\n        }",
+    "begin_line": 108,
+    "end_line": 110,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStuff()",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private void privateStuff() {\n        }",
+    "begin_line": 113,
+    "end_line": 114,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff()",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff() {\n            return \"privateStringStuff()\";\n        }",
+    "begin_line": 117,
+    "end_line": 119,
+    "comment": "",
+    "child_ranges": [
+      "(line 118,col 13)-(line 118,col 42)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff(int)",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff(final int i) {\n            return \"privateStringStuff(int)\";\n        }",
+    "begin_line": 122,
+    "end_line": 124,
+    "comment": "",
+    "child_ranges": [
+      "(line 123,col 13)-(line 123,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff(java.lang.Integer)",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff(final Integer i) {\n            return \"privateStringStuff(Integer)\";\n        }",
+    "begin_line": 127,
+    "end_line": 129,
+    "comment": "",
+    "child_ranges": [
+      "(line 128,col 13)-(line 128,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff(double)",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff(final double d) {\n            return \"privateStringStuff(double)\";\n        }",
+    "begin_line": 132,
+    "end_line": 134,
+    "comment": "",
+    "child_ranges": [
+      "(line 133,col 13)-(line 133,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff(java.lang.String)",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff(final String s) {\n            return \"privateStringStuff(String)\";\n        }",
+    "begin_line": 137,
+    "end_line": 139,
+    "comment": "",
+    "child_ranges": [
+      "(line 138,col 13)-(line 138,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.privateStringStuff(java.lang.Object)",
+    "snippet": "@SuppressWarnings(\"unused\")\n        private String privateStringStuff(final Object s) {\n            return \"privateStringStuff(Object)\";\n        }",
+    "begin_line": 142,
+    "end_line": 144,
+    "comment": "",
+    "child_ranges": [
+      "(line 143,col 13)-(line 143,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo()",
+    "snippet": "public String foo() {\n            return \"foo()\";\n        }",
+    "begin_line": 146,
+    "end_line": 148,
+    "comment": "",
+    "child_ranges": [
+      "(line 147,col 13)-(line 147,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(int)",
+    "snippet": "public String foo(final int i) {\n            return \"foo(int)\";\n        }",
+    "begin_line": 150,
+    "end_line": 152,
+    "comment": "",
+    "child_ranges": [
+      "(line 151,col 13)-(line 151,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.Integer)",
+    "snippet": "public String foo(final Integer i) {\n            return \"foo(Integer)\";\n        }",
+    "begin_line": 154,
+    "end_line": 156,
+    "comment": "",
+    "child_ranges": [
+      "(line 155,col 13)-(line 155,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(double)",
+    "snippet": "public String foo(final double d) {\n            return \"foo(double)\";\n        }",
+    "begin_line": 158,
+    "end_line": 160,
+    "comment": "",
+    "child_ranges": [
+      "(line 159,col 13)-(line 159,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(long)",
+    "snippet": "public String foo(final long l) {\n            return \"foo(long)\";\n        }",
+    "begin_line": 162,
+    "end_line": 164,
+    "comment": "",
+    "child_ranges": [
+      "(line 163,col 13)-(line 163,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.String)",
+    "snippet": "public String foo(final String s) {\n            return \"foo(String)\";\n        }",
+    "begin_line": 166,
+    "end_line": 168,
+    "comment": "",
+    "child_ranges": [
+      "(line 167,col 13)-(line 167,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.Object)",
+    "snippet": "public String foo(final Object o) {\n            return \"foo(Object)\";\n        }",
+    "begin_line": 170,
+    "end_line": 172,
+    "comment": "",
+    "child_ranges": [
+      "(line 171,col 13)-(line 171,col 33)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.String)",
+    "snippet": "public String foo(final String... s) {\n            return \"foo(String...)\";\n        }",
+    "begin_line": 174,
+    "end_line": 176,
+    "comment": "",
+    "child_ranges": [
+      "(line 175,col 13)-(line 175,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(long)",
+    "snippet": "public String foo(final long... l) {\n            return \"foo(long...)\";\n        }",
+    "begin_line": 178,
+    "end_line": 180,
+    "comment": "",
+    "child_ranges": [
+      "(line 179,col 13)-(line 179,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.Integer, java.lang.String)",
+    "snippet": "public String foo(final Integer i, final String... s) {\n            return \"foo(int, String...)\";\n        }",
+    "begin_line": 182,
+    "end_line": 184,
+    "comment": "",
+    "child_ranges": [
+      "(line 183,col 13)-(line 183,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.oneParameter(java.lang.String)",
+    "snippet": "public void oneParameter(final String s) {\n            // empty\n        }",
+    "begin_line": 186,
+    "end_line": 188,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.foo(java.lang.Object)",
+    "snippet": "public String foo(final Object... s) {\n            return \"foo(Object...)\";\n        }",
+    "begin_line": 190,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 191,col 13)-(line 191,col 36)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.unboxing(int)",
+    "snippet": "public int[] unboxing(final int... values) {\n            return values;\n        }",
+    "begin_line": 194,
+    "end_line": 196,
+    "comment": "",
+    "child_ranges": [
+      "(line 195,col 13)-(line 195,col 26)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Byte)",
+    "snippet": "public static String varOverload(final Byte... args) {\n            return \"Byte...\";\n        }",
+    "begin_line": 200,
+    "end_line": 202,
+    "comment": "",
+    "child_ranges": [
+      "(line 201,col 13)-(line 201,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Character)",
+    "snippet": "public static String varOverload(final Character... args) {\n            return \"Character...\";\n        }",
+    "begin_line": 204,
+    "end_line": 206,
+    "comment": "",
+    "child_ranges": [
+      "(line 205,col 13)-(line 205,col 34)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Short)",
+    "snippet": "public static String varOverload(final Short... args) {\n            return \"Short...\";\n        }",
+    "begin_line": 208,
+    "end_line": 210,
+    "comment": "",
+    "child_ranges": [
+      "(line 209,col 13)-(line 209,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Boolean)",
+    "snippet": "public static String varOverload(final Boolean... args) {\n            return \"Boolean...\";\n        }",
+    "begin_line": 212,
+    "end_line": 214,
+    "comment": "",
+    "child_ranges": [
+      "(line 213,col 13)-(line 213,col 32)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Float)",
+    "snippet": "public static String varOverload(final Float... args) {\n            return \"Float...\";\n        }",
+    "begin_line": 216,
+    "end_line": 218,
+    "comment": "",
+    "child_ranges": [
+      "(line 217,col 13)-(line 217,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Double)",
+    "snippet": "public static String varOverload(final Double... args) {\n            return \"Double...\";\n        }",
+    "begin_line": 220,
+    "end_line": 222,
+    "comment": "",
+    "child_ranges": [
+      "(line 221,col 13)-(line 221,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Integer)",
+    "snippet": "public static String varOverload(final Integer... args) {\n            return \"Integer...\";\n        }",
+    "begin_line": 224,
+    "end_line": 226,
+    "comment": "",
+    "child_ranges": [
+      "(line 225,col 13)-(line 225,col 32)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Long)",
+    "snippet": "public static String varOverload(final Long... args) {\n            return \"Long...\";\n        }",
+    "begin_line": 228,
+    "end_line": 230,
+    "comment": "",
+    "child_ranges": [
+      "(line 229,col 13)-(line 229,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Number)",
+    "snippet": "public static String varOverload(final Number... args) {\n            return \"Number...\";\n        }",
+    "begin_line": 232,
+    "end_line": 234,
+    "comment": "",
+    "child_ranges": [
+      "(line 233,col 13)-(line 233,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.Object)",
+    "snippet": "public static String varOverload(final Object... args) {\n            return \"Object...\";\n        }",
+    "begin_line": 236,
+    "end_line": 238,
+    "comment": "",
+    "child_ranges": [
+      "(line 237,col 13)-(line 237,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverload(java.lang.String)",
+    "snippet": "public static String varOverload(final String... args) {\n            return \"String...\";\n        }",
+    "begin_line": 240,
+    "end_line": 242,
+    "comment": "",
+    "child_ranges": [
+      "(line 241,col 13)-(line 241,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Byte)",
+    "snippet": "public static String numOverload(final Byte... args) {\n            return \"Byte...\";\n        }",
+    "begin_line": 246,
+    "end_line": 248,
+    "comment": "",
+    "child_ranges": [
+      "(line 247,col 13)-(line 247,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Short)",
+    "snippet": "public static String numOverload(final Short... args) {\n            return \"Short...\";\n        }",
+    "begin_line": 250,
+    "end_line": 252,
+    "comment": "",
+    "child_ranges": [
+      "(line 251,col 13)-(line 251,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Float)",
+    "snippet": "public static String numOverload(final Float... args) {\n            return \"Float...\";\n        }",
+    "begin_line": 254,
+    "end_line": 256,
+    "comment": "",
+    "child_ranges": [
+      "(line 255,col 13)-(line 255,col 30)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Double)",
+    "snippet": "public static String numOverload(final Double... args) {\n            return \"Double...\";\n        }",
+    "begin_line": 258,
+    "end_line": 260,
+    "comment": "",
+    "child_ranges": [
+      "(line 259,col 13)-(line 259,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Integer)",
+    "snippet": "public static String numOverload(final Integer... args) {\n            return \"Integer...\";\n        }",
+    "begin_line": 262,
+    "end_line": 264,
+    "comment": "",
+    "child_ranges": [
+      "(line 263,col 13)-(line 263,col 32)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Long)",
+    "snippet": "public static String numOverload(final Long... args) {\n            return \"Long...\";\n        }",
+    "begin_line": 266,
+    "end_line": 268,
+    "comment": "",
+    "child_ranges": [
+      "(line 267,col 13)-(line 267,col 29)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.numOverload(java.lang.Number)",
+    "snippet": "public static String numOverload(final Number... args) {\n            return \"Number...\";\n        }",
+    "begin_line": 270,
+    "end_line": 272,
+    "comment": "",
+    "child_ranges": [
+      "(line 271,col 13)-(line 271,col 31)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverloadEcho(java.lang.String)",
+    "snippet": "public ImmutablePair\u003cString, Object[]\u003e varOverloadEcho(final String... args) {\n            return new ImmutablePair\u003c\u003e(\"String...\", args);\n        }",
+    "begin_line": 277,
+    "end_line": 279,
+    "comment": "",
+    "child_ranges": [
+      "(line 278,col 13)-(line 278,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverloadEcho(java.lang.Number)",
+    "snippet": "public ImmutablePair\u003cString, Object[]\u003e varOverloadEcho(final Number... args) {\n            return new ImmutablePair\u003c\u003e(\"Number...\", args);\n        }",
+    "begin_line": 281,
+    "end_line": 283,
+    "comment": "",
+    "child_ranges": [
+      "(line 282,col 13)-(line 282,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverloadEchoStatic(java.lang.String)",
+    "snippet": "public static ImmutablePair\u003cString, Object[]\u003e varOverloadEchoStatic(final String... args) {\n            return new ImmutablePair\u003c\u003e(\"String...\", args);\n        }",
+    "begin_line": 285,
+    "end_line": 287,
+    "comment": "",
+    "child_ranges": [
+      "(line 286,col 13)-(line 286,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.varOverloadEchoStatic(java.lang.Number)",
+    "snippet": "public static ImmutablePair\u003cString, Object[]\u003e varOverloadEchoStatic(final Number... args) {\n            return new ImmutablePair\u003c\u003e(\"Number...\", args);\n        }",
+    "begin_line": 289,
+    "end_line": 291,
+    "comment": "",
+    "child_ranges": [
+      "(line 290,col 13)-(line 290,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.verify(ImmutablePair\u003cString,Object[]\u003e, ImmutablePair\u003cString,Object[]\u003e)",
+    "snippet": "static void verify(final ImmutablePair\u003cString, Object[]\u003e a, final ImmutablePair\u003cString, Object[]\u003e b) {\n            assertEquals(a.getLeft(), b.getLeft());\n            assertArrayEquals(a.getRight(), b.getRight());\n        }",
+    "begin_line": 293,
+    "end_line": 296,
+    "comment": "",
+    "child_ranges": [
+      "(line 294,col 13)-(line 294,col 51)",
+      "(line 295,col 13)-(line 295,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.verify(ImmutablePair\u003cString,Object[]\u003e, java.lang.Object)",
+    "snippet": "static void verify(final ImmutablePair\u003cString, Object[]\u003e a, final Object _b) {\n            @SuppressWarnings(\"unchecked\") final ImmutablePair\u003cString, Object[]\u003e b \u003d (ImmutablePair\u003cString, Object[]\u003e) _b;\n            verify(a, b);\n        }",
+    "begin_line": 298,
+    "end_line": 301,
+    "comment": "",
+    "child_ranges": [
+      "(line 299,col 13)-(line 299,col 122)",
+      "(line 300,col 13)-(line 300,col 25)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.getValue()",
+    "snippet": "@Override\n        public Object getValue() {\n            return null;\n        }",
+    "begin_line": 307,
+    "end_line": 309,
+    "comment": "",
+    "child_ranges": [
+      "(line 308,col 13)-(line 308,col 24)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.setValue(java.lang.Object)",
+    "snippet": "@Override\n        public void setValue(final Object value) {\n        }",
+    "begin_line": 312,
+    "end_line": 313,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.setUp()",
+    "snippet": "@BeforeEach\n    public void setUp() {\n        testBean \u003d new TestBean();\n        classCache.clear();\n    }",
+    "begin_line": 320,
+    "end_line": 323,
+    "comment": "",
+    "child_ranges": [
+      "(line 321,col 9)-(line 321,col 34)",
+      "(line 322,col 9)-(line 322,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testConstructor()",
+    "snippet": "@Test\n    public void testConstructor() throws Exception {\n        assertNotNull(MethodUtils.class.newInstance());\n    }",
+    "begin_line": 326,
+    "end_line": 328,
+    "comment": "",
+    "child_ranges": [
+      "(line 327,col 9)-(line 327,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.verifyJavaVarargsOverloadingResolution()",
+    "snippet": "@Test\n    public void verifyJavaVarargsOverloadingResolution() {\n        // This code is not a test of MethodUtils.\n        // Rather it makes explicit the behavior of the Java specification for\n        // various cases of overload resolution.\n        assertEquals(\"Byte...\", TestBean.varOverload((byte) 1, (byte) 2));\n        assertEquals(\"Short...\", TestBean.varOverload((short) 1, (short) 2));\n        assertEquals(\"Integer...\", TestBean.varOverload(1, 2));\n        assertEquals(\"Long...\", TestBean.varOverload(1L, 2L));\n        assertEquals(\"Float...\", TestBean.varOverload(1f, 2f));\n        assertEquals(\"Double...\", TestBean.varOverload(1d, 2d));\n        assertEquals(\"Character...\", TestBean.varOverload(\u0027a\u0027, \u0027b\u0027));\n        assertEquals(\"String...\", TestBean.varOverload(\"a\", \"b\"));\n        assertEquals(\"Boolean...\", TestBean.varOverload(true, false));\n\n        assertEquals(\"Object...\", TestBean.varOverload(1, \"s\"));\n        assertEquals(\"Object...\", TestBean.varOverload(1, true));\n        assertEquals(\"Object...\", TestBean.varOverload(1.1, true));\n        assertEquals(\"Object...\", TestBean.varOverload(\u0027c\u0027, true));\n        assertEquals(\"Number...\", TestBean.varOverload(1, 1.1));\n        assertEquals(\"Number...\", TestBean.varOverload(1, 1L));\n        assertEquals(\"Number...\", TestBean.varOverload(1d, 1f));\n        assertEquals(\"Number...\", TestBean.varOverload((short) 1, (byte) 1));\n        assertEquals(\"Object...\", TestBean.varOverload(1, \u0027c\u0027));\n        assertEquals(\"Object...\", TestBean.varOverload(\u0027c\u0027, \"s\"));\n    }",
+    "begin_line": 331,
+    "end_line": 355,
+    "comment": "",
+    "child_ranges": [
+      "(line 335,col 9)-(line 335,col 74)",
+      "(line 336,col 9)-(line 336,col 77)",
+      "(line 337,col 9)-(line 337,col 63)",
+      "(line 338,col 9)-(line 338,col 62)",
+      "(line 339,col 9)-(line 339,col 63)",
+      "(line 340,col 9)-(line 340,col 64)",
+      "(line 341,col 9)-(line 341,col 69)",
+      "(line 342,col 9)-(line 342,col 66)",
+      "(line 343,col 9)-(line 343,col 70)",
+      "(line 345,col 9)-(line 345,col 64)",
+      "(line 346,col 9)-(line 346,col 65)",
+      "(line 347,col 9)-(line 347,col 67)",
+      "(line 348,col 9)-(line 348,col 67)",
+      "(line 349,col 9)-(line 349,col 64)",
+      "(line 350,col 9)-(line 350,col 63)",
+      "(line 351,col 9)-(line 351,col 64)",
+      "(line 352,col 9)-(line 352,col 77)",
+      "(line 353,col 9)-(line 353,col 64)",
+      "(line 354,col 9)-(line 354,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeJavaVarargsOverloadingResolution()",
+    "snippet": "@Test\n    public void testInvokeJavaVarargsOverloadingResolution() throws Exception {\n        assertEquals(\"Byte...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", (byte) 1, (byte) 2));\n        assertEquals(\"Short...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", (short) 1, (short) 2));\n        assertEquals(\"Integer...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, 2));\n        assertEquals(\"Long...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1L, 2L));\n        assertEquals(\"Float...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1f, 2f));\n        assertEquals(\"Double...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1d, 2d));\n        assertEquals(\"Character...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", \u0027a\u0027, \u0027b\u0027));\n        assertEquals(\"String...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", \"a\", \"b\"));\n        assertEquals(\"Boolean...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", true, false));\n\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, \"s\"));\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, true));\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1.1, true));\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", \u0027c\u0027, true));\n        assertEquals(\"Number...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, 1.1));\n        assertEquals(\"Number...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, 1L));\n        assertEquals(\"Number...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1d, 1f));\n        assertEquals(\"Number...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", (short) 1, (byte) 1));\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", 1, \u0027c\u0027));\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"varOverload\", \u0027c\u0027, \"s\"));\n\n        assertEquals(\"Object...\", MethodUtils.invokeStaticMethod(TestBean.class, \"varOverload\",\n                (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n        assertEquals(\"Number...\", MethodUtils.invokeStaticMethod(TestBean.class, \"numOverload\",\n                (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n    }",
+    "begin_line": 358,
+    "end_line": 403,
+    "comment": "",
+    "child_ranges": [
+      "(line 359,col 9)-(line 360,col 52)",
+      "(line 361,col 9)-(line 362,col 54)",
+      "(line 363,col 9)-(line 364,col 38)",
+      "(line 365,col 9)-(line 366,col 40)",
+      "(line 367,col 9)-(line 368,col 40)",
+      "(line 369,col 9)-(line 370,col 40)",
+      "(line 371,col 9)-(line 372,col 42)",
+      "(line 373,col 9)-(line 374,col 42)",
+      "(line 375,col 9)-(line 376,col 45)",
+      "(line 378,col 9)-(line 379,col 40)",
+      "(line 380,col 9)-(line 381,col 41)",
+      "(line 382,col 9)-(line 383,col 43)",
+      "(line 384,col 9)-(line 385,col 43)",
+      "(line 386,col 9)-(line 387,col 40)",
+      "(line 388,col 9)-(line 389,col 39)",
+      "(line 390,col 9)-(line 391,col 40)",
+      "(line 392,col 9)-(line 393,col 53)",
+      "(line 394,col 9)-(line 395,col 40)",
+      "(line 396,col 9)-(line 397,col 42)",
+      "(line 399,col 9)-(line 400,col 58)",
+      "(line 401,col 9)-(line 402,col 58)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethod()",
+    "snippet": "@Test\n    public void testInvokeMethod() throws Exception {\n        assertEquals(\"foo()\", MethodUtils.invokeMethod(testBean, \"foo\",\n                (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n        assertEquals(\"foo()\", MethodUtils.invokeMethod(testBean, \"foo\"));\n        assertEquals(\"foo()\", MethodUtils.invokeMethod(testBean, \"foo\",\n                (Object[]) null));\n        assertEquals(\"foo()\", MethodUtils.invokeMethod(testBean, \"foo\",\n                null, null));\n        assertEquals(\"foo(String)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                \"\"));\n        assertEquals(\"foo(Object)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                new Object()));\n        assertEquals(\"foo(Object)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                Boolean.TRUE));\n        assertEquals(\"foo(Integer)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                NumberUtils.INTEGER_ONE));\n        assertEquals(\"foo(int)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                NumberUtils.BYTE_ONE));\n        assertEquals(\"foo(long)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                NumberUtils.LONG_ONE));\n        assertEquals(\"foo(double)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                NumberUtils.DOUBLE_ONE));\n        assertEquals(\"foo(String...)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                \"a\", \"b\", \"c\"));\n        assertEquals(\"foo(String...)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                \"a\", \"b\", \"c\"));\n        assertEquals(\"foo(int, String...)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                5, \"a\", \"b\", \"c\"));\n        assertEquals(\"foo(long...)\", MethodUtils.invokeMethod(testBean, \"foo\",\n                1L, 2L));\n\n        assertThrows(NoSuchMethodException.class, () -\u003e MethodUtils.invokeMethod(testBean, \"foo\", 1, 2));\n\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"String...\", new String[]{\"x\", \"y\"}),\n                MethodUtils.invokeMethod(testBean, \"varOverloadEcho\", \"x\", \"y\"));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"Number...\", new Number[]{17, 23, 42}),\n                MethodUtils.invokeMethod(testBean, \"varOverloadEcho\", 17, 23, 42));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"String...\", new String[]{\"x\", \"y\"}),\n                MethodUtils.invokeMethod(testBean, \"varOverloadEcho\", \"x\", \"y\"));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"Number...\", new Number[]{17, 23, 42}),\n                MethodUtils.invokeMethod(testBean, \"varOverloadEcho\", 17, 23, 42));\n    }",
+    "begin_line": 406,
+    "end_line": 447,
+    "comment": "",
+    "child_ranges": [
+      "(line 407,col 9)-(line 408,col 58)",
+      "(line 409,col 9)-(line 409,col 73)",
+      "(line 410,col 9)-(line 411,col 34)",
+      "(line 412,col 9)-(line 413,col 29)",
+      "(line 414,col 9)-(line 415,col 21)",
+      "(line 416,col 9)-(line 417,col 31)",
+      "(line 418,col 9)-(line 419,col 31)",
+      "(line 420,col 9)-(line 421,col 42)",
+      "(line 422,col 9)-(line 423,col 39)",
+      "(line 424,col 9)-(line 425,col 39)",
+      "(line 426,col 9)-(line 427,col 41)",
+      "(line 428,col 9)-(line 429,col 32)",
+      "(line 430,col 9)-(line 431,col 32)",
+      "(line 432,col 9)-(line 433,col 35)",
+      "(line 434,col 9)-(line 435,col 25)",
+      "(line 437,col 9)-(line 437,col 105)",
+      "(line 439,col 9)-(line 440,col 81)",
+      "(line 441,col 9)-(line 442,col 83)",
+      "(line 443,col 9)-(line 444,col 81)",
+      "(line 445,col 9)-(line 446,col 83)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethod_VarArgsWithNullValues()",
+    "snippet": "@Test\n    public void testInvokeMethod_VarArgsWithNullValues() throws Exception {\n        assertEquals(\"String...\", MethodUtils.invokeMethod(testBean, \"varOverload\",\n                \"a\", null, \"c\"));\n        assertEquals(\"String...\", MethodUtils.invokeMethod(testBean, \"varOverload\",\n                                                                \"a\", \"b\", null));\n    }",
+    "begin_line": 450,
+    "end_line": 455,
+    "comment": "",
+    "child_ranges": [
+      "(line 451,col 9)-(line 452,col 33)",
+      "(line 453,col 9)-(line 454,col 81)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethod_VarArgsNotUniqueResolvable()",
+    "snippet": "@Test\n    public void testInvokeMethod_VarArgsNotUniqueResolvable() throws Exception {\n      assertEquals(\"Boolean...\", MethodUtils.invokeMethod(testBean, \"varOverload\",\n                                                         new Object[] {null}));\n      assertEquals(\"Object...\", MethodUtils.invokeMethod(testBean, \"varOverload\",\n                                                         (Object[]) null));\n    }",
+    "begin_line": 458,
+    "end_line": 463,
+    "comment": "",
+    "child_ranges": [
+      "(line 459,col 7)-(line 460,col 79)",
+      "(line 461,col 7)-(line 462,col 75)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeExactMethod()",
+    "snippet": "@Test\n    public void testInvokeExactMethod() throws Exception {\n        assertEquals(\"foo()\", MethodUtils.invokeExactMethod(testBean, \"foo\",\n                (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n        assertEquals(\"foo()\", MethodUtils.invokeExactMethod(testBean, \"foo\"));\n        assertEquals(\"foo()\", MethodUtils.invokeExactMethod(testBean, \"foo\",\n                (Object[]) null));\n        assertEquals(\"foo()\", MethodUtils.invokeExactMethod(testBean, \"foo\",\n                null, null));\n        assertEquals(\"foo(String)\", MethodUtils.invokeExactMethod(testBean,\n                \"foo\", \"\"));\n        assertEquals(\"foo(Object)\", MethodUtils.invokeExactMethod(testBean,\n                \"foo\", new Object()));\n        assertEquals(\"foo(Integer)\", MethodUtils.invokeExactMethod(testBean,\n                \"foo\", NumberUtils.INTEGER_ONE));\n        assertEquals(\"foo(double)\", MethodUtils.invokeExactMethod(testBean,\n                \"foo\", new Object[]{NumberUtils.DOUBLE_ONE},\n                new Class[]{Double.TYPE}));\n\n        assertThrows(\n                NoSuchMethodException.class,\n                () -\u003e MethodUtils.invokeExactMethod(testBean, \"foo\", NumberUtils.BYTE_ONE));\n\n        assertThrows(\n                NoSuchMethodException.class,\n                () -\u003e MethodUtils.invokeExactMethod(testBean, \"foo\", NumberUtils.LONG_ONE));\n        assertThrows(NoSuchMethodException.class, () -\u003e MethodUtils.invokeExactMethod(testBean, \"foo\", Boolean.TRUE));\n    }",
+    "begin_line": 466,
+    "end_line": 492,
+    "comment": "",
+    "child_ranges": [
+      "(line 467,col 9)-(line 468,col 58)",
+      "(line 469,col 9)-(line 469,col 78)",
+      "(line 470,col 9)-(line 471,col 34)",
+      "(line 472,col 9)-(line 473,col 29)",
+      "(line 474,col 9)-(line 475,col 28)",
+      "(line 476,col 9)-(line 477,col 38)",
+      "(line 478,col 9)-(line 479,col 49)",
+      "(line 480,col 9)-(line 482,col 43)",
+      "(line 484,col 9)-(line 486,col 92)",
+      "(line 488,col 9)-(line 490,col 92)",
+      "(line 491,col 9)-(line 491,col 118)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeStaticMethod()",
+    "snippet": "@Test\n    public void testInvokeStaticMethod() throws Exception {\n        assertEquals(\"bar()\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"bar\", (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n        assertEquals(\"bar()\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"bar\", (Object[]) null));\n        assertEquals(\"bar()\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"bar\", null, null));\n        assertEquals(\"bar(String)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", \"\"));\n        assertEquals(\"bar(Object)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", new Object()));\n        assertEquals(\"bar(Object)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", Boolean.TRUE));\n        assertEquals(\"bar(Integer)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", NumberUtils.INTEGER_ONE));\n        assertEquals(\"bar(int)\", MethodUtils.invokeStaticMethod(TestBean.class,\n                \"bar\", NumberUtils.BYTE_ONE));\n        assertEquals(\"bar(double)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", NumberUtils.DOUBLE_ONE));\n        assertEquals(\"bar(String...)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", \"a\", \"b\"));\n        assertEquals(\"bar(long...)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", 1L, 2L));\n        assertEquals(\"bar(int, String...)\", MethodUtils.invokeStaticMethod(\n                TestBean.class, \"bar\", NumberUtils.INTEGER_ONE, \"a\", \"b\"));\n\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"String...\", new String[]{\"x\", \"y\"}),\n                MethodUtils.invokeStaticMethod(TestBean.class, \"varOverloadEchoStatic\", \"x\", \"y\"));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"Number...\", new Number[]{17, 23, 42}),\n                MethodUtils.invokeStaticMethod(TestBean.class, \"varOverloadEchoStatic\", 17, 23, 42));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"String...\", new String[]{\"x\", \"y\"}),\n                MethodUtils.invokeStaticMethod(TestBean.class, \"varOverloadEchoStatic\", \"x\", \"y\"));\n        TestBean.verify(new ImmutablePair\u003c\u003e(\"Number...\", new Number[]{17, 23, 42}),\n                MethodUtils.invokeStaticMethod(TestBean.class, \"varOverloadEchoStatic\", 17, 23, 42));\n\n        assertThrows(\n                NoSuchMethodException.class, () -\u003e MethodUtils.invokeStaticMethod(TestBean.class, \"does_not_exist\"));\n    }",
+    "begin_line": 495,
+    "end_line": 532,
+    "comment": "",
+    "child_ranges": [
+      "(line 496,col 9)-(line 497,col 65)",
+      "(line 498,col 9)-(line 499,col 41)",
+      "(line 500,col 9)-(line 501,col 36)",
+      "(line 502,col 9)-(line 503,col 44)",
+      "(line 504,col 9)-(line 505,col 54)",
+      "(line 506,col 9)-(line 507,col 54)",
+      "(line 508,col 9)-(line 509,col 65)",
+      "(line 510,col 9)-(line 511,col 46)",
+      "(line 512,col 9)-(line 513,col 64)",
+      "(line 514,col 9)-(line 515,col 50)",
+      "(line 516,col 9)-(line 517,col 48)",
+      "(line 518,col 9)-(line 519,col 75)",
+      "(line 521,col 9)-(line 522,col 99)",
+      "(line 523,col 9)-(line 524,col 101)",
+      "(line 525,col 9)-(line 526,col 99)",
+      "(line 527,col 9)-(line 528,col 101)",
+      "(line 530,col 9)-(line 531,col 117)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeExactStaticMethod()",
+    "snippet": "@Test\n    public void testInvokeExactStaticMethod() throws Exception {\n        assertEquals(\"bar()\", MethodUtils.invokeExactStaticMethod(TestBean.class,\n                \"bar\", (Object[]) ArrayUtils.EMPTY_CLASS_ARRAY));\n        assertEquals(\"bar()\", MethodUtils.invokeExactStaticMethod(TestBean.class,\n                \"bar\", (Object[]) null));\n        assertEquals(\"bar()\", MethodUtils.invokeExactStaticMethod(TestBean.class,\n                \"bar\", null, null));\n        assertEquals(\"bar(String)\", MethodUtils.invokeExactStaticMethod(\n                TestBean.class, \"bar\", \"\"));\n        assertEquals(\"bar(Object)\", MethodUtils.invokeExactStaticMethod(\n                TestBean.class, \"bar\", new Object()));\n        assertEquals(\"bar(Integer)\", MethodUtils.invokeExactStaticMethod(\n                TestBean.class, \"bar\", NumberUtils.INTEGER_ONE));\n        assertEquals(\"bar(double)\", MethodUtils.invokeExactStaticMethod(\n                TestBean.class, \"bar\", new Object[]{NumberUtils.DOUBLE_ONE},\n                new Class[]{Double.TYPE}));\n\n        assertThrows(\n                NoSuchMethodException.class,\n                () -\u003e MethodUtils.invokeExactStaticMethod(TestBean.class, \"bar\", NumberUtils.BYTE_ONE));\n        assertThrows(\n                NoSuchMethodException.class,\n                () -\u003e MethodUtils.invokeExactStaticMethod(TestBean.class, \"bar\", NumberUtils.LONG_ONE));\n        assertThrows(\n                NoSuchMethodException.class,\n                () -\u003e MethodUtils.invokeExactStaticMethod(TestBean.class, \"bar\", Boolean.TRUE));\n    }",
+    "begin_line": 535,
+    "end_line": 561,
+    "comment": "",
+    "child_ranges": [
+      "(line 536,col 9)-(line 537,col 65)",
+      "(line 538,col 9)-(line 539,col 41)",
+      "(line 540,col 9)-(line 541,col 36)",
+      "(line 542,col 9)-(line 543,col 44)",
+      "(line 544,col 9)-(line 545,col 54)",
+      "(line 546,col 9)-(line 547,col 65)",
+      "(line 548,col 9)-(line 550,col 43)",
+      "(line 552,col 9)-(line 554,col 104)",
+      "(line 555,col 9)-(line 557,col 104)",
+      "(line 558,col 9)-(line 560,col 96)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessibleInterfaceMethod()",
+    "snippet": "@Test\n    public void testGetAccessibleInterfaceMethod() throws Exception {\n        final Class\u003c?\u003e[][] p \u003d {ArrayUtils.EMPTY_CLASS_ARRAY, null};\n        for (final Class\u003c?\u003e[] element : p) {\n            final Method method \u003d TestMutable.class.getMethod(\"getValue\", element);\n            final Method accessibleMethod \u003d MethodUtils.getAccessibleMethod(method);\n            assertNotSame(accessibleMethod, method);\n            assertSame(Mutable.class, accessibleMethod.getDeclaringClass());\n        }\n    }",
+    "begin_line": 564,
+    "end_line": 572,
+    "comment": "",
+    "child_ranges": [
+      "(line 565,col 9)-(line 565,col 68)",
+      "(line 566,col 9)-(line 571,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessibleMethodPrivateInterface()",
+    "snippet": "@Test\n    public void testGetAccessibleMethodPrivateInterface() throws Exception {\n        final Method expected \u003d TestBeanWithInterfaces.class.getMethod(\"foo\");\n        assertNotNull(expected);\n        final Method actual \u003d MethodUtils.getAccessibleMethod(TestBeanWithInterfaces.class, \"foo\");\n        assertNull(actual);\n    }",
+    "begin_line": 575,
+    "end_line": 580,
+    "comment": "",
+    "child_ranges": [
+      "(line 576,col 9)-(line 576,col 78)",
+      "(line 577,col 9)-(line 577,col 32)",
+      "(line 578,col 9)-(line 578,col 99)",
+      "(line 579,col 9)-(line 579,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessibleInterfaceMethodFromDescription()",
+    "snippet": "@Test\n    public void testGetAccessibleInterfaceMethodFromDescription() {\n        final Class\u003c?\u003e[][] p \u003d {ArrayUtils.EMPTY_CLASS_ARRAY, null};\n        for (final Class\u003c?\u003e[] element : p) {\n            final Method accessibleMethod \u003d MethodUtils.getAccessibleMethod(\n                    TestMutable.class, \"getValue\", element);\n            assertSame(Mutable.class, accessibleMethod.getDeclaringClass());\n        }\n    }",
+    "begin_line": 583,
+    "end_line": 590,
+    "comment": "",
+    "child_ranges": [
+      "(line 584,col 9)-(line 584,col 68)",
+      "(line 585,col 9)-(line 589,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessiblePublicMethod()",
+    "snippet": "@Test\n    public void testGetAccessiblePublicMethod() throws Exception {\n        assertSame(MutableObject.class, MethodUtils.getAccessibleMethod(\n                MutableObject.class.getMethod(\"getValue\",\n                        ArrayUtils.EMPTY_CLASS_ARRAY)).getDeclaringClass());\n    }",
+    "begin_line": 593,
+    "end_line": 597,
+    "comment": "",
+    "child_ranges": [
+      "(line 594,col 9)-(line 596,col 76)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessiblePublicMethodFromDescription()",
+    "snippet": "@Test\n    public void testGetAccessiblePublicMethodFromDescription() {\n        assertSame(MutableObject.class, MethodUtils.getAccessibleMethod(\n                MutableObject.class, \"getValue\", ArrayUtils.EMPTY_CLASS_ARRAY)\n                .getDeclaringClass());\n    }",
+    "begin_line": 600,
+    "end_line": 604,
+    "comment": "",
+    "child_ranges": [
+      "(line 601,col 9)-(line 603,col 38)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAccessibleMethodInaccessible()",
+    "snippet": "@Test\n    public void testGetAccessibleMethodInaccessible() throws Exception {\n        final Method expected \u003d TestBean.class.getDeclaredMethod(\"privateStuff\");\n        final Method actual \u003d MethodUtils.getAccessibleMethod(expected);\n        assertNull(actual);\n    }",
+    "begin_line": 607,
+    "end_line": 611,
+    "comment": "",
+    "child_ranges": [
+      "(line 608,col 9)-(line 608,col 81)",
+      "(line 609,col 9)-(line 609,col 72)",
+      "(line 610,col 9)-(line 610,col 27)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMatchingAccessibleMethod()",
+    "snippet": "@Test\n    public void testGetMatchingAccessibleMethod() {\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                ArrayUtils.EMPTY_CLASS_ARRAY, ArrayUtils.EMPTY_CLASS_ARRAY);\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                null, ArrayUtils.EMPTY_CLASS_ARRAY);\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(String.class), singletonArray(String.class));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Object.class), singletonArray(Object.class));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Boolean.class), singletonArray(Object.class));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Byte.class), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Byte.TYPE), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Short.class), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Short.TYPE), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Character.class), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Character.TYPE), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Integer.class), singletonArray(Integer.class));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Integer.TYPE), singletonArray(Integer.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Long.class), singletonArray(Long.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Long.TYPE), singletonArray(Long.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Float.class), singletonArray(Double.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Float.TYPE), singletonArray(Double.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Double.class), singletonArray(Double.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Double.TYPE), singletonArray(Double.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                singletonArray(Double.TYPE), singletonArray(Double.TYPE));\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                new Class[]{String.class, String.class}, new Class[]{String[].class});\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"foo\",\n                new Class[]{Integer.TYPE, String.class, String.class}, new Class[]{Integer.class, String[].class});\n        expectMatchingAccessibleMethodParameterTypes(InheritanceBean.class, \"testOne\",\n                singletonArray(ParentObject.class), singletonArray(ParentObject.class));\n        expectMatchingAccessibleMethodParameterTypes(InheritanceBean.class, \"testOne\",\n                singletonArray(ChildObject.class), singletonArray(ParentObject.class));\n        expectMatchingAccessibleMethodParameterTypes(InheritanceBean.class, \"testTwo\",\n                singletonArray(ParentObject.class), singletonArray(GrandParentObject.class));\n        expectMatchingAccessibleMethodParameterTypes(InheritanceBean.class, \"testTwo\",\n                singletonArray(ChildObject.class), singletonArray(ChildInterface.class));\n    }",
+    "begin_line": 614,
+    "end_line": 667,
+    "comment": "",
+    "child_ranges": [
+      "(line 615,col 9)-(line 616,col 76)",
+      "(line 617,col 9)-(line 618,col 52)",
+      "(line 619,col 9)-(line 620,col 76)",
+      "(line 621,col 9)-(line 622,col 76)",
+      "(line 623,col 9)-(line 624,col 77)",
+      "(line 625,col 9)-(line 626,col 74)",
+      "(line 627,col 9)-(line 628,col 73)",
+      "(line 629,col 9)-(line 630,col 75)",
+      "(line 631,col 9)-(line 632,col 74)",
+      "(line 633,col 9)-(line 634,col 79)",
+      "(line 635,col 9)-(line 636,col 78)",
+      "(line 637,col 9)-(line 638,col 78)",
+      "(line 639,col 9)-(line 640,col 76)",
+      "(line 641,col 9)-(line 642,col 71)",
+      "(line 643,col 9)-(line 644,col 70)",
+      "(line 645,col 9)-(line 646,col 74)",
+      "(line 647,col 9)-(line 648,col 73)",
+      "(line 649,col 9)-(line 650,col 75)",
+      "(line 651,col 9)-(line 652,col 74)",
+      "(line 653,col 9)-(line 654,col 74)",
+      "(line 655,col 9)-(line 656,col 86)",
+      "(line 657,col 9)-(line 658,col 115)",
+      "(line 659,col 9)-(line 660,col 88)",
+      "(line 661,col 9)-(line 662,col 87)",
+      "(line 663,col 9)-(line 664,col 93)",
+      "(line 665,col 9)-(line 666,col 89)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testNullArgument()",
+    "snippet": "@Test\n    public void testNullArgument() {\n        expectMatchingAccessibleMethodParameterTypes(TestBean.class, \"oneParameter\",\n                singletonArray(null), singletonArray(String.class));\n    }",
+    "begin_line": 670,
+    "end_line": 673,
+    "comment": "",
+    "child_ranges": [
+      "(line 671,col 9)-(line 672,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetOverrideHierarchyIncludingInterfaces()",
+    "snippet": "@Test\n    public void testGetOverrideHierarchyIncludingInterfaces() {\n        final Method method \u003d MethodUtils.getAccessibleMethod(StringParameterizedChild.class, \"consume\", String.class);\n        final Iterator\u003cMethodDescriptor\u003e expected \u003d\n                Arrays.asList(new MethodDescriptor(StringParameterizedChild.class, \"consume\", String.class),\n                        new MethodDescriptor(GenericParent.class, \"consume\", GenericParent.class.getTypeParameters()[0]),\n                        new MethodDescriptor(GenericConsumer.class, \"consume\", GenericConsumer.class.getTypeParameters()[0]))\n                        .iterator();\n        for (final Method m : MethodUtils.getOverrideHierarchy(method, Interfaces.INCLUDE)) {\n            assertTrue(expected.hasNext());\n            final MethodDescriptor md \u003d expected.next();\n            assertEquals(md.declaringClass, m.getDeclaringClass());\n            assertEquals(md.name, m.getName());\n            assertEquals(md.parameterTypes.length, m.getParameterTypes().length);\n            for (int i \u003d 0; i \u003c md.parameterTypes.length; i++) {\n                assertTrue(TypeUtils.equals(md.parameterTypes[i], m.getGenericParameterTypes()[i]));\n            }\n        }\n        assertFalse(expected.hasNext());\n    }",
+    "begin_line": 676,
+    "end_line": 694,
+    "comment": "",
+    "child_ranges": [
+      "(line 677,col 9)-(line 677,col 119)",
+      "(line 678,col 9)-(line 682,col 36)",
+      "(line 683,col 9)-(line 692,col 9)",
+      "(line 693,col 9)-(line 693,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetOverrideHierarchyExcludingInterfaces()",
+    "snippet": "@Test\n    public void testGetOverrideHierarchyExcludingInterfaces() {\n        final Method method \u003d MethodUtils.getAccessibleMethod(StringParameterizedChild.class, \"consume\", String.class);\n        final Iterator\u003cMethodDescriptor\u003e expected \u003d\n                Arrays.asList(new MethodDescriptor(StringParameterizedChild.class, \"consume\", String.class),\n                        new MethodDescriptor(GenericParent.class, \"consume\", GenericParent.class.getTypeParameters()[0]))\n                        .iterator();\n        for (final Method m : MethodUtils.getOverrideHierarchy(method, Interfaces.EXCLUDE)) {\n            assertTrue(expected.hasNext());\n            final MethodDescriptor md \u003d expected.next();\n            assertEquals(md.declaringClass, m.getDeclaringClass());\n            assertEquals(md.name, m.getName());\n            assertEquals(md.parameterTypes.length, m.getParameterTypes().length);\n            for (int i \u003d 0; i \u003c md.parameterTypes.length; i++) {\n                assertTrue(TypeUtils.equals(md.parameterTypes[i], m.getGenericParameterTypes()[i]));\n            }\n        }\n        assertFalse(expected.hasNext());\n    }",
+    "begin_line": 697,
+    "end_line": 714,
+    "comment": "",
+    "child_ranges": [
+      "(line 698,col 9)-(line 698,col 119)",
+      "(line 699,col 9)-(line 702,col 36)",
+      "(line 703,col 9)-(line 712,col 9)",
+      "(line 713,col 9)-(line 713,col 40)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotation()",
+    "snippet": "@Test\n    @Annotated\n    public void testGetMethodsWithAnnotation() throws NoSuchMethodException {\n        assertArrayEquals(new Method[0], MethodUtils.getMethodsWithAnnotation(Object.class, Annotated.class));\n\n        final Method[] methodsWithAnnotation \u003d MethodUtils.getMethodsWithAnnotation(MethodUtilsTest.class, Annotated.class);\n        assertEquals(2, methodsWithAnnotation.length);\n        assertThat(methodsWithAnnotation, hasItemInArray(MethodUtilsTest.class.getMethod(\"testGetMethodsWithAnnotation\")));\n        assertThat(methodsWithAnnotation, hasItemInArray(MethodUtilsTest.class.getMethod(\"testGetMethodsListWithAnnotation\")));\n    }",
+    "begin_line": 718,
+    "end_line": 725,
+    "comment": "",
+    "child_ranges": [
+      "(line 719,col 9)-(line 719,col 110)",
+      "(line 721,col 9)-(line 721,col 124)",
+      "(line 722,col 9)-(line 722,col 54)",
+      "(line 723,col 9)-(line 723,col 123)",
+      "(line 724,col 9)-(line 724,col 127)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationSearchSupersAndIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationSearchSupersAndIgnoreAccess() {\n        assertArrayEquals(new Method[0], MethodUtils.getMethodsWithAnnotation(Object.class, Annotated.class,\n                true, true));\n\n        final Method[] methodsWithAnnotation \u003d MethodUtils.getMethodsWithAnnotation(PublicChild.class, Annotated.class,\n                true, true);\n        assertEquals(4, methodsWithAnnotation.length);\n        assertEquals(\"PublicChild\", methodsWithAnnotation[0].getDeclaringClass().getSimpleName());\n        assertEquals(\"PublicChild\", methodsWithAnnotation[1].getDeclaringClass().getSimpleName());\n        assertTrue(methodsWithAnnotation[0].getName().endsWith(\"AnnotatedMethod\"));\n        assertTrue(methodsWithAnnotation[1].getName().endsWith(\"AnnotatedMethod\"));\n        assertEquals(\"Foo.doIt\",\n                methodsWithAnnotation[2].getDeclaringClass().getSimpleName() + \u0027.\u0027 +\n                        methodsWithAnnotation[2].getName());\n        assertEquals(\"Parent.parentProtectedAnnotatedMethod\",\n                methodsWithAnnotation[3].getDeclaringClass().getSimpleName() + \u0027.\u0027 +\n                        methodsWithAnnotation[3].getName());\n    }",
+    "begin_line": 728,
+    "end_line": 745,
+    "comment": "",
+    "child_ranges": [
+      "(line 729,col 9)-(line 730,col 29)",
+      "(line 732,col 9)-(line 733,col 28)",
+      "(line 734,col 9)-(line 734,col 54)",
+      "(line 735,col 9)-(line 735,col 98)",
+      "(line 736,col 9)-(line 736,col 98)",
+      "(line 737,col 9)-(line 737,col 83)",
+      "(line 738,col 9)-(line 738,col 83)",
+      "(line 739,col 9)-(line 741,col 60)",
+      "(line 742,col 9)-(line 744,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationNotSearchSupersButIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationNotSearchSupersButIgnoreAccess() {\n        assertArrayEquals(new Method[0], MethodUtils.getMethodsWithAnnotation(Object.class, Annotated.class,\n                false, true));\n\n        final Method[] methodsWithAnnotation \u003d MethodUtils.getMethodsWithAnnotation(PublicChild.class, Annotated.class,\n                false, true);\n        assertEquals(2, methodsWithAnnotation.length);\n        assertEquals(\"PublicChild\", methodsWithAnnotation[0].getDeclaringClass().getSimpleName());\n        assertEquals(\"PublicChild\", methodsWithAnnotation[1].getDeclaringClass().getSimpleName());\n        assertTrue(methodsWithAnnotation[0].getName().endsWith(\"AnnotatedMethod\"));\n        assertTrue(methodsWithAnnotation[1].getName().endsWith(\"AnnotatedMethod\"));\n    }",
+    "begin_line": 748,
+    "end_line": 759,
+    "comment": "",
+    "child_ranges": [
+      "(line 749,col 9)-(line 750,col 30)",
+      "(line 752,col 9)-(line 753,col 29)",
+      "(line 754,col 9)-(line 754,col 54)",
+      "(line 755,col 9)-(line 755,col 98)",
+      "(line 756,col 9)-(line 756,col 98)",
+      "(line 757,col 9)-(line 757,col 83)",
+      "(line 758,col 9)-(line 758,col 83)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationSearchSupersButNotIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationSearchSupersButNotIgnoreAccess() {\n        assertArrayEquals(new Method[0], MethodUtils.getMethodsWithAnnotation(Object.class, Annotated.class,\n                true, false));\n\n        final Method[] methodsWithAnnotation \u003d MethodUtils.getMethodsWithAnnotation(PublicChild.class, Annotated.class,\n                true, false);\n        assertEquals(2, methodsWithAnnotation.length);\n        assertEquals(\"PublicChild.publicAnnotatedMethod\",\n                methodsWithAnnotation[0].getDeclaringClass().getSimpleName() + \u0027.\u0027 +\n                        methodsWithAnnotation[0].getName());\n        assertEquals(\"Foo.doIt\",\n                methodsWithAnnotation[1].getDeclaringClass().getSimpleName() + \u0027.\u0027 +\n                        methodsWithAnnotation[1].getName());\n    }",
+    "begin_line": 762,
+    "end_line": 775,
+    "comment": "",
+    "child_ranges": [
+      "(line 763,col 9)-(line 764,col 30)",
+      "(line 766,col 9)-(line 767,col 29)",
+      "(line 768,col 9)-(line 768,col 54)",
+      "(line 769,col 9)-(line 771,col 60)",
+      "(line 772,col 9)-(line 774,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationNotSearchSupersAndNotIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationNotSearchSupersAndNotIgnoreAccess() {\n        assertArrayEquals(new Method[0], MethodUtils.getMethodsWithAnnotation(Object.class, Annotated.class,\n                false, false));\n\n        final Method[] methodsWithAnnotation \u003d MethodUtils.getMethodsWithAnnotation(PublicChild.class, Annotated.class,\n                false, false);\n        assertEquals(1, methodsWithAnnotation.length);\n        assertEquals(\"PublicChild.publicAnnotatedMethod\",\n                methodsWithAnnotation[0].getDeclaringClass().getSimpleName() + \u0027.\u0027 +\n                        methodsWithAnnotation[0].getName());\n    }",
+    "begin_line": 778,
+    "end_line": 788,
+    "comment": "",
+    "child_ranges": [
+      "(line 779,col 9)-(line 780,col 31)",
+      "(line 782,col 9)-(line 783,col 30)",
+      "(line 784,col 9)-(line 784,col 54)",
+      "(line 785,col 9)-(line 787,col 60)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationSearchSupersAndIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetAnnotationSearchSupersAndIgnoreAccess() throws NoSuchMethodException {\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentNotAnnotatedMethod\"),\n                Annotated.class, true, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"doIt\"), Annotated.class,\n                true, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentProtectedAnnotatedMethod\"),\n                Annotated.class, true, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getDeclaredMethod(\"privateAnnotatedMethod\"),\n                Annotated.class, true, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"publicAnnotatedMethod\"),\n                Annotated.class, true, true));\n    }",
+    "begin_line": 791,
+    "end_line": 802,
+    "comment": "",
+    "child_ranges": [
+      "(line 792,col 9)-(line 793,col 46)",
+      "(line 794,col 9)-(line 795,col 29)",
+      "(line 796,col 9)-(line 797,col 46)",
+      "(line 798,col 9)-(line 799,col 46)",
+      "(line 800,col 9)-(line 801,col 46)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationNotSearchSupersButIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetAnnotationNotSearchSupersButIgnoreAccess() throws NoSuchMethodException {\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentNotAnnotatedMethod\"),\n                Annotated.class, false, true));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"doIt\"), Annotated.class,\n                false, true));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentProtectedAnnotatedMethod\"),\n                Annotated.class, false, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getDeclaredMethod(\"privateAnnotatedMethod\"),\n                Annotated.class, false, true));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"publicAnnotatedMethod\"),\n                Annotated.class, false, true));\n    }",
+    "begin_line": 805,
+    "end_line": 816,
+    "comment": "",
+    "child_ranges": [
+      "(line 806,col 9)-(line 807,col 47)",
+      "(line 808,col 9)-(line 809,col 30)",
+      "(line 810,col 9)-(line 811,col 47)",
+      "(line 812,col 9)-(line 813,col 47)",
+      "(line 814,col 9)-(line 815,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationSearchSupersButNotIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetAnnotationSearchSupersButNotIgnoreAccess() throws NoSuchMethodException {\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentNotAnnotatedMethod\"),\n                Annotated.class, true, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"doIt\"), Annotated.class,\n                true, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentProtectedAnnotatedMethod\"),\n                Annotated.class, true, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getDeclaredMethod(\"privateAnnotatedMethod\"),\n                Annotated.class, true, false));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"publicAnnotatedMethod\"),\n                Annotated.class, true, false));\n    }",
+    "begin_line": 819,
+    "end_line": 830,
+    "comment": "",
+    "child_ranges": [
+      "(line 820,col 9)-(line 821,col 47)",
+      "(line 822,col 9)-(line 823,col 30)",
+      "(line 824,col 9)-(line 825,col 47)",
+      "(line 826,col 9)-(line 827,col 47)",
+      "(line 828,col 9)-(line 829,col 47)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationNotSearchSupersAndNotIgnoreAccess()",
+    "snippet": "@Test\n    public void testGetAnnotationNotSearchSupersAndNotIgnoreAccess() throws NoSuchMethodException {\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentNotAnnotatedMethod\"),\n                Annotated.class, false, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"doIt\"), Annotated.class,\n                false, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"parentProtectedAnnotatedMethod\"),\n                Annotated.class, false, false));\n        assertNull(MethodUtils.getAnnotation(PublicChild.class.getDeclaredMethod(\"privateAnnotatedMethod\"),\n                Annotated.class, false, false));\n        assertNotNull(MethodUtils.getAnnotation(PublicChild.class.getMethod(\"publicAnnotatedMethod\"),\n                Annotated.class, false, false));\n    }",
+    "begin_line": 833,
+    "end_line": 844,
+    "comment": "",
+    "child_ranges": [
+      "(line 834,col 9)-(line 835,col 48)",
+      "(line 836,col 9)-(line 837,col 31)",
+      "(line 838,col 9)-(line 839,col 48)",
+      "(line 840,col 9)-(line 841,col 48)",
+      "(line 842,col 9)-(line 843,col 48)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationIllegalArgumentException1()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationIllegalArgumentException1() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsWithAnnotation(FieldUtilsTest.class, null));\n    }",
+    "begin_line": 847,
+    "end_line": 849,
+    "comment": "",
+    "child_ranges": [
+      "(line 848,col 9)-(line 848,col 125)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationIllegalArgumentException2()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationIllegalArgumentException2() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsWithAnnotation(null, Annotated.class));\n    }",
+    "begin_line": 852,
+    "end_line": 854,
+    "comment": "",
+    "child_ranges": [
+      "(line 853,col 9)-(line 853,col 120)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsWithAnnotationIllegalArgumentException3()",
+    "snippet": "@Test\n    public void testGetMethodsWithAnnotationIllegalArgumentException3() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsWithAnnotation(null, null));\n    }",
+    "begin_line": 857,
+    "end_line": 859,
+    "comment": "",
+    "child_ranges": [
+      "(line 858,col 9)-(line 858,col 109)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsListWithAnnotation()",
+    "snippet": "@Test\n    @Annotated\n    public void testGetMethodsListWithAnnotation() throws NoSuchMethodException {\n        assertEquals(0, MethodUtils.getMethodsListWithAnnotation(Object.class, Annotated.class).size());\n\n        final List\u003cMethod\u003e methodWithAnnotation \u003d MethodUtils.getMethodsListWithAnnotation(MethodUtilsTest.class, Annotated.class);\n        assertEquals(2, methodWithAnnotation.size());\n        assertThat(methodWithAnnotation, hasItems(\n                MethodUtilsTest.class.getMethod(\"testGetMethodsWithAnnotation\"),\n                MethodUtilsTest.class.getMethod(\"testGetMethodsListWithAnnotation\")\n        ));\n    }",
+    "begin_line": 863,
+    "end_line": 872,
+    "comment": "",
+    "child_ranges": [
+      "(line 864,col 9)-(line 864,col 104)",
+      "(line 866,col 9)-(line 866,col 131)",
+      "(line 867,col 9)-(line 867,col 53)",
+      "(line 868,col 9)-(line 871,col 11)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsListWithAnnotationIllegalArgumentException1()",
+    "snippet": "@Test\n    public void testGetMethodsListWithAnnotationIllegalArgumentException1() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsListWithAnnotation(FieldUtilsTest.class, null));\n    }",
+    "begin_line": 875,
+    "end_line": 877,
+    "comment": "",
+    "child_ranges": [
+      "(line 876,col 9)-(line 876,col 129)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsListWithAnnotationIllegalArgumentException2()",
+    "snippet": "@Test\n    public void testGetMethodsListWithAnnotationIllegalArgumentException2() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsListWithAnnotation(null, Annotated.class));\n    }",
+    "begin_line": 880,
+    "end_line": 882,
+    "comment": "",
+    "child_ranges": [
+      "(line 881,col 9)-(line 881,col 124)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetMethodsListWithAnnotationIllegalArgumentException3()",
+    "snippet": "@Test\n    public void testGetMethodsListWithAnnotationIllegalArgumentException3() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getMethodsListWithAnnotation(null, null));\n    }",
+    "begin_line": 885,
+    "end_line": 887,
+    "comment": "",
+    "child_ranges": [
+      "(line 886,col 9)-(line 886,col 113)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationIllegalArgumentException1()",
+    "snippet": "@Test\n    public void testGetAnnotationIllegalArgumentException1() {\n        assertThrows(IllegalArgumentException.class,\n                () -\u003e MethodUtils.getAnnotation(FieldUtilsTest.class.getDeclaredMethods()[0], null, true, true));\n    }",
+    "begin_line": 890,
+    "end_line": 893,
+    "comment": "",
+    "child_ranges": [
+      "(line 891,col 9)-(line 892,col 113)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationIllegalArgumentException2()",
+    "snippet": "@Test\n    public void testGetAnnotationIllegalArgumentException2() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getAnnotation(null, Annotated.class, true, true));\n    }",
+    "begin_line": 896,
+    "end_line": 898,
+    "comment": "",
+    "child_ranges": [
+      "(line 897,col 9)-(line 897,col 121)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testGetAnnotationIllegalArgumentException3()",
+    "snippet": "@Test\n    public void testGetAnnotationIllegalArgumentException3() {\n        assertThrows(IllegalArgumentException.class, () -\u003e MethodUtils.getAnnotation(null, null, true, true));\n    }",
+    "begin_line": 901,
+    "end_line": 903,
+    "comment": "",
+    "child_ranges": [
+      "(line 902,col 9)-(line 902,col 110)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.expectMatchingAccessibleMethodParameterTypes(java.lang.Class\u003c?\u003e, java.lang.String, java.lang.Class\u003c?\u003e[], java.lang.Class\u003c?\u003e[])",
+    "snippet": "private void expectMatchingAccessibleMethodParameterTypes(final Class\u003c?\u003e cls,\n                                                              final String methodName, final Class\u003c?\u003e[] requestTypes, final Class\u003c?\u003e[] actualTypes) {\n        final Method m \u003d MethodUtils.getMatchingAccessibleMethod(cls, methodName,\n                requestTypes);\n        assertNotNull(m, \"could not find any matches for \" + methodName\n                + \" (\" + (requestTypes \u003d\u003d null ? null : toString(requestTypes)) + \")\");\n        assertArrayEquals(actualTypes, m.getParameterTypes(), toString(m.getParameterTypes()) + \" not equals \" + toString(actualTypes));\n    }",
+    "begin_line": 905,
+    "end_line": 912,
+    "comment": "",
+    "child_ranges": [
+      "(line 907,col 9)-(line 908,col 30)",
+      "(line 909,col 9)-(line 910,col 87)",
+      "(line 911,col 9)-(line 911,col 136)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.toString(java.lang.Class\u003c?\u003e[])",
+    "snippet": "private String toString(final Class\u003c?\u003e[] c) {\n        return Arrays.asList(c).toString();\n    }",
+    "begin_line": 914,
+    "end_line": 916,
+    "comment": "",
+    "child_ranges": [
+      "(line 915,col 9)-(line 915,col 43)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.singletonArray(java.lang.Class\u003c?\u003e)",
+    "snippet": "private Class\u003c?\u003e[] singletonArray(final Class\u003c?\u003e c) {\n        Class\u003c?\u003e[] result \u003d classCache.get(c);\n        if (result \u003d\u003d null) {\n            result \u003d new Class[]{c};\n            classCache.put(c, result);\n        }\n        return result;\n    }",
+    "begin_line": 918,
+    "end_line": 925,
+    "comment": "",
+    "child_ranges": [
+      "(line 919,col 9)-(line 919,col 46)",
+      "(line 920,col 9)-(line 923,col 9)",
+      "(line 924,col 9)-(line 924,col 22)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testOne(java.lang.Object)",
+    "snippet": "public void testOne(final Object obj) {\n        }",
+    "begin_line": 928,
+    "end_line": 929,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testOne(org.apache.commons.lang3.reflect.MethodUtilsTest.GrandParentObject)",
+    "snippet": "public void testOne(final GrandParentObject obj) {\n        }",
+    "begin_line": 931,
+    "end_line": 932,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testOne(org.apache.commons.lang3.reflect.MethodUtilsTest.ParentObject)",
+    "snippet": "public void testOne(final ParentObject obj) {\n        }",
+    "begin_line": 934,
+    "end_line": 935,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testTwo(java.lang.Object)",
+    "snippet": "public void testTwo(final Object obj) {\n        }",
+    "begin_line": 937,
+    "end_line": 938,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testTwo(org.apache.commons.lang3.reflect.MethodUtilsTest.GrandParentObject)",
+    "snippet": "public void testTwo(final GrandParentObject obj) {\n        }",
+    "begin_line": 940,
+    "end_line": 941,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testTwo(org.apache.commons.lang3.reflect.MethodUtilsTest.ChildInterface)",
+    "snippet": "public void testTwo(final ChildInterface obj) {\n        }",
+    "begin_line": 943,
+    "end_line": 944,
+    "comment": "",
+    "child_ranges": []
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.MethodDescriptor(java.lang.Class\u003c?\u003e, java.lang.String, java.lang.reflect.Type)",
+    "snippet": " MethodDescriptor(final Class\u003c?\u003e declaringClass, final String name, final Type... parameterTypes) {\n            this.declaringClass \u003d declaringClass;\n            this.name \u003d name;\n            this.parameterTypes \u003d parameterTypes;\n        }",
+    "begin_line": 964,
+    "end_line": 968,
+    "comment": "",
+    "child_ranges": [
+      "(line 965,col 13)-(line 965,col 49)",
+      "(line 966,col 13)-(line 966,col 29)",
+      "(line 967,col 13)-(line 967,col 49)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testVarArgsUnboxing()",
+    "snippet": "@Test\n    public void testVarArgsUnboxing() throws Exception {\n        final TestBean testBean \u003d new TestBean();\n        final int[] actual \u003d (int[]) MethodUtils.invokeMethod(testBean, \"unboxing\", Integer.valueOf(1), Integer.valueOf(2));\n        assertArrayEquals(new int[]{1, 2}, actual);\n    }",
+    "begin_line": 972,
+    "end_line": 976,
+    "comment": "",
+    "child_ranges": [
+      "(line 973,col 9)-(line 973,col 49)",
+      "(line 974,col 9)-(line 974,col 124)",
+      "(line 975,col 9)-(line 975,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethodForceAccessNoArgs()",
+    "snippet": "@Test\n    public void testInvokeMethodForceAccessNoArgs() throws Exception {\n        assertEquals(\"privateStringStuff()\", MethodUtils.invokeMethod(testBean, true, \"privateStringStuff\"));\n    }",
+    "begin_line": 979,
+    "end_line": 981,
+    "comment": "",
+    "child_ranges": [
+      "(line 980,col 9)-(line 980,col 109)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testInvokeMethodForceAccessWithArgs()",
+    "snippet": "@Test\n    public void testInvokeMethodForceAccessWithArgs() throws Exception {\n        assertEquals(\"privateStringStuff(Integer)\", MethodUtils.invokeMethod(testBean, true, \"privateStringStuff\", 5));\n        assertEquals(\"privateStringStuff(double)\", MethodUtils.invokeMethod(testBean, true, \"privateStringStuff\", 5.0d));\n        assertEquals(\"privateStringStuff(String)\", MethodUtils.invokeMethod(testBean, true, \"privateStringStuff\", \"Hi There\"));\n        assertEquals(\"privateStringStuff(Object)\", MethodUtils.invokeMethod(testBean, true, \"privateStringStuff\", new Date()));\n    }",
+    "begin_line": 984,
+    "end_line": 989,
+    "comment": "",
+    "child_ranges": [
+      "(line 985,col 9)-(line 985,col 119)",
+      "(line 986,col 9)-(line 986,col 121)",
+      "(line 987,col 9)-(line 987,col 127)",
+      "(line 988,col 9)-(line 988,col 127)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.lang3.reflect.MethodUtilsTest",
+    "child_classes": [],
+    "src_path": "org/apache/commons/lang3/reflect/MethodUtilsTest.java",
+    "signature": "org.apache.commons.lang3.reflect.MethodUtilsTest.testDistance()",
+    "snippet": "@Test\n    public void testDistance() throws Exception {\n        final Method distanceMethod \u003d MethodUtils.getMatchingMethod(MethodUtils.class, \"distance\", Class[].class, Class[].class);\n        distanceMethod.setAccessible(true);\n\n        assertEquals(-1, distanceMethod.invoke(null, new Class[]{String.class}, new Class[]{Date.class}));\n        assertEquals(0, distanceMethod.invoke(null, new Class[]{Date.class}, new Class[]{Date.class}));\n        assertEquals(1, distanceMethod.invoke(null, new Class[]{Integer.class}, new Class[]{ClassUtils.wrapperToPrimitive(Integer.class)}));\n        assertEquals(2, distanceMethod.invoke(null, new Class[]{Integer.class}, new Class[]{Object.class}));\n\n        distanceMethod.setAccessible(false);\n    }",
+    "begin_line": 992,
+    "end_line": 1002,
+    "comment": "",
+    "child_ranges": [
+      "(line 993,col 9)-(line 993,col 129)",
+      "(line 994,col 9)-(line 994,col 43)",
+      "(line 996,col 9)-(line 996,col 106)",
+      "(line 997,col 9)-(line 997,col 103)",
+      "(line 998,col 9)-(line 998,col 140)",
+      "(line 999,col 9)-(line 999,col 108)",
+      "(line 1001,col 9)-(line 1001,col 44)"
+    ]
+  }
+]

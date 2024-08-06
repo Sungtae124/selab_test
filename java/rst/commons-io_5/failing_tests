@@ -1,0 +1,8 @@
+--- org.apache.commons.io.filefilter.RegexFileFilterTest::testRegexFileNameOnly
+java.lang.NullPointerException
+       org.apache.commons.io.filefilter.RegexFileFilter.accept(RegexFileFilter.java:184)
+       org.apache.commons.io.filefilter.RegexFileFilterTest.assertFiltering(RegexFileFilterTest.java:68)
+       org.apache.commons.io.filefilter.RegexFileFilterTest.testRegexFileNameOnly(RegexFileFilterTest.java:170)
+       java.base/java.lang.reflect.Method.invoke(Method.java:568)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+       java.base/java.util.ArrayList.forEach(ArrayList.java:1511)

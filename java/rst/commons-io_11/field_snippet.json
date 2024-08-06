@@ -1,0 +1,65 @@
+[
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.DEFAULT_BUFFER_SIZE",
+    "snippet": "private static final int DEFAULT_BUFFER_SIZE \u003d 1024;",
+    "begin_line": 82,
+    "end_line": 82,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.reader",
+    "snippet": "private final Reader reader;",
+    "begin_line": 97,
+    "end_line": 97,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.charsetEncoder",
+    "snippet": "private final CharsetEncoder charsetEncoder;",
+    "begin_line": 99,
+    "end_line": 99,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.encoderIn",
+    "snippet": "private final CharBuffer encoderIn;",
+    "begin_line": 105,
+    "end_line": 105,
+    "comment": "/** \n * CharBuffer used as input for the decoder. It should be reasonably large as we read data from the underlying Reader into this buffer.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.encoderOut",
+    "snippet": "private final ByteBuffer encoderOut;",
+    "begin_line": 110,
+    "end_line": 110,
+    "comment": "/** \n * ByteBuffer used as output for the decoder. This buffer can be small as it is only used to transfer data from the decoder to the buffer provided by the caller.\n */\n"
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.lastCoderResult",
+    "snippet": "private CoderResult lastCoderResult;",
+    "begin_line": 112,
+    "end_line": 112,
+    "comment": ""
+  },
+  {
+    "class_name": "org.apache.commons.io.input.ReaderInputStream",
+    "src_path": "org/apache/commons/io/input/ReaderInputStream.java",
+    "signature": "org.apache.commons.io.input.ReaderInputStream.endOfInput",
+    "snippet": "private boolean endOfInput;",
+    "begin_line": 114,
+    "end_line": 114,
+    "comment": ""
+  }
+]
