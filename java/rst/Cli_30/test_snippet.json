@@ -636,6 +636,1141 @@
     "child_ranges": []
   },
   {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.setUp()",
+    "snippet": "public void setUp()\n    {\n        options \u003d new Options()\n            .addOption(\"a\", \"enable-a\", false, \"turn [a] on or off\")\n            .addOption(\"b\", \"bfile\", true, \"set the value of [b]\")\n            .addOption(\"c\", \"copt\", false, \"turn [c] on or off\");\n    }",
+    "begin_line": 38,
+    "end_line": 44,
+    "comment": "",
+    "child_ranges": [
+      "(line 40,col 9)-(line 43,col 65)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testSimpleShort()",
+    "snippet": "public void testSimpleShort() throws Exception\n    {\n        String[] args \u003d new String[] { \"-a\",\n                                       \"-b\", \"toast\",\n                                       \"foo\", \"bar\" };\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue(\"Confirm -a is set\", cl.hasOption(\"a\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\"));\n        assertTrue(\"Confirm size of extra args\", cl.getArgList().size() \u003d\u003d 2);\n    }",
+    "begin_line": 46,
+    "end_line": 58,
+    "comment": "",
+    "child_ranges": [
+      "(line 48,col 9)-(line 50,col 54)",
+      "(line 52,col 9)-(line 52,col 53)",
+      "(line 54,col 9)-(line 54,col 59)",
+      "(line 55,col 9)-(line 55,col 59)",
+      "(line 56,col 9)-(line 56,col 80)",
+      "(line 57,col 9)-(line 57,col 78)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testSimpleLong()",
+    "snippet": "public void testSimpleLong() throws Exception\n    {\n        String[] args \u003d new String[] { \"--enable-a\",\n                                       \"--bfile\", \"toast\",\n                                       \"foo\", \"bar\" };\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue( \"Confirm -a is set\", cl.hasOption(\"a\") );\n        assertTrue( \"Confirm -b is set\", cl.hasOption(\"b\") );\n        assertTrue( \"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\") );\n        assertTrue( \"Confirm arg of --bfile\", cl.getOptionValue( \"bfile\" ).equals( \"toast\" ) );\n        assertTrue( \"Confirm size of extra args\", cl.getArgList().size() \u003d\u003d 2);\n    }",
+    "begin_line": 60,
+    "end_line": 73,
+    "comment": "",
+    "child_ranges": [
+      "(line 62,col 9)-(line 64,col 54)",
+      "(line 66,col 9)-(line 66,col 53)",
+      "(line 68,col 9)-(line 68,col 61)",
+      "(line 69,col 9)-(line 69,col 61)",
+      "(line 70,col 9)-(line 70,col 82)",
+      "(line 71,col 9)-(line 71,col 95)",
+      "(line 72,col 9)-(line 72,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMultiple()",
+    "snippet": "public void testMultiple() throws Exception\n    {\n        String[] args \u003d new String[] { \"-c\",\n                                       \"foobar\",\n                                       \"-b\", \"toast\" };\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertTrue(\"Confirm -c is set\", cl.hasOption(\"c\"));\n        assertTrue(\"Confirm  3 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 3);\n\n        cl \u003d parser.parse(options, cl.getArgs());\n\n        assertTrue(\"Confirm -c is not set\", !cl.hasOption(\"c\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\"));\n        assertTrue(\"Confirm  1 extra arg: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 1);\n        assertTrue(\"Confirm  value of extra arg: \" + cl.getArgList().get(0), cl.getArgList().get(0).equals(\"foobar\"));\n    }",
+    "begin_line": 75,
+    "end_line": 92,
+    "comment": "",
+    "child_ranges": [
+      "(line 77,col 9)-(line 79,col 55)",
+      "(line 81,col 9)-(line 81,col 59)",
+      "(line 82,col 9)-(line 82,col 59)",
+      "(line 83,col 9)-(line 83,col 100)",
+      "(line 85,col 9)-(line 85,col 49)",
+      "(line 87,col 9)-(line 87,col 64)",
+      "(line 88,col 9)-(line 88,col 59)",
+      "(line 89,col 9)-(line 89,col 80)",
+      "(line 90,col 9)-(line 90,col 99)",
+      "(line 91,col 9)-(line 91,col 118)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMultipleWithLong()",
+    "snippet": "public void testMultipleWithLong() throws Exception\n    {\n        String[] args \u003d new String[] { \"--copt\",\n                                       \"foobar\",\n                                       \"--bfile\", \"toast\" };\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertTrue(\"Confirm -c is set\", cl.hasOption(\"c\"));\n        assertTrue(\"Confirm  3 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 3);\n\n        cl \u003d parser.parse(options, cl.getArgs());\n\n        assertTrue(\"Confirm -c is not set\", !cl.hasOption(\"c\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\"));\n        assertTrue(\"Confirm  1 extra arg: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 1);\n        assertTrue(\"Confirm  value of extra arg: \" + cl.getArgList().get(0), cl.getArgList().get(0).equals(\"foobar\"));\n    }",
+    "begin_line": 94,
+    "end_line": 111,
+    "comment": "",
+    "child_ranges": [
+      "(line 96,col 9)-(line 98,col 60)",
+      "(line 100,col 9)-(line 100,col 59)",
+      "(line 101,col 9)-(line 101,col 59)",
+      "(line 102,col 9)-(line 102,col 100)",
+      "(line 104,col 9)-(line 104,col 49)",
+      "(line 106,col 9)-(line 106,col 64)",
+      "(line 107,col 9)-(line 107,col 59)",
+      "(line 108,col 9)-(line 108,col 80)",
+      "(line 109,col 9)-(line 109,col 99)",
+      "(line 110,col 9)-(line 110,col 118)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnrecognizedOption()",
+    "snippet": "public void testUnrecognizedOption() throws Exception\n    {\n        String[] args \u003d new String[] { \"-a\", \"-d\", \"-b\", \"toast\", \"foo\", \"bar\" };\n\n        try\n        {\n            parser.parse(options, args);\n            fail(\"UnrecognizedOptionException wasn\u0027t thrown\");\n        }\n        catch (UnrecognizedOptionException e)\n        {\n            assertEquals(\"-d\", e.getOption());\n        }\n    }",
+    "begin_line": 113,
+    "end_line": 126,
+    "comment": "",
+    "child_ranges": [
+      "(line 115,col 9)-(line 115,col 81)",
+      "(line 117,col 9)-(line 125,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMissingArg()",
+    "snippet": "public void testMissingArg() throws Exception\n    {\n        String[] args \u003d new String[] { \"-b\" };\n\n        boolean caught \u003d false;\n\n        try\n        {\n            parser.parse(options, args);\n        }\n        catch (MissingArgumentException e)\n        {\n            caught \u003d true;\n            assertEquals(\"option missing an argument\", \"b\", e.getOption().getOpt());\n        }\n\n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 128,
+    "end_line": 145,
+    "comment": "",
+    "child_ranges": [
+      "(line 130,col 9)-(line 130,col 46)",
+      "(line 132,col 9)-(line 132,col 31)",
+      "(line 134,col 9)-(line 142,col 9)",
+      "(line 144,col 9)-(line 144,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testDoubleDash1()",
+    "snippet": "public void testDoubleDash1() throws Exception\n    {\n        String[] args \u003d new String[] { \"--copt\",\n                                       \"--\",\n                                       \"-b\", \"toast\" };\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue(\"Confirm -c is set\", cl.hasOption(\"c\"));\n        assertTrue(\"Confirm -b is not set\", !cl.hasOption(\"b\"));\n        assertTrue(\"Confirm 2 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 2);\n    }",
+    "begin_line": 147,
+    "end_line": 158,
+    "comment": "",
+    "child_ranges": [
+      "(line 149,col 9)-(line 151,col 55)",
+      "(line 153,col 9)-(line 153,col 53)",
+      "(line 155,col 9)-(line 155,col 59)",
+      "(line 156,col 9)-(line 156,col 64)",
+      "(line 157,col 9)-(line 157,col 99)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testDoubleDash2()",
+    "snippet": "public void testDoubleDash2() throws Exception\n    {\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.hasArg().create(\u0027n\u0027));\n        options.addOption(OptionBuilder.create(\u0027m\u0027));\n\n        try\n        {\n            parser.parse(options, new String[]{\"-n\", \"--\", \"-m\"});\n            fail(\"MissingArgumentException not thrown for option -n\");\n        }\n        catch (MissingArgumentException e)\n        {\n            assertNotNull(\"option null\", e.getOption());\n            assertEquals(\"n\", e.getOption().getOpt());\n        }\n    }",
+    "begin_line": 160,
+    "end_line": 176,
+    "comment": "",
+    "child_ranges": [
+      "(line 162,col 9)-(line 162,col 40)",
+      "(line 163,col 9)-(line 163,col 62)",
+      "(line 164,col 9)-(line 164,col 53)",
+      "(line 166,col 9)-(line 175,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testSingleDash()",
+    "snippet": "public void testSingleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"--copt\",\n                                       \"-b\", \"-\",\n                                       \"-a\",\n                                       \"-\" };\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue(\"Confirm -a is set\", cl.hasOption(\"a\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"-\"));\n        assertTrue(\"Confirm 1 extra arg: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 1);\n        assertTrue(\"Confirm value of extra arg: \" + cl.getArgList().get(0), cl.getArgList().get(0).equals(\"-\"));\n    }",
+    "begin_line": 178,
+    "end_line": 192,
+    "comment": "",
+    "child_ranges": [
+      "(line 180,col 9)-(line 183,col 45)",
+      "(line 185,col 9)-(line 185,col 53)",
+      "(line 187,col 9)-(line 187,col 59)",
+      "(line 188,col 9)-(line 188,col 59)",
+      "(line 189,col 9)-(line 189,col 76)",
+      "(line 190,col 9)-(line 190,col 98)",
+      "(line 191,col 9)-(line 191,col 112)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopAtUnexpectedArg()",
+    "snippet": "public void testStopAtUnexpectedArg() throws Exception\n    {\n        String[] args \u003d new String[] { \"-c\",\n                                       \"foober\",\n                                       \"-b\",\n                                       \"toast\" };\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertTrue(\"Confirm -c is set\", cl.hasOption(\"c\"));\n        assertTrue(\"Confirm  3 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 3);\n    }",
+    "begin_line": 194,
+    "end_line": 204,
+    "comment": "",
+    "child_ranges": [
+      "(line 196,col 9)-(line 199,col 49)",
+      "(line 201,col 9)-(line 201,col 59)",
+      "(line 202,col 9)-(line 202,col 59)",
+      "(line 203,col 9)-(line 203,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopAtExpectedArg()",
+    "snippet": "public void testStopAtExpectedArg() throws Exception\n    {\n        String[] args \u003d new String[]{\"-b\", \"foo\"};\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\u0027b\u0027));\n        assertEquals(\"Confirm -b is set\", \"foo\", cl.getOptionValue(\u0027b\u0027));\n        assertTrue(\"Confirm no extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 0);\n    }",
+    "begin_line": 206,
+    "end_line": 215,
+    "comment": "",
+    "child_ranges": [
+      "(line 208,col 9)-(line 208,col 50)",
+      "(line 210,col 9)-(line 210,col 59)",
+      "(line 212,col 9)-(line 212,col 59)",
+      "(line 213,col 9)-(line 213,col 73)",
+      "(line 214,col 9)-(line 214,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopAtNonOptionShort()",
+    "snippet": "public void testStopAtNonOptionShort() throws Exception\n    {\n        String[] args \u003d new String[]{\"-z\",\n                                     \"-a\",\n                                     \"-btoast\"};\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertFalse(\"Confirm -a is not set\", cl.hasOption(\"a\"));\n        assertTrue(\"Confirm  3 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 3);\n    }",
+    "begin_line": 217,
+    "end_line": 226,
+    "comment": "",
+    "child_ranges": [
+      "(line 219,col 9)-(line 221,col 48)",
+      "(line 223,col 9)-(line 223,col 59)",
+      "(line 224,col 9)-(line 224,col 64)",
+      "(line 225,col 9)-(line 225,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopAtNonOptionLong()",
+    "snippet": "public void testStopAtNonOptionLong() throws Exception\n    {\n        String[] args \u003d new String[]{\"--zop\u003d\u003d1\",\n                                     \"-abtoast\",\n                                     \"--b\u003dbar\"};\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n\n        assertFalse(\"Confirm -a is not set\", cl.hasOption(\"a\"));\n        assertFalse(\"Confirm -b is not set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm  3 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 3);\n    }",
+    "begin_line": 228,
+    "end_line": 239,
+    "comment": "",
+    "child_ranges": [
+      "(line 230,col 9)-(line 232,col 48)",
+      "(line 234,col 9)-(line 234,col 59)",
+      "(line 236,col 9)-(line 236,col 64)",
+      "(line 237,col 9)-(line 237,col 64)",
+      "(line 238,col 9)-(line 238,col 100)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testNegativeArgument()",
+    "snippet": "public void testNegativeArgument() throws Exception\n    {\n        String[] args \u003d new String[] { \"-b\", \"-1\"} ;\n\n        CommandLine cl \u003d parser.parse(options, args);\n        assertEquals(\"-1\", cl.getOptionValue(\"b\"));\n    }",
+    "begin_line": 241,
+    "end_line": 247,
+    "comment": "",
+    "child_ranges": [
+      "(line 243,col 9)-(line 243,col 52)",
+      "(line 245,col 9)-(line 245,col 53)",
+      "(line 246,col 9)-(line 246,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testNegativeOption()",
+    "snippet": "public void testNegativeOption() throws Exception\n    {\n        String[] args \u003d new String[] { \"-b\", \"-1\"} ;\n        \n        options.addOption(\"1\", false, null);\n\n        CommandLine cl \u003d parser.parse(options, args);\n        assertEquals(\"-1\", cl.getOptionValue(\"b\"));\n    }",
+    "begin_line": 249,
+    "end_line": 257,
+    "comment": "",
+    "child_ranges": [
+      "(line 251,col 9)-(line 251,col 52)",
+      "(line 253,col 9)-(line 253,col 44)",
+      "(line 255,col 9)-(line 255,col 53)",
+      "(line 256,col 9)-(line 256,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testArgumentStartingWithHyphen()",
+    "snippet": "public void testArgumentStartingWithHyphen() throws Exception\n    {\n        String[] args \u003d new String[]{\"-b\", \"-foo\"};\n\n        CommandLine cl \u003d parser.parse(options, args);\n        assertEquals(\"-foo\", cl.getOptionValue(\"b\"));\n    }",
+    "begin_line": 259,
+    "end_line": 265,
+    "comment": "",
+    "child_ranges": [
+      "(line 261,col 9)-(line 261,col 51)",
+      "(line 263,col 9)-(line 263,col 53)",
+      "(line 264,col 9)-(line 264,col 53)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testShortWithEqual()",
+    "snippet": "public void testShortWithEqual() throws Exception\n    {\n        String[] args \u003d new String[] { \"-f\u003dbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 267,
+    "end_line": 277,
+    "comment": "",
+    "child_ranges": [
+      "(line 269,col 9)-(line 269,col 50)",
+      "(line 271,col 9)-(line 271,col 40)",
+      "(line 272,col 9)-(line 272,col 81)",
+      "(line 274,col 9)-(line 274,col 53)",
+      "(line 276,col 9)-(line 276,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testShortWithoutEqual()",
+    "snippet": "public void testShortWithoutEqual() throws Exception\n    {\n        String[] args \u003d new String[] { \"-fbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 279,
+    "end_line": 289,
+    "comment": "",
+    "child_ranges": [
+      "(line 281,col 9)-(line 281,col 49)",
+      "(line 283,col 9)-(line 283,col 40)",
+      "(line 284,col 9)-(line 284,col 81)",
+      "(line 286,col 9)-(line 286,col 53)",
+      "(line 288,col 9)-(line 288,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithEqualDoubleDash()",
+    "snippet": "public void testLongWithEqualDoubleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"--foo\u003dbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 291,
+    "end_line": 301,
+    "comment": "",
+    "child_ranges": [
+      "(line 293,col 9)-(line 293,col 53)",
+      "(line 295,col 9)-(line 295,col 40)",
+      "(line 296,col 9)-(line 296,col 81)",
+      "(line 298,col 9)-(line 298,col 53)",
+      "(line 300,col 9)-(line 300,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithEqualSingleDash()",
+    "snippet": "public void testLongWithEqualSingleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"-foo\u003dbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 303,
+    "end_line": 313,
+    "comment": "",
+    "child_ranges": [
+      "(line 305,col 9)-(line 305,col 52)",
+      "(line 307,col 9)-(line 307,col 40)",
+      "(line 308,col 9)-(line 308,col 81)",
+      "(line 310,col 9)-(line 310,col 53)",
+      "(line 312,col 9)-(line 312,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithoutEqualSingleDash()",
+    "snippet": "public void testLongWithoutEqualSingleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"-foobar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 315,
+    "end_line": 325,
+    "comment": "",
+    "child_ranges": [
+      "(line 317,col 9)-(line 317,col 51)",
+      "(line 319,col 9)-(line 319,col 40)",
+      "(line 320,col 9)-(line 320,col 81)",
+      "(line 322,col 9)-(line 322,col 53)",
+      "(line 324,col 9)-(line 324,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testAmbiguousLongWithoutEqualSingleDash()",
+    "snippet": "public void testAmbiguousLongWithoutEqualSingleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"-b\", \"-foobar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasOptionalArg().create(\u0027f\u0027));\n        options.addOption(OptionBuilder.withLongOpt(\"bar\").hasOptionalArg().create(\u0027b\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue(cl.hasOption(\"b\"));\n        assertTrue(cl.hasOption(\"f\"));\n        assertEquals(\"bar\", cl.getOptionValue(\"foo\"));\n    }",
+    "begin_line": 327,
+    "end_line": 340,
+    "comment": "",
+    "child_ranges": [
+      "(line 329,col 9)-(line 329,col 57)",
+      "(line 331,col 9)-(line 331,col 40)",
+      "(line 332,col 9)-(line 332,col 89)",
+      "(line 333,col 9)-(line 333,col 89)",
+      "(line 335,col 9)-(line 335,col 53)",
+      "(line 337,col 9)-(line 337,col 38)",
+      "(line 338,col 9)-(line 338,col 38)",
+      "(line 339,col 9)-(line 339,col 54)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithoutEqualDoubleDash()",
+    "snippet": "public void testLongWithoutEqualDoubleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"--foobar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").hasArg().create(\u0027f\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n\n        assertFalse(cl.hasOption(\"foo\")); // foo isn\u0027t expected to be recognized with a double dash\n    }",
+    "begin_line": 342,
+    "end_line": 352,
+    "comment": "",
+    "child_ranges": [
+      "(line 344,col 9)-(line 344,col 52)",
+      "(line 346,col 9)-(line 346,col 40)",
+      "(line 347,col 9)-(line 347,col 81)",
+      "(line 349,col 9)-(line 349,col 59)",
+      "(line 351,col 9)-(line 351,col 41)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithUnexpectedArgument1()",
+    "snippet": "public void testLongWithUnexpectedArgument1() throws Exception\n    {\n        String[] args \u003d new String[] { \"--foo\u003dbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").create(\u0027f\u0027));\n\n        try\n        {\n            parser.parse(options, args);\n        }\n        catch (UnrecognizedOptionException e)\n        {\n            assertEquals(\"--foo\u003dbar\", e.getOption());\n            return;\n        }\n\n        fail(\"UnrecognizedOptionException not thrown\");\n    }",
+    "begin_line": 354,
+    "end_line": 372,
+    "comment": "",
+    "child_ranges": [
+      "(line 356,col 9)-(line 356,col 53)",
+      "(line 358,col 9)-(line 358,col 40)",
+      "(line 359,col 9)-(line 359,col 72)",
+      "(line 361,col 9)-(line 369,col 9)",
+      "(line 371,col 9)-(line 371,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testLongWithUnexpectedArgument2()",
+    "snippet": "public void testLongWithUnexpectedArgument2() throws Exception\n    {\n        String[] args \u003d new String[] { \"-foobar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").create(\u0027f\u0027));\n\n        try\n        {\n            parser.parse(options, args);\n        }\n        catch (UnrecognizedOptionException e)\n        {\n            assertEquals(\"-foobar\", e.getOption());\n            return;\n        }\n\n        fail(\"UnrecognizedOptionException not thrown\");\n    }",
+    "begin_line": 374,
+    "end_line": 392,
+    "comment": "",
+    "child_ranges": [
+      "(line 376,col 9)-(line 376,col 51)",
+      "(line 378,col 9)-(line 378,col 40)",
+      "(line 379,col 9)-(line 379,col 72)",
+      "(line 381,col 9)-(line 389,col 9)",
+      "(line 391,col 9)-(line 391,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testShortWithUnexpectedArgument()",
+    "snippet": "public void testShortWithUnexpectedArgument() throws Exception\n    {\n        String[] args \u003d new String[] { \"-f\u003dbar\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"foo\").create(\u0027f\u0027));\n\n        try\n        {\n            parser.parse(options, args);\n        }\n        catch (UnrecognizedOptionException e)\n        {\n            assertEquals(\"-f\u003dbar\", e.getOption());\n            return;\n        }\n\n        fail(\"UnrecognizedOptionException not thrown\");\n    }",
+    "begin_line": 394,
+    "end_line": 412,
+    "comment": "",
+    "child_ranges": [
+      "(line 396,col 9)-(line 396,col 50)",
+      "(line 398,col 9)-(line 398,col 40)",
+      "(line 399,col 9)-(line 399,col 72)",
+      "(line 401,col 9)-(line 409,col 9)",
+      "(line 411,col 9)-(line 411,col 55)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertiesOption1()",
+    "snippet": "public void testPropertiesOption1() throws Exception\n    {\n        String[] args \u003d new String[] { \"-Jsource\u003d1.5\", \"-J\", \"target\", \"1.5\", \"foo\" };\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withValueSeparator().hasArgs(2).create(\u0027J\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        List values \u003d Arrays.asList(cl.getOptionValues(\"J\"));\n        assertNotNull(\"null values\", values);\n        assertEquals(\"number of values\", 4, values.size());\n        assertEquals(\"value 1\", \"source\", values.get(0));\n        assertEquals(\"value 2\", \"1.5\", values.get(1));\n        assertEquals(\"value 3\", \"target\", values.get(2));\n        assertEquals(\"value 4\", \"1.5\", values.get(3));\n        \n        List argsleft \u003d cl.getArgList();\n        assertEquals(\"Should be 1 arg left\", 1, argsleft.size());\n        assertEquals(\"Expecting foo\", \"foo\", argsleft.get(0));\n    }",
+    "begin_line": 414,
+    "end_line": 434,
+    "comment": "",
+    "child_ranges": [
+      "(line 416,col 9)-(line 416,col 86)",
+      "(line 418,col 9)-(line 418,col 40)",
+      "(line 419,col 9)-(line 419,col 85)",
+      "(line 421,col 9)-(line 421,col 53)",
+      "(line 423,col 9)-(line 423,col 61)",
+      "(line 424,col 9)-(line 424,col 45)",
+      "(line 425,col 9)-(line 425,col 59)",
+      "(line 426,col 9)-(line 426,col 57)",
+      "(line 427,col 9)-(line 427,col 54)",
+      "(line 428,col 9)-(line 428,col 57)",
+      "(line 429,col 9)-(line 429,col 54)",
+      "(line 431,col 9)-(line 431,col 40)",
+      "(line 432,col 9)-(line 432,col 65)",
+      "(line 433,col 9)-(line 433,col 62)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertiesOption2()",
+    "snippet": "public void testPropertiesOption2() throws Exception\n    {\n        String[] args \u003d new String[] { \"-Dparam1\", \"-Dparam2\u003dvalue2\", \"-D\"};\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withValueSeparator().hasOptionalArgs(2).create(\u0027D\u0027));\n\n        CommandLine cl \u003d parser.parse(options, args);\n        \n        Properties props \u003d cl.getOptionProperties(\"D\");\n        assertNotNull(\"null properties\", props);\n        assertEquals(\"number of properties in \" + props, 2, props.size());\n        assertEquals(\"property 1\", \"true\", props.getProperty(\"param1\"));\n        assertEquals(\"property 2\", \"value2\", props.getProperty(\"param2\"));\n        \n        List argsleft \u003d cl.getArgList();\n        assertEquals(\"Should be no arg left\", 0, argsleft.size());\n    }",
+    "begin_line": 436,
+    "end_line": 453,
+    "comment": "",
+    "child_ranges": [
+      "(line 438,col 9)-(line 438,col 76)",
+      "(line 440,col 9)-(line 440,col 40)",
+      "(line 441,col 9)-(line 441,col 93)",
+      "(line 443,col 9)-(line 443,col 53)",
+      "(line 445,col 9)-(line 445,col 55)",
+      "(line 446,col 9)-(line 446,col 48)",
+      "(line 447,col 9)-(line 447,col 74)",
+      "(line 448,col 9)-(line 448,col 72)",
+      "(line 449,col 9)-(line 449,col 74)",
+      "(line 451,col 9)-(line 451,col 40)",
+      "(line 452,col 9)-(line 452,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnambiguousPartialLongOption1()",
+    "snippet": "public void testUnambiguousPartialLongOption1() throws Exception\n    {\n        String[] args \u003d new String[] { \"--ver\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"help\").create());\n        \n        CommandLine cl \u003d parser.parse(options, args);\n        \n        assertTrue(\"Confirm --version is set\", cl.hasOption(\"version\"));\n    }",
+    "begin_line": 455,
+    "end_line": 466,
+    "comment": "",
+    "child_ranges": [
+      "(line 457,col 9)-(line 457,col 49)",
+      "(line 459,col 9)-(line 459,col 40)",
+      "(line 460,col 9)-(line 460,col 73)",
+      "(line 461,col 9)-(line 461,col 70)",
+      "(line 463,col 9)-(line 463,col 53)",
+      "(line 465,col 9)-(line 465,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnambiguousPartialLongOption2()",
+    "snippet": "public void testUnambiguousPartialLongOption2() throws Exception\n    {\n        String[] args \u003d new String[] { \"-ver\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"help\").create());\n        \n        CommandLine cl \u003d parser.parse(options, args);\n        \n        assertTrue(\"Confirm --version is set\", cl.hasOption(\"version\"));\n    }",
+    "begin_line": 468,
+    "end_line": 479,
+    "comment": "",
+    "child_ranges": [
+      "(line 470,col 9)-(line 470,col 48)",
+      "(line 472,col 9)-(line 472,col 40)",
+      "(line 473,col 9)-(line 473,col 73)",
+      "(line 474,col 9)-(line 474,col 70)",
+      "(line 476,col 9)-(line 476,col 53)",
+      "(line 478,col 9)-(line 478,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnambiguousPartialLongOption3()",
+    "snippet": "public void testUnambiguousPartialLongOption3() throws Exception\n    {\n        String[] args \u003d new String[] { \"--ver\u003d1\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").hasOptionalArg().create());\n        options.addOption(OptionBuilder.withLongOpt(\"help\").create());\n        \n        CommandLine cl \u003d parser.parse(options, args);\n        \n        assertTrue(\"Confirm --verbose is set\", cl.hasOption(\"verbose\"));\n        assertEquals(\"1\", cl.getOptionValue(\"verbose\"));\n    }",
+    "begin_line": 481,
+    "end_line": 493,
+    "comment": "",
+    "child_ranges": [
+      "(line 483,col 9)-(line 483,col 51)",
+      "(line 485,col 9)-(line 485,col 40)",
+      "(line 486,col 9)-(line 486,col 90)",
+      "(line 487,col 9)-(line 487,col 70)",
+      "(line 489,col 9)-(line 489,col 53)",
+      "(line 491,col 9)-(line 491,col 72)",
+      "(line 492,col 9)-(line 492,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnambiguousPartialLongOption4()",
+    "snippet": "public void testUnambiguousPartialLongOption4() throws Exception\n    {\n        String[] args \u003d new String[] { \"-ver\u003d1\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").hasOptionalArg().create());\n        options.addOption(OptionBuilder.withLongOpt(\"help\").create());\n        \n        CommandLine cl \u003d parser.parse(options, args);\n        \n        assertTrue(\"Confirm --verbose is set\", cl.hasOption(\"verbose\"));\n        assertEquals(\"1\", cl.getOptionValue(\"verbose\"));\n    }",
+    "begin_line": 495,
+    "end_line": 507,
+    "comment": "",
+    "child_ranges": [
+      "(line 497,col 9)-(line 497,col 50)",
+      "(line 499,col 9)-(line 499,col 40)",
+      "(line 500,col 9)-(line 500,col 90)",
+      "(line 501,col 9)-(line 501,col 70)",
+      "(line 503,col 9)-(line 503,col 53)",
+      "(line 505,col 9)-(line 505,col 72)",
+      "(line 506,col 9)-(line 506,col 56)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testAmbiguousPartialLongOption1()",
+    "snippet": "public void testAmbiguousPartialLongOption1() throws Exception\n    {\n        String[] args \u003d new String[] { \"--ver\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").create());\n        \n        boolean caught \u003d false;\n        \n        try \n        {\n            parser.parse(options, args);\n        }\n        catch (AmbiguousOptionException e) \n        {\n            caught \u003d true;\n            assertEquals(\"Partial option\", \"--ver\", e.getOption());\n            assertNotNull(\"Matching options null\", e.getMatchingOptions());\n            assertEquals(\"Matching options size\", 2, e.getMatchingOptions().size());\n        }\n        \n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 509,
+    "end_line": 532,
+    "comment": "",
+    "child_ranges": [
+      "(line 511,col 9)-(line 511,col 49)",
+      "(line 513,col 9)-(line 513,col 40)",
+      "(line 514,col 9)-(line 514,col 73)",
+      "(line 515,col 9)-(line 515,col 73)",
+      "(line 517,col 9)-(line 517,col 31)",
+      "(line 519,col 9)-(line 529,col 9)",
+      "(line 531,col 9)-(line 531,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testAmbiguousPartialLongOption2()",
+    "snippet": "public void testAmbiguousPartialLongOption2() throws Exception\n    {\n        String[] args \u003d new String[] { \"-ver\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").create());\n        \n        boolean caught \u003d false;\n        \n        try \n        {\n            parser.parse(options, args);\n        }\n        catch (AmbiguousOptionException e) \n        {\n            caught \u003d true;\n            assertEquals(\"Partial option\", \"-ver\", e.getOption());\n            assertNotNull(\"Matching options null\", e.getMatchingOptions());\n            assertEquals(\"Matching options size\", 2, e.getMatchingOptions().size());\n        }\n        \n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 534,
+    "end_line": 557,
+    "comment": "",
+    "child_ranges": [
+      "(line 536,col 9)-(line 536,col 48)",
+      "(line 538,col 9)-(line 538,col 40)",
+      "(line 539,col 9)-(line 539,col 73)",
+      "(line 540,col 9)-(line 540,col 73)",
+      "(line 542,col 9)-(line 542,col 31)",
+      "(line 544,col 9)-(line 554,col 9)",
+      "(line 556,col 9)-(line 556,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testAmbiguousPartialLongOption3()",
+    "snippet": "public void testAmbiguousPartialLongOption3() throws Exception\n    {\n        String[] args \u003d new String[] { \"--ver\u003d1\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").hasOptionalArg().create());\n        \n        boolean caught \u003d false;\n        \n        try \n        {\n            parser.parse(options, args);\n        }\n        catch (AmbiguousOptionException e) \n        {\n            caught \u003d true;\n            assertEquals(\"Partial option\", \"--ver\", e.getOption());\n            assertNotNull(\"Matching options null\", e.getMatchingOptions());\n            assertEquals(\"Matching options size\", 2, e.getMatchingOptions().size());\n        }\n        \n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 559,
+    "end_line": 582,
+    "comment": "",
+    "child_ranges": [
+      "(line 561,col 9)-(line 561,col 51)",
+      "(line 563,col 9)-(line 563,col 40)",
+      "(line 564,col 9)-(line 564,col 73)",
+      "(line 565,col 9)-(line 565,col 90)",
+      "(line 567,col 9)-(line 567,col 31)",
+      "(line 569,col 9)-(line 579,col 9)",
+      "(line 581,col 9)-(line 581,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testAmbiguousPartialLongOption4()",
+    "snippet": "public void testAmbiguousPartialLongOption4() throws Exception\n    {\n        String[] args \u003d new String[] { \"-ver\u003d1\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.withLongOpt(\"verbose\").hasOptionalArg().create());\n        \n        boolean caught \u003d false;\n        \n        try \n        {\n            parser.parse(options, args);\n        }\n        catch (AmbiguousOptionException e) \n        {\n            caught \u003d true;\n            assertEquals(\"Partial option\", \"-ver\", e.getOption());\n            assertNotNull(\"Matching options null\", e.getMatchingOptions());\n            assertEquals(\"Matching options size\", 2, e.getMatchingOptions().size());\n        }\n        \n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 584,
+    "end_line": 607,
+    "comment": "",
+    "child_ranges": [
+      "(line 586,col 9)-(line 586,col 50)",
+      "(line 588,col 9)-(line 588,col 40)",
+      "(line 589,col 9)-(line 589,col 73)",
+      "(line 590,col 9)-(line 590,col 90)",
+      "(line 592,col 9)-(line 592,col 31)",
+      "(line 594,col 9)-(line 604,col 9)",
+      "(line 606,col 9)-(line 606,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPartialLongOptionSingleDash()",
+    "snippet": "public void testPartialLongOptionSingleDash() throws Exception\n    {\n        String[] args \u003d new String[] { \"-ver\" };\n        \n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.withLongOpt(\"version\").create());\n        options.addOption(OptionBuilder.hasArg().create(\u0027v\u0027));\n        \n        CommandLine cl \u003d parser.parse(options, args);\n        \n        assertTrue(\"Confirm --version is set\", cl.hasOption(\"version\"));\n        assertTrue(\"Confirm -v is not set\", !cl.hasOption(\"v\"));\n    }",
+    "begin_line": 609,
+    "end_line": 621,
+    "comment": "",
+    "child_ranges": [
+      "(line 611,col 9)-(line 611,col 48)",
+      "(line 613,col 9)-(line 613,col 40)",
+      "(line 614,col 9)-(line 614,col 73)",
+      "(line 615,col 9)-(line 615,col 62)",
+      "(line 617,col 9)-(line 617,col 53)",
+      "(line 619,col 9)-(line 619,col 72)",
+      "(line 620,col 9)-(line 620,col 64)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testWithRequiredOption()",
+    "snippet": "public void testWithRequiredOption() throws Exception\n    {\n        String[] args \u003d new String[] { \"-b\", \"file\" };\n        \n        Options options \u003d new Options();\n        options.addOption(\"a\", \"enable-a\", false, null);\n        options.addOption(OptionBuilder.withLongOpt(\"bfile\").hasArg().isRequired().create(\u0027b\u0027));\n\n        CommandLine cl \u003d parser.parse(options,args);\n\n        assertTrue(\"Confirm -a is NOT set\", !cl.hasOption(\"a\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"file\"));\n        assertTrue(\"Confirm NO of extra args\", cl.getArgList().size() \u003d\u003d 0);\n    }",
+    "begin_line": 623,
+    "end_line": 637,
+    "comment": "",
+    "child_ranges": [
+      "(line 625,col 9)-(line 625,col 54)",
+      "(line 627,col 9)-(line 627,col 40)",
+      "(line 628,col 9)-(line 628,col 56)",
+      "(line 629,col 9)-(line 629,col 96)",
+      "(line 631,col 9)-(line 631,col 52)",
+      "(line 633,col 9)-(line 633,col 64)",
+      "(line 634,col 9)-(line 634,col 59)",
+      "(line 635,col 9)-(line 635,col 79)",
+      "(line 636,col 9)-(line 636,col 76)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testOptionAndRequiredOption()",
+    "snippet": "public void testOptionAndRequiredOption() throws Exception\n    {\n        String[] args \u003d new String[] { \"-a\", \"-b\", \"file\" };\n        \n        Options options \u003d new Options();\n        options.addOption(\"a\", \"enable-a\", false, null);\n        options.addOption(OptionBuilder.withLongOpt(\"bfile\").hasArg().isRequired().create(\u0027b\u0027));\n\n        CommandLine cl \u003d parser.parse(options,args);\n\n        assertTrue(\"Confirm -a is set\", cl.hasOption(\"a\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"file\"));\n        assertTrue(\"Confirm NO of extra args\", cl.getArgList().size() \u003d\u003d 0);\n    }",
+    "begin_line": 639,
+    "end_line": 653,
+    "comment": "",
+    "child_ranges": [
+      "(line 641,col 9)-(line 641,col 60)",
+      "(line 643,col 9)-(line 643,col 40)",
+      "(line 644,col 9)-(line 644,col 56)",
+      "(line 645,col 9)-(line 645,col 96)",
+      "(line 647,col 9)-(line 647,col 52)",
+      "(line 649,col 9)-(line 649,col 59)",
+      "(line 650,col 9)-(line 650,col 59)",
+      "(line 651,col 9)-(line 651,col 79)",
+      "(line 652,col 9)-(line 652,col 76)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMissingRequiredOption()",
+    "snippet": "public void testMissingRequiredOption()\n    {\n        String[] args \u003d new String[] { \"-a\" };\n        \n        Options options \u003d new Options();\n        options.addOption(\"a\", \"enable-a\", false, null);\n        options.addOption(OptionBuilder.withLongOpt(\"bfile\").hasArg().isRequired().create(\u0027b\u0027));\n\n        try\n        {\n            parser.parse(options,args);\n            fail(\"exception should have been thrown\");\n        }\n        catch (MissingOptionException e)\n        {\n            assertEquals( \"Incorrect exception message\", \"Missing required option: b\", e.getMessage() );\n            assertTrue(e.getMissingOptions().contains(\"b\"));\n        }\n        catch (ParseException e)\n        {\n            fail(\"expected to catch MissingOptionException\");\n        }\n    }",
+    "begin_line": 655,
+    "end_line": 677,
+    "comment": "",
+    "child_ranges": [
+      "(line 657,col 9)-(line 657,col 46)",
+      "(line 659,col 9)-(line 659,col 40)",
+      "(line 660,col 9)-(line 660,col 56)",
+      "(line 661,col 9)-(line 661,col 96)",
+      "(line 663,col 9)-(line 676,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMissingRequiredOptions()",
+    "snippet": "public void testMissingRequiredOptions()\n    {\n        String[] args \u003d new String[] { \"-a\" };\n\n        Options options \u003d new Options();\n        options.addOption(\"a\", \"enable-a\", false, null);\n        options.addOption(OptionBuilder.withLongOpt(\"bfile\").hasArg().isRequired().create(\u0027b\u0027));\n        options.addOption(OptionBuilder.withLongOpt(\"cfile\").hasArg().isRequired().create(\u0027c\u0027));\n\n        try\n        {\n            parser.parse(options,args);\n            fail(\"exception should have been thrown\");\n        }\n        catch (MissingOptionException e)\n        {\n            assertEquals(\"Incorrect exception message\", \"Missing required options: b, c\", e.getMessage());\n            assertTrue(e.getMissingOptions().contains(\"b\"));\n            assertTrue(e.getMissingOptions().contains(\"c\"));\n        }\n        catch (ParseException e)\n        {\n            fail(\"expected to catch MissingOptionException\");\n        }\n    }",
+    "begin_line": 679,
+    "end_line": 703,
+    "comment": "",
+    "child_ranges": [
+      "(line 681,col 9)-(line 681,col 46)",
+      "(line 683,col 9)-(line 683,col 40)",
+      "(line 684,col 9)-(line 684,col 56)",
+      "(line 685,col 9)-(line 685,col 96)",
+      "(line 686,col 9)-(line 686,col 96)",
+      "(line 688,col 9)-(line 702,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMissingRequiredGroup()",
+    "snippet": "public void testMissingRequiredGroup() throws Exception\n    {\n        OptionGroup group \u003d new OptionGroup();\n        group.addOption(OptionBuilder.create(\"a\"));\n        group.addOption(OptionBuilder.create(\"b\"));\n        group.setRequired(true);\n\n        Options options \u003d new Options();\n        options.addOptionGroup(group);\n        options.addOption(OptionBuilder.isRequired().create(\"c\"));\n\n        try\n        {\n            parser.parse(options, new String[] { \"-c\" });\n            fail(\"MissingOptionException not thrown\");\n        }\n        catch (MissingOptionException e)\n        {\n            assertEquals(1, e.getMissingOptions().size());\n            assertTrue(e.getMissingOptions().get(0) instanceof OptionGroup);\n        }\n        catch (ParseException e)\n        {\n            fail(\"Expected to catch MissingOptionException\");\n        }\n    }",
+    "begin_line": 705,
+    "end_line": 730,
+    "comment": "",
+    "child_ranges": [
+      "(line 707,col 9)-(line 707,col 46)",
+      "(line 708,col 9)-(line 708,col 51)",
+      "(line 709,col 9)-(line 709,col 51)",
+      "(line 710,col 9)-(line 710,col 32)",
+      "(line 712,col 9)-(line 712,col 40)",
+      "(line 713,col 9)-(line 713,col 38)",
+      "(line 714,col 9)-(line 714,col 66)",
+      "(line 716,col 9)-(line 729,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testOptionGroup()",
+    "snippet": "public void testOptionGroup() throws Exception\n    {\n        OptionGroup group \u003d new OptionGroup();\n        group.addOption(OptionBuilder.create(\"a\"));\n        group.addOption(OptionBuilder.create(\"b\"));\n        \n        Options options \u003d new Options();\n        options.addOptionGroup(group);\n        \n        parser.parse(options, new String[] { \"-b\" });\n        \n        assertEquals(\"selected option\", \"b\", group.getSelected());\n    }",
+    "begin_line": 732,
+    "end_line": 744,
+    "comment": "",
+    "child_ranges": [
+      "(line 734,col 9)-(line 734,col 46)",
+      "(line 735,col 9)-(line 735,col 51)",
+      "(line 736,col 9)-(line 736,col 51)",
+      "(line 738,col 9)-(line 738,col 40)",
+      "(line 739,col 9)-(line 739,col 38)",
+      "(line 741,col 9)-(line 741,col 53)",
+      "(line 743,col 9)-(line 743,col 66)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testOptionGroupLong()",
+    "snippet": "public void testOptionGroupLong() throws Exception\n    {\n        OptionGroup group \u003d new OptionGroup();\n        group.addOption(OptionBuilder.withLongOpt(\"foo\").create());\n        group.addOption(OptionBuilder.withLongOpt(\"bar\").create());\n        \n        Options options \u003d new Options();\n        options.addOptionGroup(group);\n        \n        CommandLine cl \u003d parser.parse(options, new String[] { \"--bar\" });\n        \n        assertTrue(cl.hasOption(\"bar\"));\n        assertEquals(\"selected option\", \"bar\", group.getSelected());\n    }",
+    "begin_line": 746,
+    "end_line": 759,
+    "comment": "",
+    "child_ranges": [
+      "(line 748,col 9)-(line 748,col 46)",
+      "(line 749,col 9)-(line 749,col 67)",
+      "(line 750,col 9)-(line 750,col 67)",
+      "(line 752,col 9)-(line 752,col 40)",
+      "(line 753,col 9)-(line 753,col 38)",
+      "(line 755,col 9)-(line 755,col 73)",
+      "(line 757,col 9)-(line 757,col 40)",
+      "(line 758,col 9)-(line 758,col 68)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testReuseOptionsTwice()",
+    "snippet": "public void testReuseOptionsTwice() throws Exception\n    {\n        Options opts \u003d new Options();\n\t\topts.addOption(OptionBuilder.isRequired().create(\u0027v\u0027));\n\n        // first parsing\n        parser.parse(opts, new String[] { \"-v\" });\n\n        try\n        {\n            // second parsing, with the same Options instance and an invalid command line\n            parser.parse(opts, new String[0]);\n            fail(\"MissingOptionException not thrown\");\n        }\n        catch (MissingOptionException e)\n        {\n            // expected\n        }\n    }",
+    "begin_line": 761,
+    "end_line": 779,
+    "comment": "",
+    "child_ranges": [
+      "(line 763,col 9)-(line 763,col 37)",
+      "(line 764,col 3)-(line 764,col 57)",
+      "(line 767,col 9)-(line 767,col 50)",
+      "(line 769,col 9)-(line 778,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testBursting()",
+    "snippet": "public void testBursting() throws Exception\n    {\n        String[] args \u003d new String[] { \"-acbtoast\", \"foo\", \"bar\" };\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue( \"Confirm -a is set\", cl.hasOption(\"a\") );\n        assertTrue( \"Confirm -b is set\", cl.hasOption(\"b\") );\n        assertTrue( \"Confirm -c is set\", cl.hasOption(\"c\") );\n        assertTrue( \"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\") );\n        assertTrue( \"Confirm size of extra args\", cl.getArgList().size() \u003d\u003d 2);\n    }",
+    "begin_line": 781,
+    "end_line": 792,
+    "comment": "",
+    "child_ranges": [
+      "(line 783,col 9)-(line 783,col 67)",
+      "(line 785,col 9)-(line 785,col 53)",
+      "(line 787,col 9)-(line 787,col 61)",
+      "(line 788,col 9)-(line 788,col 61)",
+      "(line 789,col 9)-(line 789,col 61)",
+      "(line 790,col 9)-(line 790,col 82)",
+      "(line 791,col 9)-(line 791,col 79)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnrecognizedOptionWithBursting()",
+    "snippet": "public void testUnrecognizedOptionWithBursting() throws Exception\n    {\n        String[] args \u003d new String[] { \"-adbtoast\", \"foo\", \"bar\" };\n\n        try\n        {\n            parser.parse(options, args);\n            fail(\"UnrecognizedOptionException wasn\u0027t thrown\");\n        }\n        catch (UnrecognizedOptionException e)\n        {\n            assertEquals(\"-adbtoast\", e.getOption());\n        }\n    }",
+    "begin_line": 794,
+    "end_line": 807,
+    "comment": "",
+    "child_ranges": [
+      "(line 796,col 9)-(line 796,col 67)",
+      "(line 798,col 9)-(line 806,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testMissingArgWithBursting()",
+    "snippet": "public void testMissingArgWithBursting() throws Exception\n    {\n        String[] args \u003d new String[] { \"-acb\" };\n\n        boolean caught \u003d false;\n\n        try\n        {\n            parser.parse(options, args);\n        }\n        catch (MissingArgumentException e)\n        {\n            caught \u003d true;\n            assertEquals(\"option missing an argument\", \"b\", e.getOption().getOpt());\n        }\n\n        assertTrue( \"Confirm MissingArgumentException caught\", caught );\n    }",
+    "begin_line": 809,
+    "end_line": 826,
+    "comment": "",
+    "child_ranges": [
+      "(line 811,col 9)-(line 811,col 48)",
+      "(line 813,col 9)-(line 813,col 31)",
+      "(line 815,col 9)-(line 823,col 9)",
+      "(line 825,col 9)-(line 825,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopBursting()",
+    "snippet": "public void testStopBursting() throws Exception\n    {\n        String[] args \u003d new String[] { \"-azc\" };\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertTrue( \"Confirm -a is set\", cl.hasOption(\"a\") );\n        assertFalse( \"Confirm -c is not set\", cl.hasOption(\"c\") );\n\n        assertTrue( \"Confirm  1 extra arg: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 1);\n        assertTrue(cl.getArgList().contains(\"zc\"));\n    }",
+    "begin_line": 828,
+    "end_line": 838,
+    "comment": "",
+    "child_ranges": [
+      "(line 830,col 9)-(line 830,col 48)",
+      "(line 832,col 9)-(line 832,col 59)",
+      "(line 833,col 9)-(line 833,col 61)",
+      "(line 834,col 9)-(line 834,col 66)",
+      "(line 836,col 9)-(line 836,col 100)",
+      "(line 837,col 9)-(line 837,col 51)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testStopBursting2()",
+    "snippet": "public void testStopBursting2() throws Exception\n    {\n        String[] args \u003d new String[] { \"-c\", \"foobar\", \"-btoast\" };\n\n        CommandLine cl \u003d parser.parse(options, args, true);\n        assertTrue(\"Confirm -c is set\", cl.hasOption(\"c\"));\n        assertTrue(\"Confirm  2 extra args: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 2);\n\n        cl \u003d parser.parse(options, cl.getArgs());\n\n        assertTrue(\"Confirm -c is not set\", !cl.hasOption(\"c\"));\n        assertTrue(\"Confirm -b is set\", cl.hasOption(\"b\"));\n        assertTrue(\"Confirm arg of -b\", cl.getOptionValue(\"b\").equals(\"toast\"));\n        assertTrue(\"Confirm  1 extra arg: \" + cl.getArgList().size(), cl.getArgList().size() \u003d\u003d 1);\n        assertTrue(\"Confirm  value of extra arg: \" + cl.getArgList().get(0), cl.getArgList().get(0).equals(\"foobar\"));\n    }",
+    "begin_line": 840,
+    "end_line": 855,
+    "comment": "",
+    "child_ranges": [
+      "(line 842,col 9)-(line 842,col 67)",
+      "(line 844,col 9)-(line 844,col 59)",
+      "(line 845,col 9)-(line 845,col 59)",
+      "(line 846,col 9)-(line 846,col 100)",
+      "(line 848,col 9)-(line 848,col 49)",
+      "(line 850,col 9)-(line 850,col 64)",
+      "(line 851,col 9)-(line 851,col 59)",
+      "(line 852,col 9)-(line 852,col 80)",
+      "(line 853,col 9)-(line 853,col 99)",
+      "(line 854,col 9)-(line 854,col 118)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testUnlimitedArgs()",
+    "snippet": "public void testUnlimitedArgs() throws Exception\n    {\n        String[] args \u003d new String[]{\"-e\", \"one\", \"two\", \"-f\", \"alpha\"};\n\n        Options options \u003d new Options();\n        options.addOption(OptionBuilder.hasArgs().create(\"e\"));\n        options.addOption(OptionBuilder.hasArgs().create(\"f\"));\n\n        CommandLine cl \u003d parser.parse(options, args);\n\n        assertTrue(\"Confirm -e is set\", cl.hasOption(\"e\"));\n        assertEquals(\"number of arg for -e\", 2, cl.getOptionValues(\"e\").length);\n        assertTrue(\"Confirm -f is set\", cl.hasOption(\"f\"));\n        assertEquals(\"number of arg for -f\", 1, cl.getOptionValues(\"f\").length);\n    }",
+    "begin_line": 857,
+    "end_line": 871,
+    "comment": "",
+    "child_ranges": [
+      "(line 859,col 9)-(line 859,col 72)",
+      "(line 861,col 9)-(line 861,col 40)",
+      "(line 862,col 9)-(line 862,col 63)",
+      "(line 863,col 9)-(line 863,col 63)",
+      "(line 865,col 9)-(line 865,col 53)",
+      "(line 867,col 9)-(line 867,col 59)",
+      "(line 868,col 9)-(line 868,col 80)",
+      "(line 869,col 9)-(line 869,col 59)",
+      "(line 870,col 9)-(line 870,col 80)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.parse(CommandLineParser, Options, java.lang.String[], java.util.Properties)",
+    "snippet": "private CommandLine parse(CommandLineParser parser, Options opts, String[] args, Properties properties) throws ParseException {\n        if (parser instanceof Parser) {\n            return ((Parser) parser).parse(opts, args, properties);\n        } else if (parser instanceof DefaultParser) {\n            return ((DefaultParser) parser).parse(opts, args, properties);\n        } else {\n            throw new UnsupportedOperationException(\"Default options not supported by this parser\");\n        }\n    }",
+    "begin_line": 873,
+    "end_line": 881,
+    "comment": "",
+    "child_ranges": [
+      "(line 874,col 9)-(line 880,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionSingularValue()",
+    "snippet": "public void testPropertyOptionSingularValue() throws Exception\n    {\n        Options opts \u003d new Options();\n        opts.addOption(OptionBuilder.hasOptionalArgs(2).withLongOpt(\"hide\").create());        \n        \n        Properties properties \u003d new Properties();\n        properties.setProperty( \"hide\", \"seek\" );\n\n        CommandLine cmd \u003d parse(parser, opts, null, properties);\n        assertTrue( cmd.hasOption(\"hide\") );\n        assertEquals( \"seek\", cmd.getOptionValue(\"hide\") );\n        assertTrue( !cmd.hasOption(\"fake\") );\n    }",
+    "begin_line": 883,
+    "end_line": 895,
+    "comment": "",
+    "child_ranges": [
+      "(line 885,col 9)-(line 885,col 37)",
+      "(line 886,col 9)-(line 886,col 86)",
+      "(line 888,col 9)-(line 888,col 49)",
+      "(line 889,col 9)-(line 889,col 49)",
+      "(line 891,col 9)-(line 891,col 64)",
+      "(line 892,col 9)-(line 892,col 44)",
+      "(line 893,col 9)-(line 893,col 59)",
+      "(line 894,col 9)-(line 894,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionFlags()",
+    "snippet": "public void testPropertyOptionFlags() throws Exception\n    {\n        Options opts \u003d new Options();\n        opts.addOption(\"a\", false, \"toggle -a\");\n        opts.addOption(\"c\", \"c\", false, \"toggle -c\");\n        opts.addOption(OptionBuilder.hasOptionalArg().create(\u0027e\u0027));\n        \n        Properties properties \u003d new Properties();\n        properties.setProperty(\"a\", \"true\");\n        properties.setProperty(\"c\", \"yes\");\n        properties.setProperty(\"e\", \"1\");\n        \n        CommandLine cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(cmd.hasOption(\"a\"));\n        assertTrue(cmd.hasOption(\"c\"));\n        assertTrue(cmd.hasOption(\"e\"));\n        \n        \n        properties \u003d new Properties();\n        properties.setProperty(\"a\", \"false\");\n        properties.setProperty(\"c\", \"no\");\n        properties.setProperty(\"e\", \"0\");\n        \n        cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(!cmd.hasOption(\"a\"));\n        assertTrue(!cmd.hasOption(\"c\"));\n        assertTrue(cmd.hasOption(\"e\")); // this option accepts an argument\n        \n        \n        properties \u003d new Properties();\n        properties.setProperty(\"a\", \"TRUE\");\n        properties.setProperty(\"c\", \"nO\");\n        properties.setProperty(\"e\", \"TrUe\");\n        \n        cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(cmd.hasOption(\"a\"));\n        assertTrue(!cmd.hasOption(\"c\"));\n        assertTrue(cmd.hasOption(\"e\"));\n        \n        \n        properties \u003d new Properties();\n        properties.setProperty(\"a\", \"just a string\");\n        properties.setProperty(\"e\", \"\");\n        \n        cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(!cmd.hasOption(\"a\"));\n        assertTrue(!cmd.hasOption(\"c\"));\n        assertTrue(cmd.hasOption(\"e\"));\n        \n        \n        properties \u003d new Properties();\n        properties.setProperty(\"a\", \"0\");\n        properties.setProperty(\"c\", \"1\");\n        \n        cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(!cmd.hasOption(\"a\"));\n        assertTrue(cmd.hasOption(\"c\"));\n    }",
+    "begin_line": 897,
+    "end_line": 954,
+    "comment": "",
+    "child_ranges": [
+      "(line 899,col 9)-(line 899,col 37)",
+      "(line 900,col 9)-(line 900,col 48)",
+      "(line 901,col 9)-(line 901,col 53)",
+      "(line 902,col 9)-(line 902,col 67)",
+      "(line 904,col 9)-(line 904,col 49)",
+      "(line 905,col 9)-(line 905,col 44)",
+      "(line 906,col 9)-(line 906,col 43)",
+      "(line 907,col 9)-(line 907,col 41)",
+      "(line 909,col 9)-(line 909,col 64)",
+      "(line 910,col 9)-(line 910,col 39)",
+      "(line 911,col 9)-(line 911,col 39)",
+      "(line 912,col 9)-(line 912,col 39)",
+      "(line 915,col 9)-(line 915,col 38)",
+      "(line 916,col 9)-(line 916,col 45)",
+      "(line 917,col 9)-(line 917,col 42)",
+      "(line 918,col 9)-(line 918,col 41)",
+      "(line 920,col 9)-(line 920,col 52)",
+      "(line 921,col 9)-(line 921,col 40)",
+      "(line 922,col 9)-(line 922,col 40)",
+      "(line 923,col 9)-(line 923,col 39)",
+      "(line 926,col 9)-(line 926,col 38)",
+      "(line 927,col 9)-(line 927,col 44)",
+      "(line 928,col 9)-(line 928,col 42)",
+      "(line 929,col 9)-(line 929,col 44)",
+      "(line 931,col 9)-(line 931,col 52)",
+      "(line 932,col 9)-(line 932,col 39)",
+      "(line 933,col 9)-(line 933,col 40)",
+      "(line 934,col 9)-(line 934,col 39)",
+      "(line 937,col 9)-(line 937,col 38)",
+      "(line 938,col 9)-(line 938,col 53)",
+      "(line 939,col 9)-(line 939,col 40)",
+      "(line 941,col 9)-(line 941,col 52)",
+      "(line 942,col 9)-(line 942,col 40)",
+      "(line 943,col 9)-(line 943,col 40)",
+      "(line 944,col 9)-(line 944,col 39)",
+      "(line 947,col 9)-(line 947,col 38)",
+      "(line 948,col 9)-(line 948,col 41)",
+      "(line 949,col 9)-(line 949,col 41)",
+      "(line 951,col 9)-(line 951,col 52)",
+      "(line 952,col 9)-(line 952,col 40)",
+      "(line 953,col 9)-(line 953,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionMultipleValues()",
+    "snippet": "public void testPropertyOptionMultipleValues() throws Exception\n    {\n        Options opts \u003d new Options();\n        opts.addOption(OptionBuilder.hasArgs().withValueSeparator(\u0027,\u0027).create(\u0027k\u0027));\n        \n        Properties properties \u003d new Properties();\n        properties.setProperty( \"k\", \"one,two\" );\n\n        String[] values \u003d new String[] { \"one\", \"two\" };\n\n        CommandLine cmd \u003d parse(parser, opts, null, properties);\n        assertTrue( cmd.hasOption(\"k\") );\n        assertTrue( Arrays.equals( values, cmd.getOptionValues(\u0027k\u0027) ) );\n    }",
+    "begin_line": 956,
+    "end_line": 969,
+    "comment": "",
+    "child_ranges": [
+      "(line 958,col 9)-(line 958,col 37)",
+      "(line 959,col 9)-(line 959,col 84)",
+      "(line 961,col 9)-(line 961,col 49)",
+      "(line 962,col 9)-(line 962,col 49)",
+      "(line 964,col 9)-(line 964,col 56)",
+      "(line 966,col 9)-(line 966,col 64)",
+      "(line 967,col 9)-(line 967,col 41)",
+      "(line 968,col 9)-(line 968,col 72)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOverrideValues()",
+    "snippet": "public void testPropertyOverrideValues() throws Exception\n    {\n        Options opts \u003d new Options();\n        opts.addOption(OptionBuilder.hasOptionalArgs(2).create(\u0027i\u0027));\n        opts.addOption(OptionBuilder.hasOptionalArgs().create(\u0027j\u0027));\n        \n        String[] args \u003d new String[] { \"-j\", \"found\", \"-i\", \"ink\" };\n\n        Properties properties \u003d new Properties();\n        properties.setProperty( \"j\", \"seek\" );\n\n        CommandLine cmd \u003d parse(parser, opts, args, properties);\n        assertTrue( cmd.hasOption(\"j\") );\n        assertEquals( \"found\", cmd.getOptionValue(\"j\") );\n        assertTrue( cmd.hasOption(\"i\") );\n        assertEquals( \"ink\", cmd.getOptionValue(\"i\") );\n        assertTrue( !cmd.hasOption(\"fake\") );\n    }",
+    "begin_line": 971,
+    "end_line": 988,
+    "comment": "",
+    "child_ranges": [
+      "(line 973,col 9)-(line 973,col 37)",
+      "(line 974,col 9)-(line 974,col 69)",
+      "(line 975,col 9)-(line 975,col 68)",
+      "(line 977,col 9)-(line 977,col 68)",
+      "(line 979,col 9)-(line 979,col 49)",
+      "(line 980,col 9)-(line 980,col 46)",
+      "(line 982,col 9)-(line 982,col 64)",
+      "(line 983,col 9)-(line 983,col 41)",
+      "(line 984,col 9)-(line 984,col 57)",
+      "(line 985,col 9)-(line 985,col 41)",
+      "(line 986,col 9)-(line 986,col 55)",
+      "(line 987,col 9)-(line 987,col 45)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionRequired()",
+    "snippet": "public void testPropertyOptionRequired() throws Exception\n    {\n        Options opts \u003d new Options();\n        opts.addOption(OptionBuilder.isRequired().create(\"f\"));\n        \n        Properties properties \u003d new Properties();\n        properties.setProperty(\"f\", \"true\");\n        \n        CommandLine cmd \u003d parse(parser, opts, null, properties);\n        assertTrue(cmd.hasOption(\"f\"));\n    }",
+    "begin_line": 990,
+    "end_line": 1000,
+    "comment": "",
+    "child_ranges": [
+      "(line 992,col 9)-(line 992,col 37)",
+      "(line 993,col 9)-(line 993,col 63)",
+      "(line 995,col 9)-(line 995,col 49)",
+      "(line 996,col 9)-(line 996,col 44)",
+      "(line 998,col 9)-(line 998,col 64)",
+      "(line 999,col 9)-(line 999,col 39)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionUnexpected()",
+    "snippet": "public void testPropertyOptionUnexpected() throws Exception\n    {\n        Options opts \u003d new Options();\n        \n        Properties properties \u003d new Properties();\n        properties.setProperty(\"f\", \"true\");\n        \n        try {\n            parse(parser, opts, null, properties);\n            fail(\"UnrecognizedOptionException expected\");\n        } catch (UnrecognizedOptionException e) {\n            // expected\n        }\n    }",
+    "begin_line": 1002,
+    "end_line": 1015,
+    "comment": "",
+    "child_ranges": [
+      "(line 1004,col 9)-(line 1004,col 37)",
+      "(line 1006,col 9)-(line 1006,col 49)",
+      "(line 1007,col 9)-(line 1007,col 44)",
+      "(line 1009,col 9)-(line 1014,col 9)"
+    ]
+  },
+  {
+    "class_name": "org.apache.commons.cli.ParserTestCase",
+    "child_classes": [],
+    "src_path": "org/apache/commons/cli/ParserTestCase.java",
+    "signature": "org.apache.commons.cli.ParserTestCase.testPropertyOptionGroup()",
+    "snippet": "public void testPropertyOptionGroup() throws Exception\n    {\n        Options opts \u003d new Options();\n        \n        OptionGroup group1 \u003d new OptionGroup();\n        group1.addOption(new Option(\"a\", null));\n        group1.addOption(new Option(\"b\", null));\n        opts.addOptionGroup(group1);\n        \n        OptionGroup group2 \u003d new OptionGroup();\n        group2.addOption(new Option(\"x\", null));\n        group2.addOption(new Option(\"y\", null));\n        opts.addOptionGroup(group2);\n        \n        String[] args \u003d new String[] { \"-a\" };\n        \n        Properties properties \u003d new Properties();\n        properties.put(\"b\", \"true\");\n        properties.put(\"x\", \"true\");\n        \n        CommandLine cmd \u003d parse(parser, opts, args, properties);\n        \n        assertTrue(cmd.hasOption(\"a\"));\n        assertFalse(cmd.hasOption(\"b\"));\n        assertTrue(cmd.hasOption(\"x\"));\n        assertFalse(cmd.hasOption(\"y\"));\n    }",
+    "begin_line": 1017,
+    "end_line": 1043,
+    "comment": "",
+    "child_ranges": [
+      "(line 1019,col 9)-(line 1019,col 37)",
+      "(line 1021,col 9)-(line 1021,col 47)",
+      "(line 1022,col 9)-(line 1022,col 48)",
+      "(line 1023,col 9)-(line 1023,col 48)",
+      "(line 1024,col 9)-(line 1024,col 36)",
+      "(line 1026,col 9)-(line 1026,col 47)",
+      "(line 1027,col 9)-(line 1027,col 48)",
+      "(line 1028,col 9)-(line 1028,col 48)",
+      "(line 1029,col 9)-(line 1029,col 36)",
+      "(line 1031,col 9)-(line 1031,col 46)",
+      "(line 1033,col 9)-(line 1033,col 49)",
+      "(line 1034,col 9)-(line 1034,col 36)",
+      "(line 1035,col 9)-(line 1035,col 36)",
+      "(line 1037,col 9)-(line 1037,col 64)",
+      "(line 1039,col 9)-(line 1039,col 39)",
+      "(line 1040,col 9)-(line 1040,col 40)",
+      "(line 1041,col 9)-(line 1041,col 39)",
+      "(line 1042,col 9)-(line 1042,col 40)"
+    ]
+  },
+  {
     "class_name": "org.apache.commons.cli.DefaultParserTest",
     "child_classes": [],
     "src_path": "org/apache/commons/cli/DefaultParserTest.java",
